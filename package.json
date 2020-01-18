@@ -1,0 +1,75 @@
+{
+  "name": "zdenekd",
+  "version": "0.0.1",
+  "description": "Web",
+  "main": "index.js",
+  "homepage": "git@bitbucket.org:zdenekd-team/zdenekd.git#readme",
+  "repository": "git@bitbucket.org:zdenekd-team/zdenekd.git",
+  "author": "ZdenekD <zdenekd@zdenekd.cz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "reinstall": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --cache --fix --color --formatter verbose",
+      "git add"
+    ],
+    "*.{json,md,yml,html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=10.13.0",
+    "npm": ">=6.4.1"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^9.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.0.2",
+    "babel-eslint": "^10.0.3",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "hint": "^6.0.3",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-reporter": "^6.0.1",
+    "prettier": "^1.19.1",
+    "stylelint": "^13.0.0",
+    "stylelint-a11y": "^1.2.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-csstree-validator": "^1.7.0",
+    "stylelint-order": "^4.0.0"
+  }
+}

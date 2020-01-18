@@ -1,0 +1,9 @@
+node_modules/*
+bower_components/*
+vendor/*
+doc/*
+**/dist/*
+**/public/*
+.next
+test/*
+hint-report/*
