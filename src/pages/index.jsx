@@ -1,11 +1,7 @@
 import React from 'react';
-import styles from './index.css';
-import Heading from '../components/heading';
+import './index.css';
+import Main from '../components/layout/main';
 
-const Homepage = () => (
-    <main className={styles.default}>
-        <Heading title="Heading" />
-    </main>
-);
+const Homepage = () => <Main />;
 
 export default Homepage;
