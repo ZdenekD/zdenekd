@@ -8,3 +8,5 @@ doc/*
 test/*
 __tests__/*
 hint-report/*
+**/*.jsx
+**/*.css
