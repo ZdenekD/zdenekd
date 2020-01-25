@@ -6,4 +6,5 @@ doc/*
 **/public/*
 .next
 test/*
+__tests__/*
 hint-report/*

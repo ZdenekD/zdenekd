@@ -6,6 +6,6 @@ module.exports = styles({
     cssModules: true,
     cssLoaderOptions: {
         mode: 'local',
-        localIdentName: !isProduction ? '[name]-[hash:base64:4]' : '[hash:base64:4]',
+        localIdentName: !isProduction ? '[name]-[local]--[hash:base64:6]' : '[hash:base64:8]',
     },
 });

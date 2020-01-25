@@ -10,45 +10,36 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "react",
-    "react-hooks"
-  ],
-  "extends": [
-    "airbnb-base",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:jest/recommended"
-  ],
+  "plugins": ["react", "react-hooks"],
+  "extends": ["airbnb-base", "plugin:react/recommended", "plugin:jsx-a11y/recommended", "plugin:jest/recommended"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
-    },
-    "react": {
-      "version": "detect"
     }
   },
   "rules": {
+    // Enforce line breaks between array elements
+    "array-element-newline": [
+      "error",
+      {
+        "minItems": 3
+      }
+    ],
+    // Enforce line breaks after opening and before closing array brackets
+    "array-bracket-newline": [
+      "error",
+      {
+        "multiline": true
+      }
+    ],
     // Require parens in arrow function arguments
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
+    "arrow-parens": ["error", "as-needed"],
     // Require braces in arrow function body
-    "arrow-body-style": [
-      "error",
-      "as-needed"
-    ],
+    "arrow-body-style": ["error", "as-needed"],
     // Disallow or enforce spaces inside of single line blocks
-    "block-spacing": [
-      "error",
-      "never"
-    ],
+    "block-spacing": ["error", "never"],
     // Require or disallow trailing commas
     "comma-dangle": [
       "error",
@@ -66,15 +57,19 @@
       }
     ],
     // Enforce consistent linebreak style
-    "linebreak-style": [
+    "linebreak-style": ["error", "unix"],
+    // Enforce consistent line breaks inside braces
+    "object-curly-newline": [
       "error",
-      "unix"
+      {
+        "ObjectExpression": {"multiline": true, "minProperties": 3},
+        "ObjectPattern": {"multiline": true},
+        "ImportDeclaration": "never",
+        "ExportDeclaration": {"multiline": true, "minProperties": 3}
+      }
     ],
     // Enforce consistent spacing inside braces
-    "object-curly-spacing": [
-      "error",
-      "never"
-    ],
+    "object-curly-spacing": ["error", "never"],
     // Enforce a maximum line length
     "max-len": [
       "error",
@@ -90,11 +85,7 @@
     "no-console": [
       "error",
       {
-        "allow": [
-          "info",
-          "log",
-          "assert"
-        ]
+        "allow": ["info", "log", "assert"]
       }
     ],
     // Disallow the unary operators ++ and --
@@ -108,9 +99,7 @@
     "no-underscore-dangle": [
       "error",
       {
-        "allow": [
-          "_this"
-        ],
+        "allow": ["_this", "_id"],
         "allowAfterThis": true,
         "allowAfterSuper": true
       }
@@ -125,40 +114,22 @@
       },
       {
         "blankLine": "always",
-        "prev": [
-          "const",
-          "let"
-        ],
+        "prev": ["const", "let"],
         "next": "*"
       },
       {
         "blankLine": "always",
         "prev": "*",
-        "next": [
-          "const",
-          "let"
-        ]
+        "next": ["const", "let"]
       },
       {
         "blankLine": "any",
-        "prev": [
-          "const",
-          "let"
-        ],
-        "next": [
-          "const",
-          "let"
-        ]
+        "prev": ["const", "let"],
+        "next": ["const", "let"]
       },
       {
         "blankLine": "always",
-        "prev": [
-          "if",
-          "for",
-          "while",
-          "switch",
-          "class"
-        ],
+        "prev": ["if", "for", "while", "switch", "class"],
         "next": "*"
       },
       {
@@ -173,10 +144,7 @@
       }
     ],
     // Enforce the consistent use of either backticks, double, or single quotes
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quotes": ["error", "single"],
     // Require or disallow a space before function parenthesis
     "space-before-function-paren": [
       "error",
@@ -187,19 +155,11 @@
       }
     ],
     // Forbid certain propTypes
-    "react/forbid-prop-types": [
-      0
-    ],
+    "react/forbid-prop-types": [0],
     // Enforce JSX indentation
-    "react/jsx-indent": [
-      "error",
-      4
-    ],
+    "react/jsx-indent": ["error", 4],
     // Validate props indentation in JSX
-    "react/jsx-indent-props": [
-      "error",
-      4
-    ],
+    "react/jsx-indent-props": ["error", 4],
     // Prevent definitions of unused state
     "react/no-unused-state": 0,
     // Enforce consistent usage of destructuring assignment of props, state, and context
@@ -220,10 +180,7 @@
       1,
       {
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         }
       }
     ],

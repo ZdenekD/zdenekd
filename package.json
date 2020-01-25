@@ -12,30 +12,22 @@
     "reinstall": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "test:js": "jest --watch",
+    "test:security": "yarn test:audit && yarn test:snyk",
+    "test:audit": "yarn audit",
+    "test:snyk": "snyk monitor",
+    "test:webhint": "hint http://localhost:3000",
+    "test:packages": "yarn outdated"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --cache --fix",
-      "git add"
-    ],
-    "*.css": [
-      "stylelint --cache --fix --color --formatter verbose",
-      "git add"
-    ],
-    "*.{json,md,yml,html}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "engines": {
-    "node": ">=10.13.0",
-    "npm": ">=6.4.1"
+    "node": ">=12.0.0",
+    "npm": ">=6.9.0"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -47,7 +39,12 @@
   "devDependencies": {
     "@hint/configuration-web-recommended": "^8.0.2",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "check-prop-types": "^1.1.2",
     "cssnano": "^4.1.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
@@ -57,8 +54,9 @@
     "eslint-plugin-react-hooks": "^2.0.1",
     "hint": "^6.0.3",
     "husky": "^4.0.10",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
+    "jest": "^25.1.0",
+    "jest-enzyme": "^7.1.2",
+    "lint-staged": "^10.0.2",
     "postcss-custom-media": "^7.0.8",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
