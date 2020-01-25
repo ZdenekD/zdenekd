@@ -9,6 +9,7 @@ const Heading = ({title, children}) => (
     </h1>
 );
 
+// prettier-ignore
 Heading.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([

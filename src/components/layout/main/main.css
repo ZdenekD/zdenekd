@@ -73,6 +73,7 @@
 .section {
     width: 100%;
     max-width: var(--max-container-width);
+    position: relative;
     background: linear-gradient(123deg, var(--color-white) 94%, var(--color-yellow-lighten-1) calc(94% + 1px), var(--color-yellow) 97%, var(--color-orange-lighten-1) calc(97% + 1px), var(--color-orange) 100%);
     border-radius: calc(3 * var(--border-radius));
 }
