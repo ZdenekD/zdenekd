@@ -1,11 +1,5 @@
 {
   "name": "ZdenekD",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
