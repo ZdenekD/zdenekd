@@ -39,6 +39,15 @@
       ]
     },
     {
+      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpe?g|(.*).mp4|(.*).png|(.*).web[mp]|(.*).css|(.*).json|(.*).ico",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "(.*).js",
       "headers": [
         {
