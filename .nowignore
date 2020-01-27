@@ -1,6 +1,8 @@
 .editorconfig
+.eslintcache
 .hintrc
 .htaccess
+.stylelintcache
 .lintstagesrc
 CHECKLIST.md
 README.md
