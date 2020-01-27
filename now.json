@@ -39,7 +39,7 @@
       ]
     },
     {
-      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpe?g|(.*).mp4|(.*).png|(.*).web[mp]|(.*).css|(.*).json|(.*).ico",
+      "source": "(.*).woff2|(.*).woff",
       "headers": [
         {
           "key": "Cache-Control",
