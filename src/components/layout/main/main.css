@@ -8,7 +8,6 @@
 
 .section {
     width: 100%;
-    max-width: var(--max-container-width);
     position: relative;
     background: var(--color-blue-lighten-5);
     border-radius: var(--border-radius);

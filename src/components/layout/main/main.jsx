@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import styles from './main.css';
 import Header from '../header';
 import Content from '../content';
-import Aside from '../aside';
 import DATA from '../../../data/pages';
 
+const Aside = dynamic(() => import('../aside'));
 const Main = ({site}) => {
     const {title} = DATA[site];
 
