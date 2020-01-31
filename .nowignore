@@ -8,6 +8,6 @@ CHECKLIST.md
 README.md
 buildspec.yml
 jest.config.js
-__tests__
+__test__
 **/*.spec.js
 **/*.test.js
