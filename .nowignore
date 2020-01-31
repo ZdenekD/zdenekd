@@ -1,9 +1,13 @@
 .editorconfig
+.eslintcache
 .hintrc
 .htaccess
+.stylelintcache
+.lintstagesrc
 CHECKLIST.md
 README.md
 buildspec.yml
-__tests__
+jest.config.js
+__test__
 **/*.spec.js
 **/*.test.js

@@ -1,4 +1,4 @@
-import {factory, findComponent} from '../../../__tests__/utils/helpers';
+import {factory, findComponent} from '../../../__test__/utils/helpers';
 import Heading from './index';
 
 describe('Heading', () => {

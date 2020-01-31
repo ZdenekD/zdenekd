@@ -3,20 +3,12 @@ import PropTypes from 'prop-types';
 import styles from './header.css';
 import Heading from '../../heading';
 
-const Header = ({children, ...props}) => (
+const Header = ({title}) => (
     <header className={styles.header}>
-        <Heading {...props} data-test="component-header">
-            {children}
-        </Heading>
+        <Heading title={title} data-test="component-header" />
     </header>
 );
 
-Header.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element,
-        PropTypes.number,
-    ]),
-};
+Header.propTypes = {title: PropTypes.string.isRequired};
 
 export default Header;
