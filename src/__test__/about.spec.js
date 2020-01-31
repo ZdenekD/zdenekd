@@ -1,10 +1,10 @@
 import {factory, findComponent} from '../../__test__/utils/helpers';
-import Projects from './projects';
+import About from '../pages/about';
 
-describe('Projects page', () => {
+describe('About page', () => {
     it('renders wihout error', () => {
-        const site = 'projects';
-        const wrapper = factory(Projects, {site});
+        const site = 'about';
+        const wrapper = factory(About, {site});
         const component = findComponent(wrapper, 'component-main');
 
         expect(component.length).toBe(1);
