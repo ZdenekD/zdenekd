@@ -1,0 +1,73 @@
+{
+  "name": "zdenekd",
+  "version": "0.0.1",
+  "description": "Web",
+  "main": "index.js",
+  "homepage": "git@bitbucket.org:zdenekd-team/zdenekd.git#readme",
+  "repository": "git@bitbucket.org:zdenekd-team/zdenekd.git",
+  "author": "ZdenekD <zdenekd@zdenekd.cz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "reinstall": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "test:js": "jest --watch",
+    "test:security": "yarn test:audit && yarn test:snyk",
+    "test:audit": "yarn audit",
+    "test:snyk": "snyk monitor",
+    "test:webhint": "hint http://localhost:3000",
+    "test:packages": "yarn outdated"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.9.0"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^9.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.0.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "check-prop-types": "^1.1.2",
+    "cssnano": "^4.1.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "hint": "^6.0.3",
+    "husky": "^4.0.10",
+    "jest": "^25.1.0",
+    "jest-enzyme": "^7.1.2",
+    "lint-staged": "^10.0.2",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-reporter": "^6.0.1",
+    "prettier": "^1.19.1",
+    "stylelint": "^13.0.0",
+    "stylelint-a11y": "^1.2.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-csstree-validator": "^1.7.0",
+    "stylelint-order": "^4.0.0"
+  }
+}
