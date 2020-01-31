@@ -6,13 +6,13 @@ module.exports = {
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx}'],
-    coverageDirectory: './__tests__/coverage',
+    coverageDirectory: './__test__/coverage',
     coverageReporters: ['html'],
     transform: {
         '^.+\\.(js|jsx)$': 'babel-jest',
-        '^.+\\.css$': '<rootDir>/__tests__/transform/css.js',
-        '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/__tests__/transform/file.js',
+        '^.+\\.css$': '<rootDir>/__test__/transform/css.js',
+        '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/__test__/transform/file.js',
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$', '^.+\\.module\\.(css|sass|scss)$'],
-    setupFiles: ['<rootDir>/__tests__/utils/setup.js'],
+    setupFiles: ['<rootDir>/__test__/utils/setup.js'],
 };

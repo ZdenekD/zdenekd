@@ -39,7 +39,7 @@ behat.yml
 localhost.json
 
 # Test
-/__tests__/coverage
+/__test__/coverage
 
 # System files
 .DS_Store
