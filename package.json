@@ -38,9 +38,9 @@
   },
   "devDependencies": {
     "@hint/configuration-web-recommended": "^8.0.2",
+    "@svgr/webpack": "^5.1.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
-    "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "check-prop-types": "^1.1.2",
     "cssnano": "^4.1.10",
