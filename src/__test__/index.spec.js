@@ -1,4 +1,4 @@
-import {factory, findComponent} from '../../__test__/utils/helpers';
+import {factory, findComponent} from './utils/helpers';
 import Homepage from '../pages/index';
 
 describe('Homepage page', () => {

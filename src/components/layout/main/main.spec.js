@@ -1,4 +1,4 @@
-import {factory, findComponent} from '../../../../__test__/utils/helpers';
+import {factory, findComponent} from '../../../__test__/utils/helpers';
 import Main from './index';
 import DATA from '../../../data/pages';
 
