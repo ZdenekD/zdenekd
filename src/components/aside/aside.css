@@ -1,9 +1,11 @@
 .aside {
-    width: 50%;
-    max-width: 300px;
+    width: 100%;
     height: 100%;
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
     z-index: var(--zindex-aside);
+    background: linear-gradient(123deg, var(--color-blue-lighten-4) 90%, var(--color-blue-lighten-5) 100%);
+    border-radius: var(--border-radius);
 }

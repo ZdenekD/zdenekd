@@ -8,4 +8,9 @@
     width: auto;
     height: 100%;
     max-height: 60px;
+
+    :global .logo_svg__st0 {
+        fill: var(--color-dark-gray);
+        stroke: var(--color-dark-gray);
+    }
 }

@@ -1,0 +1,10 @@
+.icon {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    fill: none;
+    stroke: var(--color-dark-gray);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
