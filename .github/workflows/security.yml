@@ -2,7 +2,7 @@ name: Audit
 on:
   push:
     branches:
-      - develop
+      - feature/actions
 jobs:
   build:
     runs-on: ubuntu-latest
