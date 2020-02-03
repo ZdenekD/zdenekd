@@ -1,8 +1,7 @@
-name: JavaScript tests
+name: Jest
 on: [push]
 jobs:
   build:
-    name: Jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

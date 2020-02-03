@@ -1,13 +1,16 @@
-name: Security tests
+name: Audit
 on: [push]
 jobs:
   build:
-    name: Packages test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: develop
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: yarn
-      - run: yarn test:security
+      - run: yarn audit
+      - uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
