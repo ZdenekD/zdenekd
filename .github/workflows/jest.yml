@@ -1,7 +1,10 @@
 name: Jest
-on: [push]
+on:
+  push:
+    branches:
+      - develop
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
