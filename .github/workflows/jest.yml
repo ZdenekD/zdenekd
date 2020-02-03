@@ -1,8 +1,8 @@
-name: Workflow
+name: JavaScript tests
 on: [push]
 jobs:
   build:
-    name: JS test
+    name: Jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
