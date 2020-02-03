@@ -18,7 +18,7 @@
     "test:js:coverage": "jest --coverage",
     "test:security": "yarn test:audit && yarn test:snyk",
     "test:audit": "yarn audit",
-    "test:snyk": "snyk monitor",
+    "test:snyk": "snyk test",
     "test:webhint": "hint http://localhost:3000",
     "test:packages": "yarn outdated"
   },
