@@ -1,61 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns="https://www.w3.org/2000/svg"
    id="master-artboard"
    viewBox="0 0 1400 980"
-   version="1.1"
-   x="0px"
-   y="0px"
-   style="enable-background: new 0 0 336 235.2;"
    width="1400px"
-   height="980px"
-   sodipodi:docname="logo-3.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
-  <metadata
-     id="metadata94">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs92" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1148"
-     id="namedview90"
-     showgrid="false"
-     showguides="false"
-     inkscape:zoom="0.4872449"
-     inkscape:cx="875.94843"
-     inkscape:cy="72.344648"
-     inkscape:window-x="1920"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="master-artboard">
-    <inkscape:grid
-       type="xygrid"
-       id="grid96" />
-  </sodipodi:namedview>
+>
   <rect
      id="ee-background"
      x="27.579956"
@@ -82,8 +31,7 @@
     stroke: #333;
     stroke-width: 1;
     paint-order: fill;"
-             id="path73"
-             inkscape:connector-curvature="0" />
+             id="path73" />
         </g>
       </g>
     </g>
@@ -105,8 +53,7 @@
     stroke: #333;
     stroke-width: 4;
     paint-order: fill;"
-             id="path81"
-             inkscape:connector-curvature="0" />
+             id="path81" />
         </g>
       </g>
     </g>

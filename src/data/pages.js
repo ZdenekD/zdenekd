@@ -1,4 +1,4 @@
-const DATA = {
+const data = {
     homepage: {
         link: '/',
         title: 'Úvodní stránka',
@@ -17,4 +17,4 @@ const DATA = {
     },
 };
 
-export default DATA;
+export default data;

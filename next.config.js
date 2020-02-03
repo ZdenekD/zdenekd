@@ -8,4 +8,13 @@ module.exports = styles({
         mode: 'local',
         localIdentName: !isProduction ? '[name]-[local]--[hash:base64:6]' : '[hash:base64:8]',
     },
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            exclude: /node_modules|vendor/,
+            use: [{loader: '@svgr/webpack'}],
+        });
+
+        return config;
+    },
 });
