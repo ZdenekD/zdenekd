@@ -1,6 +1,6 @@
 import {factory, findComponent} from '../../__test__/utils/helpers';
 import Navigation from './index';
-import DATA from '../../data/pages';
+import data from '../../data/pages';
 
 describe('Navigation', () => {
     let wrapper;
@@ -16,7 +16,7 @@ describe('Navigation', () => {
     });
 
     it('renders all pages links', () => {
-        const {length} = Object.keys(DATA);
+        const {length} = Object.keys(data);
         const component = findComponent(wrapper, 'component-link');
 
         expect(component.length).toBe(length);
