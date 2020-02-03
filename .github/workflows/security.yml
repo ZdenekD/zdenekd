@@ -1,8 +1,8 @@
-name: Audit
+name: Snyk
 on:
   push:
     branches:
-      - feature/actions
+      - develop
 jobs:
   build:
     runs-on: ubuntu-latest
