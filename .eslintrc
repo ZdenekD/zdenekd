@@ -17,6 +17,9 @@
       "node": {
         "extensions": [".js", ".jsx"]
       }
+    },
+    "react": {
+      "version": "16.9.0"
     }
   },
   "rules": {
