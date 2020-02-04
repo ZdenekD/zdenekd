@@ -1,18 +1,18 @@
 import {factory, findComponent, checkProps} from '../../__test__/utils/helpers';
-import Aside from './index';
+import Menu from './index';
 
-describe('Aside', () => {
+describe('Menu', () => {
     const defaultProps = {isMenu: false, handleMenu: () => {}};
 
     it('does not throw warning with expected props', () => {
-        const check = checkProps(Aside, defaultProps);
+        const check = checkProps(Menu, defaultProps);
 
         expect(check).toBeUndefined();
     });
 
     it('renders wihout error', () => {
-        const wrapper = factory(Aside, defaultProps);
-        const component = findComponent(wrapper, 'component-aside');
+        const wrapper = factory(Menu, defaultProps);
+        const component = findComponent(wrapper, 'component-menu');
 
         expect(component.length).toBe(1);
     });

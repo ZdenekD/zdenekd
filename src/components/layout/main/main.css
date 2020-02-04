@@ -1,9 +1,10 @@
 .default {
     width: 100vw;
     min-height: 100vh;
-    padding: calc(2 * var(--gutter));
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    border: calc(2 * var(--gutter)) solid var(--color-white);
 }
 
 .section {

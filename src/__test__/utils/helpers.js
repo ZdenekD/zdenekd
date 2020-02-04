@@ -34,8 +34,4 @@ export const findComponent = (wrapper, value) => wrapper.find(`[data-test="${val
  * @param {object} props
  * @returns {Error|undefined}
  */
-export const checkProps = (component, props) => {
-    const error = checkPropTypes(component.propTypes, props, 'props', component.name);
-
-    expect(error).toBeUndefined();
-};
+export const checkProps = (component, props) => checkPropTypes(component.propTypes, props, 'props', component.name);

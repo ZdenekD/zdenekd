@@ -9,7 +9,7 @@ const Navigation = () => (
             {Object.keys(data).map(item => (
                 <li key={item} className={styles.item} data-test="component-link">
                     <Link href={data[item].link} passHref>
-                        <a href={data[item].link} title={`${data[item].title} | ZdenekD`}>{data[item].title}</a>
+                        <a href={data[item].link} title={`${data[item].title} | ZdenekD`} className={styles.link}>{data[item].title}</a>
                     </Link>
                 </li>
             ))}

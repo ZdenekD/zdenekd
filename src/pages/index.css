@@ -1,6 +1,7 @@
 @import '../styles/reset.css';
 @import '../styles/normalize.css';
 @import '../styles/variables.css';
+@import '../styles/easing.css';
 @import '../styles/helpers.css';
 
 html {

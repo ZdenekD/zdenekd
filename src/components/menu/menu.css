@@ -1,10 +1,16 @@
 .icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     fill: none;
     stroke: var(--color-dark-gray);
-    stroke-width: 6;
+    stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: all .6s var(--ease-out-expo) .2s;
+}
+
+:global .active-menu :local .icon {
+    stroke: var(--color-blue-darken-4);
+    transition: all .6s var(--ease-out-expo);
 }

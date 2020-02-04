@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import styles from './heading.css';
-import Logo from '../../assets/images/logo.svg';
+import Logo from '../../images/logo.svg';
 import data from '../../data/pages';
 import getPage from '../../helpers/getPage';
 
