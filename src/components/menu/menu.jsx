@@ -8,11 +8,11 @@ const Menu = ({isMenu, handleMenu}) => {
     };
 
     return (
-        <button type="button" onClick={handleClick} data-test="component-menu">
+        <button type="button" className={styles.button} onClick={handleClick} data-test="component-menu">
             <svg id="i1" className={styles.icon} viewBox="0 0 100 100">
-                <path id="top-line" d="M30,35 L70,35 Z"></path>
+                <path id="top-line" d="M30,40 L70,40 Z"></path>
                 <path id="middle-line" d="M30,50 L70,50 Z"></path>
-                <path id="bottom-line" d="M30,65 L70,65 Z"></path>
+                <path id="bottom-line" d="M30,60 L70,60 Z"></path>
             </svg>
         </button>
     );

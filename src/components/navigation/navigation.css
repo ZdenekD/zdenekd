@@ -23,7 +23,7 @@
 .navigation {
     width: 100%;
     height: 100%;
-    padding: calc(2 * var(--gutter));
+    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
     display: flex;
     align-items: center;
 }
@@ -79,6 +79,7 @@
     font-size: 3em;
     font-weight: bold;
     text-decoration: none;
+    text-transform: uppercase;
     transition: color .4s var(--ease-in-out-expo);
 
     &:hover,

@@ -26,7 +26,7 @@ const Main = ({children}) => {
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
                 <title data-test="component-title">{`${heading} | ZdenekD`}</title>
             </Head>
-            <main className={`${styles.default} ${isMenu ? 'active-menu' : ''}`} data-test="component-main">
+            <main className={`${styles.main} ${isMenu ? 'active-menu' : ''}`} data-test="component-main">
                 <section className={`${styles.section} ${styles[page]}`}>
                     <Header isMenu={isMenu} handleMenu={handleMenu} />
                     <Content />
