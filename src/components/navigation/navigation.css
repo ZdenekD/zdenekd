@@ -1,3 +1,25 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-5vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-5vh);
+    }
+}
+
 .navigation {
     width: 100%;
     height: 100%;
@@ -6,19 +28,80 @@
     align-items: center;
 }
 
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .item {
     padding: 3vh 0;
-    opacity: 0;
-    visibility: hidden;
+    animation: fade-out .6s var(--ease-out-cubic) forwards;
+
+    &:nth-of-type(1) {
+        animation-delay: .6s;
+    }
+
+    &:nth-of-type(2) {
+        animation-delay: .4s;
+    }
+
+    &:nth-of-type(3) {
+        animation-delay: .2s;
+    }
 }
 
 :global .active-menu :local .item {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    transform: translateY(-5vh);
+    animation: fade-in .6s var(--ease-out-cubic) forwards;
+
+    &:nth-of-type(1) {
+        animation-delay: .4s;
+    }
+
+    &:nth-of-type(2) {
+        animation-delay: .6s;
+    }
+
+    &:nth-of-type(3) {
+        animation-delay: .8s;
+    }
+
+    &:nth-of-type(4) {
+        animation-delay: 1s;
+    }
 }
 
 .link {
+    position: relative;
     color: var(--color-blue-darken-4);
     font-size: 3em;
+    font-weight: bold;
     text-decoration: none;
+    transition: color .4s var(--ease-in-out-expo);
+
+    &:hover,
+    &:focus {
+        color: var(--color-blue-darken-3);
+        transition: color .4s var(--ease-in-out-expo);
+
+        &::after {
+            --scale: 1;
+        }
+    }
+
+    &::after {
+        --scale: 0;
+        height: 3px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        content: '';
+        background: linear-gradient(135deg, var(--color-blue-darken-2), var(--color-blue-darken-5));
+        transform: scaleX(var(--scale));
+        transform-origin: var(--x) 50%;
+        transition: transform .4s var(--ease-in-out-expo);
+    }
 }

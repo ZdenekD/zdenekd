@@ -31,7 +31,7 @@ const Main = ({children}) => {
                     <Header isMenu={isMenu} handleMenu={handleMenu} />
                     <Content />
                     {children}
-                    <Aside isMenu={isMenu} />
+                    <Aside />
                 </section>
             </main>
         </>

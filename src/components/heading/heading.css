@@ -12,12 +12,12 @@
     :global .logo_svg__st0 {
         fill: var(--color-dark-gray);
         stroke: var(--color-dark-gray);
-        transition: all .6s var(--ease-out-expo) .2s;
+        transition: var(--header-transition);
     }
 }
 
 :global .active-menu :global .logo_svg__st0 {
     fill: var(--color-blue-darken-4);
     stroke: var(--color-blue-darken-4);
-    transition: all .6s var(--ease-out-expo);
+    transition: var(--header-transition-active);
 }

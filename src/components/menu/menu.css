@@ -7,10 +7,10 @@
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transition: all .6s var(--ease-out-expo) .2s;
+    transition: var(--header-transition);
 }
 
 :global .active-menu :local .icon {
     stroke: var(--color-blue-darken-4);
-    transition: all .6s var(--ease-out-expo);
+    transition: var(--header-transition-active);
 }
