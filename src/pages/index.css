@@ -1,9 +1,9 @@
-@import '../styles/reset.css';
-@import '../styles/normalize.css';
-@import '../styles/variables.css';
-@import '../styles/easing.css';
-@import '../styles/transition.css';
-@import '../styles/helpers.css';
+@import '../assets/styles/reset.css';
+@import '../assets/styles/normalize.css';
+@import '../assets/styles/variables.css';
+@import '../assets/styles/easing.css';
+@import '../assets/styles/transition.css';
+@import '../assets/styles/helpers.css';
 
 html {
     height: 100%;
