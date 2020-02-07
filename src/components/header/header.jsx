@@ -3,10 +3,10 @@ import styles from './header.css';
 import Heading from '../heading';
 import Menu from '../menu';
 
-const Header = props => (
+const Header = () => (
     <header className={styles.header}>
         <Heading data-test="component-header" />
-        <Menu {...props} data-test="component-menu" />
+        <Menu data-test="component-menu" />
     </header>
 );
 
