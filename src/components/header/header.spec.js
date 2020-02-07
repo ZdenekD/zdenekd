@@ -4,7 +4,7 @@ import Header from './index';
 describe('Header', () => {
     const defaultProps = {isMenu: false, handleMenu: () => {}};
 
-    it('renders heading component wihout error', () => {
+    it('renders heading component without error', () => {
         const wrapper = factory(Header, defaultProps);
         const component = findComponent(wrapper, 'component-header');
 

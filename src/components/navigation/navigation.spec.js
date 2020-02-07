@@ -9,7 +9,7 @@ describe('Navigation', () => {
         wrapper = factory(Navigation);
     });
 
-    it('renders wihout error', () => {
+    it('renders without error', () => {
         const component = findComponent(wrapper, 'component-navigation');
 
         expect(component.length).toBe(1);

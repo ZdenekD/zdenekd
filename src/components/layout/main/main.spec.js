@@ -6,7 +6,7 @@ import getPage from '../../../helpers/getPage';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({asPath: '/'}))}));
 
 describe('Main', () => {
-    it('renders wihout error', () => {
+    it('renders without error', () => {
         const wrapper = factory(Main);
         const component = findComponent(wrapper, 'component-main');
 

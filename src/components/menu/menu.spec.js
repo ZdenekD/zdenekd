@@ -10,7 +10,7 @@ describe('Menu', () => {
         expect(check).toBeUndefined();
     });
 
-    it('renders wihout error', () => {
+    it('renders without error', () => {
         const wrapper = factory(Menu, defaultProps);
         const component = findComponent(wrapper, 'component-menu');
 
