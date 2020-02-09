@@ -1,25 +1,3 @@
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(-5vh);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fade-out {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-5vh);
-    }
-}
-
 .navigation {
     width: 100%;
     height: 100%;
@@ -36,41 +14,6 @@
 
 .item {
     padding: 3vh 0;
-    animation: fade-out .6s var(--ease-out-cubic) forwards;
-
-    &:nth-of-type(1) {
-        animation-delay: .6s;
-    }
-
-    &:nth-of-type(2) {
-        animation-delay: .4s;
-    }
-
-    &:nth-of-type(3) {
-        animation-delay: .2s;
-    }
-}
-
-:global .active-menu :local .item {
-    opacity: 0;
-    transform: translateY(-5vh);
-    animation: fade-in .6s var(--ease-out-cubic) forwards;
-
-    &:nth-of-type(1) {
-        animation-delay: .4s;
-    }
-
-    &:nth-of-type(2) {
-        animation-delay: .6s;
-    }
-
-    &:nth-of-type(3) {
-        animation-delay: .8s;
-    }
-
-    &:nth-of-type(4) {
-        animation-delay: 1s;
-    }
 }
 
 .link {

@@ -1,12 +1,13 @@
-import {factory, findComponent} from '../../__test__/utils/helpers';
+import {factoryStore, findComponent} from '../../__test__/utils/helpers';
 import Navigation from './index';
 import data from '../../data/pages';
 
 describe('Navigation', () => {
+    const defaultProps = {menu: {isOpen: false}};
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factory(Navigation);
+        wrapper = factoryStore(Navigation, defaultProps);
     });
 
     it('renders without error', () => {
