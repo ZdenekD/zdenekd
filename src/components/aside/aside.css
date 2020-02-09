@@ -7,11 +7,5 @@
     z-index: var(--zindex-aside);
     background: var(--color-blue-lighten-4);
     transform: translateY(-100%);
-    transition: transform .8s var(--ease-out-cubic) 1s;
     border-radius: var(--border-radius);
-}
-
-:global .active-menu :local .aside {
-    transform: translateY(0);
-    transition-delay: initial;
 }
