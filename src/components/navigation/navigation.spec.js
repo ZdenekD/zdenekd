@@ -3,7 +3,7 @@ import Navigation from './index';
 import data from '../../data/pages';
 
 describe('Navigation', () => {
-    const defaultProps = {menu: {isOpen: false}};
+    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
     let wrapper;
 
     beforeEach(() => {

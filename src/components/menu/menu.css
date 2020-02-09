@@ -1,5 +1,9 @@
 .button {
     line-height: 0;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
 }
 
 .icon {

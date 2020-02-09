@@ -6,7 +6,7 @@ import getPage from '../../helpers/getPage';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({asPath: '/'}))}));
 
 describe('Heading', () => {
-    const defaultProps = {menu: {isOpen: false}};
+    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
     let wrapper;
 
     beforeEach(() => {

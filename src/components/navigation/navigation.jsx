@@ -1,11 +1,12 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import anime from 'animejs';
 import styles from './navigation.css';
 import data from '../../data/pages';
 
-const Navigation = ({isOpen}) => {
+const Navigation = ({isOpen, isAnimated, handleMenuAnimation}) => {
+    const [isPrepared, setPrepared] = useState(false);
     const [innerState, setInnerState] = useState(false);
     const listRef = useRef(null);
     const handleAnimationIn = () => {
@@ -20,6 +21,7 @@ const Navigation = ({isOpen}) => {
             easing: 'easeOutCubic',
             complete() {
                 setInnerState(isOpen);
+                handleMenuAnimation(false);
             },
         });
     };
@@ -61,6 +63,7 @@ const Navigation = ({isOpen}) => {
                     href={data[item].link}
                     title={`${data[item].title} | ZdenekD`}
                     className={styles.link}
+                    disabled={isAnimated}
                     onMouseEnter={handleMouse}
                 >
                     {data[item].title}
@@ -69,9 +72,13 @@ const Navigation = ({isOpen}) => {
         </li>
     ));
 
-    if (isOpen !== innerState) {
+    if (isPrepared && isOpen !== innerState) {
         (isOpen ? handleAnimationIn : handleAnimationOut)();
     }
+
+    useEffect(() => {
+        setPrepared(true);
+    }, []);
 
     return (
         <nav className={styles.navigation} data-test="component-navigation">
@@ -82,6 +89,10 @@ const Navigation = ({isOpen}) => {
     );
 };
 
-Navigation.propTypes = {isOpen: PropTypes.bool.isRequired};
+Navigation.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    isAnimated: PropTypes.bool.isRequired,
+    handleMenuAnimation: PropTypes.func.isRequired,
+};
 
 export default Navigation;

@@ -4,7 +4,7 @@ import anime from 'animejs';
 import styles from './aside.css';
 import Navigation from '../navigation';
 
-const Aside = ({isOpen}) => {
+const Aside = ({isOpen, handleMenuAnimation}) => {
     const [innerState, setInnerState] = useState(false);
     const asideRef = useRef(null);
     const handleAnimationIn = () => {
@@ -27,6 +27,7 @@ const Aside = ({isOpen}) => {
             easing: 'easeOutCubic',
             complete() {
                 setInnerState(isOpen);
+                handleMenuAnimation(false);
             },
         });
     };
@@ -42,6 +43,9 @@ const Aside = ({isOpen}) => {
     );
 };
 
-Aside.propTypes = {isOpen: PropTypes.bool.isRequired};
+Aside.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    handleMenuAnimation: PropTypes.func.isRequired,
+};
 
 export default Aside;

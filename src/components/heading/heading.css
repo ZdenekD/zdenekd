@@ -1,3 +1,11 @@
+.link {
+    text-decoration: none;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
 .heading {
     margin: 0;
     cursor: pointer;
