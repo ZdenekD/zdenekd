@@ -14,7 +14,10 @@
     transition: var(--header-transition);
 }
 
-:global .active-menu :local .icon {
-    stroke: var(--color-blue-darken-4);
-    transition: var(--header-transition-active);
+.buttonActive {
+
+    .icon {
+        stroke: var(--color-blue-darken-4);
+        transition: var(--header-transition-active);
+    }
 }

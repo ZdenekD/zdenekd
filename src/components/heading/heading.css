@@ -16,8 +16,11 @@
     }
 }
 
-:global .active-menu :global .logo_svg__st0 {
-    fill: var(--color-blue-darken-4);
-    stroke: var(--color-blue-darken-4);
-    transition: var(--header-transition-active);
+.logoActive {
+
+    :global .logo_svg__st0 {
+        fill: var(--color-blue-darken-4);
+        stroke: var(--color-blue-darken-4);
+        transition: var(--header-transition-active);
+    }
 }

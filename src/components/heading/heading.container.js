@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import Main from './main';
+import Heading from './heading';
 
 const mapStateToProps = state => ({...state.menu});
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(Heading);
