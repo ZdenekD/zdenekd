@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
         case MENU_IS_OPEN:
             return ({
                 ...state,
-                isOpen: action.isOpen,
+                isOpen: action.payload,
             });
         default:
             return state;
