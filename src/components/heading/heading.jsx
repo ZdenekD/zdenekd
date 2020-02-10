@@ -17,7 +17,7 @@ const Heading = ({isOpen, isAnimated}) => {
             <a href="/" className={styles.link} disabled={isAnimated}>
                 <h1 className={styles.heading} data-test="component-heading">
                     <span className="_visuallyhidden" data-test="component-title">{`${heading} | ZdenekD`}</span>
-                    <Logo className={`${styles.logo} ${isOpen ? styles.logoActive : ''}`} />
+                    <Logo className={`${styles.logo} ${styles[page]} ${isOpen ? styles.active : ''}`} />
                 </h1>
             </a>
         </Link>

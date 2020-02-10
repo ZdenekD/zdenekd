@@ -13,7 +13,7 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     return (
         <button
             type="button"
-            className={`${styles.button} ${isOpen ? styles.buttonActive : ''}`}
+            className={`${styles.button} ${isOpen ? styles.active : ''}`}
             onClick={handleClick}
             disabled={isAnimated}
             data-test="component-menu"

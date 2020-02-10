@@ -11,22 +11,26 @@
 .section {
     width: 100%;
     position: relative;
-    background: var(--color-blue-lighten-5);
+    background: var(--background);
     border-radius: var(--border-radius);
 }
 
 .homepage {
-    background: var(--color-blue-lighten-5);
+    --background: var(--color-blue-lighten-5);
+    --header-color: var(--color-blue-lighten-1);
 }
 
 .projects {
-    background: var(--color-green-lighten-5);
+    --background: var(--color-green-lighten-5);
+    --header-color: var(--color-green-lighten-1);
 }
 
 .about {
-    background: var(--color-red-lighten-5);
+    --background: var(--color-red-lighten-5);
+    --header-color: var(--color-red-lighten-1);
 }
 
 .contact {
-    background: var(--color-orange-lighten-5);
+    --background: var(--color-orange-lighten-5);
+    --header-color: var(--color-orange-lighten-1);
 }
