@@ -1,7 +1,5 @@
 import {factoryStore, findComponent} from '../../__test__/utils/helpers';
 import Heading from './index';
-import data from '../../data/pages';
-import getPage from '../../helpers/getPage';
 
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({asPath: '/'}))}));
 
@@ -21,8 +19,7 @@ describe('Heading', () => {
 
     it('renders appropriate heading title', () => {
         const component = findComponent(wrapper, 'component-title');
-        const [page] = getPage('/');
-        const heading = data[page].title;
+        const heading = 'Kávová paráda';
 
         expect(component.text().includes(heading)).toBe(true);
     });
