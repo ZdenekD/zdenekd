@@ -10,7 +10,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const asideRef = useRef(null);
     const listRef = useRef(null);
     const router = useRouter();
-    const handleAnimationIn = (callback = () => {}) => {
+    const handleAnimationIn = () => {
         anime
             .timeline()
             .add({
@@ -30,7 +30,6 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);
-                    callback();
                 },
             }, '-=400');
     };
@@ -44,13 +43,13 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                     return 600 - (index * 200);
                 },
                 opacity: [1, 0],
-                translateY: [0, '-5vh'],
+                translateY: [0, '5vh'],
                 easing: 'easeOutCubic',
             })
             .add({
                 targets: asideRef.current,
                 duration: 800,
-                translateY: [0, '-100%'],
+                translateY: [0, '100%'],
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);
