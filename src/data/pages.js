@@ -1,4 +1,8 @@
 const data = {
+    homepage: {
+        link: '/',
+        title: 'Úvodní stránka',
+    },
     projects: {
         link: '/projects',
         title: 'Projekty',
