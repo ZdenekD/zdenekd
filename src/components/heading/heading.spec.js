@@ -1,9 +1,9 @@
 import {factoryStore, findComponent} from '../../__test__/utils/helpers';
 import Heading from './index';
 import data from '../../data/pages';
-import getPages from '../../helpers/getPage';
+import {getPage} from '../../helpers/getPage';
 
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({asPath: '/'}))}));
+jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Heading', () => {
     const defaultProps = {menu: {isOpen: false, isAnimated: false}};
@@ -21,7 +21,7 @@ describe('Heading', () => {
 
     it('renders appropriate heading title', () => {
         const component = findComponent(wrapper, 'component-title');
-        const [page] = getPages('/');
+        const [page] = getPage('/');
         const heading = data[page].title;
 
         expect(component.text().includes(heading)).toBe(true);

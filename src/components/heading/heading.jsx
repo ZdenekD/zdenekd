@@ -5,11 +5,11 @@ import {useRouter} from 'next/router';
 import styles from './heading.css';
 import Logo from '../../assets/images/logo.svg';
 import data from '../../data/pages';
-import getPage from '../../helpers/getPage';
+import {getPage} from '../../helpers/getPage';
 
 const Heading = ({isOpen, isAnimated}) => {
     const router = useRouter();
-    const [page] = getPage(router.asPath);
+    const [page] = getPage(router.route);
     const heading = data[page]?.title ?? 'Kávová paráda';
 
     return (

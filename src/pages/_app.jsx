@@ -3,9 +3,11 @@ import {Provider} from 'react-redux';
 import App from 'next/app';
 import anime from 'animejs';
 import withRedux from 'next-redux-wrapper';
+import './index.css';
 import styles from './_app.css';
 import initStore from '../store';
-import getPage from '../helpers/getPage';
+import {handleAppAnimation} from '../store/app/actions';
+import {getPage} from '../helpers/getPage';
 
 class Application extends App {
     constructor(props) {
@@ -21,14 +23,27 @@ class Application extends App {
     }
 
     componentDidUpdate() {
+        const {dispatch} = this.props.store;
+
         anime
             .timeline({
                 targets: this.curtainRef.current,
-                duration: 800,
                 easing: 'easeOutCubic',
             })
-            .add({opacity: [0, 1]})
-            .add({translateY: [0, '100%']}, '-=200');
+            .add({
+                duration: 1200,
+                opacity: [0, 1],
+                begin() {
+                    dispatch(handleAppAnimation(true));
+                },
+            })
+            .add({
+                duration: 800,
+                translateY: [0, '100%'],
+                complete() {
+                    dispatch(handleAppAnimation(false));
+                },
+            }, '-=200');
     }
 
     render() {

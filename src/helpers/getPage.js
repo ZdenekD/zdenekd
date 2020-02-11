@@ -7,4 +7,14 @@ import data from '../data/pages';
  */
 const getPage = link => Object.keys(data).filter(item => data[item].link === link);
 
-export default getPage;
+/**
+ * Get page index from data object
+ * @param {string} link - URL link value to find index
+ * @returns {number}
+ */
+const getPageIndex = link => Object.keys(data).findIndex(item => data[item].link === link);
+
+export {
+    getPage,
+    getPageIndex
+};

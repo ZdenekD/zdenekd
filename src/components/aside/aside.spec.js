@@ -2,7 +2,7 @@ import {factoryStore, findComponent} from '../../__test__/utils/helpers';
 import Aside from './index';
 import data from '../../data/pages';
 
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({asPath: '/'}))}));
+jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Aside', () => {
     const defaultProps = {menu: {isOpen: false, isAnimated: false}};

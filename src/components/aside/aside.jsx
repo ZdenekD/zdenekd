@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import anime from 'animejs';
 import styles from './aside.css';
 import data from '../../data/pages';
-import getPage from '../../helpers/getPage';
+import {getPage} from '../../helpers/getPage';
 
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const [isPrepared, setPrepared] = useState(false);
