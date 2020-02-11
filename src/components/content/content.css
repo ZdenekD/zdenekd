@@ -1,3 +1,4 @@
 .content {
-    display: none;
+    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
+    opacity: 0;
 }

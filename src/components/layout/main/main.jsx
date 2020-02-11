@@ -10,7 +10,7 @@ import data from '../../../data/pages';
 import {getPage, getPageIndex} from '../../../helpers/getPage';
 import styles from './main.css';
 
-const Main = ({isAnimated}) => {
+const Main = ({isAnimated, children}) => {
     const router = useRouter();
     const [page] = getPage(router.route);
     const pages = Object.keys(data);
@@ -128,13 +128,22 @@ const Main = ({isAnimated}) => {
             </Head>
             <section className={styles.section}>
                 <Header />
-                <Content />
+                {!isAnimated && (
+                    <Content content={children} />
+                )}
                 <Aside />
             </section>
         </>
     );
 };
 
-Main.propTypes = {isAnimated: PropTypes.bool.isRequired};
+Main.propTypes = {
+    isAnimated: PropTypes.bool.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+        PropTypes.node,
+    ]),
+};
 
 export default Main;
