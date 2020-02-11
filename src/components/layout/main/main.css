@@ -1,36 +1,6 @@
-.main {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border: calc(2 * var(--gutter)) solid var(--color-white);
-}
-
 .section {
     width: 100%;
     position: relative;
-    background: var(--background);
+    background: var(--background, var(--color-blue-lighten-5));
     border-radius: var(--border-radius);
-}
-
-.homepage {
-    --background: var(--color-blue-lighten-5);
-    --header-color: var(--color-blue-lighten-1);
-}
-
-.projects {
-    --background: var(--color-green-lighten-5);
-    --header-color: var(--color-green-lighten-1);
-}
-
-.about {
-    --background: var(--color-red-lighten-5);
-    --header-color: var(--color-red-lighten-1);
-}
-
-.contact {
-    --background: var(--color-orange-lighten-5);
-    --header-color: var(--color-orange-lighten-1);
 }

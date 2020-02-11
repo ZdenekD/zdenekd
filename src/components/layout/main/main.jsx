@@ -21,13 +21,11 @@ const Main = () => {
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
                 <title data-test="component-title">{`${heading} | ZdenekD`}</title>
             </Head>
-            <main className={styles.main} data-test="component-main">
-                <section className={`${styles.section} ${styles[page]}`}>
-                    <Header />
-                    <Content />
-                    <Aside />
-                </section>
-            </main>
+            <section className={styles.section}>
+                <Header />
+                <Content />
+                <Aside />
+            </section>
         </>
     );
 };
