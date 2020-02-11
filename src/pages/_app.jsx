@@ -24,16 +24,11 @@ class Application extends App {
         anime
             .timeline({
                 targets: this.curtainRef.current,
+                duration: 800,
                 easing: 'easeOutCubic',
             })
-            .add({
-                duration: 1000,
-                opacity: [0, 1],
-            })
-            .add({
-                duration: 800,
-                translateY: [0, '100%'],
-            }, '-=200');
+            .add({opacity: [0, 1]})
+            .add({translateY: [0, '100%']}, '-=200');
     }
 
     render() {

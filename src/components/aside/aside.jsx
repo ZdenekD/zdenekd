@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import anime from 'animejs';
 import styles from './aside.css';
 import data from '../../data/pages';
+import getPage from '../../helpers/getPage';
 
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const [isPrepared, setPrepared] = useState(false);
@@ -11,6 +12,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const asideRef = useRef(null);
     const listRef = useRef(null);
     const router = useRouter();
+    const [page] = getPage(router.route);
     const handleAnimationIn = () => {
         anime
             .timeline()
@@ -87,27 +89,15 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     };
     const links = Object.keys(data).map(item => (
         <li key={item} className={styles.item} data-test="component-link">
-            {isAnimated
-                ? (
-                    <span
-                        title={`${data[item].title} | ZdenekD`}
-                        className={styles.span}
-                    >
-                        {data[item].title}
-                    </span>
-                )
-                : (
-                    <a
-                        href={data[item].link}
-                        title={`${data[item].title} | ZdenekD`}
-                        className={styles.link}
-                        onMouseEnter={handleMouse}
-                        onClick={handleClick}
-                    >
-                        {data[item].title}
-                    </a>
-                )}
-
+            <a
+                href={data[item].link}
+                title={`${data[item].title} | ZdenekD`}
+                className={`${styles.link} ${isAnimated ? styles.animated : ''} ${page === item ? styles.active : ''}`}
+                onMouseEnter={handleMouse}
+                onClick={handleClick}
+            >
+                {data[item].title}
+            </a>
         </li>
     ));
 
