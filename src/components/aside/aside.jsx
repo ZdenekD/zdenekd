@@ -7,6 +7,7 @@ import data from '../../data/pages';
 
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const [isPrepared, setPrepared] = useState(false);
+    const [href, setHref] = useState(null);
     const asideRef = useRef(null);
     const listRef = useRef(null);
     const router = useRouter();
@@ -33,7 +34,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                 },
             }, '-=400');
     };
-    const handleAnimationOut = (callback = () => {}) => {
+    const handleAnimationOut = () => {
         anime
             .timeline()
             .add({
@@ -53,20 +54,20 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);
-                    callback();
+
+                    if (href) {
+                        router.push(href);
+                        setHref(null);
+                    }
                 },
             }, '-=200');
     };
     const handleClick = event => {
         event.preventDefault();
 
-        const href = event.target.getAttribute('href');
-        const callback = () => {
-            handleMenu(false);
-            router.push(href);
-        };
-
-        handleAnimationOut(callback);
+        handleMenu(false);
+        handleMenuAnimation(true);
+        setHref(event.target.getAttribute('href'));
     };
     const handleMouse = event => {
         const tolerance = 5;

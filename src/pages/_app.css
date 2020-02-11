@@ -1,4 +1,6 @@
 .main {
+    --navigation-color: var(--color-blue-darken-4);
+    --navigation-color-active: var(--color-blue-darken-3);
     width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -22,24 +24,20 @@
 
 .homepage {
     --background: var(--color-blue-lighten-5);
-    --header-color: var(--color-blue-lighten-1);
     --curtain-color: var(--color-blue-lighten-4);
 }
 
 .projects {
     --background: var(--color-green-lighten-5);
-    --header-color: var(--color-green-lighten-1);
     --curtain-color: var(--color-green-lighten-4);
 }
 
 .about {
     --background: var(--color-red-lighten-5);
-    --header-color: var(--color-red-lighten-1);
     --curtain-color: var(--color-red-lighten-4);
 }
 
 .contact {
     --background: var(--color-orange-lighten-5);
-    --header-color: var(--color-orange-lighten-1);
     --curtain-color: var(--color-orange-lighten-4);
 }

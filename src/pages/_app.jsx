@@ -32,9 +32,8 @@ class Application extends App {
             })
             .add({
                 duration: 800,
-                delay: 200,
                 translateY: [0, '100%'],
-            });
+            }, '-=200');
     }
 
     render() {

@@ -30,7 +30,7 @@
 
 .link,
 .span {
-    color: var(--color-blue-darken-4);
+    color: var(--navigation-color-active);
     font-size: 3em;
     font-weight: bold;
     text-decoration: none;
@@ -43,7 +43,7 @@
 
     &:hover:not([disabled]),
     &:focus:not([disabled]) {
-        color: var(--color-blue-darken-3);
+        color: var(--navigation-color);
         transition: color .4s var(--ease-in-out-expo);
 
         &::after {
@@ -59,7 +59,7 @@
         right: 0;
         left: 0;
         content: '';
-        background: linear-gradient(135deg, var(--color-blue-darken-2), var(--color-blue-darken-5));
+        background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
         transform: scaleX(var(--scale));
         transform-origin: var(--x) 50%;
         transition: transform .4s var(--ease-in-out-expo);

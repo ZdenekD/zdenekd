@@ -12,17 +12,21 @@
     height: 80px;
     cursor: pointer;
     fill: none;
-    stroke: var(--header-color, var(--color-blue-lighten-3));
+    stroke: var(--navigation-color);
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
     transition: var(--header-transition);
+
+    path {
+        transform-origin: center;
+    }
 }
 
 .active {
 
     .icon {
-        --header-color: var(--color-blue-darken-4);
+        --navigation-color: var(--navigation-color-active);
         transition: var(--header-transition-active);
     }
 }
