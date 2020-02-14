@@ -1,10 +1,9 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styles from './content.css';
 
 const Content = ({content}) => {
-    const [isPrepared, setPrepared] = useState(false);
     const contentRef = useRef(null);
     const handleAnimationIn = () => {
         anime({
@@ -16,13 +15,9 @@ const Content = ({content}) => {
         });
     };
 
-    if (isPrepared) {
-        handleAnimationIn();
-    }
-
     useEffect(() => {
-        setPrepared(true);
-    }, []);
+        handleAnimationIn();
+    });
 
     return (
         <section className={styles.content} data-test="component-content" ref={contentRef}>

@@ -1,10 +1,9 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styles from './menu.css';
 
 const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
-    const [isPrepared, setPrepared] = useState(null);
     const pathTopRef = useRef(null);
     const pathMiddleRef = useRef(null);
     const pathBottomRef = useRef(null);
@@ -65,13 +64,11 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
         }
     };
 
-    if (isPrepared && isAnimated) {
-        (isOpen ? handleTriggerAnimationOn : handleTriggerAnimationOff)();
-    }
-
     useEffect(() => {
-        setPrepared(true);
-    }, []);
+        if (isAnimated) {
+            (isOpen ? handleTriggerAnimationOn : handleTriggerAnimationOff)();
+        }
+    });
 
     return (
         <button

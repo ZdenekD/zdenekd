@@ -23,3 +23,9 @@ body {
 strong {
     font-weight: 700;
 }
+
+code,
+kbd,
+samp {
+    font-family: 'Roboto Mono', monospace;
+}

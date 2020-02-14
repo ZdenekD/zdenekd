@@ -6,6 +6,7 @@ import useEventListener from '@use-it/event-listener';
 import Aside from '../../aside';
 import Header from '../../header';
 import Content from '../../content';
+import Footer from '../../footer';
 import data from '../../../data/pages';
 import {getPage, getPageIndex} from '../../../helpers/getPage';
 import styles from './main.css';
@@ -124,15 +125,19 @@ const Main = ({isAnimated, children}) => {
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
                 <title data-test="component-title">{`${heading} | ZdenekD`}</title>
             </Head>
             <section className={styles.section}>
                 <Header />
                 {!isAnimated && (
-                    <Content content={children} />
+                    <>
+                        <Content content={children} />
+                        <Footer />
+                    </>
                 )}
-                <Aside />
             </section>
+            <Aside />
         </>
     );
 };

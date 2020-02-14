@@ -7,7 +7,6 @@ import data from '../../data/pages';
 import {getPage} from '../../helpers/getPage';
 
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAnimation}) => {
-    const [isPrepared, setPrepared] = useState(false);
     const [href, setHref] = useState(null);
     const asideRef = useRef(null);
     const listRef = useRef(null);
@@ -19,6 +18,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .add({
                 targets: asideRef.current,
                 duration: 800,
+                opacity: [0, 1],
                 translateY: ['-100%', 0],
                 easing: 'easeOutCubic',
             })
@@ -59,6 +59,10 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);
+
+                    if (!href) {
+                        handleAppAnimation(false);
+                    }
 
                     if (href) {
                         router.push(href);
@@ -104,13 +108,11 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
         </li>
     ));
 
-    if (isPrepared && isAnimated) {
-        (isOpen ? handleAnimationIn : handleAnimationOut)();
-    }
-
     useEffect(() => {
-        setPrepared(true);
-    }, []);
+        if (isAnimated) {
+            (isOpen ? handleAnimationIn : handleAnimationOut)();
+        }
+    });
 
     return (
         <aside className={styles.aside} data-test="component-aside" ref={asideRef}>

@@ -14,6 +14,8 @@ class Application extends App {
         super(props);
 
         this.curtainRef = React.createRef();
+
+        console.info('Hello Underworld! Authorship is attributed to 01011010 01100100 01100101 01101110 01100101 01101011 01000100. You can try this >> https://bit.ly/31QKTyy');
     }
 
     static async getInitialProps({Component, ctx}) {
@@ -58,7 +60,7 @@ class Application extends App {
         return (
             <Provider store={store}>
                 <main className={`${styles.main} ${styles[page]}`}>
-                    <div className={styles.curtain} ref={this.curtainRef}></div>
+                    <i className={styles.curtain} ref={this.curtainRef}></i>
                     <Component {...pageProps} />
                 </main>
             </Provider>

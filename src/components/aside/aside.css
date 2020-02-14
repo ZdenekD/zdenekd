@@ -32,7 +32,6 @@
     position: relative;
     color: var(--navigation-color-active);
     font-size: 3em;
-    font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
     transition: color .4s var(--ease-in-out-expo);

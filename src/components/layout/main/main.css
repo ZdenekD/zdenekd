@@ -1,6 +1,8 @@
 .section {
     width: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: var(--background, var(--color-blue-lighten-5));
     border-radius: var(--border-radius);
 }
