@@ -1,18 +1,10 @@
 import React from 'react';
 import Main from '../components/layout/main';
+import data from '../data/pages';
 
 const Contact = () => (
     <Main data-test="component-main">
-        <h2>
-            Contact
-        </h2>
-        <p>
-            Bacon ipsum dolor amet andouille ham cupim burgdoggen short ribs turkey short loin, swine bresaola pork chop chuck venison.
-            Meatball ribeye shoulder pastrami leberkas tri-tip.
-            Swine shoulder t-bone doner andouille kevin.
-            Pig alcatra capicola jowl brisket porchetta chislic flank bacon meatloaf cupim kevin buffalo.
-            Sausage bresaola shoulder meatloaf pig chicken ham hock shank.
-        </p>
+        <h2>{data.contact.heading}</h2>
     </Main>
 );
 

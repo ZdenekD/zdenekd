@@ -17,14 +17,14 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .timeline()
             .add({
                 targets: asideRef.current,
-                duration: 800,
+                duration: 600,
                 opacity: [0, 1],
                 translateY: ['-100%', 0],
                 easing: 'easeOutCubic',
             })
             .add({
                 targets: [...listRef.current.querySelectorAll('li')],
-                duration: 600,
+                duration: 800,
                 delay(target, index) {
                     return (index * 200);
                 },

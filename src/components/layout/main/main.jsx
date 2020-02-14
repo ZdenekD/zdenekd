@@ -131,11 +131,9 @@ const Main = ({isAnimated, children}) => {
             <section className={styles.section}>
                 <Header />
                 {!isAnimated && (
-                    <>
-                        <Content content={children} />
-                        <Footer />
-                    </>
+                    <Content content={children} />
                 )}
+                <Footer />
             </section>
             <Aside />
         </>
