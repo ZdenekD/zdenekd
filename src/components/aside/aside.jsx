@@ -6,7 +6,7 @@ import styles from './aside.css';
 import data from '../../data/pages';
 import {getPage} from '../../helpers/getPage';
 
-const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
+const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAnimation}) => {
     const [isPrepared, setPrepared] = useState(false);
     const [href, setHref] = useState(null);
     const asideRef = useRef(null);
@@ -48,11 +48,14 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                 opacity: [1, 0],
                 translateY: [0, '5vh'],
                 easing: 'easeOutCubic',
+                begin() {
+                    handleAppAnimation(true);
+                },
             })
             .add({
                 targets: asideRef.current,
-                duration: 800,
-                translateY: [0, '100%'],
+                duration: 600,
+                opacity: [1, 0],
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);
@@ -125,6 +128,7 @@ Aside.propTypes = {
     isAnimated: PropTypes.bool.isRequired,
     handleMenu: PropTypes.func.isRequired,
     handleMenuAnimation: PropTypes.func.isRequired,
+    handleAppAnimation: PropTypes.func.isRequired,
 };
 
 export default Aside;

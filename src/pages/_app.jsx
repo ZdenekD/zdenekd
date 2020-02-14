@@ -12,7 +12,7 @@ import {getPage} from '../helpers/getPage';
 class Application extends App {
     constructor(props) {
         super(props);
-        this.componentRef = React.createRef();
+
         this.curtainRef = React.createRef();
     }
 
@@ -23,6 +23,7 @@ class Application extends App {
     }
 
     componentDidUpdate() {
+        const {store} = this.props;
         const {dispatch} = this.props.store;
 
         anime
@@ -31,10 +32,14 @@ class Application extends App {
                 easing: 'easeOutCubic',
             })
             .add({
-                duration: 1200,
+                duration: 600,
                 opacity: [0, 1],
                 begin() {
-                    dispatch(handleAppAnimation(true));
+                    const {isAnimated} = store.getState().app;
+
+                    if (!isAnimated) {
+                        dispatch(handleAppAnimation(true));
+                    }
                 },
             })
             .add({
@@ -52,7 +57,7 @@ class Application extends App {
 
         return (
             <Provider store={store}>
-                <main className={`${styles.main} ${styles[page]}`} ref={this.componentRef}>
+                <main className={`${styles.main} ${styles[page]}`}>
                     <div className={styles.curtain} ref={this.curtainRef}></div>
                     <Component {...pageProps} />
                 </main>
