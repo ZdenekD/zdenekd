@@ -18,12 +18,6 @@ class Application extends App {
         console.info('Hello Underworld! Authorship is attributed to 01011010 01100100 01100101 01101110 01100101 01101011 01000100. You can try this >> https://bit.ly/31QKTyy');
     }
 
-    static async getInitialProps({Component, ctx}) {
-        const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-
-        return {pageProps};
-    }
-
     componentDidUpdate() {
         const {store} = this.props;
         const {dispatch} = this.props.store;
