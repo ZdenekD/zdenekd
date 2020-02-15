@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.css';
+import './_index.css';
 import Main from '../components/layout/main';
 
 const Error = ({statusCode}) => (

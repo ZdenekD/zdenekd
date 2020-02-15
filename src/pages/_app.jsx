@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import App from 'next/app';
 import anime from 'animejs';
 import withRedux from 'next-redux-wrapper';
-import './index.css';
+import './_index.css';
 import styles from './_app.css';
 import initStore from '../store';
 import {handleAppAnimation} from '../store/app/actions';
@@ -15,7 +15,13 @@ class Application extends App {
 
         this.curtainRef = React.createRef();
 
-        console.info('Hello Underworld! Authorship is attributed to 01011010 01100100 01100101 01101110 01100101 01101011 01000100. You can try this >> https://bit.ly/31QKTyy');
+        console.info('%cHello Underworld! Authorship is attributed to %c01011010 01100100 01100101 01101110 01100101 01101011 01000100. %cYou can try this >> https://bit.ly/31QKTyy', 'color: #9cd9f2', 'color: #c8e49b', 'color: #9cd9f2');
+    }
+
+    static async getInitialProps({Component, ctx}) {
+        const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+
+        return {pageProps};
     }
 
     componentDidUpdate() {

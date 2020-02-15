@@ -77,6 +77,7 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
             onClick={handleClick}
             disabled={isAnimated}
             data-test="component-menu"
+            aria-label="Menu"
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
                 <path d="M30,40 L70,40 Z" ref={pathTopRef}></path>
