@@ -11,8 +11,8 @@
     width: 100%;
     padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) var(--gutter);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     position: relative;
     z-index: var(--zindex-header);
     color: var(--navigation-color);
@@ -60,6 +60,7 @@
 }
 
 .code {
+    margin-right: auto;
     padding-left: 30px;
     align-self: flex-end;
     position: relative;
@@ -78,6 +79,89 @@
         content: '';
         background: currentColor;
         transform: translateY(-50%);
+    }
+}
+
+.keys {
+    --arrow-color: var(--color-blue-darken-4);
+    margin-right: calc(2 * var(--gutter));
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+
+    i {
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: relative;
+        background: var(--key-background);
+        border-radius: var(--border-radius);
+
+        &::before {
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.showKeys {
+    --fade-in-opacity: 1;
+    animation: fade-in 1.2s var(--ease-in-cubic) forwards .6s;
+}
+
+.key {
+    display: flex;
+}
+
+.keyUp {
+    margin: 0 auto;
+    align-self: flex-start;
+
+    &::before {
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid var(--arrow-color);
+        border-left: 4px solid transparent;
+    }
+}
+
+.keyLeft,
+.keyDown,
+.keyRight {
+    margin: 4px 2px;
+}
+
+.keyLeft {
+    opacity: .25;
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-right: 4px solid var(--arrow-color);
+        border-bottom: 4px solid transparent;
+    }
+}
+
+.keyDown {
+
+    &::before {
+        border-top: 4px solid var(--arrow-color);
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+}
+
+.keyRight {
+    opacity: .25;
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--arrow-color);
     }
 }
 

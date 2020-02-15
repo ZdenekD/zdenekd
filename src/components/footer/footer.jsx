@@ -27,6 +27,16 @@ const Footer = ({isOpen, isAnimated}) => {
     return (
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`}>
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
+            <span className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
+                <span className={styles.key}>
+                    <i className={styles.keyUp}></i>
+                </span>
+                <span className={styles.key}>
+                    <i className={styles.keyLeft}></i>
+                    <i className={styles.keyDown}></i>
+                    <i className={styles.keyRight}></i>
+                </span>
+            </span>
             <span className={styles.scroll}>
                 Scroll
                 <i className={styles.dot} ref={dotRef}></i>
