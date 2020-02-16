@@ -9,7 +9,7 @@ import {getPage} from '../../helpers/getPage';
 
 const Heading = ({isOpen, isAnimated}) => {
     const router = useRouter();
-    const [page] = getPage(router.route);
+    const page = getPage(router.route);
     const heading = data[page]?.title ?? 'Kávová paráda';
 
     return (

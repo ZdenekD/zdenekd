@@ -55,7 +55,7 @@ class Application extends App {
 
     render() {
         const {Component, pageProps, store, router} = this.props;
-        const [page] = getPage(router.route);
+        const page = getPage(router.route);
 
         return (
             <Provider store={store}>

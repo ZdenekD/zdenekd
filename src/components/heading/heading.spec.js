@@ -21,7 +21,7 @@ describe('Heading', () => {
 
     it('renders appropriate heading title', () => {
         const component = findComponent(wrapper, 'component-title');
-        const [page] = getPage('/');
+        const page = getPage('/');
         const heading = data[page].title;
 
         expect(component.text().includes(heading)).toBe(true);

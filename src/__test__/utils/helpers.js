@@ -8,7 +8,7 @@ import {middlewares} from '../../store/index';
  * Creat store
  * @param {Object} state
  */
-const getStore = state => applyMiddleware(...middlewares)(createStore)(reducer, state);
+export const getStore = state => applyMiddleware(...middlewares)(createStore)(reducer, state);
 
 /**
  * Factory function to create a shallow wrapper for App component

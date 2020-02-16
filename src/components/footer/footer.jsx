@@ -9,7 +9,7 @@ import {getPage} from '../../helpers/getPage';
 const Footer = ({isOpen, isAnimated}) => {
     const dotRef = useRef(null);
     const router = useRouter();
-    const [page] = getPage(router.route);
+    const page = getPage(router.route);
     const pages = Object.keys(data);
     const year = new Date().getFullYear();
     const date = getRoman(year);
@@ -25,7 +25,7 @@ const Footer = ({isOpen, isAnimated}) => {
     });
 
     return (
-        <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`}>
+        <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
             <span className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
                 <span className={styles.key}>

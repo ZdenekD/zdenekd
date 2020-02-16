@@ -11,7 +11,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
     const asideRef = useRef(null);
     const listRef = useRef(null);
     const router = useRouter();
-    const [page] = getPage(router.route);
+    const page = getPage(router.route);
     const handleAnimationIn = () => {
         anime
             .timeline()

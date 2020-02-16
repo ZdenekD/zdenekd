@@ -11,7 +11,7 @@ describe('Main', () => {
     it('renders appropriate title value', () => {
         const wrapper = factoryStore(Main, defaultProps);
         const component = findComponent(wrapper, 'component-title');
-        const [page] = getPage('/');
+        const page = getPage('/');
         const heading = data[page].title;
 
         expect(component.text().includes(heading)).toBe(true);

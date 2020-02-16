@@ -13,7 +13,7 @@ import styles from './main.css';
 
 const Main = ({isAnimated, children}) => {
     const router = useRouter();
-    const [page] = getPage(router.route);
+    const page = getPage(router.route);
     const pages = Object.keys(data);
     const minIndex = 0;
     const maxIndex = pages.length - 1;
