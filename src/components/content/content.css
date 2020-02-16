@@ -1,5 +1,5 @@
 .content {
-    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
+    padding: 0 calc(4 * var(--gutter));
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -11,7 +11,7 @@
         padding-right: 12px;
         position: relative;
         color: var(--content-heading-admit);
-        font-size: 4em;
+        font-size: 3.2em;
         text-align: center;
 
         &::first-letter {

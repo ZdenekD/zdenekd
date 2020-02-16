@@ -17,7 +17,7 @@ const Main = ({isAnimated, children}) => {
     const pages = Object.keys(data);
     const minIndex = 0;
     const maxIndex = pages.length - 1;
-    const heading = data[page]?.title ?? 'Kávová paráda';
+    const title = data[page]?.title ?? 'Kávová paráda';
     const index = getPageIndex(router.route);
     let counter = 0;
     let timestamp = Math.floor(+new Date() / 1000);
@@ -126,7 +126,7 @@ const Main = ({isAnimated, children}) => {
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
-                <title data-test="component-title">{`${heading} | ZdenekD`}</title>
+                <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
             <section className={styles.section}>
                 <Header />

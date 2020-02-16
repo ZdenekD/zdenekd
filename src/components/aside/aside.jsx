@@ -56,6 +56,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 targets: asideRef.current,
                 duration: 600,
                 opacity: [1, 0],
+                translateY: [0, '-100%'],
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation(false);

@@ -10,13 +10,13 @@ import {getPage} from '../../helpers/getPage';
 const Heading = ({isOpen, isAnimated}) => {
     const router = useRouter();
     const page = getPage(router.route);
-    const heading = data[page]?.title ?? 'Kávová paráda';
+    const title = data[page]?.title ?? 'Kávová paráda';
 
     return (
         <Link href="/" passHref>
             <a href="/" className={styles.link} disabled={isAnimated}>
                 <h1 className={styles.heading} data-test="component-heading">
-                    <span className="_visuallyhidden" data-test="component-title">{`${heading} | ZdenekD`}</span>
+                    <span className="_visuallyhidden" data-test="component-title">{`${title} | ZdenekD`}</span>
                     <Logo className={`${styles.logo} ${isOpen ? styles.active : ''}`} />
                 </h1>
             </a>

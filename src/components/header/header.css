@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
+    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter)) var(--gutter);
     display: flex;
     justify-content: space-between;
     align-items: center;

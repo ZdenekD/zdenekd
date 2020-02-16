@@ -8,9 +8,10 @@ const Content = ({content}) => {
     const handleAnimationIn = () => {
         anime({
             targets: contentRef.current,
-            duration: 600,
+            duration: 800,
+            delay: 100,
             opacity: [0, 1],
-            translateX: ['5vw', 0],
+            translateX: ['10vw', 0],
             easing: 'easeOutCubic',
         });
     };
