@@ -1,5 +1,5 @@
 .content {
-    padding: 0 calc(4 * var(--gutter));
+    padding: 0 calc(4 * var(--gutter)) calc(2 * var(--gutter));
     display: flex;
     flex-grow: 1;
     flex-direction: column;
