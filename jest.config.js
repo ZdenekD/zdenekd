@@ -15,4 +15,5 @@ module.exports = {
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$', '^.+\\.module\\.(css|sass|scss)$'],
     setupFiles: ['<rootDir>/src/__test__/utils/setup.js'],
+    snapshotSerializers: ['jest-serializer-html'],
 };
