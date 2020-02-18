@@ -29,10 +29,6 @@
           "value": "GET"
         },
         {
-          "key": "Connection",
-          "value": "keep-alive"
-        },
-        {
           "key": "Cache-Control",
           "value": "private, max-age=180"
         }
