@@ -1,0 +1,202 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--fade-in-opacity);
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) var(--gutter);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    z-index: var(--zindex-header);
+    color: var(--navigation-color);
+
+    &::before,
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        opacity: 0;
+        background: var(--curtain-color);
+        border-top-left-radius: var(--border-radius);
+    }
+
+    &::before {
+        width: 25%;
+        height: 100%;
+        right: 0;
+        border-bottom-right-radius: var(--border-radius);
+    }
+
+    &::after {
+        width: 12.5%;
+        height: 75%;
+        right: 25%;
+    }
+}
+
+.show {
+
+    &::before,
+    &::after {
+        animation: fade-in 2s var(--ease-in-cubic) forwards;
+    }
+
+    &::before {
+        --fade-in-opacity: .5;
+        animation-delay: 1.2s;
+    }
+
+    &::after {
+        --fade-in-opacity: .25;
+        animation-delay: 1.8s;
+    }
+}
+
+.code {
+    margin-right: auto;
+    padding-left: 30px;
+    align-self: flex-end;
+    position: relative;
+    left: -10px;
+    opacity: .75;
+    font-size: .8em;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+
+    &::before {
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        content: '';
+        background: currentColor;
+        transform: translateY(-50%);
+    }
+}
+
+.keys {
+    --arrow-color: var(--color-blue-darken-4);
+    margin-right: calc(2 * var(--gutter));
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+
+    i {
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: relative;
+        background: var(--key-background);
+        border-radius: var(--border-radius);
+
+        &::before {
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.showKeys {
+    --fade-in-opacity: 1;
+    animation: fade-in 1.2s var(--ease-in-cubic) forwards .6s;
+}
+
+.key {
+    display: flex;
+}
+
+.keyUp {
+    margin: 0 auto;
+    align-self: flex-start;
+    opacity: var(--key-up-opacity, 1);
+
+    &::before {
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid var(--arrow-color);
+        border-left: 4px solid transparent;
+    }
+}
+
+.keyLeft,
+.keyDown,
+.keyRight {
+    margin: 4px 2px;
+}
+
+.keyLeft {
+    opacity: var(--key-left-opacity, .25);
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-right: 4px solid var(--arrow-color);
+        border-bottom: 4px solid transparent;
+    }
+}
+
+.keyDown {
+    opacity: var(--key-down-opacity, 1);
+
+    &::before {
+        border-top: 4px solid var(--arrow-color);
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+}
+
+.keyRight {
+    opacity: var(--key-right-opacity, .25);
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--arrow-color);
+    }
+}
+
+.scroll {
+    margin-right: calc(4 * var(--gutter));
+    padding-bottom: calc(5 * var(--gutter));
+    position: relative;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
+
+    &::before {
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: calc(2 * var(--gutter));
+        left: 50%;
+        content: '';
+        background: currentColor;
+        transform: translateX(-50%);
+    }
+}
+
+.dot {
+    --dot-opacity: 0;
+    --dot-transform: 0;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: calc(2 * var(--gutter));
+    right: calc(50% - 12px);
+    opacity: var(--dot-opacity);
+    background: var(--color-red);
+    transform: translateY(var(--dot-transform));
+    transition: opacity .6s var(--ease-in-out-cubic) 1.2s;
+    border-radius: 50%;
+}

@@ -1,3 +1,12 @@
+.link {
+    text-decoration: none;
+
+    &[disabled] {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
 .heading {
     margin: 0;
     cursor: pointer;
@@ -9,8 +18,20 @@
     height: 100%;
     max-height: 60px;
 
+    &.active {
+        --navigation-color: var(--navigation-color-active);
+    }
+
     :global .logo_svg__st0 {
-        fill: var(--color-dark-gray);
-        stroke: var(--color-dark-gray);
+        fill: var(--navigation-color, var(--color-blue-darken-3));
+        stroke: var(--navigation-color, var(--color-blue-darken-3));
+        transition: var(--header-transition);
+    }
+}
+
+.active {
+
+    :global .logo_svg__st0 {
+        transition: var(--header-transition-active);
     }
 }

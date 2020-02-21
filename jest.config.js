@@ -5,7 +5,7 @@ module.exports = {
     testMatch: ['<rootDir>/src/**/*.{spec,test}.{js,jsx}'],
     clearMocks: true,
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx}'],
+    collectCoverageFrom: ['src/**/*.{js,jsx}', '!src/index.{js,jsx}'],
     coverageDirectory: './__test__/coverage',
     coverageReporters: ['html'],
     transform: {
@@ -15,4 +15,5 @@ module.exports = {
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$', '^.+\\.module\\.(css|sass|scss)$'],
     setupFiles: ['<rootDir>/src/__test__/utils/setup.js'],
+    snapshotSerializers: ['jest-serializer-html'],
 };

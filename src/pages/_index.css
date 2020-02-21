@@ -1,0 +1,31 @@
+@import '../assets/styles/reset.css';
+@import '../assets/styles/normalize.css';
+@import '../assets/styles/variables.css';
+@import '../assets/styles/easing.css';
+@import '../assets/styles/transition.css';
+@import '../assets/styles/helpers.css';
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    overflow-y: hidden;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
+    font-size: var(--font-size, 13px);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+strong {
+    font-weight: 700;
+}
+
+code,
+kbd,
+samp {
+    font-family: 'Roboto Mono', monospace;
+}

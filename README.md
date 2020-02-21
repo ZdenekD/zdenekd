@@ -45,9 +45,7 @@ yarn test:js
 
 Security and audit tests
 
-```
-yarn test:security
-```
+-   Exists github actions to run tests
 
 Webpages tests (it needs to run webserver - it looks on http://localhost:3000)
 

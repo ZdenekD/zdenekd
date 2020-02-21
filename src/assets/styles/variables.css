@@ -44,5 +44,6 @@
     --gutter: 1em;
     --max-container-width: 1800px;
     --zindex-aside: 100;
+    --zindex-header: 110;
     --border-radius: 4px;
 }

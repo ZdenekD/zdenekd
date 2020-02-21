@@ -1,3 +1,33 @@
 .content {
-    display: none;
+    padding: 0 calc(4 * var(--gutter)) calc(2 * var(--gutter));
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+
+    h2 {
+        margin: 0 auto;
+        padding-right: 12px;
+        position: relative;
+        color: var(--content-heading-admit);
+        font-size: 3.2em;
+        text-align: center;
+
+        &::first-letter {
+            color: var(--content-heading);
+        }
+
+        &::after {
+            width: 6px;
+            height: 6px;
+            display: block;
+            position: absolute;
+            top: calc(1em - 2px);
+            right: 0;
+            content: '';
+            background: var(--navigation-color);
+            border-radius: 50%;
+        }
+    }
 }

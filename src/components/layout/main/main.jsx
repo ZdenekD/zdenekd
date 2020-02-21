@@ -2,44 +2,151 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import styles from './main.css';
+import useEventListener from '@use-it/event-listener';
 import Aside from '../../aside';
 import Header from '../../header';
 import Content from '../../content';
+import Footer from '../../footer';
 import data from '../../../data/pages';
-import getPage from '../../../helpers/getPage';
+import {getPage, getPageIndex} from '../../../helpers/getPage';
+import styles from './main.css';
 
-const Main = ({children}) => {
+const Main = ({isAnimated, children}) => {
     const router = useRouter();
-    const [page] = getPage(router.asPath);
-    const heading = data[page]?.title ?? 'Kávová paráda';
+    const page = getPage(router.route);
+    const pages = Object.keys(data);
+    const minIndex = 0;
+    const maxIndex = pages.length - 1;
+    const title = data[page]?.title ?? 'Kávová paráda';
+    const index = getPageIndex(router.route);
+    let counter = 0;
+    let timestamp = Math.floor(+new Date() / 1000);
+    let coords = [0, 0];
+    const handlePagePrev = () => {
+        if (isAnimated || index - 1 < minIndex) {
+            return;
+        }
+
+        const current = index - 1;
+
+        router.push(data[pages[current]].link);
+    };
+    const handlePageNext = () => {
+        if (isAnimated || index + 1 > maxIndex) {
+            return;
+        }
+
+        const current = index + 1;
+
+        router.push(data[pages[current]].link);
+    };
+    const handleScroll = event => {
+        event.stopPropagation();
+
+        const wheel = 'wheelDelta' in event ? event.wheelDelta : -40 * event.detail;
+
+        if (!event) {
+            return;
+        }
+
+        if (timestamp === Math.floor(+new Date() / 1000)) {
+            counter += 1;
+        } else {
+            timestamp = Math.floor(+new Date() / 1000);
+            counter = 0;
+        }
+
+        if (counter < 3) {
+            return;
+        }
+
+        (wheel > 0 ? handlePagePrev : handlePageNext)();
+    };
+    const handleKeyboard = event => {
+        const isDown = [
+            34,
+            35,
+            40,
+        ].includes(event.keyCode);
+        const isUp = [
+            33,
+            36,
+            38,
+        ].includes(event.keyCode);
+
+        if (isAnimated) {
+            return;
+        }
+
+        if (isDown) {
+            handlePageNext();
+        }
+
+        if (isUp) {
+            handlePagePrev();
+        }
+    };
+    const handleTouchStart = event => {
+        const touches = [event.touches[0].clientX, event.touches[0].clientY];
+
+        coords = [...touches];
+    };
+    const handleTouchMove = event => {
+        const {clientX, clientY} = event.touches[0];
+        const [xDown, yDown] = coords;
+
+        if (!xDown || !yDown || isAnimated) {
+            return;
+        }
+
+        const xUp = clientX;
+        const yUp = clientY;
+        const xDiff = xDown - xUp;
+        const yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            return;
+        }
+
+        (yDiff < 0 ? handlePagePrev : handlePageNext)();
+
+        coords = [0, 0];
+    };
+
+    useEventListener('mousewheel', handleScroll);
+    useEventListener('DOMMouseScroll', handleScroll);
+    useEventListener('keydown', handleKeyboard);
+    useEventListener('touchstart', handleTouchStart);
+    useEventListener('touchmove', handleTouchMove);
 
     return (
         <>
             <Head>
+                <link rel="icon" type="image/png" href="/favicon.png" />
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
-                <title data-test="component-title">{`${heading} | ZdenekD`}</title>
+                <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
+                <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
-            <main className={styles.default} data-test="component-main">
-                <section className={`${styles.section} ${styles[page]}`}>
-                    <Header />
-                    <Content />
-                    {children}
-                    <Aside />
-                </section>
-            </main>
+            <section className={styles.section}>
+                <Header />
+                {!isAnimated && (
+                    <Content content={children} />
+                )}
+                <Footer />
+            </section>
+            <Aside />
         </>
     );
 };
 
 Main.propTypes = {
+    isAnimated: PropTypes.bool.isRequired,
     children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
         PropTypes.node,
-        PropTypes.number,
     ]),
 };
 

@@ -1,0 +1,4 @@
+:root {
+    --header-transition: all .8s var(--ease-out-expo) 1.4s;
+    --header-transition-active: all .8s var(--ease-out-expo);
+}

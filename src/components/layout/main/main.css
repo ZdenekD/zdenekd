@@ -1,30 +1,8 @@
-.default {
-    width: 100vw;
-    min-height: 100vh;
-    padding: calc(2 * var(--gutter));
-    display: flex;
-    justify-content: center;
-}
-
 .section {
     width: 100%;
-    position: relative;
-    background: var(--color-blue-lighten-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--background, var(--color-blue-lighten-5));
     border-radius: var(--border-radius);
-}
-
-.homepage {
-    background: var(--color-blue-lighten-5);
-}
-
-.projects {
-    background: var(--color-green-lighten-5);
-}
-
-.about {
-    background: var(--color-red-lighten-5);
-}
-
-.contact {
-    background: var(--color-orange-lighten-5);
 }
