@@ -16,7 +16,7 @@ describe('Heading', () => {
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-heading');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 
     it('renders appropriate heading title', () => {

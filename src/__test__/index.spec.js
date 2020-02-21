@@ -7,6 +7,6 @@ describe('Homepage page', () => {
         const wrapper = factory(Homepage, {site});
         const component = findComponent(wrapper, 'component-main');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 });

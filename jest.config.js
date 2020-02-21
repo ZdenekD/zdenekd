@@ -5,7 +5,7 @@ module.exports = {
     testMatch: ['<rootDir>/src/**/*.{spec,test}.{js,jsx}'],
     clearMocks: true,
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx}'],
+    collectCoverageFrom: ['src/**/*.{js,jsx}', '!src/index.{js,jsx}'],
     coverageDirectory: './__test__/coverage',
     coverageReporters: ['html'],
     transform: {

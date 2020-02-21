@@ -6,7 +6,7 @@ describe('Error page', () => {
         const wrapper = factory(Error);
         const component = findComponent(wrapper, 'component-error');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 
     it('renders status code from props', () => {

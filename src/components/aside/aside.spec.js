@@ -15,13 +15,13 @@ describe('Aside', () => {
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-aside');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 
     it('renders navigation without error', () => {
         const component = findComponent(wrapper, 'component-navigation');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 
     it('renders all pages links', () => {

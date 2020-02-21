@@ -6,6 +6,6 @@ describe('Content', () => {
         const wrapper = factory(Content);
         const component = findComponent(wrapper, 'component-content');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 });

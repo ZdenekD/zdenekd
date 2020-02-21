@@ -8,6 +8,6 @@ describe('Menu', () => {
         const wrapper = factoryStore(Menu, defaultProps);
         const component = findComponent(wrapper, 'component-menu');
 
-        expect(component.length).toBe(1);
+        expect(component.exists()).toBe(true);
     });
 });
