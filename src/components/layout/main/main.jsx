@@ -122,6 +122,7 @@ const Main = ({isAnimated, children}) => {
     return (
         <>
             <Head>
+                <link rel="icon" type="image/png" href="/favicon.png" />
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
