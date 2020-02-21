@@ -29,7 +29,7 @@
 }
 
 .homepage {
-    --background: var(--color-blue-lighten-5);
+    --section-background: var(--color-blue-lighten-5);
     --curtain-color: var(--color-blue-lighten-4);
     --content-heading: var(--color-blue);
     --content-heading-admit: var(--color-blue-lighten-1);
@@ -37,7 +37,7 @@
 }
 
 .projects {
-    --background: var(--color-green-lighten-5);
+    --section-background: var(--color-green-lighten-5);
     --curtain-color: var(--color-green-lighten-4);
     --content-heading: var(--color-green);
     --content-heading-admit: var(--color-green-lighten-1);
@@ -47,7 +47,7 @@
 }
 
 .about {
-    --background: var(--color-red-lighten-5);
+    --section-background: var(--color-red-lighten-5);
     --curtain-color: var(--color-red-lighten-4);
     --content-heading: var(--color-red);
     --content-heading-admit: var(--color-red-lighten-1);
@@ -55,7 +55,7 @@
 }
 
 .contact {
-    --background: var(--color-orange-lighten-5);
+    --section-background: var(--color-orange-lighten-5);
     --curtain-color: var(--color-orange-lighten-4);
     --content-heading: var(--color-orange);
     --content-heading-admit: var(--color-orange-lighten-1);

@@ -60,8 +60,8 @@ class Application extends App {
         return (
             <Provider store={store}>
                 <main className={`${styles.main} ${styles[page]}`}>
-                    <i className={styles.curtain} ref={this.curtainRef}></i>
                     <Component {...pageProps} />
+                    <i className={styles.curtain} ref={this.curtainRef}></i>
                 </main>
             </Provider>
         );

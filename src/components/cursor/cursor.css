@@ -12,8 +12,9 @@
     height: 32px;
     top: -16px;
     left: -16px;
+    background: var(--outer-cursor-background, transparent);
     transition: transform .2s var(--ease-out-quart);
-    border: 1px solid var(--color-red);
+    border: 1px solid var(--outer-cursor-color, var(--color-blue-darken-4));
 }
 
 .innerCursor {
@@ -21,5 +22,5 @@
     height: 8px;
     top: -4px;
     left: -4px;
-    background: var(--color-red);
+    background: var(--cursor-color, var(--color-blue-darken-4));
 }

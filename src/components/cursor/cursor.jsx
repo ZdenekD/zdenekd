@@ -1,28 +1,16 @@
-import React, {useRef, useEffect, useState} from 'react';
-import useEventListener from '@use-it/event-listener';
+import React, {useRef} from 'react';
+import useCursor from '../../hooks/cursor';
 import styles from './cursor.css';
 
 const Cursor = () => {
-    const [coords, setCoords] = useState([-100, -100]);
     const innerCursorRef = useRef(null);
     const outerCursorRef = useRef(null);
-    const animationRef = useRef(null);
-    const animate = () => {
-        innerCursorRef.current.style.transform = `translate(${coords[0]}px, ${coords[1]}px)`;
-        outerCursorRef.current.style.transform = `translate(${coords[0]}px, ${coords[1]}px)`;
-    };
-    const handleCursor = ({clientX, clientY}) => {
-        setCoords([clientX, clientY]);
+    const animate = ([coordX, coordY]) => {
+        innerCursorRef.current.style.transform = `translate(${coordX}px, ${coordY}px)`;
+        outerCursorRef.current.style.transform = `translate(${coordX}px, ${coordY}px)`;
     };
 
-    useEventListener('mousemove', handleCursor);
-
-    useEffect(() => {
-        animationRef.current = requestAnimationFrame(animate);
-
-        return () => cancelAnimationFrame(animationRef.current);
-        // eslint-disable-next-line
-    }, [coords]);
+    useCursor(animate);
 
     return (
         <>
