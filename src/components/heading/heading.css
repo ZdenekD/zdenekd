@@ -2,14 +2,12 @@
     text-decoration: none;
 
     &[disabled] {
-        cursor: not-allowed;
         pointer-events: none;
     }
 }
 
 .heading {
     margin: 0;
-    cursor: pointer;
     font-size: 16px;
 }
 

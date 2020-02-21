@@ -96,7 +96,6 @@
     margin: 0 2px;
     display: inline-block;
     position: relative;
-    cursor: pointer;
     background: var(--color-white);
     transition: all .2s ease-in-out;
     border-radius: var(--border-radius);

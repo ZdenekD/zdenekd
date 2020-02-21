@@ -45,5 +45,6 @@
     --max-container-width: 1800px;
     --zindex-aside: 100;
     --zindex-header: 110;
+    --zindex-cursor: 1000;
     --border-radius: 4px;
 }

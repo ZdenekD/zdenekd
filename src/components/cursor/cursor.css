@@ -1,0 +1,25 @@
+.outerCursor,
+.innerCursor {
+    display: block;
+    position: fixed;
+    z-index: var(--zindex-cursor);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.outerCursor {
+    width: 32px;
+    height: 32px;
+    top: -16px;
+    left: -16px;
+    transition: transform .2s var(--ease-out-quart);
+    border: 1px solid var(--color-red);
+}
+
+.innerCursor {
+    width: 8px;
+    height: 8px;
+    top: -4px;
+    left: -4px;
+    background: var(--color-red);
+}
