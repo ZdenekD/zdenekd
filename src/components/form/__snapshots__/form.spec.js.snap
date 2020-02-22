@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form match snapshot 1`] = `
+<form data-test="component-form">
+  <div>
+    <input type="text"
+           id="Jméno"
+           name="name"
+           value
+           placeholder="Oblíbené jméno"
+           required
+           data-test="component-input"
+    >
+    <label for="Jméno"
+           data-test="component-label"
+    >
+      Jméno
+    </label>
+  </div>
+  <div>
+    <input type="email"
+           id="E-mail"
+           name="email"
+           value
+           placeholder="Kontaktní e-mail"
+           required
+           data-test="component-input"
+    >
+    <label for="E-mail"
+           data-test="component-label"
+    >
+      E-mail
+    </label>
+  </div>
+  <div>
+    <textarea id="Vzkaz"
+              name="message"
+              placeholder="Vzkaz, požadavek nebo trocha poezie"
+              required
+              data-test="component-textarea"
+    >
+    </textarea>
+    <label for="Vzkaz"
+           data-test="component-label"
+    >
+      Vzkaz
+    </label>
+  </div>
+  <button type="submit">
+    Odeslat
+  </button>
+</form>
+`;
