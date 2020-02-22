@@ -5,7 +5,7 @@ import styles from './input.css';
 const Input = ({handleChange, label, ...rest}) => (
     <>
         <input id={label} className={styles.input} onChange={handleChange} {...rest} data-test="component-input" />
-        <label htmlFor={label} data-test="component-label">
+        <label htmlFor={label} className={styles.label} data-test="component-label">
             {label}
         </label>
     </>

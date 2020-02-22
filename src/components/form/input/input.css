@@ -1,11 +1,17 @@
+.input,
+.label {
+    width: 100%;
+    padding: 20px 0;
+}
+
 .input {
-    border: 1px solid var(--color-black);
+    height: 60px;
+    color: var(--color-blue-darken-4);
+    font-size: 2em;
+    line-height: 60px;
 }
 
 .label {
-    font-size: 16px;
-}
-
-.value {
-    font-size: 12px;
+    font-size: 1.25em;
+    text-align: left;
 }

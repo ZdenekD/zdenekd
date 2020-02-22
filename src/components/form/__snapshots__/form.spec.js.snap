@@ -7,7 +7,6 @@ exports[`Form match snapshot 1`] = `
            id="Jméno"
            name="name"
            value
-           placeholder="Oblíbené jméno"
            required
            data-test="component-input"
     >
@@ -22,7 +21,6 @@ exports[`Form match snapshot 1`] = `
            id="E-mail"
            name="email"
            value
-           placeholder="Kontaktní e-mail"
            required
            data-test="component-input"
     >
@@ -35,7 +33,6 @@ exports[`Form match snapshot 1`] = `
   <div>
     <textarea id="Vzkaz"
               name="message"
-              placeholder="Vzkaz, požadavek nebo trocha poezie"
               required
               data-test="component-textarea"
     >
@@ -46,8 +43,12 @@ exports[`Form match snapshot 1`] = `
       Vzkaz
     </label>
   </div>
-  <button type="submit">
-    Odeslat
-  </button>
+  <div>
+    <button type="submit"
+            data-test="component-button"
+    >
+      Odeslat
+    </button>
+  </div>
 </form>
 `;

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from './form.css';
+import Button from './button';
 import Input from './input';
 import Textarea from './textarea';
 
@@ -35,7 +36,6 @@ const Form = () => {
                     type="text"
                     value={data.name}
                     handleChange={handleChange}
-                    placeholder="Oblíbené jméno"
                     required
                 />
             </div>
@@ -46,7 +46,6 @@ const Form = () => {
                     type="email"
                     value={data.email}
                     handleChange={handleChange}
-                    placeholder="Kontaktní e-mail"
                     required
                 />
             </div>
@@ -56,11 +55,14 @@ const Form = () => {
                     label="Vzkaz"
                     value={data.message}
                     handleChange={handleChange}
-                    placeholder="Vzkaz, požadavek nebo trocha poezie"
                     required
                 />
             </div>
-            <button type="submit">Odeslat</button>
+            <div className={styles.row}>
+                <Button type="submit" onSubmit={handleSubmit}>
+                    Odeslat
+                </Button>
+            </div>
         </form>
     );
 };

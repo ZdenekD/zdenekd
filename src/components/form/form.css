@@ -1,9 +1,15 @@
 .form {
-    width: 100%;
-    border: 1px solid var(--color-black);
+    width: 75vw;
+    max-width: 500px;
+    margin: calc(2 * var(--gutter)) auto 0;
 }
 
 .row {
     width: 100%;
     margin-bottom: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
