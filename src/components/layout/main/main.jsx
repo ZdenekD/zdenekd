@@ -64,16 +64,8 @@ const Main = ({isAnimated, children}) => {
         (wheel > 0 ? handlePagePrev : handlePageNext)();
     };
     const handleKeyboard = event => {
-        const isDown = [
-            34,
-            35,
-            40,
-        ].includes(event.keyCode);
-        const isUp = [
-            33,
-            36,
-            38,
-        ].includes(event.keyCode);
+        const isDown = [34, 40].includes(event.keyCode);
+        const isUp = [33, 38].includes(event.keyCode);
 
         if (isAnimated) {
             return;
