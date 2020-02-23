@@ -4,5 +4,11 @@
     background-color: var(--color-blue-darken-4);
     color: var(--color-white);
     font-weight: bold;
+    transition: background-color .4s var(--ease-out-quart);
     border-radius: var(--border-radius);
+
+    &:focus,
+    &:hover {
+        background-color: var(--color-blue-lighten-2);
+    }
 }

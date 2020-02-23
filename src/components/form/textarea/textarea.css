@@ -5,15 +5,18 @@
 }
 
 .textarea {
-    height: 60px;
-    overflow: hidden;
-    color: var(--color-blue-darken-4);
-    font-size: 2em;
-    line-height: 60px;
+    composes: input from '../input/input.css';
     resize: none;
 }
 
+.value {
+    composes: value from '../input/input.css';
+}
+
 .label {
-    font-size: 1.25em;
-    text-align: left;
+    composes: label from '../input/input.css';
+}
+
+.content {
+    composes: content from '../input/input.css';
 }

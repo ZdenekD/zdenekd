@@ -10,8 +10,7 @@
     border: calc(2 * var(--gutter)) solid var(--color-white);
 
     &,
-    a,
-    button {
+    * {
         cursor: none;
     }
 }

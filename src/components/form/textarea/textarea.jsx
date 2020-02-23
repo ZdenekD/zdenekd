@@ -4,9 +4,11 @@ import styles from './textarea.css';
 
 const Textarea = ({handleChange, label, ...rest}) => (
     <>
-        <textarea id={label} className={styles.textarea} onChange={handleChange} {...rest} data-test="component-textarea" />
+        <textarea id={label} className={`${styles.textarea} ${rest?.value?.length > 0 ? styles.value : ''}`} onChange={handleChange} {...rest} data-test="component-textarea" />
         <label htmlFor={label} className={styles.label} data-test="component-label">
-            {label}
+            <span className={styles.content}>
+                {label}
+            </span>
         </label>
     </>
 );

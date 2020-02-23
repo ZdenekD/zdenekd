@@ -2,11 +2,14 @@
 
 exports[`Textarea match snapshot 1`] = `
 <textarea id
+          class="undefined "
           data-test="component-textarea"
 >
 </textarea>
 <label for
        data-test="component-label"
 >
+  <span>
+  </span>
 </label>
 `;

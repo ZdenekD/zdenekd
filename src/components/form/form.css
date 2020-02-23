@@ -1,15 +1,15 @@
 .form {
     width: 75vw;
     max-width: 500px;
-    margin: calc(2 * var(--gutter)) auto 0;
+    margin: calc(5 * var(--gutter)) auto 0;
 }
 
 .row {
     width: 100%;
-    margin-bottom: var(--gutter);
+    margin-bottom: calc(5 * var(--gutter));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
 }

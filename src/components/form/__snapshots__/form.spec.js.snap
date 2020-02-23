@@ -5,6 +5,7 @@ exports[`Form match snapshot 1`] = `
   <div>
     <input type="text"
            id="Jméno"
+           class="undefined "
            name="name"
            value
            required
@@ -13,12 +14,15 @@ exports[`Form match snapshot 1`] = `
     <label for="Jméno"
            data-test="component-label"
     >
-      Jméno
+      <span>
+        Jméno
+      </span>
     </label>
   </div>
   <div>
     <input type="email"
            id="E-mail"
+           class="undefined "
            name="email"
            value
            required
@@ -27,11 +31,14 @@ exports[`Form match snapshot 1`] = `
     <label for="E-mail"
            data-test="component-label"
     >
-      E-mail
+      <span>
+        E-mail
+      </span>
     </label>
   </div>
   <div>
     <textarea id="Vzkaz"
+              class="undefined "
               name="message"
               required
               data-test="component-textarea"
@@ -40,7 +47,9 @@ exports[`Form match snapshot 1`] = `
     <label for="Vzkaz"
            data-test="component-label"
     >
-      Vzkaz
+      <span>
+        Vzkaz
+      </span>
     </label>
   </div>
   <div>

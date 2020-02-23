@@ -6,12 +6,66 @@
 
 .input {
     height: 60px;
+    overflow: hidden;
     color: var(--color-blue-darken-4);
     font-size: 2em;
     line-height: 60px;
+
+    &:focus {
+
+        + .label {
+
+            &::after {
+                background: var(--color-blue-lighten-2);
+                transform: scale3d(1, .25, 1);
+            }
+
+            .content {
+                color: var(--color-blue-lighten-2);
+                transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+            }
+        }
+    }
+}
+
+.value {
+
+    + .label {
+
+        &::after {
+            background: var(--color-blue-lighten-2);
+            transform: scale3d(1, .25, 1);
+        }
+
+        .content {
+            color: var(--color-blue-lighten-2);
+            transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+        }
+    }
 }
 
 .label {
-    font-size: 1.25em;
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
     text-align: left;
+
+    &::after {
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        content: '';
+        background-color: var(--color-blue-darken-4);
+        transform-origin: 50% 100%;
+        transition: transform .4s var(--ease-out-quart), background-color .4s var(--ease-out-quart);
+    }
+}
+
+.content {
+    display: block;
+    color: var(--color-blue-darken-4);
+    transform-origin: 0 0;
+    transition: transform .4s var(--ease-out-quart), color .4s var(--ease-out-quart);
 }

@@ -4,9 +4,11 @@ import styles from './input.css';
 
 const Input = ({handleChange, label, ...rest}) => (
     <>
-        <input id={label} className={styles.input} onChange={handleChange} {...rest} data-test="component-input" />
+        <input id={label} className={`${styles.input} ${rest?.value?.length > 0 ? styles.value : ''}`} onChange={handleChange} {...rest} data-test="component-input" />
         <label htmlFor={label} className={styles.label} data-test="component-label">
-            {label}
+            <span className={styles.content}>
+                {label}
+            </span>
         </label>
     </>
 );
