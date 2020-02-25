@@ -2,10 +2,11 @@
 
 exports[`Input match snapshot 1`] = `
 <input id
-       class="undefined "
+       class="undefined  "
        data-test="component-input"
 >
 <label for
+       class="undefined "
        data-test="component-label"
 >
   <span>

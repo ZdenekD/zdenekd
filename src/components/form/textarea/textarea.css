@@ -1,16 +1,15 @@
-.textarea,
-.label {
-    width: 100%;
-    padding: 20px 0;
-}
-
 .textarea {
     composes: input from '../input/input.css';
+    padding: 0;
     resize: none;
 }
 
 .value {
     composes: value from '../input/input.css';
+}
+
+.error {
+    composes: error from '../input/input.css';
 }
 
 .label {

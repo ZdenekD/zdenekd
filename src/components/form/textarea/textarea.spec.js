@@ -4,6 +4,8 @@ import Textarea from './index';
 describe('Textarea', () => {
     const defaultProps = {
         handleChange: jest.fn(),
+        handleBlur: jest.fn(),
+        hasError: false,
         label: '',
     };
     let wrapper;
@@ -28,10 +30,28 @@ describe('Textarea', () => {
         expect(component.exists()).toBe(true);
     });
 
+    it('calls `handleBlur` on element blur event', () => {
+        const component = findComponent(wrapper, 'component-textarea');
+
+        component.simulate('blur');
+
+        expect(defaultProps.handleBlur).toHaveBeenCalled();
+    });
+
+    it('calls `handleChange` on element change event', () => {
+        const component = findComponent(wrapper, 'component-textarea');
+
+        component.simulate('change', {target: null});
+
+        expect(defaultProps.handleChange).toHaveBeenCalled();
+    });
+
     it('renders label text from props', () => {
         const label = 'Content text';
         const props = {
             handleChange: jest.fn(),
+            handleBlur: jest.fn(),
+            hasError: false,
             label,
         };
         const container = factory(Textarea, props);

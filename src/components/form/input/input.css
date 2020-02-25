@@ -1,5 +1,6 @@
 .input,
 .label {
+    --label-color: var(--color-blue-lighten-2);
     width: 100%;
     padding: 20px 0;
 }
@@ -16,12 +17,12 @@
         + .label {
 
             &::after {
-                background: var(--color-blue-lighten-2);
+                background: var(--label-color);
                 transform: scale3d(1, .25, 1);
             }
 
             .content {
-                color: var(--color-blue-lighten-2);
+                color: var(--label-color);
                 transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
             }
         }
@@ -33,19 +34,24 @@
     + .label {
 
         &::after {
-            background: var(--color-blue-lighten-2);
+            background: var(--label-color);
             transform: scale3d(1, .25, 1);
         }
 
         .content {
-            color: var(--color-blue-lighten-2);
+            color: var(--label-color);
             transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
         }
     }
 }
 
+.error {
+    --label-color: var(--color-red-lighten-1);
+}
+
 .label {
     position: absolute;
+    top: calc(100% - 60px);
     font-size: 1.5em;
     font-weight: bold;
     text-align: left;
@@ -64,7 +70,7 @@
 }
 
 .content {
-    display: block;
+    display: inline-block;
     color: var(--color-blue-darken-4);
     transform-origin: 0 0;
     transition: transform .4s var(--ease-out-quart), color .4s var(--ease-out-quart);

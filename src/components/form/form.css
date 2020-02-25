@@ -8,8 +8,12 @@
     width: 100%;
     margin-bottom: calc(5 * var(--gutter));
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+}
+
+.error {
+    color: var(--color-red);
 }

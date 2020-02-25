@@ -4,6 +4,8 @@ import Input from './index';
 describe('Input', () => {
     const defaultProps = {
         handleChange: jest.fn(),
+        handleBlur: jest.fn(),
+        hasError: false,
         label: '',
     };
     let wrapper;
@@ -28,10 +30,28 @@ describe('Input', () => {
         expect(component.exists()).toBe(true);
     });
 
+    it('calls `handleBlur` on element blur event', () => {
+        const component = findComponent(wrapper, 'component-input');
+
+        component.simulate('blur');
+
+        expect(defaultProps.handleBlur).toHaveBeenCalled();
+    });
+
+    it('calls `handleChange` on element change event', () => {
+        const component = findComponent(wrapper, 'component-input');
+
+        component.simulate('change');
+
+        expect(defaultProps.handleChange).toHaveBeenCalled();
+    });
+
     it('renders label text from props', () => {
         const label = 'Content text';
         const props = {
             handleChange: jest.fn(),
+            handleBlur: jest.fn(),
+            hasError: false,
             label,
         };
         const container = factory(Input, props);
