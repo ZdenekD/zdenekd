@@ -4,7 +4,6 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
 import Aside from '../../aside';
-import Cursor from '../../cursor';
 import Header from '../../header';
 import Content from '../../content';
 import Footer from '../../footer';
@@ -130,7 +129,6 @@ const Main = ({isAnimated, children}) => {
                 <Footer />
             </section>
             <Aside />
-            <Cursor />
         </>
     );
 };

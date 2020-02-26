@@ -8,11 +8,6 @@
     position: relative;
     overflow: hidden;
     border: calc(2 * var(--gutter)) solid var(--color-white);
-
-    &,
-    * {
-        cursor: none;
-    }
 }
 
 .curtain {

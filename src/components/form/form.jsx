@@ -3,6 +3,7 @@ import styles from './form.css';
 import Button from './button';
 import Input from './input';
 import Textarea from './textarea';
+import Modal from '../modal';
 import * as regex from '../../helpers/regex';
 
 const Form = () => {
@@ -26,11 +27,13 @@ const Form = () => {
     const [data, setData] = useState(initialState);
     const [error, setError] = useState(false);
     const [message, setMessage] = useState('');
+    const [isModalOpen, setModalOpen] = useState(false);
     const handleResponse = ({status}, text) => {
         setMessage(text);
 
         if (status === 200) {
             setData(initialState);
+            setModalOpen(true);
         }
     };
     const handleSubmit = async event => {
@@ -80,10 +83,11 @@ const Form = () => {
             },
         }));
     };
+    const handleClose = () => setModalOpen(false);
 
     return (
         <>
-            {message && <strong>{message}</strong>}
+            {message && <Modal content={message} isOpen={isModalOpen} handleClose={handleClose} />}
             <form onSubmit={handleSubmit} className={styles.form} data-test="component-form">
                 <div className={styles.row}>
                     <Input
