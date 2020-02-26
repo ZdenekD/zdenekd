@@ -6,6 +6,7 @@ import withRedux from 'next-redux-wrapper';
 import './_index.css';
 import styles from './_app.css';
 import initStore from '../store';
+import Cursor from '../components/cursor';
 import {handleAppAnimation} from '../store/app/actions';
 import {getPage} from '../helpers/getPage';
 
@@ -59,10 +60,11 @@ class Application extends App {
 
         return (
             <Provider store={store}>
-                <main className={`${styles.main} ${styles[page]}`}>
+                <main className={`${styles.main} ${styles[page]} main`}>
                     <Component {...pageProps} />
                     <i className={styles.curtain} ref={this.curtainRef}></i>
                 </main>
+                <Cursor />
             </Provider>
         );
     }
