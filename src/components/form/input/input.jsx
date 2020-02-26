@@ -2,7 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './input.css';
 
-const Input = ({handleChange, handleBlur, hasError, label, message, ...rest}) => (
+const Input = ({
+    handleChange,
+    handleBlur,
+    hasError,
+    label,
+    message,
+    ...rest
+}) => (
     <>
         <input
             id={label}

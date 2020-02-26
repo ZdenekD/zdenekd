@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import styles from './textarea.css';
 
-const Textarea = ({handleChange, handleBlur, hasError, label, message, ...rest}) => {
-    const onChange = event => {
-        const {target} = event;
-        const element = target;
+const Textarea = ({
+    handleChange,
+    handleBlur,
+    hasError,
+    label,
+    message,
+    ...rest
+}) => {
+    const textareaRef = useRef(null);
+    const handleHeight = () => {
+        if (textareaRef.current) {
+            const {current} = textareaRef;
 
-        if (element) {
-            element.style.height = '0';
-            element.style.height = `${target.scrollHeight}px`;
+            current.style.height = '0';
+            current.style.height = `${current.scrollHeight}px`;
         }
-
+    };
+    const onChange = event => {
+        handleHeight();
         handleChange(event);
     };
+
+    useEffect(() => {
+        handleHeight();
+    });
 
     return (
         <>
@@ -23,6 +36,7 @@ const Textarea = ({handleChange, handleBlur, hasError, label, message, ...rest})
                 onChange={onChange}
                 onBlur={handleBlur}
                 {...rest}
+                ref={textareaRef}
                 data-test="component-textarea"
             />
             <label htmlFor={label} className={`${styles.label} ${hasError ? styles.error : ''}`} data-test="component-label">
