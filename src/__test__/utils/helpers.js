@@ -15,15 +15,10 @@ export const getStore = state => applyMiddleware(...middlewares)(createStore)(re
  * @function setup
  * @param {ReactComponent} Component - React component to render with shallow
  * @param {Object} props - Component props specific to this setup
- * @param {Object} state - Initial state for setup
  * @returns {ShallowWrapper}
  */
-export const factory = (Component, props = {}, state = null) => {
+export const factory = (Component, props = {}) => {
     const wrapper = shallow(<Component {...props} />);
-
-    if (state) {
-        wrapper.setState(state);
-    }
 
     return wrapper;
 };
