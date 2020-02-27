@@ -42,6 +42,23 @@ exports[`Form match snapshot 1`] = `
       </span>
     </label>
   </div>
+  <div class="undefined undefined">
+    <input type="text"
+           id="Med"
+           class="undefined  "
+           name="med"
+           autocomplete="off"
+           data-test="component-input"
+    >
+    <label for="Med"
+           class="undefined "
+           data-test="component-label"
+    >
+      <span>
+        Med
+      </span>
+    </label>
+  </div>
   <div>
     <textarea id="Vzkaz"
               class="undefined  "
