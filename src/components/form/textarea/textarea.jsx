@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import styles from './textarea.css';
 
@@ -10,6 +10,7 @@ const Textarea = ({
     message,
     ...rest
 }) => {
+    const [length, setLength] = useState(0);
     const textareaRef = useRef(null);
     const handleHeight = () => {
         if (textareaRef.current) {
@@ -22,6 +23,7 @@ const Textarea = ({
     const onChange = event => {
         handleHeight();
         handleChange(event);
+        setLength(event.target.value.length);
     };
 
     useEffect(() => {
@@ -29,7 +31,10 @@ const Textarea = ({
     });
 
     return (
-        <>
+        <div className={styles.row}>
+            {rest.maxLength && (
+                <span className={`${styles.counter} ${length > 0 ? styles.edited : ''}`}>{length} / {rest.maxLength}</span>
+            )}
             <textarea
                 id={label}
                 className={`${styles.textarea} ${rest?.value?.length > 0 ? styles.value : ''} ${hasError ? styles.error : ''}`}
@@ -44,7 +49,7 @@ const Textarea = ({
                     {label} {hasError && <>{message}</>}
                 </span>
             </label>
-        </>
+        </div>
     );
 };
 

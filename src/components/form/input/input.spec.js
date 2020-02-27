@@ -41,7 +41,7 @@ describe('Input', () => {
     it('calls `handleChange` on element change event', () => {
         const component = findComponent(wrapper, 'component-input');
 
-        component.simulate('change');
+        component.simulate('change', {target: {value: 0}});
 
         expect(defaultProps.handleChange).toHaveBeenCalled();
     });

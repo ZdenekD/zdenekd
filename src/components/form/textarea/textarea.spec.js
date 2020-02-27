@@ -41,7 +41,7 @@ describe('Textarea', () => {
     it('calls `handleChange` on element change event', () => {
         const component = findComponent(wrapper, 'component-textarea');
 
-        component.simulate('change', {target: null});
+        component.simulate('change', {target: {value: 0}});
 
         expect(defaultProps.handleChange).toHaveBeenCalled();
     });

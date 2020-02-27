@@ -1,6 +1,10 @@
+.row {
+    composes: row from '../form.css';
+}
+
 .textarea {
     composes: input from '../input/input.css';
-    padding: 0;
+    padding: 0 var(--input-height) 0 0;
     resize: none;
 }
 
@@ -18,4 +22,12 @@
 
 .content {
     composes: content from '../input/input.css';
+}
+
+.counter {
+    composes: counter from '../input/input.css';
+}
+
+.edited {
+    composes: edited from '../input/input.css';
 }

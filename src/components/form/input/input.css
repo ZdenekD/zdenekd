@@ -1,3 +1,7 @@
+.row {
+    composes: row from '../form.css';
+}
+
 .input,
 .label {
     --label-color: var(--color-blue-lighten-2);
@@ -6,11 +10,12 @@
 }
 
 .input {
-    height: 60px;
+    height: var(--input-height);
+    padding-right: var(--input-height);
     overflow: hidden;
     color: var(--color-blue-darken-4);
     font-size: 2em;
-    line-height: 60px;
+    line-height: var(--input-height);
 
     &:focus {
 
@@ -51,7 +56,7 @@
 
 .label {
     position: absolute;
-    top: calc(100% - 60px);
+    top: calc(100% - var(--input-height));
     font-size: 1.5em;
     font-weight: bold;
     text-align: left;
@@ -74,4 +79,18 @@
     color: var(--color-blue-darken-4);
     transform-origin: 0 0;
     transition: transform .4s var(--ease-out-quart), color .4s var(--ease-out-quart);
+}
+
+.counter {
+    height: var(--input-height);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-light-gray);
+    line-height: var(--input-height);
+    text-align: right;
+}
+
+.edited {
+    color: var(--color-blue-lighten-2);
 }

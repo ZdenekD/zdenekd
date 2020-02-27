@@ -2,7 +2,10 @@
 
 exports[`Form match snapshot 1`] = `
 <form data-test="component-form">
-  <div>
+  <div class="undefined ">
+    <span class="undefined ">
+      0 / 32
+    </span>
     <input type="text"
            id="Jméno"
            class="undefined  "
@@ -22,7 +25,10 @@ exports[`Form match snapshot 1`] = `
       </span>
     </label>
   </div>
-  <div>
+  <div class="undefined ">
+    <span class="undefined ">
+      0 / 64
+    </span>
     <input type="email"
            id="E-mail"
            class="undefined  "
@@ -42,10 +48,9 @@ exports[`Form match snapshot 1`] = `
       </span>
     </label>
   </div>
-  <div class="undefined undefined">
+  <div class="undefined ">
     <input type="text"
            id="Med"
-           class="undefined  "
            name="med"
            autocomplete="off"
            data-test="component-input"
@@ -60,6 +65,9 @@ exports[`Form match snapshot 1`] = `
     </label>
   </div>
   <div>
+    <span class="undefined ">
+      0 / 140
+    </span>
     <textarea id="Vzkaz"
               class="undefined  "
               name="message"
