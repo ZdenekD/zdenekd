@@ -23,6 +23,11 @@ const Form = () => {
             hasError: false,
             message: ' obsahuje nepovolené znaky',
         },
+        med: {
+            value: '',
+            hasError: false,
+            message: '',
+        },
     };
     const [data, setData] = useState(initialState);
     const [error, setError] = useState(false);
@@ -40,8 +45,9 @@ const Form = () => {
         event.preventDefault();
 
         const hasError = !!Object.keys(data).find(item => data[item].hasError === true);
+        const isHoney = !!data.med.value;
 
-        if (!hasError) {
+        if (!hasError && !isHoney) {
             const map = Object.keys(data).map(item => ({[item]: data[item].value}));
             const input = Object.assign({}, ...map);
             const res = await fetch('/api/send', {
@@ -117,6 +123,16 @@ const Form = () => {
                         maxLength="64"
                         data-pattern="email"
                         required
+                    />
+                </div>
+                <div className={`${styles.row} ${styles.hidden}`}>
+                    <Input
+                        name="med"
+                        label="Med"
+                        type="text"
+                        hasError={data.med.hasError}
+                        handleChange={handleChange}
+                        autoComplete="off"
                     />
                 </div>
                 <div className={styles.row}>

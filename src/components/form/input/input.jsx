@@ -29,7 +29,7 @@ const Input = ({
 
 Input.propTypes = {
     handleChange: PropTypes.func.isRequired,
-    handleBlur: PropTypes.func.isRequired,
+    handleBlur: PropTypes.func,
     hasError: PropTypes.bool.isRequired,
     label: PropTypes.string.isRequired,
     message: PropTypes.string,
