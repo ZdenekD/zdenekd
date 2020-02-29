@@ -5,8 +5,8 @@ import styles from './modal.css';
 
 const Modal = ({
     content,
-    contentLabel,
-    className,
+    contentLabel = '',
+    className = '',
     isOpen,
     handleClose,
 }) => ((
@@ -34,11 +34,6 @@ Modal.propTypes = {
     className: PropTypes.string,
     isOpen: PropTypes.bool.isRequired,
     handleClose: PropTypes.func,
-};
-
-Modal.defaultProps = {
-    contentLabel: '',
-    className: '',
 };
 
 export default Modal;

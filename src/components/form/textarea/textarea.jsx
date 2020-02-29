@@ -7,7 +7,7 @@ const Textarea = ({
     handleBlur,
     hasError,
     label,
-    message,
+    message = '',
     ...rest
 }) => {
     const [length, setLength] = useState(0);
@@ -60,7 +60,5 @@ Textarea.propTypes = {
     label: PropTypes.string.isRequired,
     message: PropTypes.string,
 };
-
-Textarea.defaultProps = {message: ''};
 
 export default Textarea;

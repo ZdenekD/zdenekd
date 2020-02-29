@@ -7,7 +7,7 @@ const Input = ({
     handleBlur,
     hasError,
     label,
-    message,
+    message = '',
     ...rest
 }) => {
     const [length, setLength] = useState(0);
@@ -45,7 +45,5 @@ Input.propTypes = {
     label: PropTypes.string.isRequired,
     message: PropTypes.string,
 };
-
-Input.defaultProps = {message: ''};
 
 export default Input;
