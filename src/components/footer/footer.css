@@ -41,14 +41,6 @@
     }
 }
 
-.link {
-    margin-right: auto;
-    position: relative;
-    z-index: 1000;
-    color: var(--content-heading);
-    font-family: 'Roboto Mono', monospace;
-}
-
 .show {
 
     &::before,
