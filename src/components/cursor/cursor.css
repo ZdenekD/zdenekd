@@ -8,12 +8,13 @@
 }
 
 .outerCursor {
-    width: 32px;
-    height: 32px;
-    top: -16px;
-    left: -16px;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: -15px;
+    opacity: .4;
     background: var(--outer-cursor-background, transparent);
-    transition: transform .2s var(--ease-out-quart);
+    transition: transform .4s var(--ease-out-quart);
     border: 1px solid var(--outer-cursor-color, var(--color-blue-darken-4));
 }
 
