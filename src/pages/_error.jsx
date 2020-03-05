@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './_index.css';
 import Main from '../components/layout/main';
 
-const Error = ({statusCode}) => (
+const Error = ({statusCode = 404}) => (
     <Main data-test="component-error">
         <h2 data-test="component-status">{statusCode}</h2>
         <p>
@@ -19,7 +19,5 @@ Error.getInitialProps = ({res, err}) => {
 };
 
 Error.propTypes = {statusCode: PropTypes.number};
-
-Error.defaultProps = {statusCode: 404};
 
 export default Error;

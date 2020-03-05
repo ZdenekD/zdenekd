@@ -4,7 +4,6 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
 import Aside from '../../aside';
-import Cursor from '../../cursor';
 import Header from '../../header';
 import Content from '../../content';
 import Footer from '../../footer';
@@ -64,16 +63,8 @@ const Main = ({isAnimated, children}) => {
         (wheel > 0 ? handlePagePrev : handlePageNext)();
     };
     const handleKeyboard = event => {
-        const isDown = [
-            34,
-            35,
-            40,
-        ].includes(event.keyCode);
-        const isUp = [
-            33,
-            36,
-            38,
-        ].includes(event.keyCode);
+        const isDown = [34, 40].includes(event.keyCode);
+        const isUp = [33, 38].includes(event.keyCode);
 
         if (isAnimated) {
             return;
@@ -138,7 +129,6 @@ const Main = ({isAnimated, children}) => {
                 <Footer />
             </section>
             <Aside />
-            <Cursor />
         </>
     );
 };

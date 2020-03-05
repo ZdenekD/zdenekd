@@ -1,5 +1,6 @@
 @import '../assets/styles/reset.css';
 @import '../assets/styles/normalize.css';
+@import '../assets/styles/colors.css';
 @import '../assets/styles/variables.css';
 @import '../assets/styles/easing.css';
 @import '../assets/styles/transition.css';
@@ -18,6 +19,11 @@ body {
     font-size: var(--font-size, 13px);
     line-height: 1.4;
     font-weight: 400;
+
+    &,
+    * {
+        cursor: none;
+    }
 }
 
 strong {
