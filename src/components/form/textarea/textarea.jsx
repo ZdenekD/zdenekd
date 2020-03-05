@@ -23,12 +23,12 @@ const Textarea = ({
     const onChange = event => {
         handleHeight();
         handleChange(event);
-        setLength(event.target.value.length);
     };
 
     useEffect(() => {
         handleHeight();
-    });
+        setLength(rest.value?.length);
+    }, [rest.value]);
 
     return (
         <div className={styles.row}>

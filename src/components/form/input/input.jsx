@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import styles from './input.css';
 
@@ -11,10 +11,10 @@ const Input = ({
     ...rest
 }) => {
     const [length, setLength] = useState(0);
-    const onChange = event => {
-        handleChange(event);
-        setLength(event.target.value.length);
-    };
+
+    useEffect(() => {
+        setLength(rest.value?.length);
+    }, [rest.value]);
 
     return (
         <div className={`${styles.row} ${rest.className ? rest.className : ''}`}>
@@ -24,7 +24,7 @@ const Input = ({
             <input
                 id={label}
                 className={`${styles.input} ${rest?.value?.length > 0 ? styles.value : ''} ${hasError ? styles.error : ''}`}
-                onChange={onChange}
+                onChange={handleChange}
                 onBlur={handleBlur}
                 {...rest}
                 data-test="component-input"
