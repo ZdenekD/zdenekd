@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import useEventListener from '@use-it/event-listener';
+import {useStateValue} from '../../state';
 import styles from './cursor.css';
 
 const Cursor = () => {
@@ -7,19 +8,39 @@ const Cursor = () => {
     const animationRef = useRef(null);
     const innerCursorRef = useRef(null);
     const outerCursorRef = useRef(null);
-    const animate = ([coordX, coordY]) => {
-        innerCursorRef.current.style.transform = `translate(${coordX}px, ${coordY}px)`;
-        outerCursorRef.current.style.transform = `translate(${coordX}px, ${coordY}px)`;
+    const [{cursor}] = useStateValue();
+    const handleIsUnstuck = () => {
+        const [coordX, coordY] = coords;
+        const {style} = outerCursorRef.current;
+
+        style.transform = `translate3d(${coordX}px, ${coordY}px, 0)`;
+        style.width = '';
+        style.height = '';
+        style.borderRadius = '50%';
     };
-    const handleCursor = event => {
-        setCoords([event.clientX, event.clientY]);
+    const handleIsStuck = () => {
+        const {style} = outerCursorRef.current;
+        const {width, height, top, left} = cursor.props;
+
+        style.transform = `matrix(1, 0, 0, 1, ${left + 10}, ${top + 10})`;
+        style.width = `${width + 10}px`;
+        style.height = `${height + 10}px`;
+        style.borderRadius = '8px';
     };
-    const handleAnimate = () => animate(coords);
+    const animate = () => {
+        const [coordX, coordY] = coords;
+        const {style} = innerCursorRef.current;
+
+        style.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY})`;
+
+        (cursor.isStuck ? handleIsStuck : handleIsUnstuck)();
+    };
+    const handleCursor = event => setCoords([event.clientX, event.clientY]);
 
     useEventListener('mousemove', handleCursor);
 
     useEffect(() => {
-        animationRef.current = requestAnimationFrame(handleAnimate);
+        animationRef.current = requestAnimationFrame(() => animate());
 
         return () => cancelAnimationFrame(animationRef.current);
         // eslint-disable-next-line

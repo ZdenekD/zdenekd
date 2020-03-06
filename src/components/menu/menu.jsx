@@ -1,9 +1,12 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styles from './menu.css';
+import useHover from '../../hooks/hover';
 
 const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
+    const [, setPrepared] = useState(false);
+    const buttonRef = useRef(null);
     const pathTopRef = useRef(null);
     const pathMiddleRef = useRef(null);
     const pathBottomRef = useRef(null);
@@ -70,6 +73,12 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
         }
     });
 
+    useEffect(() => {
+        setPrepared(true);
+    }, []);
+
+    useHover(buttonRef.current);
+
     return (
         <button
             type="button"
@@ -78,6 +87,7 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
             disabled={isAnimated}
             data-test="component-menu"
             aria-label="Menu"
+            ref={buttonRef}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
                 <path d="M30,40 L70,40 Z" ref={pathTopRef}></path>

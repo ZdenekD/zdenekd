@@ -14,7 +14,7 @@
     left: -15px;
     opacity: .4;
     background: var(--outer-cursor-background, transparent);
-    transition: transform .4s var(--ease-out-quart);
+    transition: all .2s var(--ease-out-quart);
     border: 1px solid var(--outer-cursor-color, var(--color-blue-darken-4));
 }
 
