@@ -41,7 +41,7 @@ class Application extends App {
                     const {isAnimated} = store.getState().app;
 
                     if (!isAnimated) {
-                        dispatch(handleAppAnimation(true));
+                        dispatch(handleAppAnimation({isAnimated: true}));
                     }
                 },
             })
@@ -49,7 +49,7 @@ class Application extends App {
                 duration: 800,
                 translateY: [0, '100%'],
                 complete() {
-                    dispatch(handleAppAnimation(false));
+                    dispatch(handleAppAnimation({isAnimated: false}));
                 },
             }, '-=200');
     }

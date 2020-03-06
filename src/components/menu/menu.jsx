@@ -59,8 +59,8 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     };
     const handleClick = () => {
         if (!isAnimated) {
-            handleMenu(!isOpen);
-            handleMenuAnimation(true);
+            handleMenu({isOpen: !isOpen});
+            handleMenuAnimation({isAnimated: true});
         }
     };
 

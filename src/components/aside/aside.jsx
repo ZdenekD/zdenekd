@@ -32,7 +32,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 translateY: ['-5vh', 0],
                 easing: 'easeOutCubic',
                 complete() {
-                    handleMenuAnimation(false);
+                    handleMenuAnimation({isAnimated: false});
                 },
             }, '-=400');
     };
@@ -49,7 +49,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 translateY: [0, '5vh'],
                 easing: 'easeOutCubic',
                 begin() {
-                    handleAppAnimation(true);
+                    handleAppAnimation({isAnimated: true});
                 },
             })
             .add({
@@ -59,10 +59,10 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 translateY: [0, '-100%'],
                 easing: 'easeOutCubic',
                 complete() {
-                    handleMenuAnimation(false);
+                    handleMenuAnimation({isAnimated: false});
 
                     if (!href) {
-                        handleAppAnimation(false);
+                        handleAppAnimation({isAnimated: false});
                     }
 
                     if (href) {
@@ -75,8 +75,8 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
     const handleClick = event => {
         event.preventDefault();
 
-        handleMenu(false);
-        handleMenuAnimation(true);
+        handleMenu({isOpen: false});
+        handleMenuAnimation({isAnimated: true});
         setHref(event.target.getAttribute('href'));
     };
     const handleMouse = event => {

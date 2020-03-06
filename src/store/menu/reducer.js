@@ -10,12 +10,12 @@ export default (state = initialState, action) => {
         case MENU_IS_OPEN:
             return ({
                 ...state,
-                isOpen: action.payload,
+                ...action.payload,
             });
         case MENU_IS_ANIMATED:
             return ({
                 ...state,
-                isAnimated: action.payload,
+                ...action.payload,
             });
         default:
             return state;
