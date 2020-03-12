@@ -1,4 +1,4 @@
-const CURSOR_STICK = 'CURSOR_STICK';
+import {CURSOR_STICK} from './actions';
 
 export const initialState = {
     cursor: {

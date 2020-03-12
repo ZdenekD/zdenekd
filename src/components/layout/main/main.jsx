@@ -5,7 +5,6 @@ import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
 import {StateProvider} from '../../../state';
 import reducer from '../../../state/reducer';
-import {initialState} from '../../../state/cursor/reducer';
 import Aside from '../../aside';
 import Cursor from '../../cursor';
 import Header from '../../header';
@@ -125,7 +124,7 @@ const Main = ({isAnimated, children}) => {
                 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
-            <StateProvider initialState={initialState} reducer={reducer}>
+            <StateProvider reducer={reducer}>
                 <>
                     <section className={styles.section}>
                         <Header />
