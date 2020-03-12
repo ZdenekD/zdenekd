@@ -95,6 +95,7 @@
         display: block;
         position: relative;
         background: var(--key-background);
+        transition: all .4s var(--ease-out-quart);
         border-radius: var(--border-radius);
 
         &::before {
@@ -120,10 +121,20 @@
     align-self: center;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 .keyUp {
     margin: 0 auto;
     align-self: flex-start;
     opacity: var(--key-up-opacity, 1);
+
+    &:focus,
+    &:hover {
+        --arrow-color: var(--key-background);
+        background-color: var(--color-blue-darken-4);
+    }
 
     &::before {
         border-right: 4px solid transparent;
@@ -131,7 +142,7 @@
         border-left: 4px solid transparent;
     }
 
-    .key[disabled] & {
+    .disabled & {
         --key-up-opacity: .25;
     }
 }
@@ -155,13 +166,19 @@
 .keyDown {
     opacity: var(--key-down-opacity, 1);
 
+    &:focus,
+    &:hover {
+        --arrow-color: var(--key-background);
+        background-color: var(--color-blue-darken-4);
+    }
+
     &::before {
         border-top: 4px solid var(--arrow-color);
         border-right: 4px solid transparent;
         border-left: 4px solid transparent;
     }
 
-    .key[disabled] & {
+    .disabled & {
         --key-down-opacity: .25;
     }
 }

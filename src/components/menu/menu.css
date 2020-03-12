@@ -29,3 +29,7 @@
         transition: var(--header-transition-active);
     }
 }
+
+.disabled {
+    pointer-events: none;
+}

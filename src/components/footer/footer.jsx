@@ -12,17 +12,19 @@ const Footer = ({isOpen, isAnimated}) => {
     const keyUpRef = useRef(null);
     const keyDownRef = useRef(null);
     const router = useRouter();
-    const index = getPageIndex(router.route);
     const pages = Object.keys(data);
+    const index = getPageIndex(router.route);
+    const minIndex = 0;
+    const maxIndex = pages.length - 1;
     const year = new Date().getFullYear();
     const date = getRoman(year);
     const handleKeyUp = () => {
-        if (index - 1 >= 0) {
+        if (index - 1 >= minIndex) {
             router.push(data[pages[index - 1]].link);
         }
     };
     const handleKeyDown = () => {
-        if (index + 1 <= pages.length - 1) {
+        if (index + 1 <= maxIndex) {
             router.push(data[pages[index + 1]].link);
         }
     };
@@ -42,12 +44,12 @@ const Footer = ({isOpen, isAnimated}) => {
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
             <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
-                <button type="button" className={styles.key} onClick={handleKeyUp} disabled={index === 0}>
+                <button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp}>
                     <i className={styles.keyUp} ref={keyUpRef}></i>
                 </button>
                 <span className={styles.key}>
                     <i className={styles.keyLeft}></i>
-                    <button type="button" className={styles.key} onClick={handleKeyDown} disabled={index === pages.length - 1}>
+                    <button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown}>
                         <i className={styles.keyDown} ref={keyDownRef}></i>
                     </button>
                     <i className={styles.keyRight}></i>

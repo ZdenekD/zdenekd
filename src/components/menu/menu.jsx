@@ -82,9 +82,8 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     return (
         <button
             type="button"
-            className={`${styles.button} ${isOpen ? styles.active : ''}`}
+            className={`${styles.button} ${isOpen ? styles.active : ''} ${isAnimated ? styles.disabled : ''}`}
             onClick={handleClick}
-            disabled={isAnimated}
             data-test="component-menu"
             aria-label="Menu"
             ref={buttonRef}

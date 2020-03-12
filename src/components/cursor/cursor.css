@@ -30,3 +30,17 @@
     left: -4px;
     background: var(--cursor-color);
 }
+
+.outerStuck,
+.innerStuck {
+    border: var(--cursor-border) solid var(--cursor-stuck-color, var(--color-blue-darken-4));
+}
+
+.innerStuck {
+    background: var(--cursor-stuck-color, var(--color-blue-darken-4));
+}
+
+.outerStuck {
+    --cursor-border: 2px;
+    --cursor-radius: 8px;
+}
