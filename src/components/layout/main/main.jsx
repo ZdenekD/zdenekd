@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
+import {StateProvider} from '../../../state';
+import reducer from '../../../state/reducer';
 import Aside from '../../aside';
+import Cursor from '../../cursor';
 import Header from '../../header';
 import Content from '../../content';
 import Footer from '../../footer';
@@ -121,14 +124,19 @@ const Main = ({isAnimated, children}) => {
                 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
-            <section className={styles.section}>
-                <Header />
-                {!isAnimated && (
-                    <Content content={children} />
-                )}
-                <Footer />
-            </section>
-            <Aside />
+            <StateProvider reducer={reducer}>
+                <>
+                    <section className={styles.section}>
+                        <Header />
+                        {!isAnimated && (
+                            <Content content={children} />
+                        )}
+                        <Footer />
+                    </section>
+                    <Aside />
+                    <Cursor />
+                </>
+            </StateProvider>
         </>
     );
 };

@@ -6,7 +6,6 @@ import withRedux from 'next-redux-wrapper';
 import './_index.css';
 import styles from './_app.css';
 import initStore from '../store';
-import Cursor from '../components/cursor';
 import {handleAppAnimation} from '../store/app/actions';
 import {getPage} from '../helpers/getPage';
 
@@ -41,7 +40,7 @@ class Application extends App {
                     const {isAnimated} = store.getState().app;
 
                     if (!isAnimated) {
-                        dispatch(handleAppAnimation(true));
+                        dispatch(handleAppAnimation({isAnimated: true}));
                     }
                 },
             })
@@ -49,7 +48,7 @@ class Application extends App {
                 duration: 800,
                 translateY: [0, '100%'],
                 complete() {
-                    dispatch(handleAppAnimation(false));
+                    dispatch(handleAppAnimation({isAnimated: false}));
                 },
             }, '-=200');
     }
@@ -64,7 +63,6 @@ class Application extends App {
                     <Component {...pageProps} />
                     <i className={styles.curtain} ref={this.curtainRef}></i>
                 </main>
-                <Cursor />
             </Provider>
         );
     }

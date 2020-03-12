@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
         case APP_IS_ANIMATED:
             return ({
                 ...state,
-                isAnimated: action.payload,
+                ...action.payload,
             });
         default:
             return state;

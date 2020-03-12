@@ -6,13 +6,12 @@ describe('App', () => {
 
     it('handle app animation action', () => {
         const store = getStore(initialState);
-        const value = true;
-        const expected = {isAnimated: value};
+        const value = {isAnimated: true};
 
         store.dispatch(handleAppAnimation(value));
 
-        const state = store.getState().app;
+        const {app} = store.getState();
 
-        expect(state).toEqual(expected);
+        expect(app).toEqual(value);
     });
 });

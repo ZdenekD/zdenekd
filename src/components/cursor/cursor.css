@@ -1,5 +1,10 @@
 .outerCursor,
 .innerCursor {
+    --cursor-color: var(--color-blue-darken-4);
+    --cursor-border: 1px;
+    --cursor-radius: 50%;
+    --cursor-width: 30px;
+    --cursor-height: 30px;
     display: block;
     position: fixed;
     z-index: var(--zindex-cursor);
@@ -8,14 +13,14 @@
 }
 
 .outerCursor {
-    width: 30px;
-    height: 30px;
+    width: var(--cursor-width);
+    height: var(--cursor-height);
     top: -15px;
     left: -15px;
     opacity: .4;
-    background: var(--outer-cursor-background, transparent);
-    transition: transform .4s var(--ease-out-quart);
-    border: 1px solid var(--outer-cursor-color, var(--color-blue-darken-4));
+    transition: all .2s var(--ease-out-quart);
+    border-radius: var(--cursor-radius);
+    border: var(--cursor-border) solid var(--cursor-color);
 }
 
 .innerCursor {
@@ -23,5 +28,5 @@
     height: 8px;
     top: -4px;
     left: -4px;
-    background: var(--cursor-color, var(--color-blue-darken-4));
+    background: var(--cursor-color);
 }
