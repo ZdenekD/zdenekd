@@ -11,31 +11,29 @@ describe('Menu', () => {
 
     it('handle toggle menu action', () => {
         const store = getStore(initialState);
-        const value = true;
-        const expected = {
-            isOpen: value,
+        const value = {
+            isOpen: true,
             isAnimated: false,
         };
 
         store.dispatch(toggleMenu(value));
 
-        const state = store.getState().menu;
+        const {menu} = store.getState();
 
-        expect(state).toEqual(expected);
+        expect(menu).toEqual(value);
     });
 
     it('handle menu animation action', () => {
         const store = getStore(initialState);
-        const value = true;
-        const expected = {
+        const value = {
             isOpen: false,
-            isAnimated: value,
+            isAnimated: true,
         };
 
         store.dispatch(handleMenuAnimation(value));
 
-        const state = store.getState().menu;
+        const {menu} = store.getState();
 
-        expect(state).toEqual(expected);
+        expect(menu).toEqual(value);
     });
 });

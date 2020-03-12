@@ -1,8 +1,8 @@
 .button {
     line-height: 0;
+    border-radius: 50%;
 
     &[disabled] {
-        cursor: not-allowed;
         pointer-events: none;
     }
 }
@@ -10,9 +10,8 @@
 .icon {
     width: 80px;
     height: 80px;
-    cursor: pointer;
     fill: none;
-    stroke: var(--navigation-color);
+    stroke: var(--navigation-color, var(--color-blue-darken-4));
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -29,4 +28,8 @@
         --navigation-color: var(--navigation-color-active);
         transition: var(--header-transition-active);
     }
+}
+
+.disabled {
+    pointer-events: none;
 }

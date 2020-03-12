@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
+import {StateProvider} from '../../../state';
+import reducer from '../../../state/reducer';
 import Aside from '../../aside';
+import Cursor from '../../cursor';
 import Header from '../../header';
 import Content from '../../content';
 import Footer from '../../footer';
@@ -27,18 +30,14 @@ const Main = ({isAnimated, children}) => {
             return;
         }
 
-        const current = index - 1;
-
-        router.push(data[pages[current]].link);
+        router.push(data[pages[index - 1]].link);
     };
     const handlePageNext = () => {
         if (isAnimated || index + 1 > maxIndex) {
             return;
         }
 
-        const current = index + 1;
-
-        router.push(data[pages[current]].link);
+        router.push(data[pages[index + 1]].link);
     };
     const handleScroll = event => {
         event.stopPropagation();
@@ -63,16 +62,8 @@ const Main = ({isAnimated, children}) => {
         (wheel > 0 ? handlePagePrev : handlePageNext)();
     };
     const handleKeyboard = event => {
-        const isDown = [
-            34,
-            35,
-            40,
-        ].includes(event.keyCode);
-        const isUp = [
-            33,
-            36,
-            38,
-        ].includes(event.keyCode);
+        const isDown = [34, 40].includes(event.keyCode);
+        const isUp = [33, 38].includes(event.keyCode);
 
         if (isAnimated) {
             return;
@@ -129,14 +120,19 @@ const Main = ({isAnimated, children}) => {
                 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
-            <section className={styles.section}>
-                <Header />
-                {!isAnimated && (
-                    <Content content={children} />
-                )}
-                <Footer />
-            </section>
-            <Aside />
+            <StateProvider reducer={reducer}>
+                <>
+                    <section className={styles.section}>
+                        <Header />
+                        {!isAnimated && (
+                            <Content content={children} />
+                        )}
+                        <Footer />
+                    </section>
+                    <Aside />
+                    <Cursor />
+                </>
+            </StateProvider>
         </>
     );
 };

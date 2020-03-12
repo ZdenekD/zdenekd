@@ -3,19 +3,32 @@ import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import styles from './footer.css';
 import data from '../../data/pages';
+import useHover from '../../hooks/hover';
 import getRoman from '../../helpers/getRoman';
-import {getPage} from '../../helpers/getPage';
+import {getPageIndex} from '../../helpers/getPage';
 
 const Footer = ({isOpen, isAnimated}) => {
     const dotRef = useRef(null);
+    const keyUpRef = useRef(null);
+    const keyDownRef = useRef(null);
     const router = useRouter();
-    const page = getPage(router.route);
     const pages = Object.keys(data);
+    const index = getPageIndex(router.route);
+    const minIndex = 0;
+    const maxIndex = pages.length - 1;
     const year = new Date().getFullYear();
     const date = getRoman(year);
+    const handleKeyUp = () => {
+        if (index - 1 >= minIndex) {
+            router.push(data[pages[index - 1]].link);
+        }
+    };
+    const handleKeyDown = () => {
+        if (index + 1 <= maxIndex) {
+            router.push(data[pages[index + 1]].link);
+        }
+    };
     const handleDot = () => {
-        const index = pages.findIndex(item => item === page);
-
         dotRef.current.style.setProperty('--dot-transform', `calc(${index} * var(--gutter))`);
         dotRef.current.style.setProperty('--dot-opacity', '1');
     };
@@ -24,19 +37,24 @@ const Footer = ({isOpen, isAnimated}) => {
         handleDot();
     });
 
+    useHover(keyUpRef.current);
+    useHover(keyDownRef.current);
+
     return (
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
-            <span className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
-                <span className={styles.key}>
-                    <i className={styles.keyUp}></i>
-                </span>
+            <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
+                <button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp}>
+                    <i className={styles.keyUp} ref={keyUpRef}></i>
+                </button>
                 <span className={styles.key}>
                     <i className={styles.keyLeft}></i>
-                    <i className={styles.keyDown}></i>
+                    <button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown}>
+                        <i className={styles.keyDown} ref={keyDownRef}></i>
+                    </button>
                     <i className={styles.keyRight}></i>
                 </span>
-            </span>
+            </div>
             <span className={styles.scroll}>
                 Scroll
                 <i className={styles.dot} ref={dotRef}></i>

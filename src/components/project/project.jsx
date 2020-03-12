@@ -1,12 +1,18 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import useEventListener from '@use-it/event-listener';
 import projects from '../../data/projects';
 import styles from './project.css';
+import Icon from '../../assets/images/icon_open.svg';
+import useHover from '../../hooks/hover';
 
 const Project = () => {
     const [index, setIndex] = useState(0);
     const [project, setProject] = useState(projects[Object.keys(projects)[0]]);
+    const [, setPrepared] = useState(false);
     const videoRef = useRef(null);
+    const buttonBackRef = useRef(null);
+    const buttonNextRef = useRef(null);
+    const buttonLinkRef = useRef(null);
     const minIndex = 0;
     const maxIndex = Object.keys(projects).length - 1;
     const handleProjectPrev = () => {
@@ -49,6 +55,14 @@ const Project = () => {
 
     useEventListener('keydown', handleKeyboard);
 
+    useEffect(() => {
+        setPrepared(true);
+    }, []);
+
+    useHover(buttonBackRef.current);
+    useHover(buttonNextRef.current);
+    useHover(buttonLinkRef.current);
+
     return (
         <>
             <div className={styles.content}>
@@ -65,12 +79,17 @@ const Project = () => {
                         <li className={styles.browserControl}></li>
                     </ul>
                     <div className={styles.browserHistory}>
-                        <button type="button" className={styles.browserBack} onClick={handleProjectPrev}></button>
-                        <button type="button" className={styles.browserNext} onClick={handleProjectNext}></button>
+                        <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef}></button>
+                        <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef}></button>
                     </div>
                     <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
                         {project.url}
                     </span>
+                    <div className={styles.browserTarget}>
+                        <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
+                            <Icon className={styles.icon} />
+                        </a>
+                    </div>
                 </div>
                 <div className={styles.browserContent}>
                     <video

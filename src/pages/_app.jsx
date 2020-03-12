@@ -26,7 +26,7 @@ class Application extends App {
 
     componentDidUpdate() {
         const {store} = this.props;
-        const {dispatch} = this.props.store;
+        const {dispatch} = store;
 
         anime
             .timeline({
@@ -40,7 +40,7 @@ class Application extends App {
                     const {isAnimated} = store.getState().app;
 
                     if (!isAnimated) {
-                        dispatch(handleAppAnimation(true));
+                        dispatch(handleAppAnimation({isAnimated: true}));
                     }
                 },
             })
@@ -48,7 +48,7 @@ class Application extends App {
                 duration: 800,
                 translateY: [0, '100%'],
                 complete() {
-                    dispatch(handleAppAnimation(false));
+                    dispatch(handleAppAnimation({isAnimated: false}));
                 },
             }, '-=200');
     }
@@ -59,9 +59,9 @@ class Application extends App {
 
         return (
             <Provider store={store}>
-                <main className={`${styles.main} ${styles[page]}`}>
-                    <i className={styles.curtain} ref={this.curtainRef}></i>
+                <main className={`${styles.main} ${styles[page]} main`}>
                     <Component {...pageProps} />
+                    <i className={styles.curtain} ref={this.curtainRef}></i>
                 </main>
             </Provider>
         );
