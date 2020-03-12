@@ -26,7 +26,7 @@ class Application extends App {
 
     componentDidUpdate() {
         const {store} = this.props;
-        const {dispatch} = this.props.store;
+        const {dispatch} = store;
 
         anime
             .timeline({

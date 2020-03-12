@@ -117,6 +117,7 @@
 
 .key {
     display: flex;
+    align-self: center;
 }
 
 .keyUp {
@@ -128,6 +129,10 @@
         border-right: 4px solid transparent;
         border-bottom: 4px solid var(--arrow-color);
         border-left: 4px solid transparent;
+    }
+
+    .key[disabled] & {
+        --key-up-opacity: .25;
     }
 }
 
@@ -154,6 +159,10 @@
         border-top: 4px solid var(--arrow-color);
         border-right: 4px solid transparent;
         border-left: 4px solid transparent;
+    }
+
+    .key[disabled] & {
+        --key-down-opacity: .25;
     }
 }
 

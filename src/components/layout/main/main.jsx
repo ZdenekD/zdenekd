@@ -30,18 +30,14 @@ const Main = ({isAnimated, children}) => {
             return;
         }
 
-        const current = index - 1;
-
-        router.push(data[pages[current]].link);
+        router.push(data[pages[index - 1]].link);
     };
     const handlePageNext = () => {
         if (isAnimated || index + 1 > maxIndex) {
             return;
         }
 
-        const current = index + 1;
-
-        router.push(data[pages[current]].link);
+        router.push(data[pages[index + 1]].link);
     };
     const handleScroll = event => {
         event.stopPropagation();
