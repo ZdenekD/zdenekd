@@ -11,28 +11,36 @@ const Cursor = () => {
     const [{cursor}] = useStateValue();
     const handleIsUnstuck = () => {
         const [coordX, coordY] = coords;
-        const {style} = outerCursorRef.current;
+        const {style: outer} = outerCursorRef.current;
+        const {style: inner} = innerCursorRef.current;
+        const color = getComputedStyle(document.documentElement, null).getPropertyValue('--color-blue-darken-4');
 
-        style.transform = `translate3d(${coordX}px, ${coordY}px, 0)`;
-        style.width = '';
-        style.height = '';
-        style.borderRadius = '50%';
+        outer.transform = `translate3d(${coordX}px, ${coordY}px, 0)`;
+        outer.setProperty('--cursor-width', '30px');
+        outer.setProperty('--cursor-height', '30px');
+        outer.setProperty('--cursor-radius', '50%');
+        outer.setProperty('--cursor-color', color);
+        outer.setProperty('--cursor-border', '1px');
+        inner.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY}) scale(1)`;
+        inner.setProperty('--cursor-color', color);
     };
     const handleIsStuck = () => {
-        const {style} = outerCursorRef.current;
+        const [coordX, coordY] = coords;
+        const {style: outer} = outerCursorRef.current;
+        const {style: inner} = innerCursorRef.current;
         const {width, height, top, left} = cursor.props;
+        const color = getComputedStyle(document.documentElement, null).getPropertyValue('--color-red');
 
-        style.transform = `matrix(1, 0, 0, 1, ${left + 10}, ${top + 10})`;
-        style.width = `${width + 10}px`;
-        style.height = `${height + 10}px`;
-        style.borderRadius = '8px';
+        outer.transform = `matrix(1, 0, 0, 1, ${left + 10}, ${top + 10})`;
+        outer.setProperty('--cursor-width', `${width + 10}px`);
+        outer.setProperty('--cursor-height', `${height + 10}px`);
+        outer.setProperty('--cursor-color', color);
+        outer.setProperty('--cursor-radius', '8px');
+        outer.setProperty('--cursor-border', '2px');
+        inner.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY}) scale(1.3)`;
+        inner.setProperty('--cursor-color', color);
     };
     const animate = () => {
-        const [coordX, coordY] = coords;
-        const {style} = innerCursorRef.current;
-
-        style.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY})`;
-
         (cursor.isStuck ? handleIsStuck : handleIsUnstuck)();
     };
     const handleCursor = event => setCoords([event.clientX, event.clientY]);
