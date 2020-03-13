@@ -1,8 +1,10 @@
 import React, {useState, useRef, useEffect} from 'react';
 import useEventListener from '@use-it/event-listener';
+import anime from 'animejs';
 import projects from '../../data/projects';
 import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
+import Logo from '../../assets/images/logo.svg';
 import useHover from '../../hooks/hover';
 
 const Project = () => {
@@ -13,8 +15,10 @@ const Project = () => {
     const buttonBackRef = useRef(null);
     const buttonNextRef = useRef(null);
     const buttonLinkRef = useRef(null);
+    const animation = useRef(null);
     const minIndex = 0;
     const maxIndex = Object.keys(projects).length - 1;
+    let coords = [0, 0];
     const handleProjectPrev = () => {
         if (index - 1 < minIndex) {
             return;
@@ -22,12 +26,32 @@ const Project = () => {
 
         const {current: video} = videoRef;
 
-        video.pause();
+        animation.current = anime
+            .timeline({easing: 'easeOutCubic'})
+            .add({
+                targets: video,
+                duration: 600,
+                opacity: [1, 0],
+                translateX: [0, '100%'],
+                begin() {
+                    video.pause();
+                },
+                complete() {
+                    setIndex(index - 1);
+                    setProject(projects[Object.keys(projects)[index - 1]]);
 
-        setIndex(index - 1);
-        setProject(projects[Object.keys(projects)[index - 1]]);
+                    videoRef.current.load();
+                },
+            })
+            .add({
+                targets: videoRef.current,
+                duration: 800,
+                delay: 400,
+                opacity: [0, 1],
+                translateX: ['-100%', 0],
+            });
 
-        video.load();
+        animation.current.play();
     };
     const handleProjectNext = () => {
         if (index + 1 > maxIndex) {
@@ -36,12 +60,32 @@ const Project = () => {
 
         const {current: video} = videoRef;
 
-        video.pause();
+        animation.current = anime
+            .timeline({easing: 'easeOutCubic'})
+            .add({
+                targets: video,
+                duration: 600,
+                opacity: [1, 0],
+                translateX: [0, '-100%'],
+                begin() {
+                    video.pause();
+                },
+                complete() {
+                    setIndex(index + 1);
+                    setProject(projects[Object.keys(projects)[index + 1]]);
 
-        setIndex(index + 1);
-        setProject(projects[Object.keys(projects)[index + 1]]);
+                    videoRef.current.load();
+                },
+            })
+            .add({
+                targets: videoRef.current,
+                duration: 800,
+                delay: 400,
+                opacity: [0, 1],
+                translateX: ['100%', 0],
+            });
 
-        video.load();
+        animation.current.play();
     };
     const handleKeyboard = event => {
         if (event.keyCode === 37) {
@@ -52,11 +96,45 @@ const Project = () => {
             handleProjectNext();
         }
     };
+    const handleTouchStart = event => {
+        const touches = [event.touches[0].clientX, event.touches[0].clientY];
+
+        coords = [...touches];
+    };
+    const handleTouchMove = event => {
+        const {clientX, clientY} = event.touches[0];
+        const [xDown, yDown] = coords;
+
+        if (!xDown || !yDown) {
+            return;
+        }
+
+        const xUp = clientX;
+        const yUp = clientY;
+        const xDiff = xDown - xUp;
+        const yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) < Math.abs(yDiff)) {
+            return;
+        }
+
+        (xDiff < 0 ? handleProjectPrev : handleProjectNext)();
+
+        coords = [0, 0];
+    };
 
     useEventListener('keydown', handleKeyboard);
+    useEventListener('touchstart', handleTouchStart, videoRef.current);
+    useEventListener('touchmove', handleTouchMove, videoRef.current);
 
     useEffect(() => {
         setPrepared(true);
+
+        return () => {
+            if (animation.current) {
+                animation.current.pause();
+            }
+        };
     }, []);
 
     useHover(buttonBackRef.current);
@@ -64,7 +142,7 @@ const Project = () => {
     useHover(buttonLinkRef.current);
 
     return (
-        <div className="animated-block">
+        <div className={`${styles.block} animated-block`}>
             <div className={styles.content}>
                 <h3 className={styles.title}>{project.title}</h3>
                 <p>
@@ -106,6 +184,7 @@ const Project = () => {
                         <track kind="description" label={project.title} />
                         <source src={`/${project.id}.mp4`} type="video/mp4" />
                     </video>
+                    <Logo className={styles.logo} />
                 </div>
             </div>
         </div>
