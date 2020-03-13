@@ -29,7 +29,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                     return (index * 200);
                 },
                 opacity: [0, 1],
-                translateY: ['-5vh', 0],
+                translateY: ['-10vh', 0],
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation({isAnimated: false});

@@ -64,7 +64,7 @@ const Project = () => {
     useHover(buttonLinkRef.current);
 
     return (
-        <>
+        <div className="animated-block">
             <div className={styles.content}>
                 <h3 className={styles.title}>{project.title}</h3>
                 <p>
@@ -108,7 +108,7 @@ const Project = () => {
                     </video>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
