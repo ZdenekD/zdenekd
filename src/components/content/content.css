@@ -1,7 +1,7 @@
 @keyframes line {
     0% {
         opacity: 0;
-        transform: translateX(50vw) scaleX(5);
+        transform: translateX(50vw) scaleX(8);
     }
 
     1% {
