@@ -74,7 +74,6 @@
     transform: rotate(-90deg) translate(calc(2 * var(--shadow-y)), calc(.5 * var(--shadow-x)));
     transform-origin: left center;
     transition: var(--shadow-transition);
-    animation: fade-in 2s var(--ease-in-cubic) forwards;
 
     &::before {
         width: 20px;

@@ -43,7 +43,7 @@
             left: 0;
             content: '';
             opacity: 0;
-            background: var(--content-heading);
+            background: linear-gradient(90deg, var(--content-heading-admit), var(--content-heading));
             transform-origin: left center;
             animation: line-in .2s var(--ease-out-quad) .4s forwards;
         }

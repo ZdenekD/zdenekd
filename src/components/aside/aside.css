@@ -72,7 +72,7 @@
         transition: color .4s var(--ease-in-out-expo);
 
         &::after {
-            animation: line-in .25s var(--ease-out-quad) forwards;
+            animation: line-in .25s var(--ease-out-quad) both;
         }
     }
 
@@ -88,7 +88,7 @@
         background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
         transform-origin: left center;
         will-change: opacity, transform;
-        animation: line-out .25s var(--ease-out-quad) forwards;
+        animation: line-out .25s var(--ease-out-quad) both;
     }
 }
 

@@ -144,10 +144,21 @@ const Project = () => {
     return (
         <div className={`${styles.block} animated-block`}>
             <div className={styles.content}>
-                <h3 className={styles.title}>{project.title}</h3>
-                <p>
-                    {project.description}
-                </p>
+                <div className="animated-block">
+                    <h3 className={styles.title} data-title={project.title}>{project.title}</h3>
+                </div>
+                <div className="animated-block">
+                    <p className={styles.description} data-title={project.description}>
+                        {project.description}
+                    </p>
+                </div>
+                <div className="animated-block">
+                    <ul className={styles.tools}>
+                        {project.tools.map(item => (
+                            <li key={item} className={styles.tool}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
             <div className={styles.browser} data-test="component-project">
                 <div className={styles.browserHeader}>
@@ -164,9 +175,11 @@ const Project = () => {
                         {project.url}
                     </span>
                     <div className={styles.browserTarget}>
-                        <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
-                            <Icon className={styles.icon} />
-                        </a>
+                        {!/localhost$/.test(project.url) && (
+                            <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
+                                <Icon className={styles.icon} />
+                            </a>
+                        )}
                     </div>
                 </div>
                 <div className={styles.browserContent}>

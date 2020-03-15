@@ -2,11 +2,43 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.content {
+    width: 40%;
+    padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) 0 0;
+    color: var(--navigation-color);
+}
+
+.title,
+.description {
+    margin-bottom: var(--gutter);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        z-index: -1;
+        content: attr(data-title);
+        color: var(--curtain-color);
+        transform: translate(var(--shadow-x), var(--shadow-y));
+        transition: var(--shadow-transition);
+    }
+}
+
+.title {
+    font-size: 2.4em;
+}
+
+.description {
+    max-width: 75%;
+    font-size: 1.4em;
 }
 
 .browser {
-    width: 60vw;
+    width: 60%;
     max-width: 900px;
     max-height: 50vh;
     margin: calc(2 * var(--gutter)) calc(2 * var(--gutter)) 0 auto;
