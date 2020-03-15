@@ -2,6 +2,8 @@
     --gutter: 1em;
     --max-container-width: 1800px;
     --input-height: 60px;
+    --shadow-x: 0;
+    --shadow-y: 0;
     --zindex-aside: 100;
     --zindex-header: 110;
     --zindex-modal: 200;

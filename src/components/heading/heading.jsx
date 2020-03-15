@@ -27,6 +27,7 @@ const Heading = ({isOpen, isAnimated}) => {
                 <h1 className={styles.heading} data-test="component-heading" ref={headingRef}>
                     <span className="_visuallyhidden" data-test="component-title">{`${title} | ZdenekD`}</span>
                     <Logo className={`${styles.logo} ${isOpen ? styles.active : ''}`} />
+                    <i className={`${styles.shadow} ${isOpen ? styles.shadowActive : ''}`}></i>
                 </h1>
             </a>
         </Link>

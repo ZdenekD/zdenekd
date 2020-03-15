@@ -20,6 +20,8 @@ const Cursor = () => {
         outer.setProperty('--cursor-radius', '50%');
         outer.border = '1px solid';
         inner.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY}) scale(1)`;
+        document.body.style.setProperty('--shadow-x', `${-(coords[0] - (window.innerWidth / 2)) / 50}px`);
+        document.body.style.setProperty('--shadow-y', `${-(coords[1] - (window.innerHeight / 2)) / 50}px`);
     };
     const handleIsStuck = () => {
         const [coordX, coordY] = coords;
@@ -27,7 +29,7 @@ const Cursor = () => {
         const {style: inner} = innerCursorRef.current;
         const {width, height, top, left} = cursor.props;
 
-        outer.transform = `matrix(1, 0, 0, 1, ${left + 10}, ${top + 10})`;
+        outer.transform = `translate3d(${left + 10}px, ${top + 10}px, 0)`;
         outer.setProperty('--cursor-width', `${width + 10}px`);
         outer.setProperty('--cursor-height', `${height + 10}px`);
         outer.setProperty('--cursor-radius', '8px');

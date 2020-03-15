@@ -1,4 +1,4 @@
-@keyframes line {
+@keyframes line-in {
     0% {
         opacity: 0;
         transform: translateX(25vw) scaleX(8);
@@ -14,7 +14,7 @@
     }
 }
 
-@keyframes fade-out {
+@keyframes line-out {
     0% {
         opacity: 1;
     }
@@ -72,7 +72,7 @@
         transition: color .4s var(--ease-in-out-expo);
 
         &::after {
-            animation: line .25s var(--ease-out-quad) forwards;
+            animation: line-in .25s var(--ease-out-quad) forwards;
         }
     }
 
@@ -87,7 +87,8 @@
         opacity: 0;
         background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
         transform-origin: left center;
-        animation: fade-out .25s var(--ease-out-quad) forwards;
+        will-change: opacity, transform;
+        animation: line-out .25s var(--ease-out-quad) forwards;
     }
 }
 

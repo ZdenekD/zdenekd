@@ -20,24 +20,27 @@
     &::before,
     &::after {
         position: absolute;
-        bottom: 0;
+        bottom: -20px;
         content: '';
         opacity: 0;
         background: var(--curtain-color);
+        transition: var(--shadow-transition);
         border-top-left-radius: var(--border-radius);
     }
 
     &::before {
         width: 25%;
         height: 100%;
-        right: 0;
+        right: -20px;
+        transform: translate(var(--shadow-x), var(--shadow-y));
         border-bottom-right-radius: var(--border-radius);
     }
 
     &::after {
         width: 12.5%;
         height: 75%;
-        right: 25%;
+        right: calc(25% - 30px);
+        transform: translate(calc(.5 * var(--shadow-x)), calc(.5 * var(--shadow-y)));
     }
 }
 
@@ -60,6 +63,7 @@
 }
 
 .code {
+    --fade-in-opacity: 1;
     margin-right: auto;
     padding-left: 30px;
     align-self: flex-end;
@@ -67,8 +71,10 @@
     left: -10px;
     opacity: .75;
     font-size: .8em;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translate(calc(2 * var(--shadow-y)), calc(.5 * var(--shadow-x)));
     transform-origin: left center;
+    transition: var(--shadow-transition);
+    animation: fade-in 2s var(--ease-in-cubic) forwards;
 
     &::before {
         width: 20px;

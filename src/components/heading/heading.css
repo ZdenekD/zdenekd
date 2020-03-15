@@ -1,3 +1,21 @@
+@keyframes shadow-in {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--curtain-color);
+    }
+}
+
+@keyframes shadow-out {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--color-blue-lighten-5);
+    }
+}
+
 .link {
     text-decoration: none;
 
@@ -8,6 +26,7 @@
 
 .heading {
     margin: 0;
+    position: relative;
     font-size: 16px;
 }
 
@@ -32,4 +51,25 @@
     :global .logo_svg__st0 {
         transition: var(--header-transition-active);
     }
+}
+
+.shadow {
+    width: 75%;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 37.5%);
+    z-index: -1;
+    opacity: .75;
+    background: transparent;
+    transform: translate(var(--shadow-x), var(--shadow-y));
+    transition: var(--shadow-transition);
+    animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
+    border-radius: var(--border-radius);
+}
+
+.shadowActive {
+    background: transparent;
+    animation: shadow-out 2s var(--ease-out-quart) 1s forwards;
 }
