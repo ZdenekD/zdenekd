@@ -1,9 +1,10 @@
 import React, {useEffect, useState, useRef} from 'react';
+import PropTypes from 'prop-types';
 import useEventListener from '@use-it/event-listener';
 import {useStateValue} from '../../state';
 import styles from './cursor.css';
 
-const Cursor = () => {
+const Cursor = ({section}) => {
     const [coords, setCoords] = useState([-30, -30]);
     const animationRef = useRef(null);
     const innerCursorRef = useRef(null);
@@ -20,8 +21,11 @@ const Cursor = () => {
         outer.setProperty('--cursor-radius', '50%');
         outer.border = '1px solid';
         inner.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY}) scale(1)`;
-        document.body.style.setProperty('--shadow-x', `${-(coords[0] - (window.innerWidth / 2)) / 50}px`);
-        document.body.style.setProperty('--shadow-y', `${-(coords[1] - (window.innerHeight / 2)) / 50}px`);
+
+        if (section) {
+            section.style.setProperty('--shadow-x', `${-(coords[0] - (window.innerWidth / 2)) / 50}px`);
+            section.style.setProperty('--shadow-y', `${-(coords[1] - (window.innerHeight / 2)) / 50}px`);
+        }
     };
     const handleIsStuck = () => {
         const [coordX, coordY] = coords;
@@ -57,5 +61,7 @@ const Cursor = () => {
         </>
     );
 };
+
+Cursor.propTypes = {section: PropTypes.element};
 
 export default Cursor;
