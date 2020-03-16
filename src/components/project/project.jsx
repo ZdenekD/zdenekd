@@ -200,44 +200,46 @@ const Project = () => {
                     </ul>
                 </div>
             </div>
-            <div className={styles.browser} data-test="component-project">
-                <div className={styles.browserHeader}>
-                    <ul className={styles.browserControls}>
-                        <li className={styles.browserControl}></li>
-                        <li className={styles.browserControl}></li>
-                        <li className={styles.browserControl}></li>
-                    </ul>
-                    <div className={styles.browserHistory}>
-                        <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef}></button>
-                        <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef}></button>
+            <div className={styles.project} data-test="component-project">
+                <div className={styles.browser}>
+                    <div className={styles.browserHeader}>
+                        <ul className={styles.browserControls}>
+                            <li className={styles.browserControl}></li>
+                            <li className={styles.browserControl}></li>
+                            <li className={styles.browserControl}></li>
+                        </ul>
+                        <div className={styles.browserHistory}>
+                            <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef}></button>
+                            <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef}></button>
+                        </div>
+                        <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
+                            {project.url}
+                        </span>
+                        <div className={styles.browserTarget}>
+                            {!/localhost$/.test(project.url) && (
+                                <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
+                                    <Icon className={styles.icon} />
+                                </a>
+                            )}
+                        </div>
                     </div>
-                    <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
-                        {project.url}
-                    </span>
-                    <div className={styles.browserTarget}>
-                        {!/localhost$/.test(project.url) && (
-                            <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
-                                <Icon className={styles.icon} />
-                            </a>
-                        )}
+                    <div className={styles.browserContent}>
+                        <video
+                            playsInline
+                            autoPlay
+                            muted
+                            loop
+                            preload="auto"
+                            controls={false}
+                            className={styles.video}
+                            ref={videoRef}
+                        >
+                            <track kind="captions" />
+                            <track kind="description" label={project.title} />
+                            <source src={`/${project.id}.mp4`} type="video/mp4" />
+                        </video>
+                        <Logo className={styles.logo} />
                     </div>
-                </div>
-                <div className={styles.browserContent}>
-                    <video
-                        playsInline
-                        autoPlay
-                        muted
-                        loop
-                        preload="auto"
-                        controls={false}
-                        className={styles.video}
-                        ref={videoRef}
-                    >
-                        <track kind="captions" />
-                        <track kind="description" label={project.title} />
-                        <source src={`/${project.id}.mp4`} type="video/mp4" />
-                    </video>
-                    <Logo className={styles.logo} />
                 </div>
             </div>
         </div>

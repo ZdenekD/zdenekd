@@ -65,25 +65,34 @@
 .code {
     --fade-in-opacity: 1;
     margin-right: auto;
+    padding-right: 10px;
     padding-left: 30px;
     align-self: flex-end;
     position: relative;
     left: -10px;
     opacity: .75;
     font-size: .8em;
-    transform: rotate(-90deg) translate(calc(2 * var(--shadow-y)), calc(.5 * var(--shadow-x)));
+    transform: translate(calc(1.2 * var(--shadow-x)), calc(.6 * var(--shadow-y)));
     transform-origin: left center;
     transition: var(--shadow-transition);
 
-    &::before {
+    &::before,
+    &::after {
         width: 20px;
         height: 1px;
         position: absolute;
         top: 50%;
-        left: 0;
         content: '';
         background: currentColor;
         transform: translateY(-50%);
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        left: 100%;
     }
 }
 
