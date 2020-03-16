@@ -11,6 +11,7 @@ const Project = () => {
     const [index, setIndex] = useState(0);
     const [project, setProject] = useState(projects[Object.keys(projects)[0]]);
     const [, setPrepared] = useState(false);
+    const contentRef = useRef(null);
     const videoRef = useRef(null);
     const buttonBackRef = useRef(null);
     const buttonNextRef = useRef(null);
@@ -19,6 +20,34 @@ const Project = () => {
     const minIndex = 0;
     const maxIndex = Object.keys(projects).length - 1;
     let coords = [0, 0];
+    const handleAnimationIn = (direction = 'next') => {
+        const translate = direction === 'next' ? '10vw' : '-10vw';
+
+        anime({
+            targets: [...contentRef.current.querySelectorAll('.animated-item')],
+            duration: 800,
+            delay(target, i) {
+                return (i * 200);
+            },
+            opacity: [0, 1],
+            translateX: [translate, 0],
+            easing: 'easeOutExpo',
+        });
+    };
+    const handleAnimationOut = (direction = 'next') => {
+        const translate = direction === 'next' ? '-5vw' : '5vw';
+
+        anime({
+            targets: [...contentRef.current.querySelectorAll('.animated-item')],
+            duration: 600,
+            delay(target, i) {
+                return (i * 100);
+            },
+            opacity: [1, 0],
+            translateX: [0, translate],
+            easing: 'easeOutExpo',
+        });
+    };
     const handleProjectPrev = () => {
         if (index - 1 < minIndex) {
             return;
@@ -35,6 +64,7 @@ const Project = () => {
                 translateX: [0, '100%'],
                 begin() {
                     video.pause();
+                    handleAnimationOut('prev');
                 },
                 complete() {
                     setIndex(index - 1);
@@ -46,9 +76,11 @@ const Project = () => {
             .add({
                 targets: videoRef.current,
                 duration: 800,
-                delay: 400,
                 opacity: [0, 1],
                 translateX: ['-100%', 0],
+                begin() {
+                    handleAnimationIn('prev');
+                },
             });
 
         animation.current.play();
@@ -69,6 +101,7 @@ const Project = () => {
                 translateX: [0, '-100%'],
                 begin() {
                     video.pause();
+                    handleAnimationOut('next');
                 },
                 complete() {
                     setIndex(index + 1);
@@ -80,9 +113,11 @@ const Project = () => {
             .add({
                 targets: videoRef.current,
                 duration: 800,
-                delay: 400,
                 opacity: [0, 1],
                 translateX: ['100%', 0],
+                begin() {
+                    handleAnimationIn('next');
+                },
             });
 
         animation.current.play();
@@ -143,19 +178,24 @@ const Project = () => {
 
     return (
         <div className={`${styles.block} animated-block`}>
-            <div className={styles.content}>
-                <div className="animated-block">
+            <div className={styles.content} ref={contentRef}>
+                <div className="animated-block animated-item">
                     <h3 className={styles.title} data-title={project.title}>{project.title}</h3>
                 </div>
-                <div className="animated-block">
+                <div className={`${styles.descriptionWrapper} animated-block animated-item`}>
                     <p className={styles.description} data-title={project.description}>
                         {project.description}
                     </p>
                 </div>
-                <div className="animated-block">
+                <div className="animated-block animated-item">
                     <ul className={styles.tools}>
                         {project.tools.map(item => (
-                            <li key={item} className={styles.tool}>{item}</li>
+                            <li key={item} className={styles.tool}>
+                                <figure className={styles.figure}>
+                                    <img src={`/logo_${item}.svg`} alt={item} className={styles.image} />
+                                    <figcaption className={styles.caption}>{item}</figcaption>
+                                </figure>
+                            </li>
                         ))}
                     </ul>
                 </div>

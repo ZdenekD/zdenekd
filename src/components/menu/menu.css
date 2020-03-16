@@ -1,6 +1,41 @@
+@keyframes shadow-in {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--curtain-color);
+    }
+}
+
+@keyframes shadow-out {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--color-blue-lighten-3);
+    }
+}
+
 .button {
+    position: relative;
     line-height: 0;
     border-radius: 50%;
+
+    &::before {
+        width: 32px;
+        height: 32px;
+        display: block;
+        position: absolute;
+        top: 16px;
+        left: 24px;
+        z-index: -1;
+        content: '';
+        opacity: .75;
+        background: var(--curtain-color);
+        transform: translate(var(--shadow-x), var(--shadow-y));
+        transition: var(--shadow-transition);
+        animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
+    }
 
     &[disabled] {
         pointer-events: none;
@@ -23,6 +58,11 @@
 }
 
 .active {
+
+    &::before {
+        background: transparent;
+        animation: shadow-out 2s var(--ease-out-quart) 1s forwards;
+    }
 
     .icon {
         --navigation-color: var(--navigation-color-active);

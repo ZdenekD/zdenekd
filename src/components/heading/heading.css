@@ -1,18 +1,18 @@
 @keyframes shadow-in {
     0% {
-        background: transparent;
+        border-bottom-color: transparent;
     }
     100% {
-        background: var(--curtain-color);
+        border-bottom-color: var(--curtain-color);
     }
 }
 
 @keyframes shadow-out {
     0% {
-        background: transparent;
+        border-bottom-color: transparent;
     }
     100% {
-        background: var(--color-blue-lighten-3);
+        border-bottom-color: var(--color-blue-lighten-3);
     }
 }
 
@@ -54,19 +54,21 @@
 }
 
 .shadow {
-    width: 75%;
-    height: 50px;
+    width: 0;
+    height: 0;
     display: block;
     position: absolute;
     top: calc(50% - 25px);
     left: calc(50% - 37.5%);
     z-index: -1;
     opacity: .75;
-    background: transparent;
     transform: translate(var(--shadow-x), var(--shadow-y));
     transition: var(--shadow-transition);
     animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
     border-radius: var(--border-radius);
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 25px solid transparent;
 }
 
 .shadowActive {
