@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
+import {Helmet} from 'react-helmet';
 import {StateProvider} from '../../../state';
 import reducer from '../../../state/reducer';
 import Aside from '../../aside';
@@ -20,7 +21,8 @@ const Main = ({isAnimated, children}) => {
     const pages = Object.keys(data);
     const minIndex = 0;
     const maxIndex = pages.length - 1;
-    const title = data[page]?.title ?? 'Kávová paráda';
+    const title = data[page]?.title ?? 'Kávová paráda | ZdenekD';
+    const description = data[page]?.description ?? 'Lorem pivsum | ZdenekD';
     const index = getPageIndex(router.route);
     let counter = 0;
     let timestamp = Math.floor(+new Date() / 1000);
@@ -113,20 +115,22 @@ const Main = ({isAnimated, children}) => {
     return (
         <>
             <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
                 <link rel="icon" type="image/png" href="/favicon.png" />
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet" crossOrigin="anonymous" />
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
+                <meta name="description" content={`${description} | ZdenekD`} />
             </Head>
+            <Helmet>
+                <html lang="cs" />
+            </Helmet>
             <StateProvider reducer={reducer}>
                 <>
                     <section className={styles.section}>
                         <Header />
-                        {!isAnimated && (
-                            <Content content={children} />
-                        )}
+                        {!isAnimated && <Content content={children} />}
                         <Footer />
                     </section>
                     <Aside />
