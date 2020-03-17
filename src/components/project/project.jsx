@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import useEventListener from '@use-it/event-listener';
 import anime from 'animejs';
 import projects from '../../data/projects';
+import config from '../../data/config';
 import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
 import Logo from '../../assets/images/logo.svg';
@@ -27,7 +28,7 @@ const Project = () => {
             targets: [...contentRef.current.querySelectorAll('.animated-item')],
             duration: 800,
             delay(target, i) {
-                return (i * 200);
+                return i * 200;
             },
             opacity: [0, 1],
             translateX: [translate, 0],
@@ -41,7 +42,7 @@ const Project = () => {
             targets: [...contentRef.current.querySelectorAll('.animated-item')],
             duration: 600,
             delay(target, i) {
-                return (i * 100);
+                return i * 100;
             },
             opacity: [1, 0],
             translateX: [0, translate],
@@ -180,7 +181,9 @@ const Project = () => {
         <div className={`${styles.block} animated-block`}>
             <div className={styles.content} ref={contentRef}>
                 <div className="animated-block animated-item">
-                    <h3 className={styles.title} data-title={project.title}>{project.title}</h3>
+                    <h3 className={styles.title} data-title={project.title}>
+                        {project.title}
+                    </h3>
                 </div>
                 <div className={`${styles.descriptionWrapper} animated-block animated-item`}>
                     <p className={styles.description} data-title={project.description}>
@@ -192,7 +195,7 @@ const Project = () => {
                         {project.tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>
-                                    <img src={`/logo_${item}.svg`} alt={item} className={styles.image} />
+                                    <img src={`${config.cloudfront}/logo_${item}.svg`} alt={item} className={styles.image} />
                                     <figcaption className={styles.caption}>{item}</figcaption>
                                 </figure>
                             </li>
@@ -209,34 +212,44 @@ const Project = () => {
                             <li className={styles.browserControl}></li>
                         </ul>
                         <div className={styles.browserHistory}>
-                            <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef} aria-label="Následující projekt"></button>
-                            <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef} aria-label="Předchozí project"></button>
+                            <button
+                                type="button"
+                                className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`}
+                                onClick={handleProjectPrev}
+                                ref={buttonBackRef}
+                                aria-label="Následující projekt"
+                            ></button>
+                            <button
+                                type="button"
+                                className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
+                                onClick={handleProjectNext}
+                                ref={buttonNextRef}
+                                aria-label="Předchozí project"
+                            ></button>
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
                             {project.url}
                         </span>
                         <div className={styles.browserTarget}>
                             {!/localhost$/.test(project.url) && (
-                                <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef} aria-label="Otevřít referenci v novém okně">
+                                <a
+                                    href={project.url}
+                                    className={styles.browserLink}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    ref={buttonLinkRef}
+                                    aria-label="Otevřít referenci v novém okně"
+                                >
                                     <Icon className={styles.icon} />
                                 </a>
                             )}
                         </div>
                     </div>
                     <div className={styles.browserContent}>
-                        <video
-                            playsInline
-                            autoPlay
-                            muted
-                            loop
-                            preload="auto"
-                            controls={false}
-                            className={styles.video}
-                            ref={videoRef}
-                        >
+                        <video playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} ref={videoRef}>
                             <track kind="captions" />
                             <track kind="description" label={project.title} />
-                            <source src={`/${project.id}.mp4`} type="video/mp4" />
+                            <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />
                         </video>
                         <Logo className={styles.logo} />
                     </div>
