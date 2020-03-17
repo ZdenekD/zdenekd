@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
-import {Helmet} from 'react-helmet';
 import {StateProvider} from '../../../state';
 import reducer from '../../../state/reducer';
 import Aside from '../../aside';
@@ -119,13 +118,14 @@ const Main = ({isAnimated, children}) => {
                 <link rel="icon" type="image/png" href="/favicon.png" />
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono&display=swap&subset=latin-ext" rel="stylesheet" crossOrigin="anonymous" />
+                <link
+                    href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono&display=swap&subset=latin-ext"
+                    rel="stylesheet"
+                    crossOrigin="anonymous"
+                />
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
                 <meta name="description" content={`${description} | ZdenekD`} />
             </Head>
-            <Helmet>
-                <html lang="cs" />
-            </Helmet>
             <StateProvider reducer={reducer}>
                 <>
                     <section className={styles.section}>
