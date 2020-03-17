@@ -72,7 +72,14 @@
         transition: color .4s var(--ease-in-out-expo);
 
         &::after {
-            animation: line-in .25s var(--ease-out-quad) both;
+
+            @media (prefers-reduced-motion: reduce) {
+                opacity: 0;
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+                animation: line-in .25s var(--ease-out-quad) both;
+            }
         }
     }
 
@@ -84,11 +91,14 @@
         right: 0;
         left: 0;
         content: '';
-        opacity: 0;
         background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
-        transform-origin: left center;
-        will-change: opacity, transform;
-        animation: line-out .25s var(--ease-out-quad) both;
+
+        @media (prefers-reduced-motion: no-preference) {
+            opacity: 0;
+            transform-origin: left center;
+            will-change: opacity, transform;
+            animation: line-out .25s var(--ease-out-quad) both;
+        }
     }
 }
 
