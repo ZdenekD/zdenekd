@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
@@ -15,7 +15,6 @@ import {getPage, getPageIndex} from '../../../helpers/getPage';
 import styles from './main.css';
 
 const Main = ({isAnimated, children}) => {
-    const sectionRef = useRef(null);
     const router = useRouter();
     const page = getPage(router.route);
     const pages = Object.keys(data);
@@ -122,15 +121,17 @@ const Main = ({isAnimated, children}) => {
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
             </Head>
             <StateProvider reducer={reducer}>
-                <section className={styles.section} ref={sectionRef}>
-                    <Header />
-                    {!isAnimated && (
-                        <Content content={children} />
-                    )}
-                    <Footer />
-                </section>
-                <Aside />
-                <Cursor section={sectionRef.current} />
+                <>
+                    <section className={styles.section}>
+                        <Header />
+                        {!isAnimated && (
+                            <Content content={children} />
+                        )}
+                        <Footer />
+                    </section>
+                    <Aside />
+                    <Cursor />
+                </>
             </StateProvider>
         </>
     );

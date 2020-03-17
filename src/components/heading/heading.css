@@ -54,6 +54,7 @@
 }
 
 .shadow {
+    --velocity: 100;
     width: 0;
     height: 0;
     display: block;
@@ -62,8 +63,8 @@
     left: calc(50% - 37.5%);
     z-index: -1;
     opacity: .75;
-    transform: translate(var(--shadow-x), var(--shadow-y));
-    transition: var(--shadow-transition);
+    transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+    transition: var(--float-transition);
     animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
     border-radius: var(--border-radius);
     border-right: 25px solid transparent;

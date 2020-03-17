@@ -1,5 +1,5 @@
 :root {
     --header-transition: all .8s var(--ease-out-expo) 1.4s;
     --header-transition-active: all .8s var(--ease-out-expo);
-    --shadow-transition: transform 1.2s ease-out;
+    --float-transition: transform 1.2s ease-out;
 }
