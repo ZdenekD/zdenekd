@@ -212,6 +212,11 @@
 
 .browserBack,
 .browserNext {
+
+    &:focus {
+        outline: 2px dotted var(--navigation-color);
+    }
+
     &::before,
     &::after {
         width: 8px;
@@ -256,6 +261,10 @@
 }
 
 .browserLink {
+
+    &:focus {
+        outline: 2px dotted var(--navigation-color);
+    }
 
     svg {
         fill: var(--color-gray);

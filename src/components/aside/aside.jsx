@@ -87,6 +87,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 className={`${styles.link} ${isAnimated ? styles.animated : ''} ${page === item ? styles.active : ''}`}
                 onClick={handleClick}
                 aria-label={`Odkaz na stránku: ${data[item].title}`}
+                tabIndex={isOpen ? 1 : -1}
             >
                 {data[item].title}
             </a>

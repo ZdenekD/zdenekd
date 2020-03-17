@@ -15,8 +15,6 @@ const Project = () => {
     const [, setPrepared] = useState(false);
     const contentRef = useRef(null);
     const videoRef = useRef(null);
-    const buttonBackRef = useRef(null);
-    const buttonNextRef = useRef(null);
     const buttonLinkRef = useRef(null);
     const animation = useRef(null);
     const minIndex = 0;
@@ -174,8 +172,6 @@ const Project = () => {
         };
     }, []);
 
-    useHover(buttonBackRef.current);
-    useHover(buttonNextRef.current);
     useHover(buttonLinkRef.current);
 
     return (
@@ -221,15 +217,15 @@ const Project = () => {
                                 type="button"
                                 className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectPrev}
-                                ref={buttonBackRef}
                                 aria-label="Následující projekt"
+                                tabIndex={index !== minIndex ? 0 : -1}
                             ></Button>
                             <Button
                                 type="button"
                                 className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectNext}
-                                ref={buttonNextRef}
                                 aria-label="Předchozí project"
+                                tabIndex={index !== maxIndex ? 0 : -1}
                             ></Button>
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>

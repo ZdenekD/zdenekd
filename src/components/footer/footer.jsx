@@ -45,12 +45,24 @@ const Footer = ({isOpen, isAnimated}) => {
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
             <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
-                <Button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp} aria-label="Předchozí stránka">
+                <Button
+                    type="button"
+                    className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`}
+                    onClick={handleKeyUp}
+                    aria-label="Předchozí stránka"
+                    tabIndex={index !== minIndex ? 0 : -1}
+                >
                     <i className={styles.keyUp} ref={keyUpRef}></i>
                 </Button>
                 <span className={styles.key}>
                     <i className={styles.keyLeft}></i>
-                    <Button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown} aria-label="Následující stránka">
+                    <Button
+                        type="button"
+                        className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`}
+                        onClick={handleKeyDown}
+                        aria-label="Následující stránka"
+                        tabIndex={index !== maxIndex ? 0 : -1}
+                    >
                         <i className={styles.keyDown} ref={keyDownRef}></i>
                     </Button>
                     <i className={styles.keyRight}></i>

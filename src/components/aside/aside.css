@@ -66,8 +66,7 @@
     text-transform: uppercase;
     transition: color .4s var(--ease-in-out-expo);
 
-    &:hover:not([disabled]),
-    &:focus:not([disabled]) {
+    &:hover:not([disabled]) {
         color: var(--navigation-color);
         transition: color .4s var(--ease-in-out-expo);
 
@@ -81,6 +80,11 @@
                 animation: line-in .25s var(--ease-out-quad) both;
             }
         }
+    }
+
+    &:focus:not([disabled]) {
+        outline: 2px dotted var(--navigation-color);
+        outline-offset: 10px;
     }
 
     &::after {

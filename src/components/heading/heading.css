@@ -19,6 +19,10 @@
 .link {
     text-decoration: none;
 
+    &:focus {
+        outline: 2px dotted var(--navigation-color);
+    }
+
     &[disabled] {
         pointer-events: none;
     }
