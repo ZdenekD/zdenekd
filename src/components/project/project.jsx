@@ -177,32 +177,54 @@ const Project = () => {
     return (
         <div className={`${styles.block} animated-block`}>
             <div className={styles.content} ref={contentRef}>
-                <div className="animated-block animated-item">
-                    <h3 className={styles.title} data-title={project.title}>
-                        {project.title}
-                    </h3>
+                <div>
+                    <div className="animated-block animated-item">
+                        <h3 className={styles.title} data-title={project.title}>
+                            {project.title}
+                        </h3>
+                    </div>
+                    <div className={`${styles.descriptionWrapper} animated-block animated-item`}>
+                        <p className={styles.description} data-title={project.description}>
+                            {project.description}
+                        </p>
+                    </div>
+                    <div className="animated-block animated-item">
+                        <ul className={styles.tools}>
+                            {project.tools.map(item => (
+                                <li key={item} className={styles.tool}>
+                                    <figure className={styles.figure}>
+                                        <img
+                                            src={`${config.cloudfront}/logo_${item}.svg`}
+                                            alt={`Technologie použitá v projektu: ${item}`}
+                                            className={styles.image}
+                                        />
+                                        <figcaption className={styles.caption}>{item}</figcaption>
+                                    </figure>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <div className={`${styles.descriptionWrapper} animated-block animated-item`}>
-                    <p className={styles.description} data-title={project.description}>
-                        {project.description}
-                    </p>
-                </div>
-                <div className="animated-block animated-item">
-                    <ul className={styles.tools}>
-                        {project.tools.map(item => (
-                            <li key={item} className={styles.tool}>
-                                <figure className={styles.figure}>
-                                    <img
-                                        src={`${config.cloudfront}/logo_${item}.svg`}
-                                        alt={`Technologie použitá v projektu: ${item}`}
-                                        className={styles.image}
-                                    />
-                                    <figcaption className={styles.caption}>{item}</figcaption>
-                                </figure>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <ul className={`${styles.controls} animated-block`}>
+                    <li className={styles.control}>
+                        <Button
+                            type="button"
+                            className={`${styles.controlPrev} ${index === minIndex ? styles.disabled : ''}`}
+                            onClick={handleProjectPrev}
+                            aria-label="Předchozí projekt"
+                            tabIndex={index !== minIndex ? 0 : -1}
+                        />
+                    </li>
+                    <li className={styles.control}>
+                        <Button
+                            type="button"
+                            className={`${styles.controlNext} ${index === maxIndex ? styles.disabled : ''}`}
+                            onClick={handleProjectNext}
+                            aria-label="Následující projekt"
+                            tabIndex={index !== maxIndex ? 0 : -1}
+                        />
+                    </li>
+                </ul>
             </div>
             <div className={styles.project} data-test="component-project">
                 <div className={styles.browser}>
@@ -215,18 +237,18 @@ const Project = () => {
                         <div className={styles.browserHistory}>
                             <Button
                                 type="button"
-                                className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`}
+                                className={`${styles.browserPrev} ${index === minIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectPrev}
-                                aria-label="Následující projekt"
+                                aria-label="Předchozí projekt"
                                 tabIndex={index !== minIndex ? 0 : -1}
-                            ></Button>
+                            />
                             <Button
                                 type="button"
                                 className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectNext}
-                                aria-label="Předchozí project"
+                                aria-label="Následující projekt"
                                 tabIndex={index !== maxIndex ? 0 : -1}
-                            ></Button>
+                            />
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
                             {project.url}

@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .content {
     width: 40%;
     padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: var(--navigation-color);
 }
 
@@ -85,6 +88,72 @@
     &:focus,
     &:hover {
         opacity: .5;
+    }
+}
+
+.controls {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+}
+
+.control {
+    display: inline-flex;
+}
+
+.controlPrev,
+.controlNext {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: relative;
+    border-radius: var(--border-radius);
+
+    &:focus {
+        outline: 2px dotted var(--navigation-color);
+    }
+
+    &::before,
+    &::after {
+        width: 24px;
+        height: 1px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        content: '';
+        background: var(--color-blue-darken-4);
+    }
+
+    &::before {
+        top: 8px;
+    }
+
+    &::after {
+        top: 24px;
+    }
+}
+
+.controlPrev {
+
+    &::before {
+        transform: translateX(-50%) rotate(-45deg);
+    }
+
+    &::after {
+        transform: translateX(-50%) rotate(45deg);
+    }
+}
+
+.controlNext {
+
+    &::before {
+        transform: translateX(-50%) rotate(-135deg);
+    }
+
+    &::after {
+        transform: translateX(-50%) rotate(135deg);
     }
 }
 
@@ -188,7 +257,7 @@
     margin-left: calc(2 * ( var(--gutter)));
 }
 
-.browserBack,
+.browserPrev,
 .browserNext,
 .browserLink {
     width: 24px;
@@ -210,7 +279,7 @@
     }
 }
 
-.browserBack,
+.browserPrev,
 .browserNext {
 
     &:focus {
@@ -238,7 +307,7 @@
     }
 }
 
-.browserBack {
+.browserPrev {
 
     &::before {
         transform: translateX(-50%) rotate(-45deg);
@@ -283,7 +352,6 @@
 
 .browserContent {
     width: 100%;
-    height: 56.25%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -293,10 +361,10 @@
 }
 
 .video {
-    width: 100%;
+    width: calc(100% + 2px);
     position: relative;
+    top: -2px;
     z-index: 1;
-    object-fit: contain;
 }
 
 .logo {
