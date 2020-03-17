@@ -27,12 +27,12 @@
         padding-right: 12px;
         position: relative;
         opacity: 0;
-        color: var(--content-heading-admit);
+        color: var(--content-heading);
         font-size: 3.2em;
         text-align: center;
 
         &::first-letter {
-            color: var(--content-heading);
+            color: var(--content-heading-admit);
         }
 
         &::before {

@@ -209,15 +209,15 @@ const Project = () => {
                             <li className={styles.browserControl}></li>
                         </ul>
                         <div className={styles.browserHistory}>
-                            <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef}></button>
-                            <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef}></button>
+                            <button type="button" className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`} onClick={handleProjectPrev} ref={buttonBackRef} aria-label="Následující projekt"></button>
+                            <button type="button" className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleProjectNext} ref={buttonNextRef} aria-label="Předchozí project"></button>
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
                             {project.url}
                         </span>
                         <div className={styles.browserTarget}>
                             {!/localhost$/.test(project.url) && (
-                                <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef}>
+                                <a href={project.url} className={styles.browserLink} target="_blank" rel="noreferrer noopener" ref={buttonLinkRef} aria-label="Otevřít referenci v novém okně">
                                     <Icon className={styles.icon} />
                                 </a>
                             )}

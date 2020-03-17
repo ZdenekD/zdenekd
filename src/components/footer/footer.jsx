@@ -44,12 +44,12 @@ const Footer = ({isOpen, isAnimated}) => {
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
             <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
-                <button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp}>
+                <button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp} aria-label="Předchozí stránka">
                     <i className={styles.keyUp} ref={keyUpRef}></i>
                 </button>
                 <span className={styles.key}>
                     <i className={styles.keyLeft}></i>
-                    <button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown}>
+                    <button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown} aria-label="Následující stránka">
                         <i className={styles.keyDown} ref={keyDownRef}></i>
                     </button>
                     <i className={styles.keyRight}></i>
