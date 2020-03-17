@@ -13,6 +13,7 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
+    "sync": "aws s3 sync public s3://dev-zdenekd --delete",
     "test:js": "jest",
     "test:js:watch": "jest --watch",
     "test:js:coverage": "jest --coverage",
