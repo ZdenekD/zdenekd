@@ -151,7 +151,7 @@ const Form = () => {
 
                 <div className={`${styles.row} animated-block`}>
                     <span className={styles.error}>{error && <>Formulář obsahuje chybně zadané pole.</>}</span>
-                    <Button type="submit" onSubmit={handleSubmit}>
+                    <Button type="submit" onSubmit={handleSubmit} aria-label="Odeslat formulář">
                         Odeslat
                     </Button>
                 </div>

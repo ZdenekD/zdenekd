@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
+import Button from '../form/button';
 import styles from './menu.css';
 import useHover from '../../hooks/hover';
 
@@ -80,7 +81,7 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     useHover(buttonRef.current);
 
     return (
-        <button
+        <Button
             type="button"
             className={`${styles.button} ${isOpen ? styles.active : ''} ${isAnimated ? styles.disabled : ''}`}
             onClick={handleClick}
@@ -93,7 +94,7 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
                 <path d="M30,50 L70,50 Z" ref={pathMiddleRef}></path>
                 <path d="M30,60 L70,60 Z" ref={pathBottomRef}></path>
             </svg>
-        </button>
+        </Button>
     );
 };
 

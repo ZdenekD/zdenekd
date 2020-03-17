@@ -86,6 +86,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 title={`${data[item].title} | ZdenekD`}
                 className={`${styles.link} ${isAnimated ? styles.animated : ''} ${page === item ? styles.active : ''}`}
                 onClick={handleClick}
+                aria-label={`Odkaz na stránku: ${data[item].title}`}
             >
                 {data[item].title}
             </a>

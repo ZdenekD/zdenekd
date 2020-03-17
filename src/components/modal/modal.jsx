@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
+import Button from '../form/button';
 import styles from './modal.css';
 
 const Modal = ({
@@ -20,7 +21,7 @@ const Modal = ({
         appElement={document.getElementById('__next')}
     >
         {content}
-        <button type="button" className={styles.close} onClick={handleClose} aria-label="Zavřít modální okno">&times;</button>
+        <Button type="button" className={styles.close} onClick={handleClose} aria-label="Zavřít modální okno">&times;</Button>
     </ReactModal>
 ));
 

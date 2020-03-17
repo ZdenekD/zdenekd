@@ -3,6 +3,7 @@ import useEventListener from '@use-it/event-listener';
 import anime from 'animejs';
 import projects from '../../data/projects';
 import config from '../../data/config';
+import Button from '../form/button';
 import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
 import Logo from '../../assets/images/logo.svg';
@@ -195,7 +196,11 @@ const Project = () => {
                         {project.tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>
-                                    <img src={`${config.cloudfront}/logo_${item}.svg`} alt={item} className={styles.image} />
+                                    <img
+                                        src={`${config.cloudfront}/logo_${item}.svg`}
+                                        alt={`Technologie použitá v projektu: ${item}`}
+                                        className={styles.image}
+                                    />
                                     <figcaption className={styles.caption}>{item}</figcaption>
                                 </figure>
                             </li>
@@ -212,20 +217,20 @@ const Project = () => {
                             <li className={styles.browserControl}></li>
                         </ul>
                         <div className={styles.browserHistory}>
-                            <button
+                            <Button
                                 type="button"
                                 className={`${styles.browserBack} ${index === minIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectPrev}
                                 ref={buttonBackRef}
                                 aria-label="Následující projekt"
-                            ></button>
-                            <button
+                            ></Button>
+                            <Button
                                 type="button"
                                 className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
                                 onClick={handleProjectNext}
                                 ref={buttonNextRef}
                                 aria-label="Předchozí project"
-                            ></button>
+                            ></Button>
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
                             {project.url}
@@ -246,7 +251,7 @@ const Project = () => {
                         </div>
                     </div>
                     <div className={styles.browserContent}>
-                        <video playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} ref={videoRef}>
+                        <video playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} ref={videoRef} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>
                             <track kind="captions" />
                             <track kind="description" label={project.title} />
                             <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />

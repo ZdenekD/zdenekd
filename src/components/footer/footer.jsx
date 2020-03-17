@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
+import Button from '../form/button';
 import styles from './footer.css';
 import data from '../../data/pages';
 import useHover from '../../hooks/hover';
@@ -44,14 +45,14 @@ const Footer = ({isOpen, isAnimated}) => {
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
             <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`}>
-                <button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp} aria-label="Předchozí stránka">
+                <Button type="button" className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`} onClick={handleKeyUp} aria-label="Předchozí stránka">
                     <i className={styles.keyUp} ref={keyUpRef}></i>
-                </button>
+                </Button>
                 <span className={styles.key}>
                     <i className={styles.keyLeft}></i>
-                    <button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown} aria-label="Následující stránka">
+                    <Button type="button" className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`} onClick={handleKeyDown} aria-label="Následující stránka">
                         <i className={styles.keyDown} ref={keyDownRef}></i>
-                    </button>
+                    </Button>
                     <i className={styles.keyRight}></i>
                 </span>
             </div>
