@@ -35,7 +35,7 @@
       ]
     },
     {
-      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpg|(.*).jpeg|(.*).mp4|(.*).png|(.*).webp|(.*).webm|(.*).css|(.*).json|(.*).ico",
+      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpg|(.*).jpeg|(.*).mp4|(.*).png|(.*).svg|(.*).webp|(.*).webm|(.*).css|(.*).json|(.*).ico",
       "headers": [
         {
           "key": "Cache-Control",
