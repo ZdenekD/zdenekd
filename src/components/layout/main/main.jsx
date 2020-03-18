@@ -56,7 +56,7 @@ const Main = ({isAnimated, children}) => {
             counter = 0;
         }
 
-        if (counter < 3) {
+        if (counter < 5) {
             return;
         }
 

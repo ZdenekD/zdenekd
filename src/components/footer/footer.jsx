@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import Keys from './keys';
@@ -7,7 +7,7 @@ import getRoman from '../../helpers/getRoman';
 import {getPageIndex} from '../../helpers/getPage';
 
 const Footer = ({isOpen, isAnimated}) => {
-    const dotRef = useRef(null);
+    const dotRef = React.useRef(null);
     const router = useRouter();
     const index = getPageIndex(router.route);
     const year = new Date().getFullYear();
@@ -17,7 +17,7 @@ const Footer = ({isOpen, isAnimated}) => {
         dotRef.current.style.setProperty('--dot-opacity', '1');
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         handleDot();
     });
 

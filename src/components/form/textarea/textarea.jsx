@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './textarea.css';
 
@@ -10,8 +10,8 @@ const Textarea = ({
     message = '',
     ...rest
 }) => {
-    const [length, setLength] = useState(0);
-    const textareaRef = useRef(null);
+    const [length, setLength] = React.useState(0);
+    const textareaRef = React.useRef(null);
     const handleHeight = () => {
         if (textareaRef.current) {
             const {current} = textareaRef;
@@ -25,7 +25,7 @@ const Textarea = ({
         handleChange(event);
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         handleHeight();
         setLength(rest.value?.length);
     }, [rest.value]);
