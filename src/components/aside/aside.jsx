@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import anime from 'animejs';
@@ -101,7 +101,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
         }
     });
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const items = getLinks();
 
         setLinks(items);
