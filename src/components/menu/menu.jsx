@@ -1,12 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
+import Button from '../form/button';
 import styles from './menu.css';
-import useHover from '../../hooks/hover';
 
 const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
     const [, setPrepared] = useState(false);
-    const buttonRef = useRef(null);
     const pathTopRef = useRef(null);
     const pathMiddleRef = useRef(null);
     const pathBottomRef = useRef(null);
@@ -77,23 +76,20 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
         setPrepared(true);
     }, []);
 
-    useHover(buttonRef.current);
-
     return (
-        <button
+        <Button
             type="button"
             className={`${styles.button} ${isOpen ? styles.active : ''} ${isAnimated ? styles.disabled : ''}`}
             onClick={handleClick}
             data-test="component-menu"
             aria-label="Menu"
-            ref={buttonRef}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
                 <path d="M30,40 L70,40 Z" ref={pathTopRef}></path>
                 <path d="M30,50 L70,50 Z" ref={pathMiddleRef}></path>
                 <path d="M30,60 L70,60 Z" ref={pathBottomRef}></path>
             </svg>
-        </button>
+        </Button>
     );
 };
 

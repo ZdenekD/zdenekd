@@ -29,7 +29,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                     return (index * 200);
                 },
                 opacity: [0, 1],
-                translateY: ['-5vh', 0],
+                translateY: ['-10vh', 0],
                 easing: 'easeOutCubic',
                 complete() {
                     handleMenuAnimation({isAnimated: false});
@@ -79,30 +79,15 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
         handleMenuAnimation({isAnimated: true});
         setHref(event.target.getAttribute('href'));
     };
-    const handleMouse = event => {
-        const tolerance = 5;
-        const left = 0;
-        const right = event.nativeEvent.target.clientWidth;
-        let x = event.pageX - event.target.offsetLeft;
-
-        if (x - tolerance < left) {
-            x = left;
-        }
-
-        if (x + tolerance > right) {
-            x = right;
-        }
-
-        event.target.style.setProperty('--x', `${x}px`);
-    };
     const links = Object.keys(data).map(item => (
         <li key={item} className={styles.item} data-test="component-link">
             <a
                 href={data[item].link}
                 title={`${data[item].title} | ZdenekD`}
                 className={`${styles.link} ${isAnimated ? styles.animated : ''} ${page === item ? styles.active : ''}`}
-                onMouseEnter={handleMouse}
                 onClick={handleClick}
+                aria-label={`Odkaz na stránku: ${data[item].title}`}
+                tabIndex={isOpen ? 1 : -1}
             >
                 {data[item].title}
             </a>

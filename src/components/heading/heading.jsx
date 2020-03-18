@@ -23,10 +23,11 @@ const Heading = ({isOpen, isAnimated}) => {
 
     return (
         <Link href="/" passHref>
-            <a href="/" className={styles.link} disabled={isAnimated}>
+            <a href="/" className={styles.link} disabled={isAnimated} aria-label="Odkaz na domovskou stránku">
                 <h1 className={styles.heading} data-test="component-heading" ref={headingRef}>
                     <span className="_visuallyhidden" data-test="component-title">{`${title} | ZdenekD`}</span>
                     <Logo className={`${styles.logo} ${isOpen ? styles.active : ''}`} />
+                    <i className={`${styles.shadow} ${isOpen ? styles.shadowActive : ''}`}></i>
                 </h1>
             </a>
         </Link>

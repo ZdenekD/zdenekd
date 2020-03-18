@@ -1,5 +1,27 @@
+@keyframes shadow-in {
+    0% {
+        border-bottom-color: transparent;
+    }
+    100% {
+        border-bottom-color: var(--curtain-color);
+    }
+}
+
+@keyframes shadow-out {
+    0% {
+        border-bottom-color: transparent;
+    }
+    100% {
+        border-bottom-color: var(--color-blue-lighten-3);
+    }
+}
+
 .link {
     text-decoration: none;
+
+    &:focus {
+        outline: 2px dotted var(--navigation-color);
+    }
 
     &[disabled] {
         pointer-events: none;
@@ -8,6 +30,7 @@
 
 .heading {
     margin: 0;
+    position: relative;
     font-size: 16px;
 }
 
@@ -31,5 +54,32 @@
 
     :global .logo_svg__st0 {
         transition: var(--header-transition-active);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .shadow {
+        --velocity: 100;
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 12.5%);
+        z-index: -1;
+        opacity: .75;
+        transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+        transition: var(--float-transition);
+        animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
+        border-radius: var(--border-radius);
+        border-right: 25px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 25px solid transparent;
+    }
+
+    .shadowActive {
+        background: transparent;
+        animation: shadow-out 2s var(--ease-out-quart) 1s forwards;
     }
 }

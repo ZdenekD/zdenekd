@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import useHover from '../../../hooks/hover';
 import styles from './button.css';
 
-const Button = ({children, ...rest}) => {
+const Button = ({children, className, ...rest}) => {
     const [, setPrepared] = useState(false);
     const buttonRef = useRef(null);
 
@@ -14,7 +14,7 @@ const Button = ({children, ...rest}) => {
     useHover(buttonRef.current);
 
     return (
-        <button className={styles.button} {...rest} ref={buttonRef} data-test="component-button">
+        <button className={className || styles.button} {...rest} ref={buttonRef} data-test="component-button">
             {children}
         </button>
     );
@@ -26,6 +26,7 @@ Button.propTypes = {
         PropTypes.element,
         PropTypes.number,
     ]),
+    className: PropTypes.string,
 };
 
 export default Button;

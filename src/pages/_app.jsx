@@ -18,12 +18,6 @@ class Application extends App {
         console.info('%cHello Underworld! Authorship is attributed to %c01011010 01100100 01100101 01101110 01100101 01101011 01000100. %cYou can try this >> https://bit.ly/31QKTyy', 'color: #9cd9f2', 'color: #c8e49b', 'color: #9cd9f2');
     }
 
-    static async getInitialProps({Component, ctx}) {
-        const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-
-        return {pageProps};
-    }
-
     componentDidUpdate() {
         const {store} = this.props;
         const {dispatch} = store;
@@ -54,13 +48,13 @@ class Application extends App {
     }
 
     render() {
-        const {Component, pageProps, store, router} = this.props;
+        const {Component, store, router} = this.props;
         const page = getPage(router.route);
 
         return (
             <Provider store={store}>
                 <main className={`${styles.main} ${styles[page]} main`}>
-                    <Component {...pageProps} />
+                    <Component />
                     <i className={styles.curtain} ref={this.curtainRef}></i>
                 </main>
             </Provider>

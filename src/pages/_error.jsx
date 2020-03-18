@@ -12,12 +12,6 @@ const Error = ({statusCode = 404}) => (
     </Main>
 );
 
-Error.getInitialProps = ({res, err}) => {
-    const statusCode = res?.statusCode || err?.statusCode;
-
-    return {statusCode};
-};
-
 Error.propTypes = {statusCode: PropTypes.number};
 
 export default Error;

@@ -20,24 +20,31 @@
     &::before,
     &::after {
         position: absolute;
-        bottom: 0;
+        bottom: -20px;
         content: '';
         opacity: 0;
         background: var(--curtain-color);
         border-top-left-radius: var(--border-radius);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+            transition: var(--float-transition);
+        }
     }
 
     &::before {
+        --velocity: 50;
         width: 25%;
         height: 100%;
-        right: 0;
+        right: -20px;
         border-bottom-right-radius: var(--border-radius);
     }
 
     &::after {
+        --velocity: 200;
         width: 12.5%;
         height: 75%;
-        right: 25%;
+        right: calc(25% - 30px);
     }
 }
 
@@ -60,25 +67,39 @@
 }
 
 .code {
+    --fade-in-opacity: 1;
     margin-right: auto;
+    padding-right: 10px;
     padding-left: 30px;
     align-self: flex-end;
     position: relative;
     left: -10px;
     opacity: .75;
     font-size: .8em;
-    transform: rotate(-90deg);
-    transform-origin: left center;
 
-    &::before {
+    &::before,
+    &::after {
         width: 20px;
         height: 1px;
         position: absolute;
         top: 50%;
-        left: 0;
         content: '';
         background: currentColor;
         transform: translateY(-50%);
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        left: 100%;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transform: translate3d(calc((-1 * var(--float-x) + 50vw) / 150), calc((-1 * var(--float-y) + 50vh) / 50), 0);
+        transform-origin: left center;
+        transition: var(--float-transition);
     }
 }
 
@@ -117,8 +138,16 @@
 }
 
 .key {
+    margin: 2px 4px;
     display: flex;
     align-self: center;
+
+    button& {
+
+        &:focus {
+            outline: 2px dotted var(--navigation-color);
+        }
+    }
 }
 
 .disabled {
@@ -148,9 +177,9 @@
 }
 
 .keyLeft,
-.keyDown,
 .keyRight {
-    margin: 4px 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .keyLeft {

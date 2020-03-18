@@ -1,10 +1,5 @@
 .outerCursor,
 .innerCursor {
-    --cursor-color: var(--color-blue-darken-4);
-    --cursor-border: 1px;
-    --cursor-radius: 50%;
-    --cursor-width: 30px;
-    --cursor-height: 30px;
     display: block;
     position: fixed;
     z-index: var(--zindex-cursor);
@@ -18,9 +13,11 @@
     top: -15px;
     left: -15px;
     opacity: .4;
-    transition: all .2s var(--ease-out-quart);
     border-radius: var(--cursor-radius);
-    border: var(--cursor-border) solid var(--cursor-color);
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: all .2s var(--ease-out-quart);
+    }
 }
 
 .innerCursor {
@@ -28,19 +25,6 @@
     height: 8px;
     top: -4px;
     left: -4px;
-    background: var(--cursor-color);
-}
-
-.outerStuck,
-.innerStuck {
-    border: var(--cursor-border) solid var(--cursor-stuck-color, var(--color-blue-darken-4));
-}
-
-.innerStuck {
-    background: var(--cursor-stuck-color, var(--color-blue-darken-4));
-}
-
-.outerStuck {
-    --cursor-border: 2px;
-    --cursor-radius: 8px;
+    background: var(--color-blue-darken-4);
+    border: 1px solid var(--color-white);
 }
