@@ -1,4 +1,6 @@
-import {factoryStore, findComponent} from '../../__test__/utils/helpers';
+import React from 'react';
+import {mount} from 'enzyme';
+import {getStore, factoryStore, findComponent} from '../../__test__/utils/helpers';
 import Aside from './index';
 import data from '../../data/pages';
 
@@ -25,8 +27,10 @@ describe('Aside', () => {
     });
 
     it('renders all pages links', () => {
+        const store = getStore({});
+        const aside = mount(<Aside store={store} />);
         const {length} = Object.keys(data);
-        const component = findComponent(wrapper, 'component-link');
+        const component = findComponent(aside, 'component-link');
 
         expect(component.length).toBe(length);
     });

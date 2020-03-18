@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useEffect, useLayoutEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import anime from 'animejs';
@@ -7,7 +7,8 @@ import data from '../../data/pages';
 import {getPage} from '../../helpers/getPage';
 
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAnimation}) => {
-    const [href, setHref] = useState(null);
+    const [href, setHref] = React.useState(null);
+    const [links, setLinks] = React.useState(null);
     const asideRef = useRef(null);
     const listRef = useRef(null);
     const router = useRouter();
@@ -79,7 +80,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
         handleMenuAnimation({isAnimated: true});
         setHref(event.target.getAttribute('href'));
     };
-    const links = Object.keys(data).map(item => (
+    const getLinks = () => Object.keys(data).map(item => (
         <li key={item} className={styles.item} data-test="component-link">
             <a
                 href={data[item].link}
@@ -99,6 +100,13 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             (isOpen ? handleAnimationIn : handleAnimationOut)();
         }
     });
+
+    useLayoutEffect(() => {
+        const items = getLinks();
+
+        setLinks(items);
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <aside className={styles.aside} data-test="component-aside" ref={asideRef}>
