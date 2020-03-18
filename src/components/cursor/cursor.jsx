@@ -1,6 +1,6 @@
 import React from 'react';
 import useEventListener from '@use-it/event-listener';
-import {useStateValue} from '../../state';
+import state from '../../state';
 import styles from './cursor.css';
 
 const Cursor = () => {
@@ -8,7 +8,7 @@ const Cursor = () => {
     const animationRef = React.useRef(null);
     const innerCursorRef = React.useRef(null);
     const outerCursorRef = React.useRef(null);
-    const [{cursor}] = useStateValue();
+    const [{cursor}] = state.useStateValue();
     const handleIsUnstuck = () => {
         const [coordX, coordY] = coords;
         const {style: outer} = outerCursorRef.current;

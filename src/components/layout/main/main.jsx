@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import useEventListener from '@use-it/event-listener';
-import {StateProvider} from '../../../state';
+import State from '../../../state';
 import reducer from '../../../state/reducer';
 import Aside from '../../aside';
 import Cursor from '../../cursor';
@@ -126,7 +126,7 @@ const Main = ({isAnimated, children}) => {
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
                 <meta name="description" content={`${description} | ZdenekD`} />
             </Head>
-            <StateProvider reducer={reducer}>
+            <State.StateProvider reducer={reducer}>
                 <>
                     <section className={styles.section}>
                         <Header />
@@ -136,7 +136,7 @@ const Main = ({isAnimated, children}) => {
                     <Aside />
                     <Cursor />
                 </>
-            </StateProvider>
+            </State.StateProvider>
         </>
     );
 };
