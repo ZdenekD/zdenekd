@@ -8,6 +8,7 @@ jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => (
 
 describe('Aside', () => {
     const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    const store = getStore({});
     let wrapper;
 
     beforeEach(() => {
@@ -15,7 +16,6 @@ describe('Aside', () => {
     });
 
     it('match snapshot', () => {
-        const store = getStore({});
         const aside = mount(<Aside store={store} />);
 
         expect(aside.html()).toMatchSnapshot();
@@ -34,11 +34,22 @@ describe('Aside', () => {
     });
 
     it('renders all pages links', () => {
-        const store = getStore({});
-        const element = mount(<Aside store={store} />);
+        const aside = mount(<Aside store={store} />);
         const {length} = Object.keys(data);
-        const component = findComponent(element, 'component-link');
+        const component = findComponent(aside, 'component-item');
 
         expect(component.length).toBe(length);
+    });
+
+    it('set `links` state', () => {
+        const mockSetLinks = jest.fn();
+
+        React.useState = jest.fn(() => ['', mockSetLinks]);
+
+        const aside = mount(<Aside store={store} />);
+
+        aside.render();
+
+        expect(mockSetLinks).toHaveBeenCalled();
     });
 });

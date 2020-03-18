@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import anime from 'animejs';
@@ -9,8 +9,8 @@ import {getPage} from '../../helpers/getPage';
 const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAnimation}) => {
     const [href, setHref] = React.useState(null);
     const [links, setLinks] = React.useState(null);
-    const asideRef = useRef(null);
-    const listRef = useRef(null);
+    const asideRef = React.useRef(null);
+    const listRef = React.useRef(null);
     const router = useRouter();
     const page = getPage(router.route);
     const handleAnimationIn = () => {
@@ -81,7 +81,7 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
         setHref(event.target.getAttribute('href'));
     };
     const getLinks = () => Object.keys(data).map(item => (
-        <li key={item} className={styles.item} data-test="component-link">
+        <li key={item} className={styles.item} data-test="component-item">
             <a
                 href={data[item].link}
                 title={`${data[item].title} | ZdenekD`}
@@ -89,19 +89,20 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 onClick={handleClick}
                 aria-label={`Odkaz na stránku: ${data[item].title}`}
                 tabIndex={isOpen ? 1 : -1}
+                data-test="component-link"
             >
                 {data[item].title}
             </a>
         </li>
     ));
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (isAnimated) {
             (isOpen ? handleAnimationIn : handleAnimationOut)();
         }
     });
 
-    useEffect(() => {
+    React.useEffect(() => {
         const items = getLinks();
 
         setLinks(items);
