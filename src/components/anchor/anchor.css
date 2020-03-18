@@ -1,0 +1,8 @@
+.anchor {
+    border-bottom: 1px solid;
+
+    &:focus,
+    &:hover {
+        border-bottom: 1px solid transparent;
+    }
+}
