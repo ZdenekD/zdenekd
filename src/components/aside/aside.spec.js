@@ -14,6 +14,13 @@ describe('Aside', () => {
         wrapper = factoryStore(Aside, defaultProps);
     });
 
+    it('match snapshot', () => {
+        const store = getStore({});
+        const aside = mount(<Aside store={store} />);
+
+        expect(aside.html()).toMatchSnapshot();
+    });
+
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-aside');
 
