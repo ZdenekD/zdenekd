@@ -35,9 +35,9 @@ describe('Aside', () => {
 
     it('renders all pages links', () => {
         const store = getStore({});
-        const aside = mount(<Aside store={store} />);
+        const element = mount(<Aside store={store} />);
         const {length} = Object.keys(data);
-        const component = findComponent(aside, 'component-link');
+        const component = findComponent(element, 'component-link');
 
         expect(component.length).toBe(length);
     });
