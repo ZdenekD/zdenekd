@@ -128,11 +128,11 @@ const Main = ({isAnimated, children}) => {
             </Head>
             <State.StateProvider reducer={reducer}>
                 <>
-                    <section className={styles.section}>
+                    <main className={styles.section}>
                         <Header />
                         {!isAnimated && <Content content={children} />}
                         <Footer />
-                    </section>
+                    </main>
                     <Aside />
                     <Cursor />
                 </>
