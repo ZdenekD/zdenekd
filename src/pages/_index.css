@@ -4,6 +4,7 @@
 @import '../assets/styles/easing.css';
 @import '../assets/styles/transition.css';
 @import '../assets/styles/helpers.css';
+@import '../assets/styles/media.css';
 
 html {
     height: 100%;
@@ -22,6 +23,18 @@ body {
     &,
     * {
         cursor: none;
+    }
+
+    @media (--min-md) {
+        --font-size: 14px;
+    }
+
+    @media (--min-lg) {
+        --font-size: 15px;
+    }
+
+    @media (--min-xl) {
+        --font-size: 16px;
     }
 }
 

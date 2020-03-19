@@ -9,7 +9,7 @@
 
 .footer {
     width: 100%;
-    padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) var(--gutter);
+    padding: calc(4 * var(--gutter)) var(--section-gutter) var(--gutter);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -36,7 +36,7 @@
         --velocity: 50;
         width: 25%;
         height: 100%;
-        right: -20px;
+        right: -10px;
         border-bottom-right-radius: var(--border-radius);
     }
 
@@ -73,9 +73,10 @@
     padding-left: 30px;
     align-self: flex-end;
     position: relative;
+    top: -10px;
     left: -10px;
     opacity: .75;
-    font-size: .8em;
+    font-size: .75em;
 
     &::before,
     &::after {
@@ -104,17 +105,17 @@
 }
 
 .scroll {
-    margin-right: calc(4 * var(--gutter));
+    margin-right: var(--section-gutter);
     padding-bottom: calc(5 * var(--gutter));
     position: relative;
-    font-size: 1.2em;
+    font-size: 1em;
     letter-spacing: 1.5px;
 
     &::before {
         width: 1px;
         height: 100%;
         position: absolute;
-        top: calc(2 * var(--gutter));
+        top: calc(3 * var(--gutter));
         left: 50%;
         content: '';
         background: currentColor;
@@ -128,7 +129,7 @@
     width: 4px;
     height: 4px;
     position: absolute;
-    top: calc(2 * var(--gutter));
+    top: calc(3 * var(--gutter));
     right: calc(50% - 12px);
     opacity: var(--dot-opacity);
     background: var(--color-red);

@@ -43,7 +43,7 @@
 .navigation {
     width: 100%;
     height: 100%;
-    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter));
+    padding: var(--section-gutter);
     display: flex;
     align-items: center;
 }
@@ -61,7 +61,7 @@
 .link {
     position: relative;
     color: var(--navigation-color-active);
-    font-size: 3em;
+    font-size: 2.4em;
     text-decoration: none;
     text-transform: uppercase;
     transition: color .4s var(--ease-in-out-expo);

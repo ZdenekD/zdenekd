@@ -20,7 +20,7 @@
 
 .title,
 .description {
-    margin-bottom: var(--gutter);
+    margin-bottom: calc(2 * var(--gutter));
     position: relative;
 
     &::before {
@@ -36,15 +36,15 @@
 }
 
 .title {
-    font-size: 2.4em;
+    font-size: 2em;
 }
 
 .description {
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 .tools {
-    margin-top: calc(8 * var(--gutter));
+    margin-top: calc(4 * var(--gutter));
 }
 
 .tool {

@@ -15,7 +15,7 @@
 }
 
 .content {
-    padding: 0 calc(4 * var(--gutter)) calc(2 * var(--gutter));
+    padding: 0 var(--section-gutter);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -28,7 +28,7 @@
         position: relative;
         opacity: 0;
         color: var(--content-heading);
-        font-size: 3.2em;
+        font-size: 2.8em;
         text-align: center;
 
         &::first-letter {
@@ -42,7 +42,7 @@
             bottom: -10px;
             left: 0;
             content: '';
-            background: linear-gradient(90deg, var(--content-heading-admit), var(--content-heading));
+            background: var(--navigation-color);
 
             @media (prefers-reduced-motion: no-preference) {
                 opacity: 0;

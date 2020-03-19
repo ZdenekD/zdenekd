@@ -3,7 +3,6 @@
     padding: var(--gutter);
     background-color: var(--color-blue-darken-4);
     color: var(--key-background);
-    font-weight: bold;
     transition: background-color .4s var(--ease-out-quart), color .4s var(--ease-out-quart);
     border-radius: var(--border-radius);
 

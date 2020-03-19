@@ -1,6 +1,7 @@
 :root {
-    --gutter: 1em;
+    --gutter: 10px;
     --max-container-width: 1800px;
+    --section-gutter: calc(4 * var(--gutter));
     --input-height: 60px;
     --zindex-aside: 100;
     --zindex-header: 110;
