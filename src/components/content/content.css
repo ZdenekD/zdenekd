@@ -23,7 +23,7 @@
     opacity: 0;
 
     h2 {
-        margin: 0 auto;
+        margin: calc(2 * var(--gutter)) auto 0;
         padding-right: 12px;
         position: relative;
         opacity: 0;
@@ -61,6 +61,10 @@
             content: '';
             background: var(--navigation-color);
             border-radius: 50%;
+        }
+
+        @media (--min-sm) {
+            margin-top: 0;
         }
     }
 }

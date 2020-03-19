@@ -10,7 +10,7 @@
 .keys {
     --arrow-color: var(--color-blue-darken-4);
     margin-right: calc(2 * var(--gutter));
-    display: flex;
+    display: none;
     flex-direction: column;
     opacity: 0;
 
@@ -33,6 +33,10 @@
             content: '';
             transform: translate(-50%, -50%);
         }
+    }
+
+    @media (--min-lg) {
+        display: flex;
     }
 }
 

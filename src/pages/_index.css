@@ -18,6 +18,7 @@ body {
     font-size: var(--font-size, 13px);
     line-height: 1.4;
     font-weight: 400;
+    transition: font-size .4s var(--ease-out-quart);
 
     &,
     * {
