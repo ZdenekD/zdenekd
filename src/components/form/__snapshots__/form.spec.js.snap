@@ -2,56 +2,60 @@
 
 exports[`Form match snapshot 1`] = `
 <form data-test="component-form">
-  <div class="undefined ">
-    <span class="undefined ">
-      0 / 32
-    </span>
-    <input type="text"
-           id="Jméno"
-           class="undefined  "
-           name="name"
-           value
-           maxlength="32"
-           data-pattern="name"
-           required
-           data-test="component-input"
-    >
-    <label for="Jméno"
-           class="undefined "
-           data-test="component-label"
-    >
-      <span>
-        Jméno
+  <div class="animated-block">
+    <div class="undefined ">
+      <span class="undefined ">
+        0 / 32
       </span>
-    </label>
+      <input id="Jméno"
+             class="undefined  "
+             name="name"
+             type="text"
+             maxlength="32"
+             data-pattern="name"
+             required
+             data-test="component-input"
+             value
+      >
+      <label for="Jméno"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          Jméno
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="animated-block">
+    <div class="undefined ">
+      <span class="undefined ">
+        0 / 64
+      </span>
+      <input id="E-mail"
+             class="undefined  "
+             name="email"
+             type="email"
+             maxlength="64"
+             data-pattern="email"
+             required
+             data-test="component-input"
+             value
+      >
+      <label for="E-mail"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          E-mail
+        </span>
+      </label>
+    </div>
   </div>
   <div class="undefined ">
-    <span class="undefined ">
-      0 / 64
-    </span>
-    <input type="email"
-           id="E-mail"
-           class="undefined  "
-           name="email"
-           value
-           maxlength="64"
-           data-pattern="email"
-           required
-           data-test="component-input"
-    >
-    <label for="E-mail"
-           class="undefined "
-           data-test="component-label"
-    >
-      <span>
-        E-mail
-      </span>
-    </label>
-  </div>
-  <div class="undefined ">
-    <input type="text"
-           id="Med"
+    <input id="Med"
            name="med"
+           type="text"
            autocomplete="off"
            data-test="component-input"
     >
@@ -64,32 +68,36 @@ exports[`Form match snapshot 1`] = `
       </span>
     </label>
   </div>
-  <div>
-    <span class="undefined ">
-      0 / 140
-    </span>
-    <textarea id="Vzkaz"
-              class="undefined  "
-              name="message"
-              maxlength="140"
-              data-pattern="text"
-              required
-              data-test="component-textarea"
-    >
-    </textarea>
-    <label for="Vzkaz"
-           class="undefined "
-           data-test="component-label"
-    >
-      <span>
-        Vzkaz
+  <div class="animated-block">
+    <div>
+      <span class="undefined ">
+        0 / 140
       </span>
-    </label>
+      <textarea id="Vzkaz"
+                class="undefined  "
+                name="message"
+                maxlength="140"
+                data-pattern="text"
+                required
+                data-test="component-textarea"
+                style="height: 0px;"
+      >
+      </textarea>
+      <label for="Vzkaz"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          Vzkaz
+        </span>
+      </label>
+    </div>
   </div>
-  <div>
+  <div class="undefined animated-block">
     <span>
     </span>
     <button type="submit"
+            aria-label="Odeslat formulář"
             data-test="component-button"
     >
       Odeslat

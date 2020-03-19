@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './form.css';
 import Button from './button';
 import Input from './input';
@@ -29,10 +29,10 @@ const Form = () => {
             message: '',
         },
     };
-    const [data, setData] = useState(initialState);
-    const [error, setError] = useState(false);
-    const [message, setMessage] = useState('');
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [data, setData] = React.useState(initialState);
+    const [error, setError] = React.useState(false);
+    const [message, setMessage] = React.useState('');
+    const [isModalOpen, setModalOpen] = React.useState(false);
     const handleResponse = ({status}, text) => {
         setMessage(text);
 

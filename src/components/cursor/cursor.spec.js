@@ -1,11 +1,11 @@
-import {factory, findComponent} from '../../__test__/utils/helpers';
+import {factoryState, findComponent} from '../../__test__/utils/helpers';
 import Cursor from './index';
 
 describe('Cursor', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factory(Cursor);
+        wrapper = factoryState(Cursor);
     });
 
     it('match snapshot', () => {

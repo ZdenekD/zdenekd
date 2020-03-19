@@ -1,13 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import useHover from '../../../hooks/hover';
 import styles from './button.css';
 
 const Button = ({children, className, ...rest}) => {
-    const [, setPrepared] = useState(false);
-    const buttonRef = useRef(null);
+    const [, setPrepared] = React.useState(false);
+    const buttonRef = React.useRef(null);
 
-    useEffect(() => {
+    React.useEffect(() => {
         setPrepared(true);
     }, []);
 

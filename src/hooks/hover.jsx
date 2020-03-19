@@ -1,10 +1,10 @@
 import useEventListener from '@use-it/event-listener';
-import {useStateValue} from '../state';
+import state from '../state';
 import {handleCursor} from '../state/cursor/actions';
 
 const useHover = element => {
     // eslint-disable-next-line no-unused-vars
-    const [{cursor}, dispatch] = useStateValue();
+    const [{cursor}, dispatch] = state.useStateValue();
     const handleMouseEnter = event => {
         const {width, height, top, left} = event.target.getBoundingClientRect();
         const data = {

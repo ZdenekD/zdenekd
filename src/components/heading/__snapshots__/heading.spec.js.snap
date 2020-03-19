@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading match snapshot 1`] = `
+<a href="/"
+   aria-label="Odkaz na domovskou stránku"
+>
+  <h1 data-test="component-heading">
+    <span class="_visuallyhidden"
+          data-test="component-title"
+    >
+      Úvodní stránka | ZdenekD
+    </span>
+    <svg data-filename="src/assets/images/logo.svg">
+    </svg>
+    <i class="undefined ">
+    </i>
+  </h1>
+</a>
+`;

@@ -1,4 +1,4 @@
-import {factory, findComponent} from '../../../__test__/utils/helpers';
+import {factoryState, findComponent} from '../../../__test__/utils/helpers';
 import Button from './index';
 
 describe('Button', () => {
@@ -6,7 +6,7 @@ describe('Button', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factory(Button, defaultProps);
+        wrapper = factoryState(Button, defaultProps);
     });
 
     it('match snapshot', () => {

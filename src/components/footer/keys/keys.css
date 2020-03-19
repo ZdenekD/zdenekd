@@ -1,0 +1,85 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--fade-in-opacity);
+    }
+}
+
+.keys {
+    --arrow-color: var(--color-blue-darken-4);
+    margin-right: calc(2 * var(--gutter));
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+
+    i {
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: relative;
+        background: var(--key-background);
+        transition: all .4s var(--ease-out-quart);
+        border-radius: var(--border-radius);
+
+        &::before {
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.showKeys {
+    --fade-in-opacity: 1;
+    animation: fade-in 1.2s var(--ease-in-cubic) forwards .6s;
+}
+
+.key {
+    margin: 2px 4px;
+    display: flex;
+    align-self: center;
+
+    button& {
+
+        &:focus {
+            outline: 2px dotted var(--navigation-color);
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.keyLeft,
+.keyRight {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.keyLeft {
+    opacity: var(--key-left-opacity, .25);
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-right: 4px solid var(--arrow-color);
+        border-bottom: 4px solid transparent;
+    }
+}
+
+.keyRight {
+    opacity: var(--key-right-opacity, .25);
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--arrow-color);
+    }
+}

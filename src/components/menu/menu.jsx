@@ -1,14 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import Button from '../form/button';
 import styles from './menu.css';
 
 const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
-    const [, setPrepared] = useState(false);
-    const pathTopRef = useRef(null);
-    const pathMiddleRef = useRef(null);
-    const pathBottomRef = useRef(null);
+    const pathTopRef = React.useRef(null);
+    const pathMiddleRef = React.useRef(null);
+    const pathBottomRef = React.useRef(null);
     const handleTriggerAnimationOn = () => {
         anime
             .timeline({
@@ -66,15 +65,11 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
         }
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (isAnimated) {
             (isOpen ? handleTriggerAnimationOn : handleTriggerAnimationOff)();
         }
     });
-
-    useEffect(() => {
-        setPrepared(true);
-    }, []);
 
     return (
         <Button

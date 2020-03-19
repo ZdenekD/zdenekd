@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
@@ -9,15 +9,10 @@ import {getPage} from '../../helpers/getPage';
 import useHover from '../../hooks/hover';
 
 const Heading = ({isOpen, isAnimated}) => {
-    const [, setPrepared] = useState(false);
-    const headingRef = useRef(null);
+    const headingRef = React.useRef(null);
     const router = useRouter();
     const page = getPage(router.route);
     const title = data[page]?.title ?? 'Kávová paráda';
-
-    useEffect(() => {
-        setPrepared(true);
-    }, []);
 
     useHover(headingRef.current);
 

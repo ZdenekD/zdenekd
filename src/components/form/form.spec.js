@@ -1,11 +1,11 @@
-import {factory, findComponent} from '../../__test__/utils/helpers';
+import {factoryState, findComponent} from '../../__test__/utils/helpers';
 import Form from './index';
 
 describe('Form', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factory(Form);
+        wrapper = factoryState(Form);
     });
 
     it('match snapshot', () => {

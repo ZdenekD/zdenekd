@@ -1,20 +1,32 @@
-import {factoryStore, findComponent} from '../../__test__/utils/helpers';
+import React from 'react';
+import {mount} from 'enzyme';
+import {findComponent, getStore} from '../../__test__/utils/helpers';
 import Heading from './index';
+import State from '../../state';
 import data from '../../data/pages';
 import {getPage} from '../../helpers/getPage';
 
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Heading', () => {
-    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    const store = getStore({});
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factoryStore(Heading, defaultProps);
+        wrapper = mount(
+            <State.StateProvider>
+                <Heading store={store} />
+            </State.StateProvider>
+        );
+    });
+
+    it('match snapshot', () => {
+        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-heading');
+
 
         expect(component.exists()).toBe(true);
     });

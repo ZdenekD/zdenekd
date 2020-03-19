@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styles from './content.css';
 
 const Content = ({content}) => {
-    const contentRef = useRef(null);
+    const contentRef = React.useRef(null);
     const handleAnimationIn = () => {
         anime
             .timeline()
@@ -33,7 +33,7 @@ const Content = ({content}) => {
             }, '-=300');
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         handleAnimationIn();
     });
 

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Aside match snapshot 1`] = `
+<aside data-test="component-aside">
+  <nav data-test="component-navigation">
+    <ul>
+      <li data-test="component-item">
+        <a href="/"
+           title="Úvodní stránka | ZdenekD"
+           class="undefined  undefined"
+           aria-label="Odkaz na stránku: Úvodní stránka"
+           tabindex="-1"
+           data-test="component-link"
+        >
+          Úvodní stránka
+        </a>
+      </li>
+      <li data-test="component-item">
+        <a href="/projects"
+           title="Projekty | ZdenekD"
+           class="undefined  "
+           aria-label="Odkaz na stránku: Projekty"
+           tabindex="-1"
+           data-test="component-link"
+        >
+          Projekty
+        </a>
+      </li>
+      <li data-test="component-item">
+        <a href="/about"
+           title="O mně | ZdenekD"
+           class="undefined  "
+           aria-label="Odkaz na stránku: O mně"
+           tabindex="-1"
+           data-test="component-link"
+        >
+          O mně
+        </a>
+      </li>
+      <li data-test="component-item">
+        <a href="/contact"
+           title="Kontakt | ZdenekD"
+           class="undefined  "
+           aria-label="Odkaz na stránku: Kontakt"
+           tabindex="-1"
+           data-test="component-link"
+        >
+          Kontakt
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+`;

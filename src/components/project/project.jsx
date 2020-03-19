@@ -1,22 +1,20 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React from 'react';
 import useEventListener from '@use-it/event-listener';
 import anime from 'animejs';
 import projects from '../../data/projects';
 import config from '../../data/config';
+import Anchor from '../anchor';
 import Button from '../form/button';
 import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
 import Logo from '../../assets/images/logo.svg';
-import useHover from '../../hooks/hover';
 
 const Project = () => {
-    const [index, setIndex] = useState(0);
-    const [project, setProject] = useState(projects[Object.keys(projects)[0]]);
-    const [, setPrepared] = useState(false);
-    const contentRef = useRef(null);
-    const videoRef = useRef(null);
-    const buttonLinkRef = useRef(null);
-    const animation = useRef(null);
+    const [index, setIndex] = React.useState(0);
+    const [project, setProject] = React.useState(projects[Object.keys(projects)[0]]);
+    const contentRef = React.useRef(null);
+    const videoRef = React.useRef(null);
+    const animation = React.useRef(null);
     const minIndex = 0;
     const maxIndex = Object.keys(projects).length - 1;
     let coords = [0, 0];
@@ -162,17 +160,11 @@ const Project = () => {
     useEventListener('touchstart', handleTouchStart, videoRef.current);
     useEventListener('touchmove', handleTouchMove, videoRef.current);
 
-    useEffect(() => {
-        setPrepared(true);
-
-        return () => {
-            if (animation.current) {
-                animation.current.pause();
-            }
-        };
+    React.useEffect(() => () => {
+        if (animation.current) {
+            animation.current.pause();
+        }
     }, []);
-
-    useHover(buttonLinkRef.current);
 
     return (
         <div className={`${styles.block} animated-block`}>
@@ -255,16 +247,15 @@ const Project = () => {
                         </span>
                         <div className={styles.browserTarget}>
                             {!/localhost$/.test(project.url) && (
-                                <a
+                                <Anchor
                                     href={project.url}
                                     className={styles.browserLink}
                                     target="_blank"
                                     rel="noreferrer noopener"
-                                    ref={buttonLinkRef}
                                     aria-label="Otevřít referenci v novém okně"
                                 >
                                     <Icon className={styles.icon} />
-                                </a>
+                                </Anchor>
                             )}
                         </div>
                     </div>
