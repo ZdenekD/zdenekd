@@ -5,14 +5,9 @@ module.exports = {
         stylelint: {},
         'postcss-import': {},
         'postcss-nested': {},
-        'postcss-normalize': {},
-        'postcss-preset-env': {
-            stage: 1,
-        },
+        'postcss-preset-env': {stage: 1},
         'postcss-custom-media': {},
-        'postcss-reporter': {
-            clearReportedMessages: true,
-        },
+        'postcss-reporter': {clearReportedMessages: true},
         cssnano: process.env.NODE_ENV === 'production',
     },
 };
