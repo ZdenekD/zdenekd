@@ -13,8 +13,10 @@ const Footer = ({isOpen, isAnimated}) => {
     const year = new Date().getFullYear();
     const date = getRoman(year);
     const handleDot = () => {
-        dotRef.current.style.setProperty('--dot-transform', `calc(${index} * var(--gutter))`);
-        dotRef.current.style.setProperty('--dot-opacity', '1');
+        const {style} = dotRef.current;
+
+        style.setProperty('--dot-transform', `calc(${index} * var(--gutter))`);
+        style.setProperty('--dot-opacity', '1');
     };
 
     React.useEffect(() => {

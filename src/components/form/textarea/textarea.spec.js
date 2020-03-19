@@ -42,10 +42,11 @@ describe('Textarea', () => {
 
     it('calls `handleChange` on element change event', () => {
         const component = findComponent(wrapper, 'component-textarea');
+        const target = {target: {value: 0}};
 
-        component.simulate('change', {target: {value: 0}});
+        component.simulate('change', target);
 
-        expect(defaultProps.handleChange).toHaveBeenCalled();
+        expect(defaultProps.handleChange).toHaveBeenCalledWith(target);
     });
 
     it('renders label text from props', () => {

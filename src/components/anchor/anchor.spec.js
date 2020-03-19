@@ -1,18 +1,20 @@
 import React from 'react';
-import {mount} from 'enzyme';
-import {findComponent} from '../../__test__/utils/helpers';
+import {factoryState, findComponent} from '../../__test__/utils/helpers';
 import Anchor from './index';
-import State from '../../state';
 
 describe('Anchor', () => {
     const defaultProps = {href: '/', children: ''};
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = factoryState(Anchor, defaultProps);
+    });
+
+    it('match snapshot', () => {
+        expect(wrapper.html()).toMatchSnapshot();
+    });
 
     it('renders without error', () => {
-        const wrapper = mount(
-            <State.StateProvider>
-                <Anchor {...defaultProps} />
-            </State.StateProvider>
-        );
         const component = findComponent(wrapper, 'component-anchor');
 
         expect(component.exists()).toBe(true);
@@ -23,13 +25,9 @@ describe('Anchor', () => {
 
         React.useState = jest.fn(() => ['', mockSetPrepared]);
 
-        const wrapper = mount(
-            <State.StateProvider>
-                <Anchor {...defaultProps} />
-            </State.StateProvider>
-        );
+        const anchor = factoryState(Anchor, defaultProps);
 
-        wrapper.render();
+        anchor.render();
 
         expect(mockSetPrepared).toHaveBeenCalled();
     });

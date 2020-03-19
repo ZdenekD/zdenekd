@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keys match snapshot 1`] = `
+<div class="undefined undefined"
+     data-test="component-keys"
+>
+  <button class="undefined undefined"
+          type="button"
+          aria-label="Předchozí stránka"
+          tabindex="-1"
+          data-test="component-button"
+  >
+    <i>
+    </i>
+  </button>
+  <span>
+    <i>
+    </i>
+    <button class="undefined "
+            type="button"
+            aria-label="Následující stránka"
+            tabindex="0"
+            data-test="component-button"
+    >
+      <i>
+      </i>
+    </button>
+    <i>
+    </i>
+  </span>
+</div>
+`;

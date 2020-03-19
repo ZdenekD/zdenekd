@@ -5,9 +5,13 @@ jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => (
 
 describe('Footer', () => {
     const defaultProps = {menu: {isOpen: false}, app: {isAnimated: false}};
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = factoryStore(Footer, {}, defaultProps);
+    });
 
     it('renders without error', () => {
-        const wrapper = factoryStore(Footer, defaultProps);
         const component = findComponent(wrapper, 'component-footer');
 
         expect(component.exists()).toBe(true);

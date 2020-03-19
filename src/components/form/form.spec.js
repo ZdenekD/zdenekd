@@ -1,18 +1,11 @@
-import React from 'react';
-import {mount} from 'enzyme';
-import {findComponent} from '../../__test__/utils/helpers';
+import {factoryState, findComponent} from '../../__test__/utils/helpers';
 import Form from './index';
-import State from '../../state';
 
 describe('Form', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = mount(
-            <State.StateProvider>
-                <Form />
-            </State.StateProvider>
-        );
+        wrapper = factoryState(Form);
     });
 
     it('match snapshot', () => {

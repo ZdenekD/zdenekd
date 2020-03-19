@@ -7,12 +7,12 @@ import data from '../../data/pages';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Aside', () => {
-    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
     const store = getStore({});
+    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factoryStore(Aside, defaultProps);
+        wrapper = factoryStore(Aside, {}, defaultProps);
     });
 
     it('match snapshot', () => {

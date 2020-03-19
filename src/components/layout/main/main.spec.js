@@ -7,9 +7,13 @@ jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => (
 
 describe('Main', () => {
     const defaultProps = {app: {isAnimated: false}};
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = factoryStore(Main, {}, defaultProps);
+    });
 
     it('renders appropriate title value', () => {
-        const wrapper = factoryStore(Main, defaultProps);
         const component = findComponent(wrapper, 'component-title');
         const page = getPage('/');
         const heading = data[page].title;
