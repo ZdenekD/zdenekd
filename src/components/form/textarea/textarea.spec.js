@@ -1,3 +1,5 @@
+import React from 'react';
+import {mount} from 'enzyme';
 import {factory, findComponent} from '../../../__test__/utils/helpers';
 import Textarea from './index';
 
@@ -58,5 +60,42 @@ describe('Textarea', () => {
         const component = findComponent(container, 'component-label');
 
         expect(component.text().includes(label)).toBe(true);
+    });
+
+    it('renders error message if some occurs', () => {
+        const label = 'Content text';
+        const message = 'Error';
+        const props = {
+            handleChange: jest.fn(),
+            handleBlur: jest.fn(),
+            hasError: true,
+            label,
+            message,
+        };
+        const container = factory(Textarea, props);
+        const component = findComponent(container, 'component-label');
+
+        expect(component.text().includes(message)).toBe(true);
+    });
+
+    it('set characters `length` state on input value', () => {
+        const mockSetLength = jest.fn();
+
+        React.useState = jest.fn(() => ['', mockSetLength]);
+
+        const label = 'Content text';
+        const value = 'Textarea';
+        const props = {
+            handleChange: jest.fn(),
+            handleBlur: jest.fn(),
+            hasError: false,
+            label,
+            value,
+        };
+        const container = mount(<Textarea {...props} />);
+
+        container.render();
+
+        expect(mockSetLength).toHaveBeenCalledWith(value.length);
     });
 });

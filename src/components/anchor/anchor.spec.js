@@ -1,25 +1,36 @@
-import {factory, findComponent} from '../../__test__/utils/helpers';
+import React from 'react';
+import {mount} from 'enzyme';
+import {findComponent} from '../../__test__/utils/helpers';
 import Anchor from './index';
+import State from '../../state';
 
 describe('Anchor', () => {
     const defaultProps = {href: '/', children: ''};
 
     it('renders without error', () => {
-        const wrapper = factory(Anchor, defaultProps);
+        const wrapper = mount(
+            <State.StateProvider>
+                <Anchor {...defaultProps} />
+            </State.StateProvider>
+        );
         const component = findComponent(wrapper, 'component-anchor');
 
         expect(component.exists()).toBe(true);
     });
 
-    // it('set `isPrepared` state', () => {
-    //     const mockSetPrepared = jest.fn();
+    it('set `prepared` state', () => {
+        const mockSetPrepared = jest.fn();
 
-    //     React.useState = jest.fn(() => ['', mockSetPrepared]);
+        React.useState = jest.fn(() => ['', mockSetPrepared]);
 
-    //     const wrapper = mount(<Anchor {...defaultProps} />);
+        const wrapper = mount(
+            <State.StateProvider>
+                <Anchor {...defaultProps} />
+            </State.StateProvider>
+        );
 
-    //     wrapper.render();
+        wrapper.render();
 
-    //     expect(mockSetPrepared).toHaveBeenCalledWith(true);
-    // });
+        expect(mockSetPrepared).toHaveBeenCalled();
+    });
 });
