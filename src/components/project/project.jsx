@@ -168,7 +168,7 @@ const Project = () => {
 
     return (
         <div className={`${styles.block} animated-block`}>
-            <div className={styles.content} ref={contentRef}>
+            <div ref={contentRef} className={styles.content}>
                 <div>
                     <div className="animated-block animated-item">
                         <h3 className={styles.title} data-title={project.title}>
@@ -202,18 +202,18 @@ const Project = () => {
                         <Button
                             type="button"
                             className={`${styles.controlPrev} ${index === minIndex ? styles.disabled : ''}`}
-                            onClick={handleProjectPrev}
                             aria-label="Předchozí projekt"
                             tabIndex={index !== minIndex ? 0 : -1}
+                            onClick={handleProjectPrev}
                         />
                     </li>
                     <li className={styles.control}>
                         <Button
                             type="button"
                             className={`${styles.controlNext} ${index === maxIndex ? styles.disabled : ''}`}
-                            onClick={handleProjectNext}
                             aria-label="Následující projekt"
                             tabIndex={index !== maxIndex ? 0 : -1}
+                            onClick={handleProjectNext}
                         />
                     </li>
                 </ul>
@@ -230,16 +230,16 @@ const Project = () => {
                             <Button
                                 type="button"
                                 className={`${styles.browserPrev} ${index === minIndex ? styles.disabled : ''}`}
-                                onClick={handleProjectPrev}
                                 aria-label="Předchozí projekt"
                                 tabIndex={index !== minIndex ? 0 : -1}
+                                onClick={handleProjectPrev}
                             />
                             <Button
                                 type="button"
                                 className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
-                                onClick={handleProjectNext}
                                 aria-label="Následující projekt"
                                 tabIndex={index !== maxIndex ? 0 : -1}
+                                onClick={handleProjectNext}
                             />
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
@@ -260,7 +260,7 @@ const Project = () => {
                         </div>
                     </div>
                     <div className={styles.browserContent}>
-                        <video playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} ref={videoRef} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>
+                        <video ref={videoRef} playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>
                             <track kind="captions" />
                             <track kind="description" label={project.title} />
                             <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />

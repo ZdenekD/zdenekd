@@ -52,8 +52,8 @@ const Cursor = () => {
 
     return (
         <>
-            <i className={styles.outerCursor} ref={outerCursorRef} data-test="component-outer-cursor" />
-            <i className={styles.innerCursor} ref={innerCursorRef} data-test="component-inner-cursor" />
+            <i ref={outerCursorRef} className={styles.outerCursor} data-test="component-outer-cursor" />
+            <i ref={innerCursorRef} className={styles.innerCursor} data-test="component-inner-cursor" />
         </>
     );
 };

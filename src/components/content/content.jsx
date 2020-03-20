@@ -38,7 +38,7 @@ const Content = ({content}) => {
     });
 
     return (
-        <section className={styles.content} data-test="component-content" ref={contentRef}>
+        <section ref={contentRef} className={styles.content} data-test="component-content">
             {content}
         </section>
     );

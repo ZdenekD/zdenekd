@@ -14,14 +14,14 @@ const Modal = ({
     <ReactModal
         isOpen={isOpen}
         contentLabel={contentLabel}
-        onRequestClose={handleClose}
         className={`${styles.default} ${className || ''}`}
         bodyOpenClassName={styles.opened}
         overlayClassName={styles.overlay}
         appElement={document.getElementById('__next')}
+        onRequestClose={handleClose}
     >
         {content}
-        <Button type="button" className={styles.close} onClick={handleClose} aria-label="Zavřít modální okno">&times;</Button>
+        <Button type="button" className={styles.close} aria-label="Zavřít modální okno" onClick={handleClose}>&times;</Button>
     </ReactModal>
 ));
 

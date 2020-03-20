@@ -14,7 +14,7 @@ const Anchor = ({href, children, className, ...rest}) => {
     useHover(anchorRef.current);
 
     return (
-        <a href={href} className={className || styles.anchor} {...rest} ref={anchorRef} data-test="component-anchor">
+        <a ref={anchorRef} href={href} className={className || styles.anchor} data-test="component-anchor" {...rest}>
             {children}
         </a>
     );

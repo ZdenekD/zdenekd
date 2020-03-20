@@ -2,10 +2,10 @@
 
 exports[`Key Up match snapshot 1`] = `
 <button class="undefined undefined"
+        data-test="component-key"
         type="button"
         aria-label="Předchozí stránka"
         tabindex="-1"
-        data-test="component-button"
 >
   <i>
   </i>

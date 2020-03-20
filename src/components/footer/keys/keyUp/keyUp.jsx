@@ -19,12 +19,12 @@ const KeyUp = ({data, router}) => {
         <Button
             type="button"
             className={`${styles.key} ${index === minIndex ? styles.disabled : ''}`}
-            onClick={handleKey}
             aria-label="Předchozí stránka"
             tabIndex={index !== minIndex ? 0 : -1}
             data-test="component-key"
+            onClick={handleKey}
         >
-            <i className={styles.keyUp} ref={keyRef}></i>
+            <i ref={keyRef} className={styles.keyUp}></i>
         </Button>
     );
 };

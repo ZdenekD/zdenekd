@@ -86,10 +86,10 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                 href={data[item].link}
                 title={`${data[item].title} | ZdenekD`}
                 className={`${styles.link} ${isAnimated ? styles.animated : ''} ${page === item ? styles.active : ''}`}
-                onClick={handleClick}
                 aria-label={`Odkaz na stránku: ${data[item].title}`}
                 tabIndex={isOpen ? 1 : -1}
                 data-test="component-link"
+                onClick={handleClick}
             >
                 {data[item].title}
             </a>
@@ -110,9 +110,9 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
     }, []);
 
     return (
-        <aside className={styles.aside} data-test="component-aside" ref={asideRef}>
+        <aside ref={asideRef} className={styles.aside} data-test="component-aside">
             <nav className={styles.navigation} data-test="component-navigation">
-                <ul className={styles.list} ref={listRef}>
+                <ul ref={listRef} className={styles.list}>
                     {links}
                 </ul>
             </nav>
