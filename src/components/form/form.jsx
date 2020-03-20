@@ -93,7 +93,7 @@ const Form = () => {
 
     return (
         <>
-            {message && <Modal content={message} isOpen={isModalOpen} handleClose={handleClose} />}
+            {message && <Modal content={message} isOpen={isModalOpen} onClose={handleClose} />}
             <form className={styles.form} data-test="component-form" onSubmit={handleSubmit}>
                 <div className="animated-block">
                     <Input
