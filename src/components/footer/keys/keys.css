@@ -20,7 +20,7 @@
         display: block;
         position: relative;
         background: var(--key-background);
-        transition: all .4s var(--ease-out-quart);
+        transition: all var(--transition-duration) var(--transition-timing);
         border-radius: var(--border-radius);
 
         &::before {

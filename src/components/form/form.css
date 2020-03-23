@@ -6,12 +6,20 @@
 
 .row {
     width: 100%;
-    margin-bottom: calc(5 * var(--gutter));
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    transition: margin var(--transition-duration) var(--transition-timing);
+
+    @media (--min-xs) {
+        margin-bottom: calc(3 * var(--gutter));
+    }
+
+    @media (--min-md) {
+        margin-bottom: calc(5 * var(--gutter));
+    }
 }
 
 .error {

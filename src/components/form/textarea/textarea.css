@@ -4,8 +4,12 @@
 
 .textarea {
     composes: input from '../input/input.css';
-    padding: 0 var(--input-height) 0 0;
+    padding: 0 50px 0 0;
     resize: none;
+
+    @media (--min-md) {
+        padding-right: 70px;
+    }
 }
 
 .value {

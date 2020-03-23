@@ -9,7 +9,7 @@
 
 .footer {
     width: 100%;
-    padding: calc(4 * var(--gutter)) var(--section-gutter) var(--gutter);
+    padding: var(--section-gutter) var(--section-gutter) var(--gutter);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
