@@ -13,6 +13,7 @@ import Logo from '../../assets/images/logo.svg';
 const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, handlePrevProject}) => {
     const contentRef = React.useRef(null);
     const videoRef = React.useRef(null);
+    const browserRef = React.useRef(null);
     const animation = React.useRef(null);
     const project = projects[Object.keys(projects)[current]];
     let coords = [0, 0];
@@ -50,7 +51,10 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
         }
 
         const {current: video} = videoRef;
+        const {current: browser} = browserRef;
         const value = current - 1;
+
+        browser.style.height = `${video.clientHeight}px`;
 
         animation.current = anime
             .timeline({easing: 'easeOutCubic'})
@@ -90,7 +94,10 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
         }
 
         const {current: video} = videoRef;
+        const {current: browser} = browserRef;
         const value = current + 1;
+
+        browser.style.height = `${video.clientHeight}px`;
 
         animation.current = anime
             .timeline({easing: 'easeOutCubic'})
@@ -159,10 +166,14 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
 
         coords = [0, 0];
     };
+    const handleResize = () => {
+        browserRef.current.style.height = `${videoRef.current.clientHeight}px`;
+    };
 
     useEventListener('keydown', handleKeyboard);
     useEventListener('touchstart', handleTouchStart, videoRef.current);
     useEventListener('touchmove', handleTouchMove, videoRef.current);
+    useEventListener('resize', handleResize);
 
     React.useEffect(() => () => {
         if (animation.current) {
@@ -273,7 +284,7 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
                             )}
                         </div>
                     </div>
-                    <div className={styles.browserContent}>
+                    <div ref={browserRef} className={styles.browserContent}>
                         <video ref={videoRef} playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>
                             <track kind="captions" />
                             <track kind="description" label={project.title} />
