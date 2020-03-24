@@ -171,8 +171,8 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
     };
 
     useEventListener('keydown', handleKeyboard);
-    useEventListener('touchstart', handleTouchStart, videoRef.current);
-    useEventListener('touchmove', handleTouchMove, videoRef.current);
+    useEventListener('touchstart', handleTouchStart);
+    useEventListener('touchmove', handleTouchMove);
     useEventListener('resize', handleResize);
 
     React.useEffect(() => () => {

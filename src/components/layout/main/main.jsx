@@ -25,6 +25,7 @@ const Main = ({isAnimated, children}) => {
     const index = getPageIndex(router.route);
     let counter = 0;
     let timestamp = Math.floor(+new Date() / 1000);
+    let coords = [0, 0];
     const handlePagePrev = () => {
         if (isAnimated || index - 1 < minIndex) {
             return;
@@ -77,10 +78,38 @@ const Main = ({isAnimated, children}) => {
             handlePagePrev();
         }
     };
+    const handleTouchStart = event => {
+        const touches = [event.touches[0].clientX, event.touches[0].clientY];
+
+        coords = [...touches];
+    };
+    const handleTouchMove = event => {
+        const {clientX, clientY} = event.touches[0];
+        const [xDown, yDown] = coords;
+
+        if (!xDown || !yDown || isAnimated) {
+            return;
+        }
+
+        const xUp = clientX;
+        const yUp = clientY;
+        const xDiff = xDown - xUp;
+        const yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            return;
+        }
+
+        (yDiff < 0 ? handlePagePrev : handlePageNext)();
+
+        coords = [0, 0];
+    };
 
     useEventListener('mousewheel', handleScroll);
     useEventListener('DOMMouseScroll', handleScroll);
     useEventListener('keydown', handleKeyboard);
+    useEventListener('touchstart', handleTouchStart);
+    useEventListener('touchmove', handleTouchMove);
 
     return (
         <>
