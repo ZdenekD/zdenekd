@@ -93,15 +93,17 @@ exports[`Form match snapshot 1`] = `
       </label>
     </div>
   </div>
-  <div class="undefined animated-block">
-    <span>
-    </span>
-    <button data-test="component-button"
-            type="submit"
-            aria-label="Odeslat formulář"
-    >
-      Odeslat
-    </button>
+  <div class="animated-block">
+    <div class="undefined undefined">
+      <span>
+      </span>
+      <button data-test="component-button"
+              type="submit"
+              aria-label="Odeslat formulář"
+      >
+        Odeslat
+      </button>
+    </div>
   </div>
 </form>
 `;
