@@ -61,29 +61,3 @@
 .disabled {
     pointer-events: none;
 }
-
-.keyLeft,
-.keyRight {
-    margin-top: 4px;
-    margin-bottom: 4px;
-}
-
-.keyLeft {
-    opacity: var(--key-left-opacity, .25);
-
-    &::before {
-        border-top: 4px solid transparent;
-        border-right: 4px solid var(--arrow-color);
-        border-bottom: 4px solid transparent;
-    }
-}
-
-.keyRight {
-    opacity: var(--key-right-opacity, .25);
-
-    &::before {
-        border-top: 4px solid transparent;
-        border-bottom: 4px solid transparent;
-        border-left: 4px solid var(--arrow-color);
-    }
-}

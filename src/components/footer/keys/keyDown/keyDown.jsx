@@ -5,7 +5,6 @@ import styles from './keyDown.css';
 import {getPageIndex} from '../../../../helpers/getPage';
 
 const KeyDown = ({data, router}) => {
-    const keyRef = React.useRef(null);
     const pages = Object.keys(data);
     const index = getPageIndex(router.route);
     const maxIndex = pages.length - 1;
@@ -24,7 +23,7 @@ const KeyDown = ({data, router}) => {
             data-test="component-key"
             onClick={handleKey}
         >
-            <i ref={keyRef} className={styles.keyDown}></i>
+            <i className={styles.keyDown}></i>
         </Button>
     );
 };

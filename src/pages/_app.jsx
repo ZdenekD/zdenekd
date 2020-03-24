@@ -53,7 +53,7 @@ class Application extends App {
 
         return (
             <Provider store={store}>
-                <div className={`${styles.main} ${styles[page]} main`}>
+                <div className={`${styles.main} ${styles[page]}`}>
                     <Component />
                     <i ref={this.curtainRef} className={styles.curtain}></i>
                 </div>

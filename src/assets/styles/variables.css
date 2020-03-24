@@ -7,6 +7,7 @@
     --zindex-aside: 100;
     --zindex-header: 110;
     --zindex-modal: 200;
+    --zindex-loader: 210;
     --zindex-cursor: 1000;
     --border-radius: 4px;
 }

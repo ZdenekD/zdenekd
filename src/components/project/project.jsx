@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useEventListener from '@use-it/event-listener';
 import anime from 'animejs';
 import projects from '../../data/projects';
@@ -9,14 +10,12 @@ import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
 import Logo from '../../assets/images/logo.svg';
 
-const Project = () => {
-    const [index, setIndex] = React.useState(0);
-    const [project, setProject] = React.useState(projects[Object.keys(projects)[0]]);
+const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, handlePrevProject}) => {
     const contentRef = React.useRef(null);
     const videoRef = React.useRef(null);
+    const browserRef = React.useRef(null);
     const animation = React.useRef(null);
-    const minIndex = 0;
-    const maxIndex = Object.keys(projects).length - 1;
+    const project = projects[Object.keys(projects)[current]];
     let coords = [0, 0];
     const handleAnimationIn = (direction = 'next') => {
         const translate = direction === 'next' ? '10vw' : '-10vw';
@@ -47,11 +46,15 @@ const Project = () => {
         });
     };
     const handleProjectPrev = () => {
-        if (index - 1 < minIndex) {
+        if (current - 1 < min) {
             return;
         }
 
         const {current: video} = videoRef;
+        const {current: browser} = browserRef;
+        const value = current - 1;
+
+        browser.style.height = `${video.clientHeight}px`;
 
         animation.current = anime
             .timeline({easing: 'easeOutCubic'})
@@ -65,8 +68,10 @@ const Project = () => {
                     handleAnimationOut('prev');
                 },
                 complete() {
-                    setIndex(index - 1);
-                    setProject(projects[Object.keys(projects)[index - 1]]);
+                    handlePrevProject({
+                        current: value,
+                        handlePrev: false,
+                    });
 
                     videoRef.current.load();
                 },
@@ -84,11 +89,15 @@ const Project = () => {
         animation.current.play();
     };
     const handleProjectNext = () => {
-        if (index + 1 > maxIndex) {
+        if (current + 1 > max) {
             return;
         }
 
         const {current: video} = videoRef;
+        const {current: browser} = browserRef;
+        const value = current + 1;
+
+        browser.style.height = `${video.clientHeight}px`;
 
         animation.current = anime
             .timeline({easing: 'easeOutCubic'})
@@ -102,8 +111,10 @@ const Project = () => {
                     handleAnimationOut('next');
                 },
                 complete() {
-                    setIndex(index + 1);
-                    setProject(projects[Object.keys(projects)[index + 1]]);
+                    handleNextProject({
+                        current: value,
+                        handleNext: false,
+                    });
 
                     videoRef.current.load();
                 },
@@ -155,16 +166,30 @@ const Project = () => {
 
         coords = [0, 0];
     };
+    const handleResize = () => {
+        browserRef.current.style.height = `${videoRef.current.clientHeight}px`;
+    };
 
     useEventListener('keydown', handleKeyboard);
-    useEventListener('touchstart', handleTouchStart, videoRef.current);
-    useEventListener('touchmove', handleTouchMove, videoRef.current);
+    useEventListener('touchstart', handleTouchStart);
+    useEventListener('touchmove', handleTouchMove);
+    useEventListener('resize', handleResize);
 
     React.useEffect(() => () => {
         if (animation.current) {
             animation.current.pause();
         }
     }, []);
+
+    React.useEffect(() => {
+        if (handlePrev) {
+            handleProjectPrev();
+        }
+
+        if (handleNext) {
+            handleProjectNext();
+        }
+    }, [handlePrev, handleNext]);
 
     return (
         <div className={`${styles.block} animated-block`}>
@@ -201,18 +226,18 @@ const Project = () => {
                     <li className={styles.control}>
                         <Button
                             type="button"
-                            className={`${styles.controlPrev} ${index === minIndex ? styles.disabled : ''}`}
+                            className={`${styles.controlPrev} ${current === min ? styles.disabled : ''}`}
                             aria-label="Předchozí projekt"
-                            tabIndex={index !== minIndex ? 0 : -1}
+                            tabIndex={current !== min ? 0 : -1}
                             onClick={handleProjectPrev}
                         />
                     </li>
                     <li className={styles.control}>
                         <Button
                             type="button"
-                            className={`${styles.controlNext} ${index === maxIndex ? styles.disabled : ''}`}
+                            className={`${styles.controlNext} ${current === max ? styles.disabled : ''}`}
                             aria-label="Následující projekt"
-                            tabIndex={index !== maxIndex ? 0 : -1}
+                            tabIndex={current !== max ? 0 : -1}
                             onClick={handleProjectNext}
                         />
                     </li>
@@ -229,16 +254,16 @@ const Project = () => {
                         <div className={styles.browserHistory}>
                             <Button
                                 type="button"
-                                className={`${styles.browserPrev} ${index === minIndex ? styles.disabled : ''}`}
+                                className={`${styles.browserPrev} ${current === min ? styles.disabled : ''}`}
                                 aria-label="Předchozí projekt"
-                                tabIndex={index !== minIndex ? 0 : -1}
+                                tabIndex={current !== min ? 0 : -1}
                                 onClick={handleProjectPrev}
                             />
                             <Button
                                 type="button"
-                                className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
+                                className={`${styles.browserNext} ${current === max ? styles.disabled : ''}`}
                                 aria-label="Následující projekt"
-                                tabIndex={index !== maxIndex ? 0 : -1}
+                                tabIndex={current !== max ? 0 : -1}
                                 onClick={handleProjectNext}
                             />
                         </div>
@@ -246,7 +271,7 @@ const Project = () => {
                             {project.url}
                         </span>
                         <div className={styles.browserTarget}>
-                            {!/localhost$/.test(project.url) && (
+                            {!/in.progress$/.test(project.url) && (
                                 <Anchor
                                     href={project.url}
                                     className={styles.browserLink}
@@ -259,7 +284,7 @@ const Project = () => {
                             )}
                         </div>
                     </div>
-                    <div className={styles.browserContent}>
+                    <div ref={browserRef} className={styles.browserContent}>
                         <video ref={videoRef} playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>
                             <track kind="captions" />
                             <track kind="description" label={project.title} />
@@ -271,6 +296,16 @@ const Project = () => {
             </div>
         </div>
     );
+};
+
+Project.propTypes = {
+    min: PropTypes.number,
+    max: PropTypes.number,
+    current: PropTypes.number,
+    handleNext: PropTypes.bool,
+    handlePrev: PropTypes.bool,
+    handleNextProject: PropTypes.func,
+    handlePrevProject: PropTypes.func,
 };
 
 export default Project;

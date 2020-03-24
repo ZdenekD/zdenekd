@@ -52,7 +52,7 @@ const projects = {
     avprague: {
         id: 'avprague',
         title: 'AVPrague',
-        url: 'https://avprague.localhost',
+        url: 'https://avprague.in.progress',
         description: 'Pronájem ubytování přes službu Airbnb.',
         tools: [
             'jquery',
@@ -64,7 +64,7 @@ const projects = {
     portfolium: {
         id: 'portfolium',
         title: 'Portfolium',
-        url: 'https://portfolium.localhost',
+        url: 'https://portfolium.in.progress',
         description: 'Kompletní služby ohledně pronájmu bytových jednotek nebo domů.',
         tools: [
             'jquery',

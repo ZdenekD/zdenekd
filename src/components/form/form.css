@@ -2,6 +2,8 @@
     width: 75vw;
     max-width: 500px;
     margin: auto;
+    opacity: 1;
+    transition: opacity var(--transition-timing) var(--transition-duration);
 }
 
 .row {
@@ -28,6 +30,11 @@
 
 .error {
     color: var(--color-red);
+}
+
+.disabled {
+    opacity: .25;
+    pointer-events: none;
 }
 
 .hidden {
