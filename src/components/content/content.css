@@ -23,7 +23,7 @@
     opacity: 0;
 
     h2 {
-        margin: var(--section-gutter) auto;
+        margin: var(--gutter) auto;
         position: relative;
         opacity: 0;
         color: var(--content-heading);
@@ -68,15 +68,12 @@
         }
 
         @media (--min-lg) {
+            margin: var(--section-gutter) auto;
             font-size: 2.2em;
         }
 
         @media (--min-xl) {
             font-size: 2.4em;
-        }
-
-        @media (--min-sm) {
-            margin-top: 0;
         }
     }
 }

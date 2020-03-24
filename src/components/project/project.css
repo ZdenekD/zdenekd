@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    @media (--min-md) {
+    @media (--min-lg) {
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
@@ -14,9 +14,9 @@
 .content {
     display: none;
 
-    @media (--min-md) {
-        width: 40%;
-        padding: 0 calc(2 * var(--gutter)) 0 0;
+    @media (--min-lg) {
+        width: 80%;
+        margin-bottom: calc(2 * var(--gutter));
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -24,6 +24,9 @@
     }
 
     @media (--min-lg) {
+        width: 40%;
+        margin-bottom: 0;
+        padding: 0 calc(2 * var(--gutter)) 0 0;
         justify-content: space-between;
     }
 }
@@ -182,11 +185,12 @@
 }
 
 .project {
-    width: 90%;
-    max-height: 50vh;
+    width: 80%;
 
-    @media (--min-md) {
+    @media (--min-lg) {
         width: 50%;
+        margin-right: auto;
+        padding-left: calc(4 * var(--gutter));
     }
 }
 
