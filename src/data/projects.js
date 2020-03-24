@@ -10,7 +10,6 @@ const projects = {
             'lottie',
             'animejs',
             'webpack',
-            'multilanguage',
         ],
     },
     stenclova: {
@@ -23,7 +22,6 @@ const projects = {
             'octobercms',
             'sass',
             'gulp',
-            'multilanguage',
         ],
     },
     dirtjob: {
@@ -36,7 +34,6 @@ const projects = {
             'octobercms',
             'sass',
             'gulp',
-            'multilanguage',
         ],
     },
     digitalvision: {
@@ -74,7 +71,6 @@ const projects = {
             'octobercms',
             'sass',
             'gulp',
-            'multilanguage',
         ],
     },
 };

@@ -5,8 +5,8 @@ import Input from './index';
 
 describe('Input', () => {
     const defaultProps = {
-        handleChange: jest.fn(),
-        handleBlur: jest.fn(),
+        onChange: jest.fn(),
+        onBlur: jest.fn(),
         hasError: false,
         label: '',
     };
@@ -32,28 +32,28 @@ describe('Input', () => {
         expect(component.exists()).toBe(true);
     });
 
-    it('calls `handleBlur` on element blur event', () => {
+    it('calls `onBlur` on element blur event', () => {
         const component = findComponent(wrapper, 'component-input');
 
         component.simulate('blur');
 
-        expect(defaultProps.handleBlur).toHaveBeenCalled();
+        expect(defaultProps.onBlur).toHaveBeenCalled();
     });
 
-    it('calls `handleChange` on element change event', () => {
+    it('calls `onChange` on element change event', () => {
         const component = findComponent(wrapper, 'component-input');
         const target = {target: {value: 0}};
 
         component.simulate('change', target);
 
-        expect(defaultProps.handleChange).toHaveBeenCalledWith(target);
+        expect(defaultProps.onChange).toHaveBeenCalledWith(target);
     });
 
     it('renders label text from props', () => {
         const label = 'Content text';
         const props = {
-            handleChange: jest.fn(),
-            handleBlur: jest.fn(),
+            onChange: jest.fn(),
+            onBlur: jest.fn(),
             hasError: false,
             label,
         };
@@ -67,8 +67,8 @@ describe('Input', () => {
         const label = 'Content text';
         const message = 'Error';
         const props = {
-            handleChange: jest.fn(),
-            handleBlur: jest.fn(),
+            onChange: jest.fn(),
+            onBlur: jest.fn(),
             hasError: true,
             label,
             message,
@@ -87,8 +87,8 @@ describe('Input', () => {
         const label = 'Content text';
         const value = 'Input';
         const props = {
-            handleChange: jest.fn(),
-            handleBlur: jest.fn(),
+            onChange: jest.fn(),
+            onBlur: jest.fn(),
             hasError: false,
             label,
             value,

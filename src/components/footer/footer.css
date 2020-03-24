@@ -9,7 +9,7 @@
 
 .footer {
     width: 100%;
-    padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) var(--gutter);
+    padding: var(--section-gutter) var(--section-gutter) var(--gutter);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -17,34 +17,41 @@
     z-index: var(--zindex-header);
     color: var(--navigation-color);
 
-    &::before,
-    &::after {
-        position: absolute;
-        bottom: -20px;
-        content: '';
-        opacity: 0;
-        background: var(--curtain-color);
-        border-top-left-radius: var(--border-radius);
+    @media (--min-md) {
 
-        @media (prefers-reduced-motion: no-preference) {
-            transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
-            transition: var(--float-transition);
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            content: '';
+            opacity: 0;
+            background: var(--curtain-color);
+            border-top-left-radius: var(--border-radius);
+
+            @media (prefers-reduced-motion: no-preference) {
+                transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+                transition: var(--float-transition);
+            }
         }
-    }
 
-    &::before {
-        --velocity: 50;
-        width: 25%;
-        height: 100%;
-        right: -20px;
-        border-bottom-right-radius: var(--border-radius);
-    }
+        &::before {
+            --velocity: 50;
+            width: 25%;
+            min-width: 100px;
+            height: 100%;
+            min-height: 100px;
+            right: -10px;
+            border-bottom-right-radius: var(--border-radius);
+        }
 
-    &::after {
-        --velocity: 200;
-        width: 12.5%;
-        height: 75%;
-        right: calc(25% - 30px);
+        &::after {
+            --velocity: 200;
+            width: 12.5%;
+            min-width: 50px;
+            height: 75%;
+            min-height: 50px;
+            right: calc(25% - 30px);
+        }
     }
 }
 
@@ -73,9 +80,10 @@
     padding-left: 30px;
     align-self: flex-end;
     position: relative;
+    top: -10px;
     left: -10px;
     opacity: .75;
-    font-size: .8em;
+    font-size: .75em;
 
     &::before,
     &::after {
@@ -96,6 +104,10 @@
         left: 100%;
     }
 
+    @media (--max-md) {
+        margin-left: auto;
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         transform: translate3d(calc((-1 * var(--float-x) + 50vw) / 150), calc((-1 * var(--float-y) + 50vh) / 50), 0);
         transform-origin: left center;
@@ -104,21 +116,28 @@
 }
 
 .scroll {
-    margin-right: calc(4 * var(--gutter));
-    padding-bottom: calc(5 * var(--gutter));
-    position: relative;
-    font-size: 1.2em;
-    letter-spacing: 1.5px;
+    display: none;
 
-    &::before {
-        width: 1px;
-        height: 100%;
-        position: absolute;
-        top: calc(2 * var(--gutter));
-        left: 50%;
-        content: '';
-        background: currentColor;
-        transform: translateX(-50%);
+    @media (--min-lg) {
+        margin-right: var(--section-gutter);
+        padding-bottom: calc(5 * var(--gutter));
+        display: block;
+        position: relative;
+        opacity: 0;
+        font-size: 1em;
+        letter-spacing: 1.5px;
+        animation: fade-in 1s var(--ease-in-cubic) forwards;
+
+        &::before {
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: calc(3 * var(--gutter));
+            left: 50%;
+            content: '';
+            background: currentColor;
+            transform: translateX(-50%);
+        }
     }
 }
 
@@ -128,7 +147,7 @@
     width: 4px;
     height: 4px;
     position: absolute;
-    top: calc(2 * var(--gutter));
+    top: calc(3 * var(--gutter));
     right: calc(50% - 12px);
     opacity: var(--dot-opacity);
     background: var(--color-red);

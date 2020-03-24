@@ -1,17 +1,34 @@
 .block {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (--min-lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
 }
 
 .content {
-    width: 40%;
-    padding: calc(2 * var(--gutter)) calc(2 * var(--gutter)) 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: var(--navigation-color);
+    display: none;
+
+    @media (--min-lg) {
+        width: 80%;
+        margin-bottom: calc(2 * var(--gutter));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--navigation-color);
+    }
+
+    @media (--min-lg) {
+        width: 40%;
+        margin-bottom: 0;
+        padding: 0 calc(2 * var(--gutter)) 0 0;
+        justify-content: space-between;
+    }
 }
 
 .descriptionWrapper {
@@ -20,7 +37,7 @@
 
 .title,
 .description {
-    margin-bottom: var(--gutter);
+    margin-bottom: calc(2 * var(--gutter));
     position: relative;
 
     &::before {
@@ -36,15 +53,20 @@
 }
 
 .title {
-    font-size: 2.4em;
+    font-size: 2em;
 }
 
 .description {
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 .tools {
-    margin-top: calc(8 * var(--gutter));
+    display: none;
+
+    @media (--min-lg) {
+        margin-top: calc(4 * var(--gutter));
+        display: block;
+    }
 }
 
 .tool {
@@ -56,7 +78,7 @@
         .caption {
             opacity: 1;
             visibility: visible;
-            transition: all .4s var(--ease-in-out-quad);
+            transition: all var(--transition-duration) var(--ease-in-out-quad);
         }
     }
 
@@ -83,7 +105,7 @@
     width: 32px;
     height: 32px;
     opacity: .25;
-    transition: opacity .4s var(--ease-in-out-expo);
+    transition: opacity var(--transition-duration) var(--ease-in-out-expo);
 
     &:focus,
     &:hover {
@@ -92,11 +114,15 @@
 }
 
 .controls {
-    width: 100%;
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
+    display: none;
+
+    @media (--min-lg) {
+        width: 100%;
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+    }
 }
 
 .control {
@@ -159,14 +185,21 @@
 }
 
 .project {
-    width: 60%;
+    width: 80%;
+
+    @media (--min-lg) {
+        width: 50%;
+        margin-right: auto;
+        padding-left: calc(4 * var(--gutter));
+    }
 }
 
 .browser {
     --velocity: 100;
     width: 100%;
     max-width: 900px;
-    margin: calc(2 * var(--gutter)) calc(2 * var(--gutter)) 0 auto;
+    height: 100%;
+    margin: 0 calc(2 * var(--gutter)) 0 auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 .9px 3.7px rgba(0, 0, 0, .026), 0 2.2px 8.6px rgba(0, 0, 0, .037), 0 3.9px 15.5px rgba(0, 0, 0, .046), 0 6.4px 25.7px rgba(0, 0, 0, .054), 0 10.6px 42.3px rgba(0, 0, 0, .063), 0 18.5px 74px rgba(0, 0, 0, .074), 0 40px 160px rgba(0, 0, 0, .1);
@@ -275,7 +308,7 @@
     &:focus,
     &:hover {
         background: var(--color-green-lighten-5);
-        transition: all .4s ease-in-out;
+        transition: all var(--transition-duration) ease-in-out;
         border-color: var(--color-green-lighten-4);
     }
 }
@@ -362,7 +395,7 @@
 }
 
 .video {
-    width: calc(100% + 2px);
+    width: calc(100% + 4px);
     position: relative;
     top: -2px;
     z-index: 1;

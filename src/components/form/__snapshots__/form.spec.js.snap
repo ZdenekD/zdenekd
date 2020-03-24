@@ -9,12 +9,12 @@ exports[`Form match snapshot 1`] = `
       </span>
       <input id="Jméno"
              class="undefined  "
+             data-test="component-input"
+             required
              name="name"
              type="text"
              maxlength="32"
              data-pattern="name"
-             required
-             data-test="component-input"
              value
       >
       <label for="Jméno"
@@ -34,12 +34,12 @@ exports[`Form match snapshot 1`] = `
       </span>
       <input id="E-mail"
              class="undefined  "
+             data-test="component-input"
+             required
              name="email"
              type="email"
              maxlength="64"
              data-pattern="email"
-             required
-             data-test="component-input"
              value
       >
       <label for="E-mail"
@@ -54,10 +54,10 @@ exports[`Form match snapshot 1`] = `
   </div>
   <div class="undefined ">
     <input id="Med"
+           data-test="component-input"
            name="med"
            type="text"
            autocomplete="off"
-           data-test="component-input"
     >
     <label for="Med"
            class="undefined "
@@ -75,11 +75,11 @@ exports[`Form match snapshot 1`] = `
       </span>
       <textarea id="Vzkaz"
                 class="undefined  "
+                data-test="component-textarea"
+                required
                 name="message"
                 maxlength="140"
                 data-pattern="text"
-                required
-                data-test="component-textarea"
                 style="height: 0px;"
       >
       </textarea>
@@ -96,9 +96,9 @@ exports[`Form match snapshot 1`] = `
   <div class="undefined animated-block">
     <span>
     </span>
-    <button type="submit"
+    <button data-test="component-button"
+            type="submit"
             aria-label="Odeslat formulář"
-            data-test="component-button"
     >
       Odeslat
     </button>

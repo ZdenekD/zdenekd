@@ -75,14 +75,14 @@ const Menu = ({isOpen, isAnimated, handleMenu, handleMenuAnimation}) => {
         <Button
             type="button"
             className={`${styles.button} ${isOpen ? styles.active : ''} ${isAnimated ? styles.disabled : ''}`}
-            onClick={handleClick}
             data-test="component-menu"
             aria-label="Menu"
+            onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
-                <path d="M30,40 L70,40 Z" ref={pathTopRef}></path>
-                <path d="M30,50 L70,50 Z" ref={pathMiddleRef}></path>
-                <path d="M30,60 L70,60 Z" ref={pathBottomRef}></path>
+                <path ref={pathTopRef} d="M30,40 L70,40 Z"></path>
+                <path ref={pathMiddleRef} d="M30,50 L70,50 Z"></path>
+                <path ref={pathBottomRef} d="M30,60 L70,60 Z"></path>
             </svg>
         </Button>
     );

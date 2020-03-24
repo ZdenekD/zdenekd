@@ -6,15 +6,15 @@
 .label {
     --label-color: var(--color-blue-lighten-2);
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .input {
     height: var(--input-height);
-    padding-right: var(--input-height);
+    padding-right: 50px;
     overflow: hidden;
     color: var(--color-blue-darken-4);
-    font-size: 2em;
+    font-size: 1.2em;
     line-height: var(--input-height);
 
     &:focus {
@@ -28,9 +28,14 @@
 
             .content {
                 color: var(--label-color);
-                transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+                transform: translate3d(0, 2em, 0) scale3d(.655, .655, 1);
             }
         }
+    }
+
+    @media (--min-md) {
+        padding-right: 70px;
+        font-size: 1.4em;
     }
 }
 
@@ -45,7 +50,7 @@
 
         .content {
             color: var(--label-color);
-            transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+            transform: translate3d(0, 2em, 0) scale3d(.655, .655, 1);
         }
     }
 }
@@ -57,20 +62,23 @@
 .label {
     position: absolute;
     top: calc(100% - var(--input-height));
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.2em;
     text-align: left;
 
     &::after {
         width: 100%;
-        height: 4px;
+        height: 2px;
         position: absolute;
         top: 100%;
         left: 0;
         content: '';
         background-color: var(--color-blue-darken-4);
         transform-origin: 50% 100%;
-        transition: transform .4s var(--ease-out-quart), background-color .4s var(--ease-out-quart);
+        transition: transform var(--transition-duration) var(--transition-timing), background-color var(--transition-duration) var(--transition-timing);
+    }
+
+    @media (--min-md) {
+        font-size: 1.4em;
     }
 }
 
@@ -78,7 +86,7 @@
     display: inline-block;
     color: var(--color-blue-darken-4);
     transform-origin: 0 0;
-    transition: transform .4s var(--ease-out-quart), color .4s var(--ease-out-quart);
+    transition: transform var(--transition-duration) var(--transition-timing), color var(--transition-duration) var(--transition-timing);
 }
 
 .counter {
@@ -87,8 +95,13 @@
     top: 0;
     right: 0;
     color: var(--color-light-gray);
+    font-size: .8em;
     line-height: var(--input-height);
     text-align: right;
+
+    @media (--min-md) {
+        font-size: 1em;
+    }
 }
 
 .edited {

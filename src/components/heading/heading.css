@@ -28,17 +28,17 @@
     }
 }
 
-.button,
 .heading {
     margin: 0;
     position: relative;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .logo {
     width: auto;
     height: 100%;
-    max-height: 60px;
+    max-height: 40px;
+    transition: max-height var(--transition-duration) var(--transition-timing);
 
     &.active {
         --navigation-color: var(--navigation-color-active);
@@ -48,6 +48,14 @@
         fill: var(--navigation-color, var(--color-blue-darken-3));
         stroke: var(--navigation-color, var(--color-blue-darken-3));
         transition: var(--header-transition);
+    }
+
+    @media (--min-md) {
+        max-height: 50px;
+    }
+
+    @media (--min-lg) {
+        max-height: 60px;
     }
 }
 
@@ -66,17 +74,25 @@
         height: 0;
         display: block;
         position: absolute;
-        top: calc(50% - 25px);
-        left: calc(50% - 12.5%);
+        top: calc(50% - 20px);
+        left: calc(50% - 27.5%);
         z-index: -1;
         opacity: .75;
         transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
         transition: var(--float-transition);
         animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
         border-radius: var(--border-radius);
-        border-right: 25px solid transparent;
-        border-bottom: 40px solid transparent;
-        border-left: 25px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-left: 20px solid transparent;
+
+        @media (--min-md) {
+            top: calc(50% - 25px);
+            left: calc(50% - 12.5%);
+            border-right: 25px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-left: 25px solid transparent;
+        }
     }
 
     .shadowActive {

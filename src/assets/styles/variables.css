@@ -1,7 +1,9 @@
 :root {
-    --gutter: 1em;
+    --gutter: 10px;
     --max-container-width: 1800px;
-    --input-height: 60px;
+    --input-height: 50px;
+    --transition-duration: .4s;
+    --transition-timing: var(--ease-out-quart);
     --zindex-aside: 100;
     --zindex-header: 110;
     --zindex-modal: 200;

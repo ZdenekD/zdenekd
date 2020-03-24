@@ -29,7 +29,7 @@ const Footer = ({isOpen, isAnimated}) => {
             <Keys />
             <span className={styles.scroll}>
                 Scroll
-                <i className={styles.dot} ref={dotRef}></i>
+                <i ref={dotRef} className={styles.dot}></i>
             </span>
         </footer>
     );

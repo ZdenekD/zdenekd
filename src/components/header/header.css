@@ -1,9 +1,17 @@
 .header {
     width: 100%;
-    padding: calc(2 * var(--gutter)) calc(4 * var(--gutter)) var(--gutter);
+    padding: 0 var(--section-gutter);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: var(--zindex-header);
+
+    @media (--min-sm) and (orientation: portrait) {
+        padding-top: calc(2 * var(--gutter));
+    }
+
+    @media (--min-lg) {
+        padding-top: calc(2 * var(--gutter));
+    }
 }

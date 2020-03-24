@@ -93,36 +93,36 @@ const Form = () => {
 
     return (
         <>
-            {message && <Modal content={message} isOpen={isModalOpen} handleClose={handleClose} />}
-            <form onSubmit={handleSubmit} className={styles.form} data-test="component-form">
+            {message && <Modal content={message} isOpen={isModalOpen} onClose={handleClose} />}
+            <form className={styles.form} data-test="component-form" onSubmit={handleSubmit}>
                 <div className="animated-block">
                     <Input
+                        required
                         name="name"
                         label="Jméno"
                         type="text"
                         value={data.name.value}
                         hasError={data.name.hasError}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
                         message={data.name.message}
                         maxLength="32"
                         data-pattern="name"
-                        required
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                     />
                 </div>
                 <div className="animated-block">
                     <Input
+                        required
                         name="email"
                         label="E-mail"
                         type="email"
                         value={data.email.value}
                         hasError={data.email.hasError}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
                         message={data.email.message}
                         maxLength="64"
                         data-pattern="email"
-                        required
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                     />
                 </div>
                 <Input
@@ -131,29 +131,30 @@ const Form = () => {
                     type="text"
                     className={styles.hidden}
                     hasError={data.med.hasError}
-                    handleChange={handleChange}
                     autoComplete="off"
+                    onChange={handleChange}
                 />
                 <div className="animated-block">
                     <Textarea
+                        required
                         name="message"
                         label="Vzkaz"
                         value={data.message.value}
                         hasError={data.message.hasError}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
                         message={data.message.message}
                         maxLength="140"
                         data-pattern="text"
-                        required
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                     />
                 </div>
-
-                <div className={`${styles.row} animated-block`}>
-                    <span className={styles.error}>{error && <>Formulář obsahuje chybně zadané pole.</>}</span>
-                    <Button type="submit" onSubmit={handleSubmit} aria-label="Odeslat formulář">
-                        Odeslat
-                    </Button>
+                <div className="animated-block">
+                    <div className={`${styles.row} ${styles.last}`}>
+                        <span className={styles.error}>{error && <>Formulář obsahuje chybně zadané pole.</>}</span>
+                        <Button type="submit" aria-label="Odeslat formulář" onSubmit={handleSubmit}>
+                            Odeslat
+                        </Button>
+                    </div>
                 </div>
             </form>
         </>

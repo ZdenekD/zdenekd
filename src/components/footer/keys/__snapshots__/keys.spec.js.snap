@@ -5,10 +5,10 @@ exports[`Keys match snapshot 1`] = `
      data-test="component-keys"
 >
   <button class="undefined undefined"
+          data-test="component-key"
           type="button"
           aria-label="Předchozí stránka"
           tabindex="-1"
-          data-test="component-button"
   >
     <i>
     </i>
@@ -17,10 +17,10 @@ exports[`Keys match snapshot 1`] = `
     <i>
     </i>
     <button class="undefined "
+            data-test="component-key"
             type="button"
             aria-label="Následující stránka"
             tabindex="0"
-            data-test="component-button"
     >
       <i>
       </i>

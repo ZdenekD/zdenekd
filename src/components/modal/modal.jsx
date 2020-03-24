@@ -9,19 +9,19 @@ const Modal = ({
     contentLabel = '',
     className = '',
     isOpen,
-    handleClose,
+    onClose,
 }) => ((
     <ReactModal
         isOpen={isOpen}
         contentLabel={contentLabel}
-        onRequestClose={handleClose}
         className={`${styles.default} ${className || ''}`}
         bodyOpenClassName={styles.opened}
         overlayClassName={styles.overlay}
         appElement={document.getElementById('__next')}
+        onRequestClose={onClose}
     >
         {content}
-        <Button type="button" className={styles.close} onClick={handleClose} aria-label="Zavřít modální okno">&times;</Button>
+        <Button type="button" className={styles.close} aria-label="Zavřít modální okno" onClick={onClose}>&times;</Button>
     </ReactModal>
 ));
 
@@ -34,7 +34,7 @@ Modal.propTypes = {
     contentLabel: PropTypes.string,
     className: PropTypes.string,
     isOpen: PropTypes.bool.isRequired,
-    handleClose: PropTypes.func,
+    onClose: PropTypes.func,
 };
 
 export default Modal;

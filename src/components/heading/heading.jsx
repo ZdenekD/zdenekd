@@ -17,9 +17,9 @@ const Heading = ({isOpen, isAnimated}) => {
     useHover(headingRef.current);
 
     return (
-        <Link href="/" passHref>
+        <Link passHref href="/">
             <a href="/" className={styles.link} disabled={isAnimated} aria-label="Odkaz na domovskou stránku">
-                <h1 className={styles.heading} data-test="component-heading" ref={headingRef}>
+                <h1 ref={headingRef} className={styles.heading} data-test="component-heading">
                     <span className="_visuallyhidden" data-test="component-title">{`${title} | ZdenekD`}</span>
                     <Logo className={`${styles.logo} ${isOpen ? styles.active : ''}`} />
                     <i className={`${styles.shadow} ${isOpen ? styles.shadowActive : ''}`}></i>

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './textarea.css';
 
 const Textarea = ({
-    handleChange,
-    handleBlur,
+    onChange,
+    onBlur,
     hasError,
     label,
     message = '',
@@ -20,9 +20,9 @@ const Textarea = ({
             current.style.height = `${current.scrollHeight}px`;
         }
     };
-    const onChange = event => {
+    const handleChange = event => {
         handleHeight();
-        handleChange(event);
+        onChange(event);
     };
 
     React.useEffect(() => {
@@ -36,13 +36,13 @@ const Textarea = ({
                 <span className={`${styles.counter} ${length > 0 ? styles.edited : ''}`}>{length} / {rest.maxLength}</span>
             )}
             <textarea
+                ref={textareaRef}
                 id={label}
                 className={`${styles.textarea} ${rest?.value?.length > 0 ? styles.value : ''} ${hasError ? styles.error : ''}`}
-                onChange={onChange}
-                onBlur={handleBlur}
-                {...rest}
-                ref={textareaRef}
                 data-test="component-textarea"
+                onChange={handleChange}
+                onBlur={onBlur}
+                {...rest}
             />
             <label htmlFor={label} className={`${styles.label} ${hasError ? styles.error : ''}`} data-test="component-label">
                 <span className={styles.content}>
@@ -54,8 +54,8 @@ const Textarea = ({
 };
 
 Textarea.propTypes = {
-    handleChange: PropTypes.func.isRequired,
-    handleBlur: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
+    onBlur: PropTypes.func,
     hasError: PropTypes.bool.isRequired,
     label: PropTypes.string.isRequired,
     message: PropTypes.string,

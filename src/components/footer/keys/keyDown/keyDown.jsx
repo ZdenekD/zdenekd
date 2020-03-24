@@ -19,12 +19,12 @@ const KeyDown = ({data, router}) => {
         <Button
             type="button"
             className={`${styles.key} ${index === maxIndex ? styles.disabled : ''}`}
-            onClick={handleKey}
             aria-label="Následující stránka"
             tabIndex={index !== maxIndex ? 0 : -1}
             data-test="component-key"
+            onClick={handleKey}
         >
-            <i className={styles.keyDown} ref={keyRef}></i>
+            <i ref={keyRef} className={styles.keyDown}></i>
         </Button>
     );
 };
