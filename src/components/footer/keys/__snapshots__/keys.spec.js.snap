@@ -13,9 +13,16 @@ exports[`Keys match snapshot 1`] = `
     <i>
     </i>
   </button>
-  <span>
-    <i>
-    </i>
+  <div>
+    <button class="undefined undefined"
+            data-test="component-key"
+            type="button"
+            aria-label="Předchozí projekt"
+            tabindex="0"
+    >
+      <i>
+      </i>
+    </button>
     <button class="undefined "
             data-test="component-key"
             type="button"
@@ -25,8 +32,15 @@ exports[`Keys match snapshot 1`] = `
       <i>
       </i>
     </button>
-    <i>
-    </i>
-  </span>
+    <button class="undefined "
+            data-test="component-key"
+            type="button"
+            aria-label="Následující projekt"
+            tabindex="0"
+    >
+      <i>
+      </i>
+    </button>
+  </div>
 </div>
 `;

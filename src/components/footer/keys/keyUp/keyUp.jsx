@@ -5,7 +5,6 @@ import styles from './keyUp.css';
 import {getPageIndex} from '../../../../helpers/getPage';
 
 const KeyUp = ({data, router}) => {
-    const keyRef = React.useRef(null);
     const pages = Object.keys(data);
     const index = getPageIndex(router.route);
     const minIndex = 0;
@@ -24,7 +23,7 @@ const KeyUp = ({data, router}) => {
             data-test="component-key"
             onClick={handleKey}
         >
-            <i ref={keyRef} className={styles.keyUp}></i>
+            <i className={styles.keyUp}></i>
         </Button>
     );
 };
