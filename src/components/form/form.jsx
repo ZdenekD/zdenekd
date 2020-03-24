@@ -3,6 +3,7 @@ import styles from './form.css';
 import Button from './button';
 import Input from './input';
 import Textarea from './textarea';
+import Loader from '../loader';
 import Modal from '../modal';
 import * as regex from '../../helpers/regex';
 
@@ -33,6 +34,7 @@ const Form = () => {
     const [error, setError] = React.useState(false);
     const [message, setMessage] = React.useState('');
     const [isModalOpen, setModalOpen] = React.useState(false);
+    const [isLoader, setLoader] = React.useState(false);
     const handleResponse = ({status}, text) => {
         setMessage(text);
 
@@ -48,6 +50,8 @@ const Form = () => {
         const isHoney = !!data.med.value;
 
         if (!hasError && !isHoney) {
+            setLoader(true);
+
             const map = Object.keys(data).map(item => ({[item]: data[item].value}));
             const input = Object.assign({}, ...map);
             const res = await fetch('/api/send', {
@@ -60,6 +64,7 @@ const Form = () => {
             handleResponse(res, text);
         }
 
+        setLoader(false);
         setError(hasError);
     };
     const handleChange = event => {
@@ -93,8 +98,9 @@ const Form = () => {
 
     return (
         <>
+            {isLoader && <Loader />}
             {message && <Modal content={message} isOpen={isModalOpen} onClose={handleClose} />}
-            <form className={styles.form} data-test="component-form" onSubmit={handleSubmit}>
+            <form className={`${styles.form} ${isLoader ? styles.disabled : ''}`} data-test="component-form" onSubmit={handleSubmit}>
                 <div className="animated-block">
                     <Input
                         required

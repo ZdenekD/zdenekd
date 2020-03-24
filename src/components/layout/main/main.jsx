@@ -99,7 +99,7 @@ const Main = ({isAnimated, children}) => {
             </Head>
             <State.StateProvider reducer={reducer}>
                 <>
-                    <main className={styles.section}>
+                    <main className={`${styles.section} main`}>
                         <Header />
                         {!isAnimated && <Content content={children} />}
                         <Footer />

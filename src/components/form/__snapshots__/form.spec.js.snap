@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form match snapshot 1`] = `
-<form data-test="component-form">
+<form class="undefined "
+      data-test="component-form"
+>
   <div class="animated-block">
     <div class="undefined ">
       <span class="undefined ">
