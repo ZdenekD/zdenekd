@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useEventListener from '@use-it/event-listener';
 import anime from 'animejs';
 import projects from '../../data/projects';
@@ -9,8 +10,7 @@ import styles from './project.css';
 import Icon from '../../assets/images/icon_open.svg';
 import Logo from '../../assets/images/logo.svg';
 
-const Project = () => {
-    const [index, setIndex] = React.useState(0);
+const Project = ({current, handleProject}) => {
     const [project, setProject] = React.useState(projects[Object.keys(projects)[0]]);
     const contentRef = React.useRef(null);
     const videoRef = React.useRef(null);
@@ -47,7 +47,7 @@ const Project = () => {
         });
     };
     const handleProjectPrev = () => {
-        if (index - 1 < minIndex) {
+        if (current - 1 < minIndex) {
             return;
         }
 
@@ -65,8 +65,8 @@ const Project = () => {
                     handleAnimationOut('prev');
                 },
                 complete() {
-                    setIndex(index - 1);
-                    setProject(projects[Object.keys(projects)[index - 1]]);
+                    handleProject({current: current - 1});
+                    setProject(projects[Object.keys(projects)[current - 1]]);
 
                     videoRef.current.load();
                 },
@@ -84,7 +84,7 @@ const Project = () => {
         animation.current.play();
     };
     const handleProjectNext = () => {
-        if (index + 1 > maxIndex) {
+        if (current + 1 > maxIndex) {
             return;
         }
 
@@ -102,8 +102,8 @@ const Project = () => {
                     handleAnimationOut('next');
                 },
                 complete() {
-                    setIndex(index + 1);
-                    setProject(projects[Object.keys(projects)[index + 1]]);
+                    handleProject({current: current + 1});
+                    setProject(projects[Object.keys(projects)[current + 1]]);
 
                     videoRef.current.load();
                 },
@@ -201,18 +201,18 @@ const Project = () => {
                     <li className={styles.control}>
                         <Button
                             type="button"
-                            className={`${styles.controlPrev} ${index === minIndex ? styles.disabled : ''}`}
+                            className={`${styles.controlPrev} ${current === minIndex ? styles.disabled : ''}`}
                             aria-label="Předchozí projekt"
-                            tabIndex={index !== minIndex ? 0 : -1}
+                            tabIndex={current !== minIndex ? 0 : -1}
                             onClick={handleProjectPrev}
                         />
                     </li>
                     <li className={styles.control}>
                         <Button
                             type="button"
-                            className={`${styles.controlNext} ${index === maxIndex ? styles.disabled : ''}`}
+                            className={`${styles.controlNext} ${current === maxIndex ? styles.disabled : ''}`}
                             aria-label="Následující projekt"
-                            tabIndex={index !== maxIndex ? 0 : -1}
+                            tabIndex={current !== maxIndex ? 0 : -1}
                             onClick={handleProjectNext}
                         />
                     </li>
@@ -229,16 +229,16 @@ const Project = () => {
                         <div className={styles.browserHistory}>
                             <Button
                                 type="button"
-                                className={`${styles.browserPrev} ${index === minIndex ? styles.disabled : ''}`}
+                                className={`${styles.browserPrev} ${current === minIndex ? styles.disabled : ''}`}
                                 aria-label="Předchozí projekt"
-                                tabIndex={index !== minIndex ? 0 : -1}
+                                tabIndex={current !== minIndex ? 0 : -1}
                                 onClick={handleProjectPrev}
                             />
                             <Button
                                 type="button"
-                                className={`${styles.browserNext} ${index === maxIndex ? styles.disabled : ''}`}
+                                className={`${styles.browserNext} ${current === maxIndex ? styles.disabled : ''}`}
                                 aria-label="Následující projekt"
-                                tabIndex={index !== maxIndex ? 0 : -1}
+                                tabIndex={current !== maxIndex ? 0 : -1}
                                 onClick={handleProjectNext}
                             />
                         </div>
@@ -271,6 +271,11 @@ const Project = () => {
             </div>
         </div>
     );
+};
+
+Project.propTypes = {
+    current: PropTypes.number,
+    handleProject: PropTypes.func,
 };
 
 export default Project;
