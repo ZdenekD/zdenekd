@@ -18,8 +18,12 @@
     }
 
     @media (--min-md) {
-        margin-bottom: calc(5 * var(--gutter));
+        margin-bottom: calc(4 * var(--gutter));
     }
+}
+
+.last {
+    margin-bottom: 0;
 }
 
 .error {

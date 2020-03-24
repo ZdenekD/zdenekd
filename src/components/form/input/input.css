@@ -6,7 +6,7 @@
 .label {
     --label-color: var(--color-blue-lighten-2);
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .input {
@@ -28,7 +28,7 @@
 
             .content {
                 color: var(--label-color);
-                transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+                transform: translate3d(0, 2em, 0) scale3d(.655, .655, 1);
             }
         }
     }
@@ -50,7 +50,7 @@
 
         .content {
             color: var(--label-color);
-            transform: translate3d(0, 3em, 0) scale3d(.655, .655, 1);
+            transform: translate3d(0, 2em, 0) scale3d(.655, .655, 1);
         }
     }
 }

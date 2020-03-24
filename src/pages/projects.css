@@ -3,6 +3,10 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
+
+    @media (--min-md) {
+        align-items: center;
+    }
 }

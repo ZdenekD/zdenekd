@@ -148,12 +148,13 @@ const Form = () => {
                         onBlur={handleBlur}
                     />
                 </div>
-
-                <div className={`${styles.row} animated-block`}>
-                    <span className={styles.error}>{error && <>Formulář obsahuje chybně zadané pole.</>}</span>
-                    <Button type="submit" aria-label="Odeslat formulář" onSubmit={handleSubmit}>
-                        Odeslat
-                    </Button>
+                <div className="animated-block">
+                    <div className={`${styles.row} ${styles.last}`}>
+                        <span className={styles.error}>{error && <>Formulář obsahuje chybně zadané pole.</>}</span>
+                        <Button type="submit" aria-label="Odeslat formulář" onSubmit={handleSubmit}>
+                            Odeslat
+                        </Button>
+                    </div>
                 </div>
             </form>
         </>
