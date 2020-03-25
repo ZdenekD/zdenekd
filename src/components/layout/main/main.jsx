@@ -15,7 +15,7 @@ import config from '../../../data/config';
 import {getPage, getPageIndex} from '../../../helpers/getPage';
 import styles from './main.css';
 
-const Main = ({isAnimated, children}) => {
+const Main = ({isAnimated, isOpen, children}) => {
     const router = useRouter();
     const page = getPage(router.route);
     const pages = Object.keys(data);
@@ -27,20 +27,24 @@ const Main = ({isAnimated, children}) => {
     let counter = 0;
     let timestamp = Math.floor(+new Date() / 1000);
     const handlePagePrev = () => {
-        if (isAnimated || index - 1 < minIndex) {
+        if (index - 1 < minIndex) {
             return;
         }
 
         router.push(data[pages[index - 1]].link);
     };
     const handlePageNext = () => {
-        if (isAnimated || index + 1 > maxIndex) {
+        if (index + 1 > maxIndex) {
             return;
         }
 
         router.push(data[pages[index + 1]].link);
     };
     const handleScroll = event => {
+        if (isAnimated || isOpen) {
+            return;
+        }
+
         event.stopPropagation();
 
         const wheel = 'wheelDelta' in event ? event.wheelDelta : -40 * event.detail;
@@ -66,7 +70,7 @@ const Main = ({isAnimated, children}) => {
         const isDown = [34, 40].includes(event.keyCode);
         const isUp = [33, 38].includes(event.keyCode);
 
-        if (isAnimated) {
+        if (isAnimated || isOpen) {
             return;
         }
 
@@ -131,6 +135,7 @@ const Main = ({isAnimated, children}) => {
 
 Main.propTypes = {
     isAnimated: PropTypes.bool.isRequired,
+    isOpen: PropTypes.bool,
     children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
