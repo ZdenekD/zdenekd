@@ -2,7 +2,7 @@ module.exports = {
     modules: true,
     map: process.env.NODE_ENV === 'development',
     plugins: {
-        stylelint: process.env.NODE_ENV === 'development' ? {} : false,
+        stylelint: process.env.NODE_ENV === 'development' ? {} : undefined,
         'postcss-import': {},
         'postcss-nested': {},
         'postcss-preset-env': {
