@@ -5,7 +5,7 @@ import Form from '../components/form';
 
 const Contact = () => (
     <Main data-test="component-main">
-        <h2>{data.contact.heading}</h2>
+        <h2 data-test="component-heading">{data.contact.heading}</h2>
         <Form />
     </Main>
 );
