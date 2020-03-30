@@ -14,11 +14,11 @@
     "start": "next start",
     "build": "next build",
     "sync": "aws s3 sync public s3://live-zdenekd --delete",
-    "test:js": "jest",
-    "test:js:watch": "jest --watch",
-    "test:js:coverage": "jest --coverage",
-    "test:cypress": "cypress open",
-    "test:webhint": "hint http://localhost:3000"
+    "jest": "jest --watch",
+    "jest:coverage": "jest --coverage",
+    "cypress": "cypress run",
+    "cypress:open": "cypress open",
+    "hint": "hint http://localhost:3000"
   },
   "engines": {
     "node": ">=12.0.0",
