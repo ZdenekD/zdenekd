@@ -14,11 +14,11 @@
     "start": "next start",
     "build": "next build",
     "sync": "aws s3 sync public s3://live-zdenekd --delete",
-    "test:js": "jest",
-    "test:js:watch": "jest --watch",
-    "test:js:coverage": "jest --coverage",
-    "test:cypress": "cypress open",
-    "test:webhint": "hint http://localhost:3000"
+    "jest": "jest --watch",
+    "jest:coverage": "jest --coverage",
+    "cypress": "cypress run",
+    "cypress:open": "cypress open",
+    "hint": "hint https://zdenekd.now.sh"
   },
   "engines": {
     "node": ">=12.0.0",
@@ -41,10 +41,10 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
+    "@babel/core": "^7.9.0",
     "@hint/configuration-web-recommended": "^8.0.2",
     "@svgr/webpack": "^5.1.0",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "cssnano": "^4.1.10",
@@ -57,7 +57,7 @@
     "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "hint": "^6.0.3",
     "husky": "^4.0.10",
     "jest": "^25.1.0",

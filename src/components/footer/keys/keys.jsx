@@ -8,7 +8,15 @@ import KeyRight from './keyRight';
 import styles from './keys.css';
 import data from '../../../data/pages';
 
-const Keys = ({isOpen, isAnimated, min, max, current, handleNextProject, handlePrevProject}) => {
+const Keys = ({
+    isOpen,
+    isAnimated,
+    min,
+    max,
+    current,
+    handleNextProject,
+    handlePrevProject,
+}) => {
     const router = useRouter();
 
     return (

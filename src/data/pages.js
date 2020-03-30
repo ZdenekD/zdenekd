@@ -11,12 +11,6 @@ const data = {
         heading: 'Projekty',
         description: 'Lorem pivsum | Projects',
     },
-    about: {
-        link: '/about',
-        title: 'O mně',
-        heading: 'O mně',
-        description: 'Lorem pivsum | About',
-    },
     contact: {
         link: '/contact',
         title: 'Kontakt',
