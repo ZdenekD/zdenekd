@@ -1,10 +1,11 @@
 name: Jest
 on:
-  push:
+  pull_request:
     branches:
+      - master
       - develop
 jobs:
-  test:
+  jest-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,4 +13,4 @@ jobs:
         with:
           node-version: '12.x'
       - run: yarn
-      - run: yarn test:js
+      - run: npx jest
