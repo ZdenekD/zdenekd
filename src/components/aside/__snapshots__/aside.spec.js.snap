@@ -27,17 +27,6 @@ exports[`Aside match snapshot 1`] = `
         </a>
       </li>
       <li data-test="component-item">
-        <a href="/about"
-           title="O mně | ZdenekD"
-           class="undefined  "
-           aria-label="Odkaz na stránku: O mně"
-           tabindex="-1"
-           data-test="component-link"
-        >
-          O mně
-        </a>
-      </li>
-      <li data-test="component-item">
         <a href="/contact"
            title="Kontakt | ZdenekD"
            class="undefined  "

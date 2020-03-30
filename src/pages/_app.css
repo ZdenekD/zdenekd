@@ -40,14 +40,6 @@
     --key-right-opacity: 1;
 }
 
-.about {
-    --section-background: var(--color-red-lighten-5);
-    --curtain-color: var(--color-red-lighten-4);
-    --content-heading: var(--color-red);
-    --content-heading-admit: var(--color-red-lighten-1);
-    --key-background: var(--color-red-lighten-3);
-}
-
 .contact {
     --section-background: var(--color-orange-lighten-5);
     --curtain-color: var(--color-orange-lighten-4);
