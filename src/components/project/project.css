@@ -373,7 +373,7 @@
 }
 
 .disabled {
-    opacity: .25;
+    opacity: 0;
     pointer-events: none;
 }
 
