@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import Keys from './keys';
 import styles from './footer.css';
+import Icon from '../../assets/images/icon_message.svg';
 import getRoman from '../../helpers/getRoman';
 import {getPageIndex} from '../../helpers/getPage';
 
@@ -26,6 +27,9 @@ const Footer = ({isOpen, isAnimated}) => {
     return (
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
+            <a href="mailto:ditezdenek&#64;pm.me?subject=&clubs; Zpráva přímo do schránky &clubs;" title="Zpráva přímo do schránky" className={styles.link}>
+                <Icon className={styles.icon} />
+            </a>
             <Keys />
             <span className={styles.scroll}>
                 Scroll
