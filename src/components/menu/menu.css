@@ -21,7 +21,7 @@
     line-height: 0;
 
     &:focus {
-        outline: 2px dotted var(--navigation-color);
+        outline: 2px dashed var(--navigation-color);
     }
 
     &[disabled] {

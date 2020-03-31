@@ -80,6 +80,7 @@
 }
 
 .link {
+    line-height: 0;
 
     &:focus,
     &:hover {
