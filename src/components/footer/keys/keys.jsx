@@ -7,6 +7,7 @@ import KeyLeft from './keyLeft';
 import KeyRight from './keyRight';
 import styles from './keys.css';
 import data from '../../../data/pages';
+import {getPage} from '../../../helpers/getPage';
 
 const Keys = ({
     isOpen,
@@ -18,14 +19,15 @@ const Keys = ({
     handlePrevProject,
 }) => {
     const router = useRouter();
+    const page = getPage(router.route);
 
     return (
         <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`} data-test="component-keys">
             <KeyUp data={data} router={router} />
             <div className={styles.key}>
-                <KeyLeft isMin={current === min} setProject={handlePrevProject} />
+                <KeyLeft isDisabled={current === min || page !== 'projects'} setProject={handlePrevProject} />
                 <KeyDown data={data} router={router} />
-                <KeyRight isMax={current === max} setProject={handleNextProject} />
+                <KeyRight isDisabled={current === max || page !== 'projects'} setProject={handleNextProject} />
             </div>
         </div>
     );
