@@ -17,6 +17,7 @@ const Content = ({content}) => {
             .add({
                 targets: contentRef.current.querySelector('h2'),
                 duration: 600,
+                delay: 400,
                 opacity: [0, 1],
                 translateY: ['10vh', 0],
                 easing: 'easeOutExpo',

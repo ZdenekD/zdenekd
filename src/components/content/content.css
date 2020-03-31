@@ -46,17 +46,8 @@
             @media (prefers-reduced-motion: no-preference) {
                 opacity: 0;
                 transform-origin: left center;
-                animation: line-in .2s var(--ease-out-quad) .4s forwards;
+                animation: line-in .2s var(--ease-out-quad) .8s forwards;
             }
-        }
-
-        &::after {
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            z-index: -1;
-            content: attr(data-title);
-            opacity: .2;
         }
 
         @media (--min-sm) {
