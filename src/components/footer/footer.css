@@ -91,7 +91,7 @@
     }
 
     @media (--min-xs) {
-        margin: 0 auto var(--gutter);
+        margin: 0 auto calc(2 * var(--gutter));
     }
 
     @media (--min-md) {
