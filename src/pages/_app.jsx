@@ -50,10 +50,11 @@ class Application extends App {
     render() {
         const {Component, store, router} = this.props;
         const page = getPage(router.route);
+        const isError = router.route.includes('error');
 
         return (
             <Provider store={store}>
-                <div className={`${styles.main} ${styles[page]}`} data-test="component-app">
+                <div className={`${styles.main} ${page ? styles[page] : ''} ${isError ? styles.error : ''}`} data-test="component-app">
                     <Component />
                     <i ref={this.curtainRef} className={styles.curtain}></i>
                 </div>

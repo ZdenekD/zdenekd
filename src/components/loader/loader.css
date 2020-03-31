@@ -20,7 +20,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
 }
 
 .loader {
@@ -31,7 +31,7 @@
     margin-left: -20px;
     top: 15px;
     left: 50%;
-    animation-duration: 1.8s;
+    animation-duration: 1.2s;
     border-top-color: var(--color-blue-darken-3);
     border-bottom-color: var(--color-blue-darken-4);
 
@@ -55,20 +55,20 @@
 }
 
 .loader::before {
-    top: 2%;
-    right: 2%;
-    bottom: 2%;
-    left: 2%;
-    content: '';
-    animation-duration: 2.4s;
-    border-top-color: var(--color-blue);
-}
-
-.loader::after {
     top: 5%;
     right: 5%;
     bottom: 5%;
     left: 5%;
+    content: '';
+    animation-duration: 1.8s;
+    border-top-color: var(--color-blue);
+}
+
+.loader::after {
+    top: 12%;
+    right: 12%;
+    bottom: 12%;
+    left: 12%;
     content: '';
     animation-duration: 1.2s;
     border-top-color: var(--color-green);

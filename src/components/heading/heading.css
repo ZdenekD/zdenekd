@@ -20,7 +20,7 @@
     text-decoration: none;
 
     &:focus {
-        outline: 2px dotted var(--navigation-color);
+        outline: 2px dashed var(--navigation-color);
     }
 
     &[disabled] {

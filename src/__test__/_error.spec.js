@@ -8,12 +8,4 @@ describe('Error page', () => {
 
         expect(component.exists()).toBe(true);
     });
-
-    it('renders status code from props', () => {
-        const code = 500;
-        const wrapper = factory(Error, {statusCode: code});
-        const component = findComponent(wrapper, 'component-status');
-
-        expect(component.text().includes(code)).toBe(true);
-    });
 });

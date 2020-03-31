@@ -32,7 +32,7 @@ exports[`Keys match snapshot 1`] = `
       <i>
       </i>
     </button>
-    <button class="undefined "
+    <button class="undefined undefined"
             data-test="component-key"
             type="button"
             aria-label="Následující projekt"

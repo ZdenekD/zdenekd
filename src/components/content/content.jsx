@@ -10,27 +10,28 @@ const Content = ({content}) => {
             .timeline()
             .add({
                 targets: contentRef.current,
-                duration: 200,
+                duration: 400,
                 opacity: [0, 1],
                 easing: 'easeOutCubic',
             })
             .add({
                 targets: contentRef.current.querySelector('h2'),
-                duration: 600,
+                duration: 1200,
+                delay: 400,
                 opacity: [0, 1],
                 translateY: ['10vh', 0],
-                easing: 'easeOutExpo',
+                easing: 'easeOutQuart',
             })
             .add({
                 targets: [...contentRef.current.querySelectorAll('.animated-block')],
-                duration: 800,
+                duration: 1200,
                 delay(target, index) {
                     return (index * 200);
                 },
                 opacity: [0, 1],
                 translateY: ['10vh', 0],
-                easing: 'easeOutExpo',
-            }, '-=300');
+                easing: 'easeOutQuart',
+            }, '-=800');
     };
 
     React.useEffect(() => {

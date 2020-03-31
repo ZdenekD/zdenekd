@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../../../form/button';
 import styles from './keyLeft.css';
 
-const KeyLeft = ({isMin, setProject}) => {
+const KeyLeft = ({isDisabled, setProject}) => {
     const handleKey = () => {
         setProject({handlePrev: true});
     };
@@ -11,7 +11,7 @@ const KeyLeft = ({isMin, setProject}) => {
     return (
         <Button
             type="button"
-            className={`${styles.key} ${isMin ? styles.disabled : ''}`}
+            className={`${styles.key} ${isDisabled ? styles.disabled : ''}`}
             aria-label="Předchozí projekt"
             tabIndex={0}
             data-test="component-key"
@@ -23,7 +23,7 @@ const KeyLeft = ({isMin, setProject}) => {
 };
 
 KeyLeft.propTypes = {
-    isMin: PropTypes.bool,
+    isDisabled: PropTypes.bool,
     setProject: PropTypes.func,
 };
 

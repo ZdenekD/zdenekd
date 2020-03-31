@@ -27,7 +27,7 @@
         position: relative;
         opacity: 0;
         color: var(--content-heading);
-        font-size: 1.6em;
+        font-size: 2em;
         text-align: center;
 
         &::first-letter {
@@ -46,34 +46,21 @@
             @media (prefers-reduced-motion: no-preference) {
                 opacity: 0;
                 transform-origin: left center;
-                animation: line-in .2s var(--ease-out-quad) .4s forwards;
+                animation: line-in .4s var(--ease-out-quart) 1.2s forwards;
             }
         }
 
-        &::after {
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            z-index: -1;
-            content: attr(data-title);
-            opacity: .2;
-        }
-
-        @media (--min-sm) {
-            font-size: 1.8em;
-        }
-
         @media (--min-md) {
-            font-size: 2em;
+            font-size: 2.2em;
         }
 
         @media (--min-lg) {
             margin: var(--section-gutter) auto;
-            font-size: 2.2em;
+            font-size: 2.4em;
         }
 
         @media (--min-xl) {
-            font-size: 2.4em;
+            font-size: 2.8em;
         }
     }
 }

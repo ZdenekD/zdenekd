@@ -3,7 +3,7 @@ const projects = {
         id: 'tomton',
         title: 'Tomton',
         url: 'https://www.tomton.cz',
-        description: 'Společnost zabývající se výrobou designových otopných systémů. Za jeden ze svých modelů získala ocenění Red Dot Design Award.',
+        description: 'Společnost vyrabějící designové otopné systémy. Za jeden ze svých modelů získala ocenění Red Dot Design Award.',
         tools: [
             'react',
             'wordpress',
@@ -28,7 +28,7 @@ const projects = {
         id: 'dirtjob',
         title: 'Dirtjob',
         url: 'http://dirtjob.cz/',
-        description: 'Úklidová společnost s osobním přístupem.',
+        description: 'Úklidová společnost s osobním přístupem. Úklid lze objednat z domova nebo kanceláře pomocí formuláře.',
         tools: [
             'vanillajs',
             'octobercms',
@@ -53,7 +53,7 @@ const projects = {
         id: 'avprague',
         title: 'AVPrague',
         url: 'https://avprague.in.progress',
-        description: 'Pronájem ubytování přes službu Airbnb.',
+        description: 'Pronájem ubytování v Praze přes službu Airbnb.',
         tools: [
             'jquery',
             'octobercms',
