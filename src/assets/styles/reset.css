@@ -97,7 +97,6 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
 

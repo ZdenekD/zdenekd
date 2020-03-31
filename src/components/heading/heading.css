@@ -37,7 +37,7 @@
 .logo {
     width: auto;
     height: 100%;
-    max-height: 40px;
+    max-height: 30px;
     transition: max-height var(--transition-duration) var(--transition-timing);
 
     &.active {
@@ -48,6 +48,10 @@
         fill: var(--navigation-color, var(--color-blue-darken-3));
         stroke: var(--navigation-color, var(--color-blue-darken-3));
         transition: var(--header-transition);
+    }
+
+    @media (--min-sm) {
+        max-height: 40px;
     }
 
     @media (--min-md) {
