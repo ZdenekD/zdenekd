@@ -47,3 +47,11 @@
     --content-heading-admit: var(--color-orange-lighten-1);
     --key-background: var(--color-orange-lighten-3);
 }
+
+.error {
+    --section-background: var(--color-red-lighten-5);
+    --curtain-color: var(--color-red-lighten-4);
+    --content-heading: var(--color-red);
+    --content-heading-admit: var(--color-red-lighten-1);
+    --key-background: var(--color-red-lighten-3);
+}
