@@ -122,7 +122,7 @@ const Main = ({isAnimated, isOpen, children}) => {
                 <>
                     <main className={`${styles.section} main`}>
                         <Header />
-                        {!isAnimated && <Content content={children} />}
+                        {!isAnimated && !isOpen && <Content content={children} />}
                         <Footer />
                     </main>
                     <Aside />
