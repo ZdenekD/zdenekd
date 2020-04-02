@@ -16,10 +16,10 @@ const Content = ({content}) => {
             })
             .add({
                 targets: contentRef.current.querySelector('h2'),
-                duration: 1200,
+                duration: 800,
                 delay: 400,
                 opacity: [0, 1],
-                translateY: ['10vh', 0],
+                translateY: ['5vh', 0],
                 easing: 'easeOutQuart',
             })
             .add({
@@ -29,7 +29,7 @@ const Content = ({content}) => {
                     return (index * 200);
                 },
                 opacity: [0, 1],
-                translateY: ['10vh', 0],
+                translateY: ['5vh', 0],
                 easing: 'easeOutQuart',
             }, '-=800');
     };

@@ -1,7 +1,7 @@
 @keyframes line-in {
     0% {
         opacity: 0;
-        transform: translateX(50vw) scaleX(8);
+        transform: translateX(50vw) scaleX(12);
     }
 
     1% {
@@ -46,7 +46,7 @@
             @media (prefers-reduced-motion: no-preference) {
                 opacity: 0;
                 transform-origin: left center;
-                animation: line-in .4s var(--ease-out-quart) 1.2s forwards;
+                animation: line-in .2s var(--ease-out-quart) 1s forwards;
             }
         }
 
