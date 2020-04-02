@@ -196,9 +196,9 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
             <div ref={contentRef} className={styles.content}>
                 <div>
                     <div className="animated-block animated-item">
-                        <h3 className={styles.title} data-title={project.title}>
+                        <h2 className={styles.title} data-title={project.title}>
                             {project.title}
-                        </h3>
+                        </h2>
                     </div>
                     <div className={`${styles.descriptionWrapper} animated-block animated-item`}>
                         <p className={styles.description} data-title={project.description}>

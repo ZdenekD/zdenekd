@@ -9,7 +9,9 @@
 # Build
 dist/
 build/
-public/
+public/*
+!public/robots.txt
+!public/sitemap.xml
 
 # Database
 /db

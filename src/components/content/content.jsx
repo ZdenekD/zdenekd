@@ -15,11 +15,11 @@ const Content = ({content}) => {
                 easing: 'easeOutCubic',
             })
             .add({
-                targets: contentRef.current.querySelector('h2'),
-                duration: 1200,
+                targets: contentRef.current.querySelector('h1'),
+                duration: 800,
                 delay: 400,
                 opacity: [0, 1],
-                translateY: ['10vh', 0],
+                translateY: ['5vh', 0],
                 easing: 'easeOutQuart',
             })
             .add({
@@ -29,7 +29,7 @@ const Content = ({content}) => {
                     return (index * 200);
                 },
                 opacity: [0, 1],
-                translateY: ['10vh', 0],
+                translateY: ['5vh', 0],
                 easing: 'easeOutQuart',
             }, '-=800');
     };
@@ -40,6 +40,16 @@ const Content = ({content}) => {
 
     return (
         <section ref={contentRef} className={styles.content} data-test="component-content">
+            <noscript>
+                <strong className={styles.noscriptHeading}>
+                    Nemáte zapnutý Javascript
+                </strong>
+                <p className={styles.noscriptParagraph}>
+                    Některé součásti stránek Vám nemusí fungovat správně.<br />
+                    Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
+                    Vašem webovém prohlížeči.
+                </p>
+            </noscript>
             {content}
         </section>
     );

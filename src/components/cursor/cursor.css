@@ -5,6 +5,10 @@
     z-index: var(--zindex-cursor);
     pointer-events: none;
     border-radius: 50%;
+
+    @media (any-hover: none) {
+        display: none;
+    }
 }
 
 .outerCursor {

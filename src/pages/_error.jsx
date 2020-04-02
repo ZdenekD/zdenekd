@@ -1,22 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Head from 'next/head';
+import React, {useEffect} from 'react';
+import lottie from 'lottie-web';
 import './_index.css';
 import Main from '../components/layout/main';
 import styles from './_error.css';
 import config from '../data/config';
 
-const Error = () => (
-    <>
-        <Head>
-            <script async src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        </Head>
-        <Main data-test="component-error">
-            <lottie-player loop autoplay src={`${config.cloudfront}/error.json`} speed="1" class={styles.animation}></lottie-player>
-        </Main>
-    </>
-);
+const Error = () => {
+    const contentRef = React.useRef(null);
 
-Error.propTypes = {statusCode: PropTypes.number};
+    useEffect(() => {
+        lottie.loadAnimation({
+            container: contentRef.current,
+            renderer: 'svg',
+            autoplay: true,
+            loop: true,
+            path: `${config.cloudfront}/error.json`,
+        });
+    }, []);
+
+    return (
+        <Main data-test="component-error">
+            <h1 data-test="component-heading">Stránka bohužel neexistuje</h1>
+            <div ref={contentRef} className={styles.animation}></div>
+        </Main>
+    );
+};
 
 export default Error;
