@@ -40,6 +40,16 @@ const Content = ({content}) => {
 
     return (
         <section ref={contentRef} className={styles.content} data-test="component-content">
+            <noscript>
+                <strong className={styles.noscriptHeading}>
+                    Nemáte zapnutý Javascript
+                </strong>
+                <p className={styles.noscriptParagraph}>
+                    Některé součásti stránek Vám nemusí fungovat správně.<br />
+                    Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
+                    Vašem webovém prohlížeči.
+                </p>
+            </noscript>
             {content}
         </section>
     );

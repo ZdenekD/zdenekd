@@ -123,6 +123,8 @@ const Main = ({isAnimated, isOpen, children}) => {
                 />
                 <title data-test="component-title">{`${title} | ZdenekD`}</title>
                 <meta name="description" content={`${description} | ZdenekD`} />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black" />
             </Head>
             <State.StateProvider reducer={reducer}>
                 <>
