@@ -32,7 +32,7 @@
 
 [x] **README.md:** ![High][high] Project contains README.md file with project descriptions and specifications
 
-[ ] **Sentry.io:** ![High][high] Project is created in sentry to get future errors
+[x] **Sentry.io:** ![High][high] Project is created in sentry to get future errors
 
 -   [sentry.io](https://sentry.io/organizations/zdenekd/projects/)
 
@@ -41,6 +41,8 @@
 -   [snyk.io](https://app.snyk.io/org/zdenekd)
 
 [x] **Freshping** ![Medium][medium] Project is added to Freshping to catch some network problems
+
+-   [freshping.io](https://app.freshping.io)
 
 [x] **Clean up comments:** ![Low][low] Unnecessary code needs to be removed before sending the page to production.
 
@@ -66,7 +68,7 @@
 <title>Title</title>
 ```
 
-[ ] **Description:** ![High][high] A meta description is provided, it is unique and doesn't possess more than 150 characters.
+[x] **Description:** ![High][high] A meta description is provided, it is unique and doesn't possess more than 150 characters.
 
 ```html
 <meta name="description" content="Description content" />
@@ -107,7 +109,7 @@
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html" />
 ```
 
-[ ] **Apple Web App Meta:** ![Low][low] Apple meta-tags are present.
+[x] **Apple Web App Meta:** ![Low][low] Apple meta-tags are present.
 
 ```html
 <meta name="apple-mobile-web-app-capable" content="yes" /> <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -223,7 +225,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 -   [Guidelines for Developing Secure Applications Utilizing Javascript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_Javascript)
 
-[ ] **Noscript tag:** ![Medium][medium] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser.
+[x] **Noscript tag:** ![Medium][medium] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser.
 
 ```html
 <noscript>
@@ -254,7 +256,7 @@ yarn outdated
 
 ## Fonts
 
-[ ] **Webfont size:** ![High][high] Webfont sizes don't exceed 300kb (all variants included).
+[x] **Webfont size:** ![High][high] Webfont sizes don't exceed 300kb (all variants included).
 
 [x] **Webfont formats:** ![High][high] You are using WOFF2 on your web project or application. It's then good to use WOFF 2.0, WOFF 1.0 as a fallback.
 
@@ -273,7 +275,7 @@ yarn outdated
 
 ## Images
 
-[ ] **Optimization:** ![High][high] All images are optimized to be rendered in the browser (png, jpg, svg etc.). Use loseless image optimization (it's a part of builder task for assets images)
+[x] **Optimization:** ![High][high] All images are optimized to be rendered in the browser (png, jpg, svg etc.). Use loseless image optimization (it's a part of builder task for assets images)
 
 -   [Imagemin](https://github.com/imagemin/imagemin)
 -   [SVGO](https://github.com/svg/svgo)
@@ -344,7 +346,7 @@ yarn outdated
 -   [Website Page Analysis](https://tools.pingdom.com)
 -   [WebPageTest](https://www.webpagetest.org/)
 
-[ ] **Minimizing HTTP requests:** ![High][high] Always ensure that every file requested are essential for your website or application.
+[x] **Minimizing HTTP requests:** ![High][high] Always ensure that every file requested are essential for your website or application.
 
 [x] **Minified HTML:** ![Medium][medium] Your HTML is minified.
 
@@ -410,9 +412,9 @@ yarn outdated
 
 [ ] **Google Analytics:** ![High][high] Google Analytics is installed and correctly configured.
 
-[ ] **sitemap.xml:** ![High][high] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
+[x] **sitemap.xml:** ![High][high] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
 
-[ ] **robots.txt:** ![High][high] The robots.txt is not blocking webpages.
+[x] **robots.txt:** ![High][high] The robots.txt is not blocking webpages.
 
 [ ] **Structured Data:** ![High][high] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
 

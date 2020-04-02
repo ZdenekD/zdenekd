@@ -71,13 +71,6 @@
 
     a {
         color: var(--content-heading);
-        text-decoration: none;
-        border-bottom: 1px solid;
-
-        &:focus,
-        &:hover {
-            border-bottom-color: transparent;
-        }
     }
 }
 
