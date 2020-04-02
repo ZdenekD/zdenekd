@@ -30,6 +30,7 @@
     "@zeit/next-css": "^1.0.1",
     "animejs": "^3.1.0",
     "dotenv": "^8.2.0",
+    "lottie-web": "^5.6.7",
     "next": "^9.3.1",
     "next-redux-wrapper": "^5.0.0",
     "prop-types": "^15.7.2",
