@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import PropTypes from 'prop-types';
 import lottie from 'lottie-web';
 import './_index.css';
 import Main from '../components/layout/main';
@@ -26,7 +25,5 @@ const Error = () => {
         </Main>
     );
 };
-
-Error.propTypes = {statusCode: PropTypes.number};
 
 export default Error;
