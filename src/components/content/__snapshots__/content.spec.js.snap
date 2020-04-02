@@ -2,5 +2,22 @@
 
 exports[`Content match snapshot 1`] = `
 <section data-test="component-content">
+  <noscript>
+    <strong>
+      Nemáte zapnutý Javascript
+    </strong>
+    <p>
+      Některé součásti stránek Vám nemusí fungovat správně.
+      <br>
+      Zde jsou
+      <a href="https://www.enable-javascript.com/cz/"
+         target="_blank"
+         rel="noreferrer noopener"
+      >
+        instrukce
+      </a>
+      jak povolit JavaScript ve Vašem webovém prohlížeči.
+    </p>
+  </noscript>
 </section>
 `;
