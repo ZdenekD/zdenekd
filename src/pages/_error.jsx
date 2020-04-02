@@ -21,7 +21,7 @@ const Error = () => {
 
     return (
         <Main data-test="component-error">
-            <h2 data-test="component-heading">Stránka bohužel neexistuje</h2>
+            <h1 data-test="component-heading">Stránka bohužel neexistuje</h1>
             <div ref={contentRef} className={styles.animation}></div>
         </Main>
     );

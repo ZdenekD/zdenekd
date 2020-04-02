@@ -6,7 +6,7 @@ import styles from './projects.css';
 
 const Projects = () => (
     <Main data-test="component-main">
-        <h2 data-test="component-heading">{data.projects.heading}</h2>
+        <h1 data-test="component-heading">{data.projects.heading}</h1>
         <article className={styles.article}>
             <Project />
         </article>

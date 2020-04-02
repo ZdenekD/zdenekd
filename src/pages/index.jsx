@@ -4,7 +4,7 @@ import data from '../data/pages';
 
 const Homepage = () => (
     <Main data-test="component-main">
-        <h2 data-test="component-heading">{data.homepage.heading}</h2>
+        <h1 data-test="component-heading">{data.homepage.heading}</h1>
     </Main>
 );
 

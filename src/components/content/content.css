@@ -22,7 +22,7 @@
     align-items: flex-start;
     opacity: 0;
 
-    h2 {
+    h1 {
         margin: var(--gutter) auto;
         position: relative;
         opacity: 0;

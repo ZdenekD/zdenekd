@@ -17,6 +17,7 @@
 }
 
 .link {
+    position: relative;
     text-decoration: none;
 
     &:focus {
@@ -26,12 +27,6 @@
     &[disabled] {
         pointer-events: none;
     }
-}
-
-.heading {
-    margin: 0;
-    position: relative;
-    font-size: 1em;
 }
 
 .logo {

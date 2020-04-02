@@ -91,6 +91,14 @@ const Main = ({isAnimated, isOpen, children}) => {
         <>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+                <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+                {process.env.NODE_ENV === 'production' && (
+                    <>
+                        <link rel="preconnect" href={config.cloudfront} crossOrigin="true" />
+                        <link rel="dns-prefetch" href={config.cloudfront} />
+                    </>
+                )}
                 <link rel="apple-touch-icon" sizes="57x57" href={`${config.cloudfront}/apple-icon-57x57.png`} />
                 <link rel="apple-touch-icon" sizes="60x60" href={`${config.cloudfront}/apple-icon-60x60.png`} />
                 <link rel="apple-touch-icon" sizes="72x72" href={`${config.cloudfront}/apple-icon-72x72.png`} />
@@ -108,8 +116,6 @@ const Main = ({isAnimated, isOpen, children}) => {
                 <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta name="msapplication-TileImage" content={`${config.cloudfront}/ms-icon-144x144.png`} />
                 <meta name="theme-color" content="#ffffff" />
-                <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link
                     href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono&display=swap&subset=latin-ext"
                     rel="stylesheet"
