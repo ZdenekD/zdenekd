@@ -15,7 +15,7 @@ const Content = ({content}) => {
                 easing: 'easeOutCubic',
             })
             .add({
-                targets: contentRef.current.querySelector('h2'),
+                targets: contentRef.current.querySelector('h1'),
                 duration: 800,
                 delay: 400,
                 opacity: [0, 1],
