@@ -429,6 +429,8 @@
     position: relative;
     top: -1px;
     z-index: 1;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .logo {
