@@ -12,7 +12,6 @@ html {
 body {
     --section-gutter: calc(2 * var(--gutter));
     width: 100%;
-    overflow-x: hidden;
     background-color: var(--color-white);
     color: var(--color-black);
     font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
