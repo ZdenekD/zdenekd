@@ -35,4 +35,9 @@ describe('Page - Homepage', () => {
             .find('[data-test="component-aside"]')
             .should('have.css', 'opacity', '0')
     });
+
+    it('Match snapshot', () => {
+        cy.wait(4000);
+        cy.percySnapshot();
+    })
 });
