@@ -61,7 +61,6 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
             .add({
                 targets: video,
                 duration: 600,
-                opacity: [1, 0],
                 translateX: [0, '100%'],
                 begin() {
                     video.pause();
@@ -79,7 +78,6 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
             .add({
                 targets: videoRef.current,
                 duration: 800,
-                opacity: [0, 1],
                 translateX: ['-100%', 0],
                 begin() {
                     handleAnimationIn('prev');
@@ -104,7 +102,6 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
             .add({
                 targets: video,
                 duration: 600,
-                opacity: [1, 0],
                 translateX: [0, '-100%'],
                 begin() {
                     video.pause();
@@ -122,7 +119,6 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
             .add({
                 targets: videoRef.current,
                 duration: 800,
-                opacity: [0, 1],
                 translateX: ['100%', 0],
                 begin() {
                     handleAnimationIn('next');

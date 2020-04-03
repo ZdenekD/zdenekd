@@ -97,6 +97,13 @@
         outline-offset: 10px;
     }
 
+    &:not(.active)::after {
+
+        @media (any-hover: none) {
+            display: none;
+        }
+    }
+
     &::after {
         width: 80px;
         height: 2px;
