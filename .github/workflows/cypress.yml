@@ -16,7 +16,7 @@ jobs:
         env:
           PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
         with:
-          start: yarn build && yarn dev
+          start: yarn dev
           wait-on: 'http://localhost:3010'
           command-prefix: 'percy exec -- npx'
           browser: chrome
