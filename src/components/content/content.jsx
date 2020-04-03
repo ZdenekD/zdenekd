@@ -31,7 +31,7 @@ const Content = ({content}) => {
                 opacity: [0, 1],
                 translateY: ['5vh', 0],
                 easing: 'easeOutQuart',
-            }, '-=800');
+            }, '-=400');
     };
 
     React.useEffect(() => {

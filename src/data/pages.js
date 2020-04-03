@@ -2,7 +2,7 @@ const data = {
     homepage: {
         link: '/',
         title: 'Úvodní stránka',
-        heading: 'ZdenekD',
+        heading: 'Vítejte',
         description: 'Tvorba webů, ruční práce, klávesový koncert | Homepage',
     },
     projects: {

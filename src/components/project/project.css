@@ -254,6 +254,16 @@
         border-radius: var(--border-radius);
     }
 
+    a {
+        color: var(--color-white);
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            color: var(--color-green);
+        }
+    }
+
     @media (--min-sm) {
         width: 50%;
         margin-left: 24px;

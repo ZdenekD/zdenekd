@@ -18,10 +18,15 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .timeline()
             .add({
                 targets: asideRef.current,
-                duration: 600,
+                duration: 100,
                 opacity: [0, 1],
-                translateY: ['-100%', 0],
                 easing: 'easeOutCubic',
+            })
+            .add({
+                targets: asideRef.current,
+                duration: 800,
+                translateY: ['-100%', 0],
+                easing: 'easeOutQuart',
             })
             .add({
                 targets: [...listRef.current.querySelectorAll('li')],
@@ -56,7 +61,6 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .add({
                 targets: asideRef.current,
                 duration: 600,
-                opacity: [1, 0],
                 translateY: [0, '-100%'],
                 easing: 'easeOutCubic',
                 complete() {
@@ -71,7 +75,13 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                         setHref(null);
                     }
                 },
-            }, '-=200');
+            }, '-=200')
+            .add({
+                targets: asideRef.current,
+                duration: 100,
+                opacity: [1, 0],
+                easing: 'easeOutCubic',
+            });
     };
     const handleClick = event => {
         event.preventDefault();

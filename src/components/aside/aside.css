@@ -107,10 +107,6 @@
         content: '';
         background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
 
-        @media (any-hover: none) {
-            display: none;
-        }
-
         @media (prefers-reduced-motion: no-preference) {
             opacity: 0;
             transform-origin: left center;
