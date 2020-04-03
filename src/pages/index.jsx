@@ -8,10 +8,8 @@ const Homepage = () => (
         <h1 data-test="component-heading">{data.homepage.heading}</h1>
         <article className={styles.article}>
             <p className={`${styles.paragraph} animated-block`}>
-                Mé jméno je Zdeněk a&nbsp;<strong data-tooltip="zírání">hře</strong> na&nbsp;klávesnici se&nbsp;věnuji od&nbsp;roku&nbsp;2010.
-            </p>
-            <p className={`${styles.paragraph} animated-block`}>
-                Dokončené projekty se&nbsp;skládají z&nbsp;menších interaktivních webů, e-shopů a&nbsp;pokročilejších portálů.
+                Profesionální hře na&nbsp;klávesnici se&nbsp;věnuji několik let.<br />
+                Převedu vaše přání do kódu, kterému rozumí lidé i počítače.
             </p>
             <p className={`${styles.paragraph} _align-right animated-block`}>
                 <span>Tvořím s <strong data-tooltip="kávou">láskou</strong> a <strong data-tooltip="lezením">nadšením</strong>.</span><br />

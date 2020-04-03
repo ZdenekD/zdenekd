@@ -22,8 +22,14 @@
     border-radius: var(--border-radius);
 }
 
+::selection {
+    background: var(--selection-background, --color-blue-darken-4);
+    color: var(--color-white);
+}
+
 .homepage {
     --section-background: var(--color-blue-lighten-5);
+    --selection-background: var(--color-blue);
     --curtain-color: var(--color-blue-lighten-4);
     --content-heading: var(--color-blue);
     --content-heading-admit: var(--color-blue-lighten-1);
@@ -32,6 +38,7 @@
 
 .projects {
     --section-background: var(--color-green-lighten-5);
+    --selection-background: var(--color-green);
     --curtain-color: var(--color-green-lighten-4);
     --content-heading: var(--color-green);
     --content-heading-admit: var(--color-green-lighten-1);
@@ -42,6 +49,7 @@
 
 .contact {
     --section-background: var(--color-orange-lighten-5);
+    --selection-background: var(--color-orange);
     --curtain-color: var(--color-orange-lighten-4);
     --content-heading: var(--color-orange);
     --content-heading-admit: var(--color-orange-lighten-1);
@@ -50,6 +58,7 @@
 
 .error {
     --section-background: var(--color-red-lighten-5);
+    --selection-background: var(--color-red);
     --curtain-color: var(--color-red-lighten-4);
     --content-heading: var(--color-red);
     --content-heading-admit: var(--color-red-lighten-1);
