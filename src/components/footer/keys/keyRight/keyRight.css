@@ -1,0 +1,25 @@
+.key {
+    margin-left: 2px;
+    composes: key from '../keys.css';
+}
+
+.disabled {
+    --key-right-opacity: .25;
+    composes: disabled from '../keys.css';
+}
+
+.keyRight {
+    opacity: var(--key-right-opacity, .25);
+
+    &:focus,
+    &:hover {
+        --arrow-color: var(--key-background);
+        background-color: var(--color-blue-darken-4);
+    }
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--arrow-color);
+    }
+}

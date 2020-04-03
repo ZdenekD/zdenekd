@@ -1,7 +1,16 @@
 import React from 'react';
-import './index.css';
 import Main from '../components/layout/main';
+import Project from '../components/project';
+import data from '../data/pages';
+import styles from './projects.css';
 
-const Projects = () => <Main site="projects" data-test="component-main" />;
+const Projects = () => (
+    <Main data-test="component-main">
+        <h1 data-test="component-heading">{data.projects.heading}</h1>
+        <article className={styles.article}>
+            <Project />
+        </article>
+    </Main>
+);
 
 export default Projects;

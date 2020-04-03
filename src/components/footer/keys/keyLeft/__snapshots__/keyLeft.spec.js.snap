@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Key Left match snapshot 1`] = `
+<button class="undefined "
+        type="button"
+        aria-label="Předchozí projekt"
+        tabindex="0"
+        data-test="component-button"
+>
+  <i>
+  </i>
+</button>
+`;

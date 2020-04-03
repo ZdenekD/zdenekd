@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cursor match snapshot 1`] = `
+<i data-test="component-outer-cursor">
+</i>
+<i data-test="component-inner-cursor">
+</i>
+`;

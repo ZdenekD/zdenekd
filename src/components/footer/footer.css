@@ -1,0 +1,198 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--fade-in-opacity);
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: var(--section-gutter) var(--section-gutter) var(--gutter);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    z-index: var(--zindex-header);
+    color: var(--navigation-color);
+
+    @media (--min-xs) {
+        flex-direction: column-reverse;
+    }
+
+    @media (--min-md) {
+        flex-direction: row;
+
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            z-index: -1;
+            content: '';
+            opacity: 0;
+            background: var(--curtain-color);
+            border-top-left-radius: var(--border-radius);
+
+            @media (prefers-reduced-motion: no-preference) {
+                transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+                transition: var(--float-transition);
+            }
+        }
+
+        &::before {
+            --velocity: 50;
+            width: 25%;
+            min-width: 100px;
+            height: 100%;
+            min-height: 100px;
+            right: -10px;
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        &::after {
+            --velocity: 200;
+            width: 12.5%;
+            min-width: 50px;
+            height: 75%;
+            min-height: 50px;
+            right: calc(25% - 30px);
+        }
+    }
+}
+
+.show {
+
+    &::before,
+    &::after {
+        animation: fade-in 2s var(--ease-in-cubic) forwards;
+    }
+
+    &::before {
+        --fade-in-opacity: .5;
+        animation-delay: 1.2s;
+    }
+
+    &::after {
+        --fade-in-opacity: .25;
+        animation-delay: 1.8s;
+    }
+}
+
+.link {
+    line-height: 0;
+
+    &:focus,
+    &:hover {
+
+        path {
+            stroke: var(--navigation-color-active);
+        }
+    }
+
+    @media (--min-xs) {
+        margin: 0 auto calc(2 * var(--gutter));
+    }
+
+    @media (--min-md) {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    @media (--min-lg) {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+
+    path {
+        stroke: var(--navigation-color);
+        transition: stroke var(--transition-duration) var(--transition-timing);
+    }
+}
+
+.code {
+    --fade-in-opacity: 1;
+    margin-right: auto;
+    padding-right: 10px;
+    padding-left: 30px;
+    align-self: flex-end;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    font-size: .75em;
+
+    &::before,
+    &::after {
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        content: '';
+        background: currentColor;
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        left: 100%;
+    }
+
+    @media (--max-md) {
+        margin-left: auto;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transform: translate3d(calc((-1 * var(--float-x) + 50vw) / 150), calc((-1 * var(--float-y) + 50vh) / 50), 0);
+        transform-origin: left center;
+        transition: var(--float-transition);
+    }
+}
+
+.scroll {
+    display: none;
+
+    @media (--min-lg) {
+        margin-right: var(--section-gutter);
+        padding-bottom: calc(5 * var(--gutter));
+        display: block;
+        position: relative;
+        opacity: 0;
+        font-size: 1em;
+        letter-spacing: 1.5px;
+        animation: fade-in 1s var(--ease-in-cubic) forwards 1s;
+
+        &::before {
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: calc(3 * var(--gutter));
+            left: 50%;
+            content: '';
+            background: currentColor;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.dot {
+    --dot-opacity: 0;
+    --dot-transform: 0;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: calc(3 * var(--gutter));
+    right: calc(50% - 12px);
+    opacity: var(--dot-opacity);
+    background: var(--color-red);
+    transform: translateY(var(--dot-transform));
+    transition: opacity .6s var(--ease-in-out-cubic) 1.2s;
+    border-radius: 50%;
+}

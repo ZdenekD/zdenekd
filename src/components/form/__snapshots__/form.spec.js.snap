@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form match snapshot 1`] = `
+<form class="undefined "
+      data-test="component-form"
+>
+  <div class="animated-block">
+    <div class="undefined ">
+      <span class="undefined ">
+        0 / 32
+      </span>
+      <input id="Jméno"
+             class="undefined  "
+             data-test="component-input"
+             required
+             name="name"
+             type="text"
+             maxlength="32"
+             data-pattern="name"
+             value
+      >
+      <label for="Jméno"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          Jméno
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="animated-block">
+    <div class="undefined ">
+      <span class="undefined ">
+        0 / 64
+      </span>
+      <input id="E-mail"
+             class="undefined  "
+             data-test="component-input"
+             required
+             name="email"
+             type="email"
+             maxlength="64"
+             data-pattern="email"
+             value
+      >
+      <label for="E-mail"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          E-mail
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="undefined ">
+    <input id="Med"
+           data-test="component-input"
+           name="med"
+           type="text"
+           autocomplete="off"
+    >
+    <label for="Med"
+           class="undefined "
+           data-test="component-label"
+    >
+      <span>
+        Med
+      </span>
+    </label>
+  </div>
+  <div class="animated-block">
+    <div>
+      <span class="undefined ">
+        0 / 140
+      </span>
+      <textarea id="Vzkaz"
+                class="undefined  "
+                data-test="component-textarea"
+                required
+                name="message"
+                maxlength="140"
+                data-pattern="text"
+                style="height: 0px;"
+      >
+      </textarea>
+      <label for="Vzkaz"
+             class="undefined "
+             data-test="component-label"
+      >
+        <span>
+          Vzkaz
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="animated-block">
+    <div class="undefined undefined">
+      <span>
+      </span>
+      <button type="submit"
+              aria-label="Odeslat formulář"
+              data-test="component-button"
+      >
+        Odeslat
+      </button>
+    </div>
+  </div>
+</form>
+`;

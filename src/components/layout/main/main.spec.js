@@ -1,13 +1,23 @@
-import {factory, findComponent} from '../../../../__test__/utils/helpers';
+import {factoryStore, findComponent} from '../../../__test__/utils/helpers';
 import Main from './index';
-import DATA from '../../../data/pages';
+import data from '../../../data/pages';
+import {getPage} from '../../../helpers/getPage';
+
+jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Main', () => {
-    it('renders wihout error', () => {
-        const site = Object.keys(DATA)[0];
-        const wrapper = factory(Main, {site});
-        const component = findComponent(wrapper, 'component-main');
+    const defaultProps = {app: {isAnimated: false}};
+    let wrapper;
 
-        expect(component.length).toBe(1);
+    beforeEach(() => {
+        wrapper = factoryStore(Main, {}, defaultProps);
+    });
+
+    it('renders appropriate title value', () => {
+        const component = findComponent(wrapper, 'component-title');
+        const page = getPage('/');
+        const heading = data[page].title;
+
+        expect(component.text().includes(heading)).toBe(true);
     });
 });

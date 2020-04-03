@@ -1,0 +1,66 @@
+.main {
+    --navigation-color: var(--color-blue-darken-4);
+    --navigation-color-active: var(--color-blue-darken-3);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: calc(2 * var(--gutter)) solid var(--color-white);
+}
+
+.curtain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--zindex-aside);
+    background: var(--curtain-color, var(--color-blue-lighten-4));
+    transform: translateY(-100%);
+    border-radius: var(--border-radius);
+}
+
+::selection {
+    background: var(--selection-background, --color-blue-darken-4);
+    color: var(--color-white);
+}
+
+.homepage {
+    --section-background: var(--color-blue-lighten-5);
+    --selection-background: var(--color-blue);
+    --curtain-color: var(--color-blue-lighten-4);
+    --content-heading: var(--color-blue);
+    --content-heading-admit: var(--color-blue-lighten-1);
+    --key-background: var(--color-blue-lighten-3);
+}
+
+.projects {
+    --section-background: var(--color-green-lighten-5);
+    --selection-background: var(--color-green);
+    --curtain-color: var(--color-green-lighten-4);
+    --content-heading: var(--color-green);
+    --content-heading-admit: var(--color-green-lighten-1);
+    --key-background: var(--color-green-lighten-3);
+    --key-left-opacity: 1;
+    --key-right-opacity: 1;
+}
+
+.contact {
+    --section-background: var(--color-orange-lighten-5);
+    --selection-background: var(--color-orange);
+    --curtain-color: var(--color-orange-lighten-4);
+    --content-heading: var(--color-orange);
+    --content-heading-admit: var(--color-orange-lighten-1);
+    --key-background: var(--color-orange-lighten-3);
+}
+
+.error {
+    --section-background: var(--color-red-lighten-5);
+    --selection-background: var(--color-red);
+    --curtain-color: var(--color-red-lighten-4);
+    --content-heading: var(--color-red);
+    --content-heading-admit: var(--color-red-lighten-1);
+    --key-background: var(--color-red-lighten-3);
+}
