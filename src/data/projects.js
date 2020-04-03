@@ -40,7 +40,7 @@ const projects = {
         id: 'digitalvision',
         title: 'DigitalVision',
         url: 'https://digitalvision.cz/',
-        description: 'Digitální agentura s širokým záběrem od designu, webového vývoje, přes tvorbu her až po marketing. Společnost zaměřující se na uzký vztah s klientem.',
+        description: 'Digitální agentura s širokým záběrem od designu, webového vývoje, přes tvorbu her až po marketing. Společnost zaměřující se na úzký vztah s klientem.',
         tools: [
             'react',
             'lottie',
