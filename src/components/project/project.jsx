@@ -268,10 +268,22 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
                             />
                         </div>
                         <span className={`${styles.browserAddressbar} ${/https/.test(project.url) ? styles.browserHttps : styles.browserHttp}`}>
-                            {project.url}
-                        </span>
-                        <div className={styles.browserTarget}>
                             {!/in.progress$/.test(project.url) && (
+                                <a
+                                    href={project.url}
+                                    className={styles.browserAddressbarLink}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    aria-label="Otevřít referenci v novém okně"
+                                >
+                                    {project.url}
+                                </a>
+                            )}
+
+                            {/in.progress$/.test(project.url) && (project.url)}
+                        </span>
+                        {!/in.progress$/.test(project.url) && (
+                            <div className={styles.browserTarget}>
                                 <Anchor
                                     href={project.url}
                                     className={styles.browserLink}
@@ -281,8 +293,8 @@ const Project = ({min, max, current, handleNext, handlePrev, handleNextProject, 
                                 >
                                     <Icon className={styles.icon} />
                                 </Anchor>
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </div>
                     <div ref={browserRef} className={styles.browserContent}>
                         <video ref={videoRef} playsInline autoPlay muted loop preload="auto" controls={false} className={styles.video} alt={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}>

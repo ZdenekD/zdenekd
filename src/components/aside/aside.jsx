@@ -18,10 +18,10 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .timeline()
             .add({
                 targets: asideRef.current,
-                duration: 600,
-                opacity: [0, 1],
+                duration: 800,
+                delay: 200,
                 translateY: ['-100%', 0],
-                easing: 'easeOutCubic',
+                easing: 'easeOutQuart',
             })
             .add({
                 targets: [...listRef.current.querySelectorAll('li')],
@@ -56,7 +56,6 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .add({
                 targets: asideRef.current,
                 duration: 600,
-                opacity: [1, 0],
                 translateY: [0, '-100%'],
                 easing: 'easeOutCubic',
                 complete() {

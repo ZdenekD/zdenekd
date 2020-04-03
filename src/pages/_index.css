@@ -50,26 +50,29 @@ samp {
     font-family: 'Roboto Mono', monospace;
 }
 
-[data-title] {
+[data-tooltip] {
+    position: relative;
+
     &:focus,
     &:hover {
 
         &::before {
             opacity: 1;
-            transform: translate(-50%, 0);
+            transform: translate(-50%, 0) scale(1);
         }
     }
 
     &::before {
         padding: 0 calc(.5 * var(--gutter));
+        display: block;
         position: absolute;
         top: -2em;
         left: 50%;
-        content: attr(data-title);
+        content: attr(data-tooltip);
         opacity: 0;
         background: var(--color-white);
         font-size: .75em;
-        transform: translate(-50%, 1.25em);
+        transform: translate(-50%, 1.25em) scale(.75);
         transition: all var(--transition-duration) var(--transition-timing);
         border-radius: var(--border-radius);
     }

@@ -27,7 +27,7 @@ const Footer = ({isOpen, isAnimated}) => {
 
     return (
         <footer className={`${styles.footer} ${!isOpen && !isAnimated ? styles.show : ''}`} data-test="component-footer">
-            <code className={styles.code}>&clubs; {date} Vyrobeno pomocí kouzel.</code>
+            <code className={styles.code}>&clubs; {date} Vyrobeno pomocí <span data-tooltip="zaklínadel">&lt;kouzel&gt;</span>.</code>
             <Anchor href="mailto:ditezdenek&#64;pm.me?subject=&clubs; Zpráva přímo do schránky &clubs;" title="Zpráva přímo do schránky" className={styles.link}>
                 <Icon className={styles.icon} />
             </Anchor>
