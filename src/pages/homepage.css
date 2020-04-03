@@ -1,0 +1,41 @@
+.article {
+    width: 100%;
+    max-width: 75vw;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (--min-md) {
+        max-width: 50vw;
+    }
+}
+
+.paragraph {
+    margin: calc(4 * var(--gutter)) 0 var(--gutter);
+    color: var(--navigation-color);
+    font-size: 1em;
+    line-height: 1.75;
+
+    strong {
+        position: relative;
+        color: var(--content-heading);
+        border-bottom: 1px dotted var(--navigation-color);
+    }
+
+    span {
+        font-size: .8em;
+        text-align: right;
+        font-style: italic;
+    }
+
+    @media (--min-md) {
+        font-size: 1.2em;
+    }
+
+    @media (--min-lg) {
+        font-size: 1.4em;
+    }
+
+    @media (--min-xl) {
+        font-size: 1.6em;
+    }
+}

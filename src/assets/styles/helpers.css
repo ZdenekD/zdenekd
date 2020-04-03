@@ -8,3 +8,7 @@
     clip: rect(0, 0, 0, 0);
     border: none;
 }
+
+:global ._align-right {
+    text-align: right !important;
+}
