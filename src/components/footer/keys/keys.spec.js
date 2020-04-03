@@ -7,14 +7,13 @@ import State from '../../../state';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Keys', () => {
-    const store = getStore({});
-    const defaultProps = {menu: {isOpen: false}, app: {isAnimated: false}};
+    const store = getStore({menu: {isOpen: false}, app: {isAnimated: false}});
     let wrapper;
 
     beforeEach(() => {
         wrapper = mount(
             <State.StateProvider>
-                <Keys store={store} {...defaultProps} />
+                <Keys store={store} />
             </State.StateProvider>
         );
     });

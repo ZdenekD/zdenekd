@@ -5,38 +5,38 @@ exports[`Keys match snapshot 1`] = `
      data-test="component-keys"
 >
   <button class="undefined undefined"
-          data-test="component-key"
           type="button"
           aria-label="Předchozí stránka"
           tabindex="-1"
+          data-test="component-button"
   >
     <i>
     </i>
   </button>
   <div>
     <button class="undefined undefined"
-            data-test="component-key"
             type="button"
             aria-label="Předchozí projekt"
             tabindex="0"
+            data-test="component-button"
     >
       <i>
       </i>
     </button>
     <button class="undefined "
-            data-test="component-key"
             type="button"
             aria-label="Následující stránka"
             tabindex="0"
+            data-test="component-button"
     >
       <i>
       </i>
     </button>
     <button class="undefined undefined"
-            data-test="component-key"
             type="button"
             aria-label="Následující projekt"
             tabindex="0"
+            data-test="component-button"
     >
       <i>
       </i>

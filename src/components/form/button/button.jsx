@@ -14,7 +14,7 @@ const Button = ({children, className, ...rest}) => {
     useHover(buttonRef.current);
 
     return (
-        <button ref={buttonRef} className={className || styles.button} data-test="component-button" {...rest}>
+        <button ref={buttonRef} className={className || styles.button} {...rest} data-test="component-button">
             {children}
         </button>
     );
