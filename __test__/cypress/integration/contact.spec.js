@@ -21,14 +21,14 @@ describe('Page - Contact', () => {
     });
 
     it('Open and close menu', () => {
-        cy.get('[data-test="component-menu"]')
+        cy.get('[aria-label="Menu"]')
             .click()
             .wait(2000)
             .closest('[data-test="component-app"]')
             .find('[data-test="component-aside"]')
             .should('have.css', 'opacity', '1')
             .closest('[data-test="component-app"]')
-            .find('[data-test="component-menu"]')
+            .find('[aria-label="Menu"]')
             .click()
             .wait(2000)
             .closest('[data-test="component-app"]')
