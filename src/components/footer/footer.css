@@ -167,7 +167,7 @@
         opacity: 0;
         font-size: 1em;
         letter-spacing: 1.5px;
-        animation: fade-in 1s var(--ease-in-cubic) forwards;
+        animation: fade-in 1s var(--ease-in-cubic) forwards 1s;
 
         &::before {
             width: 1px;

@@ -18,8 +18,13 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
             .timeline()
             .add({
                 targets: asideRef.current,
+                duration: 100,
+                opacity: [0, 1],
+                easing: 'easeOutCubic',
+            })
+            .add({
+                targets: asideRef.current,
                 duration: 800,
-                delay: 200,
                 translateY: ['-100%', 0],
                 easing: 'easeOutQuart',
             })
@@ -70,7 +75,13 @@ const Aside = ({isOpen, isAnimated, handleMenu, handleMenuAnimation, handleAppAn
                         setHref(null);
                     }
                 },
-            }, '-=200');
+            }, '-=200')
+            .add({
+                targets: asideRef.current,
+                duration: 100,
+                opacity: [1, 0],
+                easing: 'easeOutCubic',
+            });
     };
     const handleClick = event => {
         event.preventDefault();
