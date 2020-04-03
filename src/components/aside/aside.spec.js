@@ -1,24 +1,21 @@
 import React from 'react';
 import {mount} from 'enzyme';
-import {getStore, factoryStore, findComponent} from '../../__test__/utils/helpers';
+import {getStore, findComponent} from '../../__test__/utils/helpers';
 import Aside from './index';
 import data from '../../data/pages';
 
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Aside', () => {
-    const store = getStore({});
-    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    const store = getStore({menu: {isOpen: false, isAnimated: false}});
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factoryStore(Aside, {}, defaultProps);
+        wrapper = mount(<Aside store={store} />);
     });
 
     it('match snapshot', () => {
-        const aside = mount(<Aside store={store} />);
-
-        expect(aside.html()).toMatchSnapshot();
+        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

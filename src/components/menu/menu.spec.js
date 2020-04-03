@@ -5,14 +5,20 @@ import Menu from './index';
 import State from '../../state';
 
 describe('Menu', () => {
-    const store = getStore({});
-    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    const store = getStore({
+        menu: {
+            isOpen: false,
+            isAnimated: false,
+            handleMenu: jest.fn(),
+            handleMenuAnimation: jest.fn(),
+        },
+    });
     let wrapper;
 
     beforeEach(() => {
         wrapper = mount(
             <State.StateProvider>
-                <Menu store={store} {...defaultProps} />
+                <Menu store={store} />
             </State.StateProvider>
         );
     });
