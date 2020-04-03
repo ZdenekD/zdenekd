@@ -9,7 +9,7 @@ import {getPage} from '../../helpers/getPage';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Heading', () => {
-    const store = getStore({});
+    const store = getStore({menu: {isOpen: false, isAnimated: false}});
     let wrapper;
 
     beforeEach(() => {
@@ -26,7 +26,6 @@ describe('Heading', () => {
 
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-heading');
-
 
         expect(component.exists()).toBe(true);
     });

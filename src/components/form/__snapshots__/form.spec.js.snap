@@ -99,9 +99,9 @@ exports[`Form match snapshot 1`] = `
     <div class="undefined undefined">
       <span>
       </span>
-      <button data-test="component-button"
-              type="submit"
+      <button type="submit"
               aria-label="Odeslat formulář"
+              data-test="component-button"
       >
         Odeslat
       </button>

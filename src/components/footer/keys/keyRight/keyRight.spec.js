@@ -2,7 +2,7 @@ import {factoryState, findComponent} from '../../../../__test__/utils/helpers';
 import KeyRight from './index';
 
 describe('Key Right', () => {
-    const defaultProps = {project: {current: 0, setProject: jest.fn()}};
+    const defaultProps = {setProject: jest.fn()};
     let wrapper;
 
     beforeEach(() => {
@@ -17,5 +17,14 @@ describe('Key Right', () => {
         const component = findComponent(wrapper, 'component-key');
 
         expect(component.exists()).toBe(true);
+    });
+
+    it('triggers project handler', () => {
+        const component = findComponent(wrapper, 'component-key');
+        const value = {handleNext: true};
+
+        component.simulate('click');
+
+        expect(defaultProps.setProject).toHaveBeenCalledWith(value);
     });
 });

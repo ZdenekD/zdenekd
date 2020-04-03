@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import lottie from 'lottie-web';
 import './_index.css';
 import Main from '../components/layout/main';
@@ -8,7 +8,7 @@ import config from '../data/config';
 const Error = () => {
     const contentRef = React.useRef(null);
 
-    useEffect(() => {
+    React.useEffect(() => {
         lottie.loadAnimation({
             container: contentRef.current,
             renderer: 'svg',

@@ -2,8 +2,8 @@
 
 exports[`Menu match snapshot 1`] = `
 <button class="undefined  "
-        data-test="component-menu"
         type="button"
+        data-test="component-button"
         aria-label="Menu"
 >
   <svg viewbox="0 0 100 100">

@@ -1,14 +1,16 @@
-import {factoryStore, findComponent} from '../../__test__/utils/helpers';
+import React from 'react';
+import {shallow} from 'enzyme';
+import {getStore, findComponent} from '../../__test__/utils/helpers';
 import Footer from './index';
 
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Footer', () => {
-    const defaultProps = {menu: {isOpen: false}, app: {isAnimated: false}};
+    const store = getStore({menu: {isOpen: false, isAnimated: false}});
     let wrapper;
 
     beforeEach(() => {
-        wrapper = factoryStore(Footer, {}, defaultProps);
+        wrapper = shallow(<Footer store={store} />).dive().dive();
     });
 
     it('renders without error', () => {
