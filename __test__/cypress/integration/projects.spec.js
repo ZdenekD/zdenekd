@@ -38,6 +38,6 @@ describe('Page - Project', () => {
 
     it('Match snapshot', () => {
         cy.wait(4000);
-        cy.percySnapshot();
+        cy.percySnapshot('Page - Project');
     })
 });

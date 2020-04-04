@@ -127,10 +127,7 @@ const Main = ({isAnimated, isOpen, children}) => {
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                 {process.env.NODE_ENV === 'production' && (
-                    <>
-                        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18074847-11" crossOrigin="anonymous" />
-                        <script dangerouslySetInnerHTML={{__html: 'window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'UA-18074847-11\', {page_path: window.location.pathname});'}} />
-                    </>
+                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js"></script>
                 )}
             </Head>
             <State.StateProvider reducer={reducer}>

@@ -9,7 +9,7 @@ const Homepage = () => (
         <article className={styles.article}>
             <p className={`${styles.paragraph} animated-block`}>
                 Profesionální hře na&nbsp;klávesnici se&nbsp;věnuji několik let.<br />
-                Pomohu vám převést přání do kódu, kterému rozumí lidé i počítače.
+                Pomohu vám převést přání do kódu, kterému rozumí lidé i stroje.
             </p>
             <p className={`${styles.paragraph} _align-right animated-block`}>
                 <span>Tvořím s <strong data-tooltip="kávou">láskou</strong> a <strong data-tooltip="lezením">nadšením</strong>.</span><br />
