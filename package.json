@@ -10,8 +10,8 @@
   "private": true,
   "scripts": {
     "reinstall": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
-    "dev": "next",
-    "start": "next start",
+    "dev": "node ./src/server.js",
+    "start": "NODE_ENV=production node ./src/server.js",
     "build": "next build",
     "sync": "aws s3 sync public s3://live-zdenekd --delete",
     "jest": "jest --watch",
@@ -34,6 +34,7 @@
     "@zeit/next-css": "^1.0.1",
     "animejs": "^3.1.0",
     "dotenv": "^8.2.0",
+    "fastify": "^2.13.0",
     "lottie-web": "^5.6.7",
     "next": "^9.3.1",
     "next-redux-wrapper": "^5.0.0",
