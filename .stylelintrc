@@ -323,7 +323,7 @@
     "selector-max-compound-selectors": 5,
     "selector-max-empty-lines": 0,
     "selector-max-id": 1,
-    "selector-max-type": 1,
+    "selector-max-type": 2,
     "selector-no-qualifying-type": [true, {
       "ignore": ["attribute"]
     }],
