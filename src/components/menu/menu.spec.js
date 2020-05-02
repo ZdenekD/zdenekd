@@ -5,21 +5,23 @@ import Menu from './index';
 import State from '../../state';
 
 describe('Menu', () => {
-    const store = getStore({
+    const defaultProps = {
         menu: {
             isOpen: false,
             isAnimated: false,
             handleMenu: jest.fn(),
             handleMenuAnimation: jest.fn(),
         },
-    });
+    };
+    let store;
     let wrapper;
 
     beforeEach(() => {
+        store = getStore(defaultProps);
         wrapper = mount(
-            <State.StateProvider>
+            <State.Provider>
                 <Menu store={store} />
-            </State.StateProvider>
+            </State.Provider>
         );
     });
 
@@ -31,5 +33,20 @@ describe('Menu', () => {
         const component = findComponent(wrapper, 'component-menu');
 
         expect(component.exists()).toBe(true);
+    });
+
+    it('test', () => {
+        const component = findComponent(wrapper, 'component-menu');
+        const state = {
+            ...defaultProps.menu,
+            isOpen: true,
+            isAnimated: true,
+        };
+
+        component.simulate('click');
+
+        const {menu} = store.getState();
+
+        expect(menu).toEqual(state);
     });
 });

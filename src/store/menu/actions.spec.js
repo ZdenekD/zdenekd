@@ -2,7 +2,7 @@ import {getStore} from '../../__test__/utils/helpers';
 import {toggleMenu, handleMenuAnimation} from './actions';
 
 describe('Menu', () => {
-    const initialState = {
+    const defaultProps = {
         menu: {
             isOpen: false,
             isAnimated: false,
@@ -10,7 +10,7 @@ describe('Menu', () => {
     };
 
     it('handle toggle menu action', () => {
-        const store = getStore(initialState);
+        const store = getStore(defaultProps);
         const value = {
             isOpen: true,
             isAnimated: false,
@@ -24,7 +24,7 @@ describe('Menu', () => {
     });
 
     it('handle menu animation action', () => {
-        const store = getStore(initialState);
+        const store = getStore(defaultProps);
         const value = {
             isOpen: false,
             isAnimated: true,

@@ -6,10 +6,12 @@ import Footer from './index';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Footer', () => {
-    const store = getStore({menu: {isOpen: false, isAnimated: false}});
+    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    let store;
     let wrapper;
 
     beforeEach(() => {
+        store = getStore(defaultProps);
         wrapper = shallow(<Footer store={store} />).dive().dive();
     });
 
