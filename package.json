@@ -22,8 +22,7 @@
     "hint:local": "hint http://localhost:3000",
     "hint:dev": "hint https://zdenekd.now.sh",
     "hint:prod": "hint https://zdenekd.cz",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "snyk:protect": "snyk protect"
   },
   "engines": {
     "node": ">=12.0.0",
@@ -80,12 +79,10 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^6.0.1",
     "prettier": "^2.0.2",
-    "snyk": "^1.316.2",
     "stylelint": "^13.0.0",
     "stylelint-a11y": "^1.2.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-csstree-validator": "^1.7.0",
     "stylelint-order": "^4.0.0"
-  },
-  "snyk": true
+  }
 }
