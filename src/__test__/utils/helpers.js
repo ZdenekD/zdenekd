@@ -48,9 +48,9 @@ export const factoryStore = (Component, state = {}, props = {}) => {
  */
 export const factoryState = (Component, props = {}) => {
     const wrapper = mount(
-        <State.StateProvider>
+        <State.Provider>
             <Component {...props} />
-        </State.StateProvider>
+        </State.Provider>
     );
 
     return wrapper;

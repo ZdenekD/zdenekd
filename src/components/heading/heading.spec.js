@@ -9,14 +9,16 @@ import {getPage} from '../../helpers/getPage';
 jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Heading', () => {
-    const store = getStore({menu: {isOpen: false, isAnimated: false}});
+    const defaultProps = {menu: {isOpen: false, isAnimated: false}};
+    let store;
     let wrapper;
 
     beforeEach(() => {
+        store = getStore(defaultProps);
         wrapper = mount(
-            <State.StateProvider>
+            <State.Provider>
                 <Heading store={store} />
-            </State.StateProvider>
+            </State.Provider>
         );
     });
 

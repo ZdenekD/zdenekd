@@ -130,9 +130,9 @@ const Main = ({isAnimated, isOpen, children}) => {
                     <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js"></script>
                 )}
             </Head>
-            <State.StateProvider reducer={reducer}>
+            <State.Provider reducer={reducer}>
                 <>
-                    <main className={`${styles.section} main`}>
+                    <main className={`${styles.section} main`} data-test="component-main">
                         <Header />
                         {!isAnimated && !isOpen && <Content content={children} />}
                         <Footer />
@@ -140,7 +140,7 @@ const Main = ({isAnimated, isOpen, children}) => {
                     <Aside />
                     <Cursor />
                 </>
-            </State.StateProvider>
+            </State.Provider>
         </>
     );
 };

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import state from './state';
 
 const stateContext = React.createContext();
-const StateProvider = ({reducer, children}) => (
+const Provider = ({reducer, children}) => (
     <stateContext.Provider value={React.useReducer(reducer, {...state})}>
         {children}
     </stateContext.Provider>
 );
 const useStateValue = () => React.useContext(stateContext);
 
-export default {StateProvider, useStateValue};
+export default {Provider, useStateValue};
 
-StateProvider.propTypes = {
+Provider.propTypes = {
     reducer: PropTypes.func,
     initialState: PropTypes.shape({}),
     children: PropTypes.oneOfType([

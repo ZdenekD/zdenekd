@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "reinstall": "rimraf 'yarn.lock' 'node_modules' '**/node_modules' && yarn",
+    "reinstall": "rm -rf 'yarn.lock' 'node_modules' && yarn",
     "dev": "node ./src/server.js",
     "start": "NODE_ENV=production node ./src/server.js",
     "build": "next build",
@@ -21,7 +21,8 @@
     "percy": "percy exec -- cypress run",
     "hint:local": "hint http://localhost:3000",
     "hint:dev": "hint https://zdenekd.now.sh",
-    "hint:prod": "hint https://zdenekd.cz"
+    "hint:prod": "hint https://zdenekd.cz",
+    "snyk:protect": "snyk protect"
   },
   "engines": {
     "node": ">=12.0.0",
@@ -64,7 +65,7 @@
     "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "hint": "^6.0.3",
     "husky": "^4.0.10",
     "jest": "^25.1.0",
