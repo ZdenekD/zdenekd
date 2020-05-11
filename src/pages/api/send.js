@@ -19,12 +19,14 @@ export default async function(req, res) {
             html: '<p>Zpráva od: <strong>' + name + '</strong> - <strong>' + email + '</strong></p><p>' + message + '</p>',
         };
 
-        try {
-            await sendgrid.send(content);
+        (async () => {
+            try {
+                await sendgrid.send(content);
 
-            res.status(200).send('Zpráva byla úspěšně odeslána.');
-        } catch (error) {
-            res.status(400).send('Něco se bohužel po@#$&lo.');
-        }
+                res.status(200).send('Zpráva byla úspěšně odeslána.');
+            } catch (error) {
+                res.status(400).send('Něco se bohužel po@#$&lo.');
+            }
+        })();
     }
 }
