@@ -906,60 +906,116 @@ patch:
   SNYK-JS-LODASH-567746:
     - '@babel/core > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/generator > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-env > @babel/preset-modules > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > babel-plugin-transform-define > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/plugin-proposal-object-rest-spread > @babel/plugin-transform-parameters > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/generator > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/template > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/template > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/helpers > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/preset-env > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/preset-modules > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > @babel/generator > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-member-expression-to-functions > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/generator > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-optimise-call-expression > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/helpers > @babel/traverse > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/template > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/traverse > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > styled-jsx > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > @babel/generator > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/generator > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/helpers > @babel/template > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/template > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > @babel/helper-function-name > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - '@babel/core > @babel/helpers > @babel/traverse > @babel/types > lodash':
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/traverse > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/core > @babel/helpers > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
+      next > @babel/types > lodash:
+        patched: '2020-05-11T21:11:49.103Z'
     - next > @babel/plugin-transform-runtime > @babel/helper-module-imports > @babel/types > lodash:
         patched: '2020-05-05T19:25:51.384Z'
     - next > @babel/preset-env > @babel/helper-module-imports > @babel/types > lodash:
