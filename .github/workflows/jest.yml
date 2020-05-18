@@ -5,7 +5,7 @@ on:
       - master
       - develop
 jobs:
-  jest-test:
+  jest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

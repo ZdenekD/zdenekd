@@ -2,21 +2,24 @@ name: Cypress
 on:
   pull_request:
     branches:
+      - master
       - develop
 jobs:
-  cypress-test:
+  cypress:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
       - uses: cypress-io/github-action@v1
-        env:
-          PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
         with:
           start: yarn dev
           wait-on: 'http://localhost:3000'
           command-prefix: 'percy exec -- npx'
           browser: chrome
           headless: true
+        env:
+          PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
