@@ -1,5 +1,6 @@
 const sendgrid = require('@sendgrid/mail');
 
+// eslint-disable-next-line func-names
 export default async function(req, res) {
     const {method} = req;
 
