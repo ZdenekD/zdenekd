@@ -12,20 +12,20 @@ fastify.register((component, opts, next) => {
         .prepare()
         .then(() => {
             if (isDevelop) {
-                component.get('/_next/*', (req, reply) => app.handleRequest(req.req, reply.res).then(() => {
+                component.get('/_next/*', (req, res) => handle(req.raw, res.raw).then(() => {
                     // eslint-disable-next-line no-param-reassign
-                    reply.sent = true;
+                    res.sent = true;
                 }));
             }
 
-            component.all('/*', (req, reply) => handle(req.req, reply.res).then(() => {
+            component.all('/*', (req, res) => handle(req.raw, res.raw).then(() => {
                 // eslint-disable-next-line no-param-reassign
-                reply.sent = true;
+                res.sent = true;
             }));
 
-            component.setNotFoundHandler((request, reply) => app.render404(request.req, reply.res).then(() => {
+            component.setNotFoundHandler((req, res) => app.render404(req.raw, res.raw).then(() => {
                 // eslint-disable-next-line no-param-reassign
-                reply.sent = true;
+                res.sent = true;
             }));
 
             next();
