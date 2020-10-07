@@ -10,171 +10,87 @@ ignore:
     - '@babel/core > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.358Z'
-      next > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.108Z'
     - '@babel/core > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.108Z'
     - '@babel/core > @babel/generator > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.108Z'
     - '@babel/core > @babel/traverse > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/preset-env > @babel/preset-modules > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.108Z'
     - next > @babel/core > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > babel-plugin-transform-define > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/plugin-proposal-object-rest-spread > @babel/plugin-transform-parameters > @babel/helper-get-function-arity > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/generator > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/template > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/template > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-split-export-declaration > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/traverse > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/helpers > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > @babel/core > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > @babel/preset-env > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > @babel/preset-modules > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-module-imports > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/traverse > @babel/generator > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-member-expression-to-functions > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > @babel/core > @babel/generator > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-optimise-call-expression > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - '@babel/core > @babel/helpers > @babel/traverse > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.359Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/template > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.109Z'
     - next > @babel/core > @babel/traverse > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > styled-jsx > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - '@babel/core > @babel/traverse > @babel/generator > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/core > @babel/generator > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - '@babel/core > @babel/helpers > @babel/template > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/core > @babel/template > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - '@babel/core > @babel/traverse > @babel/helper-function-name > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - '@babel/core > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - '@babel/core > @babel/helpers > @babel/traverse > @babel/types > lodash':
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/core > @babel/traverse > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
-      next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
-        reason: None given
-        expires: '2020-06-10T21:21:59.110Z'
     - next > @babel/core > @babel/helpers > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.360Z'
@@ -985,6 +901,100 @@ ignore:
     - next > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         reason: None given
         expires: '2020-06-04T19:46:31.381Z'
+    - next > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.108Z'
+    - next > @babel/core > @babel/helper-module-transforms > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.108Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.108Z'
+    - next > @babel/preset-env > @babel/preset-modules > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.108Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-module-imports > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/plugin-proposal-object-rest-spread > @babel/plugin-transform-parameters > @babel/helper-get-function-arity > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/template > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-split-export-declaration > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-module-imports > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-member-expression-to-functions > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/helper-optimise-call-expression > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-simple-access > @babel/template > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.109Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/preset-react > @babel/plugin-transform-react-jsx-development > @babel/helper-builder-react-jsx-experimental > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/preset-env > @babel/preset-modules > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+    - next > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        reason: None given
+        expires: '2020-06-10T21:21:59.110Z'
+  SNYK-JS-NODEFETCH-674311:
+    - next > @ampproject/toolbox-optimizer > node-fetch:
+        reason: None given
+        expires: '2020-11-06T09:06:16.713Z'
+      next > @ampproject/toolbox-optimizer > cross-fetch > node-fetch:
+        reason: None given
+        expires: '2020-11-06T09:08:54.557Z'
+    - next > @ampproject/toolbox-optimizer > @ampproject/toolbox-validator-rules > cross-fetch > node-fetch:
+        reason: None given
+        expires: '2020-11-06T09:08:54.557Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:
