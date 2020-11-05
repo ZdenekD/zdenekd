@@ -1,3 +1,5 @@
 import cursorReducer from './cursor/reducer';
 
-export default ({cursor}, action) => ({cursor: cursorReducer(cursor, action)});
+const reducer = ({cursor}, action) => ({cursor: cursorReducer(cursor, action)});
+
+export default reducer;

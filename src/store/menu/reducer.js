@@ -4,8 +4,7 @@ const initialState = {
     isOpen: false,
     isAnimated: false,
 };
-
-export default (state = initialState, action) => {
+const menu = (state = initialState, action) => {
     switch (action.type) {
         case MENU_IS_OPEN:
             return ({
@@ -21,3 +20,5 @@ export default (state = initialState, action) => {
             return state;
     }
 };
+
+export default menu;

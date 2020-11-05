@@ -1,8 +1,7 @@
 import {APP_IS_ANIMATED} from './actions';
 
 const initialState = {isAnimated: false};
-
-export default (state = initialState, action) => {
+const app = (state = initialState, action) => {
     switch (action.type) {
         case APP_IS_ANIMATED:
             return ({
@@ -13,3 +12,5 @@ export default (state = initialState, action) => {
             return state;
     }
 };
+
+export default app;

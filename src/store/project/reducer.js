@@ -8,8 +8,7 @@ const initialState = {
     handlePrev: false,
     handleNext: false,
 };
-
-export default (state = initialState, action) => {
+const project = (state = initialState, action) => {
     switch (action.type) {
         case SET_PROJECT_NEXT:
             return ({
@@ -37,3 +36,5 @@ export default (state = initialState, action) => {
             return state;
     }
 };
+
+export default project;
