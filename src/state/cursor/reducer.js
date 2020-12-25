@@ -1,6 +1,6 @@
 import {CURSOR_STICK} from './actions';
 
-const cursor = (state, action) => {
+const reducer = (state, action) => {
     switch (action.type) {
         case CURSOR_STICK:
             return ({
@@ -24,4 +24,4 @@ export const initialState = {
     },
 };
 
-export default cursor;
+export default reducer;

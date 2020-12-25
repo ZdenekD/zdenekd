@@ -8,7 +8,7 @@ const initialState = {
     handlePrev: false,
     handleNext: false,
 };
-const project = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PROJECT_NEXT:
             return ({
@@ -37,4 +37,4 @@ const project = (state = initialState, action) => {
     }
 };
 
-export default project;
+export default reducer;

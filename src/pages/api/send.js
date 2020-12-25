@@ -26,7 +26,7 @@ export default async function(req, res) {
 
                 res.status(200).send('Zpráva byla úspěšně odeslána.');
             } catch (error) {
-                res.status(400).send('Něco se bohužel po@#$&lo.');
+                res.status(400).send('Něco se pravděpodobně po@#$&lo.');
             }
         })();
     }

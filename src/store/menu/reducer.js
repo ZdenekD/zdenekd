@@ -4,7 +4,7 @@ const initialState = {
     isOpen: false,
     isAnimated: false,
 };
-const menu = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case MENU_IS_OPEN:
             return ({
@@ -21,4 +21,4 @@ const menu = (state = initialState, action) => {
     }
 };
 
-export default menu;
+export default reducer;
