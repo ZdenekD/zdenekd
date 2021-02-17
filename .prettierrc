@@ -4,6 +4,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "bracketSpacing": false,
+  "arrowParens": "avoid",
   "overrides": [
     {
       "files": ["*.json", "*.yml", "*.*rc"],

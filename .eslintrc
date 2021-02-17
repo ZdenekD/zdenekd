@@ -4,21 +4,24 @@
     "node": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "plugins": ["react", "react-hooks"],
-  "extends": ["airbnb-base", "plugin:react/recommended", "plugin:jest/recommended", "plugin:jsx-a11y/recommended"],
+  "extends": ["airbnb-base", "plugin:react/recommended", "plugin:jest/recommended", "plugin:jsx-a11y/recommended", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     },
     "react": {
+      "version": "detect"
+    },
+    "jest": {
       "version": "detect"
     }
   },
@@ -59,6 +62,8 @@
         "SwitchCase": 1
       }
     ],
+    // Require or disallow an empty line between class members
+    "lines-between-class-members": ["error", "always", {"exceptAfterSingleLine": true}],
     // Enforce consistent linebreak style
     "linebreak-style": ["error", "unix"],
     // Enforce consistent line breaks inside braces
@@ -88,7 +93,7 @@
     "no-console": [
       "error",
       {
-        "allow": ["info", "log", "assert"]
+        "allow": ["info", "log", "assert", "dir"]
       }
     ],
     // This rule aims to reduce the scrolling required when reading through your code. It will warn when the maximum amount of empty lines has been exceeded.
@@ -100,6 +105,8 @@
         "allowForLoopAfterthoughts": true
       }
     ],
+    // Disallow variable declarations from shadowing variables declared in the outer scope
+    "no-shadow": "off",
     // Disallow dangling underscores in identifiers
     "no-underscore-dangle": [
       "error",
@@ -159,8 +166,18 @@
         "asyncArrow": "always"
       }
     ],
+    // Note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    // Explicit accessibility modifiers on class properties and methods are not required
+    "@typescript-eslint/explicit-member-accessibility": ["off"],
+    // Disallow variable declarations from shadowing variables declared in the outer scope
+    "@typescript-eslint/no-shadow": ["error"],
     // Forbid certain propTypes
     "react/forbid-prop-types": [0],
+    // React scope is not necessary for React v17+
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     // Enforce JSX indentation
     "react/jsx-indent": ["error", 4],
     // Validate props indentation in JSX
@@ -187,6 +204,8 @@
         "ignoreClassFields": true
       }
     ],
+    // Prevent missing props validation in a React component definition
+    "react/prop-types": 0,
     // Checks rules of Hooks
     "react-hooks/rules-of-hooks": "error",
     // Checks effect dependencies
@@ -204,8 +223,8 @@
     // Enforce valid expect() usage (valid-expect)
     "jest/valid-expect": 1,
     // Off import errors (becauseof webpack config)
-    "import/no-extraneous-dependencies": 1,
-    "import/no-unresolved": 1,
-    "import/extensions": 1
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0
   }
 }

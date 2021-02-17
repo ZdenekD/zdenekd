@@ -23,18 +23,28 @@ Description how to set project on local machine
 ```
     git clone git@github.com:ZdenekD/zdenekd.git
     cd zdenekd/
-    yarn (if package.json exists)
+    yarn
 ```
 
-### Develop
+### CSS Modules fix
+
+Because of problems with NextJS CSS modules and Framer-motion (if is used `<AnimatePresence exitBeforeEnter>`, NextJS change styles immediately and animation `before unmount` is unstyled).
+Solution is use @zeit/next-css package, but there is invalid configuration for postcss, so edit files are in folder **next-css**. For proper work it's necessary use @zeit/next-css package
+and edited files from folder 'next-css'.
+
+### Development
+
+It's automatically pushed to [Zeit.co](https://zeit.co/dashboard). Production branch is **master**, other branches for development (every pushed branch is built)
 
 ```
-yarn dev
+master branch - **production**
+develop branch - stage/development preview
 ```
 
 ### Building
 
-Build project before deploy
+Project is automatically build on [Zeit.co](https://zeit.co/dashboard).
+Build task:
 
 ```
 yarn build
@@ -42,29 +52,21 @@ yarn build
 
 ## Tests
 
-JS tests are written with `jest` and `enzyme`
+How to run and write tests
+[Snyk](https://snyk.io) - check packages for vulnerabilities
+[Webhint](https://webhint.io) - complete website tests
+[Yarn Outdated](https://yarnpkg.com/lang/en/docs/cli/outdated/) - check for outdated project packages
 
 ```
-yarn test:js
-```
-
-Security and audit tests
-
--   Exists github actions to run tests
-
-Webpages tests (it needs to run webserver - it looks on http://localhost:3000)
-
-```
-yarn test:webhint
-```
-
-Yarn outdated packages test
-
-```
-yarn test:packages
+snyk wizard
+yarn jest
+yarn jest:coverage
+yarn hint:local
+yarn hint:dev
+yarn hint:prod
+yarn outdated
 ```
 
 ## Deploying
 
-Git master branch is production, other branches are develop.
-Project is on github pushed to Now.
+Push to **master** branch
