@@ -1,0 +1,79 @@
+@import './base/reset.css';
+@import './variables/colors.css';
+@import './variables/easing.css';
+@import './variables/variables.css';
+@import './utilities/helpers.css';
+
+html {
+    height: 100%;
+}
+
+body {
+    --section-gutter: calc(2 * var(--gap));
+    width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
+    font-size: var(--font-size, 13px);
+    line-height: 1.4;
+    font-weight: 400;
+    transition: font-size var(--transition-duration) var(--transition-timing);
+
+    @media (--min-md) {
+        --font-size: 14px;
+        --section-gutter: calc(4 * var(--gap));
+        overflow-y: hidden;
+    }
+
+    @media (--min-lg) {
+        --font-size: 15px;
+    }
+
+    @media (--min-xl) {
+        --font-size: 16px;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+code,
+kbd,
+samp {
+    font-family: 'Roboto Mono', monospace;
+}
+
+::selection {
+    background: var(--selection-background, --color-blue-darken-4);
+    color: var(--color-white);
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: crosshair;
+
+    &:focus,
+    &:hover {
+
+        &::before {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+    &::before {
+        padding: 0 calc(0.5 * var(--gap));
+        display: block;
+        position: absolute;
+        top: -2em;
+        left: 50%;
+        content: attr(data-tooltip);
+        opacity: 0;
+        background: var(--color-white);
+        font-size: 0.75em;
+        transform: translate(-50%, 1.25em) scale(0.75);
+        transition: all var(--transition-duration) var(--transition-timing);
+        border-radius: var(--border-radius);
+    }
+}

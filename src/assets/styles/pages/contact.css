@@ -1,0 +1,8 @@
+.root {
+    --section-background: var(--color-orange-lighten-5);
+    --selection-background: var(--color-orange);
+    --curtain-color: var(--color-orange-lighten-4);
+    --content-heading: var(--color-orange);
+    --content-heading-admit: var(--color-orange-lighten-1);
+    --key-background: var(--color-orange-lighten-3);
+}

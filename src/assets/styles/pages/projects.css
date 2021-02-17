@@ -1,0 +1,19 @@
+.root {
+    --section-background: var(--color-green-lighten-5);
+    --selection-background: var(--color-green);
+    --curtain-color: var(--color-green-lighten-4);
+    --content-heading: var(--color-green);
+    --content-heading-admit: var(--color-green-lighten-1);
+    --key-background: var(--color-green-lighten-3);
+    --key-left-opacity: 1;
+    --key-right-opacity: 1;
+}
+
+.article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}

@@ -1,0 +1,54 @@
+.root {
+    --section-background: var(--color-blue-lighten-5);
+    --selection-background: var(--color-blue);
+    --curtain-color: var(--color-blue-lighten-4);
+    --content-heading: var(--color-blue);
+    --content-heading-admit: var(--color-blue-lighten-1);
+    --key-background: var(--color-blue-lighten-3);
+}
+
+.article {
+    width: 100%;
+    max-width: 75vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+    @media (--min-md) {
+        max-width: 50vw;
+    }
+}
+
+.paragraph {
+    margin: var(--gutter) 0;
+    color: var(--navigation-color);
+    font-size: 1em;
+    line-height: 1.75;
+
+    @media (--min-md) {
+        font-size: 1.2em;
+    }
+
+    @media (--min-lg) {
+        font-size: 1.3em;
+    }
+
+    @media (--min-xl) {
+        font-size: 1.4em;
+    }
+
+    strong {
+        position: relative;
+        color: var(--content-heading);
+        border-bottom: 1px dotted var(--navigation-color);
+    }
+
+    span {
+        font-size: 0.8em;
+        text-align: right;
+        font-style: italic;
+    }
+}
