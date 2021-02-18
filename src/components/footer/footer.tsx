@@ -11,7 +11,11 @@ const Footer: React.FC = () => {
     return (
         <footer className={`${styles.footer} ${styles.show}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí <span data-tooltip="zaklínadel">&lt;kouzel&gt;</span>.</code>
-            <a href="mailto:ditezdenek&#64;pm.me?subject=&clubs; Zpráva přímo do schránky &clubs;" title="Zpráva přímo do schránky" className={styles.link}>
+            <a
+                href="mailto:ditezdenek&#64;pm.me?subject=&clubs; Zpráva přímo do schránky &clubs;"
+                title="Zpráva přímo do schránky"
+                className={styles.link}
+            >
                 <Icon className={styles.icon} />
             </a>
             <span className={styles.scroll}>

@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
                     name="med"
                     label="Med"
                     autoComplete="off"
-                    className={styles.hidden}
+                    className="_visuallyhidden"
                 />
                 <Button type="submit" variant={VariantsEnum.info} className={styles.submit} disabled={isDisabled}>Odeslat</Button>
             </Form>
