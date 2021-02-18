@@ -6,8 +6,8 @@ import KeyDown from './keyDown';
 import KeyLeft from './keyLeft';
 import KeyRight from './keyRight';
 import styles from './keys.css';
-import data from '../../../data/pages';
-import {getPage} from '../../../helpers/getPage';
+import data from '../../data/pages';
+import {getPage} from '../../helpers/getPage';
 
 const Keys = ({
     isOpen,

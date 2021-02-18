@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../../form/button';
 import styles from './keyDown.css';
-import {getPageIndex} from '../../../../helpers/getPage';
+import {getPageIndex} from '../../../helpers/getPage';
 
 const KeyDown = ({data, router}) => {
     const pages = Object.keys(data);

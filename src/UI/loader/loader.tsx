@@ -1,9 +1,11 @@
 import styles from './loader.css';
 
-const Loader: React.FC = () => (
-    <div className={styles.loader}>
-        Loader &hellip;
-    </div>
+interface ILoader {
+    className?: string
+}
+
+const Loader: React.FC<ILoader> = ({className = ''}) => (
+    <div className={`${styles.loader} ${className}`} data-test="component-loader" />
 );
 
 export default Loader;

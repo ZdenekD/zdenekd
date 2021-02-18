@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer match snapshot 1`] = `
+<footer class="footer show"
+        data-test="component-footer"
+>
+  <code class="code">
+    ♣ MMXXI Vyrobeno pomocí
+    <span data-tooltip="zaklínadel">
+      &lt;kouzel&gt;
+    </span>
+    .
+  </code>
+  <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
+     title="Zpráva přímo do schránky"
+     class="link"
+  >
+    <svg data-filename="src/assets/images/icon_message.svg">
+    </svg>
+  </a>
+  <span class="scroll">
+    Scroll
+    <i class="dot">
+    </i>
+  </span>
+</footer>
+`;

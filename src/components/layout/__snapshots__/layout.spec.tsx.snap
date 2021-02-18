@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout match snapshot 1`] = `
+<main class="main "
+      data-test="component-layout"
+>
+  <header class="header"
+          data-test="component-header"
+  >
+    <a href="/"
+       class="link"
+       aria-label="Odkaz na domovskou stránku"
+       data-test="component-heading"
+    >
+      <span class="_visuallyhidden"
+            data-test="component-title"
+      >
+        Kávová paráda | ZdenekD
+      </span>
+      <svg data-filename="src/assets/images/logo.svg">
+      </svg>
+      <i class="shadow">
+      </i>
+    </a>
+    <button type="button"
+            class="button "
+            data-test="component-menu"
+            aria-label="Menu button"
+    >
+      <svg class="icon"
+           viewbox="0 0 100 100"
+      >
+        <path d="M30,40 L70,40 Z">
+        </path>
+        <path d="M30,50 L70,50 Z">
+        </path>
+        <path d="M30,60 L70,60 Z">
+        </path>
+      </svg>
+    </button>
+  </header>
+  <section class="section"
+           data-test="component-section"
+  >
+    <noscript>
+      <strong>
+        Nemáte zapnutý Javascript
+      </strong>
+      <p>
+        Některé součásti stránek Vám nemusí fungovat správně.
+        <br>
+        Zde jsou
+        <a href="https://www.enable-javascript.com/cz/"
+           target="_blank"
+           rel="noreferrer noopener"
+        >
+          instrukce
+        </a>
+        jak povolit JavaScript ve Vašem webovém prohlížeči.
+      </p>
+    </noscript>
+    Content
+  </section>
+  <footer class="footer show"
+          data-test="component-footer"
+  >
+    <code class="code">
+      ♣ MMXXI Vyrobeno pomocí
+      <span data-tooltip="zaklínadel">
+        &lt;kouzel&gt;
+      </span>
+      .
+    </code>
+    <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
+       title="Zpráva přímo do schránky"
+       class="link"
+    >
+      <svg data-filename="src/assets/images/icon_message.svg">
+      </svg>
+    </a>
+    <span class="scroll">
+      Scroll
+      <i class="dot">
+      </i>
+    </span>
+  </footer>
+  <aside class="aside"
+         data-test="component-aside"
+  >
+    <nav class="nav"
+         data-test="component-nav"
+    >
+      <ul class="list">
+        <li>
+          <a href="/"
+             class="anchor "
+             data-test="component-anchor"
+          >
+            Úvodní stránka
+          </a>
+        </li>
+        <li>
+          <a href="/projects"
+             class="anchor "
+             data-test="component-anchor"
+          >
+            Projekty
+          </a>
+        </li>
+        <li>
+          <a href="/contact"
+             class="anchor "
+             data-test="component-anchor"
+          >
+            Kontakt
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</main>
+`;

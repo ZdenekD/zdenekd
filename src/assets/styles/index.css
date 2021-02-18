@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    --section-gutter: calc(2 * var(--gap));
     width: 100%;
     background-color: var(--color-white);
     color: var(--color-black);
@@ -21,7 +20,6 @@ body {
 
     @media (--min-md) {
         --font-size: 14px;
-        --section-gutter: calc(4 * var(--gap));
         overflow-y: hidden;
     }
 

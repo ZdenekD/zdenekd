@@ -1,4 +1,8 @@
 import Head from 'next/head';
+import Header from '../header';
+import Footer from '../footer';
+import Section from '../section';
+import Aside from '../aside';
 import config from '../../data/config';
 import styles from './layout.css';
 
@@ -47,20 +51,23 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => (
                 <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js"></script>
             )}
         </Head>
-        <main className={`${styles.main} ${className}`} data-test="component-main">
-            <noscript>
-                <strong>
-                    Nemáte zapnutý Javascript
-                </strong>
-                <p>
-                    Některé součásti stránek Vám nemusí fungovat správně.<br />
-                    Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
-                    Vašem webovém prohlížeči.
-                </p>
-            </noscript>
-            <section className={styles.section}>
+        <main className={`${styles.main} ${className}`} data-test="component-layout">
+            <Header />
+            <Section>
+                <noscript>
+                    <strong>
+                        Nemáte zapnutý Javascript
+                    </strong>
+                    <p>
+                        Některé součásti stránek Vám nemusí fungovat správně.<br />
+                        Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
+                        Vašem webovém prohlížeči.
+                    </p>
+                </noscript>
                 {children}
-            </section>
+            </Section>
+            <Footer />
+            <Aside />
         </main>
     </>
 );

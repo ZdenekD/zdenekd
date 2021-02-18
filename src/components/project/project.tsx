@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Project: React.FC = () => (
-    <div>Project</div>
+    <div data-test="component-project">Project</div>
 );
 
 export default Project;

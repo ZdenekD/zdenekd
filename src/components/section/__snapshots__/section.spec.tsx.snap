@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section match snapshot 1`] = `
+<section class="section"
+         data-test="component-section"
+>
+</section>
+`;

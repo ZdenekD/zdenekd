@@ -1,28 +1,37 @@
 import React from 'react';
-import useHover from '../../hooks/hover';
 import styles from './anchor.css';
 
 interface IAnchor {
-    children: React.ReactNode
     href: string
+    title?: string
+    children: React.ReactNode
+    target?: '_blank'
     className?: string
+    onClick?: (event: React.MouseEvent) => void
 }
 
-const Anchor: React.FC<IAnchor> = ({href, children, className = ''}) => {
-    const [, setPrepared] = React.useState(false);
-    const anchorRef = React.useRef(null);
+const Anchor = React.forwardRef<HTMLAnchorElement, IAnchor>(({
+    href,
+    title,
+    children,
+    target,
+    className = '',
+    onClick,
+}, ref) => (
+    <a
+        ref={ref}
+        href={href}
+        title={title}
+        className={`${styles.anchor} ${className}`}
+        target={target}
+        rel={target ? 'noreferrer noopener' : undefined}
+        data-test="component-anchor"
+        onClick={onClick}
+    >
+        {children}
+    </a>
+));
 
-    React.useEffect(() => {
-        setPrepared(true);
-    }, []);
-
-    useHover(anchorRef.current);
-
-    return (
-        <a ref={anchorRef} href={href} className={className || styles.anchor} data-test="component-anchor">
-            {children}
-        </a>
-    );
-};
+Anchor.displayName = 'Anchor';
 
 export default Anchor;

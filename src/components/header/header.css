@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    padding: var(--gap);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: var(--zindex-header);
+}
+
+.link {
+    position: relative;
+    text-decoration: none;
+
+    &:focus {
+        outline: 2px dashed var(--navigation-color);
+    }
+
+    &[disabled] {
+        pointer-events: none;
+    }
+}

@@ -1,5 +1,5 @@
 :root {
-    --gap: 10px;
+    --gap: 20px;
     --max-container-width: 1800px;
     --input-height: 50px;
     --transition-duration: .4s;
@@ -8,6 +8,7 @@
     --header-transition-active: all .8s var(--ease-out-expo);
     --float-transition: transform 1.2s ease-out;
     --zindex-aside: 100;
+    --zindex-footer: 105;
     --zindex-header: 110;
     --zindex-modal: 200;
     --zindex-loader: 210;

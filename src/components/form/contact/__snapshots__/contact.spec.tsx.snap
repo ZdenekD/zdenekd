@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form/Contact match snapshot 1`] = `
+<form class="form form"
+      data-test="component-form"
+>
+  <div class="control ">
+    <label for="_34rFI1"
+           class="label "
+    >
+      Jméno
+      <sup class="required">
+        *
+      </sup>
+    </label>
+    <div class="wrapper">
+      <input type="text"
+             id="_34rFI1"
+             name="name"
+             class="input  "
+             required
+             maxlength="30"
+             data-test="component-input"
+      >
+      <span class="maxlength ">
+        0 / 30
+      </span>
+    </div>
+  </div>
+  <div class="control ">
+    <label for="_34rFI2"
+           class="label "
+    >
+      E-mail
+      <sup class="required">
+        *
+      </sup>
+    </label>
+    <div class="wrapper">
+      <input type="email"
+             id="_34rFI2"
+             name="email"
+             class="input  "
+             required
+             maxlength="90"
+             data-test="component-input"
+      >
+      <span class="maxlength ">
+        0 / 90
+      </span>
+    </div>
+  </div>
+  <div class="control ">
+    <label for="_34rFI3"
+           class="label "
+    >
+      Zpráva
+      <sup class="required">
+        *
+      </sup>
+    </label>
+    <div class="wrapper">
+      <textarea id="_34rFI3"
+                name="message"
+                class="textarea   textareaMaxlength"
+                required
+                maxlength="255"
+                data-test="component-textarea"
+      >
+      </textarea>
+      <span class="maxlength ">
+        0 / 255
+      </span>
+    </div>
+  </div>
+  <div class="control hidden">
+    <label for="_34rFI4"
+           class="label "
+    >
+      Med
+    </label>
+    <div class="wrapper">
+      <input type="text"
+             id="_34rFI4"
+             name="med"
+             class="input  "
+             autocomplete="off"
+             data-test="component-input"
+      >
+    </div>
+  </div>
+  <button type="submit"
+          class="button info submit"
+          data-test="component-button"
+  >
+    Odeslat
+  </button>
+</form>
+`;

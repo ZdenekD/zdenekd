@@ -1,0 +1,107 @@
+@keyframes shadow-in {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--curtain-color);
+    }
+}
+
+@keyframes shadow-out {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: var(--color-blue-lighten-3);
+    }
+}
+
+.button {
+    position: relative;
+    line-height: 0;
+
+    &:focus {
+        outline: 2px dashed var(--navigation-color);
+    }
+
+    &:focus,
+    &:hover {
+        --button-hover-background: transparent;
+    }
+
+    &[disabled] {
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        &::before {
+            --velocity: 70;
+            width: 24px;
+            height: 24px;
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            z-index: -1;
+            content: '';
+            opacity: .75;
+            background: transparent;
+            transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+            transition: var(--float-transition);
+            animation: shadow-in 2s var(--ease-out-quart) 1.2s forwards;
+
+            @media (--min-md) {
+                width: 32px;
+                height: 32px;
+                top: 16px;
+                left: 24px;
+            }
+        }
+    }
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    fill: none;
+    stroke: var(--navigation-color, var(--color-blue-darken-4));
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: var(--header-transition);
+
+    path {
+        transform-origin: center;
+    }
+
+    @media (--min-sm) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media (--min-md) {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.active {
+
+    &::before {
+        background: transparent;
+
+        @media (prefers-reduced-motion: no-preference) {
+            animation: shadow-out 2s var(--ease-out-quart) 1s forwards;
+        }
+    }
+
+    .icon {
+        --navigation-color: var(--navigation-color-active);
+        transition: var(--header-transition-active);
+    }
+}
+
+.disabled {
+    pointer-events: none;
+}

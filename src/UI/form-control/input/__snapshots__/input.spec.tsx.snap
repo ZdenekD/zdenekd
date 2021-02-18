@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input match snapshot 1`] = `
+<div class="control ">
+  <label for="_34rFI1"
+         class="label "
+  >
+    Input
+  </label>
+  <div class="wrapper">
+    <input type="text"
+           id="_34rFI1"
+           name="input"
+           class="input  "
+           data-test="component-input"
+    >
+  </div>
+</div>
+`;
