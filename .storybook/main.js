@@ -6,6 +6,7 @@ module.exports = {
         '@storybook/addon-docs',
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
+        '@storybook/addon-backgrounds',
     ],
     webpackFinal: async (config, {configType}) => {
         const isProduction = configType === 'production';
@@ -26,7 +27,13 @@ module.exports = {
                 {loader: 'style-loader'},
                 {
                     loader: 'css-loader',
-                    options: {sourceMap: !isProduction},
+                    options: {
+                        modules: {
+                            mode: 'local',
+                            localIdentName: !isProduction ? '[name]-[local]--[hash:base64:6]' : '[hash:base64:8]',
+                        },
+                        sourceMap: !isProduction,
+                    },
                 },
                 {
                     loader: 'postcss-loader',
