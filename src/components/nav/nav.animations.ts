@@ -5,17 +5,19 @@ const list: Variants = {
         opacity: 1,
         transition: {
             duration: 0.4,
-            delay: 0.4,
-            staggerChildren: 0.3,
-            easing: 'easeOutCubic',
+            when: 'beforeChildren',
+            delayChildren: 0.1,
+            staggerChildren: 0.1,
+            ease: 'easeOut',
         },
     },
     exit: {
         opacity: 0,
         transition: {
             duration: 0.8,
-            staggerChildren: 0.3,
-            easing: 'easeOutCubic',
+            when: 'afterChildren',
+            staggerChildren: 0.2,
+            ease: 'easeOut',
         },
     },
 };
@@ -25,16 +27,16 @@ const item: Variants = {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 0.6,
-            easing: 'easeOutCubic',
+            duration: 0.4,
+            ease: 'easeOut',
         },
     },
     exit: {
-        y: '-8vh',
+        y: '-6vh',
         opacity: 0,
         transition: {
             duration: 0.6,
-            easing: 'easeOutCubic',
+            ease: 'easeOut',
         },
     },
 };

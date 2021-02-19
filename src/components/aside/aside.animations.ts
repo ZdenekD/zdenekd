@@ -5,7 +5,12 @@ const variants: Variants = {
         y: 0,
         transition: {
             duration: 0.8,
-            easing: 'easeOutQuart',
+            ease: [
+                0.215,
+                0.61,
+                0.355,
+                1,
+            ],
         },
     },
     exit: {
@@ -13,7 +18,12 @@ const variants: Variants = {
         transition: {
             duration: 0.6,
             delay: 0.8,
-            easing: 'easeOutQuart',
+            ease: [
+                0.165,
+                0.84,
+                0.44,
+                1,
+            ],
         },
     },
 };
