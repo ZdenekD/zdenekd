@@ -8,11 +8,3 @@
     background: var(--color-blue-lighten-4);
     border-radius: var(--border-radius);
 }
-
-.open {
-    transform: translateY(0);
-}
-
-.close {
-    transform: translateY(-100%);
-}

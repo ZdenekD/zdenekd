@@ -1,74 +1,40 @@
 import React from 'react';
-import anime from 'animejs';
+import {useStateValue} from '../../state';
+import setMenu from '../../state/menu/actions';
+import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.css';
 
 const Menu: React.FC = () => {
-    const [isOpen, setOpen] = React.useState(false);
-    const pathTopRef = React.useRef(null);
-    const pathMiddleRef = React.useRef(null);
-    const pathBottomRef = React.useRef(null);
-    const handleTriggerAnimationOn = () => {
-        anime
-            .timeline({
-                duration: 800,
-                easing: 'easeInOutBack',
-            })
-            .add({
-                targets: [pathTopRef.current, pathBottomRef.current],
-                d: 'M30,50 L70,50 Z',
-            })
-            .add({
-                targets: pathMiddleRef.current,
-                opacity: [1, 0],
-            }, '-=600')
-            .add({
-                targets: pathTopRef.current,
-                rotate: '45deg',
-            }, '-=600')
-            .add({
-                targets: pathBottomRef.current,
-                rotate: '-45deg',
-            }, '-=1000');
+    const {state, dispatch} = useStateValue();
+    const pathTopRef = React.useRef<SVGPathElement | null>(null);
+    const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
+    const pathBottomRef = React.useRef<SVGPathElement | null>(null);
+    const handleTriggerAnimationIn = () => {
+        animationIn({
+            pathTop: pathTopRef?.current,
+            pathMiddle: pathMiddleRef?.current,
+            pathBottom: pathBottomRef?.current,
+        });
     };
     const handleTriggerAnimationOff = () => {
-        anime
-            .timeline({
-                duration: 800,
-                easing: 'easeInOutBack',
-            })
-            .add({
-                targets: pathTopRef.current,
-                rotate: '0',
-            })
-            .add({
-                targets: pathBottomRef.current,
-                rotate: '0',
-            }, '-=600')
-            .add({
-                targets: pathMiddleRef.current,
-                opacity: [0, 1],
-            }, '-=600')
-            .add({
-                targets: pathTopRef.current,
-                d: 'M30,40 L70,40 Z',
-            }, '-=400')
-            .add({
-                targets: pathBottomRef.current,
-                d: 'M30,60 L70,60 Z',
-            }, '-=800');
+        animationOut({
+            pathTop: pathTopRef?.current,
+            pathMiddle: pathMiddleRef?.current,
+            pathBottom: pathBottomRef?.current,
+        });
     };
     const handleClick = () => {
-        setOpen(!isOpen);
+        dispatch(setMenu({menu: {isOpen: !state.menu.isOpen}}));
     };
 
     React.useEffect(() => {
-        (isOpen ? handleTriggerAnimationOn : handleTriggerAnimationOff)();
-    });
+        (state.menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOff)();
+    }, [state.menu.isOpen]);
 
     return (
         <button
             type="button"
-            className={`${styles.button} ${isOpen ? styles.active : ''}`}
+            className={`${styles.button} ${state.menu.isOpen ? styles.active : ''}`}
             data-test="component-menu"
             aria-label="Menu button"
             onClick={handleClick}

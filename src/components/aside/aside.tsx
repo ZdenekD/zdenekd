@@ -1,13 +1,22 @@
+import {motion} from 'framer-motion';
 import Nav from '../nav';
+import {useStateValue} from '../../state';
+import variants from './aside.animations';
 import styles from './aside.css';
 
 const Aside: React.FC = () => {
-    const isOpen = false;
+    const {state} = useStateValue();
 
     return (
-        <aside className={`${styles.aside} ${isOpen ? styles.open : styles.close}`} data-test="component-aside">
+        <motion.aside
+            initial={false}
+            animate={state.menu.isOpen ? 'animate' : 'exit'}
+            variants={variants}
+            className={styles.aside}
+            data-test="component-aside"
+        >
             <Nav />
-        </aside>
+        </motion.aside>
     );
 };
 

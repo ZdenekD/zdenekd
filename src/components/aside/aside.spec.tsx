@@ -6,7 +6,7 @@ describe('Aside', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Aside isOpen />);
+        wrapper = shallow(<Aside />);
     });
 
     it('match snapshot', () => {

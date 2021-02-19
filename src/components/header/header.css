@@ -15,8 +15,8 @@
     &:focus {
         outline: 2px dashed var(--navigation-color);
     }
+}
 
-    &[disabled] {
-        pointer-events: none;
-    }
+.disabled {
+    pointer-events: none;
 }
