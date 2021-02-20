@@ -61,7 +61,7 @@ const ContactForm: React.FC = () => {
                     name="name"
                     label="Jméno"
                     disabled={isDisabled}
-                    maxLength={30}
+                    maxlength={30}
                     error={errors.name?.message}
                 />
                 <Input
@@ -76,7 +76,7 @@ const ContactForm: React.FC = () => {
                     label="E-mail"
                     type="email"
                     disabled={isDisabled}
-                    maxLength={90}
+                    maxlength={90}
                     error={errors.email?.message}
                 />
                 <Textarea
@@ -90,7 +90,7 @@ const ContactForm: React.FC = () => {
                     name="message"
                     label="Zpráva"
                     disabled={isDisabled}
-                    maxLength={255}
+                    maxlength={255}
                     error={errors.message?.message}
                 />
                 <Input

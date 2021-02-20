@@ -1,15 +1,13 @@
-export interface IProjects {
-    [key: string]: {
-        id: string
-        title: string
-        url: string
-        description: string
-        tools: string[]
-    }
+export interface IProject {
+    id: string
+    title: string
+    url: string
+    description: string
+    tools: string[]
 }
 
-const projects: IProjects = {
-    tomton: {
+const projects: IProject[] = [
+    {
         id: 'tomton',
         title: 'Tomton',
         url: 'https://www.tomton.cz',
@@ -22,7 +20,7 @@ const projects: IProjects = {
             'webpack',
         ],
     },
-    stenclova: {
+    {
         id: 'stenclova',
         title: 'Ivana Štenclová',
         url: 'http://www.stenclova.cz',
@@ -34,7 +32,7 @@ const projects: IProjects = {
             'gulp',
         ],
     },
-    dirtjob: {
+    {
         id: 'dirtjob',
         title: 'Dirtjob',
         url: 'http://dirtjob.cz/',
@@ -46,7 +44,7 @@ const projects: IProjects = {
             'gulp',
         ],
     },
-    digitalvision: {
+    {
         id: 'digitalvision',
         title: 'DigitalVision',
         url: 'https://digitalvision.cz/',
@@ -59,7 +57,7 @@ const projects: IProjects = {
             'webpack',
         ],
     },
-    avprague: {
+    {
         id: 'avprague',
         title: 'AVPrague',
         url: 'https://avprague.in.progress',
@@ -71,7 +69,7 @@ const projects: IProjects = {
             'gulp',
         ],
     },
-    portfolium: {
+    {
         id: 'portfolium',
         title: 'Portfolium',
         url: 'https://portfolium.in.progress',
@@ -83,6 +81,6 @@ const projects: IProjects = {
             'gulp',
         ],
     },
-};
+];
 
 export default projects;

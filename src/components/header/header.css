@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    padding: var(--gap);
+    padding: var(--gap) calc(2 * var(--gap));
     display: flex;
     justify-content: space-between;
     align-items: center;
