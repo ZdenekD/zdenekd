@@ -13,7 +13,7 @@ interface IInput {
     variant?: VariantsEnum
     required?: boolean
     disabled?: boolean
-    maxLength?: number
+    maxlength?: number
     autoComplete?: 'on' | 'off'
     className?: string
     error?: string
@@ -27,7 +27,7 @@ const Input: React.FC<IInput> = forwardRef(({
     variant,
     required,
     disabled,
-    maxLength,
+    maxlength,
     autoComplete,
     className = '',
     error,
@@ -39,31 +39,37 @@ const Input: React.FC<IInput> = forwardRef(({
     };
 
     return (
-        <div className={`${styles.control} ${className}`}>
-            <label htmlFor={id} className={`${styles.label} ${disabled ? styles.labelDisabled : ''}`}>
-                {label}
-                {required && (<sup className={styles.required}>*</sup>)}
-                {error && (<span className={styles.error} data-test="component-input-error">{error}</span>)}
+        <div className={`${styles.control} ${disabled ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
+            <input
+                ref={ref}
+                id={id}
+                type={type}
+                name={name}
+                className={`${styles.input} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
+                placeholder={placeholder}
+                required={required}
+                disabled={disabled}
+                maxLength={maxlength}
+                autoComplete={autoComplete}
+                data-test="component-input"
+                onChange={handleInput}
+            />
+            <label
+                htmlFor={id}
+                className={styles.label}
+            >
+                <span className={styles.labelContent}>
+                    {label}
+                    {required && (<sup className={styles.required}>*</sup>)}
+                </span>
             </label>
+            {error && (<span className={styles.error} data-test="component-input-error">{error}</span>)}
 
-            <div className={styles.wrapper}>
-                <input
-                    ref={ref}
-                    id={id}
-                    type={type}
-                    name={name}
-                    className={`${styles.input} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
-                    placeholder={placeholder}
-                    required={required}
-                    disabled={disabled}
-                    maxLength={maxLength}
-                    autoComplete={autoComplete}
-                    data-test="component-input"
-                    onChange={handleInput}
-                />
-
-                {maxLength && (<span className={`${styles.maxlength} ${disabled ? styles.maxLengthDisabled : ''}`}>{length} / {maxLength}</span>)}
-            </div>
+            {maxlength && (
+                <span className={styles.maxlength}>
+                    {length} / {maxlength}
+                </span>
+            )}
         </div>
     );
 });

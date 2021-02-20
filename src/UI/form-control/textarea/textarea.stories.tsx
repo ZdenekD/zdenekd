@@ -34,9 +34,9 @@ export const error: React.FC = () => (
     </>
 );
 
-export const maxLength: React.FC = () => (
+export const maxlength: React.FC = () => (
     <>
-        <Textarea name="textarea" label="Textarea" maxLength={255} />
-        <Textarea disabled name="textarea" label="Textarea" maxLength={255} />
+        <Textarea name="textarea" label="Textarea" maxlength={255} />
+        <Textarea disabled name="textarea" label="Textarea" maxlength={255} />
     </>
 );

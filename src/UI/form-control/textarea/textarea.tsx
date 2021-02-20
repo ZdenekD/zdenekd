@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, {forwardRef} from 'react';
 import {useId} from 'react-id-generator';
 import VariantsEnum from '../../../enums/VariantsEnum';
@@ -12,7 +13,7 @@ interface ITextarea {
     variant?: VariantsEnum
     required?: boolean
     disabled?: boolean
-    maxLength?: number
+    maxlength?: number
     autoComplete?: 'on' | 'off'
     className?: string
     error?: string
@@ -25,42 +26,55 @@ const Textarea: React.FC<ITextarea> = forwardRef(({
     variant,
     required,
     disabled,
-    maxLength,
+    maxlength,
     autoComplete,
     className = '',
     error,
 }, ref: React.Ref<HTMLTextAreaElement>) => {
     const [length, setLength] = React.useState(0);
     const [id] = useId(1, prefix);
+    const handleHeight = (element: HTMLTextAreaElement) => {
+        if (element) {
+            element.style.height = '0';
+            element.style.height = `${element.scrollHeight}px`;
+        }
+    };
     const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        handleHeight(event.target);
         setLength(event.target.value.length);
     };
 
     return (
-        <div className={`${styles.control} ${className}`}>
-            <label htmlFor={id} className={`${styles.label} ${disabled ? styles.labelDisabled : ''}`}>
-                {label}
-                {required && (<sup className={styles.required}>*</sup>)}
-                {error && (<span className={styles.error}>{error}</span>)}
+        <div className={`${styles.control} ${disabled ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
+            <textarea
+                ref={ref}
+                id={id}
+                name={name}
+                className={`${styles.textarea} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
+                placeholder={placeholder}
+                required={required}
+                disabled={disabled}
+                maxLength={maxlength}
+                autoComplete={autoComplete}
+                data-test="component-textarea"
+                onChange={handleInput}
+            />
+            <label
+                htmlFor={id}
+                className={styles.label}
+            >
+                <span className={styles.labelContent}>
+                    {label}
+                    {required && (<sup className={styles.required}>*</sup>)}
+                </span>
             </label>
+            {error && (<span className={styles.error} data-test="component-textarea-error">{error}</span>)}
 
-            <div className={styles.wrapper}>
-                <textarea
-                    ref={ref}
-                    id={id}
-                    name={name}
-                    className={`${styles.textarea} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''} ${maxLength ? styles.textareaMaxlength : ''}`}
-                    placeholder={placeholder}
-                    required={required}
-                    disabled={disabled}
-                    maxLength={maxLength}
-                    autoComplete={autoComplete}
-                    data-test="component-textarea"
-                    onChange={handleInput}
-                />
-
-                {maxLength && (<span className={`${styles.maxlength} ${disabled ? styles.maxLengthDisabled : ''}`}>{length} / {maxLength}</span>)}
-            </div>
+            {maxlength && (
+                <span className={styles.maxlength}>
+                    {length} / {maxlength}
+                </span>
+            )}
         </div>
     );
 });

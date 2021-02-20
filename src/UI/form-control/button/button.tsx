@@ -8,6 +8,7 @@ interface IButton {
     disabled?: boolean
     variant?: VariantsEnum
     title?: string
+    tabindex?: number
     children: React.ReactNode
     className?: string
     onClick?: (e: React.MouseEvent) => void,
@@ -18,6 +19,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButton>(({
     disabled = false,
     variant,
     title = undefined,
+    tabindex,
     children,
     className = '',
     onClick = undefined,
@@ -26,6 +28,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButton>(({
         ref={ref}
         disabled={disabled}
         type={type}
+        tabIndex={tabindex}
         className={`${styles.button} ${variant ? styles[variant] : ''} ${className}`}
         aria-label={title}
         data-test="component-button"
