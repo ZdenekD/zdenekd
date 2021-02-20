@@ -16,7 +16,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IAnchor>(({
     children,
     target,
     className = '',
-    onClick,
+    onClick = undefined,
 }, ref) => (
     <a
         ref={ref}

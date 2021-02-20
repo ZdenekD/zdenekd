@@ -8,7 +8,7 @@ interface IForm {
 const Form: React.FC<IForm> = ({
     children,
     className = '',
-    onSubmit,
+    onSubmit = undefined,
 }) => (
     <form className={`${styles.form} ${className}`} data-test="component-form" onSubmit={onSubmit}>
         {children}

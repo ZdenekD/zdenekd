@@ -45,6 +45,10 @@
     &::placeholder {
         color: var(--color-light-gray);
     }
+
+    &::selection {
+        background: var(--label-color);
+    }
 }
 
 .label {
@@ -81,6 +85,10 @@
     transition-property: transform, color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--transition-timing);
+
+    &::selection {
+        background: var(--label-color);
+    }
 }
 
 .nonempty {
@@ -162,6 +170,10 @@
     top: -5px;
     color: var(--color-red);
     font-size: 0.9rem;
+
+    &::selection {
+        background: var(--label-color);
+    }
 }
 
 .maxlength {
@@ -171,8 +183,12 @@
     position: absolute;
     top: 0;
     right: calc(1px + calc(0.5 * var(--gap)));
-    color: var(--color-blue);
-    font-size: 0.75em;
+    color: var(--color-gray);
+    font-size: 0.8em;
+
+    &::selection {
+        background: var(--color-gray);
+    }
 }
 
 .error {
@@ -183,4 +199,8 @@
     right: 0;
     color: var(--color-red);
     font-size: 0.95em;
+
+    &::selection {
+        background: var(--color-red);
+    }
 }

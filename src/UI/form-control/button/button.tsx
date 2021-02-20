@@ -1,5 +1,4 @@
 import React from 'react';
-import {motion} from 'framer-motion';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import styles from './button.css';
 
@@ -24,7 +23,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButton>(({
     className = '',
     onClick = undefined,
 }, ref) => (
-    <motion.button
+    <button
         ref={ref}
         disabled={disabled}
         type={type}
@@ -32,11 +31,10 @@ const Button = React.forwardRef<HTMLButtonElement, IButton>(({
         className={`${styles.button} ${variant ? styles[variant] : ''} ${className}`}
         aria-label={title}
         data-test="component-button"
-        whileTap={{scale: 0.98}}
         onClick={onClick}
     >
         {children}
-    </motion.button>
+    </button>
 ));
 
 Button.displayName = 'Button';
