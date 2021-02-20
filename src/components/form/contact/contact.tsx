@@ -90,14 +90,15 @@ const ContactForm: React.FC = () => {
                     maxlength={255}
                     error={errors.message?.message}
                 />
-                <Input
+                <input
                     ref={register()}
+                    type="text"
                     name="med"
-                    label="Med"
                     autoComplete="off"
+                    tabIndex={-1}
                     className="_visuallyhidden"
                 />
-                <Button type="submit" variant={VariantsEnum.info} className={styles.submit} disabled={isDisabled}>Odeslat</Button>
+                <Button type="submit" className={styles.submit} disabled={isDisabled}>Odeslat</Button>
             </Form>
         </>
     );

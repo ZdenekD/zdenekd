@@ -1,6 +1,6 @@
 .footer {
     width: 100%;
-    padding: var(--gap);
+    padding: var(--gap) calc(2 * var(--gap));
     display: flex;
     grid-area: footer;
     align-items: flex-end;
@@ -114,6 +114,15 @@
         left: 100%;
     }
 
+    &,
+    span {
+
+        &::selection {
+            background: transparent;
+            color: currentColor;
+        }
+    }
+
     @media (--max-md) {
         margin-left: auto;
     }
@@ -121,6 +130,11 @@
 
 .scroll {
     display: none;
+
+    &::selection {
+        background: transparent;
+        color: currentColor;
+    }
 
     @media (--min-lg) {
         margin-top: var(--gap);

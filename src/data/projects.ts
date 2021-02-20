@@ -21,6 +21,19 @@ const projects: IProject[] = [
         ],
     },
     {
+        id: 'fit-s-marky',
+        title: 'Fit s Marky',
+        url: 'https://fit-s-marky.cz',
+        description: 'Instruktorka pilates a jógy.',
+        tools: [
+            'react',
+            'typescript',
+            'nextjs',
+            'lottie',
+            'framer-motion',
+        ],
+    },
+    {
         id: 'stenclova',
         title: 'Ivana Štenclová',
         url: 'http://www.stenclova.cz',

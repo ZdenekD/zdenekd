@@ -1,63 +1,15 @@
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: var(--fade-in-opacity);
-    }
-}
-
 .keys {
     display: none;
 
     @media (--min-lg) {
-        --arrow-color: var(--color-blue-darken-4);
         margin-right: calc(2 * var(--gap));
         display: flex;
         flex-direction: column;
-        opacity: 0;
-
-        i {
-            width: 24px;
-            height: 24px;
-            display: block;
-            position: relative;
-            background: var(--key-background);
-            transition: all var(--transition-duration) var(--transition-timing);
-            border-radius: var(--border-radius);
-
-            &::before {
-                width: 0;
-                height: 0;
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                content: '';
-                transform: translate(-50%, -50%);
-            }
-        }
     }
-}
-
-.showKeys {
-    --fade-in-opacity: 1;
-    animation: fade-in 1s var(--ease-in-cubic) forwards .6s;
 }
 
 .key {
     margin: 2px 4px;
     display: flex;
     align-self: center;
-
-    button& {
-
-        &:focus {
-            outline: 2px dashed var(--navigation-color);
-        }
-    }
-}
-
-.disabled {
-    pointer-events: none;
 }

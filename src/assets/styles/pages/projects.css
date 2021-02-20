@@ -5,8 +5,6 @@
     --content-heading: var(--color-green);
     --content-heading-admit: var(--color-green-lighten-1);
     --key-background: var(--color-green-lighten-3);
-    --key-left-opacity: 1;
-    --key-right-opacity: 1;
 }
 
 .article {

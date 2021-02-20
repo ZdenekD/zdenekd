@@ -1,11 +1,14 @@
 import styles from './controls.css';
 
 interface IControls {
-    handlePrev?: () => void
-    handleNext?: () => void
+    handlePrev?: (event: React.MouseEvent) => void
+    handleNext?: (event: React.MouseEvent) => void
 }
 
-const Controls: React.FC<IControls> = ({handlePrev, handleNext}) => (
+const Controls: React.FC<IControls> = ({
+    handlePrev = undefined,
+    handleNext = undefined,
+}) => (
     <ul className={styles.controls}>
         <li className={styles.control}>
             <button

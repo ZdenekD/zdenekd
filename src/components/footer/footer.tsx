@@ -1,4 +1,5 @@
 import React from 'react';
+import Keys from '../keys';
 import Icon from '../../assets/images/icon_message.svg';
 import getRoman from '../../helpers/getRoman';
 import styles from './footer.css';
@@ -18,6 +19,7 @@ const Footer: React.FC = () => {
             >
                 <Icon className={styles.icon} />
             </a>
+            <Keys />
             <span className={styles.scroll}>
                 Scroll
                 <i ref={dotRef} className={styles.dot}></i>

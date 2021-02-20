@@ -220,6 +220,8 @@
 
 .video {
     width: 100%;
+    max-width: 900px;
+    height: calc(100% * (16 / 9));
     position: relative;
     z-index: 1;
     border-bottom-right-radius: 12px;

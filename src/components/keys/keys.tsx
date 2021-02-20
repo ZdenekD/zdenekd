@@ -1,46 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
-import KeyUp from './keyUp';
-import KeyDown from './keyDown';
-import KeyLeft from './keyLeft';
-import KeyRight from './keyRight';
+import Key from './key';
+import pages from '../../data/pages';
+import {getPageIndex} from '../../helpers/getPage';
+import DirectionsEnum from '../../enums/DirectionsEnum';
 import styles from './keys.css';
-import data from '../../data/pages';
-import {getPage} from '../../helpers/getPage';
 
-const Keys = ({
-    isOpen,
-    isAnimated,
-    min,
-    max,
-    current,
-    handleNextProject,
-    handlePrevProject,
-}) => {
+const Keys: React.FC = () => {
     const router = useRouter();
-    const page = getPage(router.route);
+    const items = Object.keys(pages);
+    const index = getPageIndex(router.route);
+    const minIndex = 0;
+    const maxIndex = items.length - 1;
+    const handleKeyUp = () => {
+        if (index - 1 >= minIndex) {
+            router.push(`/${pages[items[index - 1]].slug}`);
+        }
+    };
+    const handleKeyDown = () => {
+        if (index + 1 <= maxIndex) {
+            router.push(`/${pages[items[index + 1]].slug}`);
+        }
+    };
 
     return (
-        <div className={`${styles.keys} ${!isOpen && !isAnimated ? styles.showKeys : ''}`} data-test="component-keys">
-            <KeyUp data={data} router={router} />
+        <div className={styles.keys} data-test="component-keys">
+            <Key direction={DirectionsEnum.up} label="Předchozí stránka" disabled={index === minIndex} onClick={handleKeyUp} />
             <div className={styles.key}>
-                <KeyLeft isDisabled={current === min || page !== 'projects'} setProject={handlePrevProject} />
-                <KeyDown data={data} router={router} />
-                <KeyRight isDisabled={current === max || page !== 'projects'} setProject={handleNextProject} />
+                <Key direction={DirectionsEnum.left} label="Předchozí projekt" />
+                <Key direction={DirectionsEnum.down} label="Následující stránka" disabled={index === maxIndex} onClick={handleKeyDown} />
+                <Key direction={DirectionsEnum.right} label="Následující projekt" />
             </div>
         </div>
     );
-};
-
-Keys.propTypes = {
-    isAnimated: PropTypes.bool.isRequired,
-    isOpen: PropTypes.bool.isRequired,
-    min: PropTypes.number,
-    max: PropTypes.number,
-    current: PropTypes.number,
-    handleNextProject: PropTypes.func,
-    handlePrevProject: PropTypes.func,
 };
 
 export default Keys;

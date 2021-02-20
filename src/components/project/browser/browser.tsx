@@ -6,11 +6,15 @@ import styles from './browser.css';
 
 interface IBrowser {
     project: IProject,
-    handlePrev?: () => void
-    handleNext?: () => void
+    handlePrev?: (event: React.MouseEvent) => void
+    handleNext?: (event: React.MouseEvent) => void
 }
 
-const Browser: React.FC<IBrowser> = ({project, handlePrev, handleNext}) => (
+const Browser: React.FC<IBrowser> = ({
+    project,
+    handlePrev = undefined,
+    handleNext = undefined,
+}) => (
     <section className={styles.browser} data-test="component-browser">
         <header className={styles.header}>
             <ul className={styles.controls}>

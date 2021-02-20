@@ -1,1 +1,1 @@
-export {default} from './keys.container';
+export {default} from './keys';
