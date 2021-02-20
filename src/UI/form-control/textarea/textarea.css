@@ -24,7 +24,8 @@
     line-height: var(--input-height);
     resize: none;
 
-    &:focus {
+    &:focus,
+    &[placeholder] {
 
         + .label {
             --label-color: var(--color-blue);
@@ -43,23 +44,6 @@
 
     &::placeholder {
         color: var(--color-light-gray);
-    }
-
-    &[placeholder],
-    &.nonempty {
-
-        + .label {
-
-            &::after {
-                background: var(--label-color);
-                transform: scale3d(1, 0.5, 1);
-            }
-
-            .labelContent {
-                color: var(--label-color);
-                transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
-            }
-        }
     }
 }
 
@@ -99,11 +83,24 @@
     transition-timing-function: var(--transition-timing);
 }
 
-.success {
+.nonempty {
 
     + .label {
-        --label-color: var(--color-green);
+        --label-color: var(--color-blue);
+
+        &::after {
+            background: var(--label-color);
+            transform: scale3d(1, 0.5, 1);
+        }
+
+        .labelContent {
+            color: var(--label-color);
+            transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+        }
     }
+}
+
+.success {
 
     &:focus {
 
@@ -111,20 +108,13 @@
             --label-color: var(--color-green);
         }
     }
-}
-
-.nonempty {
 
     + .label {
-        --label-color: var(--color-blue);
+        --label-color: var(--color-green);
     }
 }
 
 .info {
-
-    + .label {
-        --label-color: var(--color-blue);
-    }
 
     &:focus {
 
@@ -132,13 +122,13 @@
             --label-color: var(--color-blue);
         }
     }
+
+    + .label {
+        --label-color: var(--color-blue);
+    }
 }
 
 .warning {
-
-    + .label {
-        --label-color: var(--color-orange);
-    }
 
     &:focus {
 
@@ -146,19 +136,23 @@
             --label-color: var(--color-orange);
         }
     }
+
+    + .label {
+        --label-color: var(--color-orange);
+    }
 }
 
 .danger {
-
-    + .label {
-        --label-color: var(--color-red);
-    }
 
     &:focus {
 
         + .label {
             --label-color: var(--color-red);
         }
+    }
+
+    + .label {
+        --label-color: var(--color-red);
     }
 }
 
