@@ -1,8 +1,8 @@
 import IMessage from '.';
 
 enum ActionsEnum {
-    save = 'SAVE_MESSAGE',
-    remove = 'REMOVE_MESSAGE'
+    set = 'SET_MESSAGE',
+    unset = 'UNSET_MESSAGE'
 }
 
 export type IAction = {type: ActionsEnum, payload?: IMessage};

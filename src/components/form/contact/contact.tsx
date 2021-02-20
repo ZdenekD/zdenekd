@@ -8,7 +8,7 @@ import Textarea from '../../../UI/form-control/textarea';
 import Button from '../../../UI/form-control/button';
 import Loader from '../../../UI/loader';
 import {useStateValue} from '../../../state';
-import ActionsEnum from '../../../state/message/type/actions';
+import {setMessage} from '../../../state/message/actions';
 import regex from '../../../helpers/regex';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import styles from './contact.css';
@@ -32,15 +32,12 @@ const ContactForm: React.FC = () => {
         const response = await send(values);
 
         if (response.message) {
-            dispatch({
-                type: ActionsEnum.save,
-                payload: {
-                    message: {
-                        variant: VariantsEnum.success,
-                        content: response.message,
-                    },
+            dispatch(setMessage({
+                message: {
+                    variant: VariantsEnum.success,
+                    content: response.message,
                 },
-            });
+            }));
         }
 
         router.push('/');

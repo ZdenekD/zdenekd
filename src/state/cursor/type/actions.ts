@@ -1,7 +1,8 @@
 import ICursor from '.';
 
 enum ActionsEnum {
-    save = 'SAVE_POSITION'
+    set = 'SET_CURSOR',
+    unset = 'UNSET_CURSOR'
 }
 
 export type IAction = {type: ActionsEnum, payload: ICursor}

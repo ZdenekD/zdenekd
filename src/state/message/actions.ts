@@ -1,16 +1,16 @@
 import IMessage, {initialState} from './type';
 import ActionsEnum, {IAction} from './type/actions';
 
-export function saveMessage(payload: IMessage): IAction {
+export function setMessage(payload: IMessage): IAction {
     return {
-        type: ActionsEnum.save,
+        type: ActionsEnum.set,
         payload,
     };
 }
 
-export function removeMessage(): IAction {
+export function unsetMessage(): IAction {
     return {
-        type: ActionsEnum.remove,
+        type: ActionsEnum.unset,
         payload: {...initialState},
     };
 }

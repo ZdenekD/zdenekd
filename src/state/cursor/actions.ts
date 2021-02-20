@@ -1,9 +1,16 @@
-import ICursor from './type';
+import ICursor, {initialState} from './type';
 import ActionsEnum, {IAction} from './type/actions';
 
-export default function setCursor(payload: ICursor): IAction {
+export function setCursor(payload: ICursor): IAction {
     return {
-        type: ActionsEnum.save,
+        type: ActionsEnum.set,
         payload,
+    };
+}
+
+export function unsetCursor(): IAction {
+    return {
+        type: ActionsEnum.unset,
+        payload: {...initialState},
     };
 }

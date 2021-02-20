@@ -30,7 +30,7 @@
 
             &::after {
                 background: var(--label-color);
-                transform: scale3d(1, 0.25, 1);
+                transform: scale3d(1, 0.5, 1);
             }
 
             .labelContent {
@@ -51,7 +51,7 @@
 
             &::after {
                 background: var(--label-color);
-                transform: scale3d(1, 0.25, 1);
+                transform: scale3d(1, 0.5, 1);
             }
 
             .labelContent {
