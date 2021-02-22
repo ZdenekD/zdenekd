@@ -2,7 +2,7 @@ import useEventListener from '@use-it/event-listener';
 import {useStateValue} from '../state';
 import {setCursor, unsetCursor} from '../state/cursor/actions';
 
-const useHover = (element: HTMLElement | null): void => {
+const useCursor = (element: HTMLElement | null): void => {
     const {dispatch} = useStateValue();
     const handleMouseEnter = (event: MouseEvent): void => {
         const {width, height, top, left} = (event.target as HTMLElement).getBoundingClientRect();
@@ -27,4 +27,4 @@ const useHover = (element: HTMLElement | null): void => {
     useEventListener('mouseleave', handleMouseLeave, element);
 };
 
-export default useHover;
+export default useCursor;

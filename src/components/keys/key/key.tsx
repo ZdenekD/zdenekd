@@ -1,3 +1,5 @@
+import React from 'react';
+import useCursor from '../../../hooks/useCursor';
 import DirectionsEnum from '../../../enums/DirectionsEnum';
 import styles from './key.css';
 
@@ -13,17 +15,29 @@ const Key: React.FC<IKey> = ({
     label,
     disabled = false,
     onClick = undefined,
-}) => (
-    <button
-        type="button"
-        className={`${styles.key} ${disabled ? styles.disabled : ''}`}
-        aria-label={label}
-        data-test="component-key"
-        disabled={disabled}
-        onClick={onClick}
-    >
-        <i className={`${styles.icon} ${styles[direction]}`} />
-    </button>
-);
+}) => {
+    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
+    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+
+    React.useEffect(() => {
+        setElement(buttonRef.current);
+    }, []);
+
+    useCursor(element);
+
+    return (
+        <button
+            ref={buttonRef}
+            type="button"
+            className={`${styles.key} ${disabled ? styles.disabled : ''}`}
+            aria-label={label}
+            data-test="component-key"
+            disabled={disabled}
+            onClick={onClick}
+        >
+            <i className={`${styles.icon} ${styles[direction]}`} />
+        </button>
+    );
+};
 
 export default Key;

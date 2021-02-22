@@ -1,12 +1,12 @@
 import React from 'react';
 import {useStateValue} from '../../state';
 import setMenu from '../../state/menu/actions';
-import useHover from '../../hooks/useHover';
+import useCursor from '../../hooks/useCursor';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.css';
 
 const Menu: React.FC = () => {
-    const [button, setButton] = React.useState<HTMLButtonElement | null>(null);
+    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
     const {state, dispatch} = useStateValue();
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
@@ -35,10 +35,10 @@ const Menu: React.FC = () => {
     }, [state.menu.isOpen]);
 
     React.useEffect(() => {
-        setButton(buttonRef.current);
+        setElement(buttonRef.current);
     }, []);
 
-    useHover(button);
+    useCursor(element);
 
     return (
         <button
