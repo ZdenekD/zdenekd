@@ -11,10 +11,6 @@
 .link {
     position: relative;
     text-decoration: none;
-
-    &:focus {
-        outline: 2px dashed var(--navigation-color);
-    }
 }
 
 .disabled {

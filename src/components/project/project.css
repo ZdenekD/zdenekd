@@ -6,7 +6,7 @@
     grid-template: max-content / minmax(min-content, 1fr) minmax(min-content, 2fr);
     grid-template-areas: 'description preview'
         'controle preview';
-    grid-column-gap: var(--gap);
+    grid-column-gap: calc(2 * var(--gap));
 }
 
 .content {
@@ -40,7 +40,6 @@
 }
 
 .title {
-    margin-top: auto;
     font-size: 2rem;
 }
 

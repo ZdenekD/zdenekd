@@ -65,7 +65,7 @@
     transition: color var(--transition-duration) var(--ease-in-out-expo);
     border: none;
 
-    &:hover:not([disabled]) {
+    &:not([disabled]):hover {
         color: var(--navigation-color);
         transition: color var(--transition-duration) var(--ease-in-out-expo);
 
@@ -81,7 +81,7 @@
         }
     }
 
-    &:focus:not([disabled]) {
+    &:not([disabled]):focus {
         outline: 2px dashed var(--navigation-color);
         outline-offset: 10px;
     }

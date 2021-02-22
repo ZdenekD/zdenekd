@@ -1,8 +1,8 @@
 import React from 'react';
-import Anchor from '../../../UI/anchor';
-import Logo from '../../logo';
+import Controls from './controls';
+import Video from './video';
+import Addressbar from './addressbar';
 import {IProject} from '../../../data/projects';
-import config from '../../../data/config';
 import styles from './browser.css';
 
 interface IBrowser {
@@ -15,88 +15,19 @@ const Browser: React.FC<IBrowser> = ({
     project,
     handlePrev = undefined,
     handleNext = undefined,
-}) => {
-    const videoRef = React.useRef<HTMLVideoElement | null>(null);
-    const handleVideo = () => {
-        if (videoRef.current) {
-            videoRef.current.load();
-        }
-    };
-
-    React.useEffect(() => {
-        handleVideo();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [project]);
-
-    return (
-        <section className={styles.browser} data-test="component-browser">
-            <header className={styles.header}>
-                <span className={styles.controls}>
-                    <i className={styles.control} />
-                    <i className={styles.control} />
-                    <i className={styles.control} />
-                </span>
-                <button
-                    type="button"
-                    className={styles.prev}
-                    aria-label="Předchozí projekt"
-                    tabIndex={0}
-                    onClick={handlePrev}
-                />
-                <button
-                    type="button"
-                    className={styles.next}
-                    aria-label="Následující projekt"
-                    tabIndex={0}
-                    onClick={handleNext}
-                />
-                <span className={`${styles.addressbar} ${/https/.test(project.url) ? styles.https : styles.http}`}>
-                    {!/in.progress$/.test(project.url) && (
-                        <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="Otevřít referenci v novém okně"
-                        >
-                            {project.url}
-                        </a>
-                    )}
-
-                    {/in.progress$/.test(project.url) && (project.url)}
-                </span>
-                {!/in.progress$/.test(project.url) && (
-                    <div className={styles.target}>
-                        <Anchor
-                            href={project.url}
-                            className={styles.targetLink}
-                            target="_blank"
-                            aria-label="Otevřít referenci v novém okně"
-                        >
-                            {/* <Icon className={styles.icon} /> */}
-                        </Anchor>
-                    </div>
-                )}
-            </header>
-            <div className={styles.content}>
-                <video
-                    ref={videoRef}
-                    playsInline
-                    autoPlay
-                    muted
-                    loop
-                    preload="auto"
-                    controls={false}
-                    className={styles.video}
-                    title={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky zde: ${project.url}` : ''}`}
-                >
-                    <track kind="captions" />
-                    <track kind="description" label={project.title} />
-                    <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />
-                </video>
-                <Logo className={styles.logo} />
-            </div>
-        </section>
-    );
-};
+}) => (
+    <section className={styles.browser} data-test="component-browser">
+        <header className={styles.header}>
+            <span className={styles.controls}>
+                <i className={styles.control} />
+                <i className={styles.control} />
+                <i className={styles.control} />
+            </span>
+            <Controls handlePrev={handlePrev} handleNext={handleNext} />
+            <Addressbar url={project.url} />
+        </header>
+        <Video project={project} />
+    </section>
+);
 
 export default Browser;

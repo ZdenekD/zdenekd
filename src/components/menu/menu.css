@@ -2,10 +2,6 @@
     position: relative;
     line-height: 0;
 
-    &:focus {
-        outline: 2px dashed var(--navigation-color);
-    }
-
     &[disabled] {
         pointer-events: none;
     }
