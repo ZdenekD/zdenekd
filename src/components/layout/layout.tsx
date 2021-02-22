@@ -3,6 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 import Section from '../section';
 import Aside from '../aside';
+import Cursor from '../cursor';
 import useKeyboard from '../../hooks/useKeyboard';
 import useMouse from '../../hooks/useMouse';
 import config from '../../data/config';
@@ -72,9 +73,10 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                     </noscript>
                     {children}
                 </Section>
-                <Footer />
                 <Aside />
+                <Footer />
             </main>
+            <Cursor />
         </>
     );
 };

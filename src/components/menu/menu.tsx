@@ -1,26 +1,29 @@
 import React from 'react';
 import {useStateValue} from '../../state';
 import setMenu from '../../state/menu/actions';
+import useHover from '../../hooks/useHover';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.css';
 
 const Menu: React.FC = () => {
+    const [button, setButton] = React.useState<HTMLButtonElement | null>(null);
     const {state, dispatch} = useStateValue();
+    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
     const pathBottomRef = React.useRef<SVGPathElement | null>(null);
     const handleTriggerAnimationIn = () => {
         animationIn({
-            pathTop: pathTopRef?.current,
-            pathMiddle: pathMiddleRef?.current,
-            pathBottom: pathBottomRef?.current,
+            pathTop: pathTopRef.current,
+            pathMiddle: pathMiddleRef.current,
+            pathBottom: pathBottomRef.current,
         });
     };
     const handleTriggerAnimationOff = () => {
         animationOut({
-            pathTop: pathTopRef?.current,
-            pathMiddle: pathMiddleRef?.current,
-            pathBottom: pathBottomRef?.current,
+            pathTop: pathTopRef.current,
+            pathMiddle: pathMiddleRef.current,
+            pathBottom: pathBottomRef.current,
         });
     };
     const handleClick = () => {
@@ -31,13 +34,19 @@ const Menu: React.FC = () => {
         (state.menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOff)();
     }, [state.menu.isOpen]);
 
+    React.useEffect(() => {
+        setButton(buttonRef.current);
+    }, []);
+
+    useHover(button);
+
     return (
         <button
+            ref={buttonRef}
             type="button"
-            className={`${styles.button} ${state.menu.isOpen ? styles.active : ''}`}
+            className={`${styles.button} ${state.menu.isOpen ? styles.active : ''} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
             data-test="component-menu"
             aria-label="Menu button"
-            disabled={state.animation.isAsideAnimated}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">

@@ -18,6 +18,11 @@ body {
     font-weight: 400;
     transition: font-size var(--transition-duration) var(--transition-timing);
 
+    &,
+    * {
+        cursor: none;
+    }
+
     @media (--min-md) {
         --font-size: 14px;
         overflow-y: hidden;

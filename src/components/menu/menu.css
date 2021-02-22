@@ -6,13 +6,7 @@
         outline: 2px dashed var(--navigation-color);
     }
 
-    &:focus,
-    &:hover {
-        cursor: pointer;
-    }
-
     &[disabled] {
-        cursor: default;
         pointer-events: none;
     }
 }
@@ -51,4 +45,8 @@
         --navigation-color: var(--navigation-color-active);
         transition: var(--header-transition-active);
     }
+}
+
+.disabled {
+    pointer-events: none;
 }

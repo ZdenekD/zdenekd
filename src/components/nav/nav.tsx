@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import {motion} from 'framer-motion';
 import Anchor from '../../UI/anchor';
 import {useStateValue} from '../../state';
+import setAnimation from '../../state/animation/actions';
 import pages from '../../data/pages';
 import {list, item} from './nav.animations';
 import getPage from '../../helpers/getPage';
@@ -10,8 +11,16 @@ import styles from './nav.css';
 
 const Nav: React.FC = () => {
     const router = useRouter();
-    const {state} = useStateValue();
+    const {state, dispatch} = useStateValue();
     const page = getPage(router.route);
+    const handleAnimationComplete = () => {
+        dispatch(setAnimation({
+            animation: {
+                ...state.animation,
+                isAsideAnimated: false,
+            },
+        }));
+    };
 
     return (
         <nav className={styles.nav} data-test="component-nav">
@@ -20,6 +29,7 @@ const Nav: React.FC = () => {
                 animate={state.menu.isOpen ? 'animate' : 'exit'}
                 variants={list}
                 className={styles.list}
+                onAnimationComplete={handleAnimationComplete}
             >
                 {Object.keys(pages).map((key: string) => (
                     <motion.li

@@ -15,14 +15,6 @@ const Aside: React.FC = () => {
             },
         }));
     };
-    const handleAnimationComplete = () => {
-        dispatch(setAnimation({
-            animation: {
-                ...state.animation,
-                isAsideAnimated: false,
-            },
-        }));
-    };
 
     return (
         <motion.aside
@@ -32,7 +24,6 @@ const Aside: React.FC = () => {
             className={styles.aside}
             data-test="component-aside"
             onAnimationStart={handleAnimationStart}
-            onAnimationComplete={handleAnimationComplete}
         >
             <Nav />
         </motion.aside>

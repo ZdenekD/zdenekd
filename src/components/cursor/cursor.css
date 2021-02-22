@@ -1,0 +1,36 @@
+.outerCursor,
+.innerCursor {
+    display: block;
+    position: fixed;
+    z-index: var(--zindex-cursor);
+    pointer-events: none;
+    border-radius: 50%;
+
+    @media (any-hover: none) {
+        display: none;
+    }
+}
+
+.outerCursor {
+    width: var(--cursor-width);
+    height: var(--cursor-height);
+    top: -15px;
+    left: -15px;
+    opacity: 0.8;
+    color: var(--color-blue-darken-4);
+    border-radius: var(--cursor-radius);
+    border: 1px solid;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: all 0.2s var(--ease-out-quart);
+    }
+}
+
+.innerCursor {
+    width: 8px;
+    height: 8px;
+    top: -4px;
+    left: -4px;
+    background: var(--color-blue-darken-4);
+    border: 1px solid var(--color-white);
+}

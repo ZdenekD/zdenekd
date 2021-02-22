@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     background-color: var(--button-background, var(--color-blue-darken-4));
     color: var(--button-color, var(--key-background, var(--color-white)));
     transition-property: background, color;
@@ -27,7 +26,6 @@
     &:disabled {
         --button-color: var(--color-white);
         opacity: 0.5;
-        cursor: default;
         pointer-events: none;
     }
 
