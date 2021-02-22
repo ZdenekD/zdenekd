@@ -21,6 +21,9 @@
             z-index: -1;
             content: '';
             background: var(--curtain-color);
+            transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+            will-change: transform;
+            transition: var(--float-transition);
             border-top-left-radius: var(--border-radius);
         }
 
@@ -94,6 +97,10 @@
     top: -10px;
     left: -10px;
     font-size: 0.75em;
+    transform: translate3d(calc((-1 * var(--float-x) + 50vw) / 150), calc((-1 * var(--float-y) + 50vh) / 50), 0);
+    will-change: transform;
+    transform-origin: left center;
+    transition: var(--float-transition);
 
     &::before,
     &::after {

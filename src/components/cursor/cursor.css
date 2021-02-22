@@ -18,12 +18,9 @@
     left: -15px;
     opacity: 0.8;
     color: var(--color-blue-darken-4);
+    transition: all 0.2s var(--ease-out-quart);
     border-radius: var(--cursor-radius);
     border: 1px solid;
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition: all 0.2s var(--ease-out-quart);
-    }
 }
 
 .innerCursor {

@@ -26,6 +26,7 @@
 .description {
     margin-bottom: var(--gap);
     position: relative;
+    z-index: 0;
 
     &::before {
         position: absolute;
@@ -49,12 +50,16 @@
 }
 
 .tools {
+    --velocity: 150;
     display: none;
 
     @media (--min-lg) {
         margin-top: var(--gap);
         display: flex;
         align-self: flex-start;
+        transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
+        will-change: transform;
+        transition: var(--float-transition);
     }
 }
 

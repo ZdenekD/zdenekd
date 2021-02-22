@@ -101,13 +101,10 @@
         right: 0;
         left: 0;
         content: '';
+        opacity: 0;
         background: linear-gradient(135deg, var(--navigation-color), var(--navigation-color-active));
-
-        @media (prefers-reduced-motion: no-preference) {
-            opacity: 0;
-            transform-origin: left center;
-            animation: line-out 0.25s var(--ease-out-quad) both;
-        }
+        transform-origin: left center;
+        animation: line-out 0.25s var(--ease-out-quad) both;
     }
 
     @media (--min-sm) {

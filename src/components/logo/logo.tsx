@@ -18,7 +18,7 @@ const Logo: React.FC<ILogo> = ({className = ''}) => {
     useCursor(element);
 
     return (
-        <div ref={logoRef} className={className}>
+        <div ref={logoRef} className={`${styles.wrapper} ${className}`}>
             <Image className={styles.logo} data-test="component-logo" />
             <i className={styles.shadow}></i>
         </div>
