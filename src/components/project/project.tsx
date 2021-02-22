@@ -1,13 +1,17 @@
+import React from 'react';
 import Browser from './browser';
 import Controls from './controls';
 import useProjectAction from '../../hooks/useProjectAction';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import {useStateValue} from '../../state';
+import useCursor from '../../hooks/useCursor';
 import projects from '../../data/projects';
 import config from '../../data/config';
 import styles from './project.css';
 
 const Project: React.FC = () => {
+    const [element, setElement] = React.useState<HTMLUListElement | null>(null);
+    const toolsRef = React.useRef<HTMLUListElement | null>(null);
     const {state} = useStateValue();
     const setProjectAction = useProjectAction();
     const handlePrev = () => {
@@ -16,6 +20,12 @@ const Project: React.FC = () => {
     const handleNext = () => {
         setProjectAction(ProjectActionsEnum.nextProject);
     };
+
+    React.useEffect(() => {
+        setElement(toolsRef.current);
+    }, []);
+
+    useCursor(element);
 
     return (
         <div className={styles.block} data-test="component-project">
@@ -33,7 +43,7 @@ const Project: React.FC = () => {
                 )}
 
                 {projects[state.project.index]?.tools.length > 0 && (
-                    <ul className={styles.tools}>
+                    <ul ref={toolsRef} className={styles.tools}>
                         {projects[state.project.index].tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>

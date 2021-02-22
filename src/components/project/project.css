@@ -53,12 +53,14 @@
 
     @media (--min-lg) {
         margin-top: var(--gap);
-        display: block;
+        display: flex;
+        align-self: flex-start;
     }
 }
 
 .tool {
     display: inline-block;
+    position: relative;
 
     &:focus,
     &:hover {
@@ -82,10 +84,14 @@
 
 .caption {
     margin-top: var(--gap);
+    position: absolute;
+    top: 100%;
+    left: 50%;
     opacity: 0;
     visibility: hidden;
     color: var(--color-gray);
     font-size: 0.9em;
+    transform: translateX(-50%);
     transition: all 0.2s var(--ease-in-out-quad);
 }
 
