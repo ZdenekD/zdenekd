@@ -1,7 +1,7 @@
 export interface IConfig {
-    cloudfront: string
+    cloudfront: string | undefined
 }
 
-const config: IConfig = {cloudfront: process.env.NODE_ENV === 'production' ? 'https://d2yvj9qmuwjxbq.cloudfront.net' : ''};
+const config: IConfig = {cloudfront: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_CLOUDFRONT : ''};
 
 export default config;

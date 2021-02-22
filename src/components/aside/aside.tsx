@@ -1,11 +1,28 @@
 import {motion} from 'framer-motion';
 import Nav from '../nav';
 import {useStateValue} from '../../state';
+import setAnimation from '../../state/animation/actions';
 import variants from './aside.animations';
 import styles from './aside.css';
 
 const Aside: React.FC = () => {
-    const {state} = useStateValue();
+    const {state, dispatch} = useStateValue();
+    const handleAnimationStart = () => {
+        dispatch(setAnimation({
+            animation: {
+                ...state.animation,
+                isAsideAnimated: true,
+            },
+        }));
+    };
+    const handleAnimationComplete = () => {
+        dispatch(setAnimation({
+            animation: {
+                ...state.animation,
+                isAsideAnimated: false,
+            },
+        }));
+    };
 
     return (
         <motion.aside
@@ -14,6 +31,8 @@ const Aside: React.FC = () => {
             variants={variants}
             className={styles.aside}
             data-test="component-aside"
+            onAnimationStart={handleAnimationStart}
+            onAnimationComplete={handleAnimationComplete}
         >
             <Nav />
         </motion.aside>

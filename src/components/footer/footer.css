@@ -159,16 +159,13 @@
 }
 
 .dot {
-    --dot-opacity: 1;
     --dot-transform: 0;
     width: 4px;
     height: 4px;
     position: absolute;
     top: calc(1.5 * var(--gap));
     right: calc(50% - 12px);
-    opacity: var(--dot-opacity);
     background: var(--color-red);
     transform: translateY(var(--dot-transform));
-    transition: opacity 0.6s var(--ease-in-out-cubic) 1.2s;
     border-radius: 50%;
 }

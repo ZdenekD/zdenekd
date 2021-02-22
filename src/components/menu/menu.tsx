@@ -37,6 +37,7 @@ const Menu: React.FC = () => {
             className={`${styles.button} ${state.menu.isOpen ? styles.active : ''}`}
             data-test="component-menu"
             aria-label="Menu button"
+            disabled={state.animation.isAsideAnimated}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">

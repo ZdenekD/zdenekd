@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Browser from './browser';
 import Controls from './controls';
 import useProjectAction from '../../hooks/useProjectAction';
@@ -38,9 +37,7 @@ const Project: React.FC = () => {
                         {projects[state.project.index].tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>
-                                    <Image
-                                        width={40}
-                                        height={40}
+                                    <img
                                         src={`${config.cloudfront}/logo_${item}.svg`}
                                         alt={`Technologie použitá v projektu: ${item}`}
                                         className={styles.image}

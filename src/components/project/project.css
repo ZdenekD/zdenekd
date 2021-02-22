@@ -91,6 +91,8 @@
 }
 
 .image {
+    width: 32px;
+    height: 32px;
     opacity: 0.25;
     transition: opacity var(--transition-duration) var(--ease-in-out-expo);
 

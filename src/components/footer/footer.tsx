@@ -5,7 +5,7 @@ import getRoman from '../../helpers/getRoman';
 import styles from './footer.css';
 
 const Footer: React.FC = () => {
-    const dotRef = React.useRef(null);
+    const dotRef = React.useRef<HTMLElement | null>(null);
     const year = new Date().getFullYear();
     const date = getRoman(year);
 
