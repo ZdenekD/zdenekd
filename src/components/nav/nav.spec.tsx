@@ -2,6 +2,8 @@ import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../__test__/utils/helpers';
 import Nav from '.';
 
+jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({pathname: '/'}))}));
+
 describe('Navigation', () => {
     let wrapper: ShallowWrapper;
 

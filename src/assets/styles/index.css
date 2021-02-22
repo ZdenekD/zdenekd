@@ -46,32 +46,3 @@ samp {
     background: var(--selection-background, --color-blue-darken-4);
     color: var(--color-white);
 }
-
-[data-tooltip] {
-    position: relative;
-    cursor: crosshair;
-
-    &:focus,
-    &:hover {
-
-        &::before {
-            opacity: 1;
-            transform: translate(-50%, 0) scale(1);
-        }
-    }
-
-    &::before {
-        padding: 0 calc(0.5 * var(--gap));
-        display: block;
-        position: absolute;
-        top: -2em;
-        left: 50%;
-        content: attr(data-tooltip);
-        opacity: 0;
-        background: var(--color-white);
-        font-size: 0.75em;
-        transform: translate(-50%, 1.25em) scale(0.75);
-        transition: all var(--transition-duration) var(--transition-timing);
-        border-radius: var(--border-radius);
-    }
-}

@@ -1,38 +1,41 @@
-import React from 'react';
 import Image from 'next/image';
 import Browser from './browser';
 import Controls from './controls';
-import projects, {IProject} from '../../data/projects';
+import useProjectAction from '../../hooks/useProjectAction';
+import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
+import {useStateValue} from '../../state';
+import projects from '../../data/projects';
 import config from '../../data/config';
 import styles from './project.css';
 
 const Project: React.FC = () => {
-    const [project] = React.useState<IProject>(projects[0]);
+    const {state} = useStateValue();
+    const setProjectAction = useProjectAction();
     const handlePrev = () => {
-        console.log('Handle Prev');
+        setProjectAction(ProjectActionsEnum.prevProject);
     };
     const handleNext = () => {
-        console.log('Handle next');
+        setProjectAction(ProjectActionsEnum.nextProject);
     };
 
     return (
-        <div className={styles.block}>
+        <div className={styles.block} data-test="component-project">
             <header className={styles.content}>
-                {project?.title && (
-                    <h2 className={styles.title} data-title={project.title}>
-                        {project.title}
+                {projects[state.project.index]?.title && (
+                    <h2 className={styles.title} data-title={projects[state.project.index].title}>
+                        {projects[state.project.index].title}
                     </h2>
                 )}
 
-                {project?.description && (
-                    <p className={styles.description} data-title={project.description}>
-                        {project.description}
+                {projects[state.project.index]?.description && (
+                    <p className={styles.description} data-title={projects[state.project.index].description}>
+                        {projects[state.project.index].description}
                     </p>
                 )}
 
-                {project?.tools.length > 0 && (
+                {projects[state.project.index]?.tools.length > 0 && (
                     <ul className={styles.tools}>
-                        {project.tools.map(item => (
+                        {projects[state.project.index].tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>
                                     <Image
@@ -55,7 +58,7 @@ const Project: React.FC = () => {
                 />
             </header>
             <Browser
-                project={project}
+                project={projects[state.project.index]}
                 handlePrev={handlePrev}
                 handleNext={handleNext}
             />

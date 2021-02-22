@@ -5,11 +5,7 @@ exports[`Footer match snapshot 1`] = `
         data-test="component-footer"
 >
   <code class="code">
-    ♣ MMXXI Vyrobeno pomocí
-    <span data-tooltip="zaklínadel">
-      &lt;kouzel&gt;
-    </span>
-    .
+    ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
   </code>
   <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
      title="Zpráva přímo do schránky"
@@ -18,6 +14,46 @@ exports[`Footer match snapshot 1`] = `
     <svg data-filename="src/assets/images/icon_message.svg">
     </svg>
   </a>
+  <div class="keys"
+       data-test="component-keys"
+  >
+    <button type="button"
+            class="key "
+            aria-label="Předchozí stránka"
+            data-test="component-key"
+    >
+      <i class="icon up">
+      </i>
+    </button>
+    <div class="key">
+      <button type="button"
+              class="key disabled"
+              aria-label="Předchozí projekt"
+              data-test="component-key"
+              disabled
+      >
+        <i class="icon left">
+        </i>
+      </button>
+      <button type="button"
+              class="key "
+              aria-label="Následující stránka"
+              data-test="component-key"
+      >
+        <i class="icon down">
+        </i>
+      </button>
+      <button type="button"
+              class="key disabled"
+              aria-label="Následující projekt"
+              data-test="component-key"
+              disabled
+      >
+        <i class="icon right">
+        </i>
+      </button>
+    </div>
+  </div>
   <span class="scroll">
     Scroll
     <i class="dot">

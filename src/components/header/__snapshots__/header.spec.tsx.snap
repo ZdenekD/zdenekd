@@ -5,19 +5,16 @@ exports[`Header match snapshot 1`] = `
         data-test="component-header"
 >
   <a href="/"
-     class="link"
+     class="link "
      aria-label="Odkaz na domovskou stránku"
      data-test="component-heading"
   >
-    <span class="_visuallyhidden"
-          data-test="component-title"
-    >
-      Kávová paráda | ZdenekD
-    </span>
-    <svg data-filename="src/assets/images/logo.svg">
-    </svg>
-    <i class="shadow">
-    </i>
+    <div class>
+      <svg data-filename="src/assets/images/logo.svg">
+      </svg>
+      <i class="shadow">
+      </i>
+    </div>
   </a>
   <button type="button"
           class="button "

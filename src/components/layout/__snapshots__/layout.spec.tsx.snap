@@ -8,19 +8,16 @@ exports[`Layout match snapshot 1`] = `
           data-test="component-header"
   >
     <a href="/"
-       class="link"
+       class="link "
        aria-label="Odkaz na domovskou stránku"
        data-test="component-heading"
     >
-      <span class="_visuallyhidden"
-            data-test="component-title"
-      >
-        Kávová paráda | ZdenekD
-      </span>
-      <svg data-filename="src/assets/images/logo.svg">
-      </svg>
-      <i class="shadow">
-      </i>
+      <div class>
+        <svg data-filename="src/assets/images/logo.svg">
+        </svg>
+        <i class="shadow">
+        </i>
+      </div>
     </a>
     <button type="button"
             class="button "
@@ -65,11 +62,7 @@ exports[`Layout match snapshot 1`] = `
           data-test="component-footer"
   >
     <code class="code">
-      ♣ MMXXI Vyrobeno pomocí
-      <span data-tooltip="zaklínadel">
-        &lt;kouzel&gt;
-      </span>
-      .
+      ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
     </code>
     <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
        title="Zpráva přímo do schránky"
@@ -78,6 +71,46 @@ exports[`Layout match snapshot 1`] = `
       <svg data-filename="src/assets/images/icon_message.svg">
       </svg>
     </a>
+    <div class="keys"
+         data-test="component-keys"
+    >
+      <button type="button"
+              class="key "
+              aria-label="Předchozí stránka"
+              data-test="component-key"
+      >
+        <i class="icon up">
+        </i>
+      </button>
+      <div class="key">
+        <button type="button"
+                class="key disabled"
+                aria-label="Předchozí projekt"
+                data-test="component-key"
+                disabled
+        >
+          <i class="icon left">
+          </i>
+        </button>
+        <button type="button"
+                class="key "
+                aria-label="Následující stránka"
+                data-test="component-key"
+        >
+          <i class="icon down">
+          </i>
+        </button>
+        <button type="button"
+                class="key disabled"
+                aria-label="Následující projekt"
+                data-test="component-key"
+                disabled
+        >
+          <i class="icon right">
+          </i>
+        </button>
+      </div>
+    </div>
     <span class="scroll">
       Scroll
       <i class="dot">
@@ -86,30 +119,42 @@ exports[`Layout match snapshot 1`] = `
   </footer>
   <aside class="aside"
          data-test="component-aside"
+         style="transform:translateY(-100%) translateZ(0)"
   >
     <nav class="nav"
          data-test="component-nav"
     >
-      <ul class="list">
-        <li>
+      <ul class="list"
+          style="opacity:0"
+      >
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
           <a href="/"
-             class="anchor "
+             class="anchor link "
              data-test="component-anchor"
           >
             Úvodní stránka
           </a>
         </li>
-        <li>
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
           <a href="/projects"
-             class="anchor "
+             class="anchor link "
              data-test="component-anchor"
           >
             Projekty
           </a>
         </li>
-        <li>
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
           <a href="/contact"
-             class="anchor "
+             class="anchor link "
              data-test="component-anchor"
           >
             Kontakt

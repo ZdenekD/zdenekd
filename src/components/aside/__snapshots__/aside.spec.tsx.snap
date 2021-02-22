@@ -3,30 +3,42 @@
 exports[`Aside match snapshot 1`] = `
 <aside class="aside"
        data-test="component-aside"
+       style="transform:translateY(-100%) translateZ(0)"
 >
   <nav class="nav"
        data-test="component-nav"
   >
-    <ul class="list">
-      <li>
+    <ul class="list"
+        style="opacity:0"
+    >
+      <li class="item"
+          data-test="component-item"
+          style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+      >
         <a href="/"
-           class="anchor "
+           class="anchor link "
            data-test="component-anchor"
         >
           Úvodní stránka
         </a>
       </li>
-      <li>
+      <li class="item"
+          data-test="component-item"
+          style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+      >
         <a href="/projects"
-           class="anchor "
+           class="anchor link "
            data-test="component-anchor"
         >
           Projekty
         </a>
       </li>
-      <li>
+      <li class="item"
+          data-test="component-item"
+          style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+      >
         <a href="/contact"
-           class="anchor "
+           class="anchor link "
            data-test="component-anchor"
         >
           Kontakt

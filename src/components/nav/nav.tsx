@@ -5,7 +5,7 @@ import Anchor from '../../UI/anchor';
 import {useStateValue} from '../../state';
 import pages from '../../data/pages';
 import {list, item} from './nav.animations';
-import {getPage} from '../../helpers/getPage';
+import getPage from '../../helpers/getPage';
 import styles from './nav.css';
 
 const Nav: React.FC = () => {
@@ -28,9 +28,9 @@ const Nav: React.FC = () => {
                         className={styles.item}
                         data-test="component-item"
                     >
-                        <Link passHref href={`/${pages[key].slug}`}>
+                        <Link passHref href={pages[key].route}>
                             <Anchor
-                                href={`/${pages[key].slug}`}
+                                href={pages[key].route}
                                 className={`${styles.link} ${page === key ? styles.active : ''}`}
                             >
                                 {pages[key].title}

@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Browser match snapshot 1`] = `
+<section class="browser"
+         data-test="component-browser"
+>
+  <header class="header">
+    <ul class="controls">
+      <li class="control">
+      </li>
+      <li class="control">
+      </li>
+      <li class="control">
+      </li>
+    </ul>
+    <button type="button"
+            class="prev"
+            aria-label="Předchozí projekt"
+            tabindex="0"
+    >
+    </button>
+    <button type="button"
+            class="next"
+            aria-label="Následující projekt"
+            tabindex="0"
+    >
+    </button>
+    <span class="addressbar http">
+      <a href="http://url"
+         target="_blank"
+         rel="noreferrer noopener"
+         aria-label="Otevřít referenci v novém okně"
+      >
+        http://url
+      </a>
+    </span>
+    <div class="target">
+      <a href="http://url"
+         class="anchor targetLink"
+         target="_blank"
+         rel="noreferrer noopener"
+         data-test="component-anchor"
+      >
+      </a>
+    </div>
+  </header>
+  <div class="content">
+    <video playsinline
+           autoplay
+           muted
+           loop
+           preload="auto"
+           class="video"
+           title="Ukázka projektu: title. Stránky zde: http://url"
+    >
+      <track kind="captions">
+      <track kind="description"
+             label="title"
+      >
+      <source src="/id.mp4"
+              type="video/mp4"
+      >
+    </video>
+    <div class="logo">
+      <svg data-filename="src/assets/images/logo.svg">
+      </svg>
+      <i class="shadow">
+      </i>
+    </div>
+  </div>
+</section>
+`;

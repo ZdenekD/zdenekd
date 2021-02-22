@@ -145,6 +145,7 @@
 
 .prev,
 .next {
+    cursor: pointer;
 
     &:focus {
         outline: 2px dashed var(--navigation-color);

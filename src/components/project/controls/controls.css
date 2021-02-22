@@ -19,6 +19,7 @@
     height: 32px;
     display: block;
     position: relative;
+    cursor: pointer;
     border-radius: var(--border-radius);
 
     &:focus {
