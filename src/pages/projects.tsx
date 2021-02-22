@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
 import Project from '../components/project';
-import pages, {PagesEnum} from '../data/pages';
+import pages from '../data/pages';
+import PagesEnum from '../enums/PagesEnum';
 import styles from '../assets/styles/pages/projects.css';
 
 const Projects: React.FC = () => (

@@ -34,18 +34,6 @@ const projects: IProject[] = [
         ],
     },
     {
-        id: 'stenclova',
-        title: 'Ivana Štenclová',
-        url: 'http://www.stenclova.cz',
-        description: 'Česká umělkyně, vyjadřující se převážně kresbou, ale také pomocí nástrojů jako je tavná pistole, laser nebo dekorační válečky.',
-        tools: [
-            'vanillajs',
-            'octobercms',
-            'sass',
-            'gulp',
-        ],
-    },
-    {
         id: 'dirtjob',
         title: 'Dirtjob',
         url: 'http://dirtjob.cz/',
@@ -68,6 +56,18 @@ const projects: IProject[] = [
             'animejs',
             'postcss',
             'webpack',
+        ],
+    },
+    {
+        id: 'stenclova',
+        title: 'Ivana Štenclová',
+        url: 'http://www.stenclova.cz',
+        description: 'Česká umělkyně, vyjadřující se převážně kresbou, ale také pomocí nástrojů jako je tavná pistole, laser nebo dekorační válečky.',
+        tools: [
+            'vanillajs',
+            'octobercms',
+            'sass',
+            'gulp',
         ],
     },
     {

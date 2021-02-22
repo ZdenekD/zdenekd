@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
-import pages, {PagesEnum} from '../data/pages';
+import pages from '../data/pages';
+import PagesEnum from '../enums/PagesEnum';
 import styles from '../assets/styles/pages/index.css';
 
 const Page: React.FC = () => (
@@ -12,7 +13,7 @@ const Page: React.FC = () => (
                 Pomohu vám převést přání do kódu, kterému rozumí lidé i stroje.
             </p>
             <p className={`${styles.paragraph} _align-right animated-block`}>
-                <span>Tvořím s <strong data-tooltip="kávou">láskou</strong> a <strong data-tooltip="lezením">nadšením</strong>.</span><br />
+                <span>Tvořím s láskou a nadšením</span><br />
                 <span>ZdenekD</span>
             </p>
         </article>

@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
-import pages, {PagesEnum} from '../data/pages';
 import Form from '../components/form/contact';
+import pages from '../data/pages';
+import PagesEnum from '../enums/PagesEnum';
 import styles from '../assets/styles/pages/contact.css';
 
 const Page: React.FC = () => (

@@ -1,15 +1,10 @@
 import prefix from '../helpers/prefix';
-
-export enum PagesEnum {
-    homepage = 'homepage',
-    projects = 'projects',
-    contact = 'contact'
-}
+import PagesEnum from '../enums/PagesEnum';
 
 export interface IPages {
     [key: string]: {
         id: string
-        slug: string
+        route: string
         title: string
         heading: string
         description: string
@@ -19,21 +14,21 @@ export interface IPages {
 const pages: IPages = {
     [PagesEnum.homepage]: {
         id: `${prefix}_p1`,
-        slug: '',
+        route: '/',
         title: 'Úvodní stránka',
         heading: 'Vítejte',
         description: 'Tvorba webů, ruční práce, klávesový koncert | Homepage',
     },
     [PagesEnum.projects]: {
         id: `${prefix}_p2`,
-        slug: 'projects',
+        route: '/projects',
         title: 'Projekty',
         heading: 'Projekty',
         description: 'Projekty, spolupráce a jiné radosti | Projects',
     },
     [PagesEnum.contact]: {
         id: `${prefix}_p3`,
-        slug: 'contact',
+        route: '/contact',
         title: 'Kontakt',
         heading: 'Kontakt',
         description: 'Ozvěte se a vymyslíme řešení | Contact',
