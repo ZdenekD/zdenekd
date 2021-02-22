@@ -32,7 +32,7 @@ const Input: React.FC<IInput> = forwardRef(({
     className = '',
     error,
 }, ref: React.Ref<HTMLInputElement>) => {
-    const [length, setLength] = React.useState(0);
+    const [length, setLength] = React.useState<number>(0);
     const [id] = useId(1, prefix);
     const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLength(event.target.value.length);

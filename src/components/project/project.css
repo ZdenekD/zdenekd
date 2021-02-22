@@ -55,8 +55,9 @@
 
     @media (--min-lg) {
         margin-top: var(--gap);
+        padding: calc(0.5 * var(--gap));
         display: flex;
-        align-self: flex-start;
+        align-self: center;
         transform: translate3d(calc((-1 * var(--float-x) + 50vw) / var(--velocity)), calc((-1 * var(--float-y) + 50vh) / var(--velocity)), 0);
         will-change: transform;
         transition: var(--float-transition);

@@ -4,8 +4,10 @@ import Footer from '../footer';
 import Section from '../section';
 import Aside from '../aside';
 import Cursor from '../cursor';
+import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useMouse from '../../hooks/useMouse';
+import {useStateValue} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
 
@@ -15,6 +17,8 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
+    const {state} = useStateValue();
+
     useKeyboard();
     useMouse();
 
@@ -76,6 +80,9 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <Aside />
                 <Footer />
             </main>
+            <Alert variant={state.message.variant} isOpen={!!state.message.content} timeout={4}>
+                {state.message.content}
+            </Alert>
             <Cursor />
         </>
     );

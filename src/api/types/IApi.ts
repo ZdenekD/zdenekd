@@ -1,7 +1,10 @@
+import VariantsEnum from '../../enums/VariantsEnum';
+
 export interface IData {
     [key: string]: string
 }
 
 export interface IResponse {
-    message?: string
+    variant: VariantsEnum
+    message: string
 }

@@ -2,10 +2,6 @@
     position: relative;
     line-height: 0;
 
-    &[disabled] {
-        pointer-events: none;
-    }
-
     &::before {
         --velocity: 70;
         width: 24px;
@@ -28,6 +24,10 @@
             top: 16px;
             left: 24px;
         }
+    }
+
+    &[disabled] {
+        pointer-events: none;
     }
 }
 

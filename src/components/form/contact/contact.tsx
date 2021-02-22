@@ -10,7 +10,6 @@ import Loader from '../../../UI/loader';
 import {useStateValue} from '../../../state';
 import {setMessage} from '../../../state/message/actions';
 import regex from '../../../helpers/regex';
-import VariantsEnum from '../../../enums/VariantsEnum';
 import styles from './contact.css';
 
 interface IValues {
@@ -18,7 +17,7 @@ interface IValues {
 }
 
 const ContactForm: React.FC = () => {
-    const [isDisabled, setDisabled] = React.useState(false);
+    const [isDisabled, setDisabled] = React.useState<boolean>(false);
     const router = useRouter();
     const {dispatch} = useStateValue();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
@@ -34,7 +33,7 @@ const ContactForm: React.FC = () => {
         if (response.message) {
             dispatch(setMessage({
                 message: {
-                    variant: VariantsEnum.success,
+                    variant: response.variant,
                     content: response.message,
                 },
             }));

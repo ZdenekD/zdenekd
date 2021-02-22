@@ -77,9 +77,6 @@
         transition: all var(--transition-duration) ease-in-out;
         border-color: var(--color-green-lighten-4);
     }
-}
-
-.targetLink {
 
     svg {
         fill: var(--color-gray);
@@ -90,4 +87,3 @@
     max-width: 60%;
     height: 100%;
 }
-
