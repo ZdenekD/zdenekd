@@ -11,6 +11,6 @@ export function setMessage(payload: IMessage): IAction {
 export function unsetMessage(): IAction {
     return {
         type: ActionsEnum.unset,
-        payload: {...initialState},
+        payload: initialState,
     };
 }

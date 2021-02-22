@@ -11,6 +11,6 @@ export function setCursor(payload: ICursor): IAction {
 export function unsetCursor(): IAction {
     return {
         type: ActionsEnum.unset,
-        payload: {...initialState},
+        payload: initialState,
     };
 }

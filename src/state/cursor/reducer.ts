@@ -9,6 +9,11 @@ const reducer = (state: IState, action: IAction): IState => {
                 ...state,
                 ...action.payload,
             });
+        case ActionsEnum.unset:
+            return ({
+                ...state,
+                ...action.payload,
+            });
         default:
             return state;
     }
