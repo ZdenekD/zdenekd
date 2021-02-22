@@ -5,12 +5,12 @@ import {initialState} from './type';
 
 const reducer = (state: IState, action: IAction): IState => {
     switch (action.type) {
-        case ActionsEnum.save:
+        case ActionsEnum.set:
             return ({
                 ...state,
                 ...action.payload,
             });
-        case ActionsEnum.remove:
+        case ActionsEnum.unset:
             return ({
                 ...state,
                 ...initialState,
