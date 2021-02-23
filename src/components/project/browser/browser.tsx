@@ -2,6 +2,7 @@ import React from 'react';
 import Controls from './controls';
 import Video from './video';
 import Addressbar from './addressbar';
+import Target from './target';
 import {IProject} from '../../../data/projects';
 import styles from './browser.css';
 
@@ -25,6 +26,7 @@ const Browser: React.FC<IBrowser> = ({
             </span>
             <Controls handlePrev={handlePrev} handleNext={handleNext} />
             <Addressbar url={project.url} />
+            <Target url={project.url} />
         </header>
         <Video project={project} />
     </section>

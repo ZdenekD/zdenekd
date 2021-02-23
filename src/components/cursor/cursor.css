@@ -18,9 +18,18 @@
     left: -15px;
     opacity: 0.8;
     color: var(--color-blue-darken-4);
-    transition: all 0.2s var(--ease-out-quart);
-    border-radius: var(--cursor-radius);
+    will-change: transform;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: var(--ease-out-quart);
+    border-radius: 50%;
     border: 1px solid;
+}
+
+.outerCursorStuck {
+    transition-duration: 0.15s;
+    border-radius: var(--border-radius);
+    border: 1px dashed;
 }
 
 .innerCursor {
@@ -29,5 +38,11 @@
     top: -4px;
     left: -4px;
     background: var(--color-blue-darken-4);
+    will-change: transform;
+    transition: background var(--transition-duration) var(--transition-timing);
     border: 1px solid var(--color-white);
+}
+
+.innerCursorStuck {
+    background: var(--color-red);
 }

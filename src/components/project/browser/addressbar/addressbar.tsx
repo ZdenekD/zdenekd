@@ -1,7 +1,5 @@
 import React from 'react';
-import Anchor from '../../../../UI/anchor';
 import useCursor from '../../../../hooks/useCursor';
-import Icon from '../../../../assets/images/icon_open.svg';
 import styles from './addressbar.css';
 
 interface IAddressbar {
@@ -9,45 +7,33 @@ interface IAddressbar {
 }
 
 const Addressbar: React.FC<IAddressbar> = ({url}) => {
-    const [targetElement, setTargetElement] = React.useState<HTMLAnchorElement | null>(null);
-    const targetRef = React.useRef<HTMLAnchorElement | null>(null);
+    const [element, setElement] = React.useState<HTMLDivElement | null>(null);
+    const addressbarRef = React.useRef<HTMLDivElement | null>(null);
 
     React.useEffect(() => {
-        setTargetElement(targetRef.current);
+        setElement(addressbarRef.current);
     }, []);
 
-    useCursor(targetElement);
+    useCursor(element);
 
     return (
-        <>
-            <span className={`${styles.addressbar} ${/https/.test(url) ? styles.https : styles.http}`}>
-                {!/in.progress$/.test(url) && (
-                    <a
-                        href={url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        aria-label="Otevřít referenci v novém okně"
-                    >
-                        {url}
-                    </a>
-                )}
-
-                {/in.progress$/.test(url) && (url)}
-            </span>
+        <div
+            ref={addressbarRef}
+            className={`${styles.addressbar} ${/https/.test(url) ? styles.https : styles.http}`}
+        >
             {!/in.progress$/.test(url) && (
-                <div className={styles.target}>
-                    <Anchor
-                        ref={targetRef}
-                        href={url}
-                        className={styles.targetLink}
-                        target="_blank"
-                        aria-label="Otevřít referenci v novém okně"
-                    >
-                        <Icon className={styles.icon} />
-                    </Anchor>
-                </div>
+                <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Otevřít referenci v novém okně"
+                >
+                    {url}
+                </a>
             )}
-        </>
+
+            {/in.progress$/.test(url) && (url)}
+        </div>
     );
 };
 

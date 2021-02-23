@@ -1,3 +1,4 @@
+import {eventFromMessage} from '@sentry/browser';
 import useEventListener from '@use-it/event-listener';
 import {useStateValue} from '../state';
 import {setCursor, unsetCursor} from '../state/cursor/actions';
@@ -5,19 +6,21 @@ import {setCursor, unsetCursor} from '../state/cursor/actions';
 const useCursor = (element: HTMLElement | null): void => {
     const {dispatch} = useStateValue();
     const handleMouseEnter = (event: MouseEvent): void => {
-        const {width, height, top, left} = (event.target as HTMLElement).getBoundingClientRect();
+        if (event.target) {
+            const {width, height, top, left} = (event.target as HTMLElement).getBoundingClientRect();
 
-        dispatch(setCursor({
-            cursor: {
-                isStuck: true,
-                props: {
-                    width,
-                    height,
-                    top,
-                    left,
+            dispatch(setCursor({
+                cursor: {
+                    isStuck: true,
+                    props: {
+                        width,
+                        height,
+                        top,
+                        left,
+                    },
                 },
-            },
-        }));
+            }));
+        }
     };
     const handleMouseLeave = () => {
         dispatch(unsetCursor());

@@ -3,7 +3,7 @@ import {debounce} from 'underscore';
 import usePageAction from './usePageAction';
 import PageActionsEnum from '../enums/PageActionsEnum';
 
-const useMouse = (): void => {
+const useWheel = (): void => {
     const setPageAction = usePageAction();
     const handleMouse = (event: WheelEvent) => {
         const {deltaY} = event;
@@ -20,4 +20,4 @@ const useMouse = (): void => {
     useEventListener('wheel', debounce(handleMouse, 200));
 };
 
-export default useMouse;
+export default useWheel;

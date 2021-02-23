@@ -9,6 +9,7 @@ import Button from '../../../UI/form-control/button';
 import Loader from '../../../UI/loader';
 import {useStateValue} from '../../../state';
 import {setMessage} from '../../../state/message/actions';
+import useCursor from '../../../hooks/useCursor';
 import regex from '../../../helpers/regex';
 import styles from './contact.css';
 
@@ -18,6 +19,8 @@ interface IValues {
 
 const ContactForm: React.FC = () => {
     const [isDisabled, setDisabled] = React.useState<boolean>(false);
+    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
+    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const router = useRouter();
     const {dispatch} = useStateValue();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
@@ -41,6 +44,12 @@ const ContactForm: React.FC = () => {
 
         router.push('/');
     };
+
+    React.useEffect(() => {
+        setElement(buttonRef.current);
+    }, []);
+
+    useCursor(element);
 
     return (
         <>
@@ -97,7 +106,14 @@ const ContactForm: React.FC = () => {
                     tabIndex={-1}
                     className="_visuallyhidden"
                 />
-                <Button type="submit" className={styles.submit} disabled={isDisabled}>Odeslat</Button>
+                <Button
+                    ref={buttonRef}
+                    type="submit"
+                    className={styles.submit}
+                    disabled={isDisabled}
+                >
+                    Odeslat
+                </Button>
             </Form>
         </>
     );

@@ -18,7 +18,6 @@ const Video: React.FC<IVideo> = ({project}) => {
 
     React.useEffect(() => {
         handleVideo();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [project]);
 
     return (

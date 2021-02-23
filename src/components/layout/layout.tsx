@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import Header from '../header';
 import Footer from '../footer';
@@ -6,7 +7,7 @@ import Aside from '../aside';
 import Cursor from '../cursor';
 import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
-import useMouse from '../../hooks/useMouse';
+import useWheel from '../../hooks/useWheel';
 import {useStateValue} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
@@ -20,7 +21,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
     const {state} = useStateValue();
 
     useKeyboard();
-    useMouse();
+    useWheel();
 
     return (
         <>
@@ -63,27 +64,31 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 )}
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">
-                <Header />
-                <Section>
-                    <noscript>
-                        <strong>
-                            Nemáte zapnutý Javascript
-                        </strong>
-                        <p>
-                            Některé součásti stránek Vám nemusí fungovat správně.<br />
-                            Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
-                            Vašem webovém prohlížeči.
-                        </p>
-                    </noscript>
-                    {children}
-                </Section>
-                <Aside />
-                <Footer />
+                <React.StrictMode>
+                    <Header />
+                    <Section>
+                        <noscript>
+                            <strong>
+                                Nemáte zapnutý Javascript
+                            </strong>
+                            <p>
+                                Některé součásti stránek Vám nemusí fungovat správně.<br />
+                                Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
+                                Vašem webovém prohlížeči.
+                            </p>
+                        </noscript>
+                        {children}
+                    </Section>
+                    <Aside />
+                    <Footer />
+                </React.StrictMode>
             </main>
-            <Alert variant={state.message.variant} isOpen={!!state.message.content} timeout={4}>
-                {state.message.content}
-            </Alert>
-            <Cursor />
+            <React.StrictMode>
+                <Alert variant={state.message.variant} isOpen={!!state.message.content} timeout={4}>
+                    {state.message.content}
+                </Alert>
+                <Cursor />
+            </React.StrictMode>
         </>
     );
 };
