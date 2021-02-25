@@ -19,6 +19,7 @@
     height: 32px;
     display: block;
     position: relative;
+    transition: opacity var(--transition-duration) var(--transition-timing);
     border-radius: var(--border-radius);
 
     &::before,
@@ -61,4 +62,9 @@
     &::after {
         transform: translateX(-50%) rotate(135deg);
     }
+}
+
+.disabled {
+    opacity: 0.25;
+    pointer-events: none;
 }

@@ -3,11 +3,15 @@ import useCursor from '../../../hooks/useCursor';
 import styles from './controls.css';
 
 interface IControls {
+    isFirst: boolean
+    isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void
     handleNext?: (event: React.MouseEvent) => void
 }
 
 const Controls: React.FC<IControls> = ({
+    isFirst,
+    isLast,
     handlePrev = undefined,
     handleNext = undefined,
 }) => {
@@ -25,12 +29,12 @@ const Controls: React.FC<IControls> = ({
     useCursor(nextElement);
 
     return (
-        <ul className={styles.controls}>
+        <ul className={styles.controls} data-test="component-controls">
             <li className={styles.control}>
                 <button
                     ref={prevRef}
                     type="button"
-                    className={styles.prev}
+                    className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
                     aria-label="Předchozí projekt"
                     onClick={handlePrev}
                 />
@@ -39,7 +43,7 @@ const Controls: React.FC<IControls> = ({
                 <button
                     ref={nextRef}
                     type="button"
-                    className={styles.next}
+                    className={`${styles.next} ${isLast ? styles.disabled : ''}`}
                     aria-label="Následující projekt"
                     onClick={handleNext}
                 />

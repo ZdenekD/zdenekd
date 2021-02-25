@@ -51,7 +51,8 @@ const Cursor: React.FC = () => {
             <i
                 ref={innerCursorRef}
                 className={`${styles.innerCursor} ${state.cursor.isStuck ? styles.innerCursorStuck : ''}`}
-                data-test="component-inner-cursor" />
+                data-test="component-inner-cursor"
+            />
         </>
     );
 };

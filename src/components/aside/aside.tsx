@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import Nav from '../nav';
 import {useStateValue} from '../../state';
 import setAnimation from '../../state/animation/actions';
-import variants from './aside.animations';
+import {variants} from './aside.animations';
 import styles from './aside.css';
 
 const Aside: React.FC = () => {

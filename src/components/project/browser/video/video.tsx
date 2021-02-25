@@ -1,7 +1,8 @@
 import React from 'react';
-import Logo from '../../../logo';
+import {motion, AnimatePresence} from 'framer-motion';
 import {IProject} from '../../../../data/projects';
 import config from '../../../../data/config';
+import {variants} from './video.animations';
 import styles from './video.css';
 
 interface IVideo {
@@ -9,36 +10,36 @@ interface IVideo {
 }
 
 const Video: React.FC<IVideo> = ({project}) => {
-    const videoRef = React.useRef<HTMLVideoElement | null>(null);
-    const handleVideo = () => {
-        if (videoRef.current) {
-            videoRef.current.load();
-        }
-    };
-
-    React.useEffect(() => {
-        handleVideo();
-    }, [project]);
+    const wrapperRef = React.useRef<HTMLDivElement | null>(null);
 
     return (
-        <div className={styles.wrapper}>
-            <video
-                ref={videoRef}
-                playsInline
-                autoPlay
-                muted
-                loop
-                preload="auto"
-                controls={false}
-                className={styles.video}
-                title={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky se nacházejí zde: ${project.url}` : ''}`}
+        <AnimatePresence exitBeforeEnter>
+            <motion.div
+                ref={wrapperRef}
+                key={project.id}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                variants={variants}
+                className={styles.wrapper}
+                data-test="component-video"
             >
-                <track kind="captions" />
-                <track kind="description" label={project.title} />
-                <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />
-            </video>
-            <Logo className={styles.logo} />
-        </div>
+                <video
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    preload="auto"
+                    controls={false}
+                    className={styles.video}
+                    title={`Ukázka projektu: ${project.title}. ${!/localhost$/.test(project.url) ? `Stránky se nacházejí zde: ${project.url}` : ''}`}
+                >
+                    <track kind="captions" />
+                    <track kind="description" label={project.title} />
+                    <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />
+                </video>
+            </motion.div>
+        </AnimatePresence>
     );
 };
 

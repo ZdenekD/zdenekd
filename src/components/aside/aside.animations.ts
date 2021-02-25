@@ -28,4 +28,5 @@ const variants: Variants = {
     },
 };
 
-export default variants;
+// eslint-disable-next-line import/prefer-default-export
+export {variants};

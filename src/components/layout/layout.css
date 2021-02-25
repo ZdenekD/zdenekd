@@ -1,6 +1,4 @@
 .main {
-    --navigation-color: var(--color-blue-darken-4);
-    --navigation-color-active: var(--color-blue-darken-3);
     width: 100vw;
     min-height: 100vh;
     display: grid;

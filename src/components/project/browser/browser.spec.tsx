@@ -15,7 +15,13 @@ describe('Browser', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Browser project={project} />);
+        wrapper = shallow(
+            <Browser
+                isFirst={false}
+                isLast={false}
+                project={project}
+            />
+        );
     });
 
     it('match snapshot', () => {

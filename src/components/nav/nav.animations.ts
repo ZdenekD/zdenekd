@@ -1,6 +1,6 @@
 import {Variants} from 'framer-motion';
 
-const list: Variants = {
+const variants: Variants = {
     animate: {
         opacity: 1,
         transition: {
@@ -22,7 +22,7 @@ const list: Variants = {
     },
 };
 
-const item: Variants = {
+const variant: Variants = {
     animate: {
         y: 0,
         opacity: 1,
@@ -41,4 +41,4 @@ const item: Variants = {
     },
 };
 
-export {list, item};
+export {variants, variant};

@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import VariantsEnum from '../../enums/VariantsEnum';
-import {fade, fadeScale} from '../../helpers/animation/fade';
+import {fade, fadeScale} from './alert.animations';
 import {useStateValue} from '../../state';
 import {unsetMessage} from '../../state/message/actions';
 import styles from './alert.css';

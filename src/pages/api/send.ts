@@ -6,7 +6,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse): void
     const {method} = req;
 
     if (method !== 'POST') {
-        res.status(405).end(`Method ${method} is not allowed.`);
+        res.status(405).json({
+            message: 'Není povoleno.',
+            variant: VariantsEnum.danger,
+        });
     } else {
         sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '');
 
@@ -35,7 +38,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse): void
             } catch (error) {
                 res.status(400).json({
                     message: 'Něco se pravděpodobně po@#$&lo.',
-                    variant: VariantsEnum.danger,
+                    variant: VariantsEnum.warning,
                 });
             }
         })();

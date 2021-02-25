@@ -4,36 +4,30 @@ exports[`Project match snapshot 1`] = `
 <div class="block"
      data-test="component-project"
 >
-  <header class="content">
+  <header class="content"
+          style="opacity:0"
+  >
     <h2 class="title"
         data-title="Tomton"
+        style="opacity:0;transform:translateX(20px) translateZ(0)"
     >
       Tomton
     </h2>
     <p class="description"
-       data-title="Společnost vyrabějící designové otopné systémy. Za jeden ze svých modelů získala ocenění Red Dot Design Award."
+       data-title="Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award."
+       style="opacity:0;transform:translateX(20px) translateZ(0)"
     >
-      Společnost vyrabějící designové otopné systémy. Za jeden ze svých modelů získala ocenění Red Dot Design Award.
+      Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.
     </p>
-    <ul class="tools">
+    <ul class="tools"
+        style="opacity:0;transform:translateX(20px) translateZ(0)"
+    >
       <li class="tool">
         <figure class="figure">
-          <div style="display:inline-block;max-width:100%;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-            <div style="box-sizing:border-box;display:block;max-width:100%">
-              <img style="max-width:100%;display:block;margin:0;border:none;padding:0"
-                   alt
-                   aria-hidden="true"
-                   role="presentation"
-                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-              >
-            </div>
-            <img alt="Technologie použitá v projektu: react"
-                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 decoding="async"
-                 class="image"
-                 style="visibility:hidden;position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-            >
-          </div>
+          <img src="/logo_react.svg"
+               alt="Technologie použitá v projektu: react"
+               class="image"
+          >
           <figcaption class="caption">
             react
           </figcaption>
@@ -41,22 +35,10 @@ exports[`Project match snapshot 1`] = `
       </li>
       <li class="tool">
         <figure class="figure">
-          <div style="display:inline-block;max-width:100%;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-            <div style="box-sizing:border-box;display:block;max-width:100%">
-              <img style="max-width:100%;display:block;margin:0;border:none;padding:0"
-                   alt
-                   aria-hidden="true"
-                   role="presentation"
-                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-              >
-            </div>
-            <img alt="Technologie použitá v projektu: wordpress"
-                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 decoding="async"
-                 class="image"
-                 style="visibility:hidden;position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-            >
-          </div>
+          <img src="/logo_wordpress.svg"
+               alt="Technologie použitá v projektu: wordpress"
+               class="image"
+          >
           <figcaption class="caption">
             wordpress
           </figcaption>
@@ -64,22 +46,10 @@ exports[`Project match snapshot 1`] = `
       </li>
       <li class="tool">
         <figure class="figure">
-          <div style="display:inline-block;max-width:100%;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-            <div style="box-sizing:border-box;display:block;max-width:100%">
-              <img style="max-width:100%;display:block;margin:0;border:none;padding:0"
-                   alt
-                   aria-hidden="true"
-                   role="presentation"
-                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-              >
-            </div>
-            <img alt="Technologie použitá v projektu: lottie"
-                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 decoding="async"
-                 class="image"
-                 style="visibility:hidden;position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-            >
-          </div>
+          <img src="/logo_lottie.svg"
+               alt="Technologie použitá v projektu: lottie"
+               class="image"
+          >
           <figcaption class="caption">
             lottie
           </figcaption>
@@ -87,22 +57,10 @@ exports[`Project match snapshot 1`] = `
       </li>
       <li class="tool">
         <figure class="figure">
-          <div style="display:inline-block;max-width:100%;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-            <div style="box-sizing:border-box;display:block;max-width:100%">
-              <img style="max-width:100%;display:block;margin:0;border:none;padding:0"
-                   alt
-                   aria-hidden="true"
-                   role="presentation"
-                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-              >
-            </div>
-            <img alt="Technologie použitá v projektu: animejs"
-                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 decoding="async"
-                 class="image"
-                 style="visibility:hidden;position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-            >
-          </div>
+          <img src="/logo_animejs.svg"
+               alt="Technologie použitá v projektu: animejs"
+               class="image"
+          >
           <figcaption class="caption">
             animejs
           </figcaption>
@@ -110,39 +68,29 @@ exports[`Project match snapshot 1`] = `
       </li>
       <li class="tool">
         <figure class="figure">
-          <div style="display:inline-block;max-width:100%;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-            <div style="box-sizing:border-box;display:block;max-width:100%">
-              <img style="max-width:100%;display:block;margin:0;border:none;padding:0"
-                   alt
-                   aria-hidden="true"
-                   role="presentation"
-                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-              >
-            </div>
-            <img alt="Technologie použitá v projektu: webpack"
-                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 decoding="async"
-                 class="image"
-                 style="visibility:hidden;position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-            >
-          </div>
+          <img src="/logo_webpack.svg"
+               alt="Technologie použitá v projektu: webpack"
+               class="image"
+          >
           <figcaption class="caption">
             webpack
           </figcaption>
         </figure>
       </li>
     </ul>
-    <ul class="controls">
+    <ul class="controls"
+        data-test="component-controls"
+    >
       <li class="control">
         <button type="button"
-                class="prev"
+                class="prev disabled"
                 aria-label="Předchozí projekt"
         >
         </button>
       </li>
       <li class="control">
         <button type="button"
-                class="next"
+                class="next "
                 aria-label="Následující projekt"
         >
         </button>
@@ -153,27 +101,31 @@ exports[`Project match snapshot 1`] = `
            data-test="component-browser"
   >
     <header class="header">
-      <ul class="controls">
-        <li class="control">
-        </li>
-        <li class="control">
-        </li>
-        <li class="control">
-        </li>
-      </ul>
+      <span class="controls">
+        <i class="control">
+        </i>
+        <i class="control">
+        </i>
+        <i class="control">
+        </i>
+      </span>
       <button type="button"
-              class="prev"
+              class="prev disabled"
               aria-label="Předchozí projekt"
               tabindex="0"
+              data-test="component-prev"
       >
       </button>
       <button type="button"
-              class="next"
+              class="next "
               aria-label="Následující projekt"
               tabindex="0"
+              data-test="component-next"
       >
       </button>
-      <span class="addressbar https">
+      <div class="addressbar https"
+           data-test="component-addressbar"
+      >
         <a href="https://www.tomton.cz"
            target="_blank"
            rel="noreferrer noopener"
@@ -181,7 +133,7 @@ exports[`Project match snapshot 1`] = `
         >
           https://www.tomton.cz
         </a>
-      </span>
+      </div>
       <div class="target">
         <a href="https://www.tomton.cz"
            class="anchor targetLink"
@@ -189,17 +141,22 @@ exports[`Project match snapshot 1`] = `
            rel="noreferrer noopener"
            data-test="component-anchor"
         >
+          <svg data-filename="src/assets/images/icon_open.svg">
+          </svg>
         </a>
       </div>
     </header>
-    <div class="content">
+    <div class="wrapper"
+         data-test="component-video"
+         style="opacity:0"
+    >
       <video playsinline
              autoplay
              muted
              loop
              preload="auto"
              class="video"
-             title="Ukázka projektu: Tomton. Stránky zde: https://www.tomton.cz"
+             title="Ukázka projektu: Tomton. Stránky se nacházejí zde: https://www.tomton.cz"
       >
         <track kind="captions">
         <track kind="description"
@@ -209,12 +166,6 @@ exports[`Project match snapshot 1`] = `
                 type="video/mp4"
         >
       </video>
-      <div class="logo">
-        <svg data-filename="src/assets/images/logo.svg">
-        </svg>
-        <i class="shadow">
-        </i>
-      </div>
     </div>
   </section>
 </div>

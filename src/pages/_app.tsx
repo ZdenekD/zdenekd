@@ -1,4 +1,5 @@
 import App from 'next/app';
+import {AnimatePresence} from 'framer-motion';
 import * as Sentry from '@sentry/browser';
 import {Provider} from '../state';
 import '../assets/styles/index.css';
@@ -22,7 +23,9 @@ class Application extends App {
 
         return (
             <Provider>
-                <Component {...pageProps} key={router.route} />
+                <AnimatePresence exitBeforeEnter>
+                    <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
             </Provider>
         );
     }

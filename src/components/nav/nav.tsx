@@ -5,7 +5,7 @@ import Anchor from '../../UI/anchor';
 import {useStateValue} from '../../state';
 import setAnimation from '../../state/animation/actions';
 import pages from '../../data/pages';
-import {list, item} from './nav.animations';
+import {variants, variant} from './nav.animations';
 import getPage from '../../helpers/getPage';
 import styles from './nav.css';
 
@@ -27,14 +27,14 @@ const Nav: React.FC = () => {
             <motion.ul
                 initial={false}
                 animate={state.menu.isOpen ? 'animate' : 'exit'}
-                variants={list}
+                variants={variants}
                 className={styles.list}
                 onAnimationComplete={handleAnimationComplete}
             >
                 {Object.keys(pages).map((key: string) => (
                     <motion.li
                         key={pages[key].id}
-                        variants={item}
+                        variants={variant}
                         className={styles.item}
                         data-test="component-item"
                     >

@@ -20,6 +20,7 @@ const Addressbar: React.FC<IAddressbar> = ({url}) => {
         <div
             ref={addressbarRef}
             className={`${styles.addressbar} ${/https/.test(url) ? styles.https : styles.http}`}
+            data-test="component-addressbar"
         >
             {!/in.progress$/.test(url) && (
                 <a

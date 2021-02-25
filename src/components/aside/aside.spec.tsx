@@ -2,7 +2,7 @@ import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../__test__/utils/helpers';
 import Aside from '.';
 
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({pathname: '/'}))}));
+jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Aside', () => {
     let wrapper: ShallowWrapper;

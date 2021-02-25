@@ -28,7 +28,7 @@ describe('Alert', () => {
         const container = shallow(<Alert>message</Alert>);
         const component = findComponent(container, 'component-alert');
 
-        component.find('Button').simulate('click');
+        component.find('button').simulate('click');
 
         expect(mockSetState).toHaveBeenCalledTimes(1);
     });

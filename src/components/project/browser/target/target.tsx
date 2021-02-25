@@ -28,6 +28,7 @@ const Target: React.FC<ITarget> = ({url}) => {
                         className={styles.targetLink}
                         target="_blank"
                         aria-label="Otevřít referenci v novém okně"
+                        data-test="component-target"
                     >
                         <Icon className={styles.icon} />
                     </Anchor>

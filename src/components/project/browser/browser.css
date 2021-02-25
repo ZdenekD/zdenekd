@@ -2,8 +2,8 @@
     --velocity: 100;
     width: 100%;
     max-width: 900px;
-    height: 100%;
     margin: 0 calc(2 * var(--gap)) 0 auto;
+    overflow: hidden;
     transform: translate3d(calc((-1 * var(--x) + 50vw) / var(--velocity)), calc((-1 * var(--y) + 50vh) / var(--velocity)), 0);
     will-change: transform;
     transition: var(--float-transition);

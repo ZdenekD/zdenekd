@@ -12,7 +12,7 @@ exports[`Navigation match snapshot 1`] = `
         style="opacity:0;transform:translateY(-6vh) translateZ(0)"
     >
       <a href="/"
-         class="anchor link "
+         class="anchor link active"
          data-test="component-anchor"
       >
         Úvodní stránka

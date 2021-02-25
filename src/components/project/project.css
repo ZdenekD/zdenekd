@@ -3,9 +3,8 @@
     margin: auto;
     padding: var(--gap) 0;
     display: grid;
-    grid-template: max-content / minmax(min-content, 1fr) minmax(min-content, 2fr);
-    grid-template-areas: 'description preview'
-        'controle preview';
+    grid-template: max-content / 1fr 1.5fr;
+    grid-template-areas: 'description preview';
     grid-column-gap: calc(2 * var(--gap));
 }
 
@@ -57,7 +56,7 @@
         margin-top: var(--gap);
         padding: calc(0.5 * var(--gap));
         display: flex;
-        align-self: center;
+        align-self: flex-start;
         transform: translate3d(calc((-1 * var(--x) + 50vw) / var(--velocity)), calc((-1 * var(--y) + 50vh) / var(--velocity)), 0);
         will-change: transform;
         transition: var(--float-transition);

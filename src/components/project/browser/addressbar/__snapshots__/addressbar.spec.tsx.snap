@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Addressbar match snapshot 1`] = `
+<div class="addressbar http"
+     data-test="component-addressbar"
+>
+  <a href="http://url"
+     target="_blank"
+     rel="noreferrer noopener"
+     aria-label="Otevřít referenci v novém okně"
+  >
+    http://url
+  </a>
+</div>
+`;

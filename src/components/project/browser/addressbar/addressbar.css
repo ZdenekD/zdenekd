@@ -41,7 +41,7 @@
 .http {
 
     &::before {
-        background-color: var(--color-red);
+        background-color: var(--color-orange);
     }
 }
 

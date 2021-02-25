@@ -21,8 +21,24 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (state.project.index - 1 >= minIndex) {
-                dispatch(setProject({project: {index: state.project.index - 1}}));
+            if (state.project.index - 1 === minIndex) {
+                dispatch(setProject({
+                    project: {
+                        index: state.project.index - 1,
+                        isFirst: true,
+                        isLast: false,
+                    },
+                }));
+            }
+
+            if (state.project.index - 1 > minIndex) {
+                dispatch(setProject({
+                    project: {
+                        index: state.project.index - 1,
+                        isFirst: false,
+                        isLast: false,
+                    },
+                }));
             }
         },
         [ProjectActionsEnum.nextProject]: () => {
@@ -30,8 +46,24 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (state.project.index + 1 <= maxIndex) {
-                dispatch(setProject({project: {index: state.project.index + 1}}));
+            if (state.project.index + 1 === maxIndex) {
+                dispatch(setProject({
+                    project: {
+                        index: state.project.index + 1,
+                        isFirst: false,
+                        isLast: true,
+                    },
+                }));
+            }
+
+            if (state.project.index + 1 < maxIndex) {
+                dispatch(setProject({
+                    project: {
+                        index: state.project.index + 1,
+                        isFirst: false,
+                        isLast: false,
+                    },
+                }));
             }
         },
     };

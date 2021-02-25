@@ -28,7 +28,7 @@
 
 .outerCursorStuck {
     transition-duration: 0.15s;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     border: 1px dashed;
 }
 

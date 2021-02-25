@@ -34,7 +34,7 @@ const Textarea: React.FC<ITextarea> = forwardRef(({
     const [length, setLength] = React.useState<number>(0);
     const [id] = useId(1, prefix);
     const handleHeight = (element: HTMLTextAreaElement) => {
-        if (element) {
+        if (element.style) {
             element.style.height = '0';
             element.style.height = `${element.scrollHeight}px`;
         }

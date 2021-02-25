@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 import Browser from './browser';
 import Controls from './controls';
 import useProjectAction from '../../hooks/useProjectAction';
@@ -7,6 +8,7 @@ import {useStateValue} from '../../state';
 import useCursor from '../../hooks/useCursor';
 import projects from '../../data/projects';
 import config from '../../data/config';
+import {variants, variant} from './project.animations';
 import styles from './project.css';
 
 const Project: React.FC = () => {
@@ -29,21 +31,39 @@ const Project: React.FC = () => {
 
     return (
         <div className={styles.block} data-test="component-project">
-            <header className={styles.content}>
+            <motion.header
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                variants={variants}
+                className={styles.content}
+            >
                 {projects[state.project.index]?.title && (
-                    <h2 className={styles.title} data-title={projects[state.project.index].title}>
+                    <motion.h2
+                        variants={variant}
+                        className={styles.title}
+                        data-title={projects[state.project.index].title}
+                    >
                         {projects[state.project.index].title}
-                    </h2>
+                    </motion.h2>
                 )}
 
                 {projects[state.project.index]?.description && (
-                    <p className={styles.description} data-title={projects[state.project.index].description}>
+                    <motion.p
+                        variants={variant}
+                        className={styles.description}
+                        data-title={projects[state.project.index].description}
+                    >
                         {projects[state.project.index].description}
-                    </p>
+                    </motion.p>
                 )}
 
                 {projects[state.project.index]?.tools.length > 0 && (
-                    <ul ref={toolsRef} className={styles.tools}>
+                    <motion.ul
+                        ref={toolsRef}
+                        variants={variant}
+                        className={styles.tools}
+                    >
                         {projects[state.project.index].tools.map(item => (
                             <li key={item} className={styles.tool}>
                                 <figure className={styles.figure}>
@@ -56,16 +76,20 @@ const Project: React.FC = () => {
                                 </figure>
                             </li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 )}
 
                 <Controls
+                    isFirst={state.project.isFirst}
+                    isLast={state.project.isLast}
                     handlePrev={handlePrev}
                     handleNext={handleNext}
                 />
-            </header>
+            </motion.header>
             <Browser
                 project={projects[state.project.index]}
+                isFirst={state.project.isFirst}
+                isLast={state.project.isLast}
                 handlePrev={handlePrev}
                 handleNext={handleNext}
             />

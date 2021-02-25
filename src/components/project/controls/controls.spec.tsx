@@ -7,7 +7,10 @@ describe('Controls', () => {
 
     beforeEach(() => {
         wrapper = shallow(
-            <Controls />
+            <Controls
+                isFirst={false}
+                isLast={false}
+            />
         );
     });
 

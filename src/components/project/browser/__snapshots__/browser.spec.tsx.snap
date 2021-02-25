@@ -5,27 +5,31 @@ exports[`Browser match snapshot 1`] = `
          data-test="component-browser"
 >
   <header class="header">
-    <ul class="controls">
-      <li class="control">
-      </li>
-      <li class="control">
-      </li>
-      <li class="control">
-      </li>
-    </ul>
+    <span class="controls">
+      <i class="control">
+      </i>
+      <i class="control">
+      </i>
+      <i class="control">
+      </i>
+    </span>
     <button type="button"
-            class="prev"
+            class="prev "
             aria-label="Předchozí projekt"
             tabindex="0"
+            data-test="component-prev"
     >
     </button>
     <button type="button"
-            class="next"
+            class="next "
             aria-label="Následující projekt"
             tabindex="0"
+            data-test="component-next"
     >
     </button>
-    <span class="addressbar http">
+    <div class="addressbar http"
+         data-test="component-addressbar"
+    >
       <a href="http://url"
          target="_blank"
          rel="noreferrer noopener"
@@ -33,7 +37,7 @@ exports[`Browser match snapshot 1`] = `
       >
         http://url
       </a>
-    </span>
+    </div>
     <div class="target">
       <a href="http://url"
          class="anchor targetLink"
@@ -41,17 +45,22 @@ exports[`Browser match snapshot 1`] = `
          rel="noreferrer noopener"
          data-test="component-anchor"
       >
+        <svg data-filename="src/assets/images/icon_open.svg">
+        </svg>
       </a>
     </div>
   </header>
-  <div class="content">
+  <div class="wrapper"
+       data-test="component-video"
+       style="opacity:0"
+  >
     <video playsinline
            autoplay
            muted
            loop
            preload="auto"
            class="video"
-           title="Ukázka projektu: title. Stránky zde: http://url"
+           title="Ukázka projektu: title. Stránky se nacházejí zde: http://url"
     >
       <track kind="captions">
       <track kind="description"
@@ -61,12 +70,6 @@ exports[`Browser match snapshot 1`] = `
               type="video/mp4"
       >
     </video>
-    <div class="logo">
-      <svg data-filename="src/assets/images/logo.svg">
-      </svg>
-      <i class="shadow">
-      </i>
-    </div>
   </div>
 </section>
 `;

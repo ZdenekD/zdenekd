@@ -11,7 +11,7 @@ const projects: IProject[] = [
         id: 'tomton',
         title: 'Tomton',
         url: 'https://www.tomton.cz',
-        description: 'Společnost vyrabějící designové otopné systémy. Za jeden ze svých modelů získala ocenění Red Dot Design Award.',
+        description: 'Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.',
         tools: [
             'react',
             'wordpress',
@@ -24,7 +24,7 @@ const projects: IProject[] = [
         id: 'fit-s-marky',
         title: 'Fit s Marky',
         url: 'https://fit-s-marky.cz',
-        description: 'Instruktorka pilates a jógy.',
+        description: 'Webové stránky instruktorky pilates a jógy.',
         tools: [
             'react',
             'typescript',

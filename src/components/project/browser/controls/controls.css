@@ -7,7 +7,7 @@
     position: relative;
     background: var(--color-white);
     text-align: center;
-    transition: all 0.2s ease-in-out;
+    transition: all var(--transition-duration) var(--transition-timing);
     border-radius: var(--border-radius);
     border: 1px solid #f7f7f7;
 
@@ -60,4 +60,9 @@
     &::after {
         transform: translateX(-50%) rotate(135deg);
     }
+}
+
+.disabled {
+    opacity: 0.25;
+    pointer-events: none;
 }

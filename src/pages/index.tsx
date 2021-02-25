@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Heading from '../components/heading';
 import pages from '../data/pages';
 import PagesEnum from '../enums/PagesEnum';
 import styles from '../assets/styles/pages/index.css';
 
 const Page: React.FC = () => (
     <Layout className={styles.root} data-test="component-layout">
-        <h1 data-test="component-heading">{pages[PagesEnum.homepage].heading}</h1>
+        <Heading data-test="component-heading">{pages[PagesEnum.homepage].heading}</Heading>
         <article className={styles.article}>
             <p className={`${styles.paragraph} animated-block`}>
                 Profesionální hře na&nbsp;klávesnici se&nbsp;věnuji několik let.<br />

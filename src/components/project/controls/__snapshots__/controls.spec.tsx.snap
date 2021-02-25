@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls match snapshot 1`] = `
+<ul class="controls"
+    data-test="component-controls"
+>
+  <li class="control">
+    <button type="button"
+            class="prev "
+            aria-label="Předchozí projekt"
+    >
+    </button>
+  </li>
+  <li class="control">
+    <button type="button"
+            class="next "
+            aria-label="Následující projekt"
+    >
+    </button>
+  </li>
+</ul>
+`;
