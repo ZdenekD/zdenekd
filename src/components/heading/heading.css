@@ -17,6 +17,7 @@
 .heading {
     margin: var(--gap) auto;
     position: relative;
+    opacity: 0;
     color: var(--content-heading);
     font-size: 2em;
     text-align: center;
@@ -37,7 +38,7 @@
         @media (prefers-reduced-motion: no-preference) {
             opacity: 0;
             transform-origin: left center;
-            animation: line-in 0.2s var(--ease-out-quart) 0.8s forwards;
+            animation: line-in 0.2s var(--ease-out-quart) 0.7s forwards;
         }
     }
 

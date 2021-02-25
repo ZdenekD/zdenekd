@@ -26,6 +26,7 @@
     margin-bottom: var(--gap);
     position: relative;
     z-index: 0;
+    opacity: 0;
 
     &::before {
         position: absolute;
@@ -48,19 +49,20 @@
     font-size: 1.2rem;
 }
 
-.tools {
-    --velocity: 150;
+.toolsWrapper {
     display: none;
 
     @media (--min-lg) {
-        margin-top: var(--gap);
-        padding: calc(0.5 * var(--gap));
         display: flex;
-        align-self: flex-start;
-        transform: translate3d(calc((-1 * var(--x) + 50vw) / var(--velocity)), calc((-1 * var(--y) + 50vh) / var(--velocity)), 0);
-        will-change: transform;
-        transition: var(--float-transition);
+        opacity: 0;
     }
+}
+
+.tools {
+    margin-top: var(--gap);
+    padding: calc(0.5 * var(--gap));
+    display: flex;
+    align-self: flex-start;
 }
 
 .tool {

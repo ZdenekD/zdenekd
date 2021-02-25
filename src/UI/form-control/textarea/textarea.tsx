@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, {forwardRef} from 'react';
+import React from 'react';
 import {useId} from 'react-id-generator';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import prefix from '../../../helpers/prefix';
@@ -19,7 +19,7 @@ interface ITextarea {
     error?: string
 }
 
-const Textarea: React.FC<ITextarea> = forwardRef(({
+const Textarea = React.forwardRef<HTMLTextAreaElement, ITextarea>(({
     name,
     label,
     placeholder,

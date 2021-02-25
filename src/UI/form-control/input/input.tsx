@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import React from 'react';
 import {useId} from 'react-id-generator';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import prefix from '../../../helpers/prefix';
@@ -19,7 +19,7 @@ interface IInput {
     error?: string
 }
 
-const Input: React.FC<IInput> = forwardRef(({
+const Input = React.forwardRef<HTMLInputElement, IInput>(({
     name,
     label,
     type = 'text',

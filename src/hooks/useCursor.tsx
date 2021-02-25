@@ -1,4 +1,3 @@
-import {eventFromMessage} from '@sentry/browser';
 import useEventListener from '@use-it/event-listener';
 import {useStateValue} from '../state';
 import {setCursor, unsetCursor} from '../state/cursor/actions';

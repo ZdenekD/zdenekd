@@ -14,14 +14,15 @@ interface IBrowser {
     handleNext?: (event: React.MouseEvent) => void
 }
 
-const Browser: React.FC<IBrowser> = ({
+const Browser = React.forwardRef<HTMLElement, IBrowser>(({
     project,
     isFirst,
     isLast,
     handlePrev = undefined,
     handleNext = undefined,
-}) => (
+}, ref) => (
     <section
+        ref={ref}
         className={styles.browser}
         data-test="component-browser"
     >
@@ -42,6 +43,8 @@ const Browser: React.FC<IBrowser> = ({
         </header>
         <Video project={project} />
     </section>
-);
+));
+
+Browser.displayName = 'Browser';
 
 export default Browser;
