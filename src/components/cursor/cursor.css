@@ -22,14 +22,7 @@
     transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: var(--ease-out-quart);
-    border-radius: 50%;
-    border: 1px solid;
-}
-
-.outerCursorStuck {
-    transition-duration: 0.15s;
-    border-radius: 8px;
-    border: 1px dashed;
+    border-radius: var(--cursor-radius);
 }
 
 .innerCursor {
