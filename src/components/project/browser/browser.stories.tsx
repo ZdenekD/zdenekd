@@ -1,16 +1,10 @@
 import Browser from '.';
-import {IProject} from '../../../data/projects';
+import projects, {IProject} from '../../../data/projects';
 
-export default {title: 'Components/Browser'};
+export default {title: 'Components/Project/Browser'};
 
-const project: IProject = {
-    id: 'id',
-    title: 'Project title',
-    description: 'Project description',
-    url: 'https://url.com',
-    tools: ['react', 'webpack'],
-};
+const project: IProject = {...projects[0]};
 
 export const base: React.FC = () => (
-    <Browser project={project} />
+    <Browser project={project} isFirst={false} isLast={false} />
 );

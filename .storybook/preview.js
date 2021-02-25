@@ -1,6 +1,7 @@
 import {addParameters, addDecorator} from '@storybook/react';
 import {withNextRouter} from 'storybook-addon-next-router';
 import {Provider} from '../src/state';
+import Cursor from '../src/components/cursor';
 import '../src/assets/styles/index.css';
 
 const viewports = {
@@ -35,5 +36,10 @@ const viewports = {
 };
 
 addDecorator(withNextRouter());
-addDecorator(Story => <Provider><Story /></Provider>)
+addDecorator(Story => (
+    <Provider>
+        <Story />
+        <Cursor />
+    </Provider>
+))
 addParameters({viewport: {viewports}});

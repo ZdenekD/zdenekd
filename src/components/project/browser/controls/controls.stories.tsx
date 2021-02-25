@@ -1,6 +1,6 @@
 import Controls from '.';
 
-export default {title: 'Components/Project/Controls'};
+export default {title: 'Components/Project/Browser/Controls'};
 
 export const base: React.FC = () => (
     <Controls isFirst={false} isLast={false} />
