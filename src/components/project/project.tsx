@@ -67,32 +67,29 @@ const Project: React.FC = () => {
     };
 
     React.useEffect(() => {
-        const animate = () => {
-            const {current: title} = titleRef;
-            const {current: description} = descriptionRef;
-            const {current: tools} = toolsWrapperRef;
-            const {current: browser} = browserRef;
-            const {current: controls} = controlsRef;
+        const {current: title} = titleRef;
+        const {current: description} = descriptionRef;
+        const {current: tools} = toolsWrapperRef;
+        const {current: browser} = browserRef;
+        const {current: controls} = controlsRef;
 
-            anime({
-                targets: [
-                    title,
-                    description,
-                    browser,
-                    tools,
-                    controls,
-                ],
-                duration: 800,
-                delay(_, i) {
-                    return (i * 200) + 700;
-                },
-                opacity: [0, 1],
-                translateY: ['5vh', 0],
-                easing: 'easeOutExpo',
-            });
-        };
+        anime({
+            targets: [
+                title,
+                description,
+                browser,
+                tools,
+                controls,
+            ],
+            duration: 800,
+            delay(_, i) {
+                return (i * 200) + 700;
+            },
+            opacity: [0, 1],
+            translateY: ['5vh', 0],
+            easing: 'easeOutExpo',
+        });
 
-        animate();
         setElement(toolsRef.current);
     }, []);
 

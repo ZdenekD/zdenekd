@@ -53,3 +53,7 @@ samp {
     background: var(--selection-background, --color-blue-darken-4);
     color: var(--color-white);
 }
+
+:global .animated-block {
+    opacity: 0;
+}

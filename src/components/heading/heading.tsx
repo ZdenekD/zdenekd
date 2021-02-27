@@ -4,7 +4,8 @@ import styles from './heading.css';
 
 const Heading: React.FC = ({children}) => {
     const headingRef = React.useRef<HTMLHeadingElement | null>(null);
-    const animate = () => {
+
+    React.useEffect(() => {
         anime({
             targets: headingRef.current,
             duration: 800,
@@ -13,10 +14,6 @@ const Heading: React.FC = ({children}) => {
             translateY: ['5vh', 0],
             easing: 'easeOutQuart',
         });
-    };
-
-    React.useEffect(() => {
-        animate();
     }, []);
 
     return (
