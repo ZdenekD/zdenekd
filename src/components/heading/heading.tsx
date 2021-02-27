@@ -9,7 +9,7 @@ const Heading: React.FC = ({children}) => {
         anime({
             targets: headingRef.current,
             duration: 800,
-            delay: 400,
+            delay: 800,
             opacity: [0, 1],
             translateY: ['5vh', 0],
             easing: 'easeOutQuart',

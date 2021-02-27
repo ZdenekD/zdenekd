@@ -26,7 +26,7 @@ const Logo: React.FC<ILogo> = ({className = ''}) => {
             <Image className={styles.logo} data-test="component-logo" />
             <motion.i
                 initial={false}
-                animate={state.menu.isOpen ? 'animate' : 'exit'}
+                animate={state.menu.isOpen ? 'enter' : 'exit'}
                 variants={variants}
                 className={styles.shadow}
             />

@@ -53,7 +53,7 @@ const ContactForm: React.FC = () => {
                 targets: [...formRef.current.querySelectorAll('.animated-block')],
                 duration: 1200,
                 delay(_, index) {
-                    return (index * 200) + 700;
+                    return (index * 200) + 1000;
                 },
                 opacity: [0, 1],
                 translateY: ['5vh', 0],

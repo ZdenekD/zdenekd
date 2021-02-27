@@ -8,25 +8,25 @@ import pages from '../../data/pages';
 import {variants, variant} from './nav.animations';
 import getPage from '../../helpers/getPage';
 import styles from './nav.css';
+import setMenu from '../../state/menu/actions';
 
 const Nav: React.FC = () => {
     const router = useRouter();
     const {state, dispatch} = useStateValue();
     const page = getPage(router.route);
     const handleAnimationComplete = () => {
-        dispatch(setAnimation({
-            animation: {
-                ...state.animation,
-                isAsideAnimated: false,
-            },
-        }));
+        dispatch(setAnimation({animation: {isAsideAnimated: false}}));
+    };
+    const handleClick = () => {
+        dispatch(setAnimation({animation: {isAsideAnimated: true}}));
+        dispatch(setMenu({menu: {isOpen: false}}));
     };
 
     return (
         <nav className={styles.nav} data-test="component-nav">
             <motion.ul
                 initial={false}
-                animate={state.menu.isOpen ? 'animate' : 'exit'}
+                animate={state.menu.isOpen ? 'enter' : 'exit'}
                 variants={variants}
                 className={styles.list}
                 onAnimationComplete={handleAnimationComplete}
@@ -42,6 +42,7 @@ const Nav: React.FC = () => {
                             <Anchor
                                 href={pages[key].route}
                                 className={`${styles.link} ${page === key ? styles.active : ''}`}
+                                onClick={handleClick}
                             >
                                 {pages[key].title}
                             </Anchor>

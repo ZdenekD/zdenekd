@@ -83,7 +83,7 @@ const Project: React.FC = () => {
             ],
             duration: 800,
             delay(_, i) {
-                return (i * 200) + 700;
+                return (i * 200) + 800;
             },
             opacity: [0, 1],
             translateY: ['5vh', 0],

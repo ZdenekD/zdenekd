@@ -1,6 +1,6 @@
 .wrapper {
-    opacity: 1;
     overflow: hidden;
+    background: #f7f7f7;
     line-height: 0;
     border-radius: 0 0 12px 12px;
 }

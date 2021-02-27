@@ -23,7 +23,12 @@ const Footer: React.FC = () => {
     useCursor(element);
 
     return (
-        <footer className={`${styles.footer} ${state.menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer">
+        <motion.footer
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: 0.6, delay: 0.8}}}
+            exit={{opacity: 0, transition: {duration: 0.4}}}
+            className={`${styles.footer} ${state.menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer"
+        >
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;zaklínadel&#125;</code>
             <a
                 ref={anchorRef}
@@ -36,14 +41,14 @@ const Footer: React.FC = () => {
             <Keys />
             <motion.span
                 initial={false}
-                animate={state.menu.isOpen ? 'animate' : 'exit'}
+                animate={state.menu.isOpen ? 'enter' : 'exit'}
                 variants={variants}
                 className={styles.scroll}
             >
                 Scroll
                 <i ref={dotRef} className={styles.dot}></i>
             </motion.span>
-        </footer>
+        </motion.footer>
     );
 };
 

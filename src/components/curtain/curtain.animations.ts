@@ -2,26 +2,29 @@ import {Variants} from 'framer-motion';
 
 const variants: Variants = {
     enter: {
-        opacity: 0,
+        y: '-100%',
+        opacity: 0.9,
+        background: 'var(--curtain-color)',
         transition: {
-            duration: 0.2,
+            duration: 1.2,
             ease: [
-                0.215,
-                0.61,
+                0.645,
+                0.045,
                 0.355,
                 1,
             ],
         },
     },
     exit: {
+        y: 0,
         opacity: 1,
+        background: 'var(--color-yellow-lighten-4)',
         transition: {
-            duration: 0.8,
-            delay: 1,
+            duration: 1.2,
             ease: [
-                0.165,
-                0.84,
-                0.44,
+                0.645,
+                0.045,
+                0.355,
                 1,
             ],
         },

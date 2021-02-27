@@ -1,7 +1,7 @@
 import {Variants} from 'framer-motion';
 
 const variants: Variants = {
-    animate: {
+    enter: {
         opacity: 1,
         transition: {
             duration: 0.4,
@@ -23,7 +23,7 @@ const variants: Variants = {
 };
 
 const variant: Variants = {
-    animate: {
+    enter: {
         y: 0,
         opacity: 1,
         transition: {

@@ -38,7 +38,7 @@ const Keys: React.FC = () => {
     return (
         <motion.div
             initial={false}
-            animate={state.menu.isOpen ? 'animate' : 'exit'}
+            animate={state.menu.isOpen ? 'enter' : 'exit'}
             variants={variants}
             className={styles.keys}
             data-test="component-keys"

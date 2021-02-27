@@ -5,6 +5,7 @@ import Footer from '../footer';
 import Section from '../section';
 import Aside from '../aside';
 import Cursor from '../cursor';
+import Curtain from '../curtain';
 import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
@@ -81,6 +82,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                     </Section>
                     <Aside />
                     <Footer />
+                    <Curtain />
                 </React.StrictMode>
             </main>
             <React.StrictMode>

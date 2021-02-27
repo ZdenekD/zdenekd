@@ -1,7 +1,7 @@
 import {Variants} from 'framer-motion';
 
 const variants: Variants = {
-    animate: {
+    enter: {
         y: 0,
         transition: {
             duration: 1,
