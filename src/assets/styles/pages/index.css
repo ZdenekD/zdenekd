@@ -23,7 +23,7 @@
 }
 
 .paragraph {
-    margin: var(--gap) 0;
+    margin: calc(3 * var(--gap)) 0 auto;
     color: var(--navigation-color);
     font-size: 1em;
     line-height: 1.75;

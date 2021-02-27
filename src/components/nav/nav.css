@@ -1,7 +1,7 @@
 @keyframes line-in {
     0% {
         opacity: 0;
-        transform: translateX(25vw) scaleX(8);
+        transform: translateX(100px) scaleX(8);
     }
 
     1% {
@@ -20,7 +20,7 @@
     }
     90% {
         opacity: 0;
-        transform: translateX(25vw) scaleX(4);
+        transform: translateX(100px) scaleX(4);
     }
     to {
         opacity: 0;

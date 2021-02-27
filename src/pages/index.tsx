@@ -13,10 +13,6 @@ const Page: React.FC = () => (
                 Profesionální hře na&nbsp;klávesnici se&nbsp;věnuji několik let.<br />
                 Pomohu vám převést přání do kódu, kterému rozumí lidé i stroje.
             </p>
-            <p className={`${styles.paragraph} _align-right`}>
-                <span>Tvořím s láskou a nadšením</span><br />
-                <span>ZdenekD</span>
-            </p>
         </article>
     </Layout>
 );
