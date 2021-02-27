@@ -3,6 +3,7 @@
 exports[`Keys match snapshot 1`] = `
 <div class="keys"
      data-test="component-keys"
+     style="opacity:1"
 >
   <button type="button"
           class="key "

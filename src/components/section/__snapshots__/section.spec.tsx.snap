@@ -3,6 +3,7 @@
 exports[`Section match snapshot 1`] = `
 <section class="section"
          data-test="component-section"
+         style="opacity:1"
 >
 </section>
 `;

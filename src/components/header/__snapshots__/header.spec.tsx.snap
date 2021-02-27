@@ -12,12 +12,14 @@ exports[`Header match snapshot 1`] = `
     <div class="wrapper ">
       <svg data-filename="src/assets/images/logo.svg">
       </svg>
-      <i class="shadow">
+      <i class="shadow"
+         style="opacity:1"
+      >
       </i>
     </div>
   </a>
   <button type="button"
-          class="button  "
+          class="button closed "
           data-test="component-menu"
           aria-label="Menu button"
   >
