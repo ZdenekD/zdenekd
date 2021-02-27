@@ -13,8 +13,8 @@ const Cursor: React.FC = () => {
     const outerCursorRef = React.useRef<HTMLElement | null>(null);
     const innerCursorRef = React.useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {
-        document.body.style.setProperty('--x', `${coordX}px`);
-        document.body.style.setProperty('--y', `${coordY}px`);
+        document.body.style.setProperty('--cursor-x', `${coordX}px`);
+        document.body.style.setProperty('--cursor-y', `${coordY}px`);
         outer.style.transform = `translate3d(${coordX}px, ${coordY}px, 0)`;
         outer.style.setProperty('--cursor-width', '30px');
         outer.style.setProperty('--cursor-height', '30px');

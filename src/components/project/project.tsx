@@ -2,12 +2,12 @@ import React from 'react';
 import anime from 'animejs';
 import Browser from './browser';
 import Controls from './controls';
+import Tools from './tools';
 import useProjectAction from '../../hooks/useProjectAction';
 import useCursor from '../../hooks/useCursor';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import {useStateValue} from '../../state';
 import projects from '../../data/projects';
-import config from '../../data/config';
 import styles from './project.css';
 
 const Project: React.FC = () => {
@@ -30,8 +30,8 @@ const Project: React.FC = () => {
         const {current: title} = titleRef;
         const {current: description} = descriptionRef;
         const {current: tools} = toolsWrapperRef;
-        const translateIn = state.project.index > project ? '-10vw' : '10vw';
-        const translateOut = state.project.index > project ? '5vw' : '-5vw';
+        const translateIn = state.project.index > project ? '10vw' : '-10vw';
+        const translateOut = state.project.index > project ? '-5vw' : '5vw';
 
         anime.timeline({easing: 'easeOutExpo'})
             .add({
@@ -127,20 +127,7 @@ const Project: React.FC = () => {
 
                 {projects[project]?.tools.length > 0 && (
                     <div ref={toolsWrapperRef} className={styles.toolsWrapper}>
-                        <ul ref={toolsRef} className={styles.tools}>
-                            {projects[project].tools.map(item => (
-                                <li key={item} className={styles.tool}>
-                                    <figure className={styles.figure}>
-                                        <img
-                                            src={`${config.cloudfront}/logo_${item}.svg`}
-                                            alt={`Technologie použitá v projektu: ${item}`}
-                                            className={styles.image}
-                                        />
-                                        <figcaption className={styles.caption}>{item}</figcaption>
-                                    </figure>
-                                </li>
-                            ))}
-                        </ul>
+                        <Tools ref={toolsRef} items={projects[project].tools} />
                     </div>
                 )}
 

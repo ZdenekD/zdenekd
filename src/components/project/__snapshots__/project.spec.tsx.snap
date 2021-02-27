@@ -4,80 +4,76 @@ exports[`Project match snapshot 1`] = `
 <div class="block"
      data-test="component-project"
 >
-  <header class="content"
-          style="opacity:0"
-  >
+  <header class="content">
     <h2 class="title"
         data-title="Tomton"
-        style="opacity:0;transform:translateX(20px) translateZ(0)"
     >
       Tomton
     </h2>
     <p class="description"
        data-title="Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award."
-       style="opacity:0;transform:translateX(20px) translateZ(0)"
     >
       Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.
     </p>
-    <ul class="tools"
-        style="opacity:0;transform:translateX(20px) translateZ(0)"
-    >
-      <li class="tool">
-        <figure class="figure">
-          <img src="/logo_react.svg"
-               alt="Technologie použitá v projektu: react"
-               class="image"
-          >
-          <figcaption class="caption">
-            react
-          </figcaption>
-        </figure>
-      </li>
-      <li class="tool">
-        <figure class="figure">
-          <img src="/logo_wordpress.svg"
-               alt="Technologie použitá v projektu: wordpress"
-               class="image"
-          >
-          <figcaption class="caption">
-            wordpress
-          </figcaption>
-        </figure>
-      </li>
-      <li class="tool">
-        <figure class="figure">
-          <img src="/logo_lottie.svg"
-               alt="Technologie použitá v projektu: lottie"
-               class="image"
-          >
-          <figcaption class="caption">
-            lottie
-          </figcaption>
-        </figure>
-      </li>
-      <li class="tool">
-        <figure class="figure">
-          <img src="/logo_animejs.svg"
-               alt="Technologie použitá v projektu: animejs"
-               class="image"
-          >
-          <figcaption class="caption">
-            animejs
-          </figcaption>
-        </figure>
-      </li>
-      <li class="tool">
-        <figure class="figure">
-          <img src="/logo_webpack.svg"
-               alt="Technologie použitá v projektu: webpack"
-               class="image"
-          >
-          <figcaption class="caption">
-            webpack
-          </figcaption>
-        </figure>
-      </li>
-    </ul>
+    <div class="toolsWrapper">
+      <ul class="tools">
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_react.svg"
+                 alt="Technologie použitá v projektu: react"
+                 class="image"
+            >
+            <figcaption class="caption">
+              react
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_wordpress.svg"
+                 alt="Technologie použitá v projektu: wordpress"
+                 class="image"
+            >
+            <figcaption class="caption">
+              wordpress
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_lottie.svg"
+                 alt="Technologie použitá v projektu: lottie"
+                 class="image"
+            >
+            <figcaption class="caption">
+              lottie
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_animejs.svg"
+                 alt="Technologie použitá v projektu: animejs"
+                 class="image"
+            >
+            <figcaption class="caption">
+              animejs
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_webpack.svg"
+                 alt="Technologie použitá v projektu: webpack"
+                 class="image"
+            >
+            <figcaption class="caption">
+              webpack
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
     <ul class="controls"
         data-test="component-controls"
     >

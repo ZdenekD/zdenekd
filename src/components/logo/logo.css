@@ -41,7 +41,7 @@
     left: calc(50% - 27.5%);
     z-index: -1;
     opacity: 0.75;
-    transform: translate3d(calc((-1 * var(--x) + 50vw) / var(--velocity)), calc((-1 * var(--y) + 50vh) / var(--velocity)), 0);
+    transform: translate3d(calc((-1 * var(--cursor-x) + 50vw) / var(--velocity)), calc((-1 * var(--cursor-y) + 50vh) / var(--velocity)), 0);
     will-change: transform;
     transition: var(--float-transition);
     border-radius: var(--border-radius);

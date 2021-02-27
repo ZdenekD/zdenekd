@@ -164,7 +164,7 @@ exports[`Layout match snapshot 1`] = `
     </span>
   </footer>
 </main>
-<i class="outerCursor "
+<i class="outerCursor"
    data-test="component-outer-cursor"
 >
 </i>
