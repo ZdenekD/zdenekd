@@ -1,11 +1,15 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 import Keys from '../keys';
 import useCursor from '../../hooks/useCursor';
+import {useStateValue} from '../../state';
+import {variants} from './footer.animations';
 import Icon from '../../assets/images/icon_message.svg';
 import getRoman from '../../helpers/getRoman';
 import styles from './footer.css';
 
 const Footer: React.FC = () => {
+    const {state} = useStateValue();
     const [element, setElement] = React.useState<HTMLAnchorElement | null>(null);
     const anchorRef = React.useRef<HTMLAnchorElement | null>(null);
     const dotRef = React.useRef<HTMLElement | null>(null);
@@ -19,7 +23,7 @@ const Footer: React.FC = () => {
     useCursor(element);
 
     return (
-        <footer className={`${styles.footer} ${styles.show}`} data-test="component-footer">
+        <footer className={`${styles.footer} ${state.menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer">
             <code className={styles.code}>&clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;zaklínadel&#125;</code>
             <a
                 ref={anchorRef}
@@ -30,10 +34,15 @@ const Footer: React.FC = () => {
                 <Icon className={styles.icon} />
             </a>
             <Keys />
-            <span className={styles.scroll}>
+            <motion.span
+                initial={false}
+                animate={state.menu.isOpen ? 'animate' : 'exit'}
+                variants={variants}
+                className={styles.scroll}
+            >
                 Scroll
                 <i ref={dotRef} className={styles.dot}></i>
-            </span>
+            </motion.span>
         </footer>
     );
 };

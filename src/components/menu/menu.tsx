@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
         <button
             ref={buttonRef}
             type="button"
-            className={`${styles.button} ${state.menu.isOpen ? styles.active : ''} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
+            className={`${styles.button} ${state.menu.isOpen ? styles.opened : styles.closed} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
             data-test="component-menu"
             aria-label="Menu button"
             onClick={handleClick}

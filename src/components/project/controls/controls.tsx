@@ -9,12 +9,12 @@ interface IControls {
     handleNext?: (event: React.MouseEvent) => void
 }
 
-const Controls: React.FC<IControls> = ({
+const Controls = React.forwardRef<HTMLUListElement, IControls>(({
     isFirst,
     isLast,
     handlePrev = undefined,
     handleNext = undefined,
-}) => {
+}, ref) => {
     const [prevElement, setPrevElement] = React.useState<HTMLButtonElement | null>(null);
     const [nextElement, setNextElement] = React.useState<HTMLButtonElement | null>(null);
     const prevRef = React.useRef<HTMLButtonElement | null>(null);
@@ -29,7 +29,7 @@ const Controls: React.FC<IControls> = ({
     useCursor(nextElement);
 
     return (
-        <ul className={styles.controls} data-test="component-controls">
+        <ul ref={ref} className={styles.controls} data-test="component-controls">
             <li className={styles.control}>
                 <button
                     ref={prevRef}
@@ -50,6 +50,8 @@ const Controls: React.FC<IControls> = ({
             </li>
         </ul>
     );
-};
+});
+
+Controls.displayName = 'Controls';
 
 export default Controls;

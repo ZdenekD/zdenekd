@@ -19,6 +19,7 @@ const Project: React.FC = () => {
     const toolsWrapperRef = React.useRef<HTMLDivElement | null>(null);
     const toolsRef = React.useRef<HTMLUListElement | null>(null);
     const browserRef = React.useRef<HTMLDivElement | null>(null);
+    const controlsRef = React.useRef<HTMLUListElement | null>(null);
     const setProjectAction = useProjectAction();
     const handlePrev = () => {
         setProjectAction(ProjectActionsEnum.prevProject);
@@ -71,6 +72,7 @@ const Project: React.FC = () => {
             const {current: description} = descriptionRef;
             const {current: tools} = toolsWrapperRef;
             const {current: browser} = browserRef;
+            const {current: controls} = controlsRef;
 
             anime({
                 targets: [
@@ -78,6 +80,7 @@ const Project: React.FC = () => {
                     description,
                     browser,
                     tools,
+                    controls,
                 ],
                 duration: 800,
                 delay(_, i) {
@@ -132,6 +135,7 @@ const Project: React.FC = () => {
                 )}
 
                 <Controls
+                    ref={controlsRef}
                     isFirst={state.project.isFirst}
                     isLast={state.project.isLast}
                     handlePrev={handlePrev}

@@ -2,9 +2,9 @@ import {Variants} from 'framer-motion';
 
 const variants: Variants = {
     animate: {
-        y: 0,
+        opacity: 0,
         transition: {
-            duration: 1,
+            duration: 0.8,
             ease: [
                 0.215,
                 0.61,
@@ -14,10 +14,10 @@ const variants: Variants = {
         },
     },
     exit: {
-        y: '-100%',
+        opacity: 1,
         transition: {
-            duration: 0.6,
-            delay: 0.8,
+            duration: 0.8,
+            delay: 1.1,
             ease: [
                 0.165,
                 0.84,

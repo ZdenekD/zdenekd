@@ -8,7 +8,7 @@ interface ITools {
 
 const Tools = React.forwardRef<HTMLUListElement, ITools>(({items}, ref) => (
     <ul ref={ref} className={styles.tools}>
-        {items.map(item => (
+        {items.map((item: string) => (
             <li key={item} className={styles.tool}>
                 <figure className={styles.figure}>
                     <img

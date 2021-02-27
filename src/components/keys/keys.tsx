@@ -1,7 +1,10 @@
 import React from 'react';
 import {useRouter} from 'next/router';
+import {motion} from 'framer-motion';
 import Key from './key';
 import pages from '../../data/pages';
+import {useStateValue} from '../../state';
+import {variants} from './keys.animations';
 import usePageAction from '../../hooks/usePageAction';
 import useProjectAction from '../../hooks/useProjectAction';
 import PagesEnum from '../../enums/PagesEnum';
@@ -11,6 +14,7 @@ import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import styles from './keys.css';
 
 const Keys: React.FC = () => {
+    const {state} = useStateValue();
     const router = useRouter();
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();
@@ -32,7 +36,13 @@ const Keys: React.FC = () => {
     };
 
     return (
-        <div className={styles.keys} data-test="component-keys">
+        <motion.div
+            initial={false}
+            animate={state.menu.isOpen ? 'animate' : 'exit'}
+            variants={variants}
+            className={styles.keys}
+            data-test="component-keys"
+        >
             <Key
                 direction={DirectionsEnum.up}
                 label="Předchozí stránka"
@@ -59,7 +69,7 @@ const Keys: React.FC = () => {
                     onClick={handleKeyRight}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 
