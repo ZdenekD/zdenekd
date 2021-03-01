@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form/Contact match snapshot 1`] = `
+<form class="form form"
+      data-test="component-form"
+>
+  <div class="animated-block">
+    <div class="control   ">
+      <input type="text"
+             id="_34rFI1"
+             name="name"
+             class="input   "
+             required
+             maxlength="30"
+             data-test="component-input"
+      >
+      <label for="_34rFI1"
+             class="label"
+      >
+        <span class="labelContent">
+          Jméno
+          <sup class="required">
+            *
+          </sup>
+        </span>
+      </label>
+      <span class="maxlength"
+            data-test="component-input-maxlength"
+      >
+        0 / 30
+      </span>
+    </div>
+  </div>
+  <div class="animated-block">
+    <div class="control   ">
+      <input type="email"
+             id="_34rFI2"
+             name="email"
+             class="input   "
+             required
+             maxlength="90"
+             data-test="component-input"
+      >
+      <label for="_34rFI2"
+             class="label"
+      >
+        <span class="labelContent">
+          E-mail
+          <sup class="required">
+            *
+          </sup>
+        </span>
+      </label>
+      <span class="maxlength"
+            data-test="component-input-maxlength"
+      >
+        0 / 90
+      </span>
+    </div>
+  </div>
+  <div class="animated-block">
+    <div class="control   ">
+      <textarea id="_34rFI3"
+                name="message"
+                class="textarea   "
+                required
+                maxlength="255"
+                data-test="component-textarea"
+      >
+      </textarea>
+      <label for="_34rFI3"
+             class="label"
+      >
+        <span class="labelContent">
+          Zpráva
+          <sup class="required">
+            *
+          </sup>
+        </span>
+      </label>
+      <span class="maxlength"
+            data-test="component-textarea-maxlength"
+      >
+        0 / 255
+      </span>
+    </div>
+  </div>
+  <input type="text"
+         name="med"
+         autocomplete="off"
+         tabindex="-1"
+         class="_visuallyhidden"
+  >
+  <div class="animated-block">
+    <button type="submit"
+            class="button  submit"
+            data-test="component-button"
+    >
+      Odeslat
+    </button>
+  </div>
+</form>
+`;

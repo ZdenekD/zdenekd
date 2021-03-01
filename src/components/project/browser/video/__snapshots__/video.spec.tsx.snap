@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video match snapshot 1`] = `
+<div class="wrapper"
+     data-test="component-video"
+     style="opacity:0"
+>
+  <video playsinline
+         autoplay
+         muted
+         loop
+         preload="auto"
+         class="video"
+         title="Ukázka projektu: title. Stránky se nacházejí zde: http://url"
+  >
+    <track kind="captions">
+    <track kind="description"
+           label="title"
+    >
+    <source src="/video/id.mp4"
+            type="video/mp4"
+    >
+  </video>
+</div>
+`;

@@ -1,0 +1,218 @@
+.control {
+    width: 100%;
+    margin: 0 auto calc(2 * var(--gap));
+    position: relative;
+
+    @media (--min-lg) {
+        margin-bottom: calc(3 * var(--gap));
+    }
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.textarea,
+.label {
+    --label-color: var(--color-blue-darken-4);
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 70px 0 var(--gap);
+}
+
+.textarea {
+    overflow: hidden;
+    color: var(--label-color);
+    font-size: 1.2em;
+    line-height: var(--input-height);
+    resize: none;
+
+    &:focus,
+    &[placeholder] {
+
+        + .label {
+            --label-color: var(--color-blue);
+
+            &::after {
+                background: var(--label-color);
+                transform: scale3d(1, 0.5, 1);
+            }
+
+            .labelContent {
+                color: var(--label-color);
+                transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
+
+                @media (--min-md) {
+                    transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+                }
+            }
+        }
+    }
+
+    &::placeholder {
+        color: var(--color-light-gray);
+    }
+
+    &::selection {
+        background: var(--label-color);
+    }
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2em;
+    text-align: left;
+
+    &::after {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        content: '';
+        background-color: var(--label-color);
+        transform-origin: 50% 100%;
+        transition-property: transform, background-color;
+        transition-duration: var(--transition-duration);
+        transition-timing-function: var(--transition-timing);
+    }
+
+    @media (--min-md) {
+        font-size: 1.4em;
+    }
+}
+
+.labelContent {
+    display: inline-block;
+    transform-origin: 0 0;
+    transition-property: transform, color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing);
+
+    &::selection {
+        background: var(--label-color);
+    }
+}
+
+.nonempty {
+
+    + .label {
+        --label-color: var(--color-blue);
+
+        &::after {
+            background: var(--label-color);
+            transform: scale3d(1, 0.5, 1);
+        }
+
+        .labelContent {
+            color: var(--label-color);
+            transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
+
+            @media (--min-md) {
+                transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+            }
+        }
+    }
+}
+
+.success {
+
+    &:focus {
+
+        + .label {
+            --label-color: var(--color-green);
+        }
+    }
+
+    + .label {
+        --label-color: var(--color-green);
+    }
+}
+
+.info {
+
+    &:focus {
+
+        + .label {
+            --label-color: var(--color-blue);
+        }
+    }
+
+    + .label {
+        --label-color: var(--color-blue);
+    }
+}
+
+.warning {
+
+    &:focus {
+
+        + .label {
+            --label-color: var(--color-orange);
+        }
+    }
+
+    + .label {
+        --label-color: var(--color-orange);
+    }
+}
+
+.danger {
+
+    &:focus {
+
+        + .label {
+            --label-color: var(--color-red);
+        }
+    }
+
+    + .label {
+        --label-color: var(--color-red);
+    }
+}
+
+.required {
+    margin-left: calc(0.25 * var(--gap));
+    position: relative;
+    top: -5px;
+    color: var(--color-red);
+    font-size: 0.9rem;
+
+    &::selection {
+        background: var(--label-color);
+    }
+}
+
+.maxlength {
+    height: var(--input-height);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: calc(1px + calc(0.5 * var(--gap)));
+    color: var(--color-gray);
+    font-size: 0.8em;
+
+    &::selection {
+        background: var(--color-gray);
+    }
+}
+
+.error {
+    max-width: 60%;
+    display: inline-block;
+    position: absolute;
+    top: calc(100% + 1em);
+    right: 0;
+    color: var(--color-red);
+    font-size: 0.95em;
+
+    &::selection {
+        background: var(--color-red);
+    }
+}

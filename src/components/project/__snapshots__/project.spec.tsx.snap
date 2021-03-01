@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project match snapshot 1`] = `
+<div class="block"
+     data-test="component-project"
+>
+  <header class="content">
+    <h2 class="title"
+        data-title="Tomton"
+    >
+      Tomton
+    </h2>
+    <p class="description"
+       data-title="Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award."
+    >
+      Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.
+    </p>
+    <div class="toolsWrapper">
+      <ul class="tools">
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_react.svg"
+                 alt="Technologie použitá v projektu: react"
+                 class="image"
+            >
+            <figcaption class="caption">
+              react
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_wordpress.svg"
+                 alt="Technologie použitá v projektu: wordpress"
+                 class="image"
+            >
+            <figcaption class="caption">
+              wordpress
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_lottie.svg"
+                 alt="Technologie použitá v projektu: lottie"
+                 class="image"
+            >
+            <figcaption class="caption">
+              lottie
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_animejs.svg"
+                 alt="Technologie použitá v projektu: animejs"
+                 class="image"
+            >
+            <figcaption class="caption">
+              animejs
+            </figcaption>
+          </figure>
+        </li>
+        <li class="tool">
+          <figure class="figure">
+            <img src="/logo_webpack.svg"
+                 alt="Technologie použitá v projektu: webpack"
+                 class="image"
+            >
+            <figcaption class="caption">
+              webpack
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+    <ul class="controls"
+        data-test="component-controls"
+    >
+      <li class="control">
+        <button type="button"
+                class="prev disabled"
+                aria-label="Předchozí projekt"
+        >
+        </button>
+      </li>
+      <li class="control">
+        <button type="button"
+                class="next "
+                aria-label="Následující projekt"
+        >
+        </button>
+      </li>
+    </ul>
+  </header>
+  <section class="browser"
+           data-test="component-browser"
+  >
+    <header class="header">
+      <span class="controls">
+        <i class="control">
+        </i>
+        <i class="control">
+        </i>
+        <i class="control">
+        </i>
+      </span>
+      <button type="button"
+              class="prev disabled"
+              aria-label="Předchozí projekt"
+              tabindex="0"
+              data-test="component-prev"
+      >
+      </button>
+      <button type="button"
+              class="next "
+              aria-label="Následující projekt"
+              tabindex="0"
+              data-test="component-next"
+      >
+      </button>
+      <div class="addressbar https"
+           data-test="component-addressbar"
+      >
+        <a href="https://www.tomton.cz"
+           target="_blank"
+           rel="noreferrer noopener"
+           aria-label="Otevřít referenci v novém okně"
+        >
+          https://www.tomton.cz
+        </a>
+      </div>
+      <div class="target">
+        <a href="https://www.tomton.cz"
+           class="anchor targetLink"
+           target="_blank"
+           rel="noreferrer noopener"
+           data-test="component-anchor"
+        >
+          <svg data-filename="src/assets/images/icon_open.svg">
+          </svg>
+        </a>
+      </div>
+    </header>
+    <div class="wrapper"
+         data-test="component-video"
+         style="opacity:0"
+    >
+      <video playsinline
+             autoplay
+             muted
+             loop
+             preload="auto"
+             class="video"
+             title="Ukázka projektu: Tomton. Stránky se nacházejí zde: https://www.tomton.cz"
+      >
+        <track kind="captions">
+        <track kind="description"
+               label="Tomton"
+        >
+        <source src="/video/tomton.mp4"
+                type="video/mp4"
+        >
+      </video>
+    </div>
+  </section>
+</div>
+`;

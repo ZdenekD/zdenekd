@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo match snapshot 1`] = `
+<div class="wrapper ">
+  <svg data-filename="src/assets/images/logo.svg">
+  </svg>
+  <i class="shadow"
+     style="opacity:1"
+  >
+  </i>
+</div>
+`;

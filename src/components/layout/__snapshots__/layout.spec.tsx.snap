@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout match snapshot 1`] = `
+<main class="main "
+      data-test="component-layout"
+>
+  <header class="header"
+          data-test="component-header"
+  >
+    <a href="/"
+       class="link "
+       aria-label="Odkaz na domovskou stránku"
+       data-test="component-heading"
+    >
+      <div class="wrapper ">
+        <svg data-filename="src/assets/images/logo.svg">
+        </svg>
+        <i class="shadow"
+           style="opacity:1"
+        >
+        </i>
+      </div>
+    </a>
+    <button type="button"
+            class="button closed "
+            data-test="component-menu"
+            aria-label="Menu button"
+    >
+      <svg class="icon"
+           viewbox="0 0 100 100"
+      >
+        <path d="M30,40 L70,40 Z">
+        </path>
+        <path d="M30,50 L70,50 Z">
+        </path>
+        <path d="M30,60 L70,60 Z">
+        </path>
+      </svg>
+    </button>
+  </header>
+  <section class="section"
+           data-test="component-section"
+           style="opacity:0"
+  >
+    <noscript>
+      <strong>
+        Nemáte zapnutý Javascript
+      </strong>
+      <p>
+        Některé součásti stránek Vám nemusí fungovat správně.
+        <br>
+        Zde jsou
+        <a href="https://www.enable-javascript.com/cz/"
+           target="_blank"
+           rel="noreferrer noopener"
+        >
+          instrukce
+        </a>
+        jak povolit JavaScript ve Vašem webovém prohlížeči.
+      </p>
+    </noscript>
+    Content
+  </section>
+  <aside class="aside"
+         data-test="component-aside"
+         style="transform:translateY(-100%) translateZ(0)"
+  >
+    <nav class="nav"
+         data-test="component-nav"
+    >
+      <ul class="list"
+          style="opacity:0"
+      >
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
+          <a href="/"
+             class="anchor link "
+             data-test="component-anchor"
+          >
+            Úvodní stránka
+          </a>
+        </li>
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
+          <a href="/projects"
+             class="anchor link "
+             data-test="component-anchor"
+          >
+            Projekty
+          </a>
+        </li>
+        <li class="item"
+            data-test="component-item"
+            style="opacity:0;transform:translateY(-6vh) translateZ(0)"
+        >
+          <a href="/contact"
+             class="anchor link "
+             data-test="component-anchor"
+          >
+            Kontakt
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <footer class="footer closed"
+          data-test="component-footer"
+          style="opacity:0"
+  >
+    <code class="code">
+      ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
+    </code>
+    <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
+       title="Zpráva přímo do schránky"
+       class="link"
+    >
+      <svg data-filename="src/assets/images/icon_message.svg">
+      </svg>
+    </a>
+    <div class="keys"
+         data-test="component-keys"
+         style="opacity:1"
+    >
+      <button type="button"
+              class="key "
+              aria-label="Předchozí stránka"
+              data-test="component-key"
+      >
+        <i class="icon up">
+        </i>
+      </button>
+      <div class="key">
+        <button type="button"
+                class="key disabled"
+                aria-label="Předchozí projekt"
+                data-test="component-key"
+                disabled
+        >
+          <i class="icon left">
+          </i>
+        </button>
+        <button type="button"
+                class="key "
+                aria-label="Následující stránka"
+                data-test="component-key"
+        >
+          <i class="icon down">
+          </i>
+        </button>
+        <button type="button"
+                class="key disabled"
+                aria-label="Následující projekt"
+                data-test="component-key"
+                disabled
+        >
+          <i class="icon right">
+          </i>
+        </button>
+      </div>
+    </div>
+    <span class="scroll"
+          style="opacity:1"
+    >
+      Scroll
+      <i class="dot">
+      </i>
+    </span>
+  </footer>
+  <div class="curtain"
+       style="background:var(--color-yellow-lighten-4);transform:none"
+  >
+  </div>
+</main>
+<i class="outerCursor"
+   data-test="component-outer-cursor"
+>
+</i>
+<i class="innerCursor "
+   data-test="component-inner-cursor"
+>
+</i>
+`;

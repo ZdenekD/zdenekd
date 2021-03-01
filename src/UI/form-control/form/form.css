@@ -1,0 +1,7 @@
+.form {
+    width: 75vw;
+    max-width: 70ch;
+    margin: auto;
+    opacity: 1;
+    transition: opacity var(--transition-timing) var(--transition-duration);
+}

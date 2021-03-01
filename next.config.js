@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config();
 
-const styles = require('@zeit/next-css');
+const styles = require('./next-css');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -19,6 +20,5 @@ module.exports = styles({
 
         return config;
     },
-    env: {SENDGRID_API_KEY: process.env.SENDGRID_API_KEY},
     poweredByHeader: false,
 });

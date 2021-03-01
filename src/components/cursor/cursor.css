@@ -16,12 +16,13 @@
     height: var(--cursor-height);
     top: -15px;
     left: -15px;
-    opacity: .4;
+    opacity: 0.8;
+    color: var(--color-blue-darken-4);
+    will-change: transform;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: var(--ease-out-quart);
     border-radius: var(--cursor-radius);
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition: all .2s var(--ease-out-quart);
-    }
 }
 
 .innerCursor {
@@ -30,5 +31,11 @@
     top: -4px;
     left: -4px;
     background: var(--color-blue-darken-4);
+    will-change: transform;
+    transition: background var(--transition-duration) var(--transition-timing);
     border: 1px solid var(--color-white);
+}
+
+.innerCursorStuck {
+    background: var(--color-red);
 }

@@ -29,13 +29,13 @@
     "at-rule-empty-line-before": ["always", {
       "except": ["blockless-after-same-name-blockless"],
       "ignore": ["after-comment"],
-      "ignoreAtRules": ["font-face", "mixin", "include", "extend"]
+      "ignoreAtRules": ["font-face", "mixin", "include", "extend", "tailwind", "apply", "layer"]
     }],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": true,
     "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["import-normalize", "mixin", "include", "extend"]
+      "ignoreAtRules": ["import-normalize", "mixin", "include", "extend", "tailwind", "apply", "layer"]
     }],
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
@@ -100,7 +100,7 @@
     "no-unknown-animations": [true, {
       "severity": "warning"
     }],
-    "number-leading-zero": "never",
+    "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
@@ -110,6 +110,10 @@
     "order/order": [
       "custom-properties",
       "declarations",
+      {
+        "type": "rule",
+        "selector": "^@apply[\\w-]+"
+      },
       {
         "type": "rule",
         "selector": "^&:[\\w-]+"
