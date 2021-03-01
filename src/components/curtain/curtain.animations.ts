@@ -3,7 +3,6 @@ import {Variants} from 'framer-motion';
 const variants: Variants = {
     enter: {
         y: '-100%',
-        opacity: 0.9,
         background: 'var(--curtain-color)',
         transition: {
             duration: 1.2,
@@ -17,7 +16,6 @@ const variants: Variants = {
     },
     exit: {
         y: 0,
-        opacity: 1,
         background: 'var(--color-yellow-lighten-4)',
         transition: {
             duration: 1.2,

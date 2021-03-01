@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
     return (
         <motion.footer
             initial={{opacity: 0}}
-            animate={{opacity: 1, transition: {duration: 0.6, delay: 0.8}}}
+            animate={{opacity: 1, transition: {duration: 0.6, delay: 1.4}}}
             exit={{opacity: 0, transition: {duration: 0.4}}}
             className={`${styles.footer} ${state.menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer"
         >

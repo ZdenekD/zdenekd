@@ -1,10 +1,9 @@
 import {Variants} from 'framer-motion';
 
 const variants: Variants = {
-    initial: {opacity: 0, scale: 1},
+    initial: {opacity: 0},
     enter: {
         opacity: 1,
-        scale: 1,
         transition: {
             duration: 0.6,
             delay: 0.8,
@@ -18,7 +17,6 @@ const variants: Variants = {
     },
     exit: {
         opacity: 0,
-        scale: 0.98,
         transition: {
             duration: 0.8,
             ease: [
