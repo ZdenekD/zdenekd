@@ -66,7 +66,7 @@ const Input = React.forwardRef<HTMLInputElement, IInput>(({
             {error && (<span className={styles.error} data-test="component-input-error">{error}</span>)}
 
             {maxlength && (
-                <span className={styles.maxlength}>
+                <span className={styles.maxlength} data-test="component-input-maxlength">
                     {length} / {maxlength}
                 </span>
             )}

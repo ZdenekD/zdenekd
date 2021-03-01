@@ -158,7 +158,7 @@ exports[`Project match snapshot 1`] = `
         <track kind="description"
                label="Tomton"
         >
-        <source src="/tomton.mp4"
+        <source src="/video/tomton.mp4"
                 type="video/mp4"
         >
       </video>

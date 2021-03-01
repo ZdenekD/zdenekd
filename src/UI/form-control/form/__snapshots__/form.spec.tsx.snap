@@ -4,5 +4,6 @@ exports[`Form match snapshot 1`] = `
 <form class="form "
       data-test="component-form"
 >
+  Content
 </form>
 `;

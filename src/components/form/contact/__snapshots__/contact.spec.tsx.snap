@@ -24,7 +24,9 @@ exports[`Form/Contact match snapshot 1`] = `
           </sup>
         </span>
       </label>
-      <span class="maxlength">
+      <span class="maxlength"
+            data-test="component-input-maxlength"
+      >
         0 / 30
       </span>
     </div>
@@ -49,7 +51,9 @@ exports[`Form/Contact match snapshot 1`] = `
           </sup>
         </span>
       </label>
-      <span class="maxlength">
+      <span class="maxlength"
+            data-test="component-input-maxlength"
+      >
         0 / 90
       </span>
     </div>
@@ -74,7 +78,9 @@ exports[`Form/Contact match snapshot 1`] = `
           </sup>
         </span>
       </label>
-      <span class="maxlength">
+      <span class="maxlength"
+            data-test="component-textarea-maxlength"
+      >
         0 / 255
       </span>
     </div>

@@ -6,7 +6,7 @@ describe('Form', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Form />);
+        wrapper = shallow(<Form>Content</Form>);
     });
 
     it('match snapshot', () => {

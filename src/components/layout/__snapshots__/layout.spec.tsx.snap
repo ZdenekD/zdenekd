@@ -40,7 +40,7 @@ exports[`Layout match snapshot 1`] = `
   </header>
   <section class="section"
            data-test="component-section"
-           style="opacity:1"
+           style="opacity:0"
   >
     <noscript>
       <strong>
@@ -109,6 +109,7 @@ exports[`Layout match snapshot 1`] = `
   </aside>
   <footer class="footer closed"
           data-test="component-footer"
+          style="opacity:0"
   >
     <code class="code">
       ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
@@ -169,6 +170,10 @@ exports[`Layout match snapshot 1`] = `
       </i>
     </span>
   </footer>
+  <div class="curtain"
+       style="background:var(--color-yellow-lighten-4);transform:none"
+  >
+  </div>
 </main>
 <i class="outerCursor"
    data-test="component-outer-cursor"

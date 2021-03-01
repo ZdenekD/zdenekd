@@ -71,7 +71,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, ITextarea>(({
             {error && (<span className={styles.error} data-test="component-textarea-error">{error}</span>)}
 
             {maxlength && (
-                <span className={styles.maxlength}>
+                <span className={styles.maxlength} data-test="component-textarea-maxlength">
                     {length} / {maxlength}
                 </span>
             )}

@@ -20,9 +20,16 @@ describe('Input', () => {
         expect(component.exists()).toBe(true);
     });
 
-    it('renders error', () => {
+    it('renders message component on error', () => {
         const container = shallow(<Input name="input" label="Input" error="Error message" />);
         const component = findComponent(container, 'component-input-error');
+
+        expect(component.exists()).toBe(true);
+    });
+
+    it('renders maxlength component', () => {
+        const container = shallow(<Input name="input" label="Input" maxlength={10} />);
+        const component = findComponent(container, 'component-input-maxlength');
 
         expect(component.exists()).toBe(true);
     });

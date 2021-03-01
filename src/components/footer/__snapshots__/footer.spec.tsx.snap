@@ -3,6 +3,7 @@
 exports[`Footer match snapshot 1`] = `
 <footer class="footer closed"
         data-test="component-footer"
+        style="opacity:0"
 >
   <code class="code">
     ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
