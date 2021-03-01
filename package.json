@@ -17,9 +17,6 @@
     "story:build": "build-storybook -c .storybook -o .storybook/build",
     "jest": "jest --watch",
     "jest:coverage": "jest --coverage",
-    "cypress": "cypress run",
-    "cypress:open": "cypress open",
-    "percy": "percy exec -- cypress run",
     "hint:local": "hint http://localhost:3000",
     "hint:dev": "hint https://zdenekd.now.sh",
     "hint:prod": "hint https://zdenekd.cz"
@@ -31,7 +28,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@hint/configuration-web-recommended": "^8.1.0",
-    "@percy/cypress": "^2.3.1",
     "@storybook/addon-a11y": "^6.1.18",
     "@storybook/addon-actions": "^6.1.18",
     "@storybook/addon-backgrounds": "^6.1.18",
@@ -55,7 +51,6 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "css-loader": "^5.0.2",
     "cssnano": "^4.1.10",
-    "cypress": "^6.2.0",
     "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "eslint": "^7.5.0",
