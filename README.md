@@ -41,6 +41,16 @@ master branch - **production**
 develop branch - stage/development preview
 ```
 
+### Convert video
+
+Convert video with YUV444 (e.g. generated with Kazam program)
+
+-   firefox bug (https://bugzilla.mozilla.org/show_bug.cgi?id=1368063)
+
+```
+ffmpeg -i video-name.mp4 -vf scale=800:450 -pix_fmt yuv420p video-name_converted.mp4
+```
+
 ### Building
 
 Project is automatically build on [Zeit.co](https://zeit.co/dashboard).
