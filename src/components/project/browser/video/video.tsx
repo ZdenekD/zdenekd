@@ -36,7 +36,7 @@ const Video: React.FC<IVideo> = ({project}) => {
                 >
                     <track kind="captions" />
                     <track kind="description" label={project.title} />
-                    <source src={`${config.cloudfront}/${project.id}.mp4`} type="video/mp4" />
+                    <source src={`${config.cloudfront}/video/${project.id}.mp4`} type="video/mp4" />
                 </video>
             </motion.div>
         </AnimatePresence>

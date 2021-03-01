@@ -1,10 +1,6 @@
 .target {
-    margin-left: var(--gap);
-    display: none;
-
-    @media (--min-sm) {
-        display: block;
-    }
+    margin-left: auto;
+    display: flex;
 }
 
 .targetLink {

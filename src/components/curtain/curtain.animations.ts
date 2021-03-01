@@ -2,7 +2,7 @@ import {Variants} from 'framer-motion';
 
 const variants: Variants = {
     enter: {
-        y: '-100%',
+        y: '100%',
         background: 'var(--curtain-color)',
         transition: {
             duration: 1.2,

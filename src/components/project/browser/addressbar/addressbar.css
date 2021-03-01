@@ -2,6 +2,7 @@
     width: 100%;
     height: 24px;
     padding-left: 32px;
+    display: none;
     position: relative;
     background-color: var(--navigation-color);
     color: var(--color-white);
@@ -33,8 +34,13 @@
     }
 
     @media (--min-sm) {
+        margin-right: var(--gap);
+        margin-left: var(--gap);
+        display: flex;
+    }
+
+    @media (--min-md) {
         width: 50%;
-        margin-left: 24px;
     }
 }
 

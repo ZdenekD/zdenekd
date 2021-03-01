@@ -1,11 +1,18 @@
 .header {
     width: 100%;
-    padding: var(--gap) calc(2 * var(--gap));
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: var(--zindex-header);
+
+    @media (--min-xs) {
+        padding: var(--gap);
+    }
+
+    @media (--min-md) {
+        padding: var(--gap) calc(2 * var(--gap)) 0;
+    }
 }
 
 .link {

@@ -8,7 +8,7 @@ import ProjectActionsEnum from '../enums/ProjectActionsEnum';
 const useKeyboard = (): void => {
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();
-    const handleKeyboard = (event: KeyboardEvent) => {
+    const handleKeyboard = (event: KeyboardEvent): void => {
         const distributor: {[key: string]: () => void} = {
             ArrowUp() {
                 setPageAction(PageActionsEnum.prevPage);
@@ -27,12 +27,6 @@ const useKeyboard = (): void => {
             },
             ArrowLeft() {
                 setProjectAction(ProjectActionsEnum.prevProject);
-            },
-            Home() {
-                setPageAction(PageActionsEnum.firstPage);
-            },
-            End() {
-                setPageAction(PageActionsEnum.lastPage);
             },
         };
 

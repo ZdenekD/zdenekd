@@ -15,7 +15,7 @@
 }
 
 .heading {
-    margin: var(--gap) auto;
+    margin: 0 auto var(--gap);
     position: relative;
     opacity: 0;
     color: var(--content-heading);
@@ -43,15 +43,14 @@
     }
 
     @media (--min-md) {
-        font-size: 2.2em;
+        font-size: 1.8em;
     }
 
     @media (--min-lg) {
-        margin: var(--gap) auto;
-        font-size: 2.4em;
+        font-size: 2em;
     }
 
     @media (--min-xl) {
-        font-size: 2.8em;
+        font-size: 2.4em;
     }
 }

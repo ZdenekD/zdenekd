@@ -40,7 +40,6 @@
 }
 
 .prev {
-    margin-left: var(--gap);
 
     &::before {
         transform: translateX(-50%) rotate(-45deg);

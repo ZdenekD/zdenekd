@@ -41,13 +41,10 @@ const Project: React.FC = () => {
                     description,
                     tools,
                 ],
-                duration: 600,
-                delay(_, i) {
-                    return i * 100;
-                },
+                duration: 200,
                 opacity: [1, 0],
                 translateX: [0, translateOut],
-                complete() {
+                begin() {
                     setProject(state.project.index);
                 },
             })

@@ -1,7 +1,11 @@
 .control {
     width: 100%;
-    margin: 0 auto calc(3 * var(--gap));
+    margin: 0 auto calc(2 * var(--gap));
     position: relative;
+
+    @media (--min-lg) {
+        margin-bottom: calc(3 * var(--gap));
+    }
 }
 
 .disabled {
@@ -14,7 +18,7 @@
     --label-color: var(--color-blue-darken-4);
     width: 100%;
     height: var(--input-height);
-    padding: 0 60px 0 var(--gap);
+    padding: 0 70px 0 var(--gap);
 }
 
 .textarea {
@@ -37,7 +41,11 @@
 
             .labelContent {
                 color: var(--label-color);
-                transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+                transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
+
+                @media (--min-md) {
+                    transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+                }
             }
         }
     }
@@ -103,7 +111,11 @@
 
         .labelContent {
             color: var(--label-color);
-            transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+            transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
+
+            @media (--min-md) {
+                transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ const variants: Variants = {
     exit: {
         opacity: 0,
         transition: {
-            duration: 0.8,
+            duration: 0.6,
             ease: [
                 0.645,
                 0.045,

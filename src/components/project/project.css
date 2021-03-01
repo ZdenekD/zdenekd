@@ -3,9 +3,17 @@
     margin: auto;
     padding: var(--gap) 0;
     display: grid;
-    grid-template: max-content / 1fr 1.5fr;
-    grid-template-areas: 'description preview';
     grid-column-gap: calc(2 * var(--gap));
+
+    @media (--min-xs) {
+        grid-template: auto / 1fr;
+        grid-template-areas: 'preview';
+    }
+
+    @media (--min-lg) {
+        grid-template: minmax(25vh, 50vh) / 1fr 1.5fr;
+        grid-template-areas: 'description preview';
+    }
 }
 
 .content {

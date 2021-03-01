@@ -9,6 +9,7 @@ import Curtain from '../curtain';
 import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
+import useSwipe from '../../hooks/useSwipe';
 import {useStateValue} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
@@ -23,6 +24,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
 
     useKeyboard();
     useWheel();
+    useSwipe();
 
     return (
         <>
