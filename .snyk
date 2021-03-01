@@ -989,12 +989,16 @@ ignore:
     - next > @ampproject/toolbox-optimizer > node-fetch:
         reason: None given
         expires: '2020-11-06T09:06:16.713Z'
-      next > @ampproject/toolbox-optimizer > cross-fetch > node-fetch:
-        reason: None given
-        expires: '2020-11-06T09:08:54.557Z'
     - next > @ampproject/toolbox-optimizer > @ampproject/toolbox-validator-rules > cross-fetch > node-fetch:
         reason: None given
         expires: '2020-11-06T09:08:54.557Z'
+    - next > @ampproject/toolbox-optimizer > cross-fetch > node-fetch:
+        reason: None given
+        expires: '2020-11-06T09:08:54.557Z'
+  SNYK-JS-GLOBPARENT-1016905:
+    - next > chokidar > glob-parent:
+        reason: None given
+        expires: '2021-03-31T21:27:47.595Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:
