@@ -6,7 +6,7 @@ import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.css';
 
 const Menu: React.FC = () => {
-    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
     const {state, dispatch} = useStateValue();
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
@@ -19,7 +19,7 @@ const Menu: React.FC = () => {
             pathBottom: pathBottomRef.current,
         });
     };
-    const handleTriggerAnimationOff = () => {
+    const handleTriggerAnimationOut = () => {
         animationOut({
             pathTop: pathTopRef.current,
             pathMiddle: pathMiddleRef.current,
@@ -31,14 +31,14 @@ const Menu: React.FC = () => {
     };
 
     React.useEffect(() => {
-        (state.menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOff)();
+        (state.menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
     }, [state.menu.isOpen]);
 
     React.useEffect(() => {
-        setElement(buttonRef.current);
+        setCatcher(buttonRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <button

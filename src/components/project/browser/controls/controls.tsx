@@ -36,7 +36,7 @@ const Controls: React.FC<IControls> = ({
                 className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
                 aria-label="Předchozí projekt"
                 tabIndex={0}
-                data-test="component-prev"
+                data-test="component-controls-prev"
                 onClick={handlePrev}
             />
             <button
@@ -45,7 +45,7 @@ const Controls: React.FC<IControls> = ({
                 className={`${styles.next} ${isLast ? styles.disabled : ''}`}
                 aria-label="Následující projekt"
                 tabIndex={0}
-                data-test="component-next"
+                data-test="component-controls-next"
                 onClick={handleNext}
             />
         </>

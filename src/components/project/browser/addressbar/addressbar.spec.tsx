@@ -18,4 +18,12 @@ describe('Addressbar', () => {
 
         expect(component.exists()).toBe(true);
     });
+
+    it('does not render link if url contains `in.progress`', () => {
+        const url = 'http://project.in.progress';
+        const container = shallow(<Addressbar url={url} />);
+        const component = findComponent(container, 'component-addressbar-link');
+
+        expect(component.exists()).toBe(false);
+    });
 });

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tools match snapshot 1`] = `
+<ul class="tools"
+    data-test="component-tools"
+>
+  <li class="tool">
+    <figure class="figure">
+      <img src="/logo_string1.svg"
+           alt="Technologie použitá v projektu: string1"
+           class="image"
+      >
+      <figcaption class="caption">
+        string1
+      </figcaption>
+    </figure>
+  </li>
+  <li class="tool">
+    <figure class="figure">
+      <img src="/logo_string2.svg"
+           alt="Technologie použitá v projektu: string2"
+           class="image"
+      >
+      <figcaption class="caption">
+        string2
+      </figcaption>
+    </figure>
+  </li>
+</ul>
+`;

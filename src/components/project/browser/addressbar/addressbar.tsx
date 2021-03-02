@@ -15,6 +15,7 @@ const Addressbar: React.FC<IAddressbar> = ({url}) => (
                 href={url}
                 target="_blank"
                 rel="noreferrer noopener"
+                data-test="component-addressbar-link"
                 aria-label="Otevřít referenci v novém okně"
             >
                 {url}

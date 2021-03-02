@@ -10,17 +10,17 @@ import styles from './footer.css';
 
 const Footer: React.FC = () => {
     const {state} = useStateValue();
-    const [element, setElement] = React.useState<HTMLAnchorElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
     const anchorRef = React.useRef<HTMLAnchorElement | null>(null);
     const dotRef = React.useRef<HTMLElement | null>(null);
     const year = new Date().getFullYear();
     const date = getRoman(year);
 
     React.useEffect(() => {
-        setElement(anchorRef.current);
+        setCatcher(anchorRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <motion.footer

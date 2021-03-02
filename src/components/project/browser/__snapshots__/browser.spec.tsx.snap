@@ -17,14 +17,14 @@ exports[`Browser match snapshot 1`] = `
             class="prev "
             aria-label="Předchozí projekt"
             tabindex="0"
-            data-test="component-prev"
+            data-test="component-controls-prev"
     >
     </button>
     <button type="button"
             class="next "
             aria-label="Následující projekt"
             tabindex="0"
-            data-test="component-next"
+            data-test="component-controls-next"
     >
     </button>
     <div class="addressbar http"
@@ -33,6 +33,7 @@ exports[`Browser match snapshot 1`] = `
       <a href="http://url"
          target="_blank"
          rel="noreferrer noopener"
+         data-test="component-addressbar-link"
          aria-label="Otevřít referenci v novém okně"
       >
         http://url

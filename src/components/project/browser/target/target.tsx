@@ -9,14 +9,14 @@ interface ITarget {
 }
 
 const Target: React.FC<ITarget> = ({url}) => {
-    const [element, setElement] = React.useState<HTMLAnchorElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
     const targetRef = React.useRef<HTMLAnchorElement | null>(null);
 
     React.useEffect(() => {
-        setElement(targetRef.current);
+        setCatcher(targetRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <>

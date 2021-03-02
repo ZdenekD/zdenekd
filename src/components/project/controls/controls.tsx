@@ -36,6 +36,7 @@ const Controls = React.forwardRef<HTMLUListElement, IControls>(({
                     type="button"
                     className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
                     aria-label="Předchozí projekt"
+                    data-test="component-controls-prev"
                     onClick={handlePrev}
                 />
             </li>
@@ -45,6 +46,7 @@ const Controls = React.forwardRef<HTMLUListElement, IControls>(({
                     type="button"
                     className={`${styles.next} ${isLast ? styles.disabled : ''}`}
                     aria-label="Následující projekt"
+                    data-test="component-controls-next"
                     onClick={handleNext}
                 />
             </li>

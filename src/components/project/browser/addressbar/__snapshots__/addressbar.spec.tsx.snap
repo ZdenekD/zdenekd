@@ -7,6 +7,7 @@ exports[`Addressbar match snapshot 1`] = `
   <a href="http://url"
      target="_blank"
      rel="noreferrer noopener"
+     data-test="component-addressbar-link"
      aria-label="Otevřít referenci v novém okně"
   >
     http://url

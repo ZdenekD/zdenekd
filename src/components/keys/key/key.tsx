@@ -16,14 +16,14 @@ const Key: React.FC<IKey> = ({
     disabled = false,
     onClick = undefined,
 }) => {
-    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
 
     React.useEffect(() => {
-        setElement(buttonRef.current);
+        setCatcher(buttonRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <button

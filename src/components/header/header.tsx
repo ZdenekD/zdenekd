@@ -21,13 +21,12 @@ const Header: React.FC = () => {
                         href="/"
                         className={`${styles.link} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
                         aria-label="Odkaz na domovskou stránku"
-                        data-test="component-heading"
                     >
                         <Logo />
                     </a>
                 </Link>
             )}
-            <Menu data-test="component-menu" />
+            <Menu />
         </header>
     );
 };

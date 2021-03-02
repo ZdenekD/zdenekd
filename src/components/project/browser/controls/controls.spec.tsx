@@ -19,10 +19,42 @@ describe('Controls', () => {
     });
 
     it('renders without error', () => {
-        const prev = findComponent(wrapper, 'component-prev');
-        const next = findComponent(wrapper, 'component-next');
+        const prev = findComponent(wrapper, 'component-controls-prev');
+        const next = findComponent(wrapper, 'component-controls-next');
 
         expect(prev.exists()).toBe(true);
         expect(next.exists()).toBe(true);
+    });
+
+    it('triggers handlePrev function on prev button click', () => {
+        const mockFunction = jest.fn();
+        const container = shallow(
+            <Controls
+                isFirst={false}
+                isLast={false}
+                handlePrev={mockFunction}
+            />
+        );
+        const component = findComponent(container, 'component-controls-prev');
+
+        component.simulate('click');
+
+        expect(mockFunction).toHaveBeenCalled();
+    });
+
+    it('triggers handleNext function on next button click', () => {
+        const mockFunction = jest.fn();
+        const container = shallow(
+            <Controls
+                isFirst={false}
+                isLast={false}
+                handleNext={mockFunction}
+            />
+        );
+        const component = findComponent(container, 'component-controls-next');
+
+        component.simulate('click');
+
+        expect(mockFunction).toHaveBeenCalled();
     });
 });
