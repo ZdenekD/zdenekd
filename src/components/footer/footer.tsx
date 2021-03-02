@@ -46,7 +46,26 @@ const Footer: React.FC = () => {
                 className={styles.scroll}
             >
                 Scroll
-                <i ref={dotRef} className={styles.dot}></i>
+                <motion.i
+                    ref={dotRef}
+                    initial={{y: 0, opacity: 1}}
+                    animate={{
+                        y: '50px',
+                        opacity: 0,
+                        transition: {
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: 'loop',
+                            ease: [
+                                0.16,
+                                1,
+                                0.3,
+                                1,
+                            ],
+                        },
+                    }}
+                    className={styles.dot}
+                />
             </motion.span>
         </motion.footer>
     );

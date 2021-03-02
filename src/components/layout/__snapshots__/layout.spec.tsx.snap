@@ -165,7 +165,9 @@ exports[`Layout match snapshot 1`] = `
           style="opacity:1"
     >
       Scroll
-      <i class="dot">
+      <i class="dot"
+         style="opacity:1;transform:none"
+      >
       </i>
     </span>
   </footer>

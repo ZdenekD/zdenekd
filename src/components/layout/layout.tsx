@@ -63,7 +63,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                 {process.env.NODE_ENV === 'production' && (
-                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js"></script>
+                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js" />
                 )}
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">

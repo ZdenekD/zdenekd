@@ -50,9 +50,9 @@ const Menu: React.FC = () => {
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
-                <path ref={pathTopRef} d="M30,40 L70,40 Z"></path>
-                <path ref={pathMiddleRef} d="M30,50 L70,50 Z"></path>
-                <path ref={pathBottomRef} d="M30,60 L70,60 Z"></path>
+                <path ref={pathTopRef} d="M30,40 L70,40 Z" />
+                <path ref={pathMiddleRef} d="M30,50 L70,50 Z" />
+                <path ref={pathBottomRef} d="M30,60 L70,60 Z" />
             </svg>
         </button>
     );
