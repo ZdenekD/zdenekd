@@ -4,10 +4,10 @@ jobs:
   scanning:
     runs-on: ubuntu-latest
     steps:
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-        uses: GitGuardian/gg-shield-action@master
+      - uses: GitGuardian/gg-shield-action@master
         env:
           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
