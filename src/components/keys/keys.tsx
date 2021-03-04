@@ -53,7 +53,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.left}
                     label="Předchozí projekt"
-                    disabled={!isProjects}
+                    disabled={!isProjects || state.project.isFirst}
                     onClick={handleKeyLeft}
                 />
                 <Key
@@ -65,7 +65,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.right}
                     label="Následující projekt"
-                    disabled={!isProjects}
+                    disabled={!isProjects || state.project.isLast}
                     onClick={handleKeyRight}
                 />
             </div>

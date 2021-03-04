@@ -13,6 +13,8 @@ const Tools = React.forwardRef<HTMLUListElement, ITools>(({items}, ref) => (
                 <figure className={styles.figure}>
                     <img
                         src={`${config.cloudfront}/logo_${item}.svg`}
+                        width={32}
+                        height={32}
                         alt={`Technologie použitá v projektu: ${item}`}
                         className={styles.image}
                     />

@@ -22,6 +22,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_react.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: react"
                  class="image"
             >
@@ -33,6 +35,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_wordpress.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: wordpress"
                  class="image"
             >
@@ -44,6 +48,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_lottie.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: lottie"
                  class="image"
             >
@@ -55,6 +61,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_animejs.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: animejs"
                  class="image"
             >
@@ -66,6 +74,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_webpack.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: webpack"
                  class="image"
             >
@@ -140,7 +150,8 @@ exports[`Project match snapshot 1`] = `
            class="anchor targetLink"
            target="_blank"
            rel="noreferrer noopener"
-           data-test="component-anchor"
+           data-test="component-target"
+           aria-label="Otevřít referenci v novém okně"
         >
           <svg data-filename="src/assets/images/icon_open.svg">
           </svg>

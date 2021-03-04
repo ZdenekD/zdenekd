@@ -125,7 +125,7 @@ const ContactForm: React.FC = () => {
                     name="med"
                     autoComplete="off"
                     tabIndex={-1}
-                    className="_visuallyhidden"
+                    className={styles.hidden}
                 />
                 <div className="animated-block">
                     <Button

@@ -46,7 +46,7 @@ const Menu: React.FC = () => {
             type="button"
             className={`${styles.button} ${state.menu.isOpen ? styles.opened : styles.closed} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
             data-test="component-menu"
-            aria-label="Menu button"
+            aria-label={`${state.menu.isOpen ? 'Zavřít' : 'Otevřít'} navigaci`}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
