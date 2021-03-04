@@ -1,8 +1,8 @@
-import IState from '../type/state';
 import IAction from '../type/actions';
+import ICursor from './type';
 import ActionsEnum from './type/actions';
 
-const reducer = (state: IState, action: IAction): IState => {
+const reducer = (state: ICursor, action: IAction): ICursor => {
     switch (action.type) {
         case ActionsEnum.set:
             return ({

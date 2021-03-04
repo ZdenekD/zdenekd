@@ -1,4 +1,4 @@
-import {createContext, useContext, useReducer, Dispatch} from 'react';
+import React from 'react';
 import initialState from './initialState';
 import reducer from './reducer';
 import IState from './type/state';
@@ -6,13 +6,13 @@ import IAction from './type/actions';
 
 interface IContext {
     state: IState
-    dispatch: Dispatch<IAction>
+    dispatch: React.Dispatch<IAction>
 }
 
-const StateContext = createContext<IContext>({state: initialState, dispatch: () => null});
+const StateContext = React.createContext<IContext>({state: initialState, dispatch: () => null});
 
 const Provider: React.FC = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = React.useReducer(reducer, initialState);
 
     return (
         <StateContext.Provider value={{state, dispatch}}>
@@ -20,7 +20,7 @@ const Provider: React.FC = ({children}) => {
         </StateContext.Provider>
     );
 };
-const useStateValue = (): IContext => useContext(StateContext);
+const useStateValue = (): IContext => React.useContext(StateContext);
 
 export {
     Provider,
