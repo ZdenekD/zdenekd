@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tablet device match snapshot 1`] = `
+<div class="wrapper"
+     data-test="component-device-tablet"
+>
+  <div class="tablet">
+    <div class="content">
+    </div>
+    <span class="header">
+      <i class="camera">
+      </i>
+    </span>
+    <span class="footer">
+      <i class="button">
+      </i>
+    </span>
+  </div>
+</div>
+`;

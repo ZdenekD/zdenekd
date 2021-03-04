@@ -52,3 +52,56 @@
         font-size: 1.4em;
     }
 }
+
+.devicesWrapper {
+    width: 100vw;
+    max-width: 1280px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 10vw;
+    z-index: 0;
+}
+
+.mobile,
+.tablet,
+.computer {
+    width: 100%;
+    position: absolute;
+}
+
+.mobile {
+    max-width: 120px;
+    display: none;
+    right: 28%;
+    bottom: 40vh;
+    z-index: 3;
+
+    @media (--min-md) and (min-height: 800px) {
+        display: block;
+    }
+}
+
+.tablet {
+    max-width: 280px;
+    display: none;
+    right: 10%;
+    bottom: 54vh;
+    z-index: 2;
+
+    @media (--min-md) and (min-height: 800px) {
+        display: block;
+    }
+}
+
+.computer {
+    max-width: 720px;
+    display: none;
+    right: 25%;
+    bottom: 58vh;
+    z-index: 1;
+
+    @media (--min-xl) and (min-height: 800px) {
+        display: block;
+    }
+}
