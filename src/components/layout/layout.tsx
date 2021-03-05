@@ -35,6 +35,8 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <title data-test="component-title">ZdenekD</title>
                 <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href={`${config.cloudfront}`} crossOrigin="anonymous" />
+                <link rel="dns-prefetch" href={`${config.cloudfront}`} />
                 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono:400&display=swap&subset=latin-ext" rel="stylesheet" crossOrigin="anonymous" />
                 {process.env.NODE_ENV === 'production' && (
                     <>
@@ -82,11 +84,11 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                         {children}
                     </Section>
                     <Footer />
-                    <Aside />
                     <Curtain />
                 </React.StrictMode>
             </main>
             <React.StrictMode>
+                <Aside />
                 <Alert variant={state.message.variant} isOpen={!!state.message.content} timeout={4}>
                     {state.message.content}
                 </Alert>
