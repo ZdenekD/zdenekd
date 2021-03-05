@@ -56,6 +56,11 @@
     border-width: 0 12px 18px;
     border-style: solid;
     border-color: #121212;
+
+    video {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .footer {

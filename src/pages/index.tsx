@@ -36,7 +36,7 @@ const Page: React.FC = () => (
                     >
                         <track kind="captions" />
                         <track kind="description" label="Description" />
-                        <source src="/video/tomton.mp4" type="video/mp4" />
+                        <source src="/video/dirtjob.mp4" type="video/mp4" />
                     </video>
                 </Computer>
             </div>
@@ -52,7 +52,7 @@ const Page: React.FC = () => (
                     >
                         <track kind="captions" />
                         <track kind="description" label="Description" />
-                        <source src="/video/digitalvision.mp4" type="video/mp4" />
+                        <source src="/video/digitalvision_mobile.mp4" type="video/mp4" />
                     </video>
                 </Mobile>
             </div>
@@ -68,7 +68,7 @@ const Page: React.FC = () => (
                     >
                         <track kind="captions" />
                         <track kind="description" label="Description" />
-                        <source src="/video/dirtjob.mp4" type="video/mp4" />
+                        <source src="/video/tomton_tablet.mp4" type="video/mp4" />
                     </video>
                 </Tablet>
             </div>
