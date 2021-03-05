@@ -52,26 +52,23 @@ exports[`Browser match snapshot 1`] = `
       </a>
     </div>
   </header>
-  <div class="wrapper"
-       data-test="component-video"
-       style="opacity:0"
+  <picture class="picture"
+           data-test="component-picture"
   >
-    <video playsinline
-           autoplay
-           muted
-           loop
-           preload="auto"
-           class="video"
-           title="Ukázka projektu: title. Stránky se nacházejí zde: http://url"
+    <source srcset="/image/mobile_id.avif"
+            type="image/avif"
     >
-      <track kind="captions">
-      <track kind="description"
-             label="title"
-      >
-      <source src="/video/id.mp4"
-              type="video/mp4"
-      >
-    </video>
-  </div>
+    <source srcset="/image/mobile_id.webp"
+            type="image/webp"
+    >
+    <img src="/image/mobile_id.png"
+         width="480"
+         height="270"
+         alt
+         loading="lazy"
+         decoding="async"
+         class="image "
+    >
+  </picture>
 </section>
 `;

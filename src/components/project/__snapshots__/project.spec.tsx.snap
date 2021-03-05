@@ -158,27 +158,24 @@ exports[`Project match snapshot 1`] = `
         </a>
       </div>
     </header>
-    <div class="wrapper"
-         data-test="component-video"
-         style="opacity:0"
+    <picture class="picture"
+             data-test="component-picture"
     >
-      <video playsinline
-             autoplay
-             muted
-             loop
-             preload="auto"
-             class="video"
-             title="Ukázka projektu: Tomton. Stránky se nacházejí zde: https://www.tomton.cz"
+      <source srcset="/image/mobile_tomton.avif"
+              type="image/avif"
       >
-        <track kind="captions">
-        <track kind="description"
-               label="Tomton"
-        >
-        <source src="/video/tomton.mp4"
-                type="video/mp4"
-        >
-      </video>
-    </div>
+      <source srcset="/image/mobile_tomton.webp"
+              type="image/webp"
+      >
+      <img src="/image/mobile_tomton.png"
+           width="480"
+           height="270"
+           alt
+           loading="lazy"
+           decoding="async"
+           class="image "
+      >
+    </picture>
   </section>
 </div>
 `;

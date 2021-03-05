@@ -27,6 +27,11 @@
 
 .video {
     width: calc(100% + 1px);
+    display: none;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+
+    @media (--min-sm) {
+        display: flex;
+    }
 }
