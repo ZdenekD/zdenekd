@@ -79,7 +79,7 @@
     "style-loader": "^2.0.0",
     "stylelint": "^13.0.0",
     "stylelint-a11y": "^1.2.2",
-    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-recommended": "^4.0.0",
     "stylelint-csstree-validator": "^1.7.0",
     "stylelint-order": "^4.0.0"
   },
@@ -87,6 +87,7 @@
     "@lottiefiles/react-lottie-player": "^3.0.0",
     "@sendgrid/mail": "^7.4.2",
     "@sentry/browser": "^6.1.0",
+    "@tabler/icons": "^1.39.1",
     "@use-it/event-listener": "^0.1.6",
     "animejs": "^3.2.1",
     "framer-motion": "^3.3.0",
