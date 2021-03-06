@@ -1,4 +1,5 @@
 import {motion} from 'framer-motion';
+import {variants} from './mobile.animations';
 import styles from './mobile.css';
 
 const Mobile: React.FC = ({children}) => (
@@ -12,16 +13,9 @@ const Mobile: React.FC = ({children}) => (
                 <i className={styles.camera} />
             </span>
             <motion.i
-                initial={{y: 0, x: '50%'}}
-                animate={{
-                    y: '4px',
-                    x: '50%',
-                    transition: {
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: 'reverse',
-                    },
-                }}
+                initial="initial"
+                animate="enter"
+                variants={variants}
                 className={styles.button}
             />
             <i className={styles.controlMute} />

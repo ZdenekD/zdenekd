@@ -7,6 +7,7 @@ import Picture from '../../../UI/picture';
 import config from '../../../data/config';
 import {IProject} from '../../../data/projects';
 import useWindowSize from '../../../hooks/useWindowSize';
+import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';
 import styles from './browser.css';
 
 interface IBrowser {
@@ -47,7 +48,7 @@ const Browser = React.forwardRef<HTMLElement, IBrowser>(({
                 <Addressbar url={project.url} />
                 <Target url={project.url} />
             </header>
-            {width > 600 ? (
+            {width > MediaQueriesEnum.sm ? (
                 <Video project={project} />
             ) : (
                 <Picture
@@ -56,7 +57,6 @@ const Browser = React.forwardRef<HTMLElement, IBrowser>(({
                     height={270}
                 />
             )}
-
         </section>
     );
 });
