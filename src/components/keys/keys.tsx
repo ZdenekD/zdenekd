@@ -22,6 +22,7 @@ const Keys: React.FC = () => {
     const isHomepage = router.route === pages[PagesEnum.homepage].route;
     const isProjects = router.route === pages[PagesEnum.projects].route;
     const isLastpage = router.route === pages[items[items.length - 1]].route;
+    const isError = router.route === '/404';
     const handleKeyUp = () => {
         setPageAction(PageActionsEnum.prevPage);
     };
@@ -46,7 +47,7 @@ const Keys: React.FC = () => {
             <Key
                 direction={DirectionsEnum.up}
                 label="Předchozí stránka"
-                disabled={isHomepage}
+                disabled={isHomepage || isError}
                 onClick={handleKeyUp}
             />
             <div className={styles.key}>
@@ -59,7 +60,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.down}
                     label="Následující stránka"
-                    disabled={isLastpage}
+                    disabled={isLastpage || isError}
                     onClick={handleKeyDown}
                 />
                 <Key
