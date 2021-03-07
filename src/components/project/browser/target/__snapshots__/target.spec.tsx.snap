@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Target match snapshot 1`] = `
+<div class="target">
+  <a href="http://url"
+     class="anchor targetLink"
+     target="_blank"
+     rel="noreferrer noopener"
+     data-test="component-target"
+     aria-label="Otevřít referenci v novém okně"
+  >
+    <svg data-filename="src/assets/images/icon_open.svg">
+    </svg>
+  </a>
+</div>
+`;

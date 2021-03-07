@@ -1,4 +1,0 @@
-version: 1
-snapshot:
-  widths: [320, 640, 960, 1280]
-  min-height: 768

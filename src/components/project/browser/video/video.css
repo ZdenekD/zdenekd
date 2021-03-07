@@ -1,0 +1,37 @@
+.wrapper {
+    overflow: hidden;
+    background: #f7f7f7;
+    line-height: 0;
+    border-radius: 0 0 12px 12px;
+
+    @media (--min-sm) {
+        width: 480px;
+        height: 270px;
+    }
+
+    @media (--min-md) {
+        width: 640px;
+        height: 340px;
+    }
+
+    @media (--min-lg) {
+        width: 560px;
+        height: 315px;
+    }
+
+    @media (--min-xl) {
+        width: 800px;
+        height: 450px;
+    }
+}
+
+.video {
+    width: calc(100% + 1px);
+    display: none;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    @media (--min-sm) {
+        display: flex;
+    }
+}

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mobile device match snapshot 1`] = `
+<div class="wrapper"
+     data-test="component-device-mobile"
+>
+  <div class="mobile">
+    <div class="content">
+    </div>
+    <span class="header">
+      <i class="speaker">
+      </i>
+      <i class="camera">
+      </i>
+    </span>
+    <i class="button"
+       style="transform:translateX(50%) translateY(0px) translateZ(0)"
+    >
+    </i>
+    <i class="controlMute">
+    </i>
+    <i class="controlSound">
+    </i>
+    <i class="controlSound">
+    </i>
+    <i class="controlTrigger">
+    </i>
+  </div>
+</div>
+`;

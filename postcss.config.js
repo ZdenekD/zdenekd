@@ -5,7 +5,7 @@ module.exports = {
         'postcss-nested': {},
         'postcss-preset-env': {
             stage: 1,
-            importFrom: 'src/assets/styles/media.css',
+            importFrom: 'src/assets/styles/utilities/media.css',
         },
         'postcss-custom-media': {},
         'postcss-reporter': {clearReportedMessages: true},

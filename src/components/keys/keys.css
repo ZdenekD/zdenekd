@@ -1,0 +1,15 @@
+.keys {
+    display: none;
+
+    @media (--min-lg) {
+        margin-right: calc(2 * var(--gap));
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.key {
+    margin: 2px 4px;
+    display: flex;
+    align-self: center;
+}

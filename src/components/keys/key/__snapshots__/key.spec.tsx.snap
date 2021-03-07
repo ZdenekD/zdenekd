@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Key match snapshot 1`] = `
+<button type="button"
+        class="key "
+        aria-label="Down"
+        data-test="component-key"
+>
+  <i class="icon down">
+  </i>
+</button>
+`;
