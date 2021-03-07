@@ -9,10 +9,14 @@
     position: relative;
     overflow: hidden;
     background: var(--section-background, var(--color-blue-lighten-5));
-    border: var(--gap) solid var(--color-white);
+    border: calc(var(--gap) / 2) solid var(--color-white);
 
     noscript {
         margin: 0 auto;
         text-align: center;
+    }
+
+    @media (--min-sm) {
+        border-width: var(--gap);
     }
 }

@@ -52,3 +52,45 @@
         font-size: 1.4em;
     }
 }
+
+.devicesWrapper {
+    width: 100vw;
+    max-width: 1280px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 10vw;
+    z-index: 0;
+
+    @media (max-height: 800px) {
+        display: none;
+    }
+}
+
+.mobile,
+.tablet,
+.computer {
+    width: 100%;
+    position: absolute;
+}
+
+.mobile {
+    max-width: 120px;
+    right: 28%;
+    bottom: 40vh;
+    z-index: 3;
+}
+
+.tablet {
+    max-width: 280px;
+    right: 10%;
+    bottom: 54vh;
+    z-index: 2;
+}
+
+.computer {
+    max-width: 720px;
+    right: 25%;
+    bottom: 58vh;
+    z-index: 1;
+}

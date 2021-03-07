@@ -23,6 +23,7 @@
     align-items: flex-end;
     position: relative;
     z-index: var(--zindex-footer);
+    color: var(--navigation-color);
 
     @media (--min-xs) {
         padding: var(--gap);
@@ -94,16 +95,7 @@
     }
 }
 
-.link {
-    line-height: 0;
-
-    &:focus,
-    &:hover {
-
-        path {
-            stroke: var(--navigation-color-active);
-        }
-    }
+.linkWrapper {
 
     @media (--min-xs) {
         margin: 0 auto;
@@ -120,13 +112,15 @@
     }
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
+.link {
+    margin: 0 4px;
+    color: var(--navigation-color);
+    line-height: 0;
+    transition: var(--transition-duration);
 
-    path {
-        stroke: var(--navigation-color);
-        transition: stroke var(--transition-duration) var(--transition-timing);
+    &:focus,
+    &:hover {
+        color: var(--color-red);
     }
 }
 

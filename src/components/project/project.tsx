@@ -13,7 +13,7 @@ import styles from './project.css';
 const Project: React.FC = () => {
     const {state} = useStateValue();
     const [project, setProject] = React.useState<number>(state.project.index);
-    const [element, setElement] = React.useState<HTMLUListElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);
     const descriptionRef = React.useRef<HTMLParagraphElement | null>(null);
     const toolsWrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -87,7 +87,7 @@ const Project: React.FC = () => {
             easing: 'easeOutExpo',
         });
 
-        setElement(toolsRef.current);
+        setCatcher(toolsRef.current);
     }, []);
 
     React.useEffect(() => {
@@ -97,7 +97,7 @@ const Project: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.project.index]);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <div className={styles.block} data-test="component-project">

@@ -12,14 +12,14 @@ interface ILogo {
 
 const Logo: React.FC<ILogo> = ({className = ''}) => {
     const {state} = useStateValue();
-    const [element, setElement] = React.useState<HTMLDivElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
 
     React.useEffect(() => {
-        setElement(logoRef.current);
+        setCatcher(logoRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <div ref={logoRef} className={`${styles.wrapper} ${className}`}>

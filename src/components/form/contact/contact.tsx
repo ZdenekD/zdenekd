@@ -20,7 +20,7 @@ interface IValues {
 
 const ContactForm: React.FC = () => {
     const [isDisabled, setDisabled] = React.useState<boolean>(false);
-    const [element, setElement] = React.useState<HTMLButtonElement | null>(null);
+    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
     const router = useRouter();
@@ -61,14 +61,14 @@ const ContactForm: React.FC = () => {
             });
         }
 
-        setElement(buttonRef.current);
+        setCatcher(buttonRef.current);
     }, []);
 
-    useCursor(element);
+    useCursor(catcher);
 
     return (
         <>
-            {isDisabled && <Loader data-test="component-loader" />}
+            {isDisabled && <Loader data-test="component-contact-loader" />}
             <Form ref={formRef} className={styles.form} data-test="component-contact" onSubmit={handleSubmit(onSubmit)}>
                 <div className="animated-block">
                     <Input
@@ -125,7 +125,7 @@ const ContactForm: React.FC = () => {
                     name="med"
                     autoComplete="off"
                     tabIndex={-1}
-                    className="_visuallyhidden"
+                    className={styles.hidden}
                 />
                 <div className="animated-block">
                     <Button

@@ -9,6 +9,7 @@ const Curtain: React.FC = () => (
         exit="exit"
         variants={variants}
         className={styles.curtain}
+        data-test="component-curtain"
     />
 );
 

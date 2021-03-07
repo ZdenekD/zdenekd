@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import VariantsEnum from '../../enums/VariantsEnum';
-import {fade, fadeScale} from './alert.animations';
+import {variants} from './alert.animations';
 import {useStateValue} from '../../state';
 import {unsetMessage} from '../../state/message/actions';
 import styles from './alert.css';
@@ -55,14 +55,14 @@ const Alert: React.FC<IAlert> = ({
                         initial="initial"
                         animate="enter"
                         exit="exit"
-                        variants={fade}
+                        variants={variants.backdrop}
                         className={styles.backdrop}
                     />
                     <motion.div
                         initial="initial"
                         animate="enter"
                         exit="exit"
-                        variants={fadeScale}
+                        variants={variants.component}
                         className={`${styles.alert} ${variant ? styles[variant] : ''} ${className}`}
                         data-test="component-alert"
                     >

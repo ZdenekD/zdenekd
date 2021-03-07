@@ -14,9 +14,9 @@ const variants: Variants = {
     exit: {
         opacity: 0,
         transition: {
-            duration: 0.8,
+            duration: 0.4,
             when: 'afterChildren',
-            staggerChildren: 0.2,
+            staggerChildren: 0.1,
             ease: 'easeOut',
         },
     },
@@ -35,7 +35,7 @@ const variant: Variants = {
         y: '-6vh',
         opacity: 0,
         transition: {
-            duration: 0.6,
+            duration: 0.2,
             ease: 'easeOut',
         },
     },

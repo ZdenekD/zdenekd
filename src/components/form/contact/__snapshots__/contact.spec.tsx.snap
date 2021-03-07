@@ -89,7 +89,7 @@ exports[`Form/Contact match snapshot 1`] = `
          name="med"
          autocomplete="off"
          tabindex="-1"
-         class="_visuallyhidden"
+         class="hidden"
   >
   <div class="animated-block">
     <button type="submit"

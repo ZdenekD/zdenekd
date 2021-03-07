@@ -7,11 +7,11 @@ import messageReducer from './message/reducer';
 import projectReducer from './project/reducer';
 
 const reducer = (state: IState, action: IAction): IState => ({
-    animation: {...animationReducer(state, action).animation},
-    cursor: {...cursorReducer(state, action).cursor},
-    menu: {...menuReducer(state, action).menu},
-    message: {...messageReducer(state, action).message},
-    project: {...projectReducer(state, action).project},
+    ...animationReducer({animation: state.animation}, action),
+    ...cursorReducer({cursor: state.cursor}, action),
+    ...menuReducer({menu: state.menu}, action),
+    ...messageReducer({message: state.message}, action),
+    ...projectReducer({project: state.project}, action),
 });
 
 export default reducer;

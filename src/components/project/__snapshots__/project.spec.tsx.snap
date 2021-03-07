@@ -16,10 +16,14 @@ exports[`Project match snapshot 1`] = `
       Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.
     </p>
     <div class="toolsWrapper">
-      <ul class="tools">
+      <ul class="tools"
+          data-test="component-tools"
+      >
         <li class="tool">
           <figure class="figure">
             <img src="/logo_react.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: react"
                  class="image"
             >
@@ -31,6 +35,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_wordpress.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: wordpress"
                  class="image"
             >
@@ -42,6 +48,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_lottie.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: lottie"
                  class="image"
             >
@@ -53,6 +61,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_animejs.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: animejs"
                  class="image"
             >
@@ -64,6 +74,8 @@ exports[`Project match snapshot 1`] = `
         <li class="tool">
           <figure class="figure">
             <img src="/logo_webpack.svg"
+                 width="32"
+                 height="32"
                  alt="Technologie použitá v projektu: webpack"
                  class="image"
             >
@@ -81,6 +93,7 @@ exports[`Project match snapshot 1`] = `
         <button type="button"
                 class="prev disabled"
                 aria-label="Předchozí projekt"
+                data-test="component-controls-prev"
         >
         </button>
       </li>
@@ -88,6 +101,7 @@ exports[`Project match snapshot 1`] = `
         <button type="button"
                 class="next "
                 aria-label="Následující projekt"
+                data-test="component-controls-next"
         >
         </button>
       </li>
@@ -109,14 +123,14 @@ exports[`Project match snapshot 1`] = `
               class="prev disabled"
               aria-label="Předchozí projekt"
               tabindex="0"
-              data-test="component-prev"
+              data-test="component-controls-prev"
       >
       </button>
       <button type="button"
               class="next "
               aria-label="Následující projekt"
               tabindex="0"
-              data-test="component-next"
+              data-test="component-controls-next"
       >
       </button>
       <div class="addressbar https"
@@ -125,6 +139,7 @@ exports[`Project match snapshot 1`] = `
         <a href="https://www.tomton.cz"
            target="_blank"
            rel="noreferrer noopener"
+           data-test="component-addressbar-link"
            aria-label="Otevřít referenci v novém okně"
         >
           https://www.tomton.cz
@@ -135,34 +150,32 @@ exports[`Project match snapshot 1`] = `
            class="anchor targetLink"
            target="_blank"
            rel="noreferrer noopener"
-           data-test="component-anchor"
+           data-test="component-target"
+           aria-label="Otevřít referenci v novém okně"
         >
           <svg data-filename="src/assets/images/icon_open.svg">
           </svg>
         </a>
       </div>
     </header>
-    <div class="wrapper"
-         data-test="component-video"
-         style="opacity:0"
+    <picture class="picture"
+             data-test="component-picture"
     >
-      <video playsinline
-             autoplay
-             muted
-             loop
-             preload="auto"
-             class="video"
-             title="Ukázka projektu: Tomton. Stránky se nacházejí zde: https://www.tomton.cz"
+      <source srcset="/image/mobile_tomton.avif"
+              type="image/avif"
       >
-        <track kind="captions">
-        <track kind="description"
-               label="Tomton"
-        >
-        <source src="/video/tomton.mp4"
-                type="video/mp4"
-        >
-      </video>
-    </div>
+      <source srcset="/image/mobile_tomton.webp"
+              type="image/webp"
+      >
+      <img src="/image/mobile_tomton.png"
+           width="480"
+           height="270"
+           alt
+           loading="lazy"
+           decoding="async"
+           class="image "
+      >
+    </picture>
   </section>
 </div>
 `;
