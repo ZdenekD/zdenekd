@@ -2,7 +2,6 @@
 
 ![Jest](https://github.com/ZdenekD/zdenekd/workflows/Jest/badge.svg)
 ![Snyk](https://github.com/ZdenekD/zdenekd/workflows/Snyk/badge.svg)
-![Cypress](https://github.com/ZdenekD/zdenekd/workflows/Cypress/badge.svg)
 
 ![](https://statuspage.freshping.io/badge/b80793be-3e66-4cae-ac37-cfe75e9adc06?0.22310144464765624)
 
