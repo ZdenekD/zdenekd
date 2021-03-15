@@ -7,7 +7,7 @@ describe('Alert', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Alert isOpen={true}>message</Alert>);
+        wrapper = shallow(<Alert isOpen>message</Alert>);
     });
 
     it('match snapshot', () => {
