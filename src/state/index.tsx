@@ -20,10 +20,10 @@ const Provider: React.FC = ({children}) => {
         </StateContext.Provider>
     );
 };
-const useStateValue = (): IContext => React.useContext(StateContext);
+const useGlobalState = (): IContext => React.useContext(StateContext);
 
 export {
     Provider,
     StateContext,
-    useStateValue
+    useGlobalState
 };

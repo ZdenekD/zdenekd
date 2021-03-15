@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import useEventListener from '@use-it/event-listener';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import styles from './cursor.css';
 
 interface IHandler {
@@ -9,7 +9,7 @@ interface IHandler {
 }
 
 const Cursor: React.FC = () => {
-    const {state} = useStateValue();
+    const {state} = useGlobalState();
     const outerCursorRef = React.useRef<HTMLElement | null>(null);
     const innerCursorRef = React.useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {

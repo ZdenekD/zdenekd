@@ -10,7 +10,7 @@ import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
 
@@ -20,7 +20,7 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
-    const {state} = useStateValue();
+    const {state} = useGlobalState();
 
     useKeyboard();
     useWheel();

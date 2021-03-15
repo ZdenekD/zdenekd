@@ -1,5 +1,5 @@
 import React from 'react';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import setMenu from '../../state/menu/actions';
 import useCursor from '../../hooks/useCursor';
 import {animationIn, animationOut} from './menu.animations';
@@ -7,7 +7,7 @@ import styles from './menu.css';
 
 const Menu: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const {state, dispatch} = useStateValue();
+    const {state, dispatch} = useGlobalState();
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);

@@ -8,7 +8,7 @@ import Input from '../../../UI/form-control/input';
 import Textarea from '../../../UI/form-control/textarea';
 import Button from '../../../UI/form-control/button';
 import Loader from '../../../UI/loader';
-import {useStateValue} from '../../../state';
+import {useGlobalState} from '../../../state';
 import {setMessage} from '../../../state/message/actions';
 import useCursor from '../../../hooks/useCursor';
 import regex from '../../../helpers/regex';
@@ -24,7 +24,7 @@ const ContactForm: React.FC = () => {
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
     const router = useRouter();
-    const {dispatch} = useStateValue();
+    const {dispatch} = useGlobalState();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
     const onSubmit = async (values: IValues) => {
         setDisabled(true);

@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import useCursor from '../../hooks/useCursor';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import {variants} from './logo.animations';
 import Image from '../../assets/images/logo.svg';
 import styles from './logo.css';
@@ -11,7 +11,7 @@ interface ILogo {
 }
 
 const Logo: React.FC<ILogo> = ({className = ''}) => {
-    const {state} = useStateValue();
+    const {state} = useGlobalState();
     const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
 

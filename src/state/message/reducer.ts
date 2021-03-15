@@ -1,6 +1,7 @@
 import IAction from '../type/actions';
+import IMessage from './type';
 import ActionsEnum from './type/actions';
-import IMessage, {initialState} from './type';
+import initialState from './initialState';
 
 const reducer = (state: IMessage, action: IAction): IMessage => {
     switch (action.type) {

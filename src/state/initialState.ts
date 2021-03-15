@@ -1,8 +1,8 @@
-import {initialState as animationState} from './animation/type';
-import {initialState as cursorState} from './cursor/type';
-import {initialState as menuState} from './menu/type';
-import {initialState as messageState} from './message/type';
-import {initialState as projectState} from './project/type';
+import animationState from './animation/initialState';
+import cursorState from './cursor/initialState';
+import menuState from './menu/initialState';
+import messageState from './message/initialState';
+import projectState from './project/initialState';
 
 export default {
     ...animationState,

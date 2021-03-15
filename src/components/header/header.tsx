@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Menu from '../menu';
 import Logo from '../logo';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import styles from './header.css';
 
 const Header: React.FC = () => {
-    const {state} = useStateValue();
+    const {state} = useGlobalState();
 
     return (
         <header className={styles.header} data-test="component-header">

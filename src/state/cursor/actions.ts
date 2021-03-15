@@ -1,4 +1,5 @@
-import ICursor, {initialState} from './type';
+import ICursor from './type';
+import initialState from './initialState';
 import ActionsEnum, {IAction} from './type/actions';
 
 export function setCursor(payload: ICursor): IAction {

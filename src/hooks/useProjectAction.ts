@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router';
-import {useStateValue} from '../state';
+import {useGlobalState} from '../state';
 import setProject from '../state/project/actions';
 import pages from '../data/pages';
 import projects from '../data/projects';
@@ -12,7 +12,7 @@ interface IAction {
 
 const useProjectAction = (): IAction => {
     const router = useRouter();
-    const {state, dispatch} = useStateValue();
+    const {state, dispatch} = useGlobalState();
     const minIndex = 0;
     const maxIndex = projects.length - 1;
     const distributor: {[key: string]: () => void} = {

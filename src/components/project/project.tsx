@@ -6,12 +6,12 @@ import Tools from './tools';
 import useProjectAction from '../../hooks/useProjectAction';
 import useCursor from '../../hooks/useCursor';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import projects from '../../data/projects';
 import styles from './project.css';
 
 const Project: React.FC = () => {
-    const {state} = useStateValue();
+    const {state} = useGlobalState();
     const [project, setProject] = React.useState<number>(state.project.index);
     const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);

@@ -1,5 +1,6 @@
 import reducer from './reducer';
-import IMessage, {initialState} from './type';
+import IMessage from './type';
+import initialState from './initialState';
 import {setMessage, unsetMessage} from './actions';
 import VariantsEnum from '../../enums/VariantsEnum';
 
