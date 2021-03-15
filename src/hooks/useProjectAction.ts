@@ -12,7 +12,7 @@ interface IAction {
 
 const useProjectAction = (): IAction => {
     const router = useRouter();
-    const {state, dispatch} = useGlobalState();
+    const [state, dispatch] = useGlobalState();
     const minIndex = 0;
     const maxIndex = projects.length - 1;
     const distributor: {[key: string]: () => void} = {

@@ -14,7 +14,7 @@ import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import styles from './keys.css';
 
 const Keys: React.FC = () => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
     const router = useRouter();
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();

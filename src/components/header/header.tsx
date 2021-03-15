@@ -6,7 +6,7 @@ import {useGlobalState} from '../../state';
 import styles from './header.css';
 
 const Header: React.FC = () => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
 
     return (
         <header className={styles.header} data-test="component-header">

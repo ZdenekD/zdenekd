@@ -11,7 +11,7 @@ interface ILogo {
 }
 
 const Logo: React.FC<ILogo> = ({className = ''}) => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
     const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
 

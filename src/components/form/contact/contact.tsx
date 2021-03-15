@@ -24,7 +24,7 @@ const ContactForm: React.FC = () => {
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
     const router = useRouter();
-    const {dispatch} = useGlobalState();
+    const [, dispatch] = useGlobalState();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
     const onSubmit = async (values: IValues) => {
         setDisabled(true);

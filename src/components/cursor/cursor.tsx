@@ -9,7 +9,7 @@ interface IHandler {
 }
 
 const Cursor: React.FC = () => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
     const outerCursorRef = React.useRef<HTMLElement | null>(null);
     const innerCursorRef = React.useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {

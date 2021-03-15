@@ -12,7 +12,7 @@ import setMenu from '../../state/menu/actions';
 
 const Nav: React.FC = () => {
     const router = useRouter();
-    const {state, dispatch} = useGlobalState();
+    const [state, dispatch] = useGlobalState();
     const page = getPage(router.route);
     const handleAnimationComplete = () => {
         dispatch(setAnimation({animation: {isAsideAnimated: false}}));

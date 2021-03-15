@@ -20,7 +20,7 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
 
     useKeyboard();
     useWheel();

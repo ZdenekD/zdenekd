@@ -7,7 +7,7 @@ import styles from './menu.css';
 
 const Menu: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const {state, dispatch} = useGlobalState();
+    const [state, dispatch] = useGlobalState();
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
