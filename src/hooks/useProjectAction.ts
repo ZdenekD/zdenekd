@@ -5,6 +5,7 @@ import pages from '../data/pages';
 import projects from '../data/projects';
 import PagesEnum from '../enums/PagesEnum';
 import ProjectActionsEnum from '../enums/ProjectActionsEnum';
+import {IDistributor} from './types/distributor';
 
 interface IAction {
     (value: ProjectActionsEnum): void
@@ -15,7 +16,7 @@ const useProjectAction = (): IAction => {
     const [state, dispatch] = useGlobalState();
     const minIndex = 0;
     const maxIndex = projects.length - 1;
-    const distributor: {[key: string]: () => void} = {
+    const distributor: IDistributor = {
         [ProjectActionsEnum.prevProject]: () => {
             if (router.route !== pages[PagesEnum.projects].route) {
                 return;

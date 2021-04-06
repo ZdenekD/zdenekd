@@ -4,12 +4,13 @@ import usePageAction from './usePageAction';
 import useProjectAction from './useProjectAction';
 import PageActionsEnum from '../enums/PageActionsEnum';
 import ProjectActionsEnum from '../enums/ProjectActionsEnum';
+import {IDistributor} from './types/distributor';
 
 const useKeyboard = (): void => {
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();
     const handleKeyboard = (event: KeyboardEvent): void => {
-        const distributor: {[key: string]: () => void} = {
+        const distributor: IDistributor = {
             ArrowUp() {
                 setPageAction(PageActionsEnum.prevPage);
             },
