@@ -1,6 +1,14 @@
 module.exports = {
     stories: ['../src/**/*.stories.jsx', '../src/**/*.stories.tsx'],
     addons: [
+        {
+            name: '@storybook/addon-postcss',
+            options: {
+                postcssLoaderOptions: {
+                    implementation: require('postcss'),
+                },
+            },
+        },
         '@storybook/addon-storysource',
         '@storybook/addon-viewport/register',
         '@storybook/addon-docs',
@@ -12,7 +20,7 @@ module.exports = {
         const isProduction = configType === 'production';
         const index = config.module.rules.findIndex(item => item.test.toString() === /\.css$/.toString());
 
-        config.module.rules = config.module.rules.map(rule => rule.test.toString().search('svg') > 0
+        config.module.rules = config.module.rules.map(rule => rule.test?.toString().search('svg') > 0
             ? {
                 ...rule,
                 test: RegExp(rule.test.toString().replace('svg|', '').replace(/\//g, '')),
