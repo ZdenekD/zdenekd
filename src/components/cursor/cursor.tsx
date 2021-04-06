@@ -38,6 +38,7 @@ const Cursor: React.FC = () => {
 
         if (inner && outer) {
             (state.cursor.isStuck ? handleIsStuck : handleIsUnstuck)(coordX, coordY, inner, outer);
+            requestAnimationFrame(() => handleCursor(coordX, coordY));
         }
     };
     const handleMouse = (event: MouseEvent) => {
