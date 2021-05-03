@@ -7,7 +7,6 @@ import styles from './input.css';
 interface IInput {
     name: string
     label: string
-    ref?: React.Ref<HTMLInputElement>
     type?: string
     placeholder?: string
     variant?: VariantsEnum

@@ -23,7 +23,7 @@ const Alert: React.FC<IAlert> = ({
 }) => {
     const [isOpened, setOpened] = React.useState<boolean>(isOpen);
     const timer = React.useRef<NodeJS.Timeout>();
-    const {dispatch} = useGlobalState();
+    const [, dispatch] = useGlobalState();
     const remove = () => {
         setOpened(false);
         dispatch(unsetMessage());

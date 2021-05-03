@@ -1,11 +1,12 @@
 import useEventListener from '@use-it/event-listener';
 import useProjectAction from './useProjectAction';
 import ProjectActionsEnum from '../enums/ProjectActionsEnum';
+import {IDistributor} from './types/distributor';
 
 const useSwipe = (): void => {
     let coords = [0, 0];
     const setProjectAction = useProjectAction();
-    const distributor: {[key: string]: () => void} = {
+    const distributor: IDistributor = {
         [ProjectActionsEnum.prevProject]: () => {
             setProjectAction(ProjectActionsEnum.prevProject);
         },

@@ -6,7 +6,7 @@ import {variants} from './aside.animations';
 import styles from './aside.css';
 
 const Aside: React.FC = () => {
-    const {state, dispatch} = useGlobalState();
+    const [state, dispatch] = useGlobalState();
     const handleAnimationStart = () => {
         dispatch(setAnimation({animation: {isAsideAnimated: true}}));
     };

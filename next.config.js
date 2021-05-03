@@ -21,4 +21,5 @@ module.exports = styles({
         return config;
     },
     poweredByHeader: false,
+    future: {webpack5: true},
 });

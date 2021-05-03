@@ -9,6 +9,10 @@
           "value": "nosniff"
         },
         {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
           "key": "Strict-Transport-Security",
           "value": "max-age=31536000; includeSubDomains; preload"
         },
@@ -31,7 +35,7 @@
       ]
     },
     {
-      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpg|(.*).jpeg|(.*).mp4|(.*).png|(.*).svg|(.*).webp|(.*).webm|(.*).css|(.*).json|(.*).ico|(.*).webmanifest",
+      "source": "(.*).woff2|(.*).woff|(.*).gif|(.*).jpg|(.*).jpeg|(.*).mp4|(.*).png|(.*).svg|(.*).webp|(.*).webm|(.*).avif|(.*).css|(.*).json|(.*).ico|(.*).webmanifest",
       "headers": [
         {
           "key": "Cache-Control",

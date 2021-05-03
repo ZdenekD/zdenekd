@@ -11,7 +11,7 @@ import projects from '../../data/projects';
 import styles from './project.css';
 
 const Project: React.FC = () => {
-    const {state} = useGlobalState();
+    const [state] = useGlobalState();
     const [project, setProject] = React.useState<number>(state.project.index);
     const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);

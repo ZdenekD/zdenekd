@@ -2,6 +2,7 @@
 @import './variables/colors.css';
 @import './variables/easing.css';
 @import './variables/variables.css';
+@import './variables/fonts.css';
 @import './utilities/helpers.css';
 
 html {

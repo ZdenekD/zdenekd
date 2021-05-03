@@ -3,6 +3,7 @@
     display: block;
     position: fixed;
     z-index: var(--zindex-cursor);
+    will-change: transform;
     pointer-events: none;
     border-radius: 50%;
 
@@ -18,7 +19,6 @@
     left: -15px;
     opacity: 0.8;
     color: var(--color-blue-darken-4);
-    will-change: transform;
     transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: var(--ease-out-quart);
@@ -31,7 +31,6 @@
     top: -4px;
     left: -4px;
     background: var(--color-blue-darken-4);
-    will-change: transform;
     transition: background var(--transition-duration) var(--transition-timing);
     border: 1px solid var(--color-white);
 }
