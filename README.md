@@ -31,6 +31,15 @@ Because of problems with NextJS CSS modules and Framer-motion (if is used `<Anim
 Solution is use @zeit/next-css package, but there is invalid configuration for postcss, so edit files are in folder **next-css**. For proper work it's necessary use @zeit/next-css package
 and edited files from folder 'next-css'.
 
+Dependecies:
+
+    -   css-loader
+    -   extracted-loader
+    -   find-up
+    -   ignore-loader
+    -   mini-css-extract-plugin
+    -   postcss-loader
+
 ### Development
 
 It's automatically pushed to [Zeit.co](https://zeit.co/dashboard). Production branch is **master**, other branches for development (every pushed branch is built)

@@ -1,4 +1,3 @@
-import IState from '../type/state';
 import IAction from '../type/actions';
 import IMenu from './type';
 import ActionsEnum from './type/actions';

@@ -8,7 +8,6 @@ import styles from './textarea.css';
 interface ITextarea {
     name: string
     label: string
-    ref?: React.Ref<HTMLTextAreaElement>
     placeholder?: string
     variant?: VariantsEnum
     required?: boolean

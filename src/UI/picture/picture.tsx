@@ -25,7 +25,7 @@ const Picture: React.FC<IPicture> = ({
             alt={alt}
             loading="lazy"
             decoding="async"
-            className={`${styles.image} ${className || ''}`}
+            className={`${styles.image} ${className}`}
         />
     </picture>
 );

@@ -1,5 +1,6 @@
 import reducer from './reducer';
-import IAnimation, {initialState} from './type';
+import initialState from './initialState';
+import IAnimation from './type';
 import setAnimation from './actions';
 
 describe('Animation reducer', () => {

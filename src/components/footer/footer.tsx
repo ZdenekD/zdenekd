@@ -2,13 +2,13 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import Keys from '../keys';
 import Icon, {IconsEnum} from '../../UI/icon';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import {variants} from './footer.animations';
 import getRoman from '../../helpers/getRoman';
 import styles from './footer.css';
 
 const Footer: React.FC = () => {
-    const {state} = useStateValue();
+    const [state] = useGlobalState();
     const dotRef = React.useRef<HTMLElement | null>(null);
     const year = new Date().getFullYear();
     const date = getRoman(year);

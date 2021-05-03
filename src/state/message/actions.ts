@@ -1,4 +1,5 @@
-import IMessage, {initialState} from './type';
+import IMessage from './type';
+import initialState from './initialState';
 import ActionsEnum, {IAction} from './type/actions';
 
 export function setMessage(payload: IMessage): IAction {

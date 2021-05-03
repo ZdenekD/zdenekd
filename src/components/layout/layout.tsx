@@ -10,7 +10,7 @@ import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
 
@@ -20,7 +20,7 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
-    const {state} = useStateValue();
+    const [state] = useGlobalState();
 
     useKeyboard();
     useWheel();
@@ -33,11 +33,11 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
                 <meta name="author" content="ZdenekD, zdenekd.cz" />
                 <title data-test="component-title">ZdenekD</title>
-                <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href={`${config.cloudfront}`} crossOrigin="anonymous" />
                 <link rel="dns-prefetch" href={`${config.cloudfront}`} />
-                <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Roboto+Mono:400&display=swap&subset=latin-ext" rel="stylesheet" crossOrigin="anonymous" />
+                <link rel="preload" href="/font/titillium-web.woff2" as="font" crossOrigin="anonymous" />
+                <link rel="preload" href="/font/titillium-web_ext.woff2" as="font" crossOrigin="anonymous" />
+                <link rel="preload" href="/font/roboto-mono.woff2" as="font" crossOrigin="anonymous" />
                 {process.env.NODE_ENV === 'production' && (
                     <>
                         <link rel="preconnect" href={config.cloudfront} crossOrigin="anonymous" />
@@ -64,7 +64,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                 {process.env.NODE_ENV === 'production' && (
-                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js" />
+                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js" crossOrigin="anonymous" />
                 )}
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">

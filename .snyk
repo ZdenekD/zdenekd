@@ -1,9 +1,13 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.19.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-GLOBPARENT-1016905:
     - next > chokidar > glob-parent:
         reason: None given
         expires: '2021-03-31T21:54:03.083Z'
+  SNYK-JS-BROWSERSLIST-1090194:
+    - next > browserslist:
+        reason: None given
+        expires: '2021-06-02T14:34:37.420Z'
 patch: {}

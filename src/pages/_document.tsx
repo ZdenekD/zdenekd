@@ -1,4 +1,11 @@
-import Document, {Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps} from 'next/document';
+import Document, {
+    Html,
+    Head,
+    Main,
+    NextScript,
+    DocumentContext,
+    DocumentInitialProps
+} from 'next/document';
 import {resetId} from 'react-id-generator';
 
 class MyDocument extends Document {

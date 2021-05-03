@@ -1,5 +1,6 @@
 import reducer from './reducer';
-import IProject, {initialState} from './type';
+import IProject from './type';
+import initialState from './initialState';
 import setProject from './actions';
 
 describe('Project reducer', () => {

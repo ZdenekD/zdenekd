@@ -4,6 +4,4 @@ type IMenu = {
     }
 }
 
-export const initialState: IMenu = {menu: {isOpen: false}};
-
 export default IMenu;

@@ -12,6 +12,7 @@ build/
 public/*
 !public/robots.txt
 !public/sitemap.xml
+!public/font/
 
 # Database
 /db

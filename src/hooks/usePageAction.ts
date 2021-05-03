@@ -2,6 +2,7 @@ import {useRouter} from 'next/router';
 import pages from '../data/pages';
 import getPageIndex from '../helpers/getPageIndex';
 import PageActionsEnum from '../enums/PageActionsEnum';
+import {IDistributor} from './types/distributor';
 
 interface IAction {
     (value: PageActionsEnum): void
@@ -13,7 +14,7 @@ const usePageAction = (): IAction => {
     const index = getPageIndex(router.route);
     const minIndex = 0;
     const maxIndex = items.length - 1;
-    const distributor: {[key: string]: () => void} = {
+    const distributor: IDistributor = {
         [PageActionsEnum.prevPage]: () => {
             if (index - 1 >= minIndex) {
                 router.push(pages[items[index - 1]].route);

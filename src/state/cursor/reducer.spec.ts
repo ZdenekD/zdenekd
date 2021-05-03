@@ -1,5 +1,6 @@
 import reducer from './reducer';
-import ICursor, {initialState} from './type';
+import initialState from './initialState';
+import ICursor from './type';
 import {setCursor, unsetCursor} from './actions';
 
 describe('Cursor reducer', () => {

@@ -4,6 +4,4 @@ type IAnimation = {
     }
 }
 
-export const initialState: IAnimation = {animation: {isAsideAnimated: false}};
-
 export default IAnimation;

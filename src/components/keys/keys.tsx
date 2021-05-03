@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {motion} from 'framer-motion';
 import Key from './key';
 import pages from '../../data/pages';
-import {useStateValue} from '../../state';
+import {useGlobalState} from '../../state';
 import {variants} from './keys.animations';
 import usePageAction from '../../hooks/usePageAction';
 import useProjectAction from '../../hooks/useProjectAction';
@@ -14,7 +14,7 @@ import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import styles from './keys.css';
 
 const Keys: React.FC = () => {
-    const {state} = useStateValue();
+    const [state] = useGlobalState();
     const router = useRouter();
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();

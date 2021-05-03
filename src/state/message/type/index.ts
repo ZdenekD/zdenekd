@@ -7,6 +7,4 @@ type IMessage = {
     }
 }
 
-export const initialState: IMessage = {message: {variant: VariantsEnum.info, content: undefined}};
-
 export default IMessage;
