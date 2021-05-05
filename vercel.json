@@ -47,12 +47,25 @@
       "source": "(.*).js",
       "headers": [
         {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self'"
+        },
+        {
           "key": "Cache-Control",
           "value": "private, max-age=31536000, immutable"
         },
         {
           "key": "Content-Type",
           "value": "application/javascript; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "(.*).ico",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/svg+xml; charset=utf-8"
         }
       ]
     },
@@ -70,7 +83,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/manifest+json; charset=utf-8"
+          "value": "application/json; charset=utf-8"
         }
       ]
     }
