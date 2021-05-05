@@ -7,7 +7,6 @@ import Heading from '../components/heading';
 import Mobile from '../components/device/mobile';
 import Tablet from '../components/device/tablet';
 import Computer from '../components/device/computer';
-import config from '../data/config';
 import useWindowSize from '../hooks/useWindowSize';
 import pages from '../data/pages';
 import PagesEnum from '../enums/PagesEnum';
@@ -108,7 +107,7 @@ const Page: React.FC = () => {
                             >
                                 <track kind="captions" />
                                 <track kind="description" label="Description" />
-                                <source src={`${config.cloudfront}/video/dirtjob.mp4`} type="video/mp4" />
+                                <source src='/video/dirtjob.mp4' type="video/mp4" />
                             </video>
                         </Computer>
                     </div>
@@ -126,7 +125,7 @@ const Page: React.FC = () => {
                             >
                                 <track kind="captions" />
                                 <track kind="description" label="Description" />
-                                <source src={`${config.cloudfront}/video/digitalvision_mobile.mp4`} type="video/mp4" />
+                                <source src='/video/digitalvision_mobile.mp4' type="video/mp4" />
                             </video>
                         </Mobile>
                     </div>
@@ -144,7 +143,7 @@ const Page: React.FC = () => {
                             >
                                 <track kind="captions" />
                                 <track kind="description" label="Description" />
-                                <source src={`${config.cloudfront}/video/tomton_tablet.mp4`} type="video/mp4" />
+                                <source src='/video/tomton_tablet.mp4' type="video/mp4" />
                             </video>
                         </Tablet>
                     </div>

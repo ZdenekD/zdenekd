@@ -2,7 +2,6 @@ import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import useLocale from '../../../../hooks/useLocale';
 import {IProject} from '../../../../data/projects';
-import config from '../../../../data/config';
 import {variants} from './video.animations';
 import styles from './video.css';
 
@@ -38,7 +37,7 @@ const Video: React.FC<IVideo> = ({project}) => {
                 >
                     <track kind="captions" />
                     <track kind="description" label={project.title} />
-                    <source src={`${config.cloudfront}/video/${project.id}.mp4`} type="video/mp4" />
+                    <source src={`/video/${project.id}.mp4`} type="video/mp4" />
                 </video>
             </motion.div>
         </AnimatePresence>

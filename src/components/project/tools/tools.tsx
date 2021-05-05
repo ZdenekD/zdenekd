@@ -1,6 +1,5 @@
 import React from 'react';
 import useLocale from '../../../hooks/useLocale';
-import config from '../../../data/config';
 import styles from './tools.css';
 
 interface ITools {
@@ -16,7 +15,7 @@ const Tools = React.forwardRef<HTMLUListElement, ITools>(({items}, ref) => {
                 <li key={item} className={styles.tool}>
                     <figure className={styles.figure}>
                         <img
-                            src={`${config.cloudfront}/logo_${item}.svg`}
+                            src={`/logo_${item}.svg`}
                             width={32}
                             height={32}
                             alt={`${locale.tools}: ${item}`}
