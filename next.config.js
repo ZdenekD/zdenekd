@@ -23,6 +23,15 @@ module.exports = styles({
     i18n: {
         locales: ['cs', 'en'],
         defaultLocale: 'cs',
+        domains: [
+            {
+                domain: 'zdenekd.cz',
+                defaultLocale: 'cs',
+            }, {
+                domain: 'zdenekd.com',
+                defaultLocale: 'en',
+            },
+        ],
     },
     poweredByHeader: false,
     future: {webpack5: true},
