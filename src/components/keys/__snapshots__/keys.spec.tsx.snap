@@ -6,9 +6,10 @@ exports[`Keys match snapshot 1`] = `
      style="opacity:1"
 >
   <button type="button"
-          class="key "
+          class="key disabled"
           aria-label="Předchozí stránka"
           data-test="component-key"
+          disabled
   >
     <i class="icon up">
     </i>

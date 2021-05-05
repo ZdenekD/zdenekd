@@ -1,8 +1,7 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../__test__/utils/helpers';
+import '../../__test__/mocks/routerMock';
 import Keys from '.';
-
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({pathname: '/'}))}));
 
 describe('Keys', () => {
     let wrapper: ShallowWrapper;

@@ -1,5 +1,6 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../../__test__/utils/helpers';
+import '../../../__test__/mocks/routerMock';
 import Tools from '.';
 
 const items = ['string1', 'string2'];

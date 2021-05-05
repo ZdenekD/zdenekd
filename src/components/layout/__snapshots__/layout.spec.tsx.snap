@@ -43,7 +43,7 @@ exports[`Layout match snapshot 1`] = `
   >
     <noscript>
       <strong>
-        Nemáte zapnutý Javascript
+        Nemáte zapnutý JavaScript
       </strong>
       <p>
         Některé součásti stránek Vám nemusí fungovat správně.
@@ -68,7 +68,7 @@ exports[`Layout match snapshot 1`] = `
       ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
     </code>
     <div class="linkWrapper">
-      <a href="mailto:ditezdenek@pm.me?subject=♣ Zpráva přímo do schránky ♣"
+      <a href="mailto:ditezdenek&amp;#64;pm.me?subject=&amp;clubs; Zpráva přímo do schránky &amp;clubs;"
          title="Zpráva přímo do schránky"
          class="link"
       >
@@ -134,9 +134,10 @@ exports[`Layout match snapshot 1`] = `
          style="opacity:1"
     >
       <button type="button"
-              class="key "
+              class="key disabled"
               aria-label="Předchozí stránka"
               data-test="component-key"
+              disabled
       >
         <i class="icon up">
         </i>
@@ -201,7 +202,7 @@ exports[`Layout match snapshot 1`] = `
           style="opacity:0;transform:translateY(-6vh) translateZ(0)"
       >
         <a href="/"
-           class="anchor link "
+           class="anchor link active"
            data-test="component-anchor"
         >
           Úvodní stránka
