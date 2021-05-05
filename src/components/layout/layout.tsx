@@ -22,6 +22,11 @@ interface ILayout {
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
     const [state] = useGlobalState();
     const locale = useLocale();
+    let hostname;
+
+    if (typeof window !== 'undefined') {
+        hostname = window.location.hostname === 'zdenekd.cz' ? 'zdenekd.cz' : 'zdenekd.com';
+    }
 
     useKeyboard();
     useWheel();
@@ -57,7 +62,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                 {process.env.NODE_ENV === 'production' && (
-                    <script async defer data-domain="zdenekd.cz" src="https://plausible.io/js/plausible.js" crossOrigin="anonymous" />
+                    <script async defer data-domain={hostname} src="https://plausible.io/js/plausible.js" crossOrigin="anonymous" />
                 )}
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">
