@@ -1,5 +1,6 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../../../__test__/utils/helpers';
+import '../../../../__test__/mocks/routerMock';
 import Target from '.';
 
 describe('Target', () => {

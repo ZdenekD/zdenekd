@@ -1,12 +1,13 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../../../__test__/utils/helpers';
+import '../../../../__test__/mocks/routerMock';
 import {IProject} from '../../../../data/projects';
 import Video from '.';
 
 const project: IProject = {
     id: 'id',
     title: 'title',
-    description: 'description',
+    locale: {cs: {description: 'description'}},
     url: 'http://url',
     tools: ['tool', 'tool'],
 };

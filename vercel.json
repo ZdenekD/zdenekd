@@ -9,10 +9,6 @@
           "value": "nosniff"
         },
         {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
           "key": "Strict-Transport-Security",
           "value": "max-age=31536000; includeSubDomains; preload"
         },
@@ -47,12 +43,25 @@
       "source": "(.*).js",
       "headers": [
         {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self'"
+        },
+        {
           "key": "Cache-Control",
           "value": "private, max-age=31536000, immutable"
         },
         {
           "key": "Content-Type",
           "value": "application/javascript; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "(.*).ico",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/svg+xml; charset=utf-8"
         }
       ]
     },
@@ -70,7 +79,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/manifest+json; charset=utf-8"
+          "value": "application/json; charset=utf-8"
         }
       ]
     }
@@ -79,8 +88,7 @@
     "env": {
       "EMAIL_RECIPIENT": "@email-recipient-zdenekd",
       "SENDGRID_API_KEY": "@sendgrid-api-key-zdenekd",
-      "SENDGRID_TEMPLATE_ID": "@sendgrid-template-id-zdenekd",
-      "NEXT_PUBLIC_CLOUDFRONT": "@cloudfront-zdenekd"
+      "SENDGRID_TEMPLATE_ID": "@sendgrid-template-id-zdenekd"
     }
   }
 }

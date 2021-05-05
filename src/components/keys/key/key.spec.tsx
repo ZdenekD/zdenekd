@@ -3,8 +3,6 @@ import findComponent from '../../../__test__/utils/helpers';
 import DirectionsEnum from '../../../enums/DirectionsEnum';
 import Key from '.';
 
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({pathname: '/'}))}));
-
 describe('Key', () => {
     let wrapper: ShallowWrapper;
 
