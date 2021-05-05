@@ -1,5 +1,6 @@
 import React from 'react';
 import useCursor from '../../../../hooks/useCursor';
+import useLocale from '../../../../hooks/useLocale';
 import styles from './controls.css';
 
 interface IControls {
@@ -19,6 +20,7 @@ const Controls: React.FC<IControls> = ({
     const [nextElement, setnextElement] = React.useState<HTMLButtonElement | null>(null);
     const prevRef = React.useRef<HTMLButtonElement | null>(null);
     const nextRef = React.useRef<HTMLButtonElement | null>(null);
+    const locale = useLocale();
 
     React.useEffect(() => {
         setPrevElement(prevRef.current);
@@ -34,7 +36,7 @@ const Controls: React.FC<IControls> = ({
                 ref={prevRef}
                 type="button"
                 className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
-                aria-label="Předchozí projekt"
+                aria-label={locale.keys.left}
                 tabIndex={0}
                 data-test="component-controls-prev"
                 onClick={handlePrev}
@@ -43,7 +45,7 @@ const Controls: React.FC<IControls> = ({
                 ref={nextRef}
                 type="button"
                 className={`${styles.next} ${isLast ? styles.disabled : ''}`}
-                aria-label="Následující projekt"
+                aria-label={locale.keys.right}
                 tabIndex={0}
                 data-test="component-controls-next"
                 onClick={handleNext}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import {useRouter} from 'next/router';
 import {motion, Variants} from 'framer-motion';
 import Layout from '../components/layout';
 import Heading from '../components/heading';
@@ -10,6 +11,7 @@ import config from '../data/config';
 import useWindowSize from '../hooks/useWindowSize';
 import pages from '../data/pages';
 import PagesEnum from '../enums/PagesEnum';
+import LocalesEnum from '../enums/LocalesEnum';
 import MediaQueriesEnum from '../enums/MediaQueriesEnum';
 import styles from '../assets/styles/pages/index.css';
 
@@ -19,7 +21,14 @@ interface IVariants {
 }
 
 const Page: React.FC = () => {
+    const router = useRouter();
     const {width} = useWindowSize();
+    const lang = router.locale || LocalesEnum.cs;
+    const {
+        description,
+        heading,
+        paragraph,
+    } = pages[PagesEnum.homepage].locale[lang];
     const variants: IVariants = {
         article: {
             initial: {y: '3vh', opacity: 0},
@@ -61,10 +70,10 @@ const Page: React.FC = () => {
     return (
         <>
             <Head>
-                <meta name="description" content={pages[PagesEnum.homepage].description} />
+                <meta name="description" content={description} />
             </Head>
             <Layout className={styles.root} data-test="component-layout">
-                <Heading data-test="component-heading">{pages[PagesEnum.homepage].heading}</Heading>
+                <Heading data-test="component-heading">{heading}</Heading>
                 <motion.article
                     initial="initial"
                     animate="enter"
@@ -72,10 +81,11 @@ const Page: React.FC = () => {
                     variants={variants.article}
                     className={styles.article}
                 >
-                    <p className={styles.paragraph}>
-                        Profesionální hře na&nbsp;klávesnici se&nbsp;věnuji několik let.<br />
-                        Pomohu vám převést přání do kódu, kterému rozumí lidé i stroje.
-                    </p>
+                    {paragraph && (
+                        <p className={styles.paragraph}>
+                            {paragraph}
+                        </p>
+                    )}
                 </motion.article>
             </Layout>
             <motion.div

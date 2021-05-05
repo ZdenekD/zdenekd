@@ -20,7 +20,7 @@ class MyDocument extends Document {
     // eslint-disable-next-line class-methods-use-this
     render(): JSX.Element {
         return (
-            <Html lang="cs">
+            <Html>
                 <Head />
                 <body>
                     <Main />

@@ -7,6 +7,7 @@ import {useGlobalState} from '../../state';
 import {variants} from './keys.animations';
 import usePageAction from '../../hooks/usePageAction';
 import useProjectAction from '../../hooks/useProjectAction';
+import useLocale from '../../hooks/useLocale';
 import PagesEnum from '../../enums/PagesEnum';
 import DirectionsEnum from '../../enums/DirectionsEnum';
 import PageActionsEnum from '../../enums/PageActionsEnum';
@@ -23,6 +24,7 @@ const Keys: React.FC = () => {
     const isProjects = router.route === pages[PagesEnum.projects].route;
     const isLastpage = router.route === pages[items[items.length - 1]].route;
     const isError = router.route === '/404';
+    const locale = useLocale();
     const handleKeyUp = () => {
         setPageAction(PageActionsEnum.prevPage);
     };
@@ -46,26 +48,26 @@ const Keys: React.FC = () => {
         >
             <Key
                 direction={DirectionsEnum.up}
-                label="Předchozí stránka"
+                label={locale.keys.up}
                 disabled={isHomepage || isError}
                 onClick={handleKeyUp}
             />
             <div className={styles.key}>
                 <Key
                     direction={DirectionsEnum.left}
-                    label="Předchozí projekt"
+                    label={locale.keys.left}
                     disabled={!isProjects || state.project.isFirst}
                     onClick={handleKeyLeft}
                 />
                 <Key
                     direction={DirectionsEnum.down}
-                    label="Následující stránka"
+                    label={locale.keys.down}
                     disabled={isLastpage || isError}
                     onClick={handleKeyDown}
                 />
                 <Key
                     direction={DirectionsEnum.right}
-                    label="Následující projekt"
+                    label={locale.keys.right}
                     disabled={!isProjects || state.project.isLast}
                     onClick={handleKeyRight}
                 />

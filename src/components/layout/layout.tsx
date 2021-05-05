@@ -10,6 +10,7 @@ import Alert from '../../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';
+import useLocale from '../../hooks/useLocale';
 import {useGlobalState} from '../../state';
 import config from '../../data/config';
 import styles from './layout.css';
@@ -21,6 +22,7 @@ interface ILayout {
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
     const [state] = useGlobalState();
+    const locale = useLocale();
 
     useKeyboard();
     useWheel();
@@ -30,7 +32,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
         <>
             <Head>
                 <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+                <meta name="viewport" content="width=device-width" />
                 <meta name="author" content="ZdenekD, zdenekd.cz" />
                 <title data-test="component-title">ZdenekD</title>
                 <link rel="preconnect" href={`${config.cloudfront}`} crossOrigin="anonymous" />
@@ -72,14 +74,7 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
                     <Header />
                     <Section>
                         <noscript>
-                            <strong>
-                                Nemáte zapnutý Javascript
-                            </strong>
-                            <p>
-                                Některé součásti stránek Vám nemusí fungovat správně.<br />
-                                Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
-                                Vašem webovém prohlížeči.
-                            </p>
+                            {locale.noscript}
                         </noscript>
                         {children}
                     </Section>

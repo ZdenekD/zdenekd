@@ -1,17 +1,16 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import Keys from '../keys';
+import useLocale from '../../hooks/useLocale';
 import Icon, {IconsEnum} from '../../UI/icon';
 import {useGlobalState} from '../../state';
 import {variants} from './footer.animations';
-import getRoman from '../../helpers/getRoman';
 import styles from './footer.css';
 
 const Footer: React.FC = () => {
     const [state] = useGlobalState();
     const dotRef = React.useRef<HTMLElement | null>(null);
-    const year = new Date().getFullYear();
-    const date = getRoman(year);
+    const locale = useLocale();
 
     return (
         <motion.footer
@@ -21,11 +20,13 @@ const Footer: React.FC = () => {
             variants={variants.footer}
             className={`${styles.footer} ${state.menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer"
         >
-            <code className={styles.code}>&clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;zaklínadel&#125;</code>
+            <code className={styles.code}>
+                {locale.footer.code}
+            </code>
             <div className={styles.linkWrapper}>
                 <a
-                    href="mailto:ditezdenek&#64;pm.me?subject=&clubs; Zpráva přímo do schránky &clubs;"
-                    title="Zpráva přímo do schránky"
+                    href={`mailto:ditezdenek&#64;pm.me?subject=&clubs; ${locale.footer.subject} &clubs;`}
+                    title={locale.footer.subject}
                     className={styles.link}
                 >
                     <Icon variant={IconsEnum.message} />

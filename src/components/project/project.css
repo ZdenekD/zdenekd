@@ -36,6 +36,7 @@
     z-index: 0;
     opacity: 0;
 
+    /* stylelint-disable a11y/content-property-no-static-value */
     &::before {
         position: absolute;
         top: 4px;
@@ -46,6 +47,7 @@
         transform: translate(calc((var(--cursor-x) - 50vw) / 100), calc((var(--cursor-y) - 50vh) / 100));
         transition: var(--float-transition);
     }
+    /* stylelint-enable a11y/content-property-no-static-value */
 }
 
 .title {

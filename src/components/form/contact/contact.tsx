@@ -3,6 +3,7 @@ import {useRouter} from 'next/router';
 import {useForm} from 'react-hook-form';
 import anime from 'animejs';
 import send from '../../../api/send';
+import useLocale from '../../../hooks/useLocale';
 import Form from '../../../UI/form-control/form';
 import Input from '../../../UI/form-control/input';
 import Textarea from '../../../UI/form-control/textarea';
@@ -12,6 +13,7 @@ import {useGlobalState} from '../../../state';
 import {setMessage} from '../../../state/message/actions';
 import useCursor from '../../../hooks/useCursor';
 import regex from '../../../helpers/regex';
+import VariantsEnum from '../../../enums/VariantsEnum';
 import styles from './contact.css';
 
 interface IValues {
@@ -26,6 +28,7 @@ const ContactForm: React.FC = () => {
     const router = useRouter();
     const [, dispatch] = useGlobalState();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
+    const locale = useLocale();
     const onSubmit = async (values: IValues) => {
         setDisabled(true);
 
@@ -35,11 +38,18 @@ const ContactForm: React.FC = () => {
 
         const response = await send(values);
 
-        if (response.message) {
+        if (response.status) {
+            const variant: {[key: string]: VariantsEnum} = {
+                200: VariantsEnum.success,
+                400: VariantsEnum.warning,
+                405: VariantsEnum.danger,
+
+            };
+
             dispatch(setMessage({
                 message: {
-                    variant: response.variant,
-                    content: response.message,
+                    variant: variant[response.status],
+                    content: locale.status[response.status],
                 },
             }));
         }
@@ -75,12 +85,12 @@ const ContactForm: React.FC = () => {
                         ref={register({
                             pattern: {
                                 value: regex.name,
-                                message: 'Jsou zadány nepovolené znaky.',
+                                message: `${locale.form.input.name.error}`,
                             },
                         })}
                         required
                         name="name"
-                        label="Jméno"
+                        label={locale.form.input.name.label}
                         disabled={isDisabled}
                         maxlength={30}
                         error={errors.name?.message}
@@ -91,12 +101,12 @@ const ContactForm: React.FC = () => {
                         ref={register({
                             pattern: {
                                 value: regex.email,
-                                message: 'E-mail není zadán ve správném formátu.',
+                                message: `${locale.form.input.email.error}`,
                             },
                         })}
                         required
                         name="email"
-                        label="E-mail"
+                        label={locale.form.input.email.label}
                         type="email"
                         disabled={isDisabled}
                         maxlength={90}
@@ -108,12 +118,12 @@ const ContactForm: React.FC = () => {
                         ref={register({
                             pattern: {
                                 value: regex.text,
-                                message: 'Jsou zadány nepovolené znaky.',
+                                message: `${locale.form.input.message.error}`,
                             },
                         })}
                         required
                         name="message"
-                        label="Zpráva"
+                        label={locale.form.input.message.label}
                         disabled={isDisabled}
                         maxlength={255}
                         error={errors.message?.message}
@@ -134,7 +144,7 @@ const ContactForm: React.FC = () => {
                         className={styles.submit}
                         disabled={isDisabled}
                     >
-                        Odeslat
+                        {locale.form.submit}
                     </Button>
                 </div>
             </Form>
