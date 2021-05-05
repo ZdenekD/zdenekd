@@ -1,15 +1,11 @@
 import sendgrid from '@sendgrid/mail';
 import {NextApiRequest, NextApiResponse} from 'next';
-import VariantsEnum from '../../enums/VariantsEnum';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse): void {
     const {method} = req;
 
     if (method !== 'POST') {
-        res.status(405).json({
-            message: 'Není povoleno.',
-            variant: VariantsEnum.danger,
-        });
+        res.status(405).json({status: 405});
     } else {
         sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '');
 
@@ -31,15 +27,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse): void
             try {
                 await sendgrid.send(content);
 
-                res.status(200).json({
-                    message: 'Zpráva byla úspěšně odeslána.',
-                    variant: VariantsEnum.success,
-                });
+                res.status(200).json({status: 200});
             } catch (error) {
-                res.status(400).json({
-                    message: 'Něco se pravděpodobně po@#$&lo.',
-                    variant: VariantsEnum.warning,
-                });
+                res.status(400).json({status: 400});
             }
         })();
     }

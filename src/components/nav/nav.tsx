@@ -7,6 +7,7 @@ import setAnimation from '../../state/animation/actions';
 import pages from '../../data/pages';
 import {variants, variant} from './nav.animations';
 import getPage from '../../helpers/getPage';
+import LocalesEnum from '../../enums/LocalesEnum';
 import styles from './nav.css';
 import setMenu from '../../state/menu/actions';
 
@@ -14,6 +15,7 @@ const Nav: React.FC = () => {
     const router = useRouter();
     const [state, dispatch] = useGlobalState();
     const page = getPage(router.route);
+    const lang = router.locale || LocalesEnum.cs;
     const handleAnimationComplete = () => {
         dispatch(setAnimation({animation: {isAsideAnimated: false}}));
     };
@@ -44,7 +46,7 @@ const Nav: React.FC = () => {
                                 className={`${styles.link} ${page === key ? styles.active : ''}`}
                                 onClick={handleClick}
                             >
-                                {pages[key].title}
+                                {pages[key].locale[lang].title}
                             </Anchor>
                         </Link>
                     </motion.li>

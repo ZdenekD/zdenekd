@@ -2,6 +2,7 @@ import React from 'react';
 import {useGlobalState} from '../../state';
 import setMenu from '../../state/menu/actions';
 import useCursor from '../../hooks/useCursor';
+import useLocale from '../../hooks/useLocale';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.css';
 
@@ -12,6 +13,7 @@ const Menu: React.FC = () => {
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
     const pathBottomRef = React.useRef<SVGPathElement | null>(null);
+    const locale = useLocale();
     const handleTriggerAnimationIn = () => {
         animationIn({
             pathTop: pathTopRef.current,
@@ -46,7 +48,7 @@ const Menu: React.FC = () => {
             type="button"
             className={`${styles.button} ${state.menu.isOpen ? styles.opened : styles.closed} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
             data-test="component-menu"
-            aria-label={`${state.menu.isOpen ? 'Zavřít' : 'Otevřít'} navigaci`}
+            aria-label={state.menu.isOpen ? locale.menu.close : locale.menu.open}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">

@@ -1,4 +1,5 @@
 import React from 'react';
+import {useRouter} from 'next/router';
 import anime from 'animejs';
 import Browser from './browser';
 import Controls from './controls';
@@ -8,9 +9,11 @@ import useCursor from '../../hooks/useCursor';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import {useGlobalState} from '../../state';
 import projects from '../../data/projects';
+import LocalesEnum from '../../enums/LocalesEnum';
 import styles from './project.css';
 
 const Project: React.FC = () => {
+    const router = useRouter();
     const [state] = useGlobalState();
     const [project, setProject] = React.useState<number>(state.project.index);
     const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
@@ -21,6 +24,7 @@ const Project: React.FC = () => {
     const browserRef = React.useRef<HTMLDivElement | null>(null);
     const controlsRef = React.useRef<HTMLUListElement | null>(null);
     const setProjectAction = useProjectAction();
+    const lang = router.locale || LocalesEnum.cs;
     const handlePrev = () => {
         setProjectAction(ProjectActionsEnum.prevProject);
     };
@@ -112,13 +116,13 @@ const Project: React.FC = () => {
                     </h2>
                 )}
 
-                {projects[project]?.description && (
+                {projects[project]?.locale[lang].description && (
                     <p
                         ref={descriptionRef}
                         className={styles.description}
-                        data-title={projects[project].description}
+                        data-title={projects[project].locale[lang].description}
                     >
-                        {projects[project].description}
+                        {projects[project].locale[lang].description}
                     </p>
                 )}
 

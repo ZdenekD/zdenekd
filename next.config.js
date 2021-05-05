@@ -20,6 +20,10 @@ module.exports = styles({
 
         return config;
     },
+    i18n: {
+        locales: ['cs', 'en'],
+        defaultLocale: 'cs',
+    },
     poweredByHeader: false,
     future: {webpack5: true},
 });

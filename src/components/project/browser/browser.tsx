@@ -4,7 +4,6 @@ import Video from './video';
 import Addressbar from './addressbar';
 import Target from './target';
 import Picture from '../../../UI/picture';
-import config from '../../../data/config';
 import {IProject} from '../../../data/projects';
 import useWindowSize from '../../../hooks/useWindowSize';
 import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';
@@ -52,7 +51,7 @@ const Browser = React.forwardRef<HTMLElement, IBrowser>(({
                 <Video project={project} />
             ) : (
                 <Picture
-                    src={`${config.cloudfront}/image/mobile_${project.id}`}
+                    src={`/image/mobile_${project.id}`}
                     width={480}
                     height={270}
                 />
