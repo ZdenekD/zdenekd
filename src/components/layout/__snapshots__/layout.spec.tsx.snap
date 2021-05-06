@@ -72,8 +72,7 @@ exports[`Layout match snapshot 1`] = `
          title="Zpráva přímo do schránky"
          class="link"
       >
-        <svg class="icon icon-tabler icon-tabler-message"
-             width="28"
+        <svg width="28"
              height="28"
              viewbox="0 0 24 24"
              stroke-width="1"
@@ -109,8 +108,7 @@ exports[`Layout match snapshot 1`] = `
          target="_blank"
          rel="noreferrer noopener"
       >
-        <svg class="icon icon-tabler icon-tabler-brand-github"
-             width="28"
+        <svg width="28"
              height="28"
              viewbox="0 0 24 24"
              stroke-width="1"
