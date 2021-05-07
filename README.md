@@ -59,6 +59,10 @@ Convert video with YUV444 (e.g. generated with Kazam program)
 ffmpeg -i video-name.mp4 -vf scale=800:450 -pix_fmt yuv420p video-name_converted.mp4
 ```
 
+### Icons
+
+[Tabler icons](https://tablericons.com)
+
 ### Building
 
 Project is automatically build on [Zeit.co](https://zeit.co/dashboard).
