@@ -222,6 +222,8 @@
     ],
     // Enforce valid expect() usage (valid-expect)
     "jest/valid-expect": 1,
+    // When there is only a single export from a module, prefer using default export over named export.
+    "import/prefer-default-export": 0,
     // Off import errors (becauseof webpack config)
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
