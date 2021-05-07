@@ -2,7 +2,7 @@
     display: none;
 
     @media (--min-lg) {
-        margin-right: calc(2 * var(--gap));
+        margin-left: auto;
         display: flex;
         flex-direction: column;
     }

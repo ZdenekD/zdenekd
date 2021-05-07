@@ -127,6 +127,20 @@ exports[`Layout match snapshot 1`] = `
         </svg>
       </a>
     </div>
+    <div class="languages">
+      <a href="/"
+         class="anchor disabled"
+         title
+      >
+        CS
+      </a>
+      <a href="/"
+         class="anchor "
+         title
+      >
+        EN
+      </a>
+    </div>
     <div class="keys"
          data-test="component-keys"
          style="opacity:1"

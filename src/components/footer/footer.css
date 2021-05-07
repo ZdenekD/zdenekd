@@ -18,7 +18,9 @@
 
 .footer {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: var(--gap);
     grid-area: footer;
     align-items: flex-end;
     position: relative;
@@ -27,11 +29,13 @@
 
     @media (--min-xs) {
         padding: var(--gap);
-        flex-direction: column-reverse;
+        grid-template-columns: auto auto;
+        grid-gap: 0;
     }
 
     @media (--min-md) {
         padding: var(--gap) calc(2 * var(--gap));
+        grid-template-columns: 50% auto auto;
         flex-direction: row;
 
         &::before,
@@ -67,10 +71,13 @@
             right: calc(25% - 30px);
         }
     }
+
+    @media (--min-lg) {
+        grid-template-columns: 50% max-content auto min-content min-content;
+    }
 }
 
 .opened {
-
     &::before {
         --opacity: 0.5;
         animation: fade-out 0.4s ease-in-out forwards;
@@ -83,7 +90,6 @@
 }
 
 .closed {
-
     &::before {
         --opacity: 0.5;
         animation: fade-in 0.4s ease-in-out 1s forwards;
@@ -96,20 +102,8 @@
 }
 
 .linkWrapper {
-
-    @media (--min-xs) {
-        margin: 0 auto;
-    }
-
-    @media (--min-md) {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-
-    @media (--min-lg) {
-        margin-right: auto;
-        margin-left: 0;
-    }
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .link {
@@ -122,6 +116,45 @@
     &:hover {
         color: var(--color-red);
     }
+}
+
+.languages {
+
+    @media (--min-xs) {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    @media (--min-lg) {
+        margin-right: auto;
+    }
+}
+
+.anchor {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--key-background, var(--color-light-gray));
+    color: inherit;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all var(--transition-duration) var(--transition-timing);
+    border-radius: var(--border-radius);
+
+    &:hover,
+    &:focus {
+        background: var(--color-blue-darken-4);
+        color: var(--key-background, var(--color-light-gray));
+    }
+}
+
+.disabled {
+    background: var(--color-blue-darken-4);
+    color: var(--key-background, var(--color-light-gray));
+    pointer-events: none;
 }
 
 .code {
@@ -161,7 +194,6 @@
 
     &,
     span {
-
         &::selection {
             background: transparent;
             color: currentColor;
@@ -186,12 +218,12 @@
     }
 
     @media (--min-lg) {
-        margin-top: var(--gap);
-        margin-right: var(--gap);
+        margin: var(--gap) var(--gap) 0;
         padding-bottom: calc(2 * var(--gap));
         display: block;
         position: relative;
         font-size: 1em;
+        text-align: center;
         letter-spacing: 1.5px;
 
         &::before {
