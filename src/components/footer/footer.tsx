@@ -1,7 +1,7 @@
 import React from 'react';
 import {useRouter} from 'next/router';
-import Link from 'next/link';
 import {motion} from 'framer-motion';
+import Locale from './locale';
 import Keys from '../keys';
 import useLocale from '../../hooks/useLocale';
 import Icon, {IconsEnum} from '../../UI/icon';
@@ -44,15 +44,20 @@ const Footer: React.FC = () => {
                     <Icon variant={IconsEnum.brandGithub} />
                 </a>
             </div>
-            <div className={styles.languages}>
+            <motion.div
+                initial={false}
+                animate={menu.isOpen ? 'enter' : 'exit'}
+                variants={variants.locale}
+                className={styles.languages}
+            >
                 {router.locales && router.locales.map(item => (
-                    <Link key={item} href={router.route} locale={item}>
-                        <a href={router.route} className={`${styles.anchor} ${item === router.locale ? styles.disabled : ''}`} title="">
-                            {item.toUpperCase()}
-                        </a>
-                    </Link>
+                    <Locale
+                        key={item}
+                        locale={item}
+                        router={router}
+                    />
                 ))}
-            </div>
+            </motion.div>
             <Keys />
             <motion.span
                 initial={false}
