@@ -1,4 +1,6 @@
 import React from 'react';
+import {useRouter} from 'next/router';
+import Link from 'next/link';
 import {motion} from 'framer-motion';
 import Keys from '../keys';
 import useLocale from '../../hooks/useLocale';
@@ -8,6 +10,7 @@ import {variants} from './footer.animations';
 import styles from './footer.css';
 
 const Footer: React.FC = () => {
+    const router = useRouter();
     const [state] = useGlobalState();
     const dotRef = React.useRef<HTMLElement | null>(null);
     const locale = useLocale();
@@ -40,6 +43,15 @@ const Footer: React.FC = () => {
                 >
                     <Icon variant={IconsEnum.brandGithub} />
                 </a>
+            </div>
+            <div className={styles.languages}>
+                {router.locales && router.locales.map(item => (
+                    <Link key={item} href={router.route} locale={item}>
+                        <a href={router.route} className={`${styles.anchor} ${item === router.locale ? styles.disabled : ''}`} title="">
+                            {item.toUpperCase()}
+                        </a>
+                    </Link>
+                ))}
             </div>
             <Keys />
             <motion.span
