@@ -1,4 +1,4 @@
-type ICursor = {
+export type ICursor = {
     cursor: {
         isStuck: boolean,
         props: {
@@ -9,5 +9,3 @@ type ICursor = {
         }
     }
 }
-
-export default ICursor;

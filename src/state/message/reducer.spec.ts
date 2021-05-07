@@ -1,8 +1,8 @@
 import reducer from './reducer';
-import IMessage from './type';
 import initialState from './initialState';
-import {setMessage, unsetMessage} from './actions';
+import {IMessage} from './type';
 import VariantsEnum from '../../enums/VariantsEnum';
+import {ActionsEnum} from './type/actions';
 
 describe('Message reducer', () => {
     it('change state on `setMessage` action', () => {
@@ -12,14 +12,16 @@ describe('Message reducer', () => {
                 content: 'Error message',
             },
         };
-        const state = reducer(initialState, setMessage(value));
+        const action = {type: ActionsEnum.set, payload: value};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });
 
     it('change to initial message state on `unsetMessage` action', () => {
         const value: IMessage = initialState;
-        const state = reducer(initialState, unsetMessage());
+        const action = {type: ActionsEnum.unset, payload: value};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });

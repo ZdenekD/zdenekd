@@ -11,7 +11,7 @@ import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';
 import useLocale from '../../hooks/useLocale';
-import {useGlobalState} from '../../state';
+import {useMessageState} from '../../state/message';
 import styles from './layout.css';
 
 interface ILayout {
@@ -20,7 +20,7 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({children, className = ''}) => {
-    const [state] = useGlobalState();
+    const [{message}] = useMessageState();
     const locale = useLocale();
     let hostname;
 
@@ -80,8 +80,8 @@ const Layout: React.FC<ILayout> = ({children, className = ''}) => {
             </main>
             <React.StrictMode>
                 <Aside />
-                <Alert variant={state.message.variant} isOpen={!!state.message.content} timeout={4}>
-                    {state.message.content}
+                <Alert variant={message.variant} isOpen={!!message.content} timeout={4}>
+                    {message.content}
                 </Alert>
                 <Cursor />
             </React.StrictMode>

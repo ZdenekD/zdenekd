@@ -1,17 +1,20 @@
-import IMessage from './type';
 import initialState from './initialState';
-import ActionsEnum, {IAction} from './type/actions';
+import {IMessage} from './type';
+import {
+    IAction,
+    IActions,
+    ActionsEnum
+} from './type/actions';
 
-export function setMessage(payload: IMessage): IAction {
-    return {
+const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
+    setMessage: (payload: IMessage) => dispatch({
         type: ActionsEnum.set,
         payload,
-    };
-}
-
-export function unsetMessage(): IAction {
-    return {
+    }),
+    unsetMessage: () => dispatch({
         type: ActionsEnum.unset,
         payload: initialState,
-    };
-}
+    }),
+});
+
+export {dispatcher};

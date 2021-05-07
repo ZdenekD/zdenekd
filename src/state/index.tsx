@@ -1,25 +1,18 @@
-import React from 'react';
-import initialState from './initialState';
-import reducer from './reducer';
-import IState from './type/state';
-import IAction from './type/actions';
+import combineProviders from './utils/combineProviders';
+import {AnimationProvider} from './animation';
+import {CursorProvider} from './cursor';
+import {MenuProvider} from './menu';
+import {MessageProvider} from './message';
+import {ProjectProvider} from './project';
 
-type IContext = [IState, React.Dispatch<IAction>];
+const providers = [
+    AnimationProvider,
+    CursorProvider,
+    MenuProvider,
+    MessageProvider,
+    ProjectProvider,
+];
 
-const StateContext = React.createContext<IContext>([initialState, () => null]);
-const Provider: React.FC = ({children}) => {
-    const [state, dispatch] = React.useReducer(reducer, initialState);
+const Provider = combineProviders(...providers);
 
-    return (
-        <StateContext.Provider value={[state, dispatch]}>
-            {children}
-        </StateContext.Provider>
-    );
-};
-const useGlobalState = (): IContext => React.useContext(StateContext);
-
-export {
-    Provider,
-    StateContext,
-    useGlobalState
-};
+export {Provider};

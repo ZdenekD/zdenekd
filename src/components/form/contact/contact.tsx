@@ -9,8 +9,7 @@ import Input from '../../../UI/form-control/input';
 import Textarea from '../../../UI/form-control/textarea';
 import Button from '../../../UI/form-control/button';
 import Loader from '../../../UI/loader';
-import {useGlobalState} from '../../../state';
-import {setMessage} from '../../../state/message/actions';
+import {useMessageState} from '../../../state/message';
 import useCursor from '../../../hooks/useCursor';
 import regex from '../../../helpers/regex';
 import VariantsEnum from '../../../enums/VariantsEnum';
@@ -26,7 +25,7 @@ const ContactForm: React.FC = () => {
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
     const router = useRouter();
-    const [, dispatch] = useGlobalState();
+    const [, {setMessage}] = useMessageState();
     const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
     const locale = useLocale();
     const onSubmit = async (values: IValues) => {
@@ -46,12 +45,12 @@ const ContactForm: React.FC = () => {
 
             };
 
-            dispatch(setMessage({
+            setMessage({
                 message: {
                     variant: variant[response.status],
                     content: locale.status[response.status],
                 },
-            }));
+            });
         }
 
         router.push('/');

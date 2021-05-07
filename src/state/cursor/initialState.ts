@@ -1,4 +1,4 @@
-import ICursor from './type';
+import {ICursor} from './type';
 
 const initialState: ICursor = {
     cursor: {

@@ -1,12 +1,13 @@
 import reducer from './reducer';
 import initialState from './initialState';
-import IMenu from './type';
-import setMenu from './actions';
+import {IMenu} from './type';
+import {ActionsEnum} from './type/actions';
 
-describe('Menu reducer', () => {
+describe('Reducer/Menu', () => {
     it('change state on `setMenu` action', () => {
         const value: IMenu = {menu: {isOpen: true}};
-        const state = reducer(initialState, setMenu(value));
+        const action = {type: ActionsEnum.set, payload: value};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import useEventListener from '@use-it/event-listener';
-import {useGlobalState} from '../../state';
+import {useCursorState} from '../../state/cursor';
 import styles from './cursor.css';
 
 interface IHandler {
@@ -9,7 +9,7 @@ interface IHandler {
 }
 
 const Cursor: React.FC = () => {
-    const [state] = useGlobalState();
+    const [{cursor}] = useCursorState();
     const outerCursorRef = React.useRef<HTMLElement | null>(null);
     const innerCursorRef = React.useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {
@@ -23,7 +23,7 @@ const Cursor: React.FC = () => {
         inner.style.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY})`;
     };
     const handleIsStuck: IHandler = (coordX, coordY, inner, outer) => {
-        const {width, height, top, left} = state.cursor.props;
+        const {width, height, top, left} = cursor.props;
 
         outer.style.transform = `translate3d(${left + 10}px, ${top + 10}px, 0)`;
         outer.style.setProperty('--cursor-width', `${width + 10}px`);
@@ -37,7 +37,7 @@ const Cursor: React.FC = () => {
         const inner = (innerCursorRef.current as HTMLElement);
 
         if (inner && outer) {
-            (state.cursor.isStuck ? handleIsStuck : handleIsUnstuck)(coordX, coordY, inner, outer);
+            (cursor.isStuck ? handleIsStuck : handleIsUnstuck)(coordX, coordY, inner, outer);
             requestAnimationFrame(() => handleCursor(coordX, coordY));
         }
     };
@@ -52,7 +52,7 @@ const Cursor: React.FC = () => {
             <i ref={outerCursorRef} className={styles.outerCursor} data-test="component-outer-cursor" />
             <i
                 ref={innerCursorRef}
-                className={`${styles.innerCursor} ${state.cursor.isStuck ? styles.innerCursorStuck : ''}`}
+                className={`${styles.innerCursor} ${cursor.isStuck ? styles.innerCursorStuck : ''}`}
                 data-test="component-inner-cursor"
             />
         </>

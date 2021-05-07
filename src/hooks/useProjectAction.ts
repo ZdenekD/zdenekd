@@ -1,6 +1,5 @@
 import {useRouter} from 'next/router';
-import {useGlobalState} from '../state';
-import setProject from '../state/project/actions';
+import {useProjectState} from '../state/project';
 import pages from '../data/pages';
 import projects from '../data/projects';
 import PagesEnum from '../enums/PagesEnum';
@@ -13,7 +12,7 @@ interface IAction {
 
 const useProjectAction = (): IAction => {
     const router = useRouter();
-    const [state, dispatch] = useGlobalState();
+    const [{project}, {setProject}] = useProjectState();
     const minIndex = 0;
     const maxIndex = projects.length - 1;
     const distributor: IDistributor = {
@@ -22,24 +21,24 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (state.project.index - 1 === minIndex) {
-                dispatch(setProject({
+            if (project.index - 1 === minIndex) {
+                setProject({
                     project: {
-                        index: state.project.index - 1,
+                        index: project.index - 1,
                         isFirst: true,
                         isLast: false,
                     },
-                }));
+                });
             }
 
-            if (state.project.index - 1 > minIndex) {
-                dispatch(setProject({
+            if (project.index - 1 > minIndex) {
+                setProject({
                     project: {
-                        index: state.project.index - 1,
+                        index: project.index - 1,
                         isFirst: false,
                         isLast: false,
                     },
-                }));
+                });
             }
         },
         [ProjectActionsEnum.nextProject]: () => {
@@ -47,24 +46,24 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (state.project.index + 1 === maxIndex) {
-                dispatch(setProject({
+            if (project.index + 1 === maxIndex) {
+                setProject({
                     project: {
-                        index: state.project.index + 1,
+                        index: project.index + 1,
                         isFirst: false,
                         isLast: true,
                     },
-                }));
+                });
             }
 
-            if (state.project.index + 1 < maxIndex) {
-                dispatch(setProject({
+            if (project.index + 1 < maxIndex) {
+                setProject({
                     project: {
-                        index: state.project.index + 1,
+                        index: project.index + 1,
                         isFirst: false,
                         isLast: false,
                     },
-                }));
+                });
             }
         },
     };

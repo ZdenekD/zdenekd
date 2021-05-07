@@ -1,9 +1,15 @@
-import IProject from './type';
-import ActionsEnum, {IAction} from './type/actions';
+import {IProject} from './type';
+import {
+    IAction,
+    IActions,
+    ActionsEnum
+} from './type/actions';
 
-export default function setProject(payload: IProject): IAction {
-    return {
+const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
+    setProject: (payload: IProject) => dispatch({
         type: ActionsEnum.set,
         payload,
-    };
-}
+    }),
+});
+
+export {dispatcher};
