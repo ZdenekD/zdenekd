@@ -1,8 +1,8 @@
-import IAction from '../type/actions';
-import IMenu from './type';
-import ActionsEnum from './type/actions';
+import {IReducer} from '../type/reducer';
+import {IMenu} from './type';
+import {IAction, ActionsEnum} from './type/actions';
 
-const reducer = (state: IMenu, action: IAction): IMenu => {
+const reducer: IReducer<IMenu, IAction> = (state, action) => {
     switch (action.type) {
         case ActionsEnum.set:
             return ({

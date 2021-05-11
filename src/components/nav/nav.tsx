@@ -2,33 +2,33 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {motion} from 'framer-motion';
 import Anchor from '../../UI/anchor';
-import {useGlobalState} from '../../state';
-import setAnimation from '../../state/animation/actions';
+import {useMenuState} from '../../state/menu';
+import {useAnimationState} from '../../state/animation';
 import pages from '../../data/pages';
 import {variants, variant} from './nav.animations';
 import getPage from '../../helpers/getPage';
 import LocalesEnum from '../../enums/LocalesEnum';
 import styles from './nav.css';
-import setMenu from '../../state/menu/actions';
 
 const Nav: React.FC = () => {
     const router = useRouter();
-    const [state, dispatch] = useGlobalState();
+    const [{menu}, {setMenu}] = useMenuState();
+    const [, {setAnimation}] = useAnimationState();
     const page = getPage(router.route);
     const lang = router.locale || LocalesEnum.cs;
     const handleAnimationComplete = () => {
-        dispatch(setAnimation({animation: {isAsideAnimated: false}}));
+        setAnimation({animation: {isAsideAnimated: false}});
     };
     const handleClick = () => {
-        dispatch(setAnimation({animation: {isAsideAnimated: true}}));
-        dispatch(setMenu({menu: {isOpen: false}}));
+        setAnimation({animation: {isAsideAnimated: true}});
+        setMenu({menu: {isOpen: false}});
     };
 
     return (
         <nav className={styles.nav} data-test="component-nav">
             <motion.ul
                 initial={false}
-                animate={state.menu.isOpen ? 'enter' : 'exit'}
+                animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={variants}
                 className={styles.list}
                 onAnimationComplete={handleAnimationComplete}

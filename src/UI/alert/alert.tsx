@@ -2,8 +2,7 @@ import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import VariantsEnum from '../../enums/VariantsEnum';
 import {variants} from './alert.animations';
-import {useGlobalState} from '../../state';
-import {unsetMessage} from '../../state/message/actions';
+import {useMessageState} from '../../state/message';
 import styles from './alert.css';
 
 interface IAlert {
@@ -23,10 +22,10 @@ const Alert: React.FC<IAlert> = ({
 }) => {
     const [isOpened, setOpened] = React.useState<boolean>(isOpen);
     const timer = React.useRef<NodeJS.Timeout>();
-    const [, dispatch] = useGlobalState();
+    const [, {unsetMessage}] = useMessageState();
     const remove = () => {
         setOpened(false);
-        dispatch(unsetMessage());
+        unsetMessage();
     };
     const handleClick = () => {
         remove();

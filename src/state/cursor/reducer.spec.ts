@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import initialState from './initialState';
-import ICursor from './type';
-import {setCursor, unsetCursor} from './actions';
+import {ICursor} from './type';
+import {ActionsEnum} from './type/actions';
 
 describe('Cursor reducer', () => {
     it('change state on `setCursor` action', () => {
@@ -16,14 +16,16 @@ describe('Cursor reducer', () => {
                 },
             },
         };
-        const state = reducer(initialState, setCursor(value));
+        const action = {type: ActionsEnum.set, payload: value};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });
 
     it('change to initial cursor state on `unsetCursor` action', () => {
         const value: ICursor = initialState;
-        const state = reducer(initialState, unsetCursor());
+        const action = {type: ActionsEnum.unset};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });

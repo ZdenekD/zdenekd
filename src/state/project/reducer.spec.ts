@@ -1,7 +1,7 @@
 import reducer from './reducer';
-import IProject from './type';
+import {IProject} from './type';
 import initialState from './initialState';
-import setProject from './actions';
+import {ActionsEnum} from './type/actions';
 
 describe('Project reducer', () => {
     it('change state on `setProject` action', () => {
@@ -12,7 +12,8 @@ describe('Project reducer', () => {
                 isLast: false,
             },
         };
-        const state = reducer(initialState, setProject(value));
+        const action = {type: ActionsEnum.set, payload: value};
+        const state = reducer(initialState, action);
 
         expect(state).toEqual(value);
     });

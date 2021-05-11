@@ -1,10 +1,8 @@
 import VariantsEnum from '../../../enums/VariantsEnum';
 
-type IMessage = {
+export type IMessage = {
     message: {
         variant: VariantsEnum
         content: string | undefined
     }
 }
-
-export default IMessage;

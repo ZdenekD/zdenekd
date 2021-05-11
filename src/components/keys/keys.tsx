@@ -3,7 +3,8 @@ import {useRouter} from 'next/router';
 import {motion} from 'framer-motion';
 import Key from './key';
 import pages from '../../data/pages';
-import {useGlobalState} from '../../state';
+import {useMenuState} from '../../state/menu';
+import {useProjectState} from '../../state/project';
 import {variants} from './keys.animations';
 import usePageAction from '../../hooks/usePageAction';
 import useProjectAction from '../../hooks/useProjectAction';
@@ -15,7 +16,8 @@ import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import styles from './keys.css';
 
 const Keys: React.FC = () => {
-    const [state] = useGlobalState();
+    const [{menu}] = useMenuState();
+    const [{project}] = useProjectState();
     const router = useRouter();
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();
@@ -41,7 +43,7 @@ const Keys: React.FC = () => {
     return (
         <motion.div
             initial={false}
-            animate={state.menu.isOpen ? 'enter' : 'exit'}
+            animate={menu.isOpen ? 'enter' : 'exit'}
             variants={variants}
             className={styles.keys}
             data-test="component-keys"
@@ -56,7 +58,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.left}
                     label={locale.keys.left}
-                    disabled={!isProjects || state.project.isFirst}
+                    disabled={!isProjects || project.isFirst}
                     onClick={handleKeyLeft}
                 />
                 <Key
@@ -68,7 +70,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.right}
                     label={locale.keys.right}
-                    disabled={!isProjects || state.project.isLast}
+                    disabled={!isProjects || project.isLast}
                     onClick={handleKeyRight}
                 />
             </div>

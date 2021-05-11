@@ -1,9 +1,14 @@
-import IMenu from '.';
+import {IMenu} from '.';
 
-enum ActionsEnum {
+export enum ActionsEnum {
     set = 'SET_MENU'
 }
 
-export type IAction = {type: ActionsEnum, payload: IMenu}
+export type IAction = {
+    readonly type: ActionsEnum,
+    readonly payload: IMenu
+}
 
-export default ActionsEnum;
+export interface IActions {
+    setMenu: (payload: IMenu) => void
+}

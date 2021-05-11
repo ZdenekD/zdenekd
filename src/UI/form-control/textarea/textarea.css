@@ -27,6 +27,7 @@
     font-size: 1.2em;
     line-height: var(--input-height);
     resize: none;
+    caret-color: var(--color-blue);
 
     &:focus,
     &[placeholder] {

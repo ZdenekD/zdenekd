@@ -1,10 +1,16 @@
-import ICursor from '.';
+import {ICursor} from '.';
 
-enum ActionsEnum {
+export enum ActionsEnum {
     set = 'SET_CURSOR',
     unset = 'UNSET_CURSOR'
 }
 
-export type IAction = {type: ActionsEnum, payload: ICursor}
+export type IAction = {
+    readonly type: ActionsEnum,
+    readonly payload?: ICursor
+};
 
-export default ActionsEnum;
+export interface IActions {
+    setCursor: (payload: ICursor) => void
+    unsetCursor: () => void
+}

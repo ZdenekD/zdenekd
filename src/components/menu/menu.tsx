@@ -1,6 +1,6 @@
 import React from 'react';
-import {useGlobalState} from '../../state';
-import setMenu from '../../state/menu/actions';
+import {useMenuState} from '../../state/menu';
+import {useAnimationState} from '../../state/animation';
 import useCursor from '../../hooks/useCursor';
 import useLocale from '../../hooks/useLocale';
 import {animationIn, animationOut} from './menu.animations';
@@ -8,7 +8,8 @@ import styles from './menu.css';
 
 const Menu: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const [state, dispatch] = useGlobalState();
+    const [{menu}, {setMenu}] = useMenuState();
+    const [{animation}] = useAnimationState();
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
@@ -29,12 +30,12 @@ const Menu: React.FC = () => {
         });
     };
     const handleClick = () => {
-        dispatch(setMenu({menu: {isOpen: !state.menu.isOpen}}));
+        setMenu({menu: {isOpen: !menu.isOpen}});
     };
 
     React.useEffect(() => {
-        (state.menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
-    }, [state.menu.isOpen]);
+        (menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
+    }, [menu.isOpen]);
 
     React.useEffect(() => {
         setCatcher(buttonRef.current);
@@ -46,9 +47,9 @@ const Menu: React.FC = () => {
         <button
             ref={buttonRef}
             type="button"
-            className={`${styles.button} ${state.menu.isOpen ? styles.opened : styles.closed} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
+            className={`${styles.button} ${menu.isOpen ? styles.opened : styles.closed} ${animation.isAsideAnimated ? styles.disabled : ''}`}
             data-test="component-menu"
-            aria-label={state.menu.isOpen ? locale.menu.close : locale.menu.open}
+            aria-label={menu.isOpen ? locale.menu.close : locale.menu.open}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">

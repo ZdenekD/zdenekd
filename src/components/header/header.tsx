@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Menu from '../menu';
 import Logo from '../logo';
 import useLocale from '../../hooks/useLocale';
-import {useGlobalState} from '../../state';
+import {useAnimationState} from '../../state/animation';
 import styles from './header.css';
 
 const Header: React.FC = () => {
-    const [state] = useGlobalState();
+    const [{animation}] = useAnimationState();
     const locale = useLocale();
 
     return (
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
             <Link passHref href="/">
                 <a
                     href="/"
-                    className={`${styles.link} ${state.animation.isAsideAnimated ? styles.disabled : ''}`}
+                    className={`${styles.link} ${animation.isAsideAnimated ? styles.disabled : ''}`}
                     aria-label={locale.header.link}
                 >
                     <Logo />

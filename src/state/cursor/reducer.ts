@@ -1,8 +1,9 @@
-import IAction from '../type/actions';
-import ICursor from './type';
-import ActionsEnum from './type/actions';
+import initialState from './initialState';
+import {IReducer} from '../type/reducer';
+import {ICursor} from './type';
+import {IAction, ActionsEnum} from './type/actions';
 
-const reducer = (state: ICursor, action: IAction): ICursor => {
+const reducer: IReducer<ICursor, IAction> = (state, action) => {
     switch (action.type) {
         case ActionsEnum.set:
             return ({
@@ -12,7 +13,7 @@ const reducer = (state: ICursor, action: IAction): ICursor => {
         case ActionsEnum.unset:
             return ({
                 ...state,
-                ...action.payload,
+                ...initialState,
             });
         default:
             return state;
