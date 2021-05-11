@@ -1,10 +1,16 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {
+    mount,
+    ReactWrapper,
+    ShallowWrapper
+} from 'enzyme';
 import {Provider} from '../../state';
 
-const findComponent = (wrapper: ShallowWrapper, attribute: string): ShallowWrapper => wrapper.find(`[data-test="${attribute}"]`);
+type IWrapper = ShallowWrapper | ReactWrapper;
 
-export const stateFactory = (children: React.ReactNode): ShallowWrapper => {
-    const wrapper = shallow(
+const findComponent = (wrapper: IWrapper, attribute: string): IWrapper => wrapper.find(`[data-test="${attribute}"]`);
+
+export const stateFactory = (children: React.ReactNode): IWrapper => {
+    const wrapper = mount(
         <Provider>
             {children}
         </Provider>

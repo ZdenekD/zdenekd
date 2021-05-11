@@ -1,9 +1,14 @@
-import IAnimation from '.';
+import {IAnimation} from '.';
 
-enum ActionsEnum {
+export enum ActionsEnum {
     set = 'SET_ANIMATION'
 }
 
-export type IAction = {type: ActionsEnum, payload: IAnimation}
+export type IAction = {
+    readonly type: ActionsEnum,
+    readonly payload: IAnimation
+}
 
-export default ActionsEnum;
+export interface IActions {
+    setAnimation: (payload: IAnimation) => void
+}

@@ -1,23 +1,24 @@
 import {motion} from 'framer-motion';
 import Nav from '../nav';
-import {useGlobalState} from '../../state';
-import setAnimation from '../../state/animation/actions';
+import {useAnimationState} from '../../state/animation';
+import {useMenuState} from '../../state/menu';
 import {variants} from './aside.animations';
 import styles from './aside.css';
 
 const Aside: React.FC = () => {
-    const [state, dispatch] = useGlobalState();
+    const [, {setAnimation}] = useAnimationState();
+    const [{menu}] = useMenuState();
     const handleAnimationStart = () => {
-        dispatch(setAnimation({animation: {isAsideAnimated: true}}));
+        setAnimation({animation: {isAsideAnimated: true}});
     };
     const handleAnimationEnd = () => {
-        dispatch(setAnimation({animation: {isAsideAnimated: false}}));
+        setAnimation({animation: {isAsideAnimated: false}});
     };
 
     return (
         <motion.aside
             initial={false}
-            animate={state.menu.isOpen ? 'enter' : 'exit'}
+            animate={menu.isOpen ? 'enter' : 'exit'}
             variants={variants}
             className={styles.aside}
             data-test="component-aside"

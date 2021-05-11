@@ -1,14 +1,13 @@
 import useEventListener from '@use-it/event-listener';
-import {useGlobalState} from '../state';
-import {setCursor, unsetCursor} from '../state/cursor/actions';
+import {useCursorState} from '../state/cursor';
 
 const useCursor = (element: HTMLElement | null): void => {
-    const [, dispatch] = useGlobalState();
+    const [, {setCursor, unsetCursor}] = useCursorState();
     const handleMouseEnter = (event: MouseEvent): void => {
         if (event.target) {
             const {width, height, top, left} = (event.target as HTMLElement).getBoundingClientRect();
 
-            dispatch(setCursor({
+            setCursor({
                 cursor: {
                     isStuck: true,
                     props: {
@@ -18,11 +17,11 @@ const useCursor = (element: HTMLElement | null): void => {
                         left,
                     },
                 },
-            }));
+            });
         }
     };
     const handleMouseLeave = () => {
-        dispatch(unsetCursor());
+        unsetCursor();
     };
 
     useEventListener('mouseenter', handleMouseEnter, element);

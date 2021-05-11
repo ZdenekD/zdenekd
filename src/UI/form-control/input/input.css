@@ -26,6 +26,7 @@
     color: var(--label-color);
     font-size: 1.2em;
     line-height: var(--input-height);
+    caret-color: var(--color-blue);
 
     &:focus,
     &[placeholder] {

@@ -94,6 +94,13 @@ video {
     box-sizing: border-box;
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+}
+
 body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -140,14 +147,37 @@ q::after {
 
 table {
     border-spacing: 0;
+    border-collapse: collapse;
+}
+
+strong {
+    font-weight: bold;
+}
+
+sub,
+sup {
+    vertical-align: baseline;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-    * {
+    *,
+    *::before,
+    *::after {
         scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
 }

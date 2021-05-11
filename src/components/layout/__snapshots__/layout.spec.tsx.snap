@@ -127,16 +127,16 @@ exports[`Layout match snapshot 1`] = `
         </svg>
       </a>
     </div>
-    <div class="languages">
+    <div class="languages"
+         style="opacity:1"
+    >
       <a href="/"
          class="anchor disabled"
-         title
       >
         CS
       </a>
       <a href="/"
          class="anchor "
-         title
       >
         EN
       </a>

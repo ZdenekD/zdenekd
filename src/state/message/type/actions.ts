@@ -1,10 +1,16 @@
-import IMessage from '.';
+import {IMessage} from '.';
 
-enum ActionsEnum {
+export enum ActionsEnum {
     set = 'SET_MESSAGE',
     unset = 'UNSET_MESSAGE'
 }
 
-export type IAction = {type: ActionsEnum, payload?: IMessage};
+export type IAction = {
+    readonly type: ActionsEnum,
+    readonly payload: IMessage
+};
 
-export default ActionsEnum;
+export interface IActions {
+    setMessage: (payload: IMessage) => void
+    unsetMessage: () => void
+}

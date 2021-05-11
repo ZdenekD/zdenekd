@@ -1,13 +1,7 @@
-import {IAction as IAnimationAction} from '../animation/type/actions';
-import {IAction as ICursorAction} from '../cursor/type/actions';
-import {IAction as IMenuAction} from '../menu/type/actions';
-import {IAction as IMessageAction} from '../message/type/actions';
-import {IAction as IProjectAction} from '../project/type/actions';
+import {IActions as IAnimationActions} from '../animation/type/actions';
+import {IActions as ICursorActions} from '../cursor/type/actions';
+import {IActions as IMenuActions} from '../menu/type/actions';
+import {IActions as IMessageActions} from '../message/type/actions';
+import {IActions as IProjectActions} from '../project/type/actions';
 
-type IAction = IAnimationAction
-    | ICursorAction
-    | IMenuAction
-    | IMessageAction
-    | IProjectAction;
-
-export default IAction;
+export type IActions = IAnimationActions | ICursorActions | IMenuActions | IMessageActions | IProjectActions;

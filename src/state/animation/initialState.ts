@@ -1,4 +1,4 @@
-import IAnimation from './type';
+import {IAnimation} from './type';
 
 const initialState: IAnimation = {animation: {isAsideAnimated: false}};
 

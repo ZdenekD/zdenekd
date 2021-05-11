@@ -1,9 +1,15 @@
-import IAnimation from './type';
-import ActionsEnum, {IAction} from './type/actions';
+import {IAnimation} from './type';
+import {
+    IAction,
+    IActions,
+    ActionsEnum
+} from './type/actions';
 
-export default function setAnimation(payload: IAnimation): IAction {
-    return {
+const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
+    setAnimation: (payload: IAnimation) => dispatch({
         type: ActionsEnum.set,
         payload,
-    };
-}
+    }),
+});
+
+export {dispatcher};

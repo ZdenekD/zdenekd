@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 import useCursor from '../../hooks/useCursor';
-import {useGlobalState} from '../../state';
+import {useMenuState} from '../../state/menu';
 import {variants} from './logo.animations';
 import Image from '../../assets/images/logo.svg';
 import styles from './logo.css';
@@ -11,7 +11,7 @@ interface ILogo {
 }
 
 const Logo: React.FC<ILogo> = ({className = ''}) => {
-    const [state] = useGlobalState();
+    const [{menu}] = useMenuState();
     const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -26,7 +26,7 @@ const Logo: React.FC<ILogo> = ({className = ''}) => {
             <Image className={styles.logo} data-test="component-logo" />
             <motion.i
                 initial={false}
-                animate={state.menu.isOpen ? 'enter' : 'exit'}
+                animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={variants}
                 className={styles.shadow}
             />

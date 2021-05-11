@@ -7,15 +7,15 @@ import Tools from './tools';
 import useProjectAction from '../../hooks/useProjectAction';
 import useCursor from '../../hooks/useCursor';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
-import {useGlobalState} from '../../state';
+import {useProjectState} from '../../state/project';
 import projects from '../../data/projects';
 import LocalesEnum from '../../enums/LocalesEnum';
 import styles from './project.css';
 
 const Project: React.FC = () => {
     const router = useRouter();
-    const [state] = useGlobalState();
-    const [project, setProject] = React.useState<number>(state.project.index);
+    const [{project}] = useProjectState();
+    const [index, setIndex] = React.useState<number>(project.index);
     const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);
     const descriptionRef = React.useRef<HTMLParagraphElement | null>(null);
@@ -35,8 +35,8 @@ const Project: React.FC = () => {
         const {current: title} = titleRef;
         const {current: description} = descriptionRef;
         const {current: tools} = toolsWrapperRef;
-        const translateIn = state.project.index > project ? '10vw' : '-10vw';
-        const translateOut = state.project.index > project ? '-5vw' : '5vw';
+        const translateIn = project.index > index ? '10vw' : '-10vw';
+        const translateOut = project.index > index ? '-5vw' : '5vw';
 
         anime.timeline({easing: 'easeOutExpo'})
             .add({
@@ -49,7 +49,7 @@ const Project: React.FC = () => {
                 opacity: [1, 0],
                 translateX: [0, translateOut],
                 begin() {
-                    setProject(state.project.index);
+                    setIndex(project.index);
                 },
             })
             .add({
@@ -95,56 +95,56 @@ const Project: React.FC = () => {
     }, []);
 
     React.useEffect(() => {
-        if (state.project.index !== project) {
+        if (project.index !== index) {
             handleAnimation();
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [state.project.index]);
+    }, [project.index]);
 
     useCursor(catcher);
 
     return (
         <div className={styles.block} data-test="component-project">
             <header className={styles.content}>
-                {projects[project]?.title && (
+                {projects[index]?.title && (
                     <h2
                         ref={titleRef}
                         className={styles.title}
-                        data-title={projects[project].title}
+                        data-title={projects[index].title}
                     >
-                        {projects[project].title}
+                        {projects[index].title}
                     </h2>
                 )}
 
-                {projects[project]?.locale[lang].description && (
+                {projects[index]?.locale[lang].description && (
                     <p
                         ref={descriptionRef}
                         className={styles.description}
-                        data-title={projects[project].locale[lang].description}
+                        data-title={projects[index].locale[lang].description}
                     >
-                        {projects[project].locale[lang].description}
+                        {projects[index].locale[lang].description}
                     </p>
                 )}
 
-                {projects[project]?.tools.length > 0 && (
+                {projects[index]?.tools.length > 0 && (
                     <div ref={toolsWrapperRef} className={styles.toolsWrapper}>
-                        <Tools ref={toolsRef} items={projects[project].tools} />
+                        <Tools ref={toolsRef} items={projects[index].tools} />
                     </div>
                 )}
 
                 <Controls
                     ref={controlsRef}
-                    isFirst={state.project.isFirst}
-                    isLast={state.project.isLast}
+                    isFirst={project.isFirst}
+                    isLast={project.isLast}
                     handlePrev={handlePrev}
                     handleNext={handleNext}
                 />
             </header>
             <Browser
                 ref={browserRef}
-                project={projects[project]}
-                isFirst={state.project.isFirst}
-                isLast={state.project.isLast}
+                project={projects[index]}
+                isFirst={project.isFirst}
+                isLast={project.isLast}
                 handlePrev={handlePrev}
                 handleNext={handleNext}
             />

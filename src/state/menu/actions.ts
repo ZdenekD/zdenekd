@@ -1,9 +1,15 @@
-import IMenu from './type';
-import ActionsEnum, {IAction} from './type/actions';
+import {IMenu} from './type';
+import {
+    IAction,
+    IActions,
+    ActionsEnum
+} from './type/actions';
 
-export default function setMenu(payload: IMenu): IAction {
-    return {
+const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
+    setMenu: (payload: IMenu) => dispatch({
         type: ActionsEnum.set,
         payload,
-    };
-}
+    }),
+});
+
+export {dispatcher};
