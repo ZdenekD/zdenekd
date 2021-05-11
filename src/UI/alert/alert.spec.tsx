@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '../../__test__/utils/helpers';
+import findComponent, {stateFactory} from '../../__test__/utils/helpers';
 import Alert from '.';
 
 describe('Alert', () => {
@@ -25,7 +25,7 @@ describe('Alert', () => {
 
         React.useState = jest.fn(() => [true, mockSetState]);
 
-        const container = shallow(<Alert>message</Alert>);
+        const container = stateFactory(<Alert>message</Alert>);
         const component = findComponent(container, 'component-alert');
 
         component.find('button').simulate('click');

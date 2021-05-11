@@ -7,7 +7,7 @@ export enum ActionsEnum {
 
 export type IAction = {
     readonly type: ActionsEnum,
-    readonly payload: ICursor
+    readonly payload?: ICursor
 };
 
 export interface IActions {
