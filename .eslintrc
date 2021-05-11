@@ -93,7 +93,7 @@
     "no-console": [
       "error",
       {
-        "allow": ["info", "log", "warn", "error", "assert", "dir"]
+        "allow": ["info", "log", "warn", "error", "table", "assert", "dir"]
       }
     ],
     // This rule aims to reduce the scrolling required when reading through your code. It will warn when the maximum amount of empty lines has been exceeded.
