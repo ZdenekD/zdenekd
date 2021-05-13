@@ -1,16 +1,16 @@
 import React from 'react';
 import useCursor from '../../../../hooks/useCursor';
 import useLocale from '../../../../hooks/useLocale';
-import styles from './controls.css';
+import styles from './controls.module.css';
 
-interface IControls {
+interface IProps {
     isFirst: boolean
     isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void
     handleNext?: (event: React.MouseEvent) => void
 }
 
-const Controls: React.FC<IControls> = ({
+const Controls: React.FC<IProps> = ({
     isFirst,
     isLast,
     handlePrev = undefined,

@@ -53,18 +53,20 @@ exports[`Browser match snapshot 1`] = `
     </div>
   </header>
   <picture class="picture"
-           data-test="component-picture"
+           data-test="component-image"
   >
     <source srcset="/image/mobile_id.avif"
             type="image/avif"
+            data-test="component-image-avif"
     >
     <source srcset="/image/mobile_id.webp"
             type="image/webp"
+            data-test="component-image-webp"
     >
-    <img src="/image/mobile_id.png"
+    <img src="/image/mobile_id"
+         alt
          width="480"
          height="270"
-         alt
          loading="lazy"
          decoding="async"
          class="image "

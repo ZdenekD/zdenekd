@@ -13,7 +13,7 @@ import {useMessageState} from '../../../state/message';
 import useCursor from '../../../hooks/useCursor';
 import regex from '../../../helpers/regex';
 import VariantsEnum from '../../../enums/VariantsEnum';
-import styles from './contact.css';
+import styles from './contact.module.css';
 
 interface IValues {
     [key: string]: string

@@ -21,14 +21,14 @@ describe('Textarea', () => {
     });
 
     it('renders message component on error', () => {
-        const container = shallow(<Textarea name="textarea" label="textarea" error="Error message" />);
+        const container = shallow(<Textarea name="textarea" label="Textarea" error="Error message" />);
         const component = findComponent(container, 'component-textarea-error');
 
         expect(component.exists()).toBe(true);
     });
 
     it('renders maxlength component', () => {
-        const container = shallow(<Textarea name="textarea" label="textarea" maxlength={10} />);
+        const container = shallow(<Textarea name="textarea" label="Textarea" maxlength={10} />);
         const component = findComponent(container, 'component-textarea-maxlength');
 
         expect(component.exists()).toBe(true);
@@ -41,7 +41,7 @@ describe('Textarea', () => {
 
         React.useState = jest.fn(() => [0, mockSetState]);
 
-        const container = shallow(<Textarea name="textarea" label="textarea" />);
+        const container = shallow(<Textarea name="textarea" label="Textarea" />);
         const component = findComponent(container, 'component-textarea');
 
         component.simulate('change', mockEvent);

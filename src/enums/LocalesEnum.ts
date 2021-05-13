@@ -1,6 +1,6 @@
 enum LocalesEnum {
-    cs = 'cs',
-    en = 'en'
+    en = 'en',
+    cs = 'cs'
 }
 
 export default LocalesEnum;

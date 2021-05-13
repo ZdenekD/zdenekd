@@ -4,9 +4,7 @@ import Alert from '.';
 export default {title: 'UI/Alert'};
 
 export const base: React.FC = () => (
-    <Alert isOpen>
-        Alert message
-    </Alert>
+    <Alert isOpen>Alert message</Alert>
 );
 
 export const success: React.FC = () => (

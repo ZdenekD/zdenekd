@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
-import {variants} from './mobile.animations';
-import styles from './mobile.css';
+import {animations} from './mobile.animations';
+import styles from './mobile.module.css';
 
 const Mobile: React.FC = ({children}) => (
     <div className={styles.wrapper} data-test="component-device-mobile">
@@ -15,7 +15,7 @@ const Mobile: React.FC = ({children}) => (
             <motion.i
                 initial="initial"
                 animate="enter"
-                variants={variants}
+                variants={animations}
                 className={styles.button}
             />
             <i className={styles.controlMute} />

@@ -1,13 +1,13 @@
 import React from 'react';
 import {useRouter} from 'next/router';
 import {motion} from 'framer-motion';
-import Locale from './locale';
-import Keys from '../keys';
-import useLocale from '../../hooks/useLocale';
-import Icon, {IconsEnum} from '../UI/icon';
-import {useMenuState} from '../../state/menu';
-import {variants} from './footer.animations';
-import styles from './footer.css';
+import Lang from './lang';
+import Keys from '../../keys';
+import useLocale from '../../../hooks/useLocale';
+import Icon, {IconsEnum} from '../../UI/icon';
+import {useMenuState} from '../../../state/menu';
+import {animations} from './footer.animations';
+import styles from './footer.module.css';
 
 const Footer: React.FC = () => {
     const router = useRouter();
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             initial="initial"
             animate="enter"
             exit="exit"
-            variants={variants.footer}
+            variants={animations.footer}
             className={`${styles.footer} ${menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer"
         >
             <code className={styles.code}>
@@ -47,11 +47,11 @@ const Footer: React.FC = () => {
             <motion.div
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
-                variants={variants.locale}
+                variants={animations.locale}
                 className={styles.languages}
             >
                 {router.locales && router.locales.map(item => (
-                    <Locale
+                    <Lang
                         key={item}
                         locale={item}
                         router={router}
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
             <motion.span
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
-                variants={variants.scroll}
+                variants={animations.scroll}
                 className={styles.scroll}
             >
                 Scroll
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                     ref={dotRef}
                     initial="initial"
                     animate="enter"
-                    variants={variants.dot}
+                    variants={animations.dot}
                     className={styles.dot}
                 />
             </motion.span>

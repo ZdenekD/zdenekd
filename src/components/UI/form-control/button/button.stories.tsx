@@ -1,7 +1,7 @@
-import VariantsEnum from '../../../../enums/VariantsEnum';
 import Button from '.';
+import VariantsEnum from '../../../../enums/VariantsEnum';
 
-export default {title: 'UI/Button'};
+export default {title: 'UI/Form Control/Button'};
 
 export const base: React.FC = () => (
     <Button>Button</Button>

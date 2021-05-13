@@ -2,14 +2,14 @@ import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import useLocale from '../../../../hooks/useLocale';
 import {IProject} from '../../../../data/projects';
-import {variants} from './video.animations';
-import styles from './video.css';
+import {animations} from './video.animations';
+import styles from './video.module.css';
 
-interface IVideo {
+interface IProps {
     project: IProject
 }
 
-const Video: React.FC<IVideo> = ({project}) => {
+const Video: React.FC<IProps> = ({project}) => {
     const wrapperRef = React.useRef<HTMLDivElement | null>(null);
     const locale = useLocale();
 
@@ -21,7 +21,7 @@ const Video: React.FC<IVideo> = ({project}) => {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={variants}
+                variants={animations}
                 className={styles.wrapper}
                 data-test="component-video"
             >

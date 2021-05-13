@@ -7,7 +7,7 @@ describe('Layout', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Layout>Content</Layout>);
+        wrapper = shallow(<Layout>Layout content</Layout>);
     });
 
     it('match snapshot', () => {

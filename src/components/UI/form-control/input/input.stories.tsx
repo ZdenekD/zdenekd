@@ -1,7 +1,7 @@
 import VariantsEnum from '../../../../enums/VariantsEnum';
 import Input from '.';
 
-export default {title: 'UI/Input'};
+export default {title: 'UI/Form Control/Input'};
 
 export const base: React.FC = () => (
     <>
@@ -49,6 +49,12 @@ export const required: React.FC = () => (
     <>
         <Input required name="input" label="Input" />
         <Input required name="input" label="Input" placeholder="Enter some data" />
+    </>
+);
+
+export const readonly: React.FC = () => (
+    <>
+        <Input readonly name="input" label="Input" value="Readonly input" />
     </>
 );
 

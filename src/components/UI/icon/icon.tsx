@@ -3,12 +3,12 @@ export enum IconsEnum {
     brandGithub = 'brandGithub'
 }
 
-interface IIcon {
+interface IProps {
     variant: IconsEnum,
     size?: number
 }
 
-const Icon: React.FC<IIcon> = ({variant, size = 28}) => (
+const Icon: React.FC<IProps> = ({variant, size = 28}) => (
     <>
         {variant === IconsEnum.brandGithub && (
             <svg

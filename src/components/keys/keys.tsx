@@ -5,7 +5,7 @@ import Key from './key';
 import pages from '../../data/pages';
 import {useMenuState} from '../../state/menu';
 import {useProjectState} from '../../state/project';
-import {variants} from './keys.animations';
+import {animations} from './keys.animations';
 import usePageAction from '../../hooks/usePageAction';
 import useProjectAction from '../../hooks/useProjectAction';
 import useLocale from '../../hooks/useLocale';
@@ -13,7 +13,7 @@ import PagesEnum from '../../enums/PagesEnum';
 import DirectionsEnum from '../../enums/DirectionsEnum';
 import PageActionsEnum from '../../enums/PageActionsEnum';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
-import styles from './keys.css';
+import styles from './keys.module.css';
 
 const Keys: React.FC = () => {
     const [{menu}] = useMenuState();
@@ -44,7 +44,7 @@ const Keys: React.FC = () => {
         <motion.div
             initial={false}
             animate={menu.isOpen ? 'enter' : 'exit'}
-            variants={variants}
+            variants={animations}
             className={styles.keys}
             data-test="component-keys"
         >

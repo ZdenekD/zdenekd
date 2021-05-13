@@ -1,8 +1,8 @@
 import React from 'react';
 import VariantsEnum from '../../../../enums/VariantsEnum';
-import styles from './button.css';
+import styles from './button.module.css';
 
-interface IButton {
+interface IProps {
     type?: 'button' | 'submit'
     disabled?: boolean
     variant?: VariantsEnum
@@ -13,7 +13,7 @@ interface IButton {
     onClick?: (e: React.MouseEvent) => void,
 }
 
-const Button = React.forwardRef<HTMLButtonElement, IButton>(({
+const Button = React.forwardRef<HTMLButtonElement, IProps>(({
     type = 'button',
     disabled = false,
     variant,

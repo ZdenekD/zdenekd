@@ -1,6 +1,6 @@
 import {Variants} from 'framer-motion';
 
-const variants: Variants = {
+const animations: Variants = {
     initial: {y: 0, x: '50%'},
     enter: {
         y: '4px',
@@ -13,5 +13,4 @@ const variants: Variants = {
     },
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export {variants};
+export {animations};

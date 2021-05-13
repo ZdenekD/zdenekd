@@ -1,7 +1,7 @@
 import VariantsEnum from '../../../../enums/VariantsEnum';
 import Textarea from '.';
 
-export default {title: 'UI/Textarea'};
+export default {title: 'UI/Form Control/Textarea'};
 
 export const base: React.FC = () => (
     <>
@@ -52,10 +52,16 @@ export const required: React.FC = () => (
     </>
 );
 
+export const readonly: React.FC = () => (
+    <>
+        <Textarea readonly name="textarea" label="Textarea" value="Readonly textarea" />
+    </>
+);
+
 export const error: React.FC = () => (
     <>
         <Textarea name="textarea" label="Textarea" error="has some error" />
-        <Textarea name="textarea" label="Textarea" error="has some error" placeholder="Enter some data" />
+        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" error="has some error" />
         <Textarea required name="textarea" label="Textarea" error="has some error" />
     </>
 );
@@ -63,7 +69,7 @@ export const error: React.FC = () => (
 export const maxlength: React.FC = () => (
     <>
         <Textarea name="textarea" label="Textarea" maxlength={255} />
-        <Textarea name="textarea" label="Textarea" maxlength={255} placeholder="Enter some data" />
+        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" maxlength={255} />
         <Textarea disabled name="textarea" label="Textarea" maxlength={255} />
     </>
 );

@@ -1,6 +1,18 @@
 import regex from './regex';
 
 describe('Helper - regex', () => {
+    it('returns `true` if name contains only valid characters', () => {
+        const value = 'Jméno a příjmení';
+
+        expect(regex.name.test(value)).toBe(true);
+    });
+
+    it('returns `false` if name contains forbidden characters', () => {
+        const value = 'Jméno a příjmení!';
+
+        expect(regex.name.test(value)).toBe(false);
+    });
+
     it('returns `true` if text contains only valid characters', () => {
         const value = 'Toto je nejneobhospodařovávanější útočná puška! Je to tak?';
 
@@ -13,16 +25,16 @@ describe('Helper - regex', () => {
         expect(regex.text.test(value)).toBe(false);
     });
 
-    it('returns `true` if name contains only valid characters', () => {
-        const value = 'Jméno a příjmení';
+    it('returns `true` if number is in correct format', () => {
+        const value = '3';
 
-        expect(regex.name.test(value)).toBe(true);
+        expect(regex.number.test(value)).toBe(true);
     });
 
-    it('returns `false` if name contains forbidden characters', () => {
-        const value = 'Jméno a příjmení!';
+    it('returns `false` if number is not in correct format', () => {
+        const value = 'number';
 
-        expect(regex.name.test(value)).toBe(false);
+        expect(regex.number.test(value)).toBe(false);
     });
 
     it('returns `true` if phone is in correct format', () => {
@@ -59,5 +71,29 @@ describe('Helper - regex', () => {
         const value = 'email@email';
 
         expect(regex.email.test(value)).toBe(false);
+    });
+
+    it('returns `true` if zip is in correct format', () => {
+        const value = '000 00';
+
+        expect(regex.zip.test(value)).toBe(true);
+    });
+
+    it('returns `false` if zip is not correct', () => {
+        const value = '123456';
+
+        expect(regex.zip.test(value)).toBe(false);
+    });
+
+    it('returns `true` if year is in correct format', () => {
+        const value = '1973';
+
+        expect(regex.year.test(value)).toBe(true);
+    });
+
+    it('returns `false` if year is not correct', () => {
+        const value = '2100';
+
+        expect(regex.year.test(value)).toBe(false);
     });
 });

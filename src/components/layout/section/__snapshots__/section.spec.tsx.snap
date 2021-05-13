@@ -5,5 +5,6 @@ exports[`Section match snapshot 1`] = `
          data-test="component-section"
          style="opacity:0"
 >
+  Section content
 </section>
 `;

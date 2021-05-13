@@ -1,16 +1,16 @@
 import React from 'react';
 import useCursor from '../../../hooks/useCursor';
 import DirectionsEnum from '../../../enums/DirectionsEnum';
-import styles from './key.css';
+import styles from './key.module.css';
 
-interface IKey {
+interface IProps {
     direction: DirectionsEnum
     label: string
     disabled?: boolean
     onClick?: (event: React.MouseEvent) => void
 }
 
-const Key: React.FC<IKey> = ({
+const Key: React.FC<IProps> = ({
     direction,
     label,
     disabled = false,
