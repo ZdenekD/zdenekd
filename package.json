@@ -1,10 +1,10 @@
 {
-  "author": "ZdenekD <zdenekd@zdenekd.cz>",
+  "author": "ZdenekD",
   "name": "zdenekd",
   "version": "1.0.0",
   "description": "Web",
-  "homepage": "git@bitbucket.org:zdenekd-team/zdenekd.git#readme",
-  "repository": "git@bitbucket.org:zdenekd-team/zdenekd.git",
+  "homepage": "git@github.com:zdenekd/zdenekd.git#readme",
+  "repository": "git@github.com:zdenekd/zdenekd.git",
   "license": "MIT",
   "scripts": {
     "reinstall": "rm -rf 'yarn.lock' 'node_modules' && yarn",
