@@ -3,7 +3,7 @@ import React from 'react';
 import {useId} from 'react-id-generator';
 import VariantsEnum from '../../../../enums/VariantsEnum';
 import prefix from '../../../../helpers/prefix';
-import styles from './textarea.css';
+import styles from './textarea.module.css';
 
 interface ITextarea {
     name: string

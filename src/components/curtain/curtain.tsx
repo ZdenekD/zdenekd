@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
 import {variants} from './curtain.animations';
-import styles from './curtain.css';
+import styles from './curtain.module.css';
 
 const Curtain: React.FC = () => (
     <motion.div

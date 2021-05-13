@@ -1,4 +1,4 @@
-import styles from './picture.css';
+import styles from './picture.module.css';
 
 interface IPicture {
     src: string

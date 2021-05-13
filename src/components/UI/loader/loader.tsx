@@ -1,4 +1,4 @@
-import styles from './loader.css';
+import styles from './loader.module.css';
 
 interface ILoader {
     className?: string

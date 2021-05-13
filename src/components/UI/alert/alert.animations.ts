@@ -39,5 +39,4 @@ const variants: IVariants = {
     },
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export {variants};

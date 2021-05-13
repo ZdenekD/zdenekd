@@ -1,7 +1,7 @@
 import React from 'react';
 import useCursor from '../../../hooks/useCursor';
 import useLocale from '../../../hooks/useLocale';
-import styles from './controls.css';
+import styles from './controls.module.css';
 
 interface IControls {
     isFirst: boolean

@@ -2,7 +2,7 @@ import React from 'react';
 import {useId} from 'react-id-generator';
 import VariantsEnum from '../../../../enums/VariantsEnum';
 import prefix from '../../../../helpers/prefix';
-import styles from './input.css';
+import styles from './input.module.css';
 
 interface IInput {
     name: string

@@ -3,7 +3,7 @@ import {motion, AnimatePresence} from 'framer-motion';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import {variants} from './alert.animations';
 import {useMessageState} from '../../../state/message';
-import styles from './alert.css';
+import styles from './alert.module.css';
 
 interface IAlert {
     children: React.ReactNode
@@ -25,7 +25,10 @@ const Alert: React.FC<IAlert> = ({
     const [, {unsetMessage}] = useMessageState();
     const remove = () => {
         setOpened(false);
-        unsetMessage();
+
+        if (unsetMessage) {
+            unsetMessage();
+        }
     };
     const handleClick = () => {
         remove();

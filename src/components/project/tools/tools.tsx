@@ -1,6 +1,6 @@
 import React from 'react';
 import useLocale from '../../../hooks/useLocale';
-import styles from './tools.css';
+import styles from './tools.module.css';
 
 interface ITools {
     items: string[]

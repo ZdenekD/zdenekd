@@ -12,7 +12,7 @@ import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';
 import useLocale from '../../hooks/useLocale';
 import {useMessageState} from '../../state/message';
-import styles from './layout.css';
+import styles from './layout.module.css';
 
 interface ILayout {
     children: React.ReactNode

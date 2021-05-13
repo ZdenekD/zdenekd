@@ -4,7 +4,7 @@ import {useAnimationState} from '../../state/animation';
 import useCursor from '../../hooks/useCursor';
 import useLocale from '../../hooks/useLocale';
 import {animationIn, animationOut} from './menu.animations';
-import styles from './menu.css';
+import styles from './menu.module.css';
 
 const Menu: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);

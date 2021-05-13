@@ -1,7 +1,7 @@
 import React from 'react';
 import useCursor from '../../../hooks/useCursor';
 import DirectionsEnum from '../../../enums/DirectionsEnum';
-import styles from './key.css';
+import styles from './key.module.css';
 
 interface IKey {
     direction: DirectionsEnum

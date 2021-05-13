@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './form.css';
+import styles from './form.module.css';
 
 interface IForm {
     children: React.ReactNode

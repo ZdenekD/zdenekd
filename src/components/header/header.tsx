@@ -4,7 +4,7 @@ import Menu from '../menu';
 import Logo from '../logo';
 import useLocale from '../../hooks/useLocale';
 import {useAnimationState} from '../../state/animation';
-import styles from './header.css';
+import styles from './header.module.css';
 
 const Header: React.FC = () => {
     const [{animation}] = useAnimationState();

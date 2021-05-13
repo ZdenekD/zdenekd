@@ -1,6 +1,6 @@
 import React from 'react';
 import useLocale from '../../../../hooks/useLocale';
-import styles from './addressbar.css';
+import styles from './addressbar.module.css';
 
 interface IAddressbar {
     url: string

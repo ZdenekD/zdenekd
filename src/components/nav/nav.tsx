@@ -8,7 +8,7 @@ import pages from '../../data/pages';
 import {variants, variant} from './nav.animations';
 import getPage from '../../helpers/getPage';
 import LocalesEnum from '../../enums/LocalesEnum';
-import styles from './nav.css';
+import styles from './nav.module.css';
 
 const Nav: React.FC = () => {
     const router = useRouter();

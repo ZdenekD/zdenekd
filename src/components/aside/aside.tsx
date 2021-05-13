@@ -3,7 +3,7 @@ import Nav from '../nav';
 import {useAnimationState} from '../../state/animation';
 import {useMenuState} from '../../state/menu';
 import {variants} from './aside.animations';
-import styles from './aside.css';
+import styles from './aside.module.css';
 
 const Aside: React.FC = () => {
     const [, {setAnimation}] = useAnimationState();

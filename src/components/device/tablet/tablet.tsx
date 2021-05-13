@@ -1,4 +1,4 @@
-import styles from './tablet.css';
+import styles from './tablet.module.css';
 
 const Tablet: React.FC = ({children}) => (
     <div className={styles.wrapper} data-test="component-device-tablet">

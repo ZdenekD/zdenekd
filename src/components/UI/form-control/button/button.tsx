@@ -1,6 +1,6 @@
 import React from 'react';
 import VariantsEnum from '../../../../enums/VariantsEnum';
-import styles from './button.css';
+import styles from './button.module.css';
 
 interface IButton {
     type?: 'button' | 'submit'

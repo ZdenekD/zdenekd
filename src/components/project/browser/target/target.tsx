@@ -3,7 +3,7 @@ import Anchor from '../../../UI/anchor';
 import useCursor from '../../../../hooks/useCursor';
 import useLocale from '../../../../hooks/useLocale';
 import Icon from '../../../../assets/images/icon_open.svg';
-import styles from './target.css';
+import styles from './target.module.css';
 
 interface ITarget {
     url: string

@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
 import {variants} from './mobile.animations';
-import styles from './mobile.css';
+import styles from './mobile.module.css';
 
 const Mobile: React.FC = ({children}) => (
     <div className={styles.wrapper} data-test="component-device-mobile">

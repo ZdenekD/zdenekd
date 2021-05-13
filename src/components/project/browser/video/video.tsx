@@ -3,7 +3,7 @@ import {motion, AnimatePresence} from 'framer-motion';
 import useLocale from '../../../../hooks/useLocale';
 import {IProject} from '../../../../data/projects';
 import {variants} from './video.animations';
-import styles from './video.css';
+import styles from './video.module.css';
 
 interface IVideo {
     project: IProject

@@ -13,7 +13,7 @@ import PagesEnum from '../../enums/PagesEnum';
 import DirectionsEnum from '../../enums/DirectionsEnum';
 import PageActionsEnum from '../../enums/PageActionsEnum';
 import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
-import styles from './keys.css';
+import styles from './keys.module.css';
 
 const Keys: React.FC = () => {
     const [{menu}] = useMenuState();

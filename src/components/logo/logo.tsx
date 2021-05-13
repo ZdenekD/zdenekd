@@ -4,7 +4,7 @@ import useCursor from '../../hooks/useCursor';
 import {useMenuState} from '../../state/menu';
 import {variants} from './logo.animations';
 import Image from '../../assets/images/logo.svg';
-import styles from './logo.css';
+import styles from './logo.module.css';
 
 interface ILogo {
     className?: string

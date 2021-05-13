@@ -7,7 +7,7 @@ import Picture from '../../UI/picture';
 import {IProject} from '../../../data/projects';
 import useWindowSize from '../../../hooks/useWindowSize';
 import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';
-import styles from './browser.css';
+import styles from './browser.module.css';
 
 interface IBrowser {
     project: IProject

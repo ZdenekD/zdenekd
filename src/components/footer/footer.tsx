@@ -7,7 +7,7 @@ import useLocale from '../../hooks/useLocale';
 import Icon, {IconsEnum} from '../UI/icon';
 import {useMenuState} from '../../state/menu';
 import {variants} from './footer.animations';
-import styles from './footer.css';
+import styles from './footer.module.css';
 
 const Footer: React.FC = () => {
     const router = useRouter();
