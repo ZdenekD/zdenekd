@@ -1,12 +1,12 @@
 import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '../../__test__/utils/helpers';
-import Picture from '.';
+import findComponent from '../../../../__test__/utils/helpers';
+import Button from '.';
 
-describe('Picture', () => {
+describe('Button', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Picture src="" />);
+        wrapper = shallow(<Button>Button</Button>);
     });
 
     it('match snapshot', () => {
@@ -14,7 +14,7 @@ describe('Picture', () => {
     });
 
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-picture');
+        const component = findComponent(wrapper, 'component-button');
 
         expect(component.exists()).toBe(true);
     });

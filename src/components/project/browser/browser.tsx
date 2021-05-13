@@ -3,7 +3,7 @@ import Controls from './controls';
 import Video from './video';
 import Addressbar from './addressbar';
 import Target from './target';
-import Picture from '../../../UI/picture';
+import Picture from '../../UI/picture';
 import {IProject} from '../../../data/projects';
 import useWindowSize from '../../../hooks/useWindowSize';
 import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';

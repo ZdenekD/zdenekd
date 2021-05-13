@@ -1,5 +1,5 @@
 import React from 'react';
-import Anchor from '../../../../UI/anchor';
+import Anchor from '../../../UI/anchor';
 import useCursor from '../../../../hooks/useCursor';
 import useLocale from '../../../../hooks/useLocale';
 import Icon from '../../../../assets/images/icon_open.svg';
