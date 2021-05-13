@@ -1,18 +1,23 @@
 import React from 'react';
 import styles from './form.module.css';
 
-interface IForm {
+interface IProps {
     children: React.ReactNode
     className?: string
     onSubmit?: () => void
 }
 
-const Form = React.forwardRef<HTMLFormElement, IForm>(({
+const Form = React.forwardRef<HTMLFormElement, IProps>(({
     children,
     className = '',
     onSubmit = undefined,
 }, ref) => (
-    <form ref={ref} className={`${styles.form} ${className}`} data-test="component-form" onSubmit={onSubmit}>
+    <form
+        ref={ref}
+        className={`${styles.form} ${className}`}
+        data-test="component-form"
+        onSubmit={onSubmit}
+    >
         {children}
     </form>
 ));

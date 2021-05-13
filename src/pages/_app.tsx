@@ -1,4 +1,4 @@
-import App from 'next/app';
+import App, {AppProps} from 'next/app';
 import {AnimatePresence} from 'framer-motion';
 import * as Sentry from '@sentry/browser';
 import {Provider} from '../state';
@@ -19,7 +19,7 @@ class Application extends App {
     }
 
     render(): React.ReactElement {
-        const {Component, pageProps, router} = this.props;
+        const {Component, pageProps, router}: AppProps = this.props;
 
         return (
             <Provider>

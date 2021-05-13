@@ -3,14 +3,14 @@ import useCursor from '../../../hooks/useCursor';
 import useLocale from '../../../hooks/useLocale';
 import styles from './controls.module.css';
 
-interface IControls {
+interface IProps {
     isFirst: boolean
     isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void
     handleNext?: (event: React.MouseEvent) => void
 }
 
-const Controls = React.forwardRef<HTMLUListElement, IControls>(({
+const Controls = React.forwardRef<HTMLUListElement, IProps>(({
     isFirst,
     isLast,
     handlePrev = undefined,

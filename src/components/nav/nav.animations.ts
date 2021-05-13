@@ -1,6 +1,6 @@
 import {Variants} from 'framer-motion';
 
-const variants: Variants = {
+const animations: Variants = {
     enter: {
         opacity: 1,
         transition: {
@@ -22,7 +22,7 @@ const variants: Variants = {
     },
 };
 
-const variant: Variants = {
+const animation: Variants = {
     enter: {
         y: 0,
         opacity: 1,
@@ -41,4 +41,4 @@ const variant: Variants = {
     },
 };
 
-export {variants, variant};
+export {animations, animation};

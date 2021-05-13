@@ -28,7 +28,7 @@ const Page: React.FC = () => {
         heading,
         paragraph,
     } = pages[PagesEnum.homepage].locale[lang];
-    const variants: IVariants = {
+    const animations: IVariants = {
         article: {
             initial: {y: '3vh', opacity: 0},
             enter: {
@@ -77,7 +77,7 @@ const Page: React.FC = () => {
                     initial="initial"
                     animate="enter"
                     exit="exit"
-                    variants={variants.article}
+                    variants={animations.article}
                     className={styles.article}
                 >
                     {paragraph && (
@@ -91,7 +91,7 @@ const Page: React.FC = () => {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={variants.devices}
+                variants={animations.devices}
                 className={styles.devicesWrapper}
             >
                 {width > MediaQueriesEnum.xl && (

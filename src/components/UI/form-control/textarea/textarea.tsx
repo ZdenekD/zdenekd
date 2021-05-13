@@ -5,6 +5,8 @@ import VariantsEnum from '../../../../enums/VariantsEnum';
 import prefix from '../../../../helpers/prefix';
 import styles from './textarea.module.css';
 
+type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
+
 interface ITextarea {
     name: string
     label: string
@@ -14,28 +16,32 @@ interface ITextarea {
     disabled?: boolean
     maxlength?: number
     autoComplete?: 'on' | 'off'
-    className?: string
     error?: string
+    className?: string
 }
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, ITextarea>(({
+type IProps = IReadonlyProps & ITextarea;
+
+const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     name,
     label,
+    value = undefined,
     placeholder,
     variant,
     required,
     disabled,
+    readonly,
     maxlength,
     autoComplete,
-    className = '',
     error,
-}, ref: React.Ref<HTMLTextAreaElement>) => {
-    const [length, setLength] = React.useState<number>(0);
+    className = '',
+}, ref) => {
+    const [length, setLength] = React.useState<number>(value?.length || 0);
     const [id] = useId(1, prefix);
     const handleHeight = (element: HTMLTextAreaElement) => {
         if (element.style) {
             element.style.height = '0';
-            element.style.height = `${element.scrollHeight}px`;
+            element.style.height = `${element.scrollHeight + 2}px`;
         }
     };
     const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -44,15 +50,17 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, ITextarea>(({
     };
 
     return (
-        <div className={`${styles.control} ${disabled ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
+        <div className={`${styles.control} ${disabled || readonly ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
             <textarea
                 ref={ref}
                 id={id}
                 name={name}
+                value={value}
                 className={`${styles.textarea} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
                 placeholder={placeholder}
                 required={required}
                 disabled={disabled}
+                readOnly={readonly}
                 maxLength={maxlength}
                 autoComplete={autoComplete}
                 data-test="component-textarea"
@@ -69,7 +77,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, ITextarea>(({
             </label>
             {error && (<span className={styles.error} data-test="component-textarea-error">{error}</span>)}
 
-            {maxlength && (
+            {maxlength && !disabled && (
                 <span className={styles.maxlength} data-test="component-textarea-maxlength">
                     {length} / {maxlength}
                 </span>

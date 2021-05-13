@@ -1,10 +1,10 @@
 import styles from './loader.module.css';
 
-interface ILoader {
+interface IProps {
     className?: string
 }
 
-const Loader: React.FC<ILoader> = ({className = ''}) => (
+const Loader: React.FC<IProps> = ({className = ''}) => (
     <div className={`${styles.loader} ${className}`} data-test="component-loader" />
 );
 

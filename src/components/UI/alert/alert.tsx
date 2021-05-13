@@ -1,28 +1,32 @@
 import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import VariantsEnum from '../../../enums/VariantsEnum';
-import {variants} from './alert.animations';
+import animations from './alert.animations';
+import useLocale from '../../../hooks/useLocale';
 import {useMessageState} from '../../../state/message';
 import styles from './alert.module.css';
 
-interface IAlert {
+interface IProps {
     children: React.ReactNode
+    title?: string
     className?: string
     variant?: VariantsEnum
-    timeout?: number
+    timeout?: number // number in seconds
     isOpen?: boolean
 }
 
-const Alert: React.FC<IAlert> = ({
+const Alert: React.FC<IProps> = ({
     children,
-    variant,
+    title,
     className = '',
+    variant,
     timeout,
     isOpen = false,
 }) => {
     const [isOpened, setOpened] = React.useState<boolean>(isOpen);
     const timer = React.useRef<NodeJS.Timeout>();
     const [, {unsetMessage}] = useMessageState();
+    const locale = useLocale();
     const remove = () => {
         setOpened(false);
 
@@ -57,17 +61,36 @@ const Alert: React.FC<IAlert> = ({
                         initial="initial"
                         animate="enter"
                         exit="exit"
-                        variants={variants.backdrop}
+                        variants={animations.backdrop}
                         className={styles.backdrop}
                     />
                     <motion.div
                         initial="initial"
                         animate="enter"
                         exit="exit"
-                        variants={variants.component}
+                        variants={animations.component}
                         className={`${styles.alert} ${variant ? styles[variant] : ''} ${className}`}
                         data-test="component-alert"
                     >
+                        {title && (
+                            <header className={styles.header}>
+                                {title && (
+                                    <strong className={styles.title}>{title}</strong>
+                                )}
+                            </header>
+                        )}
+
+                        {children}
+
+                        <button
+                            className={styles.button}
+                            aria-label={locale.alert.close}
+                            data-test="component-alert-button"
+                            onClick={handleClick}
+                        >
+                            &times;
+                        </button>
+
                         {timeout && (
                             <motion.div
                                 initial={{width: 0}}
@@ -75,8 +98,6 @@ const Alert: React.FC<IAlert> = ({
                                 className={styles.progress}
                             />
                         )}
-                        <button aria-label="Zavřít" className={styles.button} onClick={handleClick}>&times;</button>
-                        {children}
                     </motion.div>
                 </>
             )}

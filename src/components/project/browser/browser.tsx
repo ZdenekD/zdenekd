@@ -3,13 +3,13 @@ import Controls from './controls';
 import Video from './video';
 import Addressbar from './addressbar';
 import Target from './target';
-import Picture from '../../UI/picture';
+import Image from '../../UI/image';
 import {IProject} from '../../../data/projects';
 import useWindowSize from '../../../hooks/useWindowSize';
 import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';
 import styles from './browser.module.css';
 
-interface IBrowser {
+interface IProps {
     project: IProject
     isFirst: boolean
     isLast: boolean
@@ -17,7 +17,7 @@ interface IBrowser {
     handleNext?: (event: React.MouseEvent) => void
 }
 
-const Browser = React.forwardRef<HTMLElement, IBrowser>(({
+const Browser = React.forwardRef<HTMLElement, IProps>(({
     project,
     isFirst,
     isLast,
@@ -50,10 +50,11 @@ const Browser = React.forwardRef<HTMLElement, IBrowser>(({
             {width > MediaQueriesEnum.sm ? (
                 <Video project={project} />
             ) : (
-                <Picture
+                <Image
                     src={`/image/mobile_${project.id}`}
                     width={480}
                     height={270}
+                    type="webp, avif"
                 />
             )}
         </section>

@@ -5,11 +5,11 @@ import useLocale from '../../../../hooks/useLocale';
 import Icon from '../../../../assets/images/icon_open.svg';
 import styles from './target.module.css';
 
-interface ITarget {
+interface IProps {
     url: string
 }
 
-const Target: React.FC<ITarget> = ({url}) => {
+const Target: React.FC<IProps> = ({url}) => {
     const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
     const targetRef = React.useRef<HTMLAnchorElement | null>(null);
     const locale = useLocale();

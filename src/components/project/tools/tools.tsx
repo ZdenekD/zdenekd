@@ -2,11 +2,11 @@ import React from 'react';
 import useLocale from '../../../hooks/useLocale';
 import styles from './tools.module.css';
 
-interface ITools {
+interface IProps {
     items: string[]
 }
 
-const Tools = React.forwardRef<HTMLUListElement, ITools>(({items}, ref) => {
+const Tools = React.forwardRef<HTMLUListElement, IProps>(({items}, ref) => {
     const locale = useLocale();
 
     return (

@@ -2,11 +2,11 @@ import React from 'react';
 import useLocale from '../../../../hooks/useLocale';
 import styles from './addressbar.module.css';
 
-interface IAddressbar {
+interface IProps {
     url: string
 }
 
-const Addressbar: React.FC<IAddressbar> = ({url}) => {
+const Addressbar: React.FC<IProps> = ({url}) => {
     const locale = useLocale();
 
     return (

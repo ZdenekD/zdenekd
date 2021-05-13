@@ -22,6 +22,9 @@ export interface ILocale {
         }
         submit: string
     }
+    alert: {
+        close: string
+    },
     reference: {
         target: string
         video: {
@@ -83,6 +86,7 @@ const locales: ILocales = {
                 },
                 submit: 'Odeslat',
             },
+            alert: {close: 'Zavřít'},
             reference: {
                 target: 'Otevřít referenci v novém okně',
                 video: {
@@ -148,6 +152,7 @@ const locales: ILocales = {
                 },
                 submit: 'Submit',
             },
+            alert: {close: 'Close'},
             reference: {
                 target: 'Open the reference in a new window',
                 video: {
