@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     display: grid;
-    grid-template: max-content auto max-content / 100%;
+    grid-template: max-content auto max-content / 100vw;
     grid-template-areas: 'header'
         'section'
         'footer';

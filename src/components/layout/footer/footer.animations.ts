@@ -7,7 +7,7 @@ interface IVariants {
     dot: Variants
 }
 
-const variants: IVariants = {
+const animations: IVariants = {
     footer: {
         initial: {opacity: 0},
         enter: {
@@ -98,5 +98,4 @@ const variants: IVariants = {
 
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export {variants};
+export {animations};

@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion';
-import {variants} from './section.animations';
+import {animations} from './section.animations';
 import styles from './section.module.css';
 
 const Section: React.FC = ({children}) => (
@@ -7,7 +7,7 @@ const Section: React.FC = ({children}) => (
         initial="initial"
         animate="enter"
         exit="exit"
-        variants={variants}
+        variants={animations}
         className={styles.section}
         data-test="component-section"
     >

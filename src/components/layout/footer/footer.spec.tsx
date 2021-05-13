@@ -1,13 +1,13 @@
 import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '../../__test__/utils/helpers';
-import '../../__test__/mocks/routerMock';
-import Header from '.';
+import findComponent from '../../../__test__/utils/helpers';
+import '../../../__test__/mocks/routerMock';
+import Footer from '.';
 
-describe('Header', () => {
+describe('Footer', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Header />);
+        wrapper = shallow(<Footer />);
     });
 
     it('match snapshot', () => {
@@ -15,7 +15,7 @@ describe('Header', () => {
     });
 
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-header');
+        const component = findComponent(wrapper, 'component-footer');
 
         expect(component.exists()).toBe(true);
     });

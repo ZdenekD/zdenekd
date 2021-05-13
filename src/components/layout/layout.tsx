@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../header';
-import Footer from '../footer';
-import Section from '../section';
+import Header from './header';
+import Footer from './footer';
+import Section from './section';
 import Aside from '../aside';
 import Cursor from '../cursor';
 import Curtain from '../curtain';
@@ -14,12 +14,12 @@ import useLocale from '../../hooks/useLocale';
 import {useMessageState} from '../../state/message';
 import styles from './layout.module.css';
 
-interface ILayout {
+interface IProps {
     children: React.ReactNode
     className?: string
 }
 
-const Layout: React.FC<ILayout> = ({children, className = ''}) => {
+const Layout: React.FC<IProps> = ({children, className = ''}) => {
     const [{message}] = useMessageState();
     const locale = useLocale();
 

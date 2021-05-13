@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import {NextRouter} from 'next/router';
-import useCursor from '../../../hooks/useCursor';
-import styles from './locale.css';
+import useCursor from '../../../../hooks/useCursor';
+import styles from './lang.module.css';
 
-interface ILocale {
+interface IProps {
     locale: string
     router: NextRouter
 }
 
-const Locale: React.FC<ILocale> = ({locale, router}) => {
+const Locale: React.FC<IProps> = ({locale, router}) => {
     const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
     const anchorRef = React.useRef<HTMLAnchorElement | null>(null);
 
