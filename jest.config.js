@@ -32,5 +32,5 @@ module.exports = {
     coverageReporters: ['html', 'lcov'],
     setupFiles: ['<rootDir>/src/__test__/utils/setup.ts', 'jest-canvas-mock'],
     snapshotSerializers: ['jest-serializer-html'],
-    globals: {'ts-jest': {tsconfig: '<rootDir>/tsconfig.test.json'}},
+    globals: {'babel-jest': {tsconfig: '<rootDir>/tsconfig.test.json'}},
 };

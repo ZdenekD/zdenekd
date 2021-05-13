@@ -5,12 +5,12 @@ const babel = require('@babel/core');
 
 module.exports = {
     process(src, filename) {
-        const code = babel.transform(`
-            export default () => (<svg data-filename="${path.relative(process.cwd(), filename)}" />);
-        `, {
-            filename,
-            retainLines: true,
-        }).code;
+        const {code} = babel.transform(`export default () => (<svg data-filename="${path.relative(process.cwd(), filename)}" />);`,
+            {
+                filename,
+                retainLines: true,
+            });
+
         return code;
     },
 };
