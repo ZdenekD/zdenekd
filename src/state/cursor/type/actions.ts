@@ -11,6 +11,6 @@ export type IAction = {
 };
 
 export interface IActions {
-    setCursor: (payload: ICursor) => void
+    setCursor: (payload: ICursor) => void,
     unsetCursor: () => void
 }

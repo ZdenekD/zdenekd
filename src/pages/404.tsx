@@ -10,7 +10,7 @@ const Error: React.FC = () => {
     const router = useRouter();
     const paragraph: {[key: string]: string} = {
         [LocalesEnum.cs]: 'Stránka bohužel neexistuje',
-        [LocalesEnum.en]: 'Sorry, the page does not exist',
+        [LocalesEnum.en]: 'Page does not exist',
     };
 
     return (
