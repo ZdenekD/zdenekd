@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('../public/font/roboto-mono.woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('../public/font/titillium-web.woff2') format('woff2');
+  }
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('../public/font/titillium-web_ext.woff2') format('woff2');
+}

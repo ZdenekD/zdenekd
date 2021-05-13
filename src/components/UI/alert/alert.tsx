@@ -1,8 +1,8 @@
 import React from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
-import VariantsEnum from '../../enums/VariantsEnum';
+import VariantsEnum from '../../../enums/VariantsEnum';
 import {variants} from './alert.animations';
-import {useMessageState} from '../../state/message';
+import {useMessageState} from '../../../state/message';
 import styles from './alert.css';
 
 interface IAlert {

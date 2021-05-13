@@ -6,7 +6,7 @@ import Section from '../section';
 import Aside from '../aside';
 import Cursor from '../cursor';
 import Curtain from '../curtain';
-import Alert from '../../UI/alert';
+import Alert from '../UI/alert';
 import useKeyboard from '../../hooks/useKeyboard';
 import useWheel from '../../hooks/useWheel';
 import useSwipe from '../../hooks/useSwipe';

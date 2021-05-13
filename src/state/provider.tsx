@@ -2,11 +2,12 @@
 import React from 'react';
 import {IActions} from './type/actions';
 import {IAction} from './type/action';
+import {IState} from './type/state';
 
 interface IProvider {
     Context: any
     reducer: any
-    initialState: any
+    initialState: IState
     dispatcher: (dispatch: React.Dispatch<IAction>) => IActions
 }
 

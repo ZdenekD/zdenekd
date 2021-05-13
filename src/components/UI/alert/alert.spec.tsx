@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent, {stateFactory} from '../../__test__/utils/helpers';
+import findComponent, {stateFactory} from '../../../__test__/utils/helpers';
 import Alert from '.';
 
 describe('Alert', () => {

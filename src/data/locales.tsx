@@ -104,7 +104,7 @@ const locales: ILocales = {
                     </strong>
                     <p>
                         Některé součásti stránek Vám nemusí fungovat správně.<br />
-                        Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instrukce</a> jak povolit JavaScript ve
+                        Zde jsou <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener">instrukce</a> jak povolit JavaScript ve
                         Vašem webovém prohlížeči.
                     </p>
                 </>
@@ -168,8 +168,8 @@ const locales: ILocales = {
                         You don&amp;t have JavaScript enabled
                     </strong>
                     <p>
-                        Some parts of the site may not work properly for you..<br />
-                        Here are <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener"> instructions</a> how to enable JavaScript in your browser.
+                        Some parts of the site may not work properly for you.<br />
+                        Here are <a href="https://www.enable-javascript.com/cz/" target="_blank" rel="noreferrer noopener">instructions</a> how to enable JavaScript in your browser.
                     </p>
                 </>
             ),
