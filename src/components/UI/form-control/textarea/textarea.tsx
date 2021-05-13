@@ -75,6 +75,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
                     {required && (<sup className={styles.required}>*</sup>)}
                 </span>
             </label>
+
             {error && (<span className={styles.error} data-test="component-textarea-error">{error}</span>)}
 
             {maxlength && !disabled && (
