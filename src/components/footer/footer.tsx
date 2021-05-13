@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import Locale from './locale';
 import Keys from '../keys';
 import useLocale from '../../hooks/useLocale';
-import Icon, {IconsEnum} from '../../UI/icon';
+import Icon, {IconsEnum} from '../UI/icon';
 import {useMenuState} from '../../state/menu';
 import {variants} from './footer.animations';
 import styles from './footer.css';
