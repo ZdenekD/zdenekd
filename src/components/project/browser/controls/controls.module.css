@@ -5,7 +5,7 @@
     margin: 0 2px;
     display: inline-block;
     position: relative;
-    background: var(--color-white);
+    background: hsl(var(--color-white));
     text-align: center;
     transition: all var(--transition-duration) var(--transition-timing);
     border-radius: var(--border-radius);
@@ -13,9 +13,9 @@
 
     &:focus,
     &:hover {
-        background: var(--color-green-lighten-4);
+        background: hsl(var(--color-green-lighten-4));
         transition: all var(--transition-duration) ease-in-out;
-        border-color: var(--color-green-lighten-3);
+        border-color: hsl(var(--color-green-lighten-3));
     }
 
     &::before,
@@ -26,7 +26,7 @@
         position: absolute;
         left: 50%;
         content: '';
-        background-color: var(--color-gray);
+        background-color: hsl(var(--color-gray));
         transition: background 0.2s ease-in-out;
     }
 

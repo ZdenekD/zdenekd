@@ -30,8 +30,8 @@
     top: 15px;
     left: 50%;
     animation-duration: 1.2s;
-    border-top-color: var(--color-blue-darken-3);
-    border-bottom-color: var(--color-blue-darken-4);
+    border-top-color: hsl(var(--color-blue-darken-3));
+    border-bottom-color: hsl(var(--color-blue-darken-4));
 
     &::before {
         top: 5%;
@@ -40,7 +40,7 @@
         left: 5%;
         content: '';
         animation-duration: 1.8s;
-        border-top-color: var(--color-blue);
+        border-top-color: hsl(var(--color-blue));
     }
 
     &::after {
@@ -50,7 +50,7 @@
         left: 12%;
         content: '';
         animation-duration: 1.2s;
-        border-top-color: var(--color-green);
+        border-top-color: hsl(var(--color-green));
     }
 
     @media (--min-sm) {

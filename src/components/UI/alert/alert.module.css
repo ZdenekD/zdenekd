@@ -1,75 +1,109 @@
 .alert {
+    --alert-box-shadow: var(--color-black);
+    --button-width: 3rem;
+    --button-hover-background: var(--color-black);
+    --progress-background: var(--color-black);
     width: 75vw;
     max-width: 600px;
-    min-height: 40px;
-    padding: calc(0.5 * var(--gap)) calc(var(--gap) + 20px) calc(0.5 * var(--gap)) var(--gap);
+    padding: var(--gap) calc(var(--button-width) + var(--gap)) var(--gap) var(--gap);
     position: fixed;
-    top: 2vw;
-    right: 5vw;
-    z-index: var(--zindex-modal);
+    top: calc(2 * var(--gap));
+    right: calc(2 * var(--gap));
+    z-index: var(--zindex-alert);
     overflow: hidden;
-    background: var(--alert-background, var(--color-light-gray));
-    color: var(--alert-color, currentColor);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: var(--border-radius);
+    background: hsl(var(--color-white));
+    color: hsl(var(--alert-text));
+    box-shadow: 0 0.8px 6.4px hsla(var(--alert-box-shadow), 0.017), 0 2px 15.3px hsla(var(--alert-box-shadow), 0.024), 0 3.8px 28.8px hsla(var(--alert-box-shadow), 0.03), 0 6.7px 51.4px hsla(var(--alert-box-shadow), 0.036), 0 12.5px 96.1px hsla(var(--alert-box-shadow), 0.043), 0 30px 230px hsla(var(--alert-box-shadow), 0.06);
+    border-radius: var(--global-border-radius);
 }
 
-.success {
-    --alert-background: var(--color-green-lighten-1);
+.header {
+    margin-bottom: calc(var(--gap) / 2);
+    display: flex;
+    align-items: center;
+
+    + .section {
+        padding-left: calc(var(--gap) / 2);
+    }
 }
 
-.info {
-    --alert-background: var(--color-blue-lighten-1);
-    --alert-color: var(--color-white);
+.title {
+    padding-left: calc(var(--gap) / 2);
+    font-size: 1.1rem;
 }
 
-.warning {
-    --alert-background: var(--color-yellow-lighten-1);
-}
-
-.danger {
-    --alert-background: var(--color-red-lighten-1);
-}
-
-.backdrop {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: calc(var(--zindex-modal) - 1);
-    background: rgba(0, 0, 0, 0.25);
+.section {
+    color: var(--global-text);
+    font-size: 0.9rem;
 }
 
 .button {
-    width: 40px;
-    min-width: 0;
-    height: 40px;
-    min-height: 0;
-    padding: 0;
+    width: var(--button-width);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.25);
-    color: var(--color-black);
+    color: hsl(var(--color-gray-lighten-3));
     font-size: 1.5rem;
     font-weight: 400;
-    border-radius: 0 var(--border-radius) calc(var(--border-radius) / 2) 0;
+    transition-property: background-color, color, border-color;
+    transition-duration: var(--transition-out);
+    transition-timing-function: var(--transition-timing);
+    border-left: 1px solid hsla(var(--color-black), 0.05);
 
     &:focus,
     &:hover {
-        background: rgba(255, 255, 255, 0.4);
-        color: var(--color-dark-gray);
+        background-color: hsla(var(--button-hover-background), 0.05);
+        color: currentColor;
+        border-color: hsla(var(--button-hover-background), 0.05);
     }
 }
 
 .progress {
-    height: 2px;
+    height: 3px;
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.33);
+    background: hsla(var(--progress-background), 0.25);
+}
+
+.backdrop {
+    --backdrop-background: var(--color-black);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: calc(var(--zindex-alert) - 1);
+    background: hsla(var(--backdrop-background), 0.1);
+}
+
+.success {
+    --variant: var(--color-green-darken-2);
+}
+
+.info {
+    --variant: var(--color-blue-darken-2);
+}
+
+.warning {
+    --variant: var(--color-orange-darken-2);
+}
+
+.danger {
+    --variant: var(--color-red-darken-2);
+}
+
+.success,
+.info,
+.warning,
+.danger {
+    --alert-text: var(--variant);
+    --alert-box-shadow: var(--variant);
+    --backdrop-background: var(--variant);
+    --button-hover-background: var(--variant);
+    --progress-background: var(--variant);
 }

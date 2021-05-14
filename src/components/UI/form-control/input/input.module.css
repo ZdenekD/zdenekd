@@ -15,7 +15,7 @@
 
 .input,
 .label {
-    --label-color: var(--color-blue-darken-4);
+    --label-color: hsl(var(--color-blue-darken-4));
     width: 100%;
     height: var(--input-height);
     padding: 0 70px 0 var(--gap);
@@ -26,13 +26,13 @@
     color: var(--label-color);
     font-size: 1.2em;
     line-height: var(--input-height);
-    caret-color: var(--color-blue);
+    caret-color: hsl(var(--color-blue));
 
     &:focus,
     &[placeholder] {
 
         + .label {
-            --label-color: var(--color-blue);
+            --label-color: hsl(var(--color-blue));
 
             &::after {
                 background: var(--label-color);
@@ -51,7 +51,7 @@
     }
 
     &::placeholder {
-        color: var(--color-light-gray);
+        color: hsl(var(--color-light-gray));
     }
 
     &::selection {
@@ -102,7 +102,7 @@
 .nonempty {
 
     + .label {
-        --label-color: var(--color-blue);
+        --label-color: hsl(var(--color-blue));
 
         &::after {
             background: var(--label-color);
@@ -125,12 +125,12 @@
     &:focus {
 
         + .label {
-            --label-color: var(--color-green);
+            --label-color: hsl(var(--color-green));
         }
     }
 
     + .label {
-        --label-color: var(--color-green);
+        --label-color: hsl(var(--color-green));
     }
 }
 
@@ -139,12 +139,12 @@
     &:focus {
 
         + .label {
-            --label-color: var(--color-blue);
+            --label-color: hsl(var(--color-blue));
         }
     }
 
     + .label {
-        --label-color: var(--color-blue);
+        --label-color: hsl(var(--color-blue));
     }
 }
 
@@ -153,12 +153,12 @@
     &:focus {
 
         + .label {
-            --label-color: var(--color-orange);
+            --label-color: hsl(var(--color-orange));
         }
     }
 
     + .label {
-        --label-color: var(--color-orange);
+        --label-color: hsl(var(--color-orange));
     }
 }
 
@@ -167,12 +167,12 @@
     &:focus {
 
         + .label {
-            --label-color: var(--color-red);
+            --label-color: hsl(var(--color-red));
         }
     }
 
     + .label {
-        --label-color: var(--color-red);
+        --label-color: hsl(var(--color-red));
     }
 }
 
@@ -180,7 +180,7 @@
     margin-left: calc(0.25 * var(--gap));
     position: relative;
     top: -5px;
-    color: var(--color-red);
+    color: hsl(var(--color-red));
     font-size: 0.9rem;
 
     &::selection {
@@ -195,11 +195,11 @@
     position: absolute;
     top: 0;
     right: calc(1px + calc(0.5 * var(--gap)));
-    color: var(--color-gray);
+    color: hsl(var(--color-gray));
     font-size: 0.8em;
 
     &::selection {
-        background: var(--color-gray);
+        background: hsl(var(--color-gray));
     }
 }
 
@@ -209,10 +209,10 @@
     position: absolute;
     top: calc(100% + 1em);
     right: 0;
-    color: var(--color-red);
+    color: hsl(var(--color-red));
     font-size: 0.95em;
 
     &::selection {
-        background: var(--color-red);
+        background: hsl(var(--color-red));
     }
 }

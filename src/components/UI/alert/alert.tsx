@@ -62,7 +62,7 @@ const Alert: React.FC<IProps> = ({
                         animate="enter"
                         exit="exit"
                         variants={animations.backdrop}
-                        className={styles.backdrop}
+                        className={`${styles.backdrop} ${variant ? styles[variant] : ''}`}
                     />
                     <motion.div
                         initial="initial"
@@ -80,7 +80,9 @@ const Alert: React.FC<IProps> = ({
                             </header>
                         )}
 
-                        {children}
+                        <section className={styles.section}>
+                            {children}
+                        </section>
 
                         <button
                             className={styles.button}

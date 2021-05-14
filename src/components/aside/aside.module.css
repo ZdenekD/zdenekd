@@ -5,6 +5,6 @@
     top: 0;
     left: 0;
     z-index: var(--zindex-aside);
-    background: var(--color-blue-lighten-4);
+    background: hsl(var(--color-blue-lighten-4));
     border-radius: var(--border-radius);
 }

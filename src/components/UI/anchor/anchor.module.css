@@ -1,5 +1,5 @@
 .anchor {
-    color: var(--color-blue-darken-2);
+    color: hsl(var(--color-blue-darken-2));
     text-decoration: none;
     transition-property: border-color, filter;
     transition-duration: var(--transition-duration);

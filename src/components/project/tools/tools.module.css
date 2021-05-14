@@ -36,7 +36,7 @@
     left: 50%;
     opacity: 0;
     visibility: hidden;
-    color: var(--color-gray);
+    color: hsl(var(--color-gray));
     font-size: 0.9em;
     transform: translateX(-50%);
     transition: all 0.2s var(--ease-in-out-quad);

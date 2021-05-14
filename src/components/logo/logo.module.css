@@ -13,8 +13,8 @@
     }
 
     :global .logo_svg__st0 {
-        fill: var(--navigation-color, var(--color-blue-darken-3));
-        stroke: var(--navigation-color, var(--color-blue-darken-3));
+        fill: var(--navigation-color, hsl(var(--color-blue-darken-3)));
+        stroke: var(--navigation-color, hsl(var(--color-blue-darken-3)));
         transition: var(--header-transition);
     }
 

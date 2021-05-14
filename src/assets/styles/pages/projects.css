@@ -1,10 +1,10 @@
 .root {
-    --section-background: var(--color-green-lighten-5);
-    --selection-background: var(--color-green);
-    --curtain-color: var(--color-green-lighten-4);
-    --content-heading: var(--color-green);
-    --content-heading-admit: var(--color-green-lighten-1);
-    --key-background: var(--color-green-lighten-3);
+    --section-background: hsl(var(--color-green-lighten-5));
+    --selection-background: hsl(var(--color-green));
+    --curtain-color: hsl(var(--color-green-lighten-4));
+    --content-heading: hsl(var(--color-green));
+    --content-heading-admit: hsl(var(--color-green-lighten-1));
+    --key-background: hsl(var(--color-green-lighten-3));
 }
 
 .article {

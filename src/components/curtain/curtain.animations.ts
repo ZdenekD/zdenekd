@@ -16,7 +16,7 @@ const animations: Variants = {
     },
     exit: {
         y: 0,
-        background: 'var(--color-yellow-lighten-4)',
+        background: 'var(--curtain-base-color)',
         transition: {
             duration: 1.2,
             ease: [

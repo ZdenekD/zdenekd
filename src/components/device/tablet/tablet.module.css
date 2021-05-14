@@ -55,7 +55,7 @@
     position: absolute;
     top: calc(50% - 6px);
     left: 50%;
-    background: var(--color-dark-gray);
+    background: hsl(var(--color-dark-gray));
     transform: translate(-50%, -50%);
     border-radius: 50%;
 }
@@ -69,5 +69,5 @@
     z-index: 3;
     background: #121212;
     border-radius: 50%;
-    border: 1px solid var(--color-dark-gray);
+    border: 1px solid hsl(var(--color-dark-gray));
 }

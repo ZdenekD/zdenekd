@@ -7,10 +7,12 @@
     --header-transition: all .8s var(--ease-out-expo) 1.4s;
     --header-transition-active: all .8s var(--ease-out-expo);
     --float-transition: transform 1.2s ease-out;
+    --curtain-base-color: hsl(var(--color-yellow-lighten-4));
     --zindex-aside: 100;
     --zindex-footer: 105;
     --zindex-header: 110;
     --zindex-modal: 200;
+    --zindex-alert: 201;
     --zindex-loader: 210;
     --zindex-curtain: 990;
     --zindex-cursor: 1000;

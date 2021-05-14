@@ -1,19 +1,19 @@
 .key {
-    --arrow-background: var(--key-background, var(--color-light-gray));
-    --arrow-color: var(--color-blue-darken-4);
+    --arrow-background: var(--key-background, hsl(var(--color-light-gray)));
+    --arrow-color: hsl(var(--color-blue-darken-4));
     margin: 2px 4px;
     display: flex;
     align-self: center;
 
     &:not([disabled]):focus {
-        outline: 2px dashed var(--color-blue-darken-4);
+        outline: 2px dashed hsl(var(--color-blue-darken-4));
         outline-offset: 1px;
     }
 
     &:not([disabled]):focus,
     &:not([disabled]):hover {
-        --arrow-background: var(--color-blue-darken-4);
-        --arrow-color: var(--key-background, var(--color-light-gray));
+        --arrow-background: hsl(var(--color-blue-darken-4));
+        --arrow-color: var(--key-background, hsl(var(--color-light-gray)));
     }
 }
 
