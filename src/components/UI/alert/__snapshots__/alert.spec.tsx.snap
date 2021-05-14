@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert match snapshot 1`] = `
-<div class="backdrop"
+<div class="backdrop "
      style="opacity:0"
 >
 </div>
@@ -9,7 +9,9 @@ exports[`Alert match snapshot 1`] = `
      data-test="component-alert"
      style="opacity:0;transform:scale(0.85) translateZ(0)"
 >
-  message
+  <section class="section">
+    message
+  </section>
   <button class="button"
           aria-label="Zavřít"
           data-test="component-alert-button"
