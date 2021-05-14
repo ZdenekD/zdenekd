@@ -31,7 +31,7 @@
         position: absolute;
         left: 50%;
         content: '';
-        background: var(--color-blue-darken-4);
+        background: hsl(var(--color-blue-darken-4));
     }
 
     &::before {

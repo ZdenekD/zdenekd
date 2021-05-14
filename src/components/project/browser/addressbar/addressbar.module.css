@@ -5,7 +5,7 @@
     display: none;
     position: relative;
     background-color: var(--navigation-color);
-    color: var(--color-white);
+    color: hsl(var(--color-white));
     font-size: 0.9em;
     line-height: 24px;
     border-radius: 6px;
@@ -24,12 +24,12 @@
     a {
         width: 100%;
         display: block;
-        color: var(--color-white);
+        color: hsl(var(--color-white));
         text-decoration: none;
 
         &:focus,
         &:hover {
-            color: var(--color-green);
+            color: hsl(var(--color-green));
         }
     }
 
@@ -47,13 +47,13 @@
 .http {
 
     &::before {
-        background-color: var(--color-orange);
+        background-color: hsl(var(--color-orange));
     }
 }
 
 .https {
 
     &::before {
-        background-color: var(--color-green);
+        background-color: hsl(var(--color-green));
     }
 }

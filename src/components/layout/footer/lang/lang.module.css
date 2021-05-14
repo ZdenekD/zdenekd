@@ -5,7 +5,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: var(--key-background, var(--color-light-gray));
+    background: var(--key-background, hsl(var(--color-light-gray)));
     color: inherit;
     font-size: 0.8rem;
     text-decoration: none;
@@ -15,12 +15,12 @@
     &:hover,
     &:focus {
         background: var(--color-blue-darken-4);
-        color: var(--key-background, var(--color-light-gray));
+        color: var(--key-background, hsl(var(--color-light-gray)));
     }
 }
 
 .disabled {
     background: var(--color-blue-darken-4);
-    color: var(--key-background, var(--color-light-gray));
+    color: var(--key-background, hsl(var(--color-light-gray)));
     pointer-events: none;
 }

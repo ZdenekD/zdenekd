@@ -1,10 +1,10 @@
 .root {
-    --section-background: var(--color-red-lighten-5);
-    --selection-background: var(--color-red);
-    --curtain-color: var(--color-red-lighten-4);
-    --content-heading: var(--color-red);
-    --content-heading-admit: var(--color-red-lighten-1);
-    --key-background: var(--color-red-lighten-3);
+    --section-background: hsl(var(--color-red-lighten-5));
+    --selection-background: hsl(var(--color-red));
+    --curtain-color: hsl(var(--color-red-lighten-4));
+    --content-heading: hsl(var(--color-red));
+    --content-heading-admit: hsl(var(--color-red-lighten-1));
+    --key-background: hsl(var(--color-red-lighten-3));
 }
 
 .animation {

@@ -114,7 +114,7 @@
 
     &:focus,
     &:hover {
-        color: var(--color-red);
+        color: hsl(var(--color-red));
     }
 }
 
@@ -220,7 +220,7 @@
     position: absolute;
     top: calc(1.5 * var(--gap));
     right: calc(50% - 12px);
-    background: var(--color-red);
+    background: hsl(var(--color-red));
     transform: translateY(var(--dot-transform));
     border-radius: 50%;
 }

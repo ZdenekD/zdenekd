@@ -53,7 +53,7 @@
     width: 60px;
     height: 60px;
     fill: none;
-    stroke: var(--navigation-color, var(--color-blue-darken-4));
+    stroke: var(--navigation-color, hsl(var(--color-blue-darken-4)));
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;

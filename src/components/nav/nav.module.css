@@ -125,7 +125,7 @@
 }
 
 .active {
-    color: var(--color-blue-lighten-2);
+    color: hsl(var(--color-blue-lighten-2));
     transition: color var(--transition-duration) var(--ease-in-out-expo);
     pointer-events: none;
 
@@ -133,7 +133,7 @@
         width: 100%;
         top: 55%;
         opacity: 1;
-        background: linear-gradient(135deg, var(--color-white), var(--color-blue-lighten-5));
+        background: linear-gradient(135deg, hsl(var(--color-white)), hsl(var(--color-blue-lighten-5)));
         transform: translateY(-50%);
         animation: none;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);

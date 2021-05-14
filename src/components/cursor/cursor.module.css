@@ -18,7 +18,7 @@
     top: -15px;
     left: -15px;
     opacity: 0.8;
-    color: var(--color-blue-darken-4);
+    color: hsl(var(--color-blue-darken-4));
     transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: var(--ease-out-quart);
@@ -30,11 +30,11 @@
     height: 8px;
     top: -4px;
     left: -4px;
-    background: var(--color-blue-darken-4);
+    background: hsl(var(--color-blue-darken-4));
     transition: background var(--transition-duration) var(--transition-timing);
-    border: 1px solid var(--color-white);
+    border: 1px solid hsl(var(--color-white));
 }
 
 .innerCursorStuck {
-    background: var(--color-red);
+    background: hsl(var(--color-red));
 }

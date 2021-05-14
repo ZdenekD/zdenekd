@@ -8,27 +8,27 @@
     right: 5vw;
     z-index: var(--zindex-modal);
     overflow: hidden;
-    background: var(--alert-background, var(--color-light-gray));
+    background: var(--alert-background, hsl(var(--color-light-gray)));
     color: var(--alert-color, currentColor);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px hsla(var(--color-black), 0.15);
     border-radius: var(--border-radius);
 }
 
 .success {
-    --alert-background: var(--color-green-lighten-1);
+    --alert-background: hsl(var(--color-green-lighten-1));
 }
 
 .info {
-    --alert-background: var(--color-blue-lighten-1);
-    --alert-color: var(--color-white);
+    --alert-background: hsl(var(--color-blue-lighten-1));
+    --alert-color: hsl(var(--color-white));
 }
 
 .warning {
-    --alert-background: var(--color-yellow-lighten-1);
+    --alert-background: hsl(var(--color-yellow-lighten-1));
 }
 
 .danger {
-    --alert-background: var(--color-red-lighten-1);
+    --alert-background: hsl(var(--color-red-lighten-1));
 }
 
 .backdrop {
@@ -38,7 +38,7 @@
     top: 0;
     left: 0;
     z-index: calc(var(--zindex-modal) - 1);
-    background: rgba(0, 0, 0, 0.25);
+    background: hsla(var(--color-black), 0.25);
 }
 
 .button {
@@ -53,16 +53,16 @@
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.25);
-    color: var(--color-black);
+    background: hsla(var(--color-white), 0.25);
+    color: hsl(var(--color-black));
     font-size: 1.5rem;
     font-weight: 400;
     border-radius: 0 var(--border-radius) calc(var(--border-radius) / 2) 0;
 
     &:focus,
     &:hover {
-        background: rgba(255, 255, 255, 0.4);
-        color: var(--color-dark-gray);
+        background: hsla(var(--color-white), 0.4);
+        color: hsl(var(--color-dark-gray));
     }
 }
 
@@ -71,5 +71,5 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.33);
+    background: hsla(var(--color-black), 0.33);
 }
