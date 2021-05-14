@@ -2,7 +2,7 @@
 import React from 'react';
 import useEventListener from '@use-it/event-listener';
 import {useCursorState} from '../../state/cursor';
-import styles from './cursor.css';
+import styles from './cursor.module.css';
 
 interface IHandler {
     (a: number, b: number, c: HTMLElement, d: HTMLElement): void

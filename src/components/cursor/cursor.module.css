@@ -1,0 +1,40 @@
+.outerCursor,
+.innerCursor {
+    display: block;
+    position: fixed;
+    z-index: var(--zindex-cursor);
+    will-change: transform;
+    pointer-events: none;
+    border-radius: 50%;
+
+    @media (any-hover: none) {
+        display: none;
+    }
+}
+
+.outerCursor {
+    width: var(--cursor-width);
+    height: var(--cursor-height);
+    top: -15px;
+    left: -15px;
+    opacity: 0.8;
+    color: hsl(var(--color-blue-darken-4));
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: var(--ease-out-quart);
+    border-radius: var(--cursor-radius);
+}
+
+.innerCursor {
+    width: 8px;
+    height: 8px;
+    top: -4px;
+    left: -4px;
+    background: hsl(var(--color-blue-darken-4));
+    transition: background var(--transition-duration) var(--transition-timing);
+    border: 1px solid hsl(var(--color-white));
+}
+
+.innerCursorStuck {
+    background: hsl(var(--color-red));
+}

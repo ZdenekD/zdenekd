@@ -1,0 +1,26 @@
+.anchor {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--key-background, hsl(var(--color-light-gray)));
+    color: inherit;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all var(--transition-duration) var(--transition-timing);
+    border-radius: var(--border-radius);
+
+    &:hover,
+    &:focus {
+        background: var(--color-blue-darken-4);
+        color: var(--key-background, hsl(var(--color-light-gray)));
+    }
+}
+
+.disabled {
+    background: var(--color-blue-darken-4);
+    color: var(--key-background, hsl(var(--color-light-gray)));
+    pointer-events: none;
+}

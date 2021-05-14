@@ -1,0 +1,55 @@
+.browser {
+    margin: 0 auto;
+    align-self: center;
+    opacity: 0;
+    overflow: hidden;
+    box-shadow: 0 0.9px 3.7px rgba(0, 0, 0, 0.026), 0 2.2px 8.6px rgba(0, 0, 0, 0.037), 0 3.9px 15.5px rgba(0, 0, 0, 0.046), 0 6.4px 25.7px rgba(0, 0, 0, 0.054), 0 10.6px 42.3px rgba(0, 0, 0, 0.063), 0 18.5px 74px rgba(0, 0, 0, 0.074), 0 40px 160px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.header {
+    height: 42px;
+    padding: 0 var(--gap);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: #f7f7f7;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border: 1px solid #f2f2f2;
+
+    @media (--min-sm) {
+        height: 48px;
+    }
+}
+
+.controls {
+    margin-right: var(--gap);
+    display: none;
+    list-style-type: none;
+
+    @media (--min-md) {
+        display: block;
+    }
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+    display: inline-block;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+        background-color: hsl(var(--color-red));
+    }
+
+    &:nth-child(2) {
+        background-color: hsl(var(--color-orange));
+    }
+
+    &:nth-child(3) {
+        background-color: hsl(var(--color-green));
+    }
+}

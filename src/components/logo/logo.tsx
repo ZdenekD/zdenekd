@@ -2,15 +2,15 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import useCursor from '../../hooks/useCursor';
 import {useMenuState} from '../../state/menu';
-import {variants} from './logo.animations';
+import {animations} from './logo.animations';
 import Image from '../../assets/images/logo.svg';
-import styles from './logo.css';
+import styles from './logo.module.css';
 
-interface ILogo {
+interface IProps {
     className?: string
 }
 
-const Logo: React.FC<ILogo> = ({className = ''}) => {
+const Logo: React.FC<IProps> = ({className = ''}) => {
     const [{menu}] = useMenuState();
     const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
@@ -27,7 +27,7 @@ const Logo: React.FC<ILogo> = ({className = ''}) => {
             <motion.i
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
-                variants={variants}
+                variants={animations}
                 className={styles.shadow}
             />
         </div>

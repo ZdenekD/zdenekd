@@ -1,6 +1,6 @@
 import React from 'react';
 import anime from 'animejs';
-import styles from './heading.css';
+import styles from './heading.module.css';
 
 const Heading: React.FC = ({children}) => {
     const headingRef = React.useRef<HTMLHeadingElement | null>(null);

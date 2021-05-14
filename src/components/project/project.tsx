@@ -10,7 +10,7 @@ import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
 import {useProjectState} from '../../state/project';
 import projects from '../../data/projects';
 import LocalesEnum from '../../enums/LocalesEnum';
-import styles from './project.css';
+import styles from './project.module.css';
 
 const Project: React.FC = () => {
     const router = useRouter();

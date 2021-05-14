@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './anchor.css';
+import styles from './anchor.module.css';
 
-interface IAnchor {
+interface IProps {
     href: string
     title?: string
     children: React.ReactNode
@@ -10,7 +10,7 @@ interface IAnchor {
     onClick?: (event: React.MouseEvent) => void
 }
 
-const Anchor = React.forwardRef<HTMLAnchorElement, IAnchor>(({
+const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
     href,
     title,
     children,

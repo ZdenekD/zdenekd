@@ -1,4 +1,4 @@
-import styles from './computer.css';
+import styles from './computer.module.css';
 
 const Computer: React.FC = ({children}) => (
     <div className={styles.wrapper} data-test="component-device-computer">

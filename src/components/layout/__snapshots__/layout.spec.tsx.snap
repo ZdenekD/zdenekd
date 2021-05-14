@@ -58,7 +58,7 @@ exports[`Layout match snapshot 1`] = `
         jak povolit JavaScript ve Vašem webovém prohlížeči.
       </p>
     </noscript>
-    Content
+    Layout content
   </section>
   <footer class="footer closed"
           data-test="component-footer"
@@ -195,7 +195,7 @@ exports[`Layout match snapshot 1`] = `
   </footer>
   <div class="curtain"
        data-test="component-curtain"
-       style="background:var(--color-yellow-lighten-4);transform:none"
+       style="background:var(--curtain-base-color);transform:none"
   >
   </div>
 </main>

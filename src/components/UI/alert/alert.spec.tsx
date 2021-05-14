@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent, {stateFactory} from '../../../__test__/utils/helpers';
+import '../../../__test__/mocks/routerMock';
 import Alert from '.';
 
 describe('Alert', () => {
@@ -26,9 +27,9 @@ describe('Alert', () => {
         React.useState = jest.fn(() => [true, mockSetState]);
 
         const container = stateFactory(<Alert>message</Alert>);
-        const component = findComponent(container, 'component-alert');
+        const button = findComponent(container, 'component-alert-button');
 
-        component.find('button').simulate('click');
+        button.simulate('click');
 
         expect(mockSetState).toHaveBeenCalledTimes(1);
     });

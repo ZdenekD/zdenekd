@@ -1,6 +1,6 @@
 import {Variants} from 'framer-motion';
 
-const variants: Variants = {
+const animations: Variants = {
     enter: {
         y: '100%',
         background: 'var(--curtain-color)',
@@ -16,7 +16,7 @@ const variants: Variants = {
     },
     exit: {
         y: 0,
-        background: 'var(--color-yellow-lighten-4)',
+        background: 'var(--curtain-base-color)',
         transition: {
             duration: 1.2,
             ease: [
@@ -29,5 +29,4 @@ const variants: Variants = {
     },
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export {variants};
+export {animations};

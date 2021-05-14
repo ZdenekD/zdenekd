@@ -1,0 +1,14 @@
+.anchor {
+    color: hsl(var(--color-blue-darken-2));
+    text-decoration: none;
+    transition-property: border-color, filter;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing);
+    border-bottom: 1px solid;
+
+    &:focus,
+    &:hover {
+        filter: saturate(2);
+        border-bottom: 1px solid transparent;
+    }
+}

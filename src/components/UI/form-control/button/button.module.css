@@ -1,0 +1,60 @@
+.button {
+    min-width: 150px;
+    padding: calc(0.5 * var(--gap)) var(--gap);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-background, hsl(var(--color-blue-darken-4)));
+    color: var(--button-color, var(--key-background, hsl(var(--color-white))));
+    transition-property: background, color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing);
+    border-radius: var(--border-radius);
+
+    &:not([disabled]):focus {
+        outline: 2px dashed hsl(var(--color-blue-darken-4));
+        outline-offset: 1px;
+    }
+
+    &:not([disabled]):focus,
+    &:not([disabled]):hover {
+        background-color: var(--button-hover-background, var(--key-background, hsl(var(--color-light-gray))));
+        color: var(--button-hover-color, hsl(var(--color-blue-darken-4)));
+        transition-duration: var(--transition-duration);
+    }
+
+    &:disabled {
+        --button-color: hsl(var(--color-white));
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &::selection {
+        background: transparent;
+        color: currentColor;
+    }
+}
+
+.success {
+    --button-background: hsl(var(--color-green));
+    --button-outline-color: hsl(var(--color-green-lighten-3));
+    --button-hover-background: hsl(var(--color-green-lighten-1));
+}
+
+.info {
+    --button-background: hsl(var(--color-blue));
+    --button-outline-color: hsl(var(--color-blue-lighten-3));
+    --button-hover-background: hsl(var(--color-blue-lighten-1));
+}
+
+.warning {
+    --button-background: hsl(var(--color-orange));
+    --button-outline-color: hsl(var(--color-orange-lighten-3));
+    --button-hover-background: hsl(var(--color-orange-lighten-1));
+}
+
+.danger {
+    --button-background: hsl(var(--color-red));
+    --button-outline-color: hsl(var(--color-red-lighten-3));
+    --button-hover-background: hsl(var(--color-red-lighten-1));
+}

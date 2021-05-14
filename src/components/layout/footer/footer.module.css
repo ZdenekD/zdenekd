@@ -1,0 +1,226 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--opacity);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: var(--opacity);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.footer {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: var(--gap);
+    grid-area: footer;
+    align-items: flex-end;
+    position: relative;
+    z-index: var(--zindex-footer);
+    color: var(--navigation-color);
+
+    @media (--min-xs) {
+        padding: var(--gap);
+        grid-template-columns: auto auto;
+        grid-gap: 0;
+    }
+
+    @media (--min-md) {
+        padding: var(--gap) calc(2 * var(--gap));
+        grid-template-columns: 50% auto auto;
+        flex-direction: row;
+
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            z-index: -1;
+            content: '';
+            opacity: 0;
+            background: var(--curtain-color);
+            transform: translate3d(calc((-1 * var(--cursor-x) + 50vw) / var(--velocity)), calc((-1 * var(--cursor-y) + 50vh) / var(--velocity)), 0);
+            will-change: transform;
+            transition: var(--float-transition);
+            border-top-left-radius: var(--border-radius);
+        }
+
+        &::before {
+            --velocity: 50;
+            width: 25%;
+            min-width: 100px;
+            height: 100%;
+            min-height: 100px;
+            right: -10px;
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        &::after {
+            --velocity: 200;
+            width: 12.5%;
+            min-width: 50px;
+            height: 75%;
+            min-height: 50px;
+            right: calc(25% - 30px);
+        }
+    }
+
+    @media (--min-lg) {
+        grid-template-columns: 50% max-content auto min-content min-content;
+    }
+}
+
+.opened {
+    &::before {
+        --opacity: 0.5;
+        animation: fade-out 0.4s ease-in-out forwards;
+    }
+
+    &::after {
+        --opacity: 0.25;
+        animation: fade-out 0.4s ease-in-out forwards;
+    }
+}
+
+.closed {
+    &::before {
+        --opacity: 0.5;
+        animation: fade-in 0.4s ease-in-out 1s forwards;
+    }
+
+    &::after {
+        --opacity: 0.25;
+        animation: fade-in 0.4s ease-in-out 1.2s forwards;
+    }
+}
+
+.linkWrapper {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.link {
+    margin: 0 4px;
+    color: var(--navigation-color);
+    line-height: 0;
+    transition: var(--transition-duration);
+
+    &:focus,
+    &:hover {
+        color: hsl(var(--color-red));
+    }
+}
+
+.languages {
+
+    @media (--min-xs) {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    @media (--min-lg) {
+        margin-right: auto;
+    }
+}
+
+.code {
+    margin-right: auto;
+    margin-left: calc(0.5 * var(--gap));
+    padding-right: 10px;
+    padding-left: 30px;
+    display: none;
+    align-self: flex-end;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    font-size: 0.75em;
+    transform: translate3d(calc((-1 * var(--cursor-x) + 50vw) / 150), calc((-1 * var(--cursor-y) + 50vh) / 50), 0);
+    transform-origin: left center;
+    will-change: transform;
+    transition: var(--float-transition);
+
+    &::before,
+    &::after {
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        content: '';
+        background: currentColor;
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        left: 100%;
+    }
+
+    &,
+    span {
+
+        &::selection {
+            background: transparent;
+            color: currentColor;
+        }
+    }
+
+    @media (--min-md) {
+        display: flex;
+    }
+
+    @media (--max-md) {
+        margin-left: auto;
+    }
+}
+
+.scroll {
+    display: none;
+
+    &::selection {
+        background: transparent;
+        color: currentColor;
+    }
+
+    @media (--min-lg) {
+        margin: var(--gap) var(--gap) 0;
+        padding-bottom: calc(2 * var(--gap));
+        display: block;
+        position: relative;
+        font-size: 1em;
+        text-align: center;
+        letter-spacing: 1.5px;
+
+        &::before {
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: calc(1.5 * var(--gap));
+            left: 50%;
+            content: '';
+            background: currentColor;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.dot {
+    --dot-transform: 0;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: calc(1.5 * var(--gap));
+    right: calc(50% - 12px);
+    background: hsl(var(--color-red));
+    transform: translateY(var(--dot-transform));
+    border-radius: 50%;
+}

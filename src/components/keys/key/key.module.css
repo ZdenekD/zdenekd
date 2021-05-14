@@ -1,0 +1,80 @@
+.key {
+    --arrow-background: var(--key-background, hsl(var(--color-light-gray)));
+    --arrow-color: hsl(var(--color-blue-darken-4));
+    margin: 2px 4px;
+    display: flex;
+    align-self: center;
+
+    &:not([disabled]):focus {
+        outline: 2px dashed hsl(var(--color-blue-darken-4));
+        outline-offset: 1px;
+    }
+
+    &:not([disabled]):focus,
+    &:not([disabled]):hover {
+        --arrow-background: hsl(var(--color-blue-darken-4));
+        --arrow-color: var(--key-background, hsl(var(--color-light-gray)));
+    }
+}
+
+.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: relative;
+    background: var(--arrow-background);
+    transition: all var(--transition-duration) var(--transition-timing);
+    border-radius: var(--border-radius);
+
+    &::before {
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: '';
+        transform: translate(-50%, -50%);
+    }
+}
+
+.up {
+
+    &::before {
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid var(--arrow-color);
+        border-left: 4px solid transparent;
+    }
+}
+
+.right {
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--arrow-color);
+    }
+}
+
+.left {
+
+    &::before {
+        border-top: 4px solid transparent;
+        border-right: 4px solid var(--arrow-color);
+        border-bottom: 4px solid transparent;
+    }
+}
+
+.down {
+
+    &::before {
+        border-top: 4px solid var(--arrow-color);
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+}

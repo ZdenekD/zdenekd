@@ -1,0 +1,99 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--opacity);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: var(--opacity);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.button {
+    position: relative;
+    line-height: 0;
+
+    &::before {
+        --velocity: 70;
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        z-index: -1;
+        content: '';
+        opacity: 0;
+        background: var(--curtain-color);
+        transform: translate3d(calc((-1 * var(--cursor-x) + 50vw) / var(--velocity)), calc((-1 * var(--cursor-y) + 50vh) / var(--velocity)), 0);
+        will-change: transform;
+        transition: var(--float-transition);
+
+        @media (--min-md) {
+            width: 32px;
+            height: 32px;
+            top: 16px;
+            left: 24px;
+        }
+    }
+
+    &[disabled] {
+        pointer-events: none;
+    }
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    fill: none;
+    stroke: var(--navigation-color, hsl(var(--color-blue-darken-4)));
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    path {
+        transform-origin: center;
+    }
+
+    @media (--min-sm) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media (--min-md) {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.opened {
+
+    &::before {
+        --opacity: 0.75;
+        animation: fade-out 0.2s ease-in-out forwards;
+    }
+
+    .icon {
+        --navigation-color: var(--navigation-color-active);
+        transition: var(--header-transition-active);
+    }
+}
+
+.closed {
+
+    &::before {
+        --opacity: 0.75;
+        animation: fade-in 0.6s ease-in-out 1.4s forwards;
+    }
+}
+
+.disabled {
+    pointer-events: none;
+}

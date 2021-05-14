@@ -1,0 +1,71 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader,
+.loader::before,
+.loader::after {
+    --max-size: 40px;
+    position: absolute;
+    z-index: var(--zindex-loader);
+    transition: all var(--transition-duration) var(--transition-timing);
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.loader {
+    width: 20vw;
+    max-width: var(--max-size);
+    height: 20vw;
+    max-height: var(--max-size);
+    margin-left: -20px;
+    top: 15px;
+    left: 50%;
+    animation-duration: 1.2s;
+    border-top-color: hsl(var(--color-blue-darken-3));
+    border-bottom-color: hsl(var(--color-blue-darken-4));
+
+    &::before {
+        top: 5%;
+        right: 5%;
+        bottom: 5%;
+        left: 5%;
+        content: '';
+        animation-duration: 1.8s;
+        border-top-color: hsl(var(--color-blue));
+    }
+
+    &::after {
+        top: 12%;
+        right: 12%;
+        bottom: 12%;
+        left: 12%;
+        content: '';
+        animation-duration: 1.2s;
+        border-top-color: hsl(var(--color-green));
+    }
+
+    @media (--min-sm) {
+        --max-size: 50px;
+        margin-left: -25px;
+        top: 30px;
+    }
+
+    @media (--min-md) {
+        --max-size: 60px;
+        margin-left: -30px;
+        top: 10px;
+    }
+
+    @media (--min-lg) {
+        top: 30px;
+    }
+}
