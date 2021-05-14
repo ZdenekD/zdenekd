@@ -3,7 +3,7 @@
 exports[`Curtain match snapshot 1`] = `
 <div class="curtain"
      data-test="component-curtain"
-     style="background:var(--color-yellow-lighten-4);transform:none"
+     style="background:var(--curtain-base-color);transform:none"
 >
 </div>
 `;
