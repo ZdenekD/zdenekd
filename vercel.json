@@ -158,8 +158,6 @@
   "build": {
     "env": {
       "EMAIL_RECIPIENT": "@email-recipient-zdenekd",
-      "EMAIL_SENDER": "@email-sender-zdenekd",
-      "EMAIL_SUBJECT": "@email-subject-zdenekd",
       "SENDGRID_API_KEY": "@sendgrid-api-key-zdenekd",
       "SENDGRID_TEMPLATE_ID": "@sendgrid-template-id-zdenekd"
     }
