@@ -154,12 +154,5 @@
         }
       ]
     }
-  ],
-  "build": {
-    "env": {
-      "EMAIL_RECIPIENT": "@email-recipient-zdenekd",
-      "SENDGRID_API_KEY": "@sendgrid-api-key-zdenekd",
-      "SENDGRID_TEMPLATE_ID": "@sendgrid-template-id-zdenekd"
-    }
-  }
+  ]
 }
