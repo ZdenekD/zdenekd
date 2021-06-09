@@ -10,9 +10,9 @@ import {resetId} from 'react-id-generator';
 
 class MyDocument extends Document {
     static async getInitialProps(context: DocumentContext): Promise<DocumentInitialProps> {
-        const initialProps = await Document.getInitialProps(context);
-
         resetId();
+
+        const initialProps = await Document.getInitialProps(context);
 
         return initialProps;
     }

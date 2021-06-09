@@ -42,7 +42,6 @@ const ContactForm: React.FC = () => {
                 200: VariantsEnum.success,
                 400: VariantsEnum.warning,
                 405: VariantsEnum.danger,
-
             };
 
             setMessage({

@@ -154,6 +154,10 @@ strong {
     font-weight: bold;
 }
 
+button {
+    cursor: pointer;
+}
+
 sub,
 sup {
     vertical-align: baseline;
