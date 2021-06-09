@@ -1,7 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import {motion, Variants} from 'framer-motion';
+import {
+    LazyMotion,
+    domAnimation,
+    m,
+    Variants
+} from 'framer-motion';
 import Layout from '../components/layout';
 import Heading from '../components/heading';
 import Mobile from '../components/device/mobile';
@@ -73,7 +78,7 @@ const Page: React.FC = () => {
             </Head>
             <Layout className={styles.root} data-test="component-layout">
                 <Heading data-test="component-heading">{heading}</Heading>
-                <motion.article
+                <m.article
                     initial="initial"
                     animate="enter"
                     exit="exit"
@@ -85,70 +90,72 @@ const Page: React.FC = () => {
                             {paragraph}
                         </p>
                     )}
-                </motion.article>
+                </m.article>
             </Layout>
-            <motion.div
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                variants={animations.devices}
-                className={styles.devicesWrapper}
-            >
-                {width > MediaQueriesEnum.xl && (
-                    <div className={styles.computer}>
-                        <Computer>
-                            <video
-                                playsInline
-                                autoPlay
-                                muted
-                                loop
-                                preload="auto"
-                                controls={false}
-                            >
-                                <track kind="captions" />
-                                <track kind="description" label="Description" />
-                                <source src='/video/dirtjob.mp4' type="video/mp4" />
-                            </video>
-                        </Computer>
-                    </div>
-                )}
-                {width > MediaQueriesEnum.md && (
-                    <div className={styles.mobile}>
-                        <Mobile>
-                            <video
-                                playsInline
-                                autoPlay
-                                muted
-                                loop
-                                preload="auto"
-                                controls={false}
-                            >
-                                <track kind="captions" />
-                                <track kind="description" label="Description" />
-                                <source src='/video/digitalvision_mobile.mp4' type="video/mp4" />
-                            </video>
-                        </Mobile>
-                    </div>
-                )}
-                {width > MediaQueriesEnum.md && (
-                    <div className={styles.tablet}>
-                        <Tablet>
-                            <video
-                                playsInline
-                                autoPlay
-                                muted
-                                loop
-                                preload="auto"
-                                controls={false}
-                            >
-                                <track kind="captions" />
-                                <track kind="description" label="Description" />
-                                <source src='/video/tomton_tablet.mp4' type="video/mp4" />
-                            </video>
-                        </Tablet>
-                    </div>
-                )}
-            </motion.div>
+            <LazyMotion strict features={domAnimation}>
+                <m.div
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    variants={animations.devices}
+                    className={styles.devicesWrapper}
+                >
+                    {width > MediaQueriesEnum.xl && (
+                        <div className={styles.computer}>
+                            <Computer>
+                                <video
+                                    playsInline
+                                    autoPlay
+                                    muted
+                                    loop
+                                    preload="auto"
+                                    controls={false}
+                                >
+                                    <track kind="captions" />
+                                    <track kind="description" label="Description" />
+                                    <source src='/video/dirtjob.mp4' type="video/mp4" />
+                                </video>
+                            </Computer>
+                        </div>
+                    )}
+                    {width > MediaQueriesEnum.md && (
+                        <div className={styles.mobile}>
+                            <Mobile>
+                                <video
+                                    playsInline
+                                    autoPlay
+                                    muted
+                                    loop
+                                    preload="auto"
+                                    controls={false}
+                                >
+                                    <track kind="captions" />
+                                    <track kind="description" label="Description" />
+                                    <source src='/video/digitalvision_mobile.mp4' type="video/mp4" />
+                                </video>
+                            </Mobile>
+                        </div>
+                    )}
+                    {width > MediaQueriesEnum.md && (
+                        <div className={styles.tablet}>
+                            <Tablet>
+                                <video
+                                    playsInline
+                                    autoPlay
+                                    muted
+                                    loop
+                                    preload="auto"
+                                    controls={false}
+                                >
+                                    <track kind="captions" />
+                                    <track kind="description" label="Description" />
+                                    <source src='/video/tomton_tablet.mp4' type="video/mp4" />
+                                </video>
+                            </Tablet>
+                        </div>
+                    )}
+                </m.div>
+            </LazyMotion>
         </>
     );
 };

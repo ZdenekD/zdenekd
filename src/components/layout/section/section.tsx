@@ -1,9 +1,9 @@
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import {animations} from './section.animations';
 import styles from './section.module.css';
 
 const Section: React.FC = ({children}) => (
-    <motion.section
+    <m.section
         initial="initial"
         animate="enter"
         exit="exit"
@@ -12,7 +12,7 @@ const Section: React.FC = ({children}) => (
         data-test="component-section"
     >
         {children}
-    </motion.section>
+    </m.section>
 );
 
 export default Section;

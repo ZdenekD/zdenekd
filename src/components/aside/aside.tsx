@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import Nav from '../nav';
 import {useAnimationState} from '../../state/animation';
 import {useMenuState} from '../../state/menu';
@@ -16,7 +16,7 @@ const Aside: React.FC = () => {
     };
 
     return (
-        <motion.aside
+        <m.aside
             initial={false}
             animate={menu.isOpen ? 'enter' : 'exit'}
             variants={animations}
@@ -26,7 +26,7 @@ const Aside: React.FC = () => {
             onAnimationEnd={handleAnimationEnd}
         >
             <Nav />
-        </motion.aside>
+        </m.aside>
     );
 };
 

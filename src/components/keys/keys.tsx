@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRouter} from 'next/router';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import Key from './key';
 import pages from '../../data/pages';
 import {useMenuState} from '../../state/menu';
@@ -41,7 +41,7 @@ const Keys: React.FC = () => {
     };
 
     return (
-        <motion.div
+        <m.div
             initial={false}
             animate={menu.isOpen ? 'enter' : 'exit'}
             variants={animations}
@@ -74,7 +74,7 @@ const Keys: React.FC = () => {
                     onClick={handleKeyRight}
                 />
             </div>
-        </motion.div>
+        </m.div>
     );
 };
 

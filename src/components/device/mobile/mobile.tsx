@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import {animations} from './mobile.animations';
 import styles from './mobile.module.css';
 
@@ -12,7 +12,7 @@ const Mobile: React.FC = ({children}) => (
                 <i className={styles.speaker} />
                 <i className={styles.camera} />
             </span>
-            <motion.i
+            <m.i
                 initial="initial"
                 animate="enter"
                 variants={animations}

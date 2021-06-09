@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import {m, AnimatePresence} from 'framer-motion';
 import useLocale from '../../../../hooks/useLocale';
 import {IProject} from '../../../../data/projects';
 import {animations} from './video.animations';
@@ -15,7 +15,7 @@ const Video: React.FC<IProps> = ({project}) => {
 
     return (
         <AnimatePresence exitBeforeEnter>
-            <motion.div
+            <m.div
                 ref={wrapperRef}
                 key={project.id}
                 initial="initial"
@@ -39,7 +39,7 @@ const Video: React.FC<IProps> = ({project}) => {
                     <track kind="description" label={project.title} />
                     <source src={`/video/${project.id}.mp4`} type="video/mp4" />
                 </video>
-            </motion.div>
+            </m.div>
         </AnimatePresence>
     );
 };
