@@ -11,7 +11,7 @@ exports[`Video match snapshot 1`] = `
          loop
          preload="auto"
          class="video"
-         title="Ukázka projektu: title. Stránky se nacházejí zde: http://url"
+         title="Sample project: title. The site can be found here: http://url"
   >
     <track kind="captions">
     <track kind="description"

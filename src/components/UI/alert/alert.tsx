@@ -1,5 +1,10 @@
 import React from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import {
+    LazyMotion,
+    AnimatePresence,
+    domAnimation,
+    m
+} from 'framer-motion';
 import VariantsEnum from '../../../enums/VariantsEnum';
 import animations from './alert.animations';
 import useLocale from '../../../hooks/useLocale';
@@ -56,15 +61,15 @@ const Alert: React.FC<IProps> = ({
     return (
         <AnimatePresence>
             {isOpened && (
-                <>
-                    <motion.div
+                <LazyMotion strict features={domAnimation}>
+                    <m.div
                         initial="initial"
                         animate="enter"
                         exit="exit"
                         variants={animations.backdrop}
                         className={`${styles.backdrop} ${variant ? styles[variant] : ''}`}
                     />
-                    <motion.div
+                    <m.div
                         initial="initial"
                         animate="enter"
                         exit="exit"
@@ -94,14 +99,14 @@ const Alert: React.FC<IProps> = ({
                         </button>
 
                         {timeout && (
-                            <motion.div
+                            <m.div
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
                                 className={styles.progress}
                             />
                         )}
-                    </motion.div>
-                </>
+                    </m.div>
+                </LazyMotion>
             )}
         </AnimatePresence>
     );

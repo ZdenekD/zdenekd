@@ -1,5 +1,6 @@
 import {addParameters, addDecorator} from '@storybook/react';
 import {withNextRouter} from 'storybook-addon-next-router';
+import {LazyMotion, domAnimation} from 'framer-motion';
 import {Provider} from '../src/state';
 import './index.css';
 import Cursor from '../src/components/cursor';
@@ -35,11 +36,13 @@ const viewports = {
     },
 };
 
-addDecorator(withNextRouter());
+addDecorator(withNextRouter({locales: ['cs', 'en']}));
 addDecorator(Story => (
     <Provider>
-        <Story />
-        <Cursor />
+        <LazyMotion strict features={domAnimation}>
+            <Story />
+            <Cursor />
+        </LazyMotion>
     </Provider>
 ));
 addParameters({viewport: {viewports}});

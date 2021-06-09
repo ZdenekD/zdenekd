@@ -1,5 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import {
+    LazyMotion,
+    domAnimation,
+    m
+} from 'framer-motion';
 import Header from './header';
 import Footer from './footer';
 import Section from './section';
@@ -59,15 +64,17 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">
                 <React.StrictMode>
-                    <Header />
-                    <Section>
-                        <noscript>
-                            {locale.noscript}
-                        </noscript>
-                        {children}
-                    </Section>
-                    <Footer />
-                    <Curtain />
+                    <LazyMotion strict features={domAnimation}>
+                        <Header />
+                        <Section>
+                            <noscript>
+                                {locale.noscript}
+                            </noscript>
+                            {children}
+                        </Section>
+                        <Footer />
+                        <Curtain />
+                    </LazyMotion>
                 </React.StrictMode>
             </main>
             <React.StrictMode>

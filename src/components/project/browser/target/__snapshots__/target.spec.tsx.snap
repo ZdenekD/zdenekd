@@ -7,7 +7,7 @@ exports[`Target match snapshot 1`] = `
      target="_blank"
      rel="noreferrer noopener"
      data-test="component-target"
-     aria-label="Otevřít referenci v novém okně"
+     aria-label="Open the reference in a new window"
   >
     <svg data-filename="src/assets/images/icon_open.svg">
     </svg>

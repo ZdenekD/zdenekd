@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRouter} from 'next/router';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import Lang from './lang';
 import Keys from '../../keys';
 import useLocale from '../../../hooks/useLocale';
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     const locale = useLocale();
 
     return (
-        <motion.footer
+        <m.footer
             initial="initial"
             animate="enter"
             exit="exit"
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                     <Icon variant={IconsEnum.brandGithub} />
                 </a>
             </div>
-            <motion.div
+            <m.div
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={animations.locale}
@@ -57,24 +57,24 @@ const Footer: React.FC = () => {
                         router={router}
                     />
                 ))}
-            </motion.div>
+            </m.div>
             <Keys />
-            <motion.span
+            <m.span
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={animations.scroll}
                 className={styles.scroll}
             >
                 Scroll
-                <motion.i
+                <m.i
                     ref={dotRef}
                     initial="initial"
                     animate="enter"
                     variants={animations.dot}
                     className={styles.dot}
                 />
-            </motion.span>
-        </motion.footer>
+            </m.span>
+        </m.footer>
     );
 };
 

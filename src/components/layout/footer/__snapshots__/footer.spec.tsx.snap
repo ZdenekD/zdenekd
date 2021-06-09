@@ -6,11 +6,11 @@ exports[`Footer match snapshot 1`] = `
         style="opacity:0"
 >
   <code class="code">
-    ♣ MMXXI Vyrobeno pomocí &lt;kouzel&gt; a {zaklínadel}
+    ♣ MMXXI Made with &lt;spells&gt; and {incantations}
   </code>
   <div class="linkWrapper">
-    <a href="mailto:ditezdenek&amp;#64;pm.me?subject=&amp;clubs; Zpráva přímo do schránky &amp;clubs;"
-       title="Zpráva přímo do schránky"
+    <a href="mailto:ditezdenek&amp;#64;pm.me?subject=&amp;clubs; Message directly to the mailbox &amp;clubs;"
+       title="Message directly to the mailbox"
        class="link"
     >
       <svg width="28"
@@ -72,12 +72,12 @@ exports[`Footer match snapshot 1`] = `
        style="opacity:1"
   >
     <a href="/"
-       class="anchor disabled"
+       class="anchor "
     >
       CS
     </a>
     <a href="/"
-       class="anchor "
+       class="anchor disabled"
     >
       EN
     </a>
@@ -88,7 +88,7 @@ exports[`Footer match snapshot 1`] = `
   >
     <button type="button"
             class="key disabled"
-            aria-label="Předchozí stránka"
+            aria-label="Previous page"
             data-test="component-key"
             disabled
     >
@@ -98,7 +98,7 @@ exports[`Footer match snapshot 1`] = `
     <div class="key">
       <button type="button"
               class="key disabled"
-              aria-label="Předchozí projekt"
+              aria-label="Previous project"
               data-test="component-key"
               disabled
       >
@@ -107,7 +107,7 @@ exports[`Footer match snapshot 1`] = `
       </button>
       <button type="button"
               class="key "
-              aria-label="Následující stránka"
+              aria-label="Next page"
               data-test="component-key"
       >
         <i class="icon down">
@@ -115,7 +115,7 @@ exports[`Footer match snapshot 1`] = `
       </button>
       <button type="button"
               class="key disabled"
-              aria-label="Následující projekt"
+              aria-label="Next project"
               data-test="component-key"
               disabled
       >

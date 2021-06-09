@@ -1,4 +1,4 @@
-import sendgrid from '@sendgrid/mail';
+import sendgrid, {MailDataRequired} from '@sendgrid/mail';
 import {NextApiRequest, NextApiResponse} from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse): void {
@@ -13,9 +13,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse): void
         const content = {
             to: process.env.EMAIL_RECIPIENT,
             from: process.env.EMAIL_SENDER as string,
-            text: message,
             templateId: process.env.SENDGRID_TEMPLATE_ID,
-            dynamicTemplateData: {
+            dynamic_template_data: {
                 subject: process.env.EMAIL_SUBJECT,
                 name,
                 email,
@@ -25,7 +24,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse): void
 
         (async () => {
             try {
-                await sendgrid.send(content);
+                await sendgrid.send(content as MailDataRequired);
 
                 res.status(200).json({status: 200});
             } catch (error) {

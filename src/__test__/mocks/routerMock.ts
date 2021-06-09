@@ -2,7 +2,7 @@ const routerMock = jest.mock('next/router', () => ({
     useRouter: jest.fn().mockImplementation(() => ({
         pathname: '/',
         route: '/',
-        locale: 'cs',
+        locale: 'en',
         locales: ['cs', 'en'],
     })),
 }));

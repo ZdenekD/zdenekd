@@ -18,7 +18,7 @@ exports[`Form/Contact match snapshot 1`] = `
              class="label"
       >
         <span class="labelContent">
-          Jméno
+          Name
           <sup class="required">
             *
           </sup>
@@ -72,7 +72,7 @@ exports[`Form/Contact match snapshot 1`] = `
              class="label"
       >
         <span class="labelContent">
-          Zpráva
+          Message
           <sup class="required">
             *
           </sup>
@@ -96,7 +96,7 @@ exports[`Form/Contact match snapshot 1`] = `
             class="button  submit"
             data-test="component-button"
     >
-      Odeslat
+      Submit
     </button>
   </div>
 </form>

@@ -15,14 +15,14 @@ exports[`Browser match snapshot 1`] = `
     </span>
     <button type="button"
             class="prev "
-            aria-label="Předchozí projekt"
+            aria-label="Previous project"
             tabindex="0"
             data-test="component-controls-prev"
     >
     </button>
     <button type="button"
             class="next "
-            aria-label="Následující projekt"
+            aria-label="Next project"
             tabindex="0"
             data-test="component-controls-next"
     >
@@ -34,7 +34,7 @@ exports[`Browser match snapshot 1`] = `
          target="_blank"
          rel="noreferrer noopener"
          data-test="component-addressbar-link"
-         aria-label="Otevřít referenci v novém okně"
+         aria-label="Open the reference in a new window"
       >
         http://url
       </a>
@@ -45,7 +45,7 @@ exports[`Browser match snapshot 1`] = `
          target="_blank"
          rel="noreferrer noopener"
          data-test="component-target"
-         aria-label="Otevřít referenci v novém okně"
+         aria-label="Open the reference in a new window"
       >
         <svg data-filename="src/assets/images/icon_open.svg">
         </svg>
