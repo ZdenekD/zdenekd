@@ -3,7 +3,7 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('../public/font/roboto-mono.woff2');
+    src: url('../public/font/roboto-mono.woff2') format('woff2');
 }
 
 @font-face {

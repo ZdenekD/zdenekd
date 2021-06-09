@@ -34,6 +34,10 @@ const Menu: React.FC = () => {
     };
 
     React.useEffect(() => {
+        if (menu.isOpen === undefined) {
+            return;
+        }
+
         (menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
     }, [menu.isOpen]);
 

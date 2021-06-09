@@ -1,60 +1,7 @@
 @import './base/reset.css';
+@import './base/html.css';
 @import './variables/colors.css';
 @import './variables/easing.css';
 @import './variables/variables.css';
 @import './variables/fonts.css';
 @import './utilities/helpers.css';
-
-html {
-    height: 100%;
-}
-
-body {
-    --navigation-color: hsl(var(--color-blue-darken-4));
-    --navigation-color-active: hsl(var(--color-blue-darken-3));
-    width: 100%;
-    background-color: hsl(var(--color-white));
-    color: hsl(var(--color-black));
-    font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
-    font-size: var(--font-size, 13px);
-    line-height: 1.4;
-    font-weight: 400;
-    transition: font-size var(--transition-duration) var(--transition-timing);
-
-    &,
-    * {
-        cursor: crosshair;
-    }
-
-    @media (--min-md) {
-        --font-size: 14px;
-        overflow-y: hidden;
-    }
-
-    @media (--min-lg) {
-        --font-size: 15px;
-    }
-
-    @media (--min-xl) {
-        --font-size: 16px;
-    }
-}
-
-strong {
-    font-weight: 700;
-}
-
-code,
-kbd,
-samp {
-    font-family: 'Roboto Mono', monospace;
-}
-
-::selection {
-    background: var(--selection-background, hsl(var(--color-blue-darken-4)));
-    color: hsl(var(--color-white));
-}
-
-:global .animated-block {
-    opacity: 0;
-}

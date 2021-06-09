@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import useCursor from '../../hooks/useCursor';
 import {useMenuState} from '../../state/menu';
 import {animations} from './logo.animations';
@@ -24,7 +24,7 @@ const Logo: React.FC<IProps> = ({className = ''}) => {
     return (
         <div ref={logoRef} className={`${styles.wrapper} ${className}`}>
             <Image className={styles.logo} data-test="component-logo" />
-            <motion.i
+            <m.i
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={animations}

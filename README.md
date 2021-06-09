@@ -20,9 +20,9 @@ Instruction of the minimal setup
 Description how to set project on local machine
 
 ```
-    git clone git@github.com:ZdenekD/zdenekd.git
-    cd zdenekd/
-    yarn
+git clone git@github.com:ZdenekD/zdenekd.git
+cd zdenekd/
+yarn
 ```
 
 ### CSS Modules fix

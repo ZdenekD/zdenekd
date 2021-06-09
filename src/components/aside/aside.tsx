@@ -1,4 +1,8 @@
-import {motion} from 'framer-motion';
+import {
+    LazyMotion,
+    domAnimation,
+    m
+} from 'framer-motion';
 import Nav from '../nav';
 import {useAnimationState} from '../../state/animation';
 import {useMenuState} from '../../state/menu';
@@ -16,17 +20,19 @@ const Aside: React.FC = () => {
     };
 
     return (
-        <motion.aside
-            initial={false}
-            animate={menu.isOpen ? 'enter' : 'exit'}
-            variants={animations}
-            className={styles.aside}
-            data-test="component-aside"
-            onAnimationStart={handleAnimationStart}
-            onAnimationEnd={handleAnimationEnd}
-        >
-            <Nav />
-        </motion.aside>
+        <LazyMotion strict features={domAnimation}>
+            <m.aside
+                initial={false}
+                animate={menu.isOpen ? 'enter' : 'exit'}
+                variants={animations}
+                className={styles.aside}
+                data-test="component-aside"
+                onAnimationStart={handleAnimationStart}
+                onAnimationEnd={handleAnimationEnd}
+            >
+                <Nav />
+            </m.aside>
+        </LazyMotion>
     );
 };
 

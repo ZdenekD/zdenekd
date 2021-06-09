@@ -3,14 +3,14 @@
 exports[`Controls match snapshot 1`] = `
 <button type="button"
         class="prev "
-        aria-label="Předchozí projekt"
+        aria-label="Previous project"
         tabindex="0"
         data-test="component-controls-prev"
 >
 </button>
 <button type="button"
         class="next "
-        aria-label="Následující projekt"
+        aria-label="Next project"
         tabindex="0"
         data-test="component-controls-next"
 >

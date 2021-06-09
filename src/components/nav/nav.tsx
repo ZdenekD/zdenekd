@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import Anchor from '../UI/anchor';
 import {useMenuState} from '../../state/menu';
 import {useAnimationState} from '../../state/animation';
@@ -26,7 +26,7 @@ const Nav: React.FC = () => {
 
     return (
         <nav className={styles.nav} data-test="component-nav">
-            <motion.ul
+            <m.ul
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={animations}
@@ -34,7 +34,7 @@ const Nav: React.FC = () => {
                 onAnimationComplete={handleAnimationComplete}
             >
                 {Object.keys(pages).map((key: string) => (
-                    <motion.li
+                    <m.li
                         key={pages[key].id}
                         variants={animation}
                         className={styles.item}
@@ -49,9 +49,9 @@ const Nav: React.FC = () => {
                                 {pages[key].locale[lang].title}
                             </Anchor>
                         </Link>
-                    </motion.li>
+                    </m.li>
                 ))}
-            </motion.ul>
+            </m.ul>
         </nav>
     );
 };

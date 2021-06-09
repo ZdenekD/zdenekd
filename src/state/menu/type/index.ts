@@ -1,5 +1,5 @@
 export type IMenu = {
     menu: {
-        isOpen: boolean
+        isOpen: boolean | undefined
     }
 }
