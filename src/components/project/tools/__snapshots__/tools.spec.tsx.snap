@@ -9,7 +9,7 @@ exports[`Tools match snapshot 1`] = `
       <img src="/logo_string1.svg"
            width="32"
            height="32"
-           alt="Technologie použitá v projektu: string1"
+           alt="Technology used in the project: string1"
            class="image"
       >
       <figcaption class="caption">
@@ -22,7 +22,7 @@ exports[`Tools match snapshot 1`] = `
       <img src="/logo_string2.svg"
            width="32"
            height="32"
-           alt="Technologie použitá v projektu: string2"
+           alt="Technology used in the project: string2"
            class="image"
       >
       <figcaption class="caption">

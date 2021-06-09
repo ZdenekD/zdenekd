@@ -4,7 +4,7 @@ exports[`Menu match snapshot 1`] = `
 <button type="button"
         class="button closed "
         data-test="component-menu"
-        aria-label="Otevřít navigaci"
+        aria-label="Open navigation"
 >
   <svg class="icon"
        viewbox="0 0 100 100"

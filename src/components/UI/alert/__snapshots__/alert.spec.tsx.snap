@@ -13,7 +13,7 @@ exports[`Alert match snapshot 1`] = `
     message
   </section>
   <button class="button"
-          aria-label="Zavřít"
+          aria-label="Close"
           data-test="component-alert-button"
   >
     ×

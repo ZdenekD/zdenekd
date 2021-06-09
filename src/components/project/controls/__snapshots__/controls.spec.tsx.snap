@@ -7,7 +7,7 @@ exports[`Controls match snapshot 1`] = `
   <li class="control">
     <button type="button"
             class="prev "
-            aria-label="Předchozí projekt"
+            aria-label="Previous project"
             data-test="component-controls-prev"
     >
     </button>
@@ -15,7 +15,7 @@ exports[`Controls match snapshot 1`] = `
   <li class="control">
     <button type="button"
             class="next "
-            aria-label="Následující projekt"
+            aria-label="Next project"
             data-test="component-controls-next"
     >
     </button>

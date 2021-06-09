@@ -11,9 +11,9 @@ exports[`Project match snapshot 1`] = `
       Tomton
     </h2>
     <p class="description"
-       data-title="Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award."
+       data-title="Company producing design heating systems. One of the models won the world-renowned Red Dot Design Award."
     >
-      Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.
+      Company producing design heating systems. One of the models won the world-renowned Red Dot Design Award.
     </p>
     <div class="toolsWrapper">
       <ul class="tools"
@@ -24,7 +24,7 @@ exports[`Project match snapshot 1`] = `
             <img src="/logo_react.svg"
                  width="32"
                  height="32"
-                 alt="Technologie použitá v projektu: react"
+                 alt="Technology used in the project: react"
                  class="image"
             >
             <figcaption class="caption">
@@ -37,7 +37,7 @@ exports[`Project match snapshot 1`] = `
             <img src="/logo_wordpress.svg"
                  width="32"
                  height="32"
-                 alt="Technologie použitá v projektu: wordpress"
+                 alt="Technology used in the project: wordpress"
                  class="image"
             >
             <figcaption class="caption">
@@ -50,7 +50,7 @@ exports[`Project match snapshot 1`] = `
             <img src="/logo_lottie.svg"
                  width="32"
                  height="32"
-                 alt="Technologie použitá v projektu: lottie"
+                 alt="Technology used in the project: lottie"
                  class="image"
             >
             <figcaption class="caption">
@@ -63,7 +63,7 @@ exports[`Project match snapshot 1`] = `
             <img src="/logo_animejs.svg"
                  width="32"
                  height="32"
-                 alt="Technologie použitá v projektu: animejs"
+                 alt="Technology used in the project: animejs"
                  class="image"
             >
             <figcaption class="caption">
@@ -76,7 +76,7 @@ exports[`Project match snapshot 1`] = `
             <img src="/logo_webpack.svg"
                  width="32"
                  height="32"
-                 alt="Technologie použitá v projektu: webpack"
+                 alt="Technology used in the project: webpack"
                  class="image"
             >
             <figcaption class="caption">
@@ -92,7 +92,7 @@ exports[`Project match snapshot 1`] = `
       <li class="control">
         <button type="button"
                 class="prev disabled"
-                aria-label="Předchozí projekt"
+                aria-label="Previous project"
                 data-test="component-controls-prev"
         >
         </button>
@@ -100,7 +100,7 @@ exports[`Project match snapshot 1`] = `
       <li class="control">
         <button type="button"
                 class="next "
-                aria-label="Následující projekt"
+                aria-label="Next project"
                 data-test="component-controls-next"
         >
         </button>
@@ -121,14 +121,14 @@ exports[`Project match snapshot 1`] = `
       </span>
       <button type="button"
               class="prev disabled"
-              aria-label="Předchozí projekt"
+              aria-label="Previous project"
               tabindex="0"
               data-test="component-controls-prev"
       >
       </button>
       <button type="button"
               class="next "
-              aria-label="Následující projekt"
+              aria-label="Next project"
               tabindex="0"
               data-test="component-controls-next"
       >
@@ -140,7 +140,7 @@ exports[`Project match snapshot 1`] = `
            target="_blank"
            rel="noreferrer noopener"
            data-test="component-addressbar-link"
-           aria-label="Otevřít referenci v novém okně"
+           aria-label="Open the reference in a new window"
         >
           https://www.tomton.cz
         </a>
@@ -151,7 +151,7 @@ exports[`Project match snapshot 1`] = `
            target="_blank"
            rel="noreferrer noopener"
            data-test="component-target"
-           aria-label="Otevřít referenci v novém okně"
+           aria-label="Open the reference in a new window"
         >
           <svg data-filename="src/assets/images/icon_open.svg">
           </svg>
