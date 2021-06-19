@@ -89,6 +89,14 @@ yarn hint:prod
 yarn outdated
 ```
 
+## Sentry
+
+Handle initial config files for Sentry
+
+```
+npx @sentry/wizard -i nextjs
+```
+
 ## Deploying
 
 Push to **master** branch
