@@ -89,11 +89,11 @@
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.0.0",
     "@sendgrid/mail": "^7.4.2",
-    "@sentry/browser": "^6.1.0",
+    "@sentry/nextjs": "^6.7.1",
     "@use-it/event-listener": "^0.1.6",
     "animejs": "^3.2.1",
     "framer-motion": "^4.1.2",
-    "next": "^10.0.5",
+    "next": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.1",
