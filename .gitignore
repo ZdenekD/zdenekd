@@ -49,6 +49,7 @@ build/Release
 .env*
 behat.yml
 localhost.json
+sentry.properties
 
 # Test
 coverage

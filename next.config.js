@@ -20,6 +20,7 @@ module.exports = styles({
 
         return config;
     },
+    images: {disableStaticImages: true},
     i18n: {
         locales: ['cs', 'en'],
         defaultLocale: 'cs',
@@ -33,6 +34,7 @@ module.exports = styles({
             },
         ],
     },
+    eslint: {ignoreDuringBuilds: true},
+    reactStrictMode: true,
     poweredByHeader: false,
-    future: {webpack5: true},
 });
