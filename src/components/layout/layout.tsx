@@ -63,27 +63,23 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">
-                <React.StrictMode>
-                    <LazyMotion strict features={domAnimation}>
-                        <Header />
-                        <Section>
-                            <noscript>
-                                {locale.noscript}
-                            </noscript>
-                            {children}
-                        </Section>
-                        <Footer />
-                        <Curtain />
-                    </LazyMotion>
-                </React.StrictMode>
+                <LazyMotion strict features={domAnimation}>
+                    <Header />
+                    <Section>
+                        <noscript>
+                            {locale.noscript}
+                        </noscript>
+                        {children}
+                    </Section>
+                    <Footer />
+                    <Curtain />
+                </LazyMotion>
             </main>
-            <React.StrictMode>
-                <Aside />
-                <Alert variant={message.variant} isOpen={!!message.content} timeout={4}>
-                    {message.content}
-                </Alert>
-                <Cursor />
-            </React.StrictMode>
+            <Aside />
+            <Alert variant={message.variant} isOpen={!!message.content} timeout={4}>
+                {message.content}
+            </Alert>
+            <Cursor />
         </>
     );
 };
