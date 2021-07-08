@@ -16,7 +16,7 @@
     "story": "start-storybook -s ./public -p 8020",
     "story:build": "build-storybook -c .storybook -o .storybook/build",
     "hint:local": "hint http://localhost:3000",
-    "hint:dev": "hint https://zdenekd.now.sh",
+    "hint:dev": "hint https://zdenekd-ditezdenek.vercel.app",
     "hint:prod": "hint https://zdenekd.cz"
   },
   "engines": {
@@ -38,7 +38,7 @@
     "@types/animejs": "^3.1.2",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.20",
-    "@types/node": "^15.0.1",
+    "@types/node": "^16.0.1",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/underscore": "^1.10.24",
@@ -62,7 +62,7 @@
     "extracted-loader": "^1.0.7",
     "find-up": "^5.0.0",
     "hint": "^6.0.3",
-    "husky": "^6.0.0",
+    "husky": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
     "ignore-loader": "^0.1.2",
     "jest": "^27.0.4",
@@ -98,7 +98,7 @@
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.1",
     "react-id-generator": "^3.0.1",
-    "typescript": "4.2.4",
+    "typescript": "^4.3.5",
     "underscore": "^1.12.0"
   }
 }
