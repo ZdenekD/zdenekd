@@ -25,11 +25,15 @@ module.exports = (
     }
 
     if (!isServer) {
-        config.optimization.splitChunks.cacheGroups.styles = {
-            name: 'styles',
-            test: new RegExp(`\\.+(${[...fileExtensions].join('|')})$`),
-            chunks: 'all',
-            enforce: true,
+        config.optimization.splitChunks = {
+            cacheGroups: {
+                styles: {
+                    name: 'styles',
+                    test: new RegExp(`\\.+(${[...fileExtensions].join('|')})$`),
+                    chunks: 'all',
+                    enforce: true,
+                },
+            },
         };
     }
 
