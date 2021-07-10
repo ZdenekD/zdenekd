@@ -1,10 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import {
-    LazyMotion,
-    domAnimation,
-    m
-} from 'framer-motion';
+import {LazyMotion, domAnimation} from 'framer-motion';
 import Header from './header';
 import Footer from './footer';
 import Section from './section';
