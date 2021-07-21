@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import useEventListener from '@use-it/event-listener';
-import {useCursorState} from '../../state/cursor';
+import {useCursorState} from '../../store/cursor';
 import styles from './cursor.module.css';
 
 interface IHandler {

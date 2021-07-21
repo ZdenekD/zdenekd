@@ -1,5 +1,5 @@
 import useEventListener from '@use-it/event-listener';
-import {useCursorState} from '../state/cursor';
+import {useCursorState} from '../../store/cursor';
 
 const useCursor = (element: HTMLElement | null): void => {
     const [, {setCursor, unsetCursor}] = useCursorState();

@@ -1,4 +1,4 @@
-import VariantsEnum from '../../../enums/VariantsEnum';
+import VariantsEnum from '../../../utils/enums/VariantsEnum';
 import Alert from '.';
 
 export default {title: 'UI/Alert'};

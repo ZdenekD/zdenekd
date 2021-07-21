@@ -8,11 +8,11 @@ import Aside from '../aside';
 import Cursor from '../cursor';
 import Curtain from '../curtain';
 import Alert from '../UI/alert';
-import useKeyboard from '../../hooks/useKeyboard';
-import useWheel from '../../hooks/useWheel';
-import useSwipe from '../../hooks/useSwipe';
-import useLocale from '../../hooks/useLocale';
-import {useMessageState} from '../../state/message';
+import useKeyboard from '../../utils/hooks/useKeyboard';
+import useWheel from '../../utils/hooks/useWheel';
+import useSwipe from '../../utils/hooks/useSwipe';
+import useLocale from '../../utils/hooks/useLocale';
+import {useMessageState} from '../../store/message';
 import styles from './layout.module.css';
 
 interface IProps {

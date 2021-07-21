@@ -12,11 +12,11 @@ import Heading from '../components/heading';
 import Mobile from '../components/device/mobile';
 import Tablet from '../components/device/tablet';
 import Computer from '../components/device/computer';
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from '../utils/hooks/useWindowSize';
 import pages from '../data/pages';
-import PagesEnum from '../enums/PagesEnum';
-import LocalesEnum from '../enums/LocalesEnum';
-import MediaQueriesEnum from '../enums/MediaQueriesEnum';
+import PagesEnum from '../utils/enums/PagesEnum';
+import LocalesEnum from '../utils/enums/LocalesEnum';
+import MediaQueriesEnum from '../utils/enums/MediaQueriesEnum';
 import styles from '../assets/styles/pages/index.css';
 
 interface IVariants {

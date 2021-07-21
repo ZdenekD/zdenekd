@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router';
-import locales, {ILocale} from '../data/locales';
+import locales, {ILocale} from '../../data/locales';
 import LocalesEnum from '../enums/LocalesEnum';
 
 const useLocale = (): ILocale => {

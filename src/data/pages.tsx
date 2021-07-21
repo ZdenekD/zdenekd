@@ -1,6 +1,6 @@
-import prefix from '../helpers/prefix';
-import PagesEnum from '../enums/PagesEnum';
-import LocalesEnum from '../enums/LocalesEnum';
+import prefix from '../utils/helpers/prefix';
+import PagesEnum from '../utils/enums/PagesEnum';
+import LocalesEnum from '../utils/enums/LocalesEnum';
 
 export interface IPages {
     [key: string]: {

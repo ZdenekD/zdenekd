@@ -3,7 +3,7 @@ import {
     ReactWrapper,
     ShallowWrapper
 } from 'enzyme';
-import {Provider} from '../../state';
+import {Provider} from '../../store';
 
 type IWrapper = ShallowWrapper | ReactWrapper;
 
