@@ -44,10 +44,6 @@
         {
           "key": "Content-Type",
           "value": "application/javascript; charset=utf-8"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding: gzip, deflate, br"
         }
       ]
     },
@@ -70,7 +66,7 @@
       ]
     },
     {
-      "source": "(.*).gif",
+      "source": "/:foo*/(.*).gif",
       "headers": [
         {
           "key": "Cache-Control",
@@ -79,7 +75,7 @@
       ]
     },
     {
-      "source": "(.*).jpg",
+      "source": "/:foo*/(.*).(jpg|png|jxl|avif|webp)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -88,7 +84,7 @@
       ]
     },
     {
-      "source": "(.*).png",
+      "source": "/:foo*/(.*).svg",
       "headers": [
         {
           "key": "Cache-Control",
@@ -97,7 +93,7 @@
       ]
     },
     {
-      "source": "(.*).jxl",
+      "source": "/:foo*/(.*).mp4",
       "headers": [
         {
           "key": "Cache-Control",
@@ -106,7 +102,7 @@
       ]
     },
     {
-      "source": "(.*).avif",
+      "source": "/:foo*/(.*).webm",
       "headers": [
         {
           "key": "Cache-Control",
@@ -115,43 +111,7 @@
       ]
     },
     {
-      "source": "(.*).webp",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).svg",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).mp4",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).webm",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).ico",
+      "source": "/:foo*/(.*).ico",
       "headers": [
         {
           "key": "Cache-Control",
@@ -190,7 +150,7 @@
       ]
     },
     {
-      "source": "(.*).webmanifest",
+      "source": "/:foo*/(.*).webmanifest",
       "headers": [
         {
           "key": "Cache-Control",
