@@ -30,7 +30,7 @@
         },
         {
           "key": "Vary",
-          "value": "accept-encoding: gzip, br, deflate"
+          "value": "Accept-Encoding"
         }
       ]
     },
