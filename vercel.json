@@ -47,7 +47,7 @@
         },
         {
           "key": "Vary",
-          "value": "Cache-Control"
+          "value": "Accept-Encoding: gzip, deflate, br"
         }
       ]
     },
