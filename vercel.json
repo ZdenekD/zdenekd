@@ -39,7 +39,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "private, max-age=31536000, immutable"
+          "value": "Vary: Cache-Control: private, max-age=31536000, immutable"
         },
         {
           "key": "Content-Type",
