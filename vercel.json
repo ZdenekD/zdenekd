@@ -27,6 +27,10 @@
         {
           "key": "Cache-Control",
           "value": "private, max-age=180"
+        },
+        {
+          "key": "Vary",
+          "value": "accept-encoding: gzip, br, deflate"
         }
       ]
     },
