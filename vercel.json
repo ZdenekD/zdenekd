@@ -2,7 +2,7 @@
   "name": "ZdenekD",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:foo*/(.*)",
       "headers": [
         {
           "key": "X-Content-Type-Options",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "source": "/:foo/(.*).js",
+      "source": "/:foo*/(.*).js",
       "headers": [
         {
           "key": "Content-Security-Policy",
@@ -43,12 +43,12 @@
         },
         {
           "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
+          "value": "application/javascript; charset=utf-16"
         }
       ]
     },
     {
-      "source": "/:foo/(.*).css",
+      "source": "/:foo*/(.*).css",
       "headers": [
         {
           "key": "Cache-Control",
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "source": "/manifest.json",
+      "source": "/:foo*/manifest.json",
       "headers": [
         {
           "key": "Cache-Control",
