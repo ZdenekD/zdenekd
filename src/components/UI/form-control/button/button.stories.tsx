@@ -1,5 +1,5 @@
 import Button from '.';
-import VariantsEnum from '../../../../enums/VariantsEnum';
+import VariantsEnum from '../../../../utils/enums/VariantsEnum';
 
 export default {title: 'UI/Form Control/Button'};
 

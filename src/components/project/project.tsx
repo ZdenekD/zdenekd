@@ -4,12 +4,12 @@ import anime from 'animejs';
 import Browser from './browser';
 import Controls from './controls';
 import Tools from './tools';
-import useProjectAction from '../../hooks/useProjectAction';
-import useCursor from '../../hooks/useCursor';
-import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
-import {useProjectState} from '../../state/project';
+import useProjectAction from '../../utils/hooks/useProjectAction';
+import useCursor from '../../utils/hooks/useCursor';
+import ProjectActionsEnum from '../../utils/enums/ProjectActionsEnum';
+import {useProjectState} from '../../store/project';
 import projects from '../../data/projects';
-import LocalesEnum from '../../enums/LocalesEnum';
+import LocalesEnum from '../../utils/enums/LocalesEnum';
 import styles from './project.module.css';
 
 const Project: React.FC = () => {

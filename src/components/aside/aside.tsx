@@ -4,8 +4,8 @@ import {
     m
 } from 'framer-motion';
 import Nav from '../nav';
-import {useAnimationState} from '../../state/animation';
-import {useMenuState} from '../../state/menu';
+import {useAnimationState} from '../../store/animation';
+import {useMenuState} from '../../store/menu';
 import {animations} from './aside.animations';
 import styles from './aside.module.css';
 

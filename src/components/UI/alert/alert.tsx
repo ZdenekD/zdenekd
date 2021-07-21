@@ -5,10 +5,10 @@ import {
     domAnimation,
     m
 } from 'framer-motion';
-import VariantsEnum from '../../../enums/VariantsEnum';
+import VariantsEnum from '../../../utils/enums/VariantsEnum';
 import animations from './alert.animations';
-import useLocale from '../../../hooks/useLocale';
-import {useMessageState} from '../../../state/message';
+import useLocale from '../../../utils/hooks/useLocale';
+import {useMessageState} from '../../../store/message';
 import styles from './alert.module.css';
 
 interface IProps {

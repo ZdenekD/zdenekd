@@ -1,6 +1,6 @@
 import App, {AppProps} from 'next/app';
 import {AnimatePresence} from 'framer-motion';
-import {Provider} from '../state';
+import {Provider} from '../store';
 import '../assets/styles/index.css';
 
 class Application extends App {
