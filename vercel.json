@@ -43,7 +43,11 @@
         },
         {
           "key": "Content-Type",
-          "value": "application/javascript; charset=utf-16"
+          "value": "application/javascript; charset=utf-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Cache-Control"
         }
       ]
     },
@@ -57,7 +61,7 @@
       ]
     },
     {
-      "source": "(.*).woff2",
+      "source": "/:foo*/(.*).woff2",
       "headers": [
         {
           "key": "Cache-Control",
@@ -173,7 +177,7 @@
       ]
     },
     {
-      "source": "(.*).json",
+      "source": "/:foo*/(.*).json",
       "headers": [
         {
           "key": "Cache-Control",
