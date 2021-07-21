@@ -1,5 +1,5 @@
 import React from 'react';
-import Provider from '../provider';
+import Provider from '../utils/provider';
 import initialState from './initialState';
 import reducer from './reducer';
 import {dispatcher} from './actions';

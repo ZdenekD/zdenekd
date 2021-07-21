@@ -1,12 +1,12 @@
 import React from 'react';
-import Provider from '../provider';
+import Provider from '../utils/provider';
 import initialState from './initialState';
 import reducer from './reducer';
 import {dispatcher} from './actions';
-import {IProject} from './type';
+import {ICursor} from './type';
 import {IActions} from './type/actions';
 
-type IContext = [IProject, IActions | Record<string, never>];
+type IContext = [ICursor, IActions | Record<string, never>];
 
 const Context = React.createContext<IContext>([initialState, {}]);
 const props = {
@@ -15,14 +15,14 @@ const props = {
     reducer,
     dispatcher,
 };
-const ProjectProvider: React.FC = ({children}) => (
+const CursorProvider: React.FC = ({children}) => (
     <Provider {...props}>
         {children}
     </Provider>
 );
-const useProjectState = (): IContext => React.useContext(Context);
+const useCursorState = (): IContext => React.useContext(Context);
 
 export {
-    ProjectProvider,
-    useProjectState
+    CursorProvider,
+    useCursorState
 };

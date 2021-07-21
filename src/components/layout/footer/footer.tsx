@@ -3,9 +3,9 @@ import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
 import Lang from './lang';
 import Keys from '../../keys';
-import useLocale from '../../../hooks/useLocale';
+import useLocale from '../../../utils/hooks/useLocale';
 import Icon, {IconsEnum} from '../../UI/icon';
-import {useMenuState} from '../../../state/menu';
+import {useMenuState} from '../../../store/menu';
 import {animations} from './footer.animations';
 import styles from './footer.module.css';
 

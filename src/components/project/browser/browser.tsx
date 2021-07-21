@@ -5,8 +5,8 @@ import Addressbar from './addressbar';
 import Target from './target';
 import Image from '../../UI/image';
 import {IProject} from '../../../data/projects';
-import useWindowSize from '../../../hooks/useWindowSize';
-import MediaQueriesEnum from '../../../enums/MediaQueriesEnum';
+import useWindowSize from '../../../utils/hooks/useWindowSize';
+import MediaQueriesEnum from '../../../utils/enums/MediaQueriesEnum';
 import styles from './browser.module.css';
 
 interface IProps {

@@ -1,6 +1,6 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../../__test__/utils/helpers';
-import DirectionsEnum from '../../../enums/DirectionsEnum';
+import DirectionsEnum from '../../../utils/enums/DirectionsEnum';
 import Key from '.';
 
 describe('Key', () => {

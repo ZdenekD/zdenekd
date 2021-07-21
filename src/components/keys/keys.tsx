@@ -3,16 +3,16 @@ import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
 import Key from './key';
 import pages from '../../data/pages';
-import {useMenuState} from '../../state/menu';
-import {useProjectState} from '../../state/project';
+import {useMenuState} from '../../store/menu';
+import {useProjectState} from '../../store/project';
 import {animations} from './keys.animations';
-import usePageAction from '../../hooks/usePageAction';
-import useProjectAction from '../../hooks/useProjectAction';
-import useLocale from '../../hooks/useLocale';
-import PagesEnum from '../../enums/PagesEnum';
-import DirectionsEnum from '../../enums/DirectionsEnum';
-import PageActionsEnum from '../../enums/PageActionsEnum';
-import ProjectActionsEnum from '../../enums/ProjectActionsEnum';
+import usePageAction from '../../utils/hooks/usePageAction';
+import useProjectAction from '../../utils/hooks/useProjectAction';
+import useLocale from '../../utils/hooks/useLocale';
+import PagesEnum from '../../utils/enums/PagesEnum';
+import DirectionsEnum from '../../utils/enums/DirectionsEnum';
+import PageActionsEnum from '../../utils/enums/PageActionsEnum';
+import ProjectActionsEnum from '../../utils/enums/ProjectActionsEnum';
 import styles from './keys.module.css';
 
 const Keys: React.FC = () => {

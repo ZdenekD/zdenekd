@@ -1,12 +1,12 @@
 import React from 'react';
-import Provider from '../provider';
+import Provider from '../utils/provider';
 import initialState from './initialState';
 import reducer from './reducer';
 import {dispatcher} from './actions';
-import {IMenu} from './type';
+import {IProject} from './type';
 import {IActions} from './type/actions';
 
-type IContext = [IMenu, IActions | Record<string, never>];
+type IContext = [IProject, IActions | Record<string, never>];
 
 const Context = React.createContext<IContext>([initialState, {}]);
 const props = {
@@ -15,14 +15,14 @@ const props = {
     reducer,
     dispatcher,
 };
-const MenuProvider: React.FC = ({children}) => (
+const ProjectProvider: React.FC = ({children}) => (
     <Provider {...props}>
         {children}
     </Provider>
 );
-const useMenuState = (): IContext => React.useContext(Context);
+const useProjectState = (): IContext => React.useContext(Context);
 
 export {
-    MenuProvider,
-    useMenuState
+    ProjectProvider,
+    useProjectState
 };

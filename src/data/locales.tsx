@@ -1,5 +1,5 @@
-import getRoman from '../helpers/getRoman';
-import LocalesEnum from '../enums/LocalesEnum';
+import getRoman from '../utils/helpers/getRoman';
+import LocalesEnum from '../utils/enums/LocalesEnum';
 
 export interface ILocale {
     header: {

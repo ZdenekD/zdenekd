@@ -1,5 +1,5 @@
 import React from 'react';
-import useLocale from '../../../hooks/useLocale';
+import useLocale from '../../../utils/hooks/useLocale';
 import styles from './tools.module.css';
 
 interface IProps {
