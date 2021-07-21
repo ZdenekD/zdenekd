@@ -27,7 +27,12 @@
         {
           "key": "Cache-Control",
           "value": "private, max-age=180"
-        },
+        }
+      ]
+    },
+    {
+      "source": "/(.*).(js|css|xml|gz|html)",
+      "headers": [
         {
           "key": "Vary",
           "value": "Accept-Encoding"
