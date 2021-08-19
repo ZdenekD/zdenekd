@@ -3,8 +3,7 @@ vendor
 node_modules
 bower_components
 jspm_packages
-.pnp
-.pnp.js
+.pnp*
 
 # Build
 dist/
@@ -15,23 +14,18 @@ build/
 
 # Logs
 logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log*
 
 # Runtime data
 pids
-*.pid
+*.pid*
 *.seed
-*.pid.lock
 
 # Reports
 hint-report
 
 # Cache
-.cache/
-.sass-cache/
+.*cache/
 .next
 
 # Node-waf configuration
@@ -47,8 +41,8 @@ build/Release
 .eslintcache
 .stylelintcache
 .env*
+!.env.sample
 behat.yml
-localhost.json
 sentry.properties
 
 # Test
@@ -78,3 +72,5 @@ nbproject
 
 # Others
 /doc
+/__test__/**/*.mp4
+playground*.*

@@ -1,5 +1,4 @@
-import {addParameters, addDecorator} from '@storybook/react';
-import {withNextRouter} from 'storybook-addon-next-router';
+import { RouterContext } from "next/dist/shared/lib/router-context";
 import {LazyMotion, domAnimation} from 'framer-motion';
 import {Provider} from '../src/store';
 import './index.css';
@@ -36,13 +35,20 @@ const viewports = {
     },
 };
 
-addDecorator(withNextRouter({locales: ['cs', 'en']}));
-addDecorator(Story => (
-    <Provider>
-        <LazyMotion strict features={domAnimation}>
-            <Story />
-            <Cursor />
-        </LazyMotion>
-    </Provider>
-));
-addParameters({viewport: {viewports}});
+export const parameters = {
+    viewport: {viewports},
+    nextRouter: {
+        Provider: RouterContext.Provider,
+    },
+}
+
+export const decorators = [
+    Story => (
+        <Provider>
+            <LazyMotion strict features={domAnimation}>
+                <Story />
+                <Cursor />
+            </LazyMotion>
+        </Provider>
+    )
+]
