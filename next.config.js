@@ -9,7 +9,7 @@ module.exports = styles({
     cssModules: true,
     cssLoaderOptions: {
         mode: 'local',
-        localIdentName: !isProduction ? '[name]-[local]--[hash:base64:3]' : '[hash:base64:3]',
+        localIdentName: !isProduction ? '[name]-[local]--[hash:base64:4]' : '[hash:base64:5]',
     },
     webpack(config) {
         config.module.rules.push({
