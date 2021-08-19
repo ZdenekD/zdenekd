@@ -5,8 +5,20 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self' *.vercel-insights.com"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "sameorigin"
         },
         {
           "key": "Strict-Transport-Security",
@@ -27,11 +39,28 @@
         {
           "key": "Cache-Control",
           "value": "private, max-age=180"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
     },
     {
-      "source": "(.*).js",
+      "source": "/(.*).(js|css|xml|gz|html)",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).js",
       "headers": [
         {
           "key": "Content-Security-Policy",
@@ -48,7 +77,7 @@
       ]
     },
     {
-      "source": "(.*).css",
+      "source": "/(.*).css",
       "headers": [
         {
           "key": "Cache-Control",
@@ -57,7 +86,7 @@
       ]
     },
     {
-      "source": "(.*).woff2",
+      "source": "/(.*).(woff2|gif|jpg|png|jxl|avif|webp|svg|mp4|webm)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -66,88 +95,7 @@
       ]
     },
     {
-      "source": "(.*).gif",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).jpg",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).png",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).jxl",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).avif",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).webp",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).svg",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).mp4",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).webm",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "(.*).ico",
+      "source": "/(.*).ico",
       "headers": [
         {
           "key": "Cache-Control",
@@ -160,7 +108,7 @@
       ]
     },
     {
-      "source": "(.*).json",
+      "source": "/(.*).json",
       "headers": [
         {
           "key": "Cache-Control",
@@ -173,7 +121,7 @@
       ]
     },
     {
-      "source": "manifest.json",
+      "source": "/(.*)manifest.json",
       "headers": [
         {
           "key": "Cache-Control",
@@ -186,7 +134,7 @@
       ]
     },
     {
-      "source": "(.*).webmanifest",
+      "source": "/(.*).webmanifest",
       "headers": [
         {
           "key": "Cache-Control",

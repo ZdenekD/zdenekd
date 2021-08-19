@@ -6,7 +6,6 @@ doc/*
 **/public/*
 .next
 .storybook
-test/*
 __test__/*
 hint-report/*
 *.html
