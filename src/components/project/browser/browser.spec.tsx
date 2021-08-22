@@ -1,6 +1,6 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../../__test__/utils/helpers';
-import '../../../__test__/mocks/routerMock';
+import '../../../__test__/mocks/nextRouterMock';
 import {IProject} from '../../../data/projects';
 import Browser from '.';
 

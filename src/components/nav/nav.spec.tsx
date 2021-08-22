@@ -1,8 +1,8 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '../../__test__/utils/helpers';
-import '../../__test__/mocks/routerMock';
-import Nav from '.';
+import '../../__test__/mocks/nextRouterMock';
 import pages from '../../data/pages';
+import Nav from '.';
 
 describe('Navigation', () => {
     let wrapper: ShallowWrapper;
