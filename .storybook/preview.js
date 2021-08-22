@@ -1,4 +1,4 @@
-import { RouterContext } from "next/dist/shared/lib/router-context";
+import {RouterContext} from "next/dist/shared/lib/router-context";
 import {LazyMotion, domAnimation} from 'framer-motion';
 import {Provider} from '../src/store';
 import './index.css';
