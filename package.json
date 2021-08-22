@@ -16,6 +16,7 @@
     "jest:coverage": "jest --coverage",
     "story": "start-storybook -s ./public -p 8020",
     "story:build": "build-storybook -c .storybook -o .storybook/build",
+    "chromatic": "npx chromatic",
     "hint:local": "hint http://localhost:3000",
     "hint:dev": "hint https://zdenekd-ditezdenek.vercel.app",
     "hint:prod": "hint https://zdenekd.cz"
@@ -49,6 +50,7 @@
     "@zeit/next-css": "^1.0.1",
     "babel-jest": "^27.0.2",
     "babel-plugin-react-remove-properties": "^0.3.0",
+    "chromatic": "^5.9.2",
     "css-loader": "^6.2.0",
     "cssnano": "^5.0.2",
     "dotenv": "^10.0.0",
