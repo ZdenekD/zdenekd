@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     stories: ['../src/**/*.stories.jsx', '../src/**/*.stories.tsx'],
     addons: [
@@ -38,7 +40,24 @@ module.exports = {
             exclude: /node_modules/,
             use: [{loader: '@svgr/webpack'}],
         });
+        const alias = {
+            ...config.resolve?.alias,
+            '@/api': path.resolve(__dirname, '../src/api'),
+            '@/assets': path.resolve(__dirname, '../src/assets'),
+            '@/components': path.resolve(__dirname, '../src/components'),
+            '@/UI': path.resolve(__dirname, '../src/components/UI'),
+            '@/data': path.resolve(__dirname, '../src/data'),
+            '@/store': path.resolve(__dirname, '../src/store'),
+            '@/utils': path.resolve(__dirname, '../src/utils'),
+            '@/__test__': path.resolve(__dirname, '../src/__test__'),
+        }
 
-        return config;
+        return {
+            ...config,
+            resolve: {
+                ...config.resolve,
+                alias
+            }
+        };
     },
 };
