@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
+import pages from '@/data/pages';
+import {useMenuState} from '@/store/menu';
+import {useAnimationState} from '@/store/animation';
+import getPage from '@/utils/helpers/getPage';
+import LocalesEnum from '@/utils/enums/LocalesEnum';
 import Anchor from '../UI/anchor';
-import {useMenuState} from '../../store/menu';
-import {useAnimationState} from '../../store/animation';
-import pages from '../../data/pages';
 import {animations, animation} from './nav.animations';
-import getPage from '../../utils/helpers/getPage';
-import LocalesEnum from '../../utils/enums/LocalesEnum';
 import styles from './nav.module.css';
 
 const Nav: React.FC = () => {

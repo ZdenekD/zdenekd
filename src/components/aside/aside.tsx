@@ -3,9 +3,9 @@ import {
     domAnimation,
     m
 } from 'framer-motion';
+import {useAnimationState} from '@/store/animation';
+import {useMenuState} from '@/store/menu';
 import Nav from '../nav';
-import {useAnimationState} from '../../store/animation';
-import {useMenuState} from '../../store/menu';
 import {animations} from './aside.animations';
 import styles from './aside.module.css';
 

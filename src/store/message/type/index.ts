@@ -1,4 +1,4 @@
-import VariantsEnum from '../../../utils/enums/VariantsEnum';
+import VariantsEnum from '@/utils/enums/VariantsEnum';
 
 export type IMessage = {
     message: {

@@ -1,10 +1,10 @@
 import {useRouter} from 'next/router';
 import {Player} from '@lottiefiles/react-lottie-player';
-import Layout from '../components/layout';
-import Heading from '../components/heading';
-import LocalesEnum from '../utils/enums/LocalesEnum';
-import '../assets/styles/index.css';
-import styles from '../assets/styles/pages/error.css';
+import Layout from '@/components/layout';
+import Heading from '@/components/heading';
+import LocalesEnum from '@/utils/enums/LocalesEnum';
+import '@/assets/styles/index.css';
+import styles from '@/assets/styles/pages/error.css';
 
 const Error: React.FC = () => {
     const router = useRouter();

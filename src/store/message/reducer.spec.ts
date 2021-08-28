@@ -1,7 +1,7 @@
+import VariantsEnum from '@/utils/enums/VariantsEnum';
 import reducer from './reducer';
 import initialState from './initialState';
 import {IMessage} from './type';
-import VariantsEnum from '../../utils/enums/VariantsEnum';
 import {ActionsEnum} from './type/actions';
 
 describe('Message reducer', () => {
