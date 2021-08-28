@@ -1,9 +1,9 @@
 import React from 'react';
 import {m} from 'framer-motion';
-import useCursor from '../../utils/hooks/useCursor';
-import {useMenuState} from '../../store/menu';
+import Image from '@/assets/images/logo.svg';
+import {useMenuState} from '@/store/menu';
+import useCursor from '@/utils/hooks/useCursor';
 import {animations} from './logo.animations';
-import Image from '../../assets/images/logo.svg';
 import styles from './logo.module.css';
 
 interface IProps {

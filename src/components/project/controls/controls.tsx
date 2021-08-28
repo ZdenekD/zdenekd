@@ -1,6 +1,6 @@
 import React from 'react';
-import useCursor from '../../../utils/hooks/useCursor';
-import useLocale from '../../../utils/hooks/useLocale';
+import useCursor from '@/utils/hooks/useCursor';
+import useLocale from '@/utils/hooks/useLocale';
 import styles from './controls.module.css';
 
 interface IProps {

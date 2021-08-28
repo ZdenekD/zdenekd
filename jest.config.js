@@ -7,7 +7,17 @@ module.exports = {
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$', '^.+\\.module\\.(css|sass|scss)$'],
     roots: ['<rootDir>/src'],
-    moduleNameMapper: {'\\.css$': 'identity-obj-proxy'},
+    moduleNameMapper: {
+        '\\.css$': 'identity-obj-proxy',
+        '@/api(.*)': '<rootDir>/src/api/$1',
+        '@/assets(.*)': '<rootDir>/src/assets/$1',
+        '@/components(.*)': '<rootDir>/src/components/$1',
+        '@/UI(.*)': '<rootDir>/src/components/UI/$1',
+        '@/data(.*)': '<rootDir>/src/data/$1',
+        '@/store(.*)': '<rootDir>/src/store/$1',
+        '@/utils(.*)': '<rootDir>/src/utils/$1',
+        '@/__test__(.*)$': '<rootDir>/src/__test__/$1',
+    },
     moduleFileExtensions: [
         'js',
         'jsx',

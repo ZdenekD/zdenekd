@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router';
-import pages from '../../data/pages';
+import pages from '@/data/pages';
 import getPageIndex from '../helpers/getPageIndex';
 import PageActionsEnum from '../enums/PageActionsEnum';
 import {IDistributor} from './types/distributor';

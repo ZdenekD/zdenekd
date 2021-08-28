@@ -1,5 +1,5 @@
 import React from 'react';
-import VariantsEnum from '../../../../utils/enums/VariantsEnum';
+import VariantsEnum from '@/utils/enums/VariantsEnum';
 import styles from './button.module.css';
 
 interface IProps {

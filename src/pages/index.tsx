@@ -7,17 +7,17 @@ import {
     m,
     Variants
 } from 'framer-motion';
-import Layout from '../components/layout';
-import Heading from '../components/heading';
-import Mobile from '../components/device/mobile';
-import Tablet from '../components/device/tablet';
-import Computer from '../components/device/computer';
-import useWindowSize from '../utils/hooks/useWindowSize';
-import pages from '../data/pages';
-import PagesEnum from '../utils/enums/PagesEnum';
-import LocalesEnum from '../utils/enums/LocalesEnum';
-import MediaQueriesEnum from '../utils/enums/MediaQueriesEnum';
-import styles from '../assets/styles/pages/index.css';
+import styles from '@/assets/styles/pages/index.css';
+import Layout from '@/components/layout';
+import Heading from '@/components/heading';
+import Mobile from '@/components/device/mobile';
+import Tablet from '@/components/device/tablet';
+import Computer from '@/components/device/computer';
+import pages from '@/data/pages';
+import useWindowSize from '@/utils/hooks/useWindowSize';
+import PagesEnum from '@/utils/enums/PagesEnum';
+import LocalesEnum from '@/utils/enums/LocalesEnum';
+import MediaQueriesEnum from '@/utils/enums/MediaQueriesEnum';
 
 interface IVariants {
     article: Variants

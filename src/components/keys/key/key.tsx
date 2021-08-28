@@ -1,6 +1,6 @@
 import React from 'react';
-import useCursor from '../../../utils/hooks/useCursor';
-import DirectionsEnum from '../../../utils/enums/DirectionsEnum';
+import useCursor from '@/utils/hooks/useCursor';
+import DirectionsEnum from '@/utils/enums/DirectionsEnum';
 import styles from './key.module.css';
 
 interface IProps {

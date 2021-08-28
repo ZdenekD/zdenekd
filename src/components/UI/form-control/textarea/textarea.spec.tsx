@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '../../../../__test__/utils/helpers';
+import findComponent from '@/__test__/utils/helpers';
 import Textarea from '.';
 
 describe('Textarea', () => {

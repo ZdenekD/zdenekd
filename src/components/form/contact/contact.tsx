@@ -2,17 +2,17 @@ import React from 'react';
 import {useRouter} from 'next/router';
 import {useForm} from 'react-hook-form';
 import anime from 'animejs';
-import send from '../../../api/send';
-import useLocale from '../../../utils/hooks/useLocale';
+import send from '@/api/send';
+import {useMessageState} from '@/store/message';
+import useLocale from '@/utils/hooks/useLocale';
+import useCursor from '@/utils/hooks/useCursor';
+import regex from '@/utils/helpers/regex';
+import VariantsEnum from '@/utils/enums/VariantsEnum';
 import Form from '../../UI/form-control/form';
 import Input from '../../UI/form-control/input';
 import Textarea from '../../UI/form-control/textarea';
 import Button from '../../UI/form-control/button';
 import Loader from '../../UI/loader';
-import {useMessageState} from '../../../store/message';
-import useCursor from '../../../utils/hooks/useCursor';
-import regex from '../../../utils/helpers/regex';
-import VariantsEnum from '../../../utils/enums/VariantsEnum';
 import styles from './contact.module.css';
 
 interface IValues {

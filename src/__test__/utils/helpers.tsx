@@ -1,3 +1,4 @@
+import 'jsdom-global/register';
 import {
     mount,
     ReactWrapper,

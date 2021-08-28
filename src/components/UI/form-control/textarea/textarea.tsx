@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import {useId} from 'react-id-generator';
-import VariantsEnum from '../../../../utils/enums/VariantsEnum';
-import prefix from '../../../../utils/helpers/prefix';
+import VariantsEnum from '@/utils/enums/VariantsEnum';
+import prefix from '@/utils/helpers/prefix';
 import styles from './textarea.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};

@@ -1,7 +1,7 @@
 import App, {AppProps} from 'next/app';
 import {AnimatePresence} from 'framer-motion';
 import {Provider} from '../store';
-import '../assets/styles/index.css';
+import '@/assets/styles/index.css';
 
 class Application extends App {
     // eslint-disable-next-line class-methods-use-this
