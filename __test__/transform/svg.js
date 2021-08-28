@@ -1,5 +1,3 @@
-// Custom Jest transformer for SVG files
-// http://facebook.github.io/jest/docs/en/tutorial-react.html#custom-transformers
 const path = require('path');
 const babel = require('@babel/core');
 

@@ -1,18 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import {LazyMotion, domAnimation} from 'framer-motion';
-import Header from './header';
-import Footer from './footer';
-import Section from './section';
+import {useMessageState} from '@/store/message';
+import useKeyboard from '@/utils/hooks/useKeyboard';
+import useWheel from '@/utils/hooks/useWheel';
+import useSwipe from '@/utils/hooks/useSwipe';
+import useLocale from '@/utils/hooks/useLocale';
 import Aside from '../aside';
 import Cursor from '../cursor';
 import Curtain from '../curtain';
 import Alert from '../UI/alert';
-import useKeyboard from '../../utils/hooks/useKeyboard';
-import useWheel from '../../utils/hooks/useWheel';
-import useSwipe from '../../utils/hooks/useSwipe';
-import useLocale from '../../utils/hooks/useLocale';
-import {useMessageState} from '../../store/message';
+import Section from './section';
+import Footer from './footer';
+import Header from './header';
 import styles from './layout.module.css';
 
 interface IProps {

@@ -1,12 +1,12 @@
 import React from 'react';
+import {IProject} from '@/data/projects';
+import useWindowSize from '@/utils/hooks/useWindowSize';
+import MediaQueriesEnum from '@/utils/enums/MediaQueriesEnum';
+import Image from '../../UI/image';
 import Controls from './controls';
 import Video from './video';
 import Addressbar from './addressbar';
 import Target from './target';
-import Image from '../../UI/image';
-import {IProject} from '../../../data/projects';
-import useWindowSize from '../../../utils/hooks/useWindowSize';
-import MediaQueriesEnum from '../../../utils/enums/MediaQueriesEnum';
 import styles from './browser.module.css';
 
 interface IProps {

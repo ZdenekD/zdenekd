@@ -1,11 +1,11 @@
 import React from 'react';
 import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
-import Lang from './lang';
+import {useMenuState} from '@/store/menu';
+import useLocale from '@/utils/hooks/useLocale';
 import Keys from '../../keys';
-import useLocale from '../../../utils/hooks/useLocale';
 import Icon, {IconsEnum} from '../../UI/icon';
-import {useMenuState} from '../../../store/menu';
+import Lang from './lang';
 import {animations} from './footer.animations';
 import styles from './footer.module.css';
 

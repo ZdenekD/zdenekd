@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {NextRouter} from 'next/router';
-import useCursor from '../../../../utils/hooks/useCursor';
+import useCursor from '@/utils/hooks/useCursor';
 import styles from './lang.module.css';
 
 interface IProps {

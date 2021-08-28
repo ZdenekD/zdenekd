@@ -1,5 +1,5 @@
 import {shallow} from 'enzyme';
-import findComponent from '../../../__test__/utils/helpers';
+import findComponent from '@/__test__/utils/helpers';
 import Image from '.';
 
 describe('Image', () => {

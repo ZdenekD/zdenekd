@@ -28,16 +28,15 @@ yarn
 ### CSS Modules fix
 
 Because of problems with NextJS CSS modules and Framer-motion (if is used `<AnimatePresence exitBeforeEnter>`, NextJS change styles immediately and animation `before unmount` is unstyled).
-Solution is use @zeit/next-css package, but there is invalid configuration for postcss, so edit files are in folder **next-css**. For proper work it's necessary use @zeit/next-css package
-and edited files from folder 'next-css'.
+Solution is use @zeit/next-css package, but there is invalid configuration for postcss, so edit files are in folder **next-css**. For proper work it's necessary use @zeit/next-css package and edited files from folder 'next-css'.
 
 Dependecies:
 
     -   css-loader
     -   extracted-loader
-    -   find-up
+    -   find-up (v. ^5.0.0)
     -   ignore-loader
-    -   mini-css-extract-plugin
+    -   mini-css-extract-plugin (v. ^1.6.2)
     -   postcss-loader
 
 ### Development
