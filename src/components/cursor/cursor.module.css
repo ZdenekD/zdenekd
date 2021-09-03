@@ -31,7 +31,7 @@
     top: -4px;
     left: -4px;
     background: hsl(var(--color-blue-darken-4));
-    transition: background var(--transition-duration) var(--transition-timing);
+    transition: background-color var(--transition-duration) var(--transition-timing);
     border: 1px solid hsl(var(--color-white));
 }
 
