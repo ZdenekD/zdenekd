@@ -95,7 +95,6 @@ const animations: IVariants = {
             },
         },
     },
-
 };
 
 export {animations};

@@ -34,7 +34,6 @@ const animations: IVariants = {
             opacity: 0,
             scale: 0.94,
             transition: {duration: 0.2},
-
         },
     },
 };
