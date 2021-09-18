@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import initialState from './initialState';
-import {IMenu} from './type';
-import {ActionsEnum} from './type/actions';
+import {IMenu} from './types';
+import {ActionsEnum} from './types/actions';
 
 describe('Reducer/Menu', () => {
     it('change state on `setMenu` action', () => {

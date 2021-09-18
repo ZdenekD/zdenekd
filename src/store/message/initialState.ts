@@ -1,5 +1,5 @@
 import VariantsEnum from '@/utils/enums/VariantsEnum';
-import {IMessage} from './type';
+import {IMessage} from './types';
 
 const initialState: IMessage = {message: {variant: VariantsEnum.info, content: undefined}};
 

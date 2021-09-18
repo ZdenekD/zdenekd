@@ -1,4 +1,4 @@
-import {IMenu} from './type';
+import {IMenu} from './types';
 
 const initialState: IMenu = {menu: {isOpen: undefined}};
 

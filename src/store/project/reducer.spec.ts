@@ -1,7 +1,7 @@
 import reducer from './reducer';
-import {IProject} from './type';
+import {IProject} from './types';
 import initialState from './initialState';
-import {ActionsEnum} from './type/actions';
+import {ActionsEnum} from './types/actions';
 
 describe('Project reducer', () => {
     it('change state on `setProject` action', () => {

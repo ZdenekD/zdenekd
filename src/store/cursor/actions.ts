@@ -1,10 +1,10 @@
 import initialState from './initialState';
-import {ICursor} from './type';
+import {ICursor} from './types';
 import {
     IAction,
     IActions,
     ActionsEnum
-} from './type/actions';
+} from './types/actions';
 
 const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
     setCursor: (payload: ICursor) => dispatch({

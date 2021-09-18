@@ -3,8 +3,8 @@ import Provider from '../utils/provider';
 import initialState from './initialState';
 import reducer from './reducer';
 import {dispatcher} from './actions';
-import {IAnimation} from './type';
-import {IActions} from './type/actions';
+import {IAnimation} from './types';
+import {IActions} from './types/actions';
 
 type IContext = [IAnimation, IActions | Record<string, never>];
 
