@@ -43,7 +43,6 @@ build/Release
 .env*
 !.env.sample
 behat.yml
-sentry.properties
 
 # Test
 coverage
