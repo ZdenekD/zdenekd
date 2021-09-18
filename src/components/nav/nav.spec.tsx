@@ -4,15 +4,11 @@ import '@/__test__/mocks/nextRouterMock';
 import pages from '@/data/pages';
 import Nav from '.';
 
-describe('Navigation', () => {
+describe('Nav', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
         wrapper = shallow(<Nav />);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

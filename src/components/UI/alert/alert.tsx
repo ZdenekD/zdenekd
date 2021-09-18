@@ -93,6 +93,7 @@ const Alert: React.FC<IProps> = ({
                             className={styles.button}
                             aria-label={locale.alert.close}
                             data-test="component-alert-button"
+                            type="button"
                             onClick={handleClick}
                         >
                             &times;

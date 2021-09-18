@@ -20,10 +20,6 @@ describe('Form/Contact', () => {
         wrapper = shallow(<Contact />);
     });
 
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
-    });
-
     it('renders without error', () => {
         const component = findComponent(wrapper, 'component-contact');
 

@@ -1,6 +1,6 @@
 import Logo from '.';
 
-export default {title: 'Components/Logo'};
+export default {title: 'Logo'};
 
 export const base: React.FC = () => (
     <Logo />

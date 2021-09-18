@@ -4,7 +4,7 @@ import styles from './form.module.css';
 interface IProps {
     children: React.ReactNode
     className?: string
-    onSubmit?: () => void
+    onSubmit?: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
 }
 
 const Form = React.forwardRef<HTMLFormElement, IProps>(({

@@ -3,7 +3,7 @@ import findComponent from '@/__test__/utils/helpers';
 import '@/__test__/mocks/nextRouterMock';
 import Controls from '.';
 
-describe('Controls', () => {
+describe('Project/Browser/Controls', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
@@ -13,10 +13,6 @@ describe('Controls', () => {
                 isLast={false}
             />
         );
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

@@ -1,7 +1,7 @@
 import DirectionsEnum from '@/utils/enums/DirectionsEnum';
 import Key from '.';
 
-export default {title: 'UI/Keys/Key'};
+export default {title: 'Keys/Key'};
 
 export const up: React.FC = () => (
     <Key direction={DirectionsEnum.up} label="Label" />

@@ -1,19 +1,10 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Computer from '.';
 
-describe('Computer device', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Computer />);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
-    });
-
+describe('Device/Computer', () => {
     it('renders without error', () => {
+        const wrapper = shallow(<Computer />);
         const component = findComponent(wrapper, 'component-device-computer');
 
         expect(component.exists()).toBe(true);

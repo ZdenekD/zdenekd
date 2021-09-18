@@ -2,15 +2,11 @@ import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Anchor from '.';
 
-describe('Anchor', () => {
+describe('UI/Anchor', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
         wrapper = shallow(<Anchor href="#">content</Anchor>);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

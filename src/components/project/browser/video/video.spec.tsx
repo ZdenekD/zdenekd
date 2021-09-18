@@ -1,4 +1,4 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import '@/__test__/mocks/nextRouterMock';
 import {IProject} from '@/data/projects';
@@ -12,18 +12,9 @@ const project: IProject = {
     tools: ['tool', 'tool'],
 };
 
-describe('Video', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Video project={project} />);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
-    });
-
+describe('Project/Browser/Video', () => {
     it('renders without error', () => {
+        const wrapper = shallow(<Video project={project} />);
         const component = findComponent(wrapper, 'component-video');
 
         expect(component.exists()).toBe(true);

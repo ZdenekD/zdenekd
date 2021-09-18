@@ -1,6 +1,6 @@
 import Project from '.';
 
-export default {title: 'Components/Project'};
+export default {title: 'Project'};
 
 export const base: React.FC = () => (
     <Project />

@@ -1,6 +1,6 @@
 import Footer from '.';
 
-export default {title: 'Components/Layout/Footer'};
+export default {title: 'Layout/Footer'};
 
 export const base: React.FC = () => (
     <Footer />
