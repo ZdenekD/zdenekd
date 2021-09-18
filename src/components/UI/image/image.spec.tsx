@@ -2,7 +2,7 @@ import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Image from '.';
 
-describe('Image', () => {
+describe('UI/Image', () => {
     it('renders without error', () => {
         const wrapper = shallow(<Image src="/path/to/image.jpg" />);
         const component = findComponent(wrapper, 'component-image');

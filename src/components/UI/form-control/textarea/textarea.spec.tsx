@@ -3,7 +3,7 @@ import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Textarea from '.';
 
-describe('Textarea', () => {
+describe('UI/Form Control/Textarea', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {

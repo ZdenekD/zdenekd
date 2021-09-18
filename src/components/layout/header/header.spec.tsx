@@ -3,7 +3,7 @@ import findComponent from '@/__test__/utils/helpers';
 import '@/__test__/mocks/nextRouterMock';
 import Header from '.';
 
-describe('Header', () => {
+describe('Layout/Header', () => {
     it('renders without error', () => {
         const wrapper = shallow(<Header />);
         const component = findComponent(wrapper, 'component-header');
