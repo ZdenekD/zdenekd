@@ -43,6 +43,7 @@ build/Release
 .env*
 !.env.sample
 behat.yml
+.sentryclirc
 
 # Test
 coverage
