@@ -14,4 +14,14 @@ ignore:
     - '@sendgrid/mail > @sendgrid/client > axios':
         reason: None given
         expires: '2021-10-03T14:27:13.013Z'
+  SNYK-JS-ANSIREGEX-1583908:
+    - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > strip-ansi > ansi-regex':
+        reason: None given
+        expires: '2021-10-18T10:27:40.691Z'
+    - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > string-width > strip-ansi > ansi-regex':
+        reason: None given
+        expires: '2021-10-18T10:27:40.691Z'
+    - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > wide-align > string-width > strip-ansi > ansi-regex':
+        reason: None given
+        expires: '2021-10-18T10:27:40.691Z'
 patch: {}

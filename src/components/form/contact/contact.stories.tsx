@@ -1,6 +1,6 @@
 import Contact from '.';
 
-export default {title: 'Components/Form/Contact'};
+export default {title: 'Form/Contact'};
 
 export const base: React.FC = () => (
     <Contact />

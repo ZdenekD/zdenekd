@@ -3,15 +3,11 @@ import findComponent from '@/__test__/utils/helpers';
 import '@/__test__/mocks/nextRouterMock';
 import Addressbar from '.';
 
-describe('Addressbar', () => {
+describe('Project/Browser/Addressbar', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
         wrapper = shallow(<Addressbar url="http://url" />);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

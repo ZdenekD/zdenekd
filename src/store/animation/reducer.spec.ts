@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import initialState from './initialState';
-import {IAnimation} from './type';
-import {ActionsEnum} from './type/actions';
+import {IAnimation} from './types';
+import {ActionsEnum} from './types/actions';
 
 describe('Animation reducer', () => {
     it('change state on `setAnimation` action', () => {

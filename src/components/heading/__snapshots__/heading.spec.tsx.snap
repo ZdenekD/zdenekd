@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Heading match snapshot 1`] = `
-<h1 class="heading"
-    data-test="component-heading"
->
-</h1>
-`;

@@ -3,15 +3,11 @@ import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Input from '.';
 
-describe('Input', () => {
+describe('UI/Form Control/Input', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
         wrapper = shallow(<Input name="input" label="Input" />);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {

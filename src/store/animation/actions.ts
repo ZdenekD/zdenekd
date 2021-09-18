@@ -1,9 +1,9 @@
-import {IAnimation} from './type';
+import {IAnimation} from './types';
 import {
     IAction,
     IActions,
     ActionsEnum
-} from './type/actions';
+} from './types/actions';
 
 const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
     setAnimation: (payload: IAnimation) => dispatch({

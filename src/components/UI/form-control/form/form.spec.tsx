@@ -1,19 +1,10 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import Form from '.';
 
-describe('Form', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Form>Content</Form>);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
-    });
-
+describe('UI/Form Control/Form', () => {
     it('renders wihout error', () => {
+        const wrapper = shallow(<Form>Content</Form>);
         const component = findComponent(wrapper, 'component-form');
 
         expect(component.exists()).toBe(true);

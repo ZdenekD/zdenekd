@@ -4,15 +4,11 @@ import findComponent from '@/__test__/utils/helpers';
 import '@/__test__/mocks/nextRouterMock';
 import Alert from '.';
 
-describe('Alert', () => {
+describe('UI/Alert', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
         wrapper = shallow(<Alert isOpen>message</Alert>);
-    });
-
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders without error', () => {
