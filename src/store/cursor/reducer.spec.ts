@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import initialState from './initialState';
-import {ICursor} from './type';
-import {ActionsEnum} from './type/actions';
+import {ICursor} from './types';
+import {ActionsEnum} from './types/actions';
 
 describe('Cursor reducer', () => {
     it('change state on `setCursor` action', () => {

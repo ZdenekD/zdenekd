@@ -9,10 +9,6 @@ describe('Cursor', () => {
         wrapper = shallow(<Cursor />);
     });
 
-    it('match snapshot', () => {
-        expect(wrapper.html()).toMatchSnapshot();
-    });
-
     it('renders inner cursor without error', () => {
         const component = findComponent(wrapper, 'component-inner-cursor');
 

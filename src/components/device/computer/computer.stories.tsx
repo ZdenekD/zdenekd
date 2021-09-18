@@ -1,6 +1,6 @@
 import Computer from '.';
 
-export default {title: 'Components/Device/Computer'};
+export default {title: 'Device/Computer'};
 
 export const base: React.FC = () => (
     <div style={{maxWidth: '800px'}}>

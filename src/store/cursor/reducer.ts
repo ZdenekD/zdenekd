@@ -1,7 +1,7 @@
+import {IReducer} from '../types/reducer';
 import initialState from './initialState';
-import {IReducer} from '../type/reducer';
-import {ICursor} from './type';
-import {IAction, ActionsEnum} from './type/actions';
+import {ICursor} from './types';
+import {IAction, ActionsEnum} from './types/actions';
 
 const reducer: IReducer<ICursor, IAction> = (state, action) => {
     switch (action.type) {

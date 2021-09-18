@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import {IActions} from '../type/actions';
-import {IAction} from '../type/action';
-import {IState} from '../type/state';
+import {IActions} from '../types/actions';
+import {IAction} from '../types/action';
+import {IState} from '../types/state';
 
 interface IProvider {
     Context: any

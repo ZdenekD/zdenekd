@@ -1,9 +1,9 @@
-import {IMenu} from './type';
+import {IMenu} from './types';
 import {
     IAction,
     IActions,
     ActionsEnum
-} from './type/actions';
+} from './types/actions';
 
 const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
     setMenu: (payload: IMenu) => dispatch({

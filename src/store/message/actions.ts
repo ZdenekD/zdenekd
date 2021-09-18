@@ -1,10 +1,10 @@
 import initialState from './initialState';
-import {IMessage} from './type';
+import {IMessage} from './types';
 import {
     IAction,
     IActions,
     ActionsEnum
-} from './type/actions';
+} from './types/actions';
 
 const dispatcher = (dispatch: (value: IAction) => void): IActions => ({
     setMessage: (payload: IMessage) => dispatch({
