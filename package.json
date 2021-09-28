@@ -13,6 +13,7 @@
     "start": "next start",
     "build": "next build",
     "jest": "jest --watch",
+    "jest:verbose": "jest --watch --verbose=true",
     "jest:coverage": "jest --coverage",
     "story": "start-storybook -s ./public -p 8020",
     "story:build": "build-storybook -c .storybook -o .storybook/build",
