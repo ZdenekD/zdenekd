@@ -1,5 +1,6 @@
 module.exports = {
-    verbose: true,
+    verbose: false,
+    testEnvironment: 'jsdom',
     transform: {
         '^.+\\.ts(x)?$': 'babel-jest',
         '^.+\\.svg$': '<rootDir>/__test__/transform/svg.js',
