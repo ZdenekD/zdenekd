@@ -1,7 +1,7 @@
 import React from 'react';
 import {useId} from 'react-id-generator';
-import VariantsEnum from '@/utils/enums/VariantsEnum';
-import prefix from '@/utils/helpers/prefix';
+import VariantsEnum from '@/enums/VariantsEnum';
+import prefix from '@/helpers/prefix';
 import styles from './input.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};

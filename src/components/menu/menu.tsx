@@ -1,8 +1,8 @@
 import React from 'react';
-import {useMenuState} from '@/store/menu';
+import useCursor from '@/hooks/useCursor';
+import useLocale from '@/hooks/useLocale';
 import {useAnimationState} from '@/store/animation';
-import useCursor from '@/utils/hooks/useCursor';
-import useLocale from '@/utils/hooks/useLocale';
+import {useMenuState} from '@/store/menu';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.module.css';
 

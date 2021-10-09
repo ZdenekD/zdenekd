@@ -1,10 +1,10 @@
 import useEventListener from '@use-it/event-listener';
 import {debounce} from 'underscore';
+import PageActionsEnum from '@/enums/PageActionsEnum';
+import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
 import usePageAction from './usePageAction';
 import useProjectAction from './useProjectAction';
-import PageActionsEnum from '../enums/PageActionsEnum';
-import ProjectActionsEnum from '../enums/ProjectActionsEnum';
-import {IDistributor} from './types/distributor';
+import type {IDistributor} from './types/distributor';
 
 const useKeyboard = (): void => {
     const setPageAction = usePageAction();

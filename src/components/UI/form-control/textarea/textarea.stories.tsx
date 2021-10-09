@@ -1,4 +1,4 @@
-import VariantsEnum from '@/utils/enums/VariantsEnum';
+import VariantsEnum from '@/enums/VariantsEnum';
 import Textarea from '.';
 
 export default {title: 'UI/Form Control/Textarea'};

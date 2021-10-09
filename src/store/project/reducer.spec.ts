@@ -1,6 +1,6 @@
+import initialState from './initialState';
 import reducer from './reducer';
 import {IProject} from './types';
-import initialState from './initialState';
 import {ActionsEnum} from './types/actions';
 
 describe('Project reducer', () => {

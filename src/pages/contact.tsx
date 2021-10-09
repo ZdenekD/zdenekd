@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import styles from '@/assets/styles/pages/contact.css';
-import Layout from '@/components/layout';
-import Heading from '@/components/heading';
 import Form from '@/components/form/contact';
+import Heading from '@/components/heading';
+import Layout from '@/components/layout';
 import pages from '@/data/pages';
-import PagesEnum from '@/utils/enums/PagesEnum';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
+import LocalesEnum from '@/enums/LocalesEnum';
+import PagesEnum from '@/enums/PagesEnum';
 
 const Page: React.FC = () => {
     const router = useRouter();

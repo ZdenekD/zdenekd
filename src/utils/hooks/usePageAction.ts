@@ -1,8 +1,8 @@
 import {useRouter} from 'next/router';
 import pages from '@/data/pages';
-import getPageIndex from '../helpers/getPageIndex';
-import PageActionsEnum from '../enums/PageActionsEnum';
-import {IDistributor} from './types/distributor';
+import PageActionsEnum from '@/enums/PageActionsEnum';
+import getPageIndex from '@/helpers/getPageIndex';
+import type {IDistributor} from './types/distributor';
 
 interface IAction {
     (value: PageActionsEnum): void

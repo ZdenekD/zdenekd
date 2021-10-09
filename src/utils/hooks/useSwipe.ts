@@ -1,7 +1,7 @@
 import useEventListener from '@use-it/event-listener';
+import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
 import useProjectAction from './useProjectAction';
-import ProjectActionsEnum from '../enums/ProjectActionsEnum';
-import {IDistributor} from './types/distributor';
+import type {IDistributor} from './types/distributor';
 
 const useSwipe = (): void => {
     let coords = [0, 0];

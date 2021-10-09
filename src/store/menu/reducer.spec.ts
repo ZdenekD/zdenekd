@@ -1,5 +1,5 @@
-import reducer from './reducer';
 import initialState from './initialState';
+import reducer from './reducer';
 import {IMenu} from './types';
 import {ActionsEnum} from './types/actions';
 
