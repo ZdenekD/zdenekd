@@ -71,7 +71,7 @@
     "jest": "^27.0.4",
     "jest-canvas-mock": "^2.2.0",
     "jest-serializer-html": "^7.0.0",
-    "jsdom": "^17.0.0",
+    "jsdom": "^18.0.0",
     "jsdom-global": "^3.0.2",
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^1.6.2",
