@@ -2,6 +2,6 @@ import Anchor from '.';
 
 export default {title: 'UI/Anchor'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Anchor href="#">Anchor content</Anchor>
 );

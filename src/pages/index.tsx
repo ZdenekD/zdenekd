@@ -1,23 +1,23 @@
-import React from 'react';
-import Head from 'next/head';
-import {useRouter} from 'next/router';
 import {
     LazyMotion,
     domAnimation,
     m,
     Variants
 } from 'framer-motion';
+import Head from 'next/head';
+import {useRouter} from 'next/router';
+import React from 'react';
 import styles from '@/assets/styles/pages/index.css';
-import Layout from '@/components/layout';
-import Heading from '@/components/heading';
+import Computer from '@/components/device/computer';
 import Mobile from '@/components/device/mobile';
 import Tablet from '@/components/device/tablet';
-import Computer from '@/components/device/computer';
+import Heading from '@/components/heading';
+import Layout from '@/components/layout';
 import pages from '@/data/pages';
-import useWindowSize from '@/utils/hooks/useWindowSize';
-import PagesEnum from '@/utils/enums/PagesEnum';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
-import MediaQueriesEnum from '@/utils/enums/MediaQueriesEnum';
+import LocalesEnum from '@/enums/LocalesEnum';
+import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
+import PagesEnum from '@/enums/PagesEnum';
+import useWindowSize from '@/hooks/useWindowSize';
 
 interface IVariants {
     article: Variants

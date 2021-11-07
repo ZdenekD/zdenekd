@@ -22,7 +22,6 @@ module.exports = {
         },
         '@storybook/addon-storysource',
         '@storybook/addon-viewport/register',
-        '@storybook/addon-docs',
         '@storybook/addon-a11y',
         '@storybook/addon-actions',
         '@storybook/addon-backgrounds',
@@ -49,6 +48,9 @@ module.exports = {
             '@/data': path.resolve(__dirname, '../src/data'),
             '@/store': path.resolve(__dirname, '../src/store'),
             '@/utils': path.resolve(__dirname, '../src/utils'),
+            '@/enums': path.resolve(__dirname, '../src/utils/enums'),
+            '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
+            '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
             '@/__test__': path.resolve(__dirname, '../src/__test__'),
         }
 

@@ -12,6 +12,10 @@
       "@/data/*": ["src/data/*"],
       "@/store/*": ["src/store/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/enums/*": ["src/utils/enums/*"],
+      "@/helpers/*": ["src/utils/helpers/*"],
+      "@/hooks/*": ["src/utils/hooks/*"],
+      "@/mocks/*": ["src/utils/mocks/*"],
       "@/__test__/*": ["src/__test__/*"]
     },
     "allowJs": true,

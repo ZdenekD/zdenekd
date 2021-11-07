@@ -2,7 +2,7 @@ import Image from '.';
 
 export default {title: 'UI/Image'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Image src="/image/mobile_fit-s-marky.png" />
 );
 

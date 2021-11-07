@@ -24,4 +24,8 @@ ignore:
     - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > wide-align > string-width > strip-ansi > ansi-regex':
         reason: None given
         expires: '2021-10-18T10:27:40.691Z'
+  SNYK-JS-SHELLQUOTE-1766506:
+    - next > @next/react-dev-overlay > shell-quote:
+        reason: None given
+        expires: '2021-12-07T16:43:26.955Z'
 patch: {}

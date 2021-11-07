@@ -1,9 +1,10 @@
-import {useRouter} from 'next/router';
 import {Player} from '@lottiefiles/react-lottie-player';
-import Layout from '@/components/layout';
+import {useRouter} from 'next/router';
 import Heading from '@/components/heading';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
+import Layout from '@/components/layout';
+import LocalesEnum from '@/enums/LocalesEnum';
 import '@/assets/styles/index.css';
+// eslint-disable-next-line import/order
 import styles from '@/assets/styles/pages/error.css';
 
 const Error: React.FC = () => {

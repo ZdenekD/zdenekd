@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from '@/assets/images/icon_open.svg';
-import useCursor from '@/utils/hooks/useCursor';
-import useLocale from '@/utils/hooks/useLocale';
-import Anchor from '../../../UI/anchor';
+import useCursor from '@/hooks/useCursor';
+import useLocale from '@/hooks/useLocale';
+import Anchor from '@/UI/anchor';
 import styles from './target.module.css';
 
 interface IProps {

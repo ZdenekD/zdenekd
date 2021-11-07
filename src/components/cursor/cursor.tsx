@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import React from 'react';
 import useEventListener from '@use-it/event-listener';
+import React from 'react';
 import {useCursorState} from '@/store/cursor';
 import styles from './cursor.module.css';
 

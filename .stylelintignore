@@ -9,3 +9,5 @@ doc/*
 __test__/*
 hint-report/*
 *.html
+*.tsx
+*.ts

@@ -248,7 +248,11 @@
             "position": "before"
           }
         ],
-        "newlines-between": "never"
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   }

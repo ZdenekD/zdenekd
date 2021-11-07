@@ -1,8 +1,8 @@
-import VariantsEnum from '@/utils/enums/VariantsEnum';
-import reducer from './reducer';
+import VariantsEnum from '@/enums/VariantsEnum';
 import initialState from './initialState';
-import {ActionsEnum} from './types/actions';
+import reducer from './reducer';
 import {IMessage} from './types';
+import {ActionsEnum} from './types/actions';
 
 describe('Message reducer', () => {
     it('change state on `setMessage` action', () => {

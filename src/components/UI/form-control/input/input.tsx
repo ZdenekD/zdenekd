@@ -1,12 +1,11 @@
 import React from 'react';
-import {useId} from 'react-id-generator';
-import VariantsEnum from '@/utils/enums/VariantsEnum';
-import prefix from '@/utils/helpers/prefix';
+import VariantsEnum from '@/enums/VariantsEnum';
 import styles from './input.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
 interface IInput {
+    id?: string
     name: string
     label: string
     type?: string
@@ -18,15 +17,18 @@ interface IInput {
     autoComplete?: 'on' | 'off'
     error?: string
     className?: string
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 type IProps = IReadonlyProps & IInput;
 
 const Input = React.forwardRef<HTMLInputElement, IProps>(({
+    id,
     name,
     label,
     type = 'text',
-    value = undefined,
+    value = '',
     placeholder,
     variant,
     required,
@@ -36,33 +38,42 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
     autoComplete,
     error,
     className = '',
+    onChange,
+    onBlur,
 }, ref) => {
     const [length, setLength] = React.useState<number>(value?.length || 0);
-    const [id] = useId(1, prefix);
     const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLength(event.target.value.length);
+
+        if (onChange) {
+            onChange(event);
+        }
     };
+
+    React.useEffect(() => {
+        setLength(value.length);
+    }, [value]);
 
     return (
         <div className={`${styles.control} ${disabled || readonly ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
             <input
                 ref={ref}
-                id={id}
+                id={id || name}
                 type={type}
                 name={name}
                 value={value}
                 className={`${styles.input} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
                 placeholder={placeholder}
-                required={required}
                 disabled={disabled}
                 readOnly={readonly}
                 maxLength={maxlength}
                 autoComplete={autoComplete}
                 data-test="component-input"
                 onChange={handleInput}
+                onBlur={onBlur}
             />
             <label
-                htmlFor={id}
+                htmlFor={id || name}
                 className={styles.label}
             >
                 <span className={styles.labelContent}>

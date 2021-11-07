@@ -2,7 +2,7 @@ import Layout from '.';
 
 export default {title: 'Layout'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Layout>
         Layout content
     </Layout>

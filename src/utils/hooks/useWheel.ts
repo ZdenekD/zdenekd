@@ -1,7 +1,7 @@
 import useEventListener from '@use-it/event-listener';
 import {debounce} from 'underscore';
+import PageActionsEnum from '@/enums/PageActionsEnum';
 import usePageAction from './usePageAction';
-import PageActionsEnum from '../enums/PageActionsEnum';
 
 const useWheel = (): void => {
     const setPageAction = usePageAction();

@@ -1,4 +1,4 @@
-import DirectionsEnum from '@/utils/enums/DirectionsEnum';
+import DirectionsEnum from '@/enums/DirectionsEnum';
 import Key from '.';
 
 export default {title: 'Keys/Key'};

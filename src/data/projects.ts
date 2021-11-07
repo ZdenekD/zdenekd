@@ -1,4 +1,4 @@
-import LocalesEnum from '@/utils/enums/LocalesEnum';
+import LocalesEnum from '@/enums/LocalesEnum';
 
 export interface IProject {
     id: string

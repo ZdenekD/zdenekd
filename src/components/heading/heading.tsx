@@ -1,5 +1,5 @@
-import React from 'react';
 import anime from 'animejs';
+import React from 'react';
 import styles from './heading.module.css';
 
 const Heading: React.FC = ({children}) => {

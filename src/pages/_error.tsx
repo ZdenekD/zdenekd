@@ -1,9 +1,10 @@
 import {useRouter} from 'next/router';
-import Layout from '@/components/layout';
 import Heading from '@/components/heading';
+import Layout from '@/components/layout';
 import Anchor from '@/components/UI/anchor';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
+import LocalesEnum from '@/enums/LocalesEnum';
 import '@/assets/styles/index.css';
+// eslint-disable-next-line import/order
 import styles from '@/assets/styles/pages/error.css';
 
 const Error: React.FC = () => {

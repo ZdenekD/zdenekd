@@ -1,16 +1,16 @@
-import React from 'react';
-import {useRouter} from 'next/router';
 import anime from 'animejs';
+import {useRouter} from 'next/router';
+import React from 'react';
 import projects from '@/data/projects';
+import LocalesEnum from '@/enums/LocalesEnum';
+import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import useCursor from '@/hooks/useCursor';
+import useProjectAction from '@/hooks/useProjectAction';
 import {useProjectState} from '@/store/project';
-import useProjectAction from '@/utils/hooks/useProjectAction';
-import useCursor from '@/utils/hooks/useCursor';
-import ProjectActionsEnum from '@/utils/enums/ProjectActionsEnum';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
-import Tools from './tools';
-import Controls from './controls';
 import Browser from './browser';
+import Controls from './controls';
 import styles from './project.module.css';
+import Tools from './tools';
 
 const Project: React.FC = () => {
     const router = useRouter();

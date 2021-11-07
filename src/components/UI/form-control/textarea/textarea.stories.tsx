@@ -1,75 +1,182 @@
-import VariantsEnum from '@/utils/enums/VariantsEnum';
+import React from 'react';
+import VariantsEnum from '@/enums/VariantsEnum';
 import Textarea from '.';
 
 export default {title: 'UI/Form Control/Textarea'};
 
-export const base: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" />
-    </>
-);
+const defaultProps = {
+    name: 'input',
+    label: 'Label',
+};
 
-export const success: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" variant={VariantsEnum.success} />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" variant={VariantsEnum.success} />
-    </>
-);
+export const component: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
 
-export const info: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" variant={VariantsEnum.info} />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" variant={VariantsEnum.info} />
-    </>
-);
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                value={value}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
 
-export const warning: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" variant={VariantsEnum.warning} />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" variant={VariantsEnum.warning} />
-    </>
-);
+export const success: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
 
-export const danger: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" variant={VariantsEnum.danger} />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" variant={VariantsEnum.danger} />
-    </>
-);
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.success}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.success}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
+
+export const info: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
+
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.info}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.info}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
+
+export const warning: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
+
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.warning}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.warning}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
+
+export const danger: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
+
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.danger}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                value={value}
+                variant={VariantsEnum.danger}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
 
 export const disabled: React.FC = () => (
-    <>
-        <Textarea disabled name="textarea" label="Textarea" />
-        <Textarea disabled name="textarea" label="Textarea" placeholder="Enter some data" />
-    </>
+    <Textarea
+        {...defaultProps}
+        disabled
+        value="Value"
+    />
 );
 
-export const required: React.FC = () => (
-    <>
-        <Textarea required name="textarea" label="Textarea" />
-        <Textarea required name="textarea" label="Textarea" placeholder="Enter some data" />
-    </>
-);
+export const required: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
+
+    return (
+        <>
+            <Textarea
+                {...defaultProps}
+                required
+                value={value}
+                onChange={event => setValue(event.target.value)}
+            />
+            <Textarea
+                {...defaultProps}
+                required
+                value={value}
+                placeholder="Enter some data"
+                onChange={event => setValue(event.target.value)}
+            />
+        </>
+    );
+});
 
 export const readonly: React.FC = () => (
-    <>
-        <Textarea readonly name="textarea" label="Textarea" value="Readonly textarea" />
-    </>
+    <Textarea
+        {...defaultProps}
+        readonly
+        value="Readonly value"
+    />
 );
 
-export const error: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" error="has some error" />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" error="has some error" />
-        <Textarea required name="textarea" label="Textarea" error="has some error" />
-    </>
-);
+export const error: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
 
-export const maxlength: React.FC = () => (
-    <>
-        <Textarea name="textarea" label="Textarea" maxlength={255} />
-        <Textarea name="textarea" label="Textarea" placeholder="Enter some data" maxlength={255} />
-        <Textarea disabled name="textarea" label="Textarea" maxlength={255} />
-    </>
-);
+    return (
+        <Textarea
+            {...defaultProps}
+            value={value}
+            error="has some error"
+            onChange={event => setValue(event.target.value)}
+        />
+    );
+});
+
+export const maxlength: React.FC = () => React.createElement(() => {
+    const [value, setValue] = React.useState('');
+
+    return (
+        <Textarea
+            {...defaultProps}
+            value={value}
+            maxlength={32}
+            onChange={event => setValue(event.target.value)}
+        />
+    );
+});

@@ -1,5 +1,5 @@
-import getRoman from '@/utils/helpers/getRoman';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
+import LocalesEnum from '@/enums/LocalesEnum';
+import getRoman from '@/helpers/getRoman';
 
 export interface ILocale {
     header: {
@@ -18,6 +18,7 @@ export interface ILocale {
             [key: string]: {
                 label: string
                 error: string
+                required: string
             }
         }
         submit: string
@@ -74,14 +75,17 @@ const locales: ILocales = {
                     name: {
                         label: 'Jméno',
                         error: 'Jsou zadány nepovolené znaky.',
+                        required: 'Je nutné zadat jméno',
                     },
                     email: {
                         label: 'E-mail',
                         error: 'E-mail není zadán ve správném formátu.',
+                        required: 'Je nutné zadat e-mail',
                     },
                     message: {
                         label: 'Zpráva',
                         error: 'Jsou zadány nepovolené znaky.',
+                        required: 'Zadejte zprávu',
                     },
                 },
                 submit: 'Odeslat',
@@ -140,14 +144,17 @@ const locales: ILocales = {
                     name: {
                         label: 'Name',
                         error: 'It contains illegal characters.',
+                        required: 'Name is required',
                     },
                     email: {
                         label: 'E-mail',
                         error: 'E-mail is not entered in the correct format.',
+                        required: 'E-mail is required',
                     },
                     message: {
                         label: 'Message',
                         error: 'It contains illegal characters.',
+                        required: 'Message is required',
                     },
                 },
                 submit: 'Submit',

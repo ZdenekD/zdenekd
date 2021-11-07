@@ -1,5 +1,5 @@
-import React from 'react';
 import useEventListener from '@use-it/event-listener';
+import React from 'react';
 import {debounce} from 'underscore';
 
 interface ISize {
