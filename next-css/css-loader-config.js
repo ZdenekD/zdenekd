@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const findUp = require('find-up');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const fileExtensions = new Set();
 let extractCssInitialized = false;
