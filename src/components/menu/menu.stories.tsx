@@ -2,6 +2,6 @@ import Menu from '.';
 
 export default {title: 'Menu'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Menu />
 );

@@ -2,6 +2,6 @@ import Nav from '.';
 
 export default {title: 'Nav'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Nav />
 );

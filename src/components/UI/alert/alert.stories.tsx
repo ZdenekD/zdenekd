@@ -3,7 +3,7 @@ import Alert from '.';
 
 export default {title: 'UI/Alert'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Alert isOpen>Alert message</Alert>
 );
 

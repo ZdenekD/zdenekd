@@ -2,7 +2,7 @@ import Icon, {IconsEnum} from '.';
 
 export default {title: 'UI/Icons'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <>
         <Icon variant={IconsEnum.brandGithub} />
         <Icon variant={IconsEnum.message} />

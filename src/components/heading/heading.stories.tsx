@@ -2,6 +2,6 @@ import Heading from '.';
 
 export default {title: 'Heading'};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Heading>Heading</Heading>
 );
