@@ -2,11 +2,10 @@
 require('dotenv').config();
 
 const {withSentryConfig} = require('@sentry/nextjs');
-const styles = require('./next-css');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const moduleExports = styles({
+const moduleExports = {
     cssModules: true,
     cssLoaderOptions: {
         mode: 'local',
@@ -38,7 +37,8 @@ const moduleExports = styles({
     eslint: {ignoreDuringBuilds: true},
     reactStrictMode: true,
     poweredByHeader: false,
-});
+    swcMinify: true,
+};
 const SentryWebpackPluginOptions = {silent: true};
 
 module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);
