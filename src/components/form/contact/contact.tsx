@@ -1,10 +1,14 @@
+import {yupResolver} from '@hookform/resolvers/yup';
 import anime from 'animejs';
 import {useRouter} from 'next/router';
 import React from 'react';
-import {useForm} from 'react-hook-form';
+import {
+    useForm,
+    Controller,
+    SubmitHandler
+} from 'react-hook-form';
 import send from '@/api/send';
 import VariantsEnum from '@/enums/VariantsEnum';
-import regex from '@/helpers/regex';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import {useMessageState} from '@/store/message';
@@ -14,23 +18,32 @@ import Input from '@/UI/form-control/input';
 import Textarea from '@/UI/form-control/textarea';
 import Loader from '@/UI/loader';
 import styles from './contact.module.css';
+import validation from './contact.validation';
 
 interface IValues {
     [key: string]: string
 }
 
 const ContactForm: React.FC = () => {
-    const [isDisabled, setDisabled] = React.useState<boolean>(false);
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
     const router = useRouter();
     const [, {setMessage}] = useMessageState();
-    const {register, errors, handleSubmit} = useForm({mode: 'onBlur'});
     const locale = useLocale();
-    const onSubmit = async (values: IValues) => {
-        setDisabled(true);
-
+    const schema = validation(locale);
+    const {
+        control,
+        formState: {
+            isSubmitting,
+            errors,
+        },
+        handleSubmit,
+    } = useForm({
+        resolver: yupResolver(schema),
+        mode: 'onTouched',
+    });
+    const onSubmit: SubmitHandler<IValues> = async values => {
         if (values.med) {
             return;
         }
@@ -76,71 +89,79 @@ const ContactForm: React.FC = () => {
 
     return (
         <>
-            {isDisabled && <Loader data-test="component-contact-loader" />}
+            {isSubmitting && <Loader data-test="component-contact-loader" />}
             <Form ref={formRef} className={styles.form} data-test="component-contact" onSubmit={handleSubmit(onSubmit)}>
                 <div className="animated-block">
-                    <Input
-                        ref={register({
-                            pattern: {
-                                value: regex.name,
-                                message: `${locale.form.input.name.error}`,
-                            },
-                        })}
-                        required
+                    <Controller
                         name="name"
-                        label={locale.form.input.name.label}
-                        disabled={isDisabled}
-                        maxlength={30}
-                        error={errors.name?.message}
+                        control={control}
+                        render={({field}) => (
+                            <Input
+                                {...field}
+                                required
+                                label={locale.form.input.name.label}
+                                disabled={isSubmitting}
+                                maxlength={30}
+                                error={errors.name?.message}
+                            />
+                        )}
                     />
+
                 </div>
                 <div className="animated-block">
-                    <Input
-                        ref={register({
-                            pattern: {
-                                value: regex.email,
-                                message: `${locale.form.input.email.error}`,
-                            },
-                        })}
-                        required
+                    <Controller
                         name="email"
-                        label={locale.form.input.email.label}
-                        type="email"
-                        disabled={isDisabled}
-                        maxlength={90}
-                        error={errors.email?.message}
+                        control={control}
+                        render={({field}) => (
+                            <Input
+                                {...field}
+                                required
+                                label={locale.form.input.email.label}
+                                type="email"
+                                disabled={isSubmitting}
+                                maxlength={90}
+                                error={errors.email?.message}
+                            />
+                        )}
                     />
                 </div>
                 <div className="animated-block">
-                    <Textarea
-                        ref={register({
-                            pattern: {
-                                value: regex.text,
-                                message: `${locale.form.input.message.error}`,
-                            },
-                        })}
-                        required
+                    <Controller
                         name="message"
-                        label={locale.form.input.message.label}
-                        disabled={isDisabled}
-                        maxlength={255}
-                        error={errors.message?.message}
+                        control={control}
+                        render={({field}) => (
+                            <Textarea
+                                {...field}
+                                required
+                                name="message"
+                                label={locale.form.input.message.label}
+                                disabled={isSubmitting}
+                                maxlength={255}
+                                error={errors.message?.message}
+                            />
+                        )}
                     />
                 </div>
-                <input
-                    ref={register()}
-                    type="text"
+                <Controller
                     name="med"
-                    autoComplete="off"
-                    tabIndex={-1}
-                    className={styles.hidden}
+                    control={control}
+                    render={({field}) => (
+                        <input
+                            {...field}
+                            type="text"
+                            name="med"
+                            autoComplete="off"
+                            tabIndex={-1}
+                            className={styles.hidden}
+                        />
+                    )}
                 />
                 <div className="animated-block">
                     <Button
                         ref={buttonRef}
                         type="submit"
                         className={styles.submit}
-                        disabled={isDisabled}
+                        disabled={isSubmitting}
                     >
                         {locale.form.submit}
                     </Button>

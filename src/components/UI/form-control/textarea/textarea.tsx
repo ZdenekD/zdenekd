@@ -1,13 +1,12 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
-import {useId} from 'react-id-generator';
 import VariantsEnum from '@/enums/VariantsEnum';
-import prefix from '@/helpers/prefix';
 import styles from './textarea.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
 interface ITextarea {
+    id?: string
     name: string
     label: string
     placeholder?: string
@@ -18,14 +17,17 @@ interface ITextarea {
     autoComplete?: 'on' | 'off'
     error?: string
     className?: string
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+    onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 type IProps = IReadonlyProps & ITextarea;
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
+    id,
     name,
     label,
-    value = undefined,
+    value = '',
     placeholder,
     variant,
     required,
@@ -35,39 +37,48 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     autoComplete,
     error,
     className = '',
+    onChange,
+    onBlur,
 }, ref) => {
     const [length, setLength] = React.useState<number>(value?.length || 0);
-    const [id] = useId(1, prefix);
     const handleHeight = (element: HTMLTextAreaElement) => {
         if (element.style) {
             element.style.height = '0';
-            element.style.height = `${element.scrollHeight + 2}px`;
+            element.style.height = `${element.scrollHeight}px`;
         }
     };
     const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         handleHeight(event.target);
         setLength(event.target.value.length);
+
+        if (onChange) {
+            onChange(event);
+        }
     };
+
+    React.useEffect(() => {
+        setLength(value.length);
+    }, [value]);
 
     return (
         <div className={`${styles.control} ${disabled || readonly ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
             <textarea
                 ref={ref}
-                id={id}
+                id={id || name}
                 name={name}
                 value={value}
                 className={`${styles.textarea} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
                 placeholder={placeholder}
-                required={required}
                 disabled={disabled}
                 readOnly={readonly}
                 maxLength={maxlength}
                 autoComplete={autoComplete}
                 data-test="component-textarea"
                 onChange={handleInput}
+                onBlur={onBlur}
             />
             <label
-                htmlFor={id}
+                htmlFor={id || name}
                 className={styles.label}
             >
                 <span className={styles.labelContent}>
