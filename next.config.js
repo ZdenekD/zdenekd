@@ -1,17 +1,48 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config();
 
+const path = require('path');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({enabled: process.env.ANALYZE === 'true'});
 const {withSentryConfig} = require('@sentry/nextjs');
+const loaderUtils = require('loader-utils');
+const headers = require('./next.headers');
 
-const isProduction = process.env.NODE_ENV === 'production';
+const hashOnlyIdent = (context, _, exportName) => loaderUtils
+    .getHashDigest(
+        Buffer.from(
+            `filePath:${path
+                .relative(context.rootContext, context.resourcePath)
+                .replace(/\\+/g, '/')}#className:${exportName}`
+        ),
+        'md4',
+        'base64',
+        6
+    )
+    .replace(/^(-?\d|--)|\/|\+/g, '_$1');
 
 const moduleExports = {
-    cssModules: true,
-    cssLoaderOptions: {
-        mode: 'local',
-        localIdentName: !isProduction ? '[name]-[local]--[hash:base64:4]' : '[hash:base64:5]',
+    async headers() {
+        return headers;
     },
-    webpack(config) {
+    webpack(config, {dev}) {
+        const rules = config.module.rules
+            .find(rule => typeof rule.oneOf === 'object')
+            .oneOf.filter(rule => Array.isArray(rule.use));
+
+        if (!dev) {
+            rules.forEach(rule => {
+                rule.use.forEach(moduleLoader => {
+                    if (
+                        moduleLoader.loader?.includes('css-loader')
+                        && !moduleLoader.loader?.includes('postcss-loader')
+                    ) {
+                        moduleLoader.options.modules.getLocalIdent = hashOnlyIdent;
+                    }
+                });
+            });
+        }
+
         config.module.rules.push({
             test: /\.svg$/,
             exclude: /node_modules|vendor/,
@@ -37,8 +68,7 @@ const moduleExports = {
     eslint: {ignoreDuringBuilds: true},
     reactStrictMode: true,
     poweredByHeader: false,
-    swcMinify: true,
 };
 const SentryWebpackPluginOptions = {silent: true};
 
-module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);
+module.exports = withBundleAnalyzer(withSentryConfig(moduleExports, SentryWebpackPluginOptions));

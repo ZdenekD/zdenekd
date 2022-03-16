@@ -11,11 +11,13 @@
       "@/UI/*": ["src/components/UI/*"],
       "@/data/*": ["src/data/*"],
       "@/store/*": ["src/store/*"],
-      "@/utils/*": ["src/utils/*"],
+      "@/distributors/*": ["src/utils/distributors/*"],
       "@/enums/*": ["src/utils/enums/*"],
       "@/helpers/*": ["src/utils/helpers/*"],
       "@/hooks/*": ["src/utils/hooks/*"],
       "@/mocks/*": ["src/utils/mocks/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"],
       "@/__test__/*": ["src/__test__/*"]
     },
     "allowJs": true,
@@ -36,8 +38,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "plugins": [{"name": "typescript-plugin-css-modules"}]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "__test__"],
   "include": ["next-env.d.ts", "next-add.d.ts", "src/**/*.ts", "src/**/*.tsx"]
 }

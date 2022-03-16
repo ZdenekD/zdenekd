@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-    stories: ['../src/**/*.stories.jsx', '../src/**/*.stories.tsx'],
+    stories: ['../src/**/*.stories.tsx'],
+    staticDirs: ['../public', '../__test__'],
+    core: {
+        builder: "webpack5",
+    },
     addons: [
         {
             name: '@storybook/addon-postcss',
@@ -20,11 +24,19 @@ module.exports = {
                 }
             },
         },
-        '@storybook/addon-storysource',
-        '@storybook/addon-viewport/register',
+        {
+            name: '@storybook/addon-storysource',
+            options: {
+                rule: {
+                    test: /\.stories.tsx?$/,
+                },
+                loaderOptions: {
+                    parser: 'typescript'
+                }
+            }
+        },
+        '@storybook/addon-essentials',
         '@storybook/addon-a11y',
-        '@storybook/addon-actions',
-        '@storybook/addon-backgrounds',
         'storybook-addon-next-router',
     ],
     webpackFinal: async config => {
@@ -47,10 +59,13 @@ module.exports = {
             '@/UI': path.resolve(__dirname, '../src/components/UI'),
             '@/data': path.resolve(__dirname, '../src/data'),
             '@/store': path.resolve(__dirname, '../src/store'),
+            '@/types': path.resolve(__dirname, '../src/types'),
             '@/utils': path.resolve(__dirname, '../src/utils'),
+            '@/distributors': path.resolve(__dirname, '../src/utils/distributors'),
             '@/enums': path.resolve(__dirname, '../src/utils/enums'),
             '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
             '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
+            '@/mocks': path.resolve(__dirname, '../src/utils/mocks'),
             '@/__test__': path.resolve(__dirname, '../src/__test__'),
         }
 
