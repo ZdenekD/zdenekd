@@ -6,8 +6,8 @@ import {useMenuState} from '@/store/menu';
 import Icon, {IconsEnum} from '@/UI/icon';
 import Keys from '../../keys';
 import {animations} from './footer.animations';
-import styles from './footer.module.css';
 import Lang from './lang';
+import styles from './footer.module.css';
 
 const Footer: React.FC = () => {
     const router = useRouter();

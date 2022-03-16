@@ -2,10 +2,10 @@
     --gap: 20px;
     --max-container-width: 1800px;
     --input-height: 50px;
-    --transition-duration: .4s;
+    --transition-duration: 0.4s;
     --transition-timing: var(--ease-out-quart);
-    --header-transition: all .8s var(--ease-out-expo) 1.4s;
-    --header-transition-active: all .8s var(--ease-out-expo);
+    --header-transition: all 0.8s var(--ease-out-expo) 1.4s;
+    --header-transition-active: all 0.8s var(--ease-out-expo);
     --float-transition: transform 1.2s ease-out;
     --curtain-base-color: hsl(var(--color-yellow-lighten-4));
     --zindex-aside: 100;

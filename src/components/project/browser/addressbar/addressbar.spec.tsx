@@ -1,6 +1,6 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
-import '@/__test__/mocks/nextRouterMock';
+import '@/mocks/__test__/nextRouterMock';
 import Addressbar from '.';
 
 describe('Project/Browser/Addressbar', () => {

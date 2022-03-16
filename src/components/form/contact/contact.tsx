@@ -17,8 +17,8 @@ import Form from '@/UI/form-control/form';
 import Input from '@/UI/form-control/input';
 import Textarea from '@/UI/form-control/textarea';
 import Loader from '@/UI/loader';
-import styles from './contact.module.css';
 import validation from './contact.validation';
+import styles from './contact.module.css';
 
 interface IValues {
     [key: string]: string

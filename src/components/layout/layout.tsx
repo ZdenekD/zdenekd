@@ -12,8 +12,8 @@ import Cursor from '../cursor';
 import Curtain from '../curtain';
 import Footer from './footer';
 import Header from './header';
-import styles from './layout.module.css';
 import Section from './section';
+import styles from './layout.module.css';
 
 interface IProps {
     children: React.ReactNode

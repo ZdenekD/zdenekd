@@ -153,7 +153,7 @@
         position: absolute;
         top: 50%;
         content: '';
-        background: currentColor;
+        background: currentcolor;
         transform: translateY(-50%);
     }
 
@@ -170,7 +170,7 @@
 
         &::selection {
             background: transparent;
-            color: currentColor;
+            color: currentcolor;
         }
     }
 
@@ -188,7 +188,7 @@
 
     &::selection {
         background: transparent;
-        color: currentColor;
+        color: currentcolor;
     }
 
     @media (--min-lg) {
@@ -207,7 +207,7 @@
             top: calc(1.5 * var(--gap));
             left: 50%;
             content: '';
-            background: currentColor;
+            background: currentcolor;
             transform: translateX(-50%);
         }
     }

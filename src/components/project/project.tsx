@@ -9,8 +9,8 @@ import useProjectAction from '@/hooks/useProjectAction';
 import {useProjectState} from '@/store/project';
 import Browser from './browser';
 import Controls from './controls';
-import styles from './project.module.css';
 import Tools from './tools';
+import styles from './project.module.css';
 
 const Project: React.FC = () => {
     const router = useRouter();

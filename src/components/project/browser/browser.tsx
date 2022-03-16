@@ -4,10 +4,10 @@ import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
 import useWindowSize from '@/hooks/useWindowSize';
 import Image from '@/UI/image';
 import Addressbar from './addressbar';
-import styles from './browser.module.css';
 import Controls from './controls';
 import Target from './target';
 import Video from './video';
+import styles from './browser.module.css';
 
 interface IProps {
     project: IProject
