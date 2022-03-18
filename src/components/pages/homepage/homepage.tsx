@@ -33,6 +33,7 @@ const Homepage: React.FC = () => {
         <>
             <Head>
                 <meta name="description" content={description} />
+                <title>{heading} | ZdenekD</title>
             </Head>
             <Layout className={styles.root} data-test="component-homepage">
                 <Heading data-test="component-heading">{heading}</Heading>
