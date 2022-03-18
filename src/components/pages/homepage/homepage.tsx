@@ -9,8 +9,8 @@ import React from 'react';
 import Computer from '@/components/device/computer';
 import Mobile from '@/components/device/mobile';
 import Tablet from '@/components/device/tablet';
-import Heading from '@/components/heading';
 import Layout from '@/components/layout';
+import Heading from '@/components/layout/heading';
 import pages from '@/data/pages';
 import LocalesEnum from '@/enums/LocalesEnum';
 import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
@@ -22,7 +22,7 @@ import styles from './homepage.module.css';
 const Homepage: React.FC = () => {
     const router = useRouter();
     const {width} = useWindowSize();
-    const lang = router.locale || LocalesEnum.cs;
+    const lang = router.locale as LocalesEnum || LocalesEnum.cs;
     const {
         description,
         heading,

@@ -1,19 +1,22 @@
 import {LazyMotion, domAnimation} from 'framer-motion';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
+import Cursor from '@/components/cursor';
 import useKeyboard from '@/hooks/useKeyboard';
 import useLocale from '@/hooks/useLocale';
 import useSwipe from '@/hooks/useSwipe';
 import useWheel from '@/hooks/useWheel';
 import {useMessageState} from '@/store/message';
-import Alert from '@/UI/alert';
-import Aside from '../aside';
-import Cursor from '../cursor';
-import Curtain from '../curtain';
 import Footer from './footer';
 import Header from './header';
+import Meta from './meta';
 import Section from './section';
 import styles from './layout.module.css';
+
+const Alert = dynamic(() => import('@/UI/alert'));
+const Aside = dynamic(() => import('@/components/aside'));
+const Curtain = dynamic(() => import('@/components/curtain'));
 
 interface IProps {
     children: React.ReactNode
@@ -31,31 +34,7 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
     return (
         <>
             <Head>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width" />
-                <meta name="author" content="ZdenekD, zdenekd.cz" />
-                <title data-test="component-title">ZdenekD</title>
-                <link rel="preload" href="/font/titillium-web.woff2" as="font" crossOrigin="anonymous" />
-                <link rel="preload" href="/font/titillium-web_ext.woff2" as="font" crossOrigin="anonymous" />
-                <link rel="preload" href="/font/roboto-mono.woff2" as="font" crossOrigin="anonymous" />
-                <link rel="apple-touch-icon" sizes="57x57" href='/apple-icon-57x57.png' />
-                <link rel="apple-touch-icon" sizes="60x60" href='/apple-icon-60x60.png' />
-                <link rel="apple-touch-icon" sizes="72x72" href='/apple-icon-72x72.png' />
-                <link rel="apple-touch-icon" sizes="76x76" href='/apple-icon-76x76.png' />
-                <link rel="apple-touch-icon" sizes="114x114" href='/apple-icon-114x114.png' />
-                <link rel="apple-touch-icon" sizes="120x120" href='/apple-icon-120x120.png' />
-                <link rel="apple-touch-icon" sizes="144x144" href='/apple-icon-144x144.png' />
-                <link rel="apple-touch-icon" sizes="152x152" href='/apple-icon-152x152.png' />
-                <link rel="apple-touch-icon" sizes="180x180" href='/apple-icon-180x180.png' />
-                <link rel="icon" type="image/png" sizes="192x192" href='/android-icon-192x192.png' />
-                <link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png' />
-                <link rel="icon" type="image/png" sizes="96x96" href='/favicon-96x96.png' />
-                <link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png' />
-                <link rel="manifest" href='/manifest.json' />
-                <meta name="msapplication-TileColor" content="#ffffff" />
-                <meta name="msapplication-TileImage" content='/ms-icon-144x144.png' />
-                <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+                <Meta />
             </Head>
             <main className={`${styles.main} ${className}`} data-test="component-layout">
                 <LazyMotion strict features={domAnimation}>

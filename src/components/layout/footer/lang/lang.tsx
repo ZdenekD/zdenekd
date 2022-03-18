@@ -21,7 +21,11 @@ const Locale: React.FC<IProps> = ({locale, router}) => {
 
     return (
         <Link href={router.route} locale={locale}>
-            <a ref={anchorRef} href={router.route} className={`${styles.anchor} ${locale === router.locale ? styles.disabled : ''}`}>
+            <a
+                ref={anchorRef}
+                href={router.route}
+                className={`${styles.anchor} ${locale === router.locale ? styles.disabled : ''}`}
+            >
                 {locale.toUpperCase()}
             </a>
         </Link>

@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
-import Heading from '@/components/heading';
 import Layout from '@/components/layout';
+import Heading from '@/components/layout/heading';
 import Anchor from '@/components/UI/anchor';
 import LocalesEnum from '@/enums/LocalesEnum';
 import styles from './error.module.css';

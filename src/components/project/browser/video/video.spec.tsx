@@ -1,7 +1,7 @@
 import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
 import '@/mocks/__test__/nextRouterMock';
-import {IProject} from '@/data/projects';
+import {IProject} from '@/types/projects';
 import Video from '.';
 
 const project: IProject = {

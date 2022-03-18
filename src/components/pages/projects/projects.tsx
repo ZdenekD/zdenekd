@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import Heading from '@/components/heading';
 import Layout from '@/components/layout';
+import Heading from '@/components/layout/heading';
 import Project from '@/components/project';
 import pages from '@/data/pages';
 import LocalesEnum from '@/enums/LocalesEnum';
@@ -10,7 +10,7 @@ import styles from './projects.module.css';
 
 const Projects: React.FC = () => {
     const router = useRouter();
-    const lang = router.locale || LocalesEnum.cs;
+    const lang = router.locale as LocalesEnum || LocalesEnum.cs;
     const {description, heading} = pages[PagesEnum.projects].locale[lang];
 
     return (

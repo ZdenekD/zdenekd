@@ -24,7 +24,7 @@ const Keys: React.FC = () => {
     const items = Object.keys(pages);
     const isHomepage = router.route === pages[PagesEnum.homepage].route;
     const isProjects = router.route === pages[PagesEnum.projects].route;
-    const isLastpage = router.route === pages[items[items.length - 1]].route;
+    const isLastpage = router.route === pages[items[items.length - 1] as PagesEnum].route;
     const isError = router.route === '/404';
     const locale = useLocale();
     const handleKeyUp = () => {
