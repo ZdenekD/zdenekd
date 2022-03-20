@@ -2,7 +2,6 @@ import React from 'react';
 
 const Meta: React.FC = () => (
     <>
-        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="author" content="ZdenekD, zdenekd.cz" />
         <title data-test="component-title">ZdenekD</title>
