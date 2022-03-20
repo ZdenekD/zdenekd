@@ -11,7 +11,7 @@ const locales: ILocales = {
             footer: {
                 code: (
                     <>
-                        &clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;zaklínadel&#125;
+                        &clubs; {date} Vyrobeno pomocí &lt;kouzel&gt;
                     </>
                 ),
                 subject: 'Zpráva přímo do schránky',
@@ -80,7 +80,7 @@ const locales: ILocales = {
             footer: {
                 code: (
                     <>
-                        &clubs; {date} Made with &lt;spells&gt; and &#123;incantations&#125;
+                        &clubs; {date} Made with &lt;spells&gt;
                     </>
                 ),
                 subject: 'Message directly to the mailbox',
