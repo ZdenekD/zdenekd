@@ -1,6 +1,8 @@
 import {RouterContext} from "next/dist/shared/lib/router-context";
 import * as nextImage from 'next/image';
 import {LazyMotion, domAnimation} from 'framer-motion';
+import {initialize, mswDecorator} from 'msw-storybook-addon'
+import handlers from '@/mocks/handlers';
 import {Provider} from '../src/store';
 import './index.css';
 import Cursor from '../src/components/cursor';
@@ -36,6 +38,8 @@ const viewports = {
     },
 };
 
+initialize();
+
 Object.defineProperty(nextImage, 'default', {
     configurable: true,
     value: props => <img {...props} />
@@ -43,12 +47,14 @@ Object.defineProperty(nextImage, 'default', {
 
 export const parameters = {
     viewport: {viewports},
+    msw: handlers,
     nextRouter: {
         Provider: RouterContext.Provider,
     },
 }
 
 export const decorators = [
+    mswDecorator,
     Story => (
         <Provider>
             <LazyMotion strict features={domAnimation}>

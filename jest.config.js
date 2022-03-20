@@ -55,6 +55,7 @@ module.exports = {
     coverageDirectory: './__test__/coverage',
     coverageReporters: ['html', 'lcov'],
     setupFiles: ['<rootDir>/src/__test__/setup.ts', 'jest-canvas-mock'],
+    setupFilesAfterEnv: ['<rootDir>/src/__test__/mockSetup.ts'],
     snapshotSerializers: ['jest-serializer-html'],
     globals: {'babel-jest': {tsconfig: '<rootDir>/tsconfig.test.json'}},
 };
