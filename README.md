@@ -57,11 +57,21 @@ Build task:
 yarn build
 ```
 
+## Debug mode
+
+-   Run app in debug mode - more [info](https://nextjs.org/docs/advanced-features/debugging)
+
+```
+yarn debug
+```
+
 ## Tests
 
 How to run and write tests
 [Snyk](https://snyk.io) - check packages for vulnerabilities
 [Webhint](https://webhint.io) - complete website tests
+[Jest](https://jestjs.io)
+[Cypress](https://www.cypress.io)
 [Yarn Outdated](https://yarnpkg.com/lang/en/docs/cli/outdated/) - check for outdated project packages
 
 ```
