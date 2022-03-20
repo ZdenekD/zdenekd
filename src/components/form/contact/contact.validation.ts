@@ -4,8 +4,8 @@ import {
     BooleanSchema,
     StringSchema
 } from 'yup';
-import {ILocale} from '@/data/locales';
 import regex from '@/helpers/regex';
+import {ILocale} from '@/types/locales';
 
 type IValidate<R = BooleanSchema | StringSchema> = (locale: ILocale | undefined) => R;
 

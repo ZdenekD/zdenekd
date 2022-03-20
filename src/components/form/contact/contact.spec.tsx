@@ -1,7 +1,7 @@
 import {shallow, ShallowWrapper} from 'enzyme';
 import React from 'react';
 import findComponent from '@/__test__/utils/helpers';
-import '@/__test__/mocks/nextRouterMock';
+import '@/mocks/__test__/nextRouterMock';
 import Contact from '.';
 
 describe('Form/Contact', () => {

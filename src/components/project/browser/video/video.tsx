@@ -1,7 +1,7 @@
 import {m, AnimatePresence} from 'framer-motion';
 import React from 'react';
-import {IProject} from '@/data/projects';
 import useLocale from '@/hooks/useLocale';
+import {IProject} from '@/types/projects';
 import {animations} from './video.animations';
 import styles from './video.module.css';
 

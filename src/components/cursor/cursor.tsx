@@ -4,9 +4,8 @@ import React from 'react';
 import {useCursorState} from '@/store/cursor';
 import styles from './cursor.module.css';
 
-interface IHandler {
-    (a: number, b: number, c: HTMLElement, d: HTMLElement): void
-}
+type IHandler = (coordX: number, coordY: number, inner: HTMLElement, outer: HTMLElement) => void
+type ICursorHandle = (coordX: number, coordY: number) => void
 
 const Cursor: React.FC = () => {
     const [{cursor}] = useCursorState();
@@ -32,7 +31,7 @@ const Cursor: React.FC = () => {
         outer.style.border = '2px dotted';
         inner.style.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY})`;
     };
-    const handleCursor = (coordX: number, coordY: number) => {
+    const handleCursor: ICursorHandle = (coordX, coordY) => {
         const outer = (outerCursorRef.current as HTMLElement);
         const inner = (innerCursorRef.current as HTMLElement);
 

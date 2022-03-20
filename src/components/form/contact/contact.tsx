@@ -1,5 +1,6 @@
 import {yupResolver} from '@hookform/resolvers/yup';
 import anime from 'animejs';
+import dynamic from 'next/dynamic';
 import {useRouter} from 'next/router';
 import React from 'react';
 import {
@@ -16,9 +17,10 @@ import Button from '@/UI/form-control/button';
 import Form from '@/UI/form-control/form';
 import Input from '@/UI/form-control/input';
 import Textarea from '@/UI/form-control/textarea';
-import Loader from '@/UI/loader';
-import styles from './contact.module.css';
 import validation from './contact.validation';
+import styles from './contact.module.css';
+
+const Loader = dynamic(() => import('@/UI/loader'));
 
 interface IValues {
     [key: string]: string

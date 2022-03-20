@@ -3,11 +3,13 @@ import {
     domAnimation,
     m
 } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import {useAnimationState} from '@/store/animation';
 import {useMenuState} from '@/store/menu';
-import Nav from '../nav';
 import {animations} from './aside.animations';
 import styles from './aside.module.css';
+
+const Nav = dynamic(() => import('@/components/nav'));
 
 const Aside: React.FC = () => {
     const [, {setAnimation}] = useAnimationState();

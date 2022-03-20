@@ -22,3 +22,14 @@ declare module '*.css' {
     const content: {readonly [key: string]: string};
     export default content;
 }
+
+declare module '*.module.css' {
+    const content: {readonly [key: string]: string};
+    export default content;
+}
+
+declare namespace NodeJS {
+    interface Process {
+        browser: boolean;
+    }
+}

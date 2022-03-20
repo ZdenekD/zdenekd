@@ -25,20 +25,6 @@ cd zdenekd/
 yarn
 ```
 
-### CSS Modules fix
-
-Because of problems with NextJS CSS modules and Framer-motion (if is used `<AnimatePresence exitBeforeEnter>`, NextJS change styles immediately and animation `before unmount` is unstyled).
-Solution is use @zeit/next-css package, but there is invalid configuration for postcss, so edit files are in folder **next-css**. For proper work it's necessary use @zeit/next-css package and edited files from folder 'next-css'.
-
-Dependecies:
-
-    -   css-loader
-    -   extracted-loader
-    -   find-up (v. ^5.0.0)
-    -   ignore-loader
-    -   mini-css-extract-plugin (v. ^1.6.2)
-    -   postcss-loader
-
 ### Development
 
 It's automatically pushed to [Zeit.co](https://zeit.co/dashboard). Production branch is **master**, other branches for development (every pushed branch is built)
@@ -85,7 +71,44 @@ yarn jest:coverage
 yarn hint:local
 yarn hint:dev
 yarn hint:prod
+yarn cypress
+yarn cypress:open
+```
+
+## Lint
+
+[Eslint](https://eslint.org)
+[Stylelint](https://stylelint.io)
+
+```
+yarn lint
+yarn lint:js
+yarn lint:css
+```
+
+## Check for outdated packages
+
+[Yarn Outdated](https://yarnpkg.com/lang/en/docs/cli/outdated/) - check for outdated project packages
+
+```
 yarn outdated
+yarn upgrade
+```
+
+## Storybook
+
+[storybook](https://storybook.js.org)
+
+```
+yarn story
+```
+
+## Chromatic
+
+[chromatic](https://www.chromatic.com)
+
+```
+yarn chromatic
 ```
 
 ## Sentry

@@ -31,7 +31,7 @@
 
     &::selection {
         background: transparent;
-        color: currentColor;
+        color: currentcolor;
     }
 }
 

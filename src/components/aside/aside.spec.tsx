@@ -1,8 +1,7 @@
 import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
+import '@/mocks/__test__/nextRouterMock';
 import Aside from '.';
-
-jest.mock('next/router', () => ({useRouter: jest.fn().mockImplementation(() => ({route: '/'}))}));
 
 describe('Aside', () => {
     it('renders without error', () => {

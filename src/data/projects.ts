@@ -1,18 +1,7 @@
 import LocalesEnum from '@/enums/LocalesEnum';
+import {IProjects} from '@/types/projects';
 
-export interface IProject {
-    id: string
-    title: string
-    url: string
-    tools: string[]
-    locale: {
-        [key: string]: {
-            description: string
-        }
-    }
-}
-
-const projects: IProject[] = [
+const projects: IProjects = [
     {
         id: 'tomton',
         title: 'Tomton',

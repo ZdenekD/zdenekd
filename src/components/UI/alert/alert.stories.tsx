@@ -1,7 +1,10 @@
 import VariantsEnum from '@/enums/VariantsEnum';
 import Alert from '.';
 
-export default {title: 'UI/Alert'};
+export default {
+    title: 'UI/Alert',
+    parameters: {chromatic: {delay: 3}},
+};
 
 export const component: React.FC = () => (
     <Alert isOpen>Alert message</Alert>
