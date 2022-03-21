@@ -3,15 +3,33 @@ import {IProjects} from '@/types/projects';
 
 const projects: IProjects = [
     {
+        id: 'tomton-interior',
+        title: 'Tomton Interiér',
+        url: 'https://www.tomton-interier.cz',
+        tools: [
+            'nextjs',
+            'graphcms',
+            'react',
+            'typescript',
+            'framer-motion',
+        ],
+        locale: {
+            [LocalesEnum.cs]: {description: 'Společnost specializující se na kompletní služby při zařizování komerčních i soukromých interiérů.'},
+            [LocalesEnum.en]: {description: 'Company focused on complete services in furnishing commercial and private interiors.'},
+        },
+    },
+    {
         id: 'tomton',
         title: 'Tomton',
         url: 'https://www.tomton.cz',
         tools: [
+            'nextjs',
+            'graphcms',
             'react',
-            'wordpress',
+            'typescript',
             'lottie',
+            'framer-motion',
             'animejs',
-            'webpack',
         ],
         locale: {
             [LocalesEnum.cs]: {description: 'Společnost vyrabějící designové otopné systémy. Jeden z modelů získal celosvětově uznávané ocenění Red Dot Design Award.'},
@@ -23,9 +41,9 @@ const projects: IProjects = [
         title: 'Fit s Marky',
         url: 'https://fit-s-marky.cz',
         tools: [
+            'nextjs',
             'react',
             'typescript',
-            'nextjs',
             'lottie',
             'framer-motion',
         ],
@@ -39,8 +57,8 @@ const projects: IProjects = [
         title: 'Dirtjob',
         url: 'http://dirtjob.cz/',
         tools: [
-            'vanillajs',
             'octobercms',
+            'vanillajs',
             'sass',
             'gulp',
         ],
@@ -70,8 +88,8 @@ const projects: IProjects = [
         title: 'Ivana Štenclová',
         url: 'http://www.stenclova.cz',
         tools: [
-            'vanillajs',
             'octobercms',
+            'vanillajs',
             'sass',
             'gulp',
         ],
@@ -85,8 +103,8 @@ const projects: IProjects = [
         title: 'AVPrague',
         url: 'https://avprague.in.progress',
         tools: [
-            'jquery',
             'octobercms',
+            'jquery',
             'postcss',
             'gulp',
         ],
@@ -100,8 +118,8 @@ const projects: IProjects = [
         title: 'Portfolium',
         url: 'https://portfolium.in.progress',
         tools: [
-            'jquery',
             'octobercms',
+            'jquery',
             'sass',
             'gulp',
         ],

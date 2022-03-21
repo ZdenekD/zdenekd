@@ -16,7 +16,6 @@ const Project: React.FC = () => {
     const router = useRouter();
     const [{project}] = useProjectState();
     const [index, setIndex] = React.useState<number>(project.index);
-    const [catcher, setCatcher] = React.useState<HTMLUListElement | null>(null);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);
     const descriptionRef = React.useRef<HTMLParagraphElement | null>(null);
     const toolsWrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -90,8 +89,6 @@ const Project: React.FC = () => {
             translateY: ['5vh', 0],
             easing: 'easeOutExpo',
         });
-
-        setCatcher(toolsRef.current);
     }, []);
 
     React.useEffect(() => {
@@ -100,8 +97,6 @@ const Project: React.FC = () => {
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [project.index]);
-
-    useCursor(catcher);
 
     return (
         <div className={styles.block} data-test="component-project">

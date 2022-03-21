@@ -7,10 +7,6 @@
     justify-content: space-between;
     border-radius: var(--border-radius);
 
-    a {
-        color: var(--content-heading);
-    }
-
     @media (--min-xs) {
         padding-right: var(--gap);
         padding-left: var(--gap);

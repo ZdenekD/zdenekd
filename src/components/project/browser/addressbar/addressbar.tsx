@@ -21,6 +21,7 @@ const Addressbar: React.FC<IProps> = ({url}) => {
                     rel="noreferrer noopener"
                     data-test="component-addressbar-link"
                     aria-label={locale.reference.target}
+                    className={styles.link}
                 >
                     {url}
                 </a>

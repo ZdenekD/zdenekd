@@ -72,7 +72,7 @@ const Homepage: React.FC = () => {
                                 >
                                     <track kind="captions" />
                                     <track kind="description" label="Description" />
-                                    <source src='/video/dirtjob.mp4' type="video/mp4" />
+                                    <source src='/video/tomton-interior.mp4' type="video/mp4" />
                                 </video>
                             </Computer>
                         </div>
