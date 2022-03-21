@@ -2,7 +2,7 @@ import Section from '.';
 
 export default {
     title: 'Layout/Section',
-    parameters: {chromatic: {delay: 20}},
+    parameters: {chromatic: {delay: 50}},
 };
 
 export const component: React.FC = () => (
