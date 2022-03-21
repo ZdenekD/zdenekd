@@ -6,7 +6,7 @@
 }
 
 .tool {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
 
     &:focus,
@@ -26,10 +26,12 @@
 
 .figure {
     min-width: 60px;
+    line-height: 0;
     text-align: center;
 }
 
 .caption {
+    width: max-content;
     margin-top: var(--gap);
     position: absolute;
     top: 100%;
@@ -43,13 +45,13 @@
 }
 
 .image {
-    width: 32px;
-    height: 32px;
-    opacity: 0.25;
+    width: 36px;
+    height: 36px;
+    opacity: 0.5;
     transition: opacity var(--transition-duration) var(--ease-in-out-expo);
 
     &:focus,
     &:hover {
-        opacity: 0.5;
+        opacity: 0.75;
     }
 }

@@ -1,0 +1,15 @@
+.root {
+    --section-background: hsl(var(--color-red-lighten-5));
+    --selection-background: hsl(var(--color-red));
+    --curtain-color: hsl(var(--color-red-lighten-4));
+    --content-heading: hsl(var(--color-red));
+    --content-heading-admit: hsl(var(--color-red-lighten-1));
+    --key-background: hsl(var(--color-red-lighten-3));
+}
+
+.animation {
+    width: auto;
+    max-width: 600px;
+    max-height: 100%;
+    margin: auto;
+}

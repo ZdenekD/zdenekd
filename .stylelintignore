@@ -1,5 +1,4 @@
 node_modules/*
-vendor/*
 doc/*
 **/dist/*
 **/build/*
@@ -9,3 +8,5 @@ doc/*
 __test__/*
 hint-report/*
 *.html
+*.tsx
+*.ts

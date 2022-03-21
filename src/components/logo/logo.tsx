@@ -1,8 +1,8 @@
-import React from 'react';
 import {m} from 'framer-motion';
+import React from 'react';
 import Image from '@/assets/images/logo.svg';
+import useCursor from '@/hooks/useCursor';
 import {useMenuState} from '@/store/menu';
-import useCursor from '@/utils/hooks/useCursor';
 import {animations} from './logo.animations';
 import styles from './logo.module.css';
 

@@ -1,0 +1,141 @@
+const headers = [
+    {
+        source: '/(.*)',
+        headers: [
+            {
+                key: 'X-Content-Type-Options',
+                value: 'nosniff',
+            },
+            {
+                key: 'X-DNS-Prefetch-Control',
+                value: 'on',
+            },
+            {
+                key: 'X-Frame-Options',
+                value: 'deny',
+            },
+            {
+                key: 'Strict-Transport-Security',
+                value: 'max-age=31536000; includeSubDomains; preload',
+            },
+            {
+                key: 'Access-Control-Allow-Origin',
+                value: '*',
+            },
+            {
+                key: 'Access-Control-Allow-Headers',
+                value: 'origin, x-requested-with, content-type',
+            },
+            {
+                key: 'Access-Control-Allow-Methods',
+                value: 'GET',
+            },
+            {
+                key: 'Cache-Control',
+                value: 'private, max-age=180',
+            },
+            {
+                key: 'Referrer-Policy',
+                value: 'strict-origin',
+            },
+            {
+                key: 'Permissions-Policy',
+                value: 'camera=(), microphone=(), geolocation=()',
+            },
+        ],
+    },
+    {
+        source: '/(.*).(js|css|xml|gz|html)',
+        headers: [
+            {
+                key: 'Vary',
+                value: 'Accept-Encoding',
+            },
+        ],
+    },
+    {
+        source: '/(.*).js',
+        headers: [
+            {
+                key: 'Content-Security-Policy',
+                value: 'script-src "self"',
+            },
+            {
+                key: 'Cache-Control',
+                value: 'private, max-age=31536000, immutable',
+            },
+            {
+                key: 'Content-Type',
+                value: 'application/javascript; charset=utf-8',
+            },
+        ],
+    },
+    {
+        source: '/(.*).css',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            },
+        ],
+    },
+    {
+        source: '/(.*).(woff2|gif|jpg|png|jxl|avif|webp|svg|mp4|webm)',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            },
+        ],
+    },
+    {
+        source: '/(.*).ico',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            }, {
+                key: 'Content-Type',
+                value: 'image/svg+xml; charset=utf-8',
+            },
+        ],
+    },
+    {
+        source: '/(.*).json',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            }, {
+                key: 'Content-Type',
+                value: 'application/json; charset=utf-8',
+            },
+        ],
+    },
+    {
+        source: '/(.*)manifest.json',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            }, {
+                key: 'Content-Type',
+                value: 'application/manifest+json; charset=utf-8',
+            },
+        ],
+    },
+    {
+        source: '/(.*).webmanifest',
+        headers: [
+            {
+                key: 'Cache-Control',
+                value: 'public, max-age=31536000, immutable',
+            }, {
+                key: 'Content-Type',
+                value: 'application/manifest+json; charset=utf-8',
+            },
+        ],
+    },
+];
+
+module.exports = headers;

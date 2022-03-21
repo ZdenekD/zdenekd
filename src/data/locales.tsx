@@ -1,55 +1,6 @@
-import getRoman from '@/utils/helpers/getRoman';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
-
-export interface ILocale {
-    header: {
-        link: string
-    }
-    footer: {
-        code: JSX.Element
-        subject: string
-    }
-    menu: {
-        open: string
-        close: string
-    },
-    form: {
-        input: {
-            [key: string]: {
-                label: string
-                error: string
-            }
-        }
-        submit: string
-    }
-    alert: {
-        close: string
-    },
-    reference: {
-        target: string
-        video: {
-            show: string
-            link: string
-        }
-    }
-    keys: {
-        up: string
-        right: string
-        down: string
-        left: string
-    }
-    tools: string
-    noscript: JSX.Element
-    status: {
-        [key: string]: string
-    }
-}
-
-export interface ILocales {
-    [key: string]: {
-        locale: ILocale
-    }
-}
+import LocalesEnum from '@/enums/LocalesEnum';
+import getRoman from '@/helpers/getRoman';
+import {ILocales} from '@/types/locales';
 
 const year = new Date().getFullYear();
 const date = getRoman(year);
@@ -60,7 +11,7 @@ const locales: ILocales = {
             footer: {
                 code: (
                     <>
-                        &clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;zaklínadel&#125;
+                        &clubs; {date} Vyrobeno pomocí &lt;kouzel&gt; a &#123;kofeinu&#125;
                     </>
                 ),
                 subject: 'Zpráva přímo do schránky',
@@ -74,14 +25,17 @@ const locales: ILocales = {
                     name: {
                         label: 'Jméno',
                         error: 'Jsou zadány nepovolené znaky.',
+                        required: 'Je nutné zadat jméno',
                     },
                     email: {
                         label: 'E-mail',
                         error: 'E-mail není zadán ve správném formátu.',
+                        required: 'Je nutné zadat e-mail',
                     },
                     message: {
                         label: 'Zpráva',
                         error: 'Jsou zadány nepovolené znaky.',
+                        required: 'Zadejte zprávu',
                     },
                 },
                 submit: 'Odeslat',
@@ -126,7 +80,7 @@ const locales: ILocales = {
             footer: {
                 code: (
                     <>
-                        &clubs; {date} Made with &lt;spells&gt; and &#123;incantations&#125;
+                        &clubs; {date} Made with &lt;spells&gt; and &#123;caffeine&#125;
                     </>
                 ),
                 subject: 'Message directly to the mailbox',
@@ -140,14 +94,17 @@ const locales: ILocales = {
                     name: {
                         label: 'Name',
                         error: 'It contains illegal characters.',
+                        required: 'Name is required',
                     },
                     email: {
                         label: 'E-mail',
                         error: 'E-mail is not entered in the correct format.',
+                        required: 'E-mail is required',
                     },
                     message: {
                         label: 'Message',
                         error: 'It contains illegal characters.',
+                        required: 'Message is required',
                     },
                 },
                 submit: 'Submit',

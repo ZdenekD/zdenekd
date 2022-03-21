@@ -57,7 +57,7 @@
     &:focus,
     &:hover {
         background-color: hsla(var(--button-hover-background), 0.05);
-        color: currentColor;
+        color: currentcolor;
         border-color: hsla(var(--button-hover-background), 0.05);
     }
 }

@@ -1,7 +1,10 @@
 import Footer from '.';
 
-export default {title: 'Layout/Footer'};
+export default {
+    title: 'Layout/Footer',
+    parameters: {chromatic: {delay: 20}},
+};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Footer />
 );

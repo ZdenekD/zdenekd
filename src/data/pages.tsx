@@ -1,21 +1,7 @@
-import prefix from '@/utils/helpers/prefix';
-import PagesEnum from '@/utils/enums/PagesEnum';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
-
-export interface IPages {
-    [key: string]: {
-        id: string
-        route: string
-        locale: {
-            [key: string]: {
-                title: string
-                heading: string
-                description: string
-                paragraph?: JSX.Element
-            }
-        }
-    }
-}
+import LocalesEnum from '@/enums/LocalesEnum';
+import PagesEnum from '@/enums/PagesEnum';
+import prefix from '@/helpers/prefix';
+import {IPages} from '@/types/pages';
 
 const pages: IPages = {
     [PagesEnum.homepage]: {

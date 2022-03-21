@@ -1,8 +1,11 @@
 import Layout from '.';
 
-export default {title: 'Layout'};
+export default {
+    title: 'Layout',
+    parameters: {chromatic: {delay: 20}},
+};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Layout>
         Layout content
     </Layout>

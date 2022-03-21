@@ -122,7 +122,8 @@
 
 .success {
 
-    &:focus {
+    &:focus,
+    &[placeholder] {
 
         + .label {
             --label-color: hsl(var(--color-green));
@@ -136,7 +137,8 @@
 
 .info {
 
-    &:focus {
+    &:focus,
+    &[placeholder] {
 
         + .label {
             --label-color: hsl(var(--color-blue));
@@ -150,7 +152,8 @@
 
 .warning {
 
-    &:focus {
+    &:focus,
+    &[placeholder] {
 
         + .label {
             --label-color: hsl(var(--color-orange));
@@ -164,7 +167,8 @@
 
 .danger {
 
-    &:focus {
+    &:focus,
+    &[placeholder] {
 
         + .label {
             --label-color: hsl(var(--color-red));

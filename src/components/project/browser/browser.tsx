@@ -1,12 +1,12 @@
+import Image from 'next/image';
 import React from 'react';
-import {IProject} from '@/data/projects';
-import useWindowSize from '@/utils/hooks/useWindowSize';
-import MediaQueriesEnum from '@/utils/enums/MediaQueriesEnum';
-import Image from '../../UI/image';
-import Controls from './controls';
-import Video from './video';
+import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
+import useWindowSize from '@/hooks/useWindowSize';
+import {IProject} from '@/types/projects';
 import Addressbar from './addressbar';
+import Controls from './controls';
 import Target from './target';
+import Video from './video';
 import styles from './browser.module.css';
 
 interface IProps {
@@ -47,14 +47,15 @@ const Browser = React.forwardRef<HTMLElement, IProps>(({
                 <Addressbar url={project.url} />
                 <Target url={project.url} />
             </header>
+
             {width > MediaQueriesEnum.sm ? (
                 <Video project={project} />
             ) : (
                 <Image
-                    src={`/image/mobile_${project.id}`}
+                    src={`/image/mobile_${project.id}.png`}
                     width={480}
                     height={270}
-                    type="webp, avif"
+                    alt=""
                 />
             )}
         </section>

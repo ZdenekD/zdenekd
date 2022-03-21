@@ -1,5 +1,5 @@
 import React from 'react';
-import useLocale from '@/utils/hooks/useLocale';
+import useLocale from '@/hooks/useLocale';
 import styles from './addressbar.module.css';
 
 interface IProps {
@@ -21,6 +21,7 @@ const Addressbar: React.FC<IProps> = ({url}) => {
                     rel="noreferrer noopener"
                     data-test="component-addressbar-link"
                     aria-label={locale.reference.target}
+                    className={styles.link}
                 >
                     {url}
                 </a>

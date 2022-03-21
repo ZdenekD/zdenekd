@@ -1,12 +1,13 @@
+import {m} from 'framer-motion';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {m} from 'framer-motion';
 import pages from '@/data/pages';
-import {useMenuState} from '@/store/menu';
+import LocalesEnum from '@/enums/LocalesEnum';
+import PagesEnum from '@/enums/PagesEnum';
+import getPage from '@/helpers/getPage';
 import {useAnimationState} from '@/store/animation';
-import getPage from '@/utils/helpers/getPage';
-import LocalesEnum from '@/utils/enums/LocalesEnum';
-import Anchor from '../UI/anchor';
+import {useMenuState} from '@/store/menu';
+import Anchor from '@/UI/anchor';
 import {animations, animation} from './nav.animations';
 import styles from './nav.module.css';
 
@@ -33,20 +34,20 @@ const Nav: React.FC = () => {
                 className={styles.list}
                 onAnimationComplete={handleAnimationComplete}
             >
-                {Object.keys(pages).map((key: string) => (
+                {Object.keys(pages).map(key => (
                     <m.li
-                        key={pages[key].id}
+                        key={pages[key as PagesEnum].id}
                         variants={animation}
                         className={styles.item}
                         data-test="component-item"
                     >
-                        <Link passHref href={pages[key].route}>
+                        <Link passHref href={pages[key as PagesEnum].route}>
                             <Anchor
-                                href={pages[key].route}
+                                href={pages[key as PagesEnum].route}
                                 className={`${styles.link} ${page === key ? styles.active : ''}`}
                                 onClick={handleClick}
                             >
-                                {pages[key].locale[lang].title}
+                                {pages[key as PagesEnum].locale[lang as LocalesEnum].title}
                             </Anchor>
                         </Link>
                     </m.li>

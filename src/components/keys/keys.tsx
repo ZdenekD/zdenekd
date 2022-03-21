@@ -1,18 +1,18 @@
-import React from 'react';
-import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
+import {useRouter} from 'next/router';
+import React from 'react';
 import pages from '@/data/pages';
+import DirectionsEnum from '@/enums/DirectionsEnum';
+import PageActionsEnum from '@/enums/PageActionsEnum';
+import PagesEnum from '@/enums/PagesEnum';
+import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import useLocale from '@/hooks/useLocale';
+import usePageAction from '@/hooks/usePageAction';
+import useProjectAction from '@/hooks/useProjectAction';
 import {useMenuState} from '@/store/menu';
 import {useProjectState} from '@/store/project';
-import usePageAction from '@/utils/hooks/usePageAction';
-import useProjectAction from '@/utils/hooks/useProjectAction';
-import useLocale from '@/utils/hooks/useLocale';
-import PagesEnum from '@/utils/enums/PagesEnum';
-import DirectionsEnum from '@/utils/enums/DirectionsEnum';
-import PageActionsEnum from '@/utils/enums/PageActionsEnum';
-import ProjectActionsEnum from '@/utils/enums/ProjectActionsEnum';
-import {animations} from './keys.animations';
 import Key from './key';
+import {animations} from './keys.animations';
 import styles from './keys.module.css';
 
 const Keys: React.FC = () => {
@@ -24,7 +24,7 @@ const Keys: React.FC = () => {
     const items = Object.keys(pages);
     const isHomepage = router.route === pages[PagesEnum.homepage].route;
     const isProjects = router.route === pages[PagesEnum.projects].route;
-    const isLastpage = router.route === pages[items[items.length - 1]].route;
+    const isLastpage = router.route === pages[items[items.length - 1] as PagesEnum].route;
     const isError = router.route === '/404';
     const locale = useLocale();
     const handleKeyUp = () => {

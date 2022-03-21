@@ -1,8 +1,8 @@
 import React from 'react';
 import Provider from '../utils/provider';
+import {dispatcher} from './actions';
 import initialState from './initialState';
 import reducer from './reducer';
-import {dispatcher} from './actions';
 import {ICursor} from './types';
 import {IActions} from './types/actions';
 

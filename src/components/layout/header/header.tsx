@@ -1,9 +1,9 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+import Logo from '@/components/logo';
+import Menu from '@/components/menu';
+import useLocale from '@/hooks/useLocale';
 import {useAnimationState} from '@/store/animation';
-import useLocale from '@/utils/hooks/useLocale';
-import Menu from '../../menu';
-import Logo from '../../logo';
 import styles from './header.module.css';
 
 const Header: React.FC = () => {

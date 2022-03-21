@@ -1,7 +1,10 @@
 import Contact from '.';
 
-export default {title: 'Form/Contact'};
+export default {
+    title: 'Form/Contact',
+    parameters: {chromatic: {delay: 20}},
+};
 
-export const base: React.FC = () => (
+export const component: React.FC = () => (
     <Contact />
 );

@@ -1,13 +1,13 @@
-import React from 'react';
 import {
     LazyMotion,
     AnimatePresence,
     domAnimation,
     m
 } from 'framer-motion';
+import React from 'react';
+import VariantsEnum from '@/enums/VariantsEnum';
+import useLocale from '@/hooks/useLocale';
 import {useMessageState} from '@/store/message';
-import VariantsEnum from '@/utils/enums/VariantsEnum';
-import useLocale from '@/utils/hooks/useLocale';
 import animations from './alert.animations';
 import styles from './alert.module.css';
 

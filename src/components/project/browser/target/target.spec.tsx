@@ -1,6 +1,6 @@
 import {shallow} from 'enzyme';
 import findComponent from '@/__test__/utils/helpers';
-import '@/__test__/mocks/nextRouterMock';
+import '@/mocks/__test__/nextRouterMock';
 import Target from '.';
 
 describe('Project/Browser/Target', () => {

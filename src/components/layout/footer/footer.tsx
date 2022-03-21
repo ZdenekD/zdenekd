@@ -1,12 +1,12 @@
-import React from 'react';
-import {useRouter} from 'next/router';
 import {m} from 'framer-motion';
+import {useRouter} from 'next/router';
+import React from 'react';
+import Keys from '@/components/keys';
+import useLocale from '@/hooks/useLocale';
 import {useMenuState} from '@/store/menu';
-import useLocale from '@/utils/hooks/useLocale';
-import Keys from '../../keys';
-import Icon, {IconsEnum} from '../../UI/icon';
-import Lang from './lang';
+import Icon, {IconsEnum} from '@/UI/icon';
 import {animations} from './footer.animations';
+import Lang from './lang';
 import styles from './footer.module.css';
 
 const Footer: React.FC = () => {
