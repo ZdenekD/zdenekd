@@ -1,4 +1,4 @@
-:global .sr-only {
+.sr-only {
     width: 1px !important;
     height: 1px !important;
     padding: 0 !important;
@@ -10,7 +10,7 @@
     border: 0 !important;
 }
 
-:global .text-truncate {
+.text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

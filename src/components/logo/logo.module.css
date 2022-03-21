@@ -11,12 +11,6 @@
         --navigation-color: var(--navigation-color-active);
     }
 
-    :global .logo_svg__st0 {
-        fill: var(--navigation-color, hsl(var(--color-blue-darken-3)));
-        stroke: var(--navigation-color, hsl(var(--color-blue-darken-3)));
-        transition: var(--header-transition);
-    }
-
     @media (--min-sm) {
         max-height: 40px;
     }
