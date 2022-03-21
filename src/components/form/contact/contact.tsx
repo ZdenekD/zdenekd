@@ -108,7 +108,6 @@ const ContactForm: React.FC = () => {
                             />
                         )}
                     />
-
                 </div>
                 <div className="animated-block">
                     <Controller
