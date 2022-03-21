@@ -3,6 +3,22 @@ import {IProjects} from '@/types/projects';
 
 const projects: IProjects = [
     {
+        id: 'tomton-interior',
+        title: 'Tomton Interiér',
+        url: 'https://www.tomton-interier.cz',
+        tools: [
+            'nextjs',
+            'graphcms',
+            'react',
+            'typescript',
+            'framer-motion',
+        ],
+        locale: {
+            [LocalesEnum.cs]: {description: 'Společnost specializující se na kompletní služby při zařizování komerčních i soukromých interiérů.'},
+            [LocalesEnum.en]: {description: 'Company focused on complete services in furnishing commercial and private interiors.'},
+        },
+    },
+    {
         id: 'tomton',
         title: 'Tomton',
         url: 'https://www.tomton.cz',
