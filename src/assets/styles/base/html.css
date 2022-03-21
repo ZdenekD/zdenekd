@@ -48,6 +48,6 @@ samp {
     color: hsl(var(--color-white));
 }
 
-:global .animated-block {
+.animated-block {
     opacity: 0;
 }

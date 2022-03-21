@@ -104,6 +104,7 @@ const Alert: React.FC<IProps> = ({
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
                                 className={styles.progress}
+                                data-chromatic="ignore"
                             />
                         )}
                     </m.div>
