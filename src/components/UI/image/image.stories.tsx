@@ -2,7 +2,7 @@ import Image from '.';
 
 export default {
     title: 'UI/Image',
-    parameters: {chromatic: {delay: 3}},
+    parameters: {chromatic: {delay: 300}},
 };
 
 export const component: React.FC = () => (

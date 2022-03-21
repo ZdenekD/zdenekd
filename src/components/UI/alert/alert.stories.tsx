@@ -3,7 +3,7 @@ import Alert from '.';
 
 export default {
     title: 'UI/Alert',
-    parameters: {chromatic: {delay: 3}},
+    parameters: {chromatic: {delay: 1400}},
 };
 
 export const component: React.FC = () => (
