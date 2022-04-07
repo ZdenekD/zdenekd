@@ -72,7 +72,6 @@ How to run and write tests
 [Webhint](https://webhint.io) - complete website tests
 [Jest](https://jestjs.io)
 [Cypress](https://www.cypress.io)
-[Yarn Outdated](https://yarnpkg.com/lang/en/docs/cli/outdated/) - check for outdated project packages
 
 ```
 snyk wizard
@@ -132,3 +131,7 @@ npx @sentry/wizard -i nextjs
 ## Deploying
 
 Push to **master** branch
+
+## Libraries version notes
+
+-   msw is kept to version 0.38.2 because of version 0.39+ requires node 16 and higher

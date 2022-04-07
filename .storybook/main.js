@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     stories: ['../src/**/*.stories.tsx'],
-    staticDirs: ['../public', '../__test__'],
+    staticDirs: ['../public'],
     core: {
         builder: "webpack5",
     },
@@ -13,7 +13,13 @@ module.exports = {
                 styleLoaderOptions: {},
                 cssLoaderOptions: {
                     modules: {
-                        mode: 'local',
+                        mode: (resourcePath) => {
+                            if (/global.css$/i.test(resourcePath)) {
+                                return 'global';
+                            }
+
+                            return 'local';
+                        },
                         localIdentName: '[name]-[local]--[hash:base64:4]',
                     },
                     sourceMap: true,
