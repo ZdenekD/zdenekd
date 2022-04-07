@@ -3,8 +3,8 @@ module.exports = {
     testEnvironment: 'jsdom',
     transform: {
         '^.+\\.ts(x)?$': 'babel-jest',
-        '^.+\\.svg$': '<rootDir>/__test__/transform/svg.js',
-        '^(?!.*\\.json$)': '<rootDir>/__test__/transform/file.js',
+        '^.+\\.svg$': '<rootDir>/__test__/jest/transform/svg.js',
+        '^(?!.*\\.json$)': '<rootDir>/__test__/jest/transform/file.js',
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$', '^.+\\.module\\.(css|sass|scss)$'],
     roots: ['<rootDir>/src'],
@@ -23,7 +23,7 @@ module.exports = {
         '@/helpers(.*)': '<rootDir>/src/utils/helpers/$1',
         '@/hooks(.*)': '<rootDir>/src/utils/hooks/$1',
         '@/mocks(.*)': '<rootDir>/src/utils/mocks/$1',
-        '@/__test__(.*)$': '<rootDir>/src/__test__/$1',
+        '@/__test__(.*)$': '<rootDir>/__test__/jest/$1',
     },
     moduleFileExtensions: [
         'js',
@@ -52,10 +52,10 @@ module.exports = {
         '!src/**/types/*',
         '!src/**/data/*',
     ],
-    coverageDirectory: './__test__/coverage',
+    coverageDirectory: './__test__/jest/coverage',
     coverageReporters: ['html', 'lcov'],
-    setupFiles: ['<rootDir>/src/__test__/setup.ts', 'jest-canvas-mock'],
-    setupFilesAfterEnv: ['<rootDir>/src/__test__/mockSetup.ts'],
+    setupFiles: ['<rootDir>/__test__/jest/setup.ts', 'jest-canvas-mock'],
+    setupFilesAfterEnv: ['<rootDir>/__test__/jest/mockSetup.ts'],
     snapshotSerializers: ['jest-serializer-html'],
     globals: {'babel-jest': {tsconfig: '<rootDir>/tsconfig.test.json'}},
 };

@@ -4,7 +4,6 @@ import React from 'react';
 import projects from '@/data/projects';
 import LocalesEnum from '@/enums/LocalesEnum';
 import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
-import useCursor from '@/hooks/useCursor';
 import useProjectAction from '@/hooks/useProjectAction';
 import {useProjectState} from '@/store/project';
 import Browser from './browser';
