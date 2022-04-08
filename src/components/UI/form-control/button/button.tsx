@@ -8,7 +8,7 @@ interface IProps {
     variant?: VariantsEnum
     title?: string
     tabindex?: number
-    children: React.ReactNode
+    children?: React.ReactNode
     className?: string
     onClick?: (e: React.MouseEvent) => void,
 }

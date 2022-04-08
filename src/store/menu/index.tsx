@@ -8,6 +8,10 @@ import {IActions} from './types/actions';
 
 type IContext = [IMenu, IActions | Record<string, never>];
 
+interface IProps {
+    children: React.ReactNode
+}
+
 const Context = React.createContext<IContext>([initialState, {}]);
 const props = {
     Context,
@@ -15,7 +19,7 @@ const props = {
     reducer,
     dispatcher,
 };
-const MenuProvider: React.FC = ({children}) => (
+const MenuProvider: React.FC<IProps> = ({children}) => (
     <Provider {...props}>
         {children}
     </Provider>

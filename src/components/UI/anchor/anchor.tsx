@@ -4,8 +4,8 @@ import styles from './anchor.module.css';
 interface IProps {
     href: string
     title?: string
-    children: React.ReactNode
     target?: '_blank'
+    children?: React.ReactNode
     className?: string
     onClick?: (event: React.MouseEvent) => void
 }
@@ -13,8 +13,8 @@ interface IProps {
 const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
     href,
     title,
-    children,
     target,
+    children,
     className = '',
     onClick = undefined,
     ...props

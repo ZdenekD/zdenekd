@@ -1,6 +1,6 @@
 import {RouterContext} from "next/dist/shared/lib/router-context";
 import * as nextImage from 'next/image';
-import {LazyMotion, domAnimation} from 'framer-motion';
+import {AnimatePresence, LazyMotion, domAnimation} from 'framer-motion';
 import {initialize, mswDecorator} from 'msw-storybook-addon'
 import handlers from '@/mocks/handlers';
 import {Provider} from '../src/store';
@@ -57,10 +57,12 @@ export const decorators = [
     mswDecorator,
     Story => (
         <Provider>
-            <LazyMotion strict features={domAnimation}>
-                <Story />
-                <Cursor />
-            </LazyMotion>
+            <AnimatePresence exitBeforeEnter>
+                <LazyMotion strict features={domAnimation}>
+                    <Story />
+                    <Cursor />
+                </LazyMotion>
+            </AnimatePresence>
         </Provider>
     )
 ]

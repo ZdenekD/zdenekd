@@ -1,6 +1,10 @@
 import styles from './computer.module.css';
 
-const Computer: React.FC = ({children}) => (
+interface IProps {
+    children?: React.ReactNode
+}
+
+const Computer: React.FC<IProps> = ({children}) => (
     <div className={styles.wrapper} data-test="component-device-computer">
         <div className={styles.computer}>
             <div className={styles.display}>

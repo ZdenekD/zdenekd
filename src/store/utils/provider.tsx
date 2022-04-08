@@ -5,6 +5,7 @@ import {IActions} from '../types/actions';
 import {IState} from '../types/state';
 
 interface IProvider {
+    children: React.ReactNode
     Context: any
     reducer: any
     initialState: IState
