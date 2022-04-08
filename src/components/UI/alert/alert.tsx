@@ -12,20 +12,20 @@ import animations from './alert.animations';
 import styles from './alert.module.css';
 
 interface IProps {
-    children: React.ReactNode
     title?: string
-    className?: string
     variant?: VariantsEnum
     timeout?: number // number in seconds
+    children?: React.ReactNode
+    className?: string
     isOpen?: boolean
 }
 
 const Alert: React.FC<IProps> = ({
-    children,
     title,
-    className = '',
     variant,
     timeout,
+    children,
+    className = '',
     isOpen = false,
 }) => {
     const [isOpened, setOpened] = React.useState<boolean>(isOpen);

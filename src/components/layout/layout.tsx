@@ -19,7 +19,7 @@ const Aside = dynamic(() => import('@/components/aside'));
 const Curtain = dynamic(() => import('@/components/curtain'));
 
 interface IProps {
-    children: React.ReactNode
+    children?: React.ReactNode
     className?: string
 }
 

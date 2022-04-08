@@ -2,7 +2,11 @@ import anime from 'animejs';
 import React from 'react';
 import styles from './heading.module.css';
 
-const Heading: React.FC = ({children}) => {
+interface IProps {
+    children?: React.ReactNode
+}
+
+const Heading: React.FC<IProps> = ({children}) => {
     const headingRef = React.useRef<HTMLHeadingElement | null>(null);
 
     React.useEffect(() => {

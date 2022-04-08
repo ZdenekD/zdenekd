@@ -2,7 +2,11 @@ import {m} from 'framer-motion';
 import {animations} from './section.animations';
 import styles from './section.module.css';
 
-const Section: React.FC = ({children}) => (
+interface IProps {
+    children?: React.ReactNode
+}
+
+const Section: React.FC<IProps> = ({children}) => (
     <m.section
         initial="initial"
         animate="enter"

@@ -8,6 +8,10 @@ import {IActions} from './types/actions';
 
 type IContext = [ICursor, IActions | Record<string, never>];
 
+interface IProps {
+    children: React.ReactNode
+}
+
 const Context = React.createContext<IContext>([initialState, {}]);
 const props = {
     Context,
@@ -15,7 +19,7 @@ const props = {
     reducer,
     dispatcher,
 };
-const CursorProvider: React.FC = ({children}) => (
+const CursorProvider: React.FC<IProps> = ({children}) => (
     <Provider {...props}>
         {children}
     </Provider>
