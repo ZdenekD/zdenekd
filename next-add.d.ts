@@ -33,3 +33,6 @@ declare namespace NodeJS {
         browser: boolean;
     }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface Window {__PRELOADED_STATE__?: any}

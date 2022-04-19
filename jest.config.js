@@ -53,7 +53,7 @@ module.exports = {
     ],
     coverageDirectory: './__test__/jest/coverage',
     coverageReporters: ['html', 'lcov'],
-    setupFiles: ['<rootDir>/__test__/jest/setup.ts', 'jest-canvas-mock'],
+    setupFiles: ['<rootDir>/__test__/jest/setup.ts'],
     setupFilesAfterEnv: ['<rootDir>/__test__/jest/mockSetup.ts'],
     snapshotSerializers: ['jest-serializer-html'],
 };
