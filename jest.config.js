@@ -1,12 +1,11 @@
 module.exports = {
     verbose: false,
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-environment-jsdom',
     transform: {
         '^.+\\.ts(x)?$': 'babel-jest',
         '^.+\\.svg$': '<rootDir>/__test__/jest/transform/svg.js',
         '^(?!.*\\.json$)': '<rootDir>/__test__/jest/transform/file.js',
     },
-    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$', '^.+\\.module\\.(css|sass|scss)$'],
     roots: ['<rootDir>/src'],
     moduleNameMapper: {
         '\\.css$': 'identity-obj-proxy',
@@ -23,7 +22,8 @@ module.exports = {
         '@/helpers(.*)': '<rootDir>/src/utils/helpers/$1',
         '@/hooks(.*)': '<rootDir>/src/utils/hooks/$1',
         '@/mocks(.*)': '<rootDir>/src/utils/mocks/$1',
-        '@/__test__(.*)$': '<rootDir>/__test__/jest/$1',
+        '@/test(.*)$': '<rootDir>/__test__/jest/$1',
+        '@/test/mocks(.*)$': '<rootDir>/__test__/jest/mocks/$1',
     },
     moduleFileExtensions: [
         'js',
@@ -42,7 +42,6 @@ module.exports = {
         '!src/**/*.stories.{ts,tsx}',
         '!src/pages/*.{ts,tsx}',
         '!src/pages/**/*.{ts,tsx}',
-        '!src/__test__/**/*',
         '!src/utils/animations/**/*',
         '!src/utils/distributors/**/*',
         '!src/utils/enums/**/*',
@@ -57,5 +56,4 @@ module.exports = {
     setupFiles: ['<rootDir>/__test__/jest/setup.ts', 'jest-canvas-mock'],
     setupFilesAfterEnv: ['<rootDir>/__test__/jest/mockSetup.ts'],
     snapshotSerializers: ['jest-serializer-html'],
-    globals: {'babel-jest': {tsconfig: '<rootDir>/tsconfig.test.json'}},
 };

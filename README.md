@@ -131,7 +131,3 @@ npx @sentry/wizard -i nextjs
 ## Deploying
 
 Push to **master** branch
-
-## Libraries version notes
-
--   msw is kept to version 0.38.2 because of version 0.39+ requires node 16 and higher

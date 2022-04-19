@@ -17,7 +17,8 @@
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:@next/next/recommended"
   ],
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
@@ -234,6 +235,8 @@
         }
       }
     ],
+    // No HTML link for pages
+    "@next/next/no-html-link-for-pages": 0,
     // Enforce valid expect() usage (valid-expect)
     "jest/valid-expect": 1,
     // When there is only a single export from a module, prefer using default export over named export.
