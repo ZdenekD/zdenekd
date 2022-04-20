@@ -10,16 +10,16 @@ const Error: React.FC = () => {
     const paragraph: {[key: string]: JSX.Element} = {
         [LocalesEnum.cs]: (
             <>
-                <Heading data-test="component-heading">Někde se stala chyba.</Heading>
-                <h2 data-test="component-subheading">
+                <Heading data-testid="component-heading">Někde se stala chyba.</Heading>
+                <h2 data-testid="component-subheading">
                     Pokud potíže přetrvávají, kontaktujte <Anchor href="mailto:frontend-optimist&#64;pm.me?subject=&clubs; Něco se na webu po@#$&lo &clubs;">správce</Anchor>
                 </h2>
             </>
         ),
         [LocalesEnum.en]: (
             <>
-                <Heading data-test="component-heading">Something had gone wrong.</Heading>
-                <h2 data-test="component-subheading">
+                <Heading data-testid="component-heading">Something had gone wrong.</Heading>
+                <h2 data-testid="component-subheading">
                     If the problem persists, contact <Anchor href="mailto:frontend-optimist&#64;pm.me?subject=&clubs; Něco se na webu po@#$&lo &clubs;">administrator</Anchor>
                 </h2>
             </>
@@ -27,7 +27,7 @@ const Error: React.FC = () => {
     };
 
     return (
-        <Layout className={styles.root} data-test="component-error">
+        <Layout className={styles.root}>
             {router.locale && paragraph[router.locale]}
         </Layout>
     );

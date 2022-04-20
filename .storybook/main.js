@@ -72,7 +72,8 @@ module.exports = {
             '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
             '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
             '@/mocks': path.resolve(__dirname, '../src/utils/mocks'),
-            '@/__test__': path.resolve(__dirname, '../__test__/jest'),
+            '@/test': path.resolve(__dirname, '../__test__/jest'),
+            '@/test/mocks': path.resolve(__dirname, '../__test__/jest/mocks'),
         }
 
         return {

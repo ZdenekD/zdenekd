@@ -1,26 +1,20 @@
-import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
 import pages from '@/data/pages';
+import '@/test/mocks/nextRouterMock';
 import Nav from '.';
 
 describe('Nav', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Nav />);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-nav');
+        render(<Nav />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-nav')).toBeInTheDocument();
     });
 
     it('renders all pages links', () => {
-        const {length} = Object.keys(pages);
-        const component = findComponent(wrapper, 'component-item');
+        render(<Nav />);
 
-        expect(component.length).toBe(length);
+        const {length} = Object.keys(pages);
+
+        expect(screen.getAllByTestId('component-item').length).toBe(length);
     });
 });

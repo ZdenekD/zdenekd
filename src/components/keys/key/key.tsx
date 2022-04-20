@@ -31,7 +31,7 @@ const Key: React.FC<IProps> = ({
             type="button"
             className={`${styles.key} ${disabled ? styles.disabled : ''}`}
             aria-label={label}
-            data-test="component-key"
+            data-testid="component-key"
             disabled={disabled}
             onClick={onClick}
         >

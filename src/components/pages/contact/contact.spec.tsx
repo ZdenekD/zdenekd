@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
-import Homepage from '.';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
+import Contact from '.';
 
-describe('Pages/Homepage', () => {
+describe('Pages/Contact', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Homepage />);
-        const component = findComponent(wrapper, 'component-contact');
+        render(<Contact />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-layout')).toBeInTheDocument();
     });
 });

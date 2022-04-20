@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const Loader: React.FC<IProps> = ({className = ''}) => (
-    <div className={`${styles.loader} ${className}`} data-test="component-loader" />
+    <div className={`${styles.loader} ${className}`} data-testid="component-loader" />
 );
 
 export default Loader;

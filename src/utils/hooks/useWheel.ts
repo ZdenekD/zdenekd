@@ -1,5 +1,5 @@
 import useEventListener from '@use-it/event-listener';
-import {debounce} from 'underscore';
+import _ from 'lodash';
 import PageActionsEnum from '@/enums/PageActionsEnum';
 import usePageAction from './usePageAction';
 
@@ -17,7 +17,7 @@ const useWheel = (): void => {
         (deltaY > 0 ? handleDown : handleUp)();
     };
 
-    useEventListener('wheel', debounce(handleMouse, 200));
+    useEventListener('wheel', _.debounce(handleMouse, 200));
 };
 
 export default useWheel;

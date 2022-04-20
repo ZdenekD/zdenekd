@@ -3,7 +3,7 @@ import pages from '@/data/pages';
 import PageActionsEnum from '@/enums/PageActionsEnum';
 import PagesEnum from '@/enums/PagesEnum';
 import getPageIndex from '@/helpers/getPageIndex';
-import type {IDistributor} from './types/distributor';
+import type {IDistributor} from '@/types/distributor';
 
 interface IAction {
     (value: PageActionsEnum): void

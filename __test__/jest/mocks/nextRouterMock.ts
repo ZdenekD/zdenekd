@@ -3,7 +3,7 @@ const nextRouterMock = jest.mock('next/router', () => ({
         asPath: '/page/subpage/something-else',
         pathname: '/',
         route: '/',
-        locale: 'en',
+        locale: 'cs',
         locales: ['cs', 'en'],
         query: {param: 'param'},
     })),

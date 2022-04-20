@@ -6,10 +6,13 @@
         [
           "react-remove-properties",
           {
-            "properties": ["data-test", "data-chromatic"]
+            "properties": ["data-testid", "data-chromatic"]
           }
         ]
       ]
+    },
+    "test": {
+      "plugins": ["transform-dynamic-import"]
     }
   }
 }

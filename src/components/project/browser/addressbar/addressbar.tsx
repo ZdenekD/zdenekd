@@ -12,14 +12,14 @@ const Addressbar: React.FC<IProps> = ({url}) => {
     return (
         <div
             className={`${styles.addressbar} ${/https/.test(url) ? styles.https : styles.http}`}
-            data-test="component-addressbar"
+            data-testid="component-addressbar"
         >
             {!/in.progress$/.test(url) && (
                 <a
                     href={url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    data-test="component-addressbar-link"
+                    data-testid="component-addressbar-link"
                     aria-label={locale.reference.target}
                     className={styles.link}
                 >

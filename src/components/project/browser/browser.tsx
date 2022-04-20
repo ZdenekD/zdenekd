@@ -30,7 +30,7 @@ const Browser = React.forwardRef<HTMLElement, IProps>(({
         <section
             ref={ref}
             className={styles.browser}
-            data-test="component-browser"
+            data-testid="component-browser"
         >
             <header className={styles.header}>
                 <span className={styles.controls}>

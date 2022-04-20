@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             animate="enter"
             exit="exit"
             variants={animations.footer}
-            className={`${styles.footer} ${menu.isOpen ? styles.opened : styles.closed}`} data-test="component-footer"
+            className={`${styles.footer} ${menu.isOpen ? styles.opened : styles.closed}`} data-testid="component-footer"
         >
             <code className={styles.code}>
                 {locale.footer.code}

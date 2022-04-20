@@ -13,7 +13,7 @@ const Section: React.FC<IProps> = ({children}) => (
         exit="exit"
         variants={animations}
         className={styles.section}
-        data-test="component-section"
+        data-testid="component-section"
     >
         {children}
     </m.section>

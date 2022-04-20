@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const Computer: React.FC<IProps> = ({children}) => (
-    <div className={styles.wrapper} data-test="component-device-computer">
+    <div className={styles.wrapper} data-testid="component-device-computer">
         <div className={styles.computer}>
             <div className={styles.display}>
                 <div className={styles.header}>

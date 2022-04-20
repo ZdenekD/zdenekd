@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import Menu from '.';
 
 describe('Menu', () => {
-    it('renders without error', () => {
-        const wrapper = shallow(<Menu />);
-        const component = findComponent(wrapper, 'component-menu');
+    it('renders without error', async () => {
+        render(<Menu />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-menu')).toBeInTheDocument();
     });
 });

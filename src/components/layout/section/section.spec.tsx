@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Section from '.';
 
 describe('Layout/Section', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Section>Section content</Section>);
-        const component = findComponent(wrapper, 'component-section');
+        render(<Section />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-section')).toBeInTheDocument();
     });
 });

@@ -30,7 +30,7 @@ const Target: React.FC<IProps> = ({url}) => {
                         className={styles.targetLink}
                         target="_blank"
                         aria-label={locale.reference.target}
-                        data-test="component-target"
+                        data-testid="component-target"
                     >
                         <Icon className={styles.icon} />
                     </Anchor>

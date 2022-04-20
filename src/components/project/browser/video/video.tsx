@@ -23,7 +23,7 @@ const Video: React.FC<IProps> = ({project}) => {
                 exit="exit"
                 variants={animations}
                 className={styles.wrapper}
-                data-test="component-video"
+                data-testid="component-video"
             >
                 <video
                     playsInline

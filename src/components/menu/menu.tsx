@@ -52,7 +52,7 @@ const Menu: React.FC = () => {
             ref={buttonRef}
             type="button"
             className={`${styles.button} ${menu.isOpen ? styles.opened : styles.closed} ${animation.isAsideAnimated ? styles.disabled : ''}`}
-            data-test="component-menu"
+            data-testid="component-menu"
             aria-label={menu.isOpen ? locale.menu.close : locale.menu.open}
             onClick={handleClick}
         >

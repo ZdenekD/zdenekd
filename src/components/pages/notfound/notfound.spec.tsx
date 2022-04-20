@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import NotFound from '.';
 
 describe('Pages/NotFound', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<NotFound />);
-        const component = findComponent(wrapper, 'component-notfound');
+        render(<NotFound />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-layout')).toBeInTheDocument();
     });
 });

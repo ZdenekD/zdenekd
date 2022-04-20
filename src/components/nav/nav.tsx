@@ -26,7 +26,7 @@ const Nav: React.FC = () => {
     };
 
     return (
-        <nav className={styles.nav} data-test="component-nav">
+        <nav className={styles.nav} data-testid="component-nav">
             <m.ul
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}
@@ -39,7 +39,7 @@ const Nav: React.FC = () => {
                         key={pages[key as PagesEnum].id}
                         variants={animation}
                         className={styles.item}
-                        data-test="component-item"
+                        data-testid="component-item"
                     >
                         <Link passHref href={pages[key as PagesEnum].route}>
                             <Anchor

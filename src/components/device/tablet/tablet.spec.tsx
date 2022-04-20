@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import Tablet from '.';
+import {render, screen} from '@testing-library/react';
+import Tabler from '.';
 
-describe('Device/Tablet', () => {
+describe('Device/Tabler', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Tablet />);
-        const component = findComponent(wrapper, 'component-device-tablet');
+        render(<Tabler />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-device-tablet')).toBeInTheDocument();
     });
 });

@@ -1,23 +1,16 @@
-import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Cursor from './index';
 
 describe('Cursor', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Cursor />);
-    });
-
     it('renders inner cursor without error', () => {
-        const component = findComponent(wrapper, 'component-inner-cursor');
+        render(<Cursor />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-inner-cursor')).toBeInTheDocument();
     });
 
     it('renders outer cursor without error', () => {
-        const component = findComponent(wrapper, 'component-outer-cursor');
+        render(<Cursor />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-outer-cursor')).toBeInTheDocument();
     });
 });

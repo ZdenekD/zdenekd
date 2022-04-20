@@ -1,47 +1,39 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
-import findComponent from '@/__test__/utils/helpers';
 import Textarea from '.';
 
+const props = {
+    name: 'textarea',
+    label: 'Textarea',
+};
+
 describe('UI/Form Control/Textarea', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Textarea name="textarea" label="Textarea" />);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-textarea');
+        render(<Textarea {...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-textarea')).toBeInTheDocument();
     });
 
     it('renders message component on error', () => {
-        const container = shallow(<Textarea name="textarea" label="Textarea" error="Error message" />);
-        const component = findComponent(container, 'component-textarea-error');
+        render(<Textarea error="Error message"{...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-textarea-error')).toBeInTheDocument();
     });
 
     it('renders maxlength component', () => {
-        const container = shallow(<Textarea name="textarea" label="Textarea" maxlength={10} />);
-        const component = findComponent(container, 'component-textarea-maxlength');
+        render(<Textarea maxlength={10} {...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-textarea-maxlength')).toBeInTheDocument();
     });
 
-    it('set length on change', () => {
-        const mockSetState = jest.fn();
-        const value = 'value';
-        const mockEvent = {target: {value}};
+    it('set length on change', async () => {
+        const user = userEvent.setup();
 
-        React.useState = jest.fn(() => [0, mockSetState]);
+        render(<Textarea maxlength={10} {...props} />);
 
-        const container = shallow(<Textarea name="textarea" label="Textarea" />);
-        const component = findComponent(container, 'component-textarea');
+        await user.type(screen.getByTestId('component-textarea'), 'value');
 
-        component.simulate('change', mockEvent);
-
-        expect(mockSetState).toHaveBeenCalledWith(value.length);
+        expect(screen.getByTestId('component-textarea-maxlength')).toHaveTextContent('5 / 10');
     });
 });

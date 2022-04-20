@@ -19,8 +19,8 @@ const Projects: React.FC = () => {
                 <meta name="description" content={description} />
                 <title>{heading} | ZdenekD</title>
             </Head>
-            <Layout className={styles.root} data-test="component-projects">
-                <Heading data-test="component-heading">{heading}</Heading>
+            <Layout className={styles.root}>
+                <Heading data-testid="component-heading">{heading}</Heading>
                 <article className={styles.article}>
                     <Project />
                 </article>

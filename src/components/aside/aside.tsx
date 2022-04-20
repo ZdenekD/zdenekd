@@ -28,7 +28,7 @@ const Aside: React.FC = () => {
                 animate={menu.isOpen ? 'enter' : 'exit'}
                 variants={animations}
                 className={styles.aside}
-                data-test="component-aside"
+                data-testid="component-aside"
                 onAnimationStart={handleAnimationStart}
                 onAnimationEnd={handleAnimationEnd}
             >

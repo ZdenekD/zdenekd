@@ -36,7 +36,7 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
             <Head>
                 <Meta />
             </Head>
-            <main className={`${styles.main} ${className}`} data-test="component-layout">
+            <main className={`${styles.main} ${className}`} data-testid="component-layout">
                 <LazyMotion strict features={domAnimation}>
                     <Header />
                     <Section>

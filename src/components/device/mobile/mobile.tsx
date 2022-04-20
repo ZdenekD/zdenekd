@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Mobile: React.FC<IProps> = ({children}) => (
-    <div className={styles.wrapper} data-test="component-device-mobile">
+    <div className={styles.wrapper} data-testid="component-device-mobile">
         <div className={styles.mobile}>
             <div className={styles.content}>
                 {children}

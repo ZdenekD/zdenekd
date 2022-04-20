@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     const locale = useLocale();
 
     return (
-        <header className={styles.header} data-test="component-header">
+        <header className={styles.header} data-testid="component-header">
             <Link passHref href="/">
                 <a
                     href="/"
