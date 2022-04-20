@@ -1,7 +1,7 @@
-export interface IData {
+export type IData = {
     [key: string]: string
 }
 
-export interface IResponse {
+export type IResponse = {
     status: string
 }

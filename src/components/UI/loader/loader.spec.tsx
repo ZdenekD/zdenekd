@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Loader from '.';
 
 describe('UI/Loader', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Loader />);
-        const component = findComponent(wrapper, 'component-loader');
+        render(<Loader />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-loader')).toBeInTheDocument();
     });
 });

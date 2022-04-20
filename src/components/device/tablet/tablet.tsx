@@ -1,11 +1,11 @@
 import styles from './tablet.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 
 const Tablet: React.FC<IProps> = ({children}) => (
-    <div className={styles.wrapper} data-test="component-device-tablet">
+    <div className={styles.wrapper} data-testid="component-device-tablet">
         <div className={styles.tablet}>
             <div className={styles.content}>
                 {children}

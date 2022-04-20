@@ -10,7 +10,7 @@ export type IAction = {
     readonly payload: IMessage
 };
 
-export interface IActions {
+export type IActions = {
     setMessage: (payload: IMessage) => void
     unsetMessage: () => void
 }

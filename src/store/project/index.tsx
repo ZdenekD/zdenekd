@@ -8,7 +8,7 @@ import {IActions} from './types/actions';
 
 type IContext = [IProject, IActions | Record<string, never>];
 
-interface IProps {
+type IProps = {
     children: React.ReactNode
 }
 

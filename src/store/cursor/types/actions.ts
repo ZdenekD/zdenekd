@@ -10,7 +10,7 @@ export type IAction = {
     readonly payload?: ICursor
 };
 
-export interface IActions {
+export type IActions = {
     setCursor: (payload: ICursor) => void,
     unsetCursor: () => void
 }

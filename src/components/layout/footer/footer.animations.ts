@@ -1,6 +1,6 @@
 import {Variants} from 'framer-motion';
 
-interface IVariants {
+type IVariants = {
     footer: Variants
     locale: Variants
     scroll: Variants

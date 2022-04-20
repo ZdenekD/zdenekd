@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import Keys from '.';
 
-describe('Keys', () => {
+describe('Form/Keys', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Keys />);
-        const component = findComponent(wrapper, 'component-keys');
+        render(<Keys />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-keys')).toBeInTheDocument();
     });
 });

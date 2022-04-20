@@ -1,47 +1,39 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
-import findComponent from '@/__test__/utils/helpers';
 import Input from '.';
 
+const props = {
+    name: 'input',
+    label: 'Input',
+};
+
 describe('UI/Form Control/Input', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Input name="input" label="Input" />);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-input');
+        render(<Input {...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-input')).toBeInTheDocument();
     });
 
     it('renders message component on error', () => {
-        const container = shallow(<Input name="input" label="Input" error="Error message" />);
-        const component = findComponent(container, 'component-input-error');
+        render(<Input error="Error message" {...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-input-error')).toBeInTheDocument();
     });
 
     it('renders maxlength component', () => {
-        const container = shallow(<Input name="input" label="Input" maxlength={10} />);
-        const component = findComponent(container, 'component-input-maxlength');
+        render(<Input maxlength={10} {...props} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-input-maxlength')).toBeInTheDocument();
     });
 
-    it('set length on change', () => {
-        const mockSetState = jest.fn();
-        const value = 'value';
-        const mockEvent = {target: {value}};
+    it('set length on change', async () => {
+        const user = userEvent.setup();
 
-        React.useState = jest.fn(() => [0, mockSetState]);
+        render(<Input maxlength={10} {...props} />);
 
-        const container = shallow(<Input name="input" label="Input" />);
-        const component = findComponent(container, 'component-input');
+        await user.type(screen.getByTestId('component-input'), 'value');
 
-        component.simulate('change', mockEvent);
-
-        expect(mockSetState).toHaveBeenCalledWith(value.length);
+        expect(screen.getByTestId('component-input-maxlength')).toHaveTextContent('5 / 10');
     });
 });

@@ -11,7 +11,7 @@ import {useMessageState} from '@/store/message';
 import animations from './alert.animations';
 import styles from './alert.module.css';
 
-interface IProps {
+type IProps = {
     title?: string
     variant?: VariantsEnum
     timeout?: number // number in seconds
@@ -68,6 +68,7 @@ const Alert: React.FC<IProps> = ({
                         exit="exit"
                         variants={animations.backdrop}
                         className={`${styles.backdrop} ${variant ? styles[variant] : ''}`}
+                        data-testid="component-alert-backdrop"
                     />
                     <m.div
                         initial="initial"
@@ -75,7 +76,7 @@ const Alert: React.FC<IProps> = ({
                         exit="exit"
                         variants={animations.component}
                         className={`${styles.alert} ${variant ? styles[variant] : ''} ${className}`}
-                        data-test="component-alert"
+                        data-testid="component-alert"
                     >
                         {title && (
                             <header className={styles.header}>
@@ -92,7 +93,7 @@ const Alert: React.FC<IProps> = ({
                         <button
                             className={styles.button}
                             aria-label={locale.alert.close}
-                            data-test="component-alert-button"
+                            data-testid="component-alert-button"
                             type="button"
                             onClick={handleClick}
                         >
@@ -104,6 +105,7 @@ const Alert: React.FC<IProps> = ({
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
                                 className={styles.progress}
+                                data-testid="component-alert-timeout"
                                 data-chromatic="ignore"
                             />
                         )}

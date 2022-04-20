@@ -6,7 +6,7 @@ import {useMenuState} from '@/store/menu';
 import {animations} from './logo.animations';
 import styles from './logo.module.css';
 
-interface IProps {
+type IProps = {
     className?: string
 }
 
@@ -22,8 +22,8 @@ const Logo: React.FC<IProps> = ({className = ''}) => {
     useCursor(catcher);
 
     return (
-        <div ref={logoRef} className={`${styles.wrapper} ${className}`}>
-            <Image className={styles.logo} data-test="component-logo" />
+        <div ref={logoRef} className={`${styles.wrapper} ${className}`} data-testid="component-logo">
+            <Image className={styles.logo} />
             <m.i
                 initial={false}
                 animate={menu.isOpen ? 'enter' : 'exit'}

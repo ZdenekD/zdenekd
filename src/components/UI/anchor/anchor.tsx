@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './anchor.module.css';
 
-interface IProps {
+type IProps = {
     href: string
     title?: string
     target?: '_blank'
@@ -26,7 +26,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
         className={`${styles.anchor} ${className}`}
         target={target}
         rel={target ? 'noreferrer noopener' : undefined}
-        data-test="component-anchor"
+        data-testid="component-anchor"
         {...props}
         onClick={onClick}
     >

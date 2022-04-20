@@ -3,7 +3,7 @@ import DirectionsEnum from '@/enums/DirectionsEnum';
 import useCursor from '@/hooks/useCursor';
 import styles from './key.module.css';
 
-interface IProps {
+type IProps = {
     direction: DirectionsEnum
     label: string
     disabled?: boolean
@@ -31,7 +31,7 @@ const Key: React.FC<IProps> = ({
             type="button"
             className={`${styles.key} ${disabled ? styles.disabled : ''}`}
             aria-label={label}
-            data-test="component-key"
+            data-testid="component-key"
             disabled={disabled}
             onClick={onClick}
         >

@@ -3,7 +3,7 @@ import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import styles from './controls.module.css';
 
-interface IProps {
+type IProps = {
     isFirst: boolean
     isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void
@@ -38,7 +38,7 @@ const Controls: React.FC<IProps> = ({
                 className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
                 aria-label={locale.keys.left}
                 tabIndex={0}
-                data-test="component-controls-prev"
+                data-testid="component-controls-prev"
                 onClick={handlePrev}
             />
             <button
@@ -47,7 +47,7 @@ const Controls: React.FC<IProps> = ({
                 className={`${styles.next} ${isLast ? styles.disabled : ''}`}
                 aria-label={locale.keys.right}
                 tabIndex={0}
-                data-test="component-controls-next"
+                data-testid="component-controls-next"
                 onClick={handleNext}
             />
         </>

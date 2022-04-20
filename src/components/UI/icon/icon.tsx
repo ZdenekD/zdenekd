@@ -3,7 +3,7 @@ export enum IconsEnum {
     brandGithub = 'brandGithub'
 }
 
-interface IProps {
+type IProps = {
     variant: IconsEnum,
     size?: number
 }

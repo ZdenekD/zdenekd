@@ -98,7 +98,7 @@ const Project: React.FC = () => {
     }, [project.index]);
 
     return (
-        <div className={styles.block} data-test="component-project">
+        <div className={styles.block} data-testid="component-project">
             <header className={styles.content}>
                 {projects[index]?.title && (
                     <h2

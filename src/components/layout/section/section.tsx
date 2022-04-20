@@ -2,7 +2,7 @@ import {m} from 'framer-motion';
 import {animations} from './section.animations';
 import styles from './section.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 
@@ -13,7 +13,7 @@ const Section: React.FC<IProps> = ({children}) => (
         exit="exit"
         variants={animations}
         className={styles.section}
-        data-test="component-section"
+        data-testid="component-section"
     >
         {children}
     </m.section>

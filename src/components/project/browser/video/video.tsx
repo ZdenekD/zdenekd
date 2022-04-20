@@ -5,7 +5,7 @@ import {IProject} from '@/types/projects';
 import {animations} from './video.animations';
 import styles from './video.module.css';
 
-interface IProps {
+type IProps = {
     project: IProject
 }
 
@@ -23,7 +23,7 @@ const Video: React.FC<IProps> = ({project}) => {
                 exit="exit"
                 variants={animations}
                 className={styles.wrapper}
-                data-test="component-video"
+                data-testid="component-video"
             >
                 <video
                     playsInline

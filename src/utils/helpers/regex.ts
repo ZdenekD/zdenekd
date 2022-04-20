@@ -8,7 +8,7 @@ export enum RegexEnum {
     year = 'year',
 }
 
-interface IRegex {
+type IRegex = {
     [RegexEnum.name]: RegExp
     [RegexEnum.text]: RegExp
     [RegexEnum.number]: RegExp

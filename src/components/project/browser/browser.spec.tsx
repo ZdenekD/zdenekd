@@ -1,6 +1,5 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import {IProject} from '@/types/projects';
 import Browser from '.';
 
@@ -14,15 +13,14 @@ const project: IProject = {
 
 describe('Project/Browser', () => {
     it('renders without error', () => {
-        const wrapper = shallow(
+        render(
             <Browser
                 isFirst={false}
                 isLast={false}
                 project={project}
             />
         );
-        const component = findComponent(wrapper, 'component-browser');
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-browser')).toBeInTheDocument();
     });
 });

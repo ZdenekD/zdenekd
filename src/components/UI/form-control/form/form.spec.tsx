@@ -1,12 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
+import React from 'react';
 import Form from '.';
 
 describe('UI/Form Control/Form', () => {
-    it('renders wihout error', () => {
-        const wrapper = shallow(<Form>Content</Form>);
-        const component = findComponent(wrapper, 'component-form');
+    it('renders without error', () => {
+        render(<Form>Form</Form>);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-form')).toBeInTheDocument();
     });
 });

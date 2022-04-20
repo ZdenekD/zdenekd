@@ -18,7 +18,7 @@ const Alert = dynamic(() => import('@/UI/alert'));
 const Aside = dynamic(() => import('@/components/aside'));
 const Curtain = dynamic(() => import('@/components/curtain'));
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
     className?: string
 }
@@ -36,7 +36,7 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
             <Head>
                 <Meta />
             </Head>
-            <main className={`${styles.main} ${className}`} data-test="component-layout">
+            <main className={`${styles.main} ${className}`} data-testid="component-layout">
                 <LazyMotion strict features={domAnimation}>
                     <Header />
                     <Section>

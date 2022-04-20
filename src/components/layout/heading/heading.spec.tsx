@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Heading from '.';
 
 describe('Layout/Heading', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Heading />);
-        const component = findComponent(wrapper, 'component-heading');
+        render(<Heading />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-heading')).toBeInTheDocument();
     });
 });

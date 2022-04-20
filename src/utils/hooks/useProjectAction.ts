@@ -4,9 +4,9 @@ import projects from '@/data/projects';
 import PagesEnum from '@/enums/PagesEnum';
 import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
 import {useProjectState} from '@/store/project';
-import type {IDistributor} from './types/distributor';
+import type {IDistributor} from '@/types/distributor';
 
-interface IAction {
+type IAction = {
     (value: ProjectActionsEnum): void
 }
 

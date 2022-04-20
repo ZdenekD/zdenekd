@@ -5,7 +5,7 @@ import styles from './textarea.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
-interface ITextarea {
+type ITextarea = {
     id?: string
     name: string
     label: string
@@ -24,10 +24,10 @@ interface ITextarea {
 type IProps = IReadonlyProps & ITextarea;
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
-    id,
+    id = undefined,
     name,
     label,
-    value = '',
+    value = undefined,
     placeholder,
     variant,
     required,
@@ -37,8 +37,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     autoComplete,
     error,
     className = '',
-    onChange,
-    onBlur,
+    onChange = undefined,
+    onBlur = undefined,
 }, ref) => {
     const [length, setLength] = React.useState<number>(value?.length || 0);
     const handleHeight = (element: HTMLTextAreaElement) => {
@@ -57,7 +57,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     };
 
     React.useEffect(() => {
-        setLength(value.length);
+        setLength(value?.length || 0);
     }, [value]);
 
     return (
@@ -73,7 +73,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
                 readOnly={readonly}
                 maxLength={maxlength}
                 autoComplete={autoComplete}
-                data-test="component-textarea"
+                data-testid="component-textarea"
                 onChange={handleInput}
                 onBlur={onBlur}
             />
@@ -87,10 +87,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
                 </span>
             </label>
 
-            {error && (<span className={styles.error} data-test="component-textarea-error">{error}</span>)}
+            {error && (<span className={styles.error} data-testid="component-textarea-error">{error}</span>)}
 
             {maxlength && !disabled && (
-                <span className={styles.maxlength} data-test="component-textarea-maxlength">
+                <span className={styles.maxlength} data-testid="component-textarea-maxlength">
                     {length} / {maxlength}
                 </span>
             )}

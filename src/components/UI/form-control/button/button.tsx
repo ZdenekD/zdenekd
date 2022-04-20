@@ -2,7 +2,7 @@ import React from 'react';
 import VariantsEnum from '@/enums/VariantsEnum';
 import styles from './button.module.css';
 
-interface IProps {
+type IProps = {
     type?: 'button' | 'submit'
     disabled?: boolean
     variant?: VariantsEnum
@@ -30,7 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, IProps>(({
         tabIndex={tabindex}
         className={`${styles.button} ${variant ? styles[variant] : ''} ${className}`}
         aria-label={title}
-        data-test="component-button"
+        data-testid="component-button"
         onClick={onClick}
     >
         {children}

@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import Project from '.';
 
 describe('Project', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Project />);
-        const component = findComponent(wrapper, 'component-project');
+        render(<Project />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-project')).toBeInTheDocument();
     });
 });

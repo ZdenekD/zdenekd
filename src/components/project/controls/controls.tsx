@@ -3,7 +3,7 @@ import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import styles from './controls.module.css';
 
-interface IProps {
+type IProps = {
     isFirst: boolean
     isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void
@@ -31,14 +31,14 @@ const Controls = React.forwardRef<HTMLUListElement, IProps>(({
     useCursor(nextElement);
 
     return (
-        <ul ref={ref} className={styles.controls} data-test="component-controls">
+        <ul ref={ref} className={styles.controls} data-testid="component-controls">
             <li className={styles.control}>
                 <button
                     ref={prevRef}
                     type="button"
                     className={`${styles.prev} ${isFirst ? styles.disabled : ''}`}
                     aria-label={locale.keys.left}
-                    data-test="component-controls-prev"
+                    data-testid="component-controls-prev"
                     onClick={handlePrev}
                 />
             </li>
@@ -48,7 +48,7 @@ const Controls = React.forwardRef<HTMLUListElement, IProps>(({
                     type="button"
                     className={`${styles.next} ${isLast ? styles.disabled : ''}`}
                     aria-label={locale.keys.right}
-                    data-test="component-controls-next"
+                    data-testid="component-controls-next"
                     onClick={handleNext}
                 />
             </li>

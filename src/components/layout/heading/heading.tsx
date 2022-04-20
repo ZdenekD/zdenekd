@@ -2,7 +2,7 @@ import anime from 'animejs';
 import React from 'react';
 import styles from './heading.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 
@@ -21,7 +21,7 @@ const Heading: React.FC<IProps> = ({children}) => {
     }, []);
 
     return (
-        <h1 ref={headingRef} className={styles.heading} data-test="component-heading">
+        <h1 ref={headingRef} className={styles.heading} data-testid="component-heading">
             {children}
         </h1>
     );
