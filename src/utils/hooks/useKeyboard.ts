@@ -1,10 +1,10 @@
 import useEventListener from '@use-it/event-listener';
-import {debounce} from 'underscore';
+import _ from 'lodash';
 import PageActionsEnum from '@/enums/PageActionsEnum';
 import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import type {IDistributor} from '@/types/distributor';
 import usePageAction from './usePageAction';
 import useProjectAction from './useProjectAction';
-import type {IDistributor} from './types/distributor';
 
 const useKeyboard = (): void => {
     const setPageAction = usePageAction();
@@ -36,7 +36,7 @@ const useKeyboard = (): void => {
         }
     };
 
-    useEventListener('keydown', debounce(handleKeyboard, 200));
+    useEventListener('keydown', _.debounce(handleKeyboard, 200));
 };
 
 export default useKeyboard;
