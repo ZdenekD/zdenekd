@@ -1,5 +1,3 @@
-import LocalesEnum from '@/enums/LocalesEnum';
-
 export type ILocale = {
     header: {
         link: string
@@ -46,7 +44,5 @@ export type ILocale = {
 }
 
 export type ILocales = {
-    [key in LocalesEnum]: {
-        locale: ILocale
-    }
+    [key: string]: ILocale
 }
