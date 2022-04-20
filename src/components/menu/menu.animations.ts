@@ -1,6 +1,6 @@
 import anime from 'animejs';
 
-interface IAnimation {
+type IAnimation = {
     pathTop: SVGPathElement | null
     pathMiddle: SVGPathElement | null
     pathBottom: SVGPathElement | null

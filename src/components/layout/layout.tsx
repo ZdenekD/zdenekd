@@ -18,7 +18,7 @@ const Alert = dynamic(() => import('@/UI/alert'));
 const Aside = dynamic(() => import('@/components/aside'));
 const Curtain = dynamic(() => import('@/components/curtain'));
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
     className?: string
 }

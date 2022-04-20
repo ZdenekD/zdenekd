@@ -1,6 +1,6 @@
 import styles from './computer.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 

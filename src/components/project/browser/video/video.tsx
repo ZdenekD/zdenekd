@@ -5,7 +5,7 @@ import {IProject} from '@/types/projects';
 import {animations} from './video.animations';
 import styles from './video.module.css';
 
-interface IProps {
+type IProps = {
     project: IProject
 }
 

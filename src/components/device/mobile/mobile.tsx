@@ -2,7 +2,7 @@ import {m} from 'framer-motion';
 import {animations} from './mobile.animations';
 import styles from './mobile.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 

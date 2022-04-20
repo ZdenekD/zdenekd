@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './anchor.module.css';
 
-interface IProps {
+type IProps = {
     href: string
     title?: string
     target?: '_blank'

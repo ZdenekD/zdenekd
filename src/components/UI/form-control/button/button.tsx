@@ -2,7 +2,7 @@ import React from 'react';
 import VariantsEnum from '@/enums/VariantsEnum';
 import styles from './button.module.css';
 
-interface IProps {
+type IProps = {
     type?: 'button' | 'submit'
     disabled?: boolean
     variant?: VariantsEnum

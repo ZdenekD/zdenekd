@@ -9,6 +9,6 @@ export type IAction = {
     readonly payload: IMenu
 }
 
-export interface IActions {
+export type IActions = {
     setMenu: (payload: IMenu) => void
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './form.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
     className?: string
     onSubmit?: (event: React.FormEvent<HTMLFormElement>) => Promise<void>

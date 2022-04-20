@@ -5,7 +5,7 @@ import styles from './textarea.module.css';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
-interface ITextarea {
+type ITextarea = {
     id?: string
     name: string
     label: string

@@ -22,7 +22,7 @@ import styles from './contact.module.css';
 
 const Loader = dynamic(() => import('@/UI/loader'));
 
-interface IValues {
+type IValues = {
     [key: string]: string
 }
 

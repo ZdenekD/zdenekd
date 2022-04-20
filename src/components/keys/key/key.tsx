@@ -3,7 +3,7 @@ import DirectionsEnum from '@/enums/DirectionsEnum';
 import useCursor from '@/hooks/useCursor';
 import styles from './key.module.css';
 
-interface IProps {
+type IProps = {
     direction: DirectionsEnum
     label: string
     disabled?: boolean

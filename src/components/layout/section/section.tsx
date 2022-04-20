@@ -2,7 +2,7 @@ import {m} from 'framer-motion';
 import {animations} from './section.animations';
 import styles from './section.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 

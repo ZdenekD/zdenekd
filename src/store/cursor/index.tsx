@@ -8,7 +8,7 @@ import {IActions} from './types/actions';
 
 type IContext = [ICursor, IActions];
 
-interface IProps {
+type IProps = {
     children: React.ReactNode
 }
 

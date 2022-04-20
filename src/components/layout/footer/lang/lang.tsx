@@ -4,7 +4,7 @@ import React from 'react';
 import useCursor from '@/hooks/useCursor';
 import styles from './lang.module.css';
 
-interface IProps {
+type IProps = {
     locale: string
     router: NextRouter
 }

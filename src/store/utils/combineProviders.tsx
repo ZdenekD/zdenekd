@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-interface IProps {
+type IProps = {
     children: React.ReactNode
 }
 

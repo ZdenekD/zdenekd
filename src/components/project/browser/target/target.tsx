@@ -5,7 +5,7 @@ import useLocale from '@/hooks/useLocale';
 import Anchor from '@/UI/anchor';
 import styles from './target.module.css';
 
-interface IProps {
+type IProps = {
     url: string
 }
 

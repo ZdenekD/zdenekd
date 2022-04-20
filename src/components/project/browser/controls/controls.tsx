@@ -3,7 +3,7 @@ import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import styles from './controls.module.css';
 
-interface IProps {
+type IProps = {
     isFirst: boolean
     isLast: boolean
     handlePrev?: (event: React.MouseEvent) => void

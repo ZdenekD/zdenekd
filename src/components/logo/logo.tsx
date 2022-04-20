@@ -6,7 +6,7 @@ import {useMenuState} from '@/store/menu';
 import {animations} from './logo.animations';
 import styles from './logo.module.css';
 
-interface IProps {
+type IProps = {
     className?: string
 }
 

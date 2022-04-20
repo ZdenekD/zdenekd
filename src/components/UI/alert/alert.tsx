@@ -11,7 +11,7 @@ import {useMessageState} from '@/store/message';
 import animations from './alert.animations';
 import styles from './alert.module.css';
 
-interface IProps {
+type IProps = {
     title?: string
     variant?: VariantsEnum
     timeout?: number // number in seconds

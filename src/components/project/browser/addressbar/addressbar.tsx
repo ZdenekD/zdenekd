@@ -2,7 +2,7 @@ import React from 'react';
 import useLocale from '@/hooks/useLocale';
 import styles from './addressbar.module.css';
 
-interface IProps {
+type IProps = {
     url: string
 }
 

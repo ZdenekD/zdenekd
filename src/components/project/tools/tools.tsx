@@ -3,7 +3,7 @@ import React from 'react';
 import useLocale from '@/hooks/useLocale';
 import styles from './tools.module.css';
 
-interface IProps {
+type IProps = {
     items: string[]
 }
 

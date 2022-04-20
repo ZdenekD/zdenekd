@@ -2,7 +2,7 @@ import useEventListener from '@use-it/event-listener';
 import _ from 'lodash';
 import React from 'react';
 
-interface ISize {
+type ISize = {
     width: number
     height: number
 }

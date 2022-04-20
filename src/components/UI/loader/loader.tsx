@@ -1,6 +1,6 @@
 import styles from './loader.module.css';
 
-interface IProps {
+type IProps = {
     className?: string
 }
 

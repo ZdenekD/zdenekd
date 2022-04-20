@@ -5,7 +5,7 @@ import PagesEnum from '@/enums/PagesEnum';
 import getPageIndex from '@/helpers/getPageIndex';
 import type {IDistributor} from '@/types/distributor';
 
-interface IAction {
+type IAction = {
     (value: PageActionsEnum): void
 }
 

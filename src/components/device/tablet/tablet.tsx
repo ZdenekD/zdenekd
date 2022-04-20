@@ -1,6 +1,6 @@
 import styles from './tablet.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 

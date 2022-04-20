@@ -2,7 +2,7 @@ import anime from 'animejs';
 import React from 'react';
 import styles from './heading.module.css';
 
-interface IProps {
+type IProps = {
     children?: React.ReactNode
 }
 

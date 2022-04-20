@@ -9,6 +9,6 @@ export type IAction = {
     readonly payload: IProject
 };
 
-export interface IActions {
+export type IActions = {
     setProject: (payload: IProject) => void
 }

@@ -1,4 +1,4 @@
-interface ILookup {
+type ILookup = {
     [key: string]: number
 }
 
