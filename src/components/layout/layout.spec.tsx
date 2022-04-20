@@ -1,13 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import Layout from '.';
 
 describe('Layout', () => {
-    it('renders without error', () => {
-        const wrapper = shallow(<Layout>Layout content</Layout>);
-        const component = findComponent(wrapper, 'component-layout');
+    it('renders without error', async () => {
+        render(<Layout />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-layout')).toBeInTheDocument();
     });
 });

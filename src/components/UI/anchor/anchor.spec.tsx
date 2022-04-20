@@ -1,24 +1,17 @@
-import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
+import React from 'react';
 import Anchor from '.';
 
 describe('UI/Anchor', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Anchor href="#">content</Anchor>);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-anchor');
+        render(<Anchor href="#">Anchor</Anchor>);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-anchor')).toBeInTheDocument();
     });
 
-    it('has rel attribute if target is set', () => {
-        const anchor = shallow(<Anchor href="/" target="_blank">content</Anchor>);
-        const component = findComponent(anchor, 'component-anchor');
+    it('has rel attribute on target prop set', () => {
+        render(<Anchor href="#" target="_blank">Anchor</Anchor>);
 
-        expect(component.html().includes('rel')).toBe(true);
+        expect(screen.getByTestId('component-anchor')).toHaveAttribute('rel');
     });
 });

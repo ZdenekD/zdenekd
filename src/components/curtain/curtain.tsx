@@ -9,7 +9,7 @@ const Curtain: React.FC = () => (
         exit="exit"
         variants={animations}
         className={styles.curtain}
-        data-test="component-curtain"
+        data-testid="component-curtain"
     />
 );
 

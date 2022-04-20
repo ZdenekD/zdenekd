@@ -1,12 +1,11 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
+import React from 'react';
 import Button from '.';
 
 describe('UI/Form Control/Button', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Button>Button</Button>);
-        const component = findComponent(wrapper, 'component-button');
+        render(<Button>Button</Button>);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-button')).toBeInTheDocument();
     });
 });

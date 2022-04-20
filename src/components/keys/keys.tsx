@@ -46,7 +46,7 @@ const Keys: React.FC = () => {
             animate={menu.isOpen ? 'enter' : 'exit'}
             variants={animations}
             className={styles.keys}
-            data-test="component-keys"
+            data-testid="component-keys"
         >
             <Key
                 direction={DirectionsEnum.up}

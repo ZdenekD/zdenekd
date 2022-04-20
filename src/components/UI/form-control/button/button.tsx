@@ -30,7 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, IProps>(({
         tabIndex={tabindex}
         className={`${styles.button} ${variant ? styles[variant] : ''} ${className}`}
         aria-label={title}
-        data-test="component-button"
+        data-testid="component-button"
         onClick={onClick}
     >
         {children}

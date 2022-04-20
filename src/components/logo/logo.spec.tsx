@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Logo from '.';
 
 describe('Logo', () => {
-    it('renders without error', () => {
-        const wrapper = shallow(<Logo />);
-        const component = findComponent(wrapper, 'component-logo');
+    it('renders without error', async () => {
+        render(<Logo />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-logo')).toBeInTheDocument();
     });
 });

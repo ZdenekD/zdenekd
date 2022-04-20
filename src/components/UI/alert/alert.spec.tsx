@@ -1,32 +1,49 @@
-import {shallow, ShallowWrapper} from 'enzyme';
+import {
+    render,
+    screen,
+    waitFor
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@/test/mocks/nextRouterMock';
 import React from 'react';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
 import Alert from '.';
 
 describe('UI/Alert', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Alert isOpen>message</Alert>);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-alert');
+        render(<Alert isOpen>Alert</Alert>);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-alert')).toBeInTheDocument();
+        expect(screen.getByTestId('component-alert-backdrop')).toBeInTheDocument();
     });
 
-    it('remove component on click remove button', () => {
-        const mockSetState = jest.fn();
+    it('contains passed title', () => {
+        render(<Alert isOpen title="Title">Alert</Alert>);
 
-        React.useState = jest.fn(() => [true, mockSetState]);
+        expect(screen.getByText('Title')).toBeInTheDocument();
+    });
 
-        const container = shallow(<Alert>message</Alert>);
-        const button = findComponent(container, 'component-alert-button');
+    it('contains passed timeout element', () => {
+        render(<Alert isOpen timeout={3}>Alert</Alert>);
 
-        button.simulate('click');
+        expect(screen.getByTestId('component-alert-timeout')).toBeInTheDocument();
+    });
 
-        expect(mockSetState).toHaveBeenCalledTimes(1);
+    it('remove component on remove button click', async () => {
+        const user = userEvent.setup();
+
+        render(<Alert isOpen>Alert</Alert>);
+
+        await user.click(screen.getByTestId('component-alert-button'));
+        await waitFor(() => {
+            expect(screen.queryByTestId('component-alert')).not.toBeInTheDocument();
+        });
+    });
+
+    it('remove component after timeout is passed', async () => {
+        render(<Alert isOpen timeout={2}>Alert</Alert>);
+
+        await waitFor(() => {
+            expect(screen.queryByTestId('component-alert')).not.toBeInTheDocument();
+        }, {timeout: 3000});
     });
 });

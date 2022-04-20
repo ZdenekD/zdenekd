@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Computer from '.';
 
 describe('Device/Computer', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Computer />);
-        const component = findComponent(wrapper, 'component-device-computer');
+        render(<Computer />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-device-computer')).toBeInTheDocument();
     });
 });

@@ -91,8 +91,12 @@ const ContactForm: React.FC = () => {
 
     return (
         <>
-            {isSubmitting && <Loader data-test="component-contact-loader" />}
-            <Form ref={formRef} className={styles.form} data-test="component-contact" onSubmit={handleSubmit(onSubmit)}>
+            {isSubmitting && <Loader data-testid="component-contact-loader" />}
+            <Form
+                ref={formRef}
+                className={styles.form}
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 <div className="animated-block">
                     <Controller
                         name="name"

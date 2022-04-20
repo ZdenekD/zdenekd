@@ -1,26 +1,17 @@
-import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import Addressbar from '.';
 
 describe('Project/Browser/Addressbar', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(<Addressbar url="http://url" />);
-    });
-
     it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-addressbar');
+        render(<Addressbar url="http://url" />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-addressbar')).toBeInTheDocument();
     });
 
-    it('does not render link if url contains `in.progress`', () => {
-        const url = 'http://project.in.progress';
-        const container = shallow(<Addressbar url={url} />);
-        const component = findComponent(container, 'component-addressbar-link');
+    it('does render link if url not contains `in.progress`', () => {
+        render(<Addressbar url="http://project" />);
 
-        expect(component.exists()).toBe(false);
+        expect(screen.getByTestId('component-addressbar-link')).toBeInTheDocument();
     });
 });

@@ -1,54 +1,48 @@
-import {shallow, ShallowWrapper} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@/test/mocks/nextRouterMock';
 import Controls from '.';
 
 describe('Project/Controls', () => {
-    let wrapper: ShallowWrapper;
-
-    beforeEach(() => {
-        wrapper = shallow(
+    it('renders without error', () => {
+        render(
             <Controls
                 isFirst={false}
                 isLast={false}
             />
         );
+
+        expect(screen.getByTestId('component-controls')).toBeInTheDocument();
     });
 
-    it('renders without error', () => {
-        const component = findComponent(wrapper, 'component-controls');
-
-        expect(component.exists()).toBe(true);
-    });
-
-    it('triggers handlePrev function on prev button click', () => {
+    it('triggers handlePrev function on prev button click', async () => {
+        const user = userEvent.setup();
         const mockFunction = jest.fn();
-        const container = shallow(
+
+        render(
             <Controls
                 isFirst={false}
                 isLast={false}
                 handlePrev={mockFunction}
             />
         );
-        const component = findComponent(container, 'component-controls-prev');
-
-        component.simulate('click');
+        await user.click(screen.getByTestId('component-controls-prev'));
 
         expect(mockFunction).toHaveBeenCalled();
     });
 
-    it('triggers handleNext function on next button click', () => {
+    it('triggers handleNext function on next button click', async () => {
+        const user = userEvent.setup();
         const mockFunction = jest.fn();
-        const container = shallow(
+
+        render(
             <Controls
                 isFirst={false}
                 isLast={false}
                 handleNext={mockFunction}
             />
         );
-        const component = findComponent(container, 'component-controls-next');
-
-        component.simulate('click');
+        await user.click(screen.getByTestId('component-controls-next'));
 
         expect(mockFunction).toHaveBeenCalled();
     });

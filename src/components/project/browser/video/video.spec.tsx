@@ -1,6 +1,5 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
-import '@/mocks/__test__/nextRouterMock';
+import {render, screen} from '@testing-library/react';
+import '@/test/mocks/nextRouterMock';
 import {IProject} from '@/types/projects';
 import Video from '.';
 
@@ -14,9 +13,8 @@ const project: IProject = {
 
 describe('Project/Browser/Video', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Video project={project} />);
-        const component = findComponent(wrapper, 'component-video');
+        render(<Video project={project} />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-video')).toBeInTheDocument();
     });
 });

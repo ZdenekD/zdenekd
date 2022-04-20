@@ -4,7 +4,7 @@ const Meta: React.FC = () => (
     <>
         <meta name="viewport" content="width=device-width" />
         <meta name="author" content="ZdenekD, zdenekd.cz" />
-        <title data-test="component-title">ZdenekD</title>
+        <title data-testid="component-title">ZdenekD</title>
         <link rel="preload" href="/font/titillium-web.woff2" as="font" crossOrigin="anonymous" />
         <link rel="preload" href="/font/titillium-web_ext.woff2" as="font" crossOrigin="anonymous" />
         <link rel="preload" href="/font/roboto-mono.woff2" as="font" crossOrigin="anonymous" />

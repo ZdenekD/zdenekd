@@ -47,11 +47,11 @@ const Cursor: React.FC = () => {
 
     return (
         <>
-            <i ref={outerCursorRef} className={styles.outerCursor} data-test="component-outer-cursor" />
+            <i ref={outerCursorRef} className={styles.outerCursor} data-testid="component-outer-cursor" />
             <i
                 ref={innerCursorRef}
                 className={`${styles.innerCursor} ${cursor.isStuck ? styles.innerCursorStuck : ''}`}
-                data-test="component-inner-cursor"
+                data-testid="component-inner-cursor"
             />
         </>
     );

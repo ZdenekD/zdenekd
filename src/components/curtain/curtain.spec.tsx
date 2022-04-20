@@ -1,12 +1,10 @@
-import {shallow} from 'enzyme';
-import findComponent from '@/__test__/utils/helpers';
+import {render, screen} from '@testing-library/react';
 import Curtain from '.';
 
 describe('Curtain', () => {
     it('renders without error', () => {
-        const wrapper = shallow(<Curtain />);
-        const component = findComponent(wrapper, 'component-curtain');
+        render(<Curtain />);
 
-        expect(component.exists()).toBe(true);
+        expect(screen.getByTestId('component-curtain')).toBeInTheDocument();
     });
 });
