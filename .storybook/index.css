@@ -3,6 +3,7 @@
 @import '../src/assets/styles/variables/base/easing.css';
 @import '../src/assets/styles/variables/custom/colors.css';
 @import '../src/assets/styles/variables/custom/global.css';
+@import '../src/assets/styles/variables/custom/grid.css';
 @import '../src/assets/styles/variables/custom/z-index.css';
 @import './fonts.css';
 @import '../src/assets/styles/utilities/helpers.css';
