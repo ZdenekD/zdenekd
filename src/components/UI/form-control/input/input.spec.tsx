@@ -1,5 +1,4 @@
 import {render, screen} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Input from '.';
 
@@ -25,15 +24,5 @@ describe('UI/Form Control/Input', () => {
         render(<Input maxlength={10} {...props} />);
 
         expect(screen.getByTestId('component-input-maxlength')).toBeInTheDocument();
-    });
-
-    it('set length on change', async () => {
-        const user = userEvent.setup();
-
-        render(<Input maxlength={10} {...props} />);
-
-        await user.type(screen.getByTestId('component-input'), 'value');
-
-        expect(screen.getByTestId('component-input-maxlength')).toHaveTextContent('5 / 10');
     });
 });

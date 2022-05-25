@@ -4,9 +4,9 @@ import Input from '.';
 
 export default {title: 'UI/Form Control/Input'};
 
-const defaultProps = {
+const props = {
     name: 'input',
-    label: 'Label',
+    label: 'Input',
 };
 
 export const component: React.FC = () => React.createElement(() => {
@@ -15,15 +15,15 @@ export const component: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
                 value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
+                placeholder="> Enter some data"
                 value={value}
-                placeholder="Enter some data"
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -35,17 +35,17 @@ export const success: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.success}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.success}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -57,17 +57,17 @@ export const info: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.info}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.info}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -79,17 +79,17 @@ export const warning: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.warning}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.warning}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -101,28 +101,27 @@ export const danger: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.danger}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.danger}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
 });
 
 export const disabled: React.FC = () => (
-    <Input
-        {...defaultProps}
-        disabled
-        value="Value"
-    />
+    <>
+        <Input disabled {...props} />
+        <Input disabled placeholder="> Enter some data" {...props} />
+    </>
 );
 
 export const required: React.FC = () => React.createElement(() => {
@@ -131,40 +130,52 @@ export const required: React.FC = () => React.createElement(() => {
     return (
         <>
             <Input
-                {...defaultProps}
                 required
                 value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Input
-                {...defaultProps}
                 required
+                placeholder="> Enter some data"
                 value={value}
-                placeholder="Enter some data"
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
 });
 
 export const readonly: React.FC = () => (
-    <Input
-        {...defaultProps}
-        readonly
-        value="Readonly value"
-    />
+    <Input readonly value="Readonly input" {...props} />
 );
 
 export const error: React.FC = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
-        <Input
-            {...defaultProps}
-            value={value}
-            error="has some error"
-            onChange={event => setValue(event.target.value)}
-        />
+        <>
+            <Input
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Input
+                placeholder="> Enter some data"
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Input
+                required
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+        </>
     );
 });
 
@@ -172,11 +183,21 @@ export const maxlength: React.FC = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
-        <Input
-            {...defaultProps}
-            value={value}
-            maxlength={32}
-            onChange={event => setValue(event.target.value)}
-        />
+        <>
+            <Input
+                maxlength={32}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Input
+                placeholder="> Enter some data"
+                maxlength={32}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Input disabled maxlength={32} {...props} />
+        </>
     );
 });

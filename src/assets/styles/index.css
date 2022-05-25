@@ -1,7 +1,9 @@
 @import './base/reset.css';
 @import './base/html.css';
-@import './variables/colors.css';
-@import './variables/easing.css';
-@import './variables/variables.css';
-@import './variables/fonts.css';
+@import './variables/base/easing.css';
+@import './variables/custom/colors.css';
+@import './variables/custom/fonts.css';
+@import './variables/custom/global.css';
+@import './variables/custom/grid.css';
+@import './variables/custom/z-index.css';
 @import './utilities/helpers.css';

@@ -95,6 +95,7 @@ video {
 }
 
 html {
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizelegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -133,6 +134,12 @@ ul {
     list-style: none;
 }
 
+abbr[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-skip-ink: none;
+}
+
 blockquote,
 q {
     quotes: none;
@@ -154,8 +161,15 @@ strong {
     font-weight: bold;
 }
 
-button {
+button:not(:disabled),
+[type = 'button']:not(:disabled),
+[type = 'reset']:not(:disabled),
+[type = 'submit']:not(:disabled) {
     cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
 }
 
 sub,

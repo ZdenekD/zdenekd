@@ -183,6 +183,7 @@
       "grid-auto-flow",
       "grid-auto-rows",
       "grid-auto-columns",
+      "flex",
       "flex-flow",
       "flex-grow",
       "flex-shrink",

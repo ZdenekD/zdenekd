@@ -10,6 +10,7 @@
       "@/components/*": ["src/components/*"],
       "@/UI/*": ["src/components/UI/*"],
       "@/data/*": ["src/data/*"],
+      "@/db/*": ["src/database/*"],
       "@/store/*": ["src/store/*"],
       "@/distributors/*": ["src/utils/distributors/*"],
       "@/enums/*": ["src/utils/enums/*"],
@@ -18,6 +19,7 @@
       "@/mocks/*": ["src/utils/mocks/*"],
       "@/types/*": ["src/types/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/public/*": ["public/*"],
       "@/test/*": ["__test__/jest/*"],
       "@/test/mocks": ["__test__/jest/mocks/*"]
     },

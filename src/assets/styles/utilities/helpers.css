@@ -10,8 +10,22 @@
     border: 0 !important;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 .text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+hr,
+.hr {
+    height: 1px;
+    margin: calc(3 * var(--gap)) 0;
+    opacity: 0.1;
+    background-color: currentcolor;
+    color: inherit;
+    border: 0;
 }

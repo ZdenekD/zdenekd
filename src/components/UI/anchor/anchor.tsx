@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './anchor.module.css';
 
-type IProps = {
+export type IProps = {
     href: string
     title?: string
     target?: '_blank'
-    children?: React.ReactNode
     className?: string
+    children: React.ReactNode
     onClick?: (event: React.MouseEvent) => void
 }
 
@@ -14,9 +14,9 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
     href,
     title,
     target,
-    children,
     className = '',
-    onClick = undefined,
+    children,
+    onClick,
     ...props
 }, ref) => (
     <a
@@ -27,8 +27,8 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
         target={target}
         rel={target ? 'noreferrer noopener' : undefined}
         data-testid="component-anchor"
-        {...props}
         onClick={onClick}
+        {...props}
     >
         {children}
     </a>
