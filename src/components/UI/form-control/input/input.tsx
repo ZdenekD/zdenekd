@@ -21,14 +21,14 @@ type IInput = {
     onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-type IProps = IReadonlyProps & IInput;
+export type IProps = IReadonlyProps & IInput;
 
 const Input = React.forwardRef<HTMLInputElement, IProps>(({
-    id = undefined,
+    id,
     name,
     label,
     type = 'text',
-    value = undefined,
+    value,
     placeholder,
     variant,
     required,
@@ -38,11 +38,11 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
     autoComplete,
     error,
     className = '',
-    onChange = undefined,
-    onBlur = undefined,
+    onChange,
+    onBlur,
 }, ref) => {
     const [length, setLength] = React.useState<number>(value?.length || 0);
-    const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInput: React.ChangeEventHandler<HTMLInputElement> = event => {
         setLength(event.target.value.length);
 
         if (onChange) {
@@ -61,7 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
                 id={id || name}
                 type={type}
                 name={name}
-                value={value}
+                value={value ?? ''}
                 className={`${styles.input} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
                 placeholder={placeholder}
                 disabled={disabled}
@@ -69,6 +69,8 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
                 maxLength={maxlength}
                 autoComplete={autoComplete}
                 data-testid="component-input"
+                aria-errormessage={`err_${id || name}`}
+                aria-invalid={!!error}
                 onChange={handleInput}
                 onBlur={onBlur}
             />
@@ -82,7 +84,7 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
                 </span>
             </label>
 
-            {error && (<span className={styles.error} data-testid="component-input-error">{error}</span>)}
+            {error && (<span id={`err_${id || name}`} className={styles.error} data-testid="component-input-error">{error}</span>)}
 
             {maxlength && !disabled && (
                 <span className={styles.maxlength} data-testid="component-input-maxlength">

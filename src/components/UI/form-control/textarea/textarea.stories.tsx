@@ -4,9 +4,9 @@ import Textarea from '.';
 
 export default {title: 'UI/Form Control/Textarea'};
 
-const defaultProps = {
-    name: 'input',
-    label: 'Label',
+const props = {
+    name: 'textarea',
+    label: 'Textarea',
 };
 
 export const component: React.FC = () => React.createElement(() => {
@@ -15,15 +15,15 @@ export const component: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
                 value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
+                placeholder="> Enter some data"
                 value={value}
-                placeholder="Enter some data"
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -35,17 +35,17 @@ export const success: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.success}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.success}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -57,17 +57,17 @@ export const info: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.info}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.info}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -79,17 +79,17 @@ export const warning: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.warning}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.warning}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
@@ -101,28 +101,27 @@ export const danger: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
-                value={value}
                 variant={VariantsEnum.danger}
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
-                value={value}
+                placeholder="> Enter some data"
                 variant={VariantsEnum.danger}
-                placeholder="Enter some data"
+                value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
 });
 
 export const disabled: React.FC = () => (
-    <Textarea
-        {...defaultProps}
-        disabled
-        value="Value"
-    />
+    <>
+        <Textarea disabled {...props} />
+        <Textarea disabled placeholder="> Enter some data" {...props} />
+    </>
 );
 
 export const required: React.FC = () => React.createElement(() => {
@@ -131,40 +130,52 @@ export const required: React.FC = () => React.createElement(() => {
     return (
         <>
             <Textarea
-                {...defaultProps}
                 required
                 value={value}
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
             <Textarea
-                {...defaultProps}
                 required
+                placeholder="> Enter some data"
                 value={value}
-                placeholder="Enter some data"
                 onChange={event => setValue(event.target.value)}
+                {...props}
             />
         </>
     );
 });
 
 export const readonly: React.FC = () => (
-    <Textarea
-        {...defaultProps}
-        readonly
-        value="Readonly value"
-    />
+    <Textarea readonly value="Readonly textarea" {...props} />
 );
 
 export const error: React.FC = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
-        <Textarea
-            {...defaultProps}
-            value={value}
-            error="has some error"
-            onChange={event => setValue(event.target.value)}
-        />
+        <>
+            <Textarea
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Textarea
+                placeholder="> Enter some data"
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Textarea
+                required
+                error="has some error"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+        </>
     );
 });
 
@@ -172,11 +183,27 @@ export const maxlength: React.FC = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
-        <Textarea
-            {...defaultProps}
-            value={value}
-            maxlength={32}
-            onChange={event => setValue(event.target.value)}
-        />
+        <>
+            <Textarea
+                maxlength={255}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Textarea
+                placeholder="> Enter some data"
+                maxlength={255}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+            <Textarea
+                disabled
+                maxlength={255}
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                {...props}
+            />
+        </>
     );
 });

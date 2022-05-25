@@ -1,5 +1,4 @@
 import {render, screen} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Textarea from '.';
 
@@ -25,15 +24,5 @@ describe('UI/Form Control/Textarea', () => {
         render(<Textarea maxlength={10} {...props} />);
 
         expect(screen.getByTestId('component-textarea-maxlength')).toBeInTheDocument();
-    });
-
-    it('set length on change', async () => {
-        const user = userEvent.setup();
-
-        render(<Textarea maxlength={10} {...props} />);
-
-        await user.type(screen.getByTestId('component-textarea'), 'value');
-
-        expect(screen.getByTestId('component-textarea-maxlength')).toHaveTextContent('5 / 10');
     });
 });

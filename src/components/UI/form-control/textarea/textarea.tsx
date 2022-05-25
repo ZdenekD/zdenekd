@@ -21,13 +21,13 @@ type ITextarea = {
     onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-type IProps = IReadonlyProps & ITextarea;
+export type IProps = IReadonlyProps & ITextarea;
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
-    id = undefined,
+    id,
     name,
     label,
-    value = undefined,
+    value,
     placeholder,
     variant,
     required,
@@ -37,17 +37,18 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     autoComplete,
     error,
     className = '',
-    onChange = undefined,
-    onBlur = undefined,
+    onChange,
+    onBlur,
 }, ref) => {
     const [length, setLength] = React.useState<number>(value?.length || 0);
+    const textareaRef = React.useRef<HTMLTextAreaElement | null>(null);
     const handleHeight = (element: HTMLTextAreaElement) => {
         if (element.style) {
-            element.style.height = '0';
-            element.style.height = `${element.scrollHeight}px`;
+            element.style.height = element.style.minHeight;
+            element.style.height = `${element.scrollHeight + 2}px`;
         }
     };
-    const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInput: React.ChangeEventHandler<HTMLTextAreaElement> = event => {
         handleHeight(event.target);
         setLength(event.target.value.length);
 
@@ -58,15 +59,19 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
 
     React.useEffect(() => {
         setLength(value?.length || 0);
+
+        if (textareaRef.current) {
+            handleHeight(textareaRef.current);
+        }
     }, [value]);
 
     return (
         <div className={`${styles.control} ${disabled || readonly ? styles.disabled : ''} ${error ? styles[VariantsEnum.danger] : ''} ${className}`}>
             <textarea
-                ref={ref}
+                ref={textareaRef || ref}
                 id={id || name}
                 name={name}
-                value={value}
+                value={value ?? ''}
                 className={`${styles.textarea} ${length > 0 ? styles.nonempty : ''} ${variant ? styles[variant] : ''} ${error ? styles[VariantsEnum.danger] : ''}`}
                 placeholder={placeholder}
                 disabled={disabled}
@@ -74,6 +79,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
                 maxLength={maxlength}
                 autoComplete={autoComplete}
                 data-testid="component-textarea"
+                aria-errormessage={`err_${id || name}`}
+                aria-invalid={!!error}
                 onChange={handleInput}
                 onBlur={onBlur}
             />
@@ -87,7 +94,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
                 </span>
             </label>
 
-            {error && (<span className={styles.error} data-testid="component-textarea-error">{error}</span>)}
+            {error && (<span id={`err_${id || name}`} className={styles.error} data-testid="component-textarea-error">{error}</span>)}
 
             {maxlength && !disabled && (
                 <span className={styles.maxlength} data-testid="component-textarea-maxlength">
