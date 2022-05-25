@@ -1,7 +1,3 @@
-html {
-    height: 100%;
-}
-
 body {
     --navigation-color: hsl(var(--color-blue-darken-4));
     --navigation-color-active: hsl(var(--color-blue-darken-3));

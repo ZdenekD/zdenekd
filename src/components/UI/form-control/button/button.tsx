@@ -2,26 +2,30 @@ import React from 'react';
 import VariantsEnum from '@/enums/VariantsEnum';
 import styles from './button.module.css';
 
-type IProps = {
+export type IProps = {
     type?: 'button' | 'submit'
     disabled?: boolean
     variant?: VariantsEnum
     title?: string
     tabindex?: number
-    children?: React.ReactNode
     className?: string
-    onClick?: (e: React.MouseEvent) => void,
+    children: React.ReactNode
+    onFocus?: () => void
+    onClick?: (e: React.MouseEvent) => void
+    onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void
 }
 
 const Button = React.forwardRef<HTMLButtonElement, IProps>(({
     type = 'button',
-    disabled = false,
+    disabled,
     variant,
-    title = undefined,
+    title,
     tabindex,
-    children,
     className = '',
-    onClick = undefined,
+    children,
+    onFocus,
+    onClick,
+    onKeyDown,
 }, ref) => (
     <button
         ref={ref}
@@ -31,7 +35,9 @@ const Button = React.forwardRef<HTMLButtonElement, IProps>(({
         className={`${styles.button} ${variant ? styles[variant] : ''} ${className}`}
         aria-label={title}
         data-testid="component-button"
+        onFocus={onFocus}
         onClick={onClick}
+        onKeyDown={onKeyDown}
     >
         {children}
     </button>

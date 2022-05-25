@@ -13,7 +13,7 @@
     text-align: center;
     transition: all 0.2s ease-in-out;
     border-radius: var(--border-radius);
-    border: 1px solid #f7f7f7;
+    border: 1px solid #f7f7f7 !important;
 
     &:focus,
     &:hover {

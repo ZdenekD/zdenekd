@@ -6,6 +6,6 @@ describe('Project/Browser/Target', () => {
     it('renders without error', () => {
         render(<Target url="http://url" />);
 
-        expect(screen.getByTestId('component-target')).toBeInTheDocument();
+        expect(screen.getByTestId('component-anchor')).toBeInTheDocument();
     });
 });

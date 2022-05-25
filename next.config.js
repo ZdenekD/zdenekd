@@ -51,7 +51,10 @@ const moduleExports = {
 
         return config;
     },
-    images: {disableStaticImages: true},
+    images: {
+        disableStaticImages: true,
+        formats: ['image/avif', 'image/webp'],
+    },
     i18n: {
         locales: ['cs', 'en'],
         defaultLocale: 'cs',

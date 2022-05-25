@@ -5,7 +5,7 @@ import {initialize, mswDecorator} from 'msw-storybook-addon'
 import handlers from '@/mocks/handlers';
 import {Provider} from '../src/store';
 import './index.css';
-import Cursor from '../src/components/cursor';
+import Cursor from '@/components/cursor';
 
 const viewports = {
     320: {
@@ -51,7 +51,7 @@ export const parameters = {
     nextRouter: {
         Provider: RouterContext.Provider,
     },
-}
+};
 
 export const decorators = [
     mswDecorator,
@@ -64,5 +64,5 @@ export const decorators = [
                 </LazyMotion>
             </AnimatePresence>
         </Provider>
-    )
-]
+    ),
+];

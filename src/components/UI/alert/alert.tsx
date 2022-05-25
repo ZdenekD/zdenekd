@@ -1,11 +1,12 @@
 import {
-    LazyMotion,
     AnimatePresence,
     domAnimation,
+    LazyMotion,
     m
 } from 'framer-motion';
 import React from 'react';
 import VariantsEnum from '@/enums/VariantsEnum';
+import useClickOutside from '@/hooks/useClickOutside';
 import useLocale from '@/hooks/useLocale';
 import {useMessageState} from '@/store/message';
 import animations from './alert.animations';
@@ -15,48 +16,60 @@ type IProps = {
     title?: string
     variant?: VariantsEnum
     timeout?: number // number in seconds
-    children?: React.ReactNode
     className?: string
-    isOpen?: boolean
+    isVisible?: boolean
+    children?: React.ReactNode
+    onClose?: () => void
 }
 
 const Alert: React.FC<IProps> = ({
     title,
     variant,
     timeout,
-    children,
     className = '',
-    isOpen = false,
+    isVisible = false,
+    children,
+    onClose,
 }) => {
-    const [isOpened, setOpened] = React.useState<boolean>(isOpen);
-    const timer = React.useRef<NodeJS.Timeout>();
+    const [isOpened, setOpened] = React.useState(false);
     const [, {unsetMessage}] = useMessageState();
     const locale = useLocale();
-    const remove = () => {
+    const handleClose = () => {
+        if (onClose) {
+            onClose();
+        }
+
         setOpened(false);
 
         if (unsetMessage) {
             unsetMessage();
         }
     };
-    const handleClick = () => {
-        remove();
-    };
+    const ref = useClickOutside(() => {
+        handleClose();
+    });
 
     React.useEffect(() => {
+        let timer: NodeJS.Timeout | null;
+
         if (timeout) {
-            timer.current = setTimeout(() => {
-                remove();
-            }, timeout * 1000);
+            timer = setTimeout(() => {
+                handleClose();
+                timer = null;
+            }, (timeout ?? 0) * 1000);
         }
 
         return () => {
-            if (timer.current) {
-                clearTimeout(timer.current);
+            if (timer) {
+                clearTimeout(timer);
             }
         };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [timeout]);
+
+    React.useEffect(() => {
+        setOpened(isVisible);
+    }, [isVisible]);
 
     return (
         <AnimatePresence>
@@ -71,18 +84,18 @@ const Alert: React.FC<IProps> = ({
                         data-testid="component-alert-backdrop"
                     />
                     <m.div
+                        ref={ref}
                         initial="initial"
                         animate="enter"
                         exit="exit"
                         variants={animations.component}
                         className={`${styles.alert} ${variant ? styles[variant] : ''} ${className}`}
+                        role="alert"
                         data-testid="component-alert"
                     >
                         {title && (
                             <header className={styles.header}>
-                                {title && (
-                                    <strong className={styles.title}>{title}</strong>
-                                )}
+                                <strong className={styles.title}>{title}</strong>
                             </header>
                         )}
 
@@ -95,7 +108,7 @@ const Alert: React.FC<IProps> = ({
                             aria-label={locale.alert.close}
                             data-testid="component-alert-button"
                             type="button"
-                            onClick={handleClick}
+                            onClick={handleClose}
                         >
                             &times;
                         </button>
@@ -104,9 +117,8 @@ const Alert: React.FC<IProps> = ({
                             <m.div
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
-                                className={styles.progress}
+                                className={`${styles.progress} chromatic-ignore`}
                                 data-testid="component-alert-timeout"
-                                data-chromatic="ignore"
                             />
                         )}
                     </m.div>
