@@ -4,5 +4,6 @@
 @import './variables/custom/colors.css';
 @import './variables/custom/fonts.css';
 @import './variables/custom/global.css';
+@import './variables/custom/grid.css';
 @import './variables/custom/z-index.css';
 @import './utilities/helpers.css';

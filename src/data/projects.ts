@@ -113,21 +113,6 @@ const projects: IProjects = [
             [LocalesEnum.en]: {description: 'Accommodation for rent in Prague via Airbnb.'},
         },
     },
-    {
-        id: 'portfolium',
-        title: 'Portfolium',
-        url: 'https://portfolium.in.progress',
-        tools: [
-            'octobercms',
-            'jquery',
-            'sass',
-            'gulp',
-        ],
-        locale: {
-            [LocalesEnum.cs]: {description: 'Kompletní služby ohledně pronájmu bytových jednotek nebo domů.'},
-            [LocalesEnum.en]: {description: 'Complete services regarding the rental of apartment units or houses.'},
-        },
-    },
 ];
 
 export default projects;
