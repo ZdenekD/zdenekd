@@ -17,6 +17,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
     className = '',
     children,
     onClick,
+    ...props
 }, ref) => (
     <a
         ref={ref}
@@ -27,6 +28,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
         rel={target ? 'noreferrer noopener' : undefined}
         data-testid="component-anchor"
         onClick={onClick}
+        {...props}
     >
         {children}
     </a>
