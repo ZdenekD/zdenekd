@@ -50,7 +50,7 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
                 </LazyMotion>
             </main>
             <Aside />
-            <Alert variant={message.variant} isOpen={!!message.content} timeout={4}>
+            <Alert variant={message.variant} isVisible={!!message.content} timeout={4}>
                 {message.content}
             </Alert>
             <Cursor />

@@ -10,20 +10,20 @@ import Alert from '.';
 
 describe('UI/Alert', () => {
     it('renders without error', () => {
-        render(<Alert isOpen>Alert</Alert>);
+        render(<Alert isVisible>Alert</Alert>);
 
         expect(screen.getByTestId('component-alert')).toBeInTheDocument();
         expect(screen.getByTestId('component-alert-backdrop')).toBeInTheDocument();
     });
 
     it('contains passed title', () => {
-        render(<Alert isOpen title="Title">Alert</Alert>);
+        render(<Alert isVisible title="Title">Alert</Alert>);
 
         expect(screen.getByText('Title')).toBeInTheDocument();
     });
 
     it('contains passed timeout element', () => {
-        render(<Alert isOpen timeout={3}>Alert</Alert>);
+        render(<Alert isVisible timeout={3}>Alert</Alert>);
 
         expect(screen.getByTestId('component-alert-timeout')).toBeInTheDocument();
     });
@@ -31,7 +31,7 @@ describe('UI/Alert', () => {
     it('remove component on remove button click', async () => {
         const user = userEvent.setup();
 
-        render(<Alert isOpen>Alert</Alert>);
+        render(<Alert isVisible>Alert</Alert>);
 
         await user.click(screen.getByTestId('component-alert-button'));
         await waitFor(() => {
@@ -40,7 +40,7 @@ describe('UI/Alert', () => {
     });
 
     it('remove component after timeout is passed', async () => {
-        render(<Alert isOpen timeout={2}>Alert</Alert>);
+        render(<Alert isVisible timeout={2}>Alert</Alert>);
 
         await waitFor(() => {
             expect(screen.queryByTestId('component-alert')).not.toBeInTheDocument();
