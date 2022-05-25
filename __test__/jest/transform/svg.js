@@ -9,6 +9,6 @@ module.exports = {
                 retainLines: true,
             });
 
-        return code;
+        return {code};
     },
 };

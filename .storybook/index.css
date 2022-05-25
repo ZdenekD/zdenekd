@@ -1,8 +1,9 @@
 @import '../src/assets/styles/base/reset.css';
 @import '../src/assets/styles/base/html.css';
-@import '../src/assets/styles/variables/colors.css';
-@import '../src/assets/styles/variables/easing.css';
-@import '../src/assets/styles/variables/variables.css';
+@import '../src/assets/styles/variables/base/easing.css';
+@import '../src/assets/styles/variables/custom/colors.css';
+@import '../src/assets/styles/variables/custom/global.css';
+@import '../src/assets/styles/variables/custom/z-index.css';
 @import './fonts.css';
 @import '../src/assets/styles/utilities/helpers.css';
 
