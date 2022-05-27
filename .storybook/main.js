@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
     stories: ['../src/**/*.stories.tsx'],
     staticDirs: ['../public'],
+    framework: '@storybook/react',
     core: {
         builder: "webpack5",
     },
@@ -44,6 +45,7 @@ module.exports = {
         '@storybook/addon-essentials',
         '@storybook/addon-a11y',
         'storybook-addon-next-router',
+        'storybook-addon-next'
     ],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.map(rule => (rule.test?.toString().search('svg') > 0
