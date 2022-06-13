@@ -1,9 +1,9 @@
-import { server } from './mockServer';
 import preloadAll from 'jest-next-dynamic';
-import '@testing-library/jest-dom/extend-expect'
+import {server} from './mockServer';
+import '@testing-library/jest-dom/extend-expect';
 
 beforeAll(async () => {
-    server.listen()
+    server.listen();
     await preloadAll();
 });
 afterEach(() => server.resetHandlers());
