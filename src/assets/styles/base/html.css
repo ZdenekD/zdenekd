@@ -5,7 +5,7 @@ body {
     background-color: hsl(var(--color-white));
     color: hsl(var(--color-black));
     font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
-    font-size: var(--font-size, 13px);
+    font-size: clamp(0.8rem, 0.76rem + 0.21vw, 1rem);
     line-height: 1.4;
     font-weight: 400;
     transition: font-size var(--transition-duration) var(--transition-timing);
@@ -16,16 +16,7 @@ body {
     }
 
     @media (--min-md) {
-        --font-size: 14px;
         overflow-y: hidden;
-    }
-
-    @media (--min-lg) {
-        --font-size: 15px;
-    }
-
-    @media (--min-xl) {
-        --font-size: 16px;
     }
 }
 

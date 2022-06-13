@@ -65,10 +65,16 @@ const locales: ILocales = {
                 </p>
             </>
         ),
-        status: {
-            200: 'Message was successfully sent.',
-            400: 'Something went wrong.',
-            405: 'Not allowed.',
+        message: {
+            successSave: 'Successfully saved.',
+            successRemove: 'Successfully removed.',
+            successUpload: 'Successfully uploaded.',
+        },
+        api: {
+            send: {
+                response: 'Thank you. The message has been sent successfully.',
+                notAllowed: 'Not allowed',
+            },
         },
     },
 };

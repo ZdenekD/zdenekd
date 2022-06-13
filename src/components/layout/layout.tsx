@@ -2,11 +2,12 @@ import {LazyMotion, domAnimation} from 'framer-motion';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import Cursor from '@/components/cursor';
+import handleResponseStatus from '@/helpers/handleResponseStatus';
 import useKeyboard from '@/hooks/useKeyboard';
 import useLocale from '@/hooks/useLocale';
 import useSwipe from '@/hooks/useSwipe';
 import useWheel from '@/hooks/useWheel';
-import {useMessageState} from '@/store/message';
+import useStore from '@/store/index';
 import Footer from './footer';
 import Header from './header';
 import Section from './section';
@@ -22,7 +23,7 @@ type IProps = {
 }
 
 const Layout: React.FC<IProps> = ({children, className = ''}) => {
-    const [{message}] = useMessageState();
+    const {status, message} = useStore(state => ({status: state.alert.status, message: state.alert.message}));
     const locale = useLocale();
 
     useKeyboard();
@@ -45,8 +46,12 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
                 </LazyMotion>
             </main>
             <Aside />
-            <Alert variant={message.variant} isVisible={!!message.content} timeout={4}>
-                {message.content}
+            <Alert
+                variant={status ? handleResponseStatus(status) : undefined}
+                isVisible={!!message}
+                timeout={4}
+            >
+                {message}
             </Alert>
             <Cursor />
         </>

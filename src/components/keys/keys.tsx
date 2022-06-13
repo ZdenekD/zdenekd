@@ -9,15 +9,14 @@ import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
 import useLocale from '@/hooks/useLocale';
 import usePageAction from '@/hooks/usePageAction';
 import useProjectAction from '@/hooks/useProjectAction';
-import {useMenuState} from '@/store/menu';
-import {useProjectState} from '@/store/project';
+import useStore from '@/store/index';
 import Key from './key';
 import {animations} from './keys.animations';
 import styles from './keys.module.css';
 
 const Keys: React.FC = () => {
-    const [{menu}] = useMenuState();
-    const [{project}] = useProjectState();
+    const {isOpen} = useStore(state => state.menu);
+    const {isFirst, isLast} = useStore(state => state.project);
     const router = useRouter();
     const setPageAction = usePageAction();
     const setProjectAction = useProjectAction();
@@ -43,7 +42,7 @@ const Keys: React.FC = () => {
     return (
         <m.div
             initial={false}
-            animate={menu.isOpen ? 'enter' : 'exit'}
+            animate={isOpen ? 'enter' : 'exit'}
             variants={animations}
             className={styles.keys}
             data-testid="component-keys"
@@ -58,7 +57,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.left}
                     label={locale.keys.left}
-                    disabled={!isProjects || project.isFirst}
+                    disabled={!isProjects || isFirst}
                     onClick={handleKeyLeft}
                 />
                 <Key
@@ -70,7 +69,7 @@ const Keys: React.FC = () => {
                 <Key
                     direction={DirectionsEnum.right}
                     label={locale.keys.right}
-                    disabled={!isProjects || project.isLast}
+                    disabled={!isProjects || isLast}
                     onClick={handleKeyRight}
                 />
             </div>
