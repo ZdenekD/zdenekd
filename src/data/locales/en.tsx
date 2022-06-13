@@ -39,7 +39,7 @@ const locales: ILocales = {
             },
             submit: 'Submit',
         },
-        alert: {close: 'Close'},
+        button: {close: 'Close'},
         reference: {
             target: 'Open the reference in a new window',
             video: {
@@ -65,10 +65,15 @@ const locales: ILocales = {
                 </p>
             </>
         ),
-        status: {
-            200: 'Message was successfully sent.',
-            400: 'Something went wrong.',
-            405: 'Not allowed.',
+        message: {
+            successSave: 'Successfully saved.',
+            successRemove: 'Successfully removed.',
+        },
+        api: {
+            send: {
+                response: 'Thank you. The message has been successfully sent.',
+                notAllowed: 'Not allowed',
+            },
         },
     },
 };

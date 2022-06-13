@@ -5,7 +5,7 @@ import projects from '@/data/projects';
 import LocalesEnum from '@/enums/LocalesEnum';
 import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
 import useProjectAction from '@/hooks/useProjectAction';
-import {useProjectState} from '@/store/project';
+import useStore from '@/store/index';
 import Browser from './browser';
 import Controls from './controls';
 import Tools from './tools';
@@ -13,8 +13,12 @@ import styles from './project.module.css';
 
 const Project: React.FC = () => {
     const router = useRouter();
-    const [{project}] = useProjectState();
-    const [index, setIndex] = React.useState<number>(project.index);
+    const {
+        index: project,
+        isFirst,
+        isLast,
+    } = useStore(state => state.project);
+    const [index, setIndex] = React.useState<number>(project);
     const titleRef = React.useRef<HTMLHeadingElement | null>(null);
     const descriptionRef = React.useRef<HTMLParagraphElement | null>(null);
     const toolsWrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -33,8 +37,8 @@ const Project: React.FC = () => {
         const {current: title} = titleRef;
         const {current: description} = descriptionRef;
         const {current: tools} = toolsWrapperRef;
-        const translateIn = project.index > index ? '10vw' : '-10vw';
-        const translateOut = project.index > index ? '-5vw' : '5vw';
+        const translateIn = project > index ? '10vw' : '-10vw';
+        const translateOut = project > index ? '-5vw' : '5vw';
 
         anime.timeline({easing: 'easeOutExpo'})
             .add({
@@ -47,7 +51,7 @@ const Project: React.FC = () => {
                 opacity: [1, 0],
                 translateX: [0, translateOut],
                 begin() {
-                    setIndex(project.index);
+                    setIndex(project);
                 },
             })
             .add({
@@ -91,11 +95,11 @@ const Project: React.FC = () => {
     }, []);
 
     React.useEffect(() => {
-        if (project.index !== index) {
+        if (project !== index) {
             handleAnimation();
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [project.index]);
+    }, [project]);
 
     return (
         <div className={styles.block} data-testid="component-project">
@@ -128,8 +132,8 @@ const Project: React.FC = () => {
 
                 <Controls
                     ref={controlsRef}
-                    isFirst={project.isFirst}
-                    isLast={project.isLast}
+                    isFirst={isFirst}
+                    isLast={isLast}
                     handlePrev={handlePrev}
                     handleNext={handleNext}
                 />
@@ -137,8 +141,8 @@ const Project: React.FC = () => {
             <Browser
                 ref={browserRef}
                 project={projects[index]}
-                isFirst={project.isFirst}
-                isLast={project.isLast}
+                isFirst={isFirst}
+                isLast={isLast}
                 handlePrev={handlePrev}
                 handleNext={handleNext}
             />

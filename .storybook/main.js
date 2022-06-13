@@ -42,6 +42,7 @@ module.exports = {
                 }
             }
         },
+        '@storybook/addon-viewport',
         '@storybook/addon-essentials',
         '@storybook/addon-a11y',
         'storybook-addon-next-router',

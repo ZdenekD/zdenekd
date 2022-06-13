@@ -22,6 +22,17 @@ const hashOnlyIdent = (context, _, exportName) => loaderUtils
     .replace(/^(-?\d|--)|\/|\+/g, '_$1');
 
 const moduleExports = {
+    async rewrites() {
+        return [
+            {
+                source: '/js/script.js',
+                destination: 'https://plausible.io/js/script.js',
+            }, {
+                source: '/api/event',
+                destination: 'https://plausible.io/api/event',
+            },
+        ];
+    },
     async headers() {
         return headers;
     },

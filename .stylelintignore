@@ -5,8 +5,9 @@ doc/*
 **/public/*
 .next
 .storybook
-__test__/*
-hint-report/*
+__test__/jest/coverage
+__test__/playwright/report
+__test__/playwright/results
 *.html
 *.tsx
 *.ts

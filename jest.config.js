@@ -7,6 +7,7 @@ module.exports = {
         '^(?!.*\\.json$)': '<rootDir>/__test__/jest/transform/file.js',
     },
     roots: ['<rootDir>/src'],
+    resolver: '<rootDir>/__test__/jest/resolver.ts',
     moduleNameMapper: {
         '\\.css$': 'identity-obj-proxy',
         '@/api(.*)': '<rootDir>/src/api/$1',
@@ -55,7 +56,7 @@ module.exports = {
     ],
     coverageDirectory: './__test__/jest/coverage',
     coverageReporters: ['html', 'lcov'],
-    setupFiles: ['<rootDir>/__test__/jest/setup.ts'],
+    setupFiles: ['<rootDir>/__test__/jest/setup.ts', 'jest-canvas-mock'],
     setupFilesAfterEnv: ['<rootDir>/__test__/jest/mockSetup.ts'],
     snapshotSerializers: ['jest-serializer-html'],
 };

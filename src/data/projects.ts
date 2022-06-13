@@ -7,6 +7,7 @@ const projects: IProjects = [
         title: 'Tomton Interiér',
         url: 'https://www.tomton-interier.cz',
         tools: [
+            'vercel',
             'nextjs',
             'graphcms',
             'react',
@@ -23,6 +24,7 @@ const projects: IProjects = [
         title: 'Tomton',
         url: 'https://www.tomton.cz',
         tools: [
+            'vercel',
             'nextjs',
             'graphcms',
             'react',
@@ -37,10 +39,28 @@ const projects: IProjects = [
         },
     },
     {
+        id: 'jf-woodpall',
+        title: 'JF Woodpall',
+        url: 'https://www.jf-woodpall.cz',
+        tools: [
+            'vercel',
+            'nextjs',
+            'react',
+            'typescript',
+            'lottie',
+            'framer-motion',
+        ],
+        locale: {
+            [LocalesEnum.cs]: {description: 'Společnost zaměřená na prodej, výrobu a opravu dřevěných palet.'},
+            [LocalesEnum.en]: {description: 'Company focused on the sale, manufacture and repair of wooden pallets.'},
+        },
+    },
+    {
         id: 'fit-s-marky',
         title: 'Fit s Marky',
         url: 'https://fit-s-marky.cz',
         tools: [
+            'vercel',
             'nextjs',
             'react',
             'typescript',

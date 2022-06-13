@@ -20,7 +20,7 @@
     }
 
     + .tool {
-        margin-left: var(--gap);
+        margin-left: calc(0.5 * var(--gap));
     }
 }
 

@@ -1,16 +1,15 @@
 import {LazyMotion, domAnimation} from 'framer-motion';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import React from 'react';
 import Cursor from '@/components/cursor';
+import getResponseVariant from '@/helpers/getResponseVariant';
 import useKeyboard from '@/hooks/useKeyboard';
 import useLocale from '@/hooks/useLocale';
 import useSwipe from '@/hooks/useSwipe';
 import useWheel from '@/hooks/useWheel';
-import {useMessageState} from '@/store/message';
+import useStore from '@/store/index';
 import Footer from './footer';
 import Header from './header';
-import Meta from './meta';
 import Section from './section';
 import styles from './layout.module.css';
 
@@ -24,7 +23,7 @@ type IProps = {
 }
 
 const Layout: React.FC<IProps> = ({children, className = ''}) => {
-    const [{message}] = useMessageState();
+    const {status, message} = useStore(state => ({status: state.alert.status, message: state.alert.message}));
     const locale = useLocale();
 
     useKeyboard();
@@ -33,9 +32,6 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
 
     return (
         <>
-            <Head>
-                <Meta />
-            </Head>
             <main className={`${styles.main} ${className}`} data-testid="component-layout">
                 <LazyMotion strict features={domAnimation}>
                     <Header />
@@ -50,8 +46,12 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
                 </LazyMotion>
             </main>
             <Aside />
-            <Alert variant={message.variant} isVisible={!!message.content} timeout={4}>
-                {message.content}
+            <Alert
+                variant={status ? getResponseVariant(status) : undefined}
+                isVisible={!!message}
+                timeout={4}
+            >
+                {message}
             </Alert>
             <Cursor />
         </>

@@ -3,7 +3,7 @@ import pages from '@/data/pages';
 import projects from '@/data/projects';
 import PagesEnum from '@/enums/PagesEnum';
 import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
-import {useProjectState} from '@/store/project';
+import useStore from '@/store/index';
 import type {IDistributor} from '@/types/distributor';
 
 type IAction = {
@@ -12,7 +12,7 @@ type IAction = {
 
 const useProjectAction = (): IAction => {
     const router = useRouter();
-    const [{project}, {setProject}] = useProjectState();
+    const {index, set} = useStore(state => state.project);
     const minIndex = 0;
     const maxIndex = projects.length - 1;
     const distributor: IDistributor = {
@@ -21,23 +21,19 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (project.index - 1 === minIndex) {
-                setProject({
-                    project: {
-                        index: project.index - 1,
-                        isFirst: true,
-                        isLast: false,
-                    },
+            if (index - 1 === minIndex) {
+                set({
+                    index: index - 1,
+                    isFirst: true,
+                    isLast: false,
                 });
             }
 
-            if (project.index - 1 > minIndex) {
-                setProject({
-                    project: {
-                        index: project.index - 1,
-                        isFirst: false,
-                        isLast: false,
-                    },
+            if (index - 1 > minIndex) {
+                set({
+                    index: index - 1,
+                    isFirst: false,
+                    isLast: false,
                 });
             }
         },
@@ -46,32 +42,28 @@ const useProjectAction = (): IAction => {
                 return;
             }
 
-            if (project.index + 1 === maxIndex) {
-                setProject({
-                    project: {
-                        index: project.index + 1,
-                        isFirst: false,
-                        isLast: true,
-                    },
+            if (index + 1 === maxIndex) {
+                set({
+                    index: index + 1,
+                    isFirst: false,
+                    isLast: true,
                 });
             }
 
-            if (project.index + 1 < maxIndex) {
-                setProject({
-                    project: {
-                        index: project.index + 1,
-                        isFirst: false,
-                        isLast: false,
-                    },
+            if (index + 1 < maxIndex) {
+                set({
+                    index: index + 1,
+                    isFirst: false,
+                    isLast: false,
                 });
             }
         },
     };
-    const setProjectAction: IAction = (type: ProjectActionsEnum) => {
+    const setAction: IAction = (type: ProjectActionsEnum) => {
         distributor[type]();
     };
 
-    return setProjectAction;
+    return setAction;
 };
 
 export default useProjectAction;

@@ -39,7 +39,7 @@ const locales: ILocales = {
             },
             submit: 'Odeslat',
         },
-        alert: {close: 'Zavřít'},
+        button: {close: 'Zavřít'},
         reference: {
             target: 'Otevřít referenci v novém okně',
             video: {
@@ -66,10 +66,15 @@ const locales: ILocales = {
                 </p>
             </>
         ),
-        status: {
-            200: 'Zpráva byla úspěšně odeslána.',
-            400: 'Něco se pravděpodobně po@#$&lo.',
-            405: 'Není povoleno.',
+        message: {
+            successSave: 'Úspěsně uloženo.',
+            successRemove: 'Úspěšně odstraněno.',
+        },
+        api: {
+            send: {
+                response: 'Děkuji. Zpráva byla úspěšně odeslána.',
+                notAllowed: 'Není povoleno',
+            },
         },
     },
 };

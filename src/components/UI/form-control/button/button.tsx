@@ -3,7 +3,7 @@ import VariantsEnum from '@/enums/VariantsEnum';
 import styles from './button.module.css';
 
 export type IProps = {
-    type?: 'button' | 'submit'
+    type?: 'button' | 'submit' | 'reset'
     disabled?: boolean
     variant?: VariantsEnum
     title?: string

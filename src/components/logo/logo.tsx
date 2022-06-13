@@ -2,7 +2,7 @@ import {m} from 'framer-motion';
 import React from 'react';
 import Image from '@/assets/images/logo.svg';
 import useCursor from '@/hooks/useCursor';
-import {useMenuState} from '@/store/menu';
+import useStore from '@/store/index';
 import {animations} from './logo.animations';
 import styles from './logo.module.css';
 
@@ -11,7 +11,7 @@ type IProps = {
 }
 
 const Logo: React.FC<IProps> = ({className = ''}) => {
-    const [{menu}] = useMenuState();
+    const {isOpen} = useStore(state => state.menu);
     const [catcher, setCatcher] = React.useState<HTMLDivElement | null>(null);
     const logoRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -26,7 +26,7 @@ const Logo: React.FC<IProps> = ({className = ''}) => {
             <Image className={styles.logo} />
             <m.i
                 initial={false}
-                animate={menu.isOpen ? 'enter' : 'exit'}
+                animate={isOpen ? 'enter' : 'exit'}
                 variants={animations}
                 className={styles.shadow}
             />

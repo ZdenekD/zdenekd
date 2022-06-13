@@ -1,5 +1,5 @@
 import useEventListener from '@use-it/event-listener';
-import _ from 'lodash';
+import {debounce} from 'lodash';
 import React from 'react';
 
 type ISize = {
@@ -24,7 +24,7 @@ const useWindowSize = (): ISize => {
         handleResize();
     }, []);
 
-    useEventListener('resize', _.debounce(handleResize, 200));
+    useEventListener('resize', debounce(handleResize, 200));
 
     return size;
 };

@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import React from 'react';
 import Keys from '@/components/keys';
 import useLocale from '@/hooks/useLocale';
-import {useMenuState} from '@/store/menu';
+import useStore from '@/store/index';
 import Icon, {IconsEnum} from '@/UI/icon';
 import {animations} from './footer.animations';
 import Lang from './lang';
@@ -11,7 +11,7 @@ import styles from './footer.module.css';
 
 const Footer: React.FC = () => {
     const router = useRouter();
-    const [{menu}] = useMenuState();
+    const {isOpen} = useStore(state => state.menu);
     const dotRef = React.useRef<HTMLElement | null>(null);
     const locale = useLocale();
 
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             animate="enter"
             exit="exit"
             variants={animations.footer}
-            className={`${styles.footer} ${menu.isOpen ? styles.opened : styles.closed}`} data-testid="component-footer"
+            className={`${styles.footer} ${isOpen ? styles.opened : styles.closed}`} data-testid="component-footer"
         >
             <code className={styles.code}>
                 {locale.footer.code}
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             </div>
             <m.div
                 initial={false}
-                animate={menu.isOpen ? 'enter' : 'exit'}
+                animate={isOpen ? 'enter' : 'exit'}
                 variants={animations.locale}
                 className={styles.languages}
             >
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             <Keys />
             <m.span
                 initial={false}
-                animate={menu.isOpen ? 'enter' : 'exit'}
+                animate={isOpen ? 'enter' : 'exit'}
                 variants={animations.scroll}
                 className={styles.scroll}
                 data-chromatic="ignore"

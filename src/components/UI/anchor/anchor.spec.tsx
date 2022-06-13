@@ -9,9 +9,9 @@ describe('UI/Anchor', () => {
         expect(screen.getByTestId('component-anchor')).toBeInTheDocument();
     });
 
-    it('has rel attribute on target prop set', () => {
+    it('has rel attribute on target prop set', async () => {
         render(<Anchor href="#" target="_blank">Anchor</Anchor>);
 
-        expect(screen.getByTestId('component-anchor')).toHaveAttribute('rel');
+        await expect(screen.getByTestId('component-anchor')).toHaveAttribute('rel');
     });
 });
