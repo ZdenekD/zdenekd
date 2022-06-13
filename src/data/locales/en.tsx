@@ -72,7 +72,7 @@ const locales: ILocales = {
         },
         api: {
             send: {
-                response: 'Thank you. The message has been sent successfully.',
+                response: 'Thank you. The message has been successfully sent.',
                 notAllowed: 'Not allowed',
             },
         },

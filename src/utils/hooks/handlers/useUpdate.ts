@@ -1,38 +1,32 @@
 import * as Sentry from '@sentry/nextjs';
 import put from '@/api/put';
-import isSuccessfulResponse from '@/helpers/isSuccessfulResponse';
 import useLocale from '@/hooks/useLocale';
 import useStore from '@/store/index';
 
-type IHandleUpdate<D> = (path: string, data: D) => Promise<void>
+type IUpdateHandler<D> = (path: string, data: D) => Promise<void>
 
 const useUpdate = <D>(
     onSuccess?: () => void,
-    onFailure?: () => void,
-    options: {showMessage?: boolean} = {showMessage: true}
+    onFailure?: () => void
 ) => {
     const locale = useLocale();
-    const setAlert = useStore(state => state.alert.set);
-    const handleUpdate: IHandleUpdate<D> = async (path, data) => {
+    const {set} = useStore(state => state.alert);
+    const handleUpdate: IUpdateHandler<D> = async (path, data) => {
         try {
             const response = await put<D>(path, data);
-            const responseMessage = response.data?.message;
-            const isSuccess = isSuccessfulResponse(response.status);
+            const message = response.data?.message;
 
-            if (!isSuccess && responseMessage && options?.showMessage) {
-                setAlert({status: response.status, message: responseMessage});
+            if (response.ok) {
+                set({status: response.status, message: message || locale?.message?.successSave});
+
+                if (onSuccess) onSuccess();
             }
 
-            if (!isSuccess && onFailure) onFailure();
+            if (!response.ok) {
+                set({status: response.status, message: message || ''});
 
-            if (isSuccess && options?.showMessage) {
-                setAlert({
-                    status: response.status,
-                    message: responseMessage || locale?.message?.successSave,
-                });
+                if (onFailure) onFailure();
             }
-
-            if (isSuccess && onSuccess) onSuccess();
         } catch (exception) {
             Sentry.captureException(exception);
         }

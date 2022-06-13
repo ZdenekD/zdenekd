@@ -5,7 +5,7 @@ const headers: HeadersInit = {
     'Content-Type': 'application/json; charset=utf-8',
     'Content-language': 'cs',
 };
-const data = {key: 'value'};
+const body = {key: 'value'};
 
 describe('API - utils - methods', () => {
     it('returns `GET` methods object', () => {
@@ -21,10 +21,10 @@ describe('API - utils - methods', () => {
         const expected = {
             method: 'POST',
             headers,
-            body: JSON.stringify(data),
+            body: JSON.stringify(body),
         };
 
-        expect(methods.post(data)).toEqual(expected);
+        expect(methods.post(body)).toEqual(expected);
     });
 
     it('returns `POST` methods object without data', () => {
@@ -41,20 +41,20 @@ describe('API - utils - methods', () => {
         const expected = {
             method: 'PUT',
             headers,
-            body: JSON.stringify(data),
+            body: JSON.stringify(body),
         };
 
-        expect(methods.put(data)).toEqual(expected);
+        expect(methods.put(body)).toEqual(expected);
     });
 
     it('returns `PATCH` methods object with data', () => {
         const expected = {
             method: 'PATCH',
             headers,
-            body: JSON.stringify(data),
+            body: JSON.stringify(body),
         };
 
-        expect(methods.patch(data)).toEqual(expected);
+        expect(methods.patch(body)).toEqual(expected);
     });
 
     it('returns `DELETE` methods object', () => {
@@ -80,10 +80,10 @@ describe('API - utils - methods', () => {
             method: 'GET',
             headers: {
                 ...headers,
-                authorization: 'Bearer 123',
+                authorization: 'Bearer token',
             },
         };
 
-        expect(methods.get({token: '123'})).toEqual(expected);
+        expect(methods.get({token: 'token'})).toEqual(expected);
     });
 });

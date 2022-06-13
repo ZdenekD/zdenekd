@@ -5,8 +5,9 @@ import methods from './utils/methods';
 
 type IDelete = <R>(path: string, options?: IOptions) => Promise<IResponse<IData<R, undefined>>>
 
-const remove: IDelete = (path, options) => fetch(`${API}/${path}`, methods.delete(options))
+const remove: IDelete = async (path, options) => fetch(`${API}/${path}`, methods.delete(options))
     .then(async response => ({
+        ok: response.ok,
         status: response.status,
         data: await response.json(),
     }));

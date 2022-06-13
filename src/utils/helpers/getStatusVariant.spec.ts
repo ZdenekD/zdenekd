@@ -1,27 +1,27 @@
 import VariantsEnum from '@/enums/VariantsEnum';
-import handleResponseStatus from './handleResponseStatus';
+import getResponseVariant from './getResponseVariant';
 
 describe('Helper - handleResponseStatus', () => {
     it('returns `success` variant on status 2**', () => {
-        const value = handleResponseStatus(200);
+        const value = getResponseVariant(200);
 
         expect(value).toBe(VariantsEnum.success);
     });
 
     it('returns `warning` variant on status 4**', () => {
-        const value = handleResponseStatus(404);
+        const value = getResponseVariant(404);
 
         expect(value).toBe(VariantsEnum.danger);
     });
 
     it('returns `danger` variant on status 5**', () => {
-        const value = handleResponseStatus(500);
+        const value = getResponseVariant(500);
 
         expect(value).toBe(VariantsEnum.danger);
     });
 
     it('returns `info` variant if no status match', () => {
-        const value = handleResponseStatus(304);
+        const value = getResponseVariant(304);
 
         expect(value).toBe(VariantsEnum.info);
     });

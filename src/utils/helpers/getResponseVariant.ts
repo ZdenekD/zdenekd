@@ -1,6 +1,6 @@
 import VariantsEnum from '@/enums/VariantsEnum';
 
-const handleResponseStatus = (code: number): VariantsEnum => {
+const getResponseVariant = (code: number): VariantsEnum => {
     switch (Math.floor(code / 100)) {
         case 2: {
             return VariantsEnum.success;
@@ -17,4 +17,4 @@ const handleResponseStatus = (code: number): VariantsEnum => {
     }
 };
 
-export default handleResponseStatus;
+export default getResponseVariant;

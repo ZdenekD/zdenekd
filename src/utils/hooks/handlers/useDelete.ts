@@ -1,38 +1,32 @@
 import * as Sentry from '@sentry/nextjs';
 import remove from '@/api/delete';
-import isSuccessfulResponse from '@/helpers/isSuccessfulResponse';
 import useLocale from '@/hooks/useLocale';
 import useStore from '@/store/index';
 
-type IHandleDelete = (path: string) => Promise<void>
+type IDeleteHandler = (path: string) => Promise<void>
 
 const useDelete = (
     onSuccess?: () => void,
-    onFailure?: () => void,
-    options: {showMessage?: boolean} = {showMessage: true}
+    onFailure?: () => void
 ) => {
     const locale = useLocale();
-    const setAlert = useStore(state => state.alert.set);
-    const handleDelete: IHandleDelete = async path => {
+    const {set} = useStore(state => state.alert);
+    const handleDelete: IDeleteHandler = async path => {
         try {
             const response = await remove<string>(path);
-            const responseMessage = response.data?.message;
-            const isSuccess = isSuccessfulResponse(response.status);
+            const message = response.data?.message;
 
-            if (!isSuccess && responseMessage && options?.showMessage) {
-                setAlert({status: response.status, message: responseMessage});
+            if (response.ok) {
+                set({status: response.status, message: message || locale?.message?.successRemove});
+
+                if (onSuccess) onSuccess();
             }
 
-            if (!isSuccess && onFailure) onFailure();
+            if (!response.ok) {
+                set({status: response.status, message: message || ''});
 
-            if (isSuccess && options?.showMessage) {
-                setAlert({
-                    status: response.status,
-                    message: responseMessage || locale?.message?.successRemove,
-                });
+                if (onFailure) onFailure();
             }
-
-            if (isSuccess && onSuccess) onSuccess();
         } catch (exception) {
             Sentry.captureException(exception);
         }

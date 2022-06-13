@@ -2,7 +2,7 @@ import {LazyMotion, domAnimation} from 'framer-motion';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import Cursor from '@/components/cursor';
-import handleResponseStatus from '@/helpers/handleResponseStatus';
+import getResponseVariant from '@/helpers/getResponseVariant';
 import useKeyboard from '@/hooks/useKeyboard';
 import useLocale from '@/hooks/useLocale';
 import useSwipe from '@/hooks/useSwipe';
@@ -47,7 +47,7 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
             </main>
             <Aside />
             <Alert
-                variant={status ? handleResponseStatus(status) : undefined}
+                variant={status ? getResponseVariant(status) : undefined}
                 isVisible={!!message}
                 timeout={4}
             >

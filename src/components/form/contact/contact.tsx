@@ -7,7 +7,7 @@ import {
     Controller,
     SubmitHandler
 } from 'react-hook-form';
-import ApiDistributor from '@/distributors/APIDistributor';
+import api from '@/distributors/api';
 import usePost from '@/hooks/handlers/usePost';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
             return;
         }
 
-        await handlePost(ApiDistributor.send, values);
+        await handlePost(api.send, values);
     };
 
     React.useEffect(() => {

@@ -15,7 +15,7 @@ import styles from './alert.module.css';
 type IProps = {
     title?: string
     variant?: VariantsEnum
-    timeout?: number // number in seconds
+    timeout?: number
     className?: string
     isVisible?: boolean
     children?: React.ReactNode
