@@ -2,7 +2,6 @@ import {AnimatePresence} from 'framer-motion';
 import {AppProps} from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import {Provider} from '../store';
 import '@/assets/styles/index.css';
 
 const App = ({Component, pageProps, router}: AppProps): JSX.Element => {
@@ -42,11 +41,9 @@ const App = ({Component, pageProps, router}: AppProps): JSX.Element => {
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <meta name="author" content="ZdenekD, zdenekd.cz" />
             </Head>
-            <Provider>
-                <AnimatePresence exitBeforeEnter>
-                    <Component {...pageProps} key={router.route} />
-                </AnimatePresence>
-            </Provider>
+            <AnimatePresence exitBeforeEnter>
+                <Component {...pageProps} key={router.route} />
+            </AnimatePresence>
         </>
     );
 };

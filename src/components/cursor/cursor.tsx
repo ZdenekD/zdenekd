@@ -1,14 +1,14 @@
 /* eslint-disable no-param-reassign */
 import useEventListener from '@use-it/event-listener';
 import React from 'react';
-import {useCursorState} from '@/store/cursor';
+import useStore from '@/store/index';
 import styles from './cursor.module.css';
 
 type IHandler = (coordX: number, coordY: number, inner: HTMLElement, outer: HTMLElement) => void
 type ICursorHandle = (coordX: number, coordY: number) => void
 
 const Cursor: React.FC = () => {
-    const [{cursor}] = useCursorState();
+    const {isStuck, props} = useStore(state => state.cursor);
     const outerCursorRef = React.useRef<HTMLElement | null>(null);
     const innerCursorRef = React.useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {
@@ -22,7 +22,7 @@ const Cursor: React.FC = () => {
         inner.style.transform = `matrix(1, 0, 0, 1, ${coordX}, ${coordY})`;
     };
     const handleIsStuck: IHandler = (coordX, coordY, inner, outer) => {
-        const {width, height, top, left} = cursor.props;
+        const {width, height, top, left} = props;
 
         outer.style.transform = `translate3d(${left + 10}px, ${top + 10}px, 0)`;
         outer.style.setProperty('--cursor-width', `${width + 10}px`);
@@ -36,7 +36,7 @@ const Cursor: React.FC = () => {
         const inner = (innerCursorRef.current as HTMLElement);
 
         if (inner && outer) {
-            (cursor.isStuck ? handleIsStuck : handleIsUnstuck)(coordX, coordY, inner, outer);
+            (isStuck ? handleIsStuck : handleIsUnstuck)(coordX, coordY, inner, outer);
         }
     };
     const handleMouse = (event: MouseEvent) => {
@@ -50,7 +50,7 @@ const Cursor: React.FC = () => {
             <i ref={outerCursorRef} className={styles.outerCursor} data-testid="component-outer-cursor" />
             <i
                 ref={innerCursorRef}
-                className={`${styles.innerCursor} ${cursor.isStuck ? styles.innerCursorStuck : ''}`}
+                className={`${styles.innerCursor} ${isStuck ? styles.innerCursorStuck : ''}`}
                 data-testid="component-inner-cursor"
             />
         </>

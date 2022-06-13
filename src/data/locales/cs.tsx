@@ -66,10 +66,16 @@ const locales: ILocales = {
                 </p>
             </>
         ),
-        status: {
-            200: 'Zpráva byla úspěšně odeslána.',
-            400: 'Něco se pravděpodobně po@#$&lo.',
-            405: 'Není povoleno.',
+        message: {
+            successSave: 'Úspěsně uloženo.',
+            successRemove: 'Úspěšně odstraněno.',
+            successUpload: 'Úspěšně nahráno.',
+        },
+        api: {
+            send: {
+                response: 'Děkuji. Zpráva byla úspěšně odeslána.',
+                notAllowed: 'Není povoleno',
+            },
         },
     },
 };

@@ -1,18 +1,16 @@
 import {yupResolver} from '@hookform/resolvers/yup';
 import anime from 'animejs';
 import dynamic from 'next/dynamic';
-import {useRouter} from 'next/router';
 import React from 'react';
 import {
     useForm,
     Controller,
     SubmitHandler
 } from 'react-hook-form';
-import send from '@/api/send';
-import VariantsEnum from '@/enums/VariantsEnum';
+import ApiDistributor from '@/distributors/APIDistributor';
+import usePost from '@/hooks/handlers/usePost';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
-import {useMessageState} from '@/store/message';
 import Button from '@/UI/form-control/button';
 import Form from '@/UI/form-control/form';
 import Input from '@/UI/form-control/input';
@@ -30,8 +28,6 @@ const ContactForm: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const formRef = React.useRef<HTMLFormElement | null>(null);
-    const router = useRouter();
-    const [, {setMessage}] = useMessageState();
     const locale = useLocale();
     const schema = validation(locale);
     const {
@@ -40,34 +36,20 @@ const ContactForm: React.FC = () => {
             isSubmitting,
             errors,
         },
+        reset,
         handleSubmit,
     } = useForm({
         resolver: yupResolver(schema),
         mode: 'onTouched',
     });
+    const onSuccess = async () => reset();
+    const {handlePost} = usePost<IValues>(onSuccess);
     const onSubmit: SubmitHandler<IValues> = async values => {
         if (values.med) {
             return;
         }
 
-        const response = await send(values);
-
-        if (response.status) {
-            const variant: {[key: string]: VariantsEnum} = {
-                200: VariantsEnum.success,
-                400: VariantsEnum.warning,
-                405: VariantsEnum.danger,
-            };
-
-            setMessage({
-                message: {
-                    variant: variant[response.status],
-                    content: locale.status[response.status],
-                },
-            });
-        }
-
-        router.push('/');
+        await handlePost(ApiDistributor.send, values);
     };
 
     React.useEffect(() => {

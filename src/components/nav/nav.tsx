@@ -5,31 +5,30 @@ import pages from '@/data/pages';
 import LocalesEnum from '@/enums/LocalesEnum';
 import PagesEnum from '@/enums/PagesEnum';
 import getPage from '@/helpers/getPage';
-import {useAnimationState} from '@/store/animation';
-import {useMenuState} from '@/store/menu';
+import useStore from '@/store/index';
 import Anchor from '@/UI/anchor';
 import {animations, animation} from './nav.animations';
 import styles from './nav.module.css';
 
 const Nav: React.FC = () => {
     const router = useRouter();
-    const [{menu}, {setMenu}] = useMenuState();
-    const [, {setAnimation}] = useAnimationState();
+    const {isOpen, set: setMenu} = useStore(state => state.menu);
+    const {set: setAnimation} = useStore(state => state.animation);
     const page = getPage(router.route);
     const lang = router.locale || LocalesEnum.cs;
     const handleAnimationComplete = () => {
-        setAnimation({animation: {isAsideAnimated: false}});
+        setAnimation({isAsideAnimated: false});
     };
     const handleClick = () => {
-        setAnimation({animation: {isAsideAnimated: true}});
-        setMenu({menu: {isOpen: false}});
+        setAnimation({isAsideAnimated: true});
+        setMenu({isOpen: false});
     };
 
     return (
         <nav className={styles.nav} data-testid="component-nav">
             <m.ul
                 initial={false}
-                animate={menu.isOpen ? 'enter' : 'exit'}
+                animate={isOpen ? 'enter' : 'exit'}
                 variants={animations}
                 className={styles.list}
                 onAnimationComplete={handleAnimationComplete}
