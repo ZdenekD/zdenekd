@@ -5,16 +5,16 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "Content-Security-Policy",
-          "value": "script-src 'self' *.vercel-insights.com"
-        },
-        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
         {
           "key": "X-DNS-Prefetch-Control",
           "value": "on"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "deny"
         },
         {
           "key": "Strict-Transport-Security",
@@ -58,6 +58,10 @@
     {
       "source": "/(.*).js",
       "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self'"
+        },
         {
           "key": "Cache-Control",
           "value": "private, max-age=31536000, immutable"

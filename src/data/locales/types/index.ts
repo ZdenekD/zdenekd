@@ -20,7 +20,7 @@ export type ILocale = {
         }
         submit: string
     }
-    alert: {
+    button: {
         close: string
     },
     reference: {
@@ -38,8 +38,13 @@ export type ILocale = {
     }
     tools: string
     noscript: JSX.Element
-    status: {
+    message: {
         [key: string]: string
+    }
+    api: {
+        send: {
+            [key: string]: string
+        }
     }
 }
 

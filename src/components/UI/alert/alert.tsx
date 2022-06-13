@@ -8,7 +8,7 @@ import React from 'react';
 import VariantsEnum from '@/enums/VariantsEnum';
 import useClickOutside from '@/hooks/useClickOutside';
 import useLocale from '@/hooks/useLocale';
-import {useMessageState} from '@/store/message';
+import useStore from '@/store/index';
 import animations from './alert.animations';
 import styles from './alert.module.css';
 
@@ -32,7 +32,7 @@ const Alert: React.FC<IProps> = ({
     onClose,
 }) => {
     const [isOpened, setOpened] = React.useState(false);
-    const [, {unsetMessage}] = useMessageState();
+    const {message, unset} = useStore(state => state.alert);
     const locale = useLocale();
     const handleClose = () => {
         if (onClose) {
@@ -41,8 +41,8 @@ const Alert: React.FC<IProps> = ({
 
         setOpened(false);
 
-        if (unsetMessage) {
-            unsetMessage();
+        if (message) {
+            unset();
         }
     };
     const ref = useClickOutside(() => {
@@ -105,7 +105,7 @@ const Alert: React.FC<IProps> = ({
 
                         <button
                             className={styles.button}
-                            aria-label={locale.alert.close}
+                            aria-label={locale.button.close}
                             data-testid="component-alert-button"
                             type="button"
                             onClick={handleClose}

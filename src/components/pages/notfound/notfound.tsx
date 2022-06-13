@@ -15,7 +15,7 @@ const NotFound: React.FC = () => {
     return (
         <Layout className={styles.root}>
             <Heading data-testid="component-heading">{router.locale && paragraph[router.locale]}</Heading>
-            <div className={styles.animation} data-chromatic="ignore">
+            <div className={`${styles.animation} chromatic-ignore`} data-chromatic="ignore">
                 <Player
                     autoplay
                     loop

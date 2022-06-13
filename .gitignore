@@ -21,9 +21,6 @@ pids
 *.pid*
 *.seed
 
-# Reports
-hint-report
-
 # Cache
 .*cache/
 .next
@@ -50,6 +47,9 @@ behat.yml
 # Test
 coverage
 cypress.env.json
+/__test__/jest/coverage
+/__test__/playwright/report
+/__test__/playwright/results
 
 # System files
 .DS_Store
@@ -75,6 +75,4 @@ nbproject
 
 # Others
 /doc
-/__test__/**/*.mp4
-/__test__/**/screenshots
 playground*.*

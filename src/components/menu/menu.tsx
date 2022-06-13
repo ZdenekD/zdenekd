@@ -1,15 +1,14 @@
 import React from 'react';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
-import {useAnimationState} from '@/store/animation';
-import {useMenuState} from '@/store/menu';
+import useStore from '@/store/index';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.module.css';
 
 const Menu: React.FC = () => {
     const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const [{menu}, {setMenu}] = useMenuState();
-    const [{animation}] = useAnimationState();
+    const {isOpen, set} = useStore(state => state.menu);
+    const {isAsideAnimated} = useStore(state => state.animation);
     const buttonRef = React.useRef<HTMLButtonElement | null>(null);
     const pathTopRef = React.useRef<SVGPathElement | null>(null);
     const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
@@ -30,16 +29,16 @@ const Menu: React.FC = () => {
         });
     };
     const handleClick = () => {
-        setMenu({menu: {isOpen: !menu.isOpen}});
+        set({isOpen: !isOpen});
     };
 
     React.useEffect(() => {
-        if (menu.isOpen === undefined) {
+        if (isOpen === undefined) {
             return;
         }
 
-        (menu.isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
-    }, [menu.isOpen]);
+        (isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
+    }, [isOpen]);
 
     React.useEffect(() => {
         setCatcher(buttonRef.current);
@@ -51,9 +50,9 @@ const Menu: React.FC = () => {
         <button
             ref={buttonRef}
             type="button"
-            className={`${styles.button} ${menu.isOpen ? styles.opened : styles.closed} ${animation.isAsideAnimated ? styles.disabled : ''}`}
+            className={`${styles.button} ${isOpen ? styles.opened : styles.closed} ${isAsideAnimated ? styles.disabled : ''}`}
             data-testid="component-menu"
-            aria-label={menu.isOpen ? locale.menu.close : locale.menu.open}
+            aria-label={isOpen ? locale.menu.close : locale.menu.open}
             onClick={handleClick}
         >
             <svg className={styles.icon} viewBox="0 0 100 100">
