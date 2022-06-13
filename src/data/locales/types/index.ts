@@ -20,7 +20,7 @@ export type ILocale = {
         }
         submit: string
     }
-    alert: {
+    button: {
         close: string
     },
     reference: {

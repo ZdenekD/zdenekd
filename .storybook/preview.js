@@ -3,7 +3,6 @@ import * as nextImage from 'next/image';
 import {AnimatePresence, LazyMotion, domAnimation} from 'framer-motion';
 import {initialize, mswDecorator} from 'msw-storybook-addon'
 import handlers from '@/mocks/handlers';
-import {Provider} from '../src/store';
 import './index.css';
 import Cursor from '@/components/cursor';
 
@@ -56,13 +55,11 @@ export const parameters = {
 export const decorators = [
     mswDecorator,
     Story => (
-        <Provider>
-            <AnimatePresence exitBeforeEnter>
-                <LazyMotion strict features={domAnimation}>
-                    <Story />
-                    <Cursor />
-                </LazyMotion>
-            </AnimatePresence>
-        </Provider>
+        <AnimatePresence exitBeforeEnter>
+            <LazyMotion strict features={domAnimation}>
+                <Story />
+                <Cursor />
+            </LazyMotion>
+        </AnimatePresence>
     ),
 ];

@@ -39,7 +39,7 @@ const locales: ILocales = {
             },
             submit: 'Submit',
         },
-        alert: {close: 'Close'},
+        button: {close: 'Close'},
         reference: {
             target: 'Open the reference in a new window',
             video: {

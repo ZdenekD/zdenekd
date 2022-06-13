@@ -32,7 +32,7 @@ const Alert: React.FC<IProps> = ({
     onClose,
 }) => {
     const [isOpened, setOpened] = React.useState(false);
-    const {unset} = useStore(state => state.alert);
+    const {message, unset} = useStore(state => state.alert);
     const locale = useLocale();
     const handleClose = () => {
         if (onClose) {
@@ -41,7 +41,7 @@ const Alert: React.FC<IProps> = ({
 
         setOpened(false);
 
-        if (unset) {
+        if (message) {
             unset();
         }
     };
@@ -105,7 +105,7 @@ const Alert: React.FC<IProps> = ({
 
                         <button
                             className={styles.button}
-                            aria-label={locale.alert.close}
+                            aria-label={locale.button.close}
                             data-testid="component-alert-button"
                             type="button"
                             onClick={handleClose}

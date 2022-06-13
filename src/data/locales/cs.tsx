@@ -39,7 +39,7 @@ const locales: ILocales = {
             },
             submit: 'Odeslat',
         },
-        alert: {close: 'Zavřít'},
+        button: {close: 'Zavřít'},
         reference: {
             target: 'Otevřít referenci v novém okně',
             video: {
