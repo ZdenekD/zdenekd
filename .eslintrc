@@ -18,7 +18,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "plugin:playwright/playwright-test"
   ],
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
@@ -237,6 +238,8 @@
     "@next/next/no-html-link-for-pages": 0,
     // Enforce valid expect() usage (valid-expect)
     "jest/valid-expect": 1,
+    // Disallow using expect outside of it or test blocks (no-standalone-expect
+    "jest/no-standalone-expect": 0,
     // When there is only a single export from a module, prefer using default export over named export.
     "import/prefer-default-export": 0,
     // Off import errors (becauseof webpack config)

@@ -69,19 +69,15 @@ yarn debug
 
 How to run and write tests
 [Snyk](https://snyk.io) - check packages for vulnerabilities
-[Webhint](https://webhint.io) - complete website tests
 [Jest](https://jestjs.io)
-[Cypress](https://www.cypress.io)
+[Playwright](https://playwright.dev)
 
 ```
 snyk wizard
 yarn jest
 yarn jest:coverage
-yarn hint:local
-yarn hint:dev
-yarn hint:prod
-yarn cypress
-yarn cypress:open
+yarn test
+yarn test:report
 ```
 
 ## Lint
