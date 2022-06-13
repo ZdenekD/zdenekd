@@ -69,7 +69,6 @@ const locales: ILocales = {
         message: {
             successSave: 'Úspěsně uloženo.',
             successRemove: 'Úspěšně odstraněno.',
-            successUpload: 'Úspěšně nahráno.',
         },
         api: {
             send: {

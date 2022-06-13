@@ -39,7 +39,8 @@ export type ILocale = {
     tools: string
     noscript: JSX.Element
     message: {
-        [key: string]: string
+        successSave: string
+        successRemove: string
     }
     api: {
         send: {

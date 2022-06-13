@@ -68,7 +68,6 @@ const locales: ILocales = {
         message: {
             successSave: 'Successfully saved.',
             successRemove: 'Successfully removed.',
-            successUpload: 'Successfully uploaded.',
         },
         api: {
             send: {
