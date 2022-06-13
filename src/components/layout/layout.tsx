@@ -1,6 +1,5 @@
 import {LazyMotion, domAnimation} from 'framer-motion';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import React from 'react';
 import Cursor from '@/components/cursor';
 import useKeyboard from '@/hooks/useKeyboard';
@@ -10,7 +9,6 @@ import useWheel from '@/hooks/useWheel';
 import {useMessageState} from '@/store/message';
 import Footer from './footer';
 import Header from './header';
-import Meta from './meta';
 import Section from './section';
 import styles from './layout.module.css';
 
@@ -33,9 +31,6 @@ const Layout: React.FC<IProps> = ({children, className = ''}) => {
 
     return (
         <>
-            <Head>
-                <Meta />
-            </Head>
             <main className={`${styles.main} ${className}`} data-testid="component-layout">
                 <LazyMotion strict features={domAnimation}>
                     <Header />
