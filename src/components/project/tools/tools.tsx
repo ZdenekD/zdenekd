@@ -16,9 +16,9 @@ const Tools = React.forwardRef<HTMLUListElement, IProps>(({items}, ref) => {
                 <li key={item} className={styles.tool}>
                     <figure className={styles.figure}>
                         <Image
-                            src={`/logo_${item}.svg`}
-                            width={32}
-                            height={32}
+                            src={`/logo/${item}.svg`}
+                            width={36}
+                            height={36}
                             alt={`${locale.tools}: ${item}`}
                             className={styles.image}
                         />
