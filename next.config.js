@@ -25,7 +25,7 @@ const moduleExports = {
     async rewrites() {
         return [
             {
-                source: '/js/script.js',
+                source: '/js/plausible.js',
                 destination: 'https://plausible.io/js/script.js',
             }, {
                 source: '/api/event',

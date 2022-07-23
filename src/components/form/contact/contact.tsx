@@ -21,7 +21,10 @@ import styles from './contact.module.css';
 const Loader = dynamic(() => import('@/UI/loader'));
 
 type IValues = {
-    [key: string]: string
+    name: string
+    email: string
+    message: string
+    med: string
 }
 
 const ContactForm: React.FC = () => {
@@ -38,7 +41,7 @@ const ContactForm: React.FC = () => {
         },
         reset,
         handleSubmit,
-    } = useForm({
+    } = useForm<IValues>({
         resolver: yupResolver(schema),
         mode: 'onTouched',
     });
