@@ -11,7 +11,6 @@ module.exports = {
         {
             name: '@storybook/addon-postcss',
             options: {
-                styleLoaderOptions: {},
                 cssLoaderOptions: {
                     modules: {
                         mode: (resourcePath) => {
@@ -42,8 +41,11 @@ module.exports = {
                 }
             }
         },
+        '@storybook/addon-actions',
         '@storybook/addon-viewport',
-        '@storybook/addon-essentials',
+        '@storybook/addon-docs',
+        '@storybook/addon-backgrounds',
+        '@storybook/addon-toolbars',
         '@storybook/addon-a11y',
         'storybook-addon-next-router',
         'storybook-addon-next'
