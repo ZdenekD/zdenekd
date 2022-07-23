@@ -1,7 +1,7 @@
 import {RouterContext} from "next/dist/shared/lib/router-context";
 import * as nextImage from 'next/image';
 import {AnimatePresence, LazyMotion, domAnimation} from 'framer-motion';
-import {initialize, mswDecorator} from 'msw-storybook-addon'
+import {initialize, mswDecorator} from 'msw-storybook-addon';
 import handlers from '@/mocks/handlers';
 import './index.css';
 import Cursor from '@/components/cursor';

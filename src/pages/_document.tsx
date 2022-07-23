@@ -31,7 +31,6 @@ export default function Document() {
                 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                 <meta name="application-name" content="ZdenekD" />
                 <meta name="generator" content="human" />
-                <script defer data-domain="zdenekd.cz" src="/js/script.js" />
             </Head>
             <body>
                 <Main />

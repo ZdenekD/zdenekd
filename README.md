@@ -27,7 +27,7 @@ yarn
 
 ### Development
 
-It's automatically pushed to [Zeit.co](https://zeit.co/dashboard). Production branch is **master**, other branches for development (every pushed branch is built)
+It's automatically pushed to [Vercel.com](https://vercel.com/dashboard). Production branch is **master**, other branches for development (every pushed branch is built)
 
 ```
 master branch - **production**
@@ -50,7 +50,7 @@ ffmpeg -i video-name.mp4 -vf scale=800:450 -pix_fmt yuv420p video-name_converted
 
 ### Building
 
-Project is automatically build on [Zeit.co](https://zeit.co/dashboard).
+Project is automatically build on [Vercel.com](https://vercel.com/dashboard).
 Build task:
 
 ```
