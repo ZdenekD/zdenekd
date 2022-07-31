@@ -74,8 +74,8 @@ How to run and write tests
 
 ```
 snyk wizard
-yarn jest
-yarn jest:coverage
+yarn test:js
+yarn test:js:coverage
 yarn test
 yarn test:report
 ```

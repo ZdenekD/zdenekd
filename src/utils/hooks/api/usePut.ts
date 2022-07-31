@@ -5,13 +5,13 @@ import useStore from '@/store/index';
 
 type IUpdateHandler<D> = (path: string, data: D) => Promise<void>
 
-const useUpdate = <D>(
+const usePut = <D>(
     onSuccess?: () => void,
     onFailure?: () => void
 ) => {
     const locale = useLocale();
     const {set} = useStore(state => state.alert);
-    const handleUpdate: IUpdateHandler<D> = async (path, data) => {
+    const handlePut: IUpdateHandler<D> = async (path, data) => {
         try {
             const response = await put<D>(path, data);
             const message = response.data?.message;
@@ -32,7 +32,7 @@ const useUpdate = <D>(
         }
     };
 
-    return {handleUpdate};
+    return {handlePut};
 };
 
-export default useUpdate;
+export default usePut;

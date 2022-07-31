@@ -8,7 +8,7 @@ import {
     SubmitHandler
 } from 'react-hook-form';
 import api from '@/distributors/api';
-import usePost from '@/hooks/handlers/usePost';
+import usePost from '@/hooks/api/usePost';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import Button from '@/UI/form-control/button';

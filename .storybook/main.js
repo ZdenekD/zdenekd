@@ -64,7 +64,6 @@ module.exports = {
         });
         const alias = {
             ...config.resolve?.alias,
-            '@/api': path.resolve(__dirname, '../src/api'),
             '@/assets': path.resolve(__dirname, '../src/assets'),
             '@/components': path.resolve(__dirname, '../src/components'),
             '@/UI': path.resolve(__dirname, '../src/components/UI'),
@@ -72,6 +71,7 @@ module.exports = {
             '@/db': path.resolve(__dirname, '../src/database'),
             '@/store': path.resolve(__dirname, '../src/store'),
             '@/distributors': path.resolve(__dirname, '../src/utils/distributors'),
+            '@/api': path.resolve(__dirname, '../src/utils/api'),
             '@/enums': path.resolve(__dirname, '../src/utils/enums'),
             '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
             '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
