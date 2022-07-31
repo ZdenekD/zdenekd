@@ -10,7 +10,6 @@ module.exports = {
     resolver: '<rootDir>/__test__/jest/resolver.ts',
     moduleNameMapper: {
         '\\.css$': 'identity-obj-proxy',
-        '@/api(.*)': '<rootDir>/src/api/$1',
         '@/assets(.*)': '<rootDir>/src/assets/$1',
         '@/components(.*)': '<rootDir>/src/components/$1',
         '@/UI(.*)': '<rootDir>/src/components/UI/$1',
@@ -18,6 +17,7 @@ module.exports = {
         '@/db(.*)': '<rootDir>/src/database/$1',
         '@/store(.*)': '<rootDir>/src/store/$1',
         '@/distributors(.*)': '<rootDir>/src/utils/distributors/$1',
+        '@/api(.*)': '<rootDir>/src/utils/api/$1',
         '@/enums(.*)': '<rootDir>/src/utils/enums/$1',
         '@/helpers(.*)': '<rootDir>/src/utils/helpers/$1',
         '@/hooks(.*)': '<rootDir>/src/utils/hooks/$1',

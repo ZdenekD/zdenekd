@@ -5,7 +5,6 @@
     "module": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "paths": {
-      "@/api/*": ["src/api/*"],
       "@/assets/*": ["src/assets/*"],
       "@/components/*": ["src/components/*"],
       "@/UI/*": ["src/components/UI/*"],
@@ -14,6 +13,7 @@
       "@/store/*": ["src/store/*"],
       "@/distributors/*": ["src/utils/distributors/*"],
       "@/enums/*": ["src/utils/enums/*"],
+      "@/api/*": ["src/utils/api/*"],
       "@/helpers/*": ["src/utils/helpers/*"],
       "@/hooks/*": ["src/utils/hooks/*"],
       "@/mocks/*": ["src/utils/mocks/*"],

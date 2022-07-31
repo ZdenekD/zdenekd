@@ -38,6 +38,11 @@ const methods: IMethods = {
         method: 'DELETE',
         headers: getHeaders(options),
     }),
+    query: (query, options) => ({
+        method: 'POST',
+        headers: getHeaders(options),
+        body: JSON.stringify({query}),
+    }),
 };
 
 export default methods;

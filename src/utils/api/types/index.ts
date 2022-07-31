@@ -25,4 +25,5 @@ export type IMethods = {
     put: <D>(data: D, options?: IOptions) => RequestInit,
     patch: <D>(data: D, options?: IOptions) => RequestInit,
     delete: (options?: IOptions) => RequestInit,
+    query: (query: string, options?: IOptions) => RequestInit
 }

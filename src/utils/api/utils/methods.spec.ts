@@ -66,6 +66,16 @@ describe('API - utils - methods', () => {
         expect(methods.delete()).toEqual(expected);
     });
 
+    it('returns `QUERY` methods object', () => {
+        const expected = {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({query: 'query'}),
+        };
+
+        expect(methods.query('query')).toEqual(expected);
+    });
+
     it('returns base `headers` if no options provided', () => {
         const expected = {
             method: 'GET',
