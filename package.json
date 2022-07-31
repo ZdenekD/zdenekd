@@ -13,15 +13,15 @@
     "start": "next start -p 8000",
     "build": "next build",
     "analyze": "cross-env ANALYZE=true next build",
-    "jest": "jest --watch",
-    "jest:verbose": "jest --watch --verbose",
-    "jest:coverage": "jest --coverage",
-    "jest:staged": "jest --bail --findRelatedTests --passWithNoTests",
     "story": "start-storybook -p 8020",
     "story:build": "build-storybook -c .storybook -o .storybook/build",
     "chromatic": "chromatic",
     "test": "playwright test",
     "test:report": "playwright show-report __test__/playwright/report",
+    "test:js": "jest --watch",
+    "test:js:verbose": "jest --watch --verbose",
+    "test:js:coverage": "jest --coverage",
+    "test:js:staged": "jest --bail --findRelatedTests --passWithNoTests",
     "lint": "yarn lint:js && yarn lint:css && yarn typecheck",
     "lint:js": "eslint --ext .ts,.tsx ./src --cache --fix",
     "lint:css": "stylelint ./src/**/*.css --cache --fix --color",
@@ -29,8 +29,7 @@
     "prepare": "husky install"
   },
   "engines": {
-    "node": ">=16.15.0",
-    "npm": ">=8.5.5"
+    "node": ">=16.15.0"
   },
   "msw": {
     "workerDirectory": "./public"
@@ -38,7 +37,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn lint:js",
-      "yarn jest:staged",
+      "yarn test:js:staged",
       "bash -c 'yarn typecheck'"
     ],
     "*.css": "yarn lint:css",
@@ -81,7 +80,7 @@
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jest": "^26.1.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-playwright": "^0.9.0",
+    "eslint-plugin-playwright": "^0.10.0",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^8.0.0",
