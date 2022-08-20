@@ -1,7 +1,7 @@
 .keys {
     display: none;
 
-    @media (--min-lg) {
+    @media (min-width: 1200px) {
         margin-left: auto;
         display: flex;
         flex-direction: column;
