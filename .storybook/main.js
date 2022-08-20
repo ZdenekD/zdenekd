@@ -47,8 +47,7 @@ module.exports = {
         '@storybook/addon-backgrounds',
         '@storybook/addon-toolbars',
         '@storybook/addon-a11y',
-        'storybook-addon-next-router',
-        'storybook-addon-next'
+        'storybook-addon-next-router'
     ],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.map(rule => (rule.test?.toString().search('svg') > 0
@@ -70,8 +69,8 @@ module.exports = {
             '@/data': path.resolve(__dirname, '../src/data'),
             '@/db': path.resolve(__dirname, '../src/database'),
             '@/store': path.resolve(__dirname, '../src/store'),
-            '@/distributors': path.resolve(__dirname, '../src/utils/distributors'),
             '@/api': path.resolve(__dirname, '../src/utils/api'),
+            '@/distributors': path.resolve(__dirname, '../src/utils/distributors'),
             '@/enums': path.resolve(__dirname, '../src/utils/enums'),
             '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
             '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
