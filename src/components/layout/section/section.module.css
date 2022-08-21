@@ -7,12 +7,12 @@
     justify-content: space-between;
     border-radius: var(--border-radius);
 
-    @media (--min-xs) {
+    @media (min-width: 300px) {
         padding-right: var(--gap);
         padding-left: var(--gap);
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         padding-right: calc(2 * var(--gap));
         padding-left: calc(2 * var(--gap));
     }

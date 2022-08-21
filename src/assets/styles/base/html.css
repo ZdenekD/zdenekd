@@ -15,13 +15,9 @@ body {
         cursor: crosshair;
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         overflow-y: hidden;
     }
-}
-
-strong {
-    font-weight: 700;
 }
 
 code,

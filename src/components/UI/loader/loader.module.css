@@ -53,19 +53,19 @@
         border-top-color: hsl(var(--color-green));
     }
 
-    @media (--min-sm) {
+    @media (min-width: 600px) {
         --max-size: 50px;
         margin-left: -25px;
         top: 30px;
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         --max-size: 60px;
         margin-left: -30px;
         top: 10px;
     }
 
-    @media (--min-lg) {
+    @media (min-width: 1200px) {
         top: 30px;
     }
 }

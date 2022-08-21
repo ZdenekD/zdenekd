@@ -1,6 +1,9 @@
-import {IData} from '@/api/types';
 import API from '@/utils/config';
-import {IOptions, IResponse} from './types';
+import {
+    IData,
+    IOptions,
+    IResponse
+} from './types';
 import methods from './utils/methods';
 
 type IGet = <R>(path: string, options?: IOptions) => Promise<IResponse<IData<R, undefined>>>

@@ -3,7 +3,7 @@
     margin: 0 auto calc(2 * var(--gap));
     position: relative;
 
-    @media (--min-lg) {
+    @media (min-width: 1200px) {
         margin-bottom: calc(3 * var(--gap));
     }
 }
@@ -43,7 +43,7 @@
                 color: var(--label-color);
                 transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
 
-                @media (--min-md) {
+                @media (min-width: 900px) {
                     transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
                 }
             }
@@ -82,7 +82,7 @@
         transition-timing-function: var(--transition-timing);
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         font-size: 1.4em;
     }
 }
@@ -113,7 +113,7 @@
             color: var(--label-color);
             transform: translate3d(0, 3em, 0) scale3d(0.75, 0.75, 1);
 
-            @media (--min-md) {
+            @media (min-width: 900px) {
                 transform: translate3d(0, 2.5em, 0) scale3d(0.75, 0.75, 1);
             }
         }

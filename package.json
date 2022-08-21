@@ -22,10 +22,11 @@
     "test:js:verbose": "jest --watch --verbose",
     "test:js:coverage": "jest --coverage",
     "test:js:staged": "jest --bail --findRelatedTests --passWithNoTests",
-    "lint": "yarn lint:js && yarn lint:css && yarn typecheck",
+    "lint": "yarn lint:js && yarn lint:css && yarn prettier && yarn typecheck",
     "lint:js": "eslint --ext .ts,.tsx ./src --cache --fix",
     "lint:css": "stylelint ./src/**/*.css --cache --fix --color",
     "typecheck": "tsc -b",
+    "prettier": "prettier --write ./ --cache --check",
     "prepare": "husky install"
   },
   "engines": {
@@ -41,7 +42,7 @@
       "bash -c 'yarn typecheck'"
     ],
     "*.css": "yarn lint:css",
-    "*.{json,md,yml,html}": "prettier --write"
+    "*.{json,md,yml,html}": "yarn prettier"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -101,12 +102,11 @@
     "postcss-preset-env": "^7.4.1",
     "postcss-reporter": "^7.0.2",
     "prettier": "^2.2.1",
-    "storybook-addon-next": "^1.6.4",
     "storybook-addon-next-router": "^4.0.0",
     "style-loader": "^3.2.1",
     "stylelint": "^14.5.1",
     "stylelint-a11y": "^1.2.2",
-    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended": "^9.0.0",
     "stylelint-csstree-validator": "^2.0.0",
     "stylelint-order": "^5.0.0",
     "webpack": "^5.48.0"

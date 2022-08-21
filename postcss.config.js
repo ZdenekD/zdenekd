@@ -3,10 +3,7 @@ module.exports = {
         stylelint: process.env.NODE_ENV === 'development' ? {} : false,
         'postcss-import': {},
         'postcss-nested': {},
-        'postcss-preset-env': {
-            stage: 1,
-            importFrom: 'src/assets/styles/variables/base/media.css',
-        },
+        'postcss-preset-env': {stage: 1},
         'postcss-custom-media': {},
         'postcss-reporter': {clearReportedMessages: true},
         cssnano: process.env.NODE_ENV === 'production',

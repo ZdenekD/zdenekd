@@ -96,17 +96,18 @@ video {
 
 html {
     height: 100%;
+    block-size: 100%;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
+    text-rendering: optimizespeed;
     -moz-osx-font-smoothing: grayscale;
     touch-action: manipulation;
 }
 
 body {
     min-height: 100vh;
+    min-block-size: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    scroll-behavior: smooth;
     line-height: 1.5;
 }
 
@@ -190,10 +191,13 @@ sup {
 
 @media (prefers-reduced-motion: reduce) {
 
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
