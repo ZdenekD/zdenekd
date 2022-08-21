@@ -36,7 +36,7 @@
         will-change: transform;
         transition: var(--float-transition);
 
-        @media (--min-md) {
+        @media (min-width: 900px) {
             width: 32px;
             height: 32px;
             top: 16px;
@@ -62,12 +62,12 @@
         transform-origin: center;
     }
 
-    @media (--min-sm) {
+    @media (min-width: 600px) {
         width: 70px;
         height: 70px;
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         width: 80px;
         height: 80px;
     }

@@ -17,7 +17,7 @@
     justify-content: space-around;
     text-align: center;
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         max-width: 50vw;
     }
 }
@@ -40,15 +40,15 @@
         font-style: italic;
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         font-size: 1.2em;
     }
 
-    @media (--min-lg) {
+    @media (min-width: 1200px) {
         font-size: 1.3em;
     }
 
-    @media (--min-xl) {
+    @media (min-width: 1500px) {
         font-size: 1.4em;
     }
 }

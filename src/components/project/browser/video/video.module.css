@@ -4,22 +4,22 @@
     line-height: 0;
     border-radius: 0 0 12px 12px;
 
-    @media (--min-sm) {
+    @media (min-width: 600px) {
         width: 480px;
         height: 270px;
     }
 
-    @media (--min-md) {
+    @media (min-width: 900px) {
         width: 640px;
         height: 340px;
     }
 
-    @media (--min-lg) {
+    @media (min-width: 1200px) {
         width: 560px;
         height: 315px;
     }
 
-    @media (--min-xl) {
+    @media (min-width: 1500px) {
         width: 800px;
         height: 450px;
     }
@@ -31,7 +31,7 @@
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
 
-    @media (--min-sm) {
+    @media (min-width: 600px) {
         display: flex;
     }
 }

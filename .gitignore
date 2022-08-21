@@ -47,6 +47,7 @@ behat.yml
 # Test
 coverage
 cypress.env.json
+/__test__/jest/coverage
 /__test__/playwright/report
 /__test__/playwright/results
 

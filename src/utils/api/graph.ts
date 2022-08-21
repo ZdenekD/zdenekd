@@ -1,5 +1,8 @@
-import {IData, IOptions} from '@/api/types';
-import {IResponse} from './types';
+import {
+    IData,
+    IOptions,
+    IResponse
+} from './types';
 import methods from './utils/methods';
 
 type IGraph = <R>(query: string, options?: IOptions) => Promise<IResponse<IData<R, undefined>>>
