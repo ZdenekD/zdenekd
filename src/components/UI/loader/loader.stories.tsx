@@ -5,6 +5,6 @@ export default {
     parameters: {chromatic: {delay: 300}},
 };
 
-export const component: React.FC = () => (
+export const component = () => (
     <Loader />
 );

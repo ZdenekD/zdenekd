@@ -5,7 +5,7 @@ export default {
     parameters: {chromatic: {delay: 5000}},
 };
 
-export const component: React.FC = () => (
+export const component = () => (
     <Layout>
         Layout content
     </Layout>

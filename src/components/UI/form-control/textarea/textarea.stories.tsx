@@ -9,7 +9,7 @@ const props = {
     label: 'Textarea',
 };
 
-export const component: React.FC = () => React.createElement(() => {
+export const component = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -29,7 +29,7 @@ export const component: React.FC = () => React.createElement(() => {
     );
 });
 
-export const success: React.FC = () => React.createElement(() => {
+export const success = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -51,7 +51,7 @@ export const success: React.FC = () => React.createElement(() => {
     );
 });
 
-export const info: React.FC = () => React.createElement(() => {
+export const info = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -73,7 +73,7 @@ export const info: React.FC = () => React.createElement(() => {
     );
 });
 
-export const warning: React.FC = () => React.createElement(() => {
+export const warning = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -95,7 +95,7 @@ export const warning: React.FC = () => React.createElement(() => {
     );
 });
 
-export const danger: React.FC = () => React.createElement(() => {
+export const danger = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -117,14 +117,14 @@ export const danger: React.FC = () => React.createElement(() => {
     );
 });
 
-export const disabled: React.FC = () => (
+export const disabled = () => (
     <>
         <Textarea disabled {...props} />
         <Textarea disabled placeholder="> Enter some data" {...props} />
     </>
 );
 
-export const required: React.FC = () => React.createElement(() => {
+export const required = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -146,11 +146,11 @@ export const required: React.FC = () => React.createElement(() => {
     );
 });
 
-export const readonly: React.FC = () => (
+export const readonly = () => (
     <Textarea readonly value="Readonly textarea" {...props} />
 );
 
-export const error: React.FC = () => React.createElement(() => {
+export const error = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (
@@ -179,7 +179,7 @@ export const error: React.FC = () => React.createElement(() => {
     );
 });
 
-export const maxlength: React.FC = () => React.createElement(() => {
+export const maxlength = () => React.createElement(() => {
     const [value, setValue] = React.useState('');
 
     return (

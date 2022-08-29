@@ -5,7 +5,7 @@ export default {
     parameters: {chromatic: {delay: 300}},
 };
 
-export const component: React.FC = () => (
+export const component = () => (
     <div style={{maxWidth: '180px'}}>
         <Mobile>Mobile device content</Mobile>
     </div>
