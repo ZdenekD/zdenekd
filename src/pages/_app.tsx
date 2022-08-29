@@ -41,7 +41,7 @@ const App = ({Component, pageProps, router}: AppProps): JSX.Element => {
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <meta name="author" content="ZdenekD, zdenekd.cz" />
             </Head>
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode="wait">
                 <Component {...pageProps} key={router.route} />
             </AnimatePresence>
         </>

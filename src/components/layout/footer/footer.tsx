@@ -64,7 +64,6 @@ const Footer: React.FC = () => {
                 animate={isOpen ? 'enter' : 'exit'}
                 variants={animations.scroll}
                 className={styles.scroll}
-                data-chromatic="ignore"
             >
                 Scroll
                 <m.i

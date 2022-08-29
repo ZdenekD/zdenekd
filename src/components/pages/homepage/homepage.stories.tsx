@@ -1,10 +1,9 @@
 import Homepage from '.';
 
-export default {
-    title: 'Pages/Homepage',
-    parameters: {chromatic: {delay: 5000}},
-};
+export default {title: 'Pages/Homepage'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Homepage />
 );
+
+component.parameters = {chromatic: {disableSnapshot: true}};

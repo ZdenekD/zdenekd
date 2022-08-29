@@ -14,7 +14,7 @@ const Video: React.FC<IProps> = ({project}) => {
     const locale = useLocale();
 
     return (
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
             <m.div
                 ref={wrapperRef}
                 key={project.id}

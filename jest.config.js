@@ -3,8 +3,8 @@ module.exports = {
     testEnvironment: 'jest-environment-jsdom',
     transform: {
         '^.+\\.ts(x)?$': 'babel-jest',
-        '^.+\\.svg$': '<rootDir>/__test__/jest/transform/svg.js',
-        '^(?!.*\\.json$)': '<rootDir>/__test__/jest/transform/file.js',
+        '\\.svg$': '<rootDir>/__test__/jest/transform/svg.js',
+        '\\.json$': '<rootDir>/__test__/jest/transform/file.js',
     },
     roots: ['<rootDir>/src'],
     resolver: '<rootDir>/__test__/jest/resolver.ts',

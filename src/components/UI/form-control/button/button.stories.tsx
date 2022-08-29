@@ -3,11 +3,11 @@ import Button from '.';
 
 export default {title: 'UI/Form Control/Button'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Button>Button</Button>
 );
 
-export const variants: React.FC = () => (
+export const variants = () => (
     <>
         <Button variant={VariantsEnum.success}>Success</Button><br />
         <Button variant={VariantsEnum.info}>Info</Button><br />
@@ -16,6 +16,6 @@ export const variants: React.FC = () => (
     </>
 );
 
-export const disabled: React.FC = () => (
+export const disabled = () => (
     <Button disabled>Disabled</Button>
 );

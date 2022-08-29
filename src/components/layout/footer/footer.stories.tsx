@@ -1,10 +1,9 @@
 import Footer from '.';
 
-export default {
-    title: 'Layout/Footer',
-    parameters: {chromatic: {delay: 5000}},
-};
+export default {title: 'Layout/Footer'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Footer />
 );
+
+component.parameters = {chromatic: {disableSnapshot: true}};

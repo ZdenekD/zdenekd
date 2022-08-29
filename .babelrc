@@ -6,7 +6,7 @@
         [
           "react-remove-properties",
           {
-            "properties": ["data-test", "data-testid", "data-chromatic"]
+            "properties": ["data-test", "data-testid"]
           }
         ]
       ]

@@ -6,9 +6,12 @@ ignore:
     - next > chokidar > glob-parent:
         reason: None given
         expires: '2021-03-31T21:54:03.083Z'
+      watchpack > watchpack-chokidar2 > chokidar > glob-parent:
+        reason: None given
+        expires: '2022-09-28T19:08:49.141Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - watchpack > watchpack-chokidar2 > chokidar > glob-parent:
         reason: None given
         expires: '2022-04-20T15:58:44.878Z'
@@ -29,10 +32,10 @@ ignore:
   SNYK-JS-ANSIREGEX-1583908:
     - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > strip-ansi > ansi-regex':
         reason: None given
-        expires: '2022-08-22T09:29:32.843Z'
+        expires: '2022-09-28T19:08:49.140Z'
     - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > string-width > strip-ansi > ansi-regex':
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - '@sentry/nextjs > @sentry/webpack-plugin > @sentry/cli > npmlog > gauge > wide-align > string-width > strip-ansi > ansi-regex':
         reason: None given
         expires: '2021-10-18T10:27:40.691Z'
@@ -80,113 +83,113 @@ ignore:
   SNYK-JS-UNSETVALUE-2400660:
     - micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
-      '@sentry/nextjs > jscodeshift > micromatch > snapdragon > base > cache-base > unset-value':
-        reason: None given
-        expires: '2022-09-20T12:47:40.853Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
-      '@sentry/nextjs > jscodeshift > micromatch > braces > snapdragon > base > cache-base > unset-value':
-        reason: None given
-        expires: '2022-09-20T12:47:40.853Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
-      '@sentry/nextjs > jscodeshift > micromatch > extglob > snapdragon > base > cache-base > unset-value':
-        reason: None given
-        expires: '2022-09-20T12:47:40.853Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
-      '@sentry/nextjs > jscodeshift > micromatch > nanomatch > snapdragon > base > cache-base > unset-value':
-        reason: None given
-        expires: '2022-09-20T12:47:40.853Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - webpack > micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
-      '@sentry/nextjs > jscodeshift > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value':
-        reason: None given
-        expires: '2022-09-20T12:47:40.853Z'
+        expires: '2022-09-28T19:08:49.141Z'
     - webpack > micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.844Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - webpack > micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - webpack > micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - watchpack > watchpack-chokidar2 > chokidar > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - webpack > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.845Z'
+        expires: '2022-09-28T19:08:49.142Z'
     - watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.846Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.143Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.847Z'
+        expires: '2022-09-28T19:08:49.144Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.848Z'
+        expires: '2022-09-28T19:08:49.145Z'
     - webpack > watchpack > watchpack-chokidar2 > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value:
         reason: None given
-        expires: '2022-08-22T09:29:32.848Z'
+        expires: '2022-09-28T19:08:49.145Z'
+    - '@sentry/nextjs > jscodeshift > micromatch > snapdragon > base > cache-base > unset-value':
+        reason: None given
+        expires: '2022-09-20T12:47:40.853Z'
+    - '@sentry/nextjs > jscodeshift > micromatch > braces > snapdragon > base > cache-base > unset-value':
+        reason: None given
+        expires: '2022-09-20T12:47:40.853Z'
+    - '@sentry/nextjs > jscodeshift > micromatch > extglob > snapdragon > base > cache-base > unset-value':
+        reason: None given
+        expires: '2022-09-20T12:47:40.853Z'
+    - '@sentry/nextjs > jscodeshift > micromatch > nanomatch > snapdragon > base > cache-base > unset-value':
+        reason: None given
+        expires: '2022-09-20T12:47:40.853Z'
+    - '@sentry/nextjs > jscodeshift > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > unset-value':
+        reason: None given
+        expires: '2022-09-20T12:47:40.853Z'
 patch: {}

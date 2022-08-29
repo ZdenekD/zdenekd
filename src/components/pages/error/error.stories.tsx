@@ -1,10 +1,9 @@
 import Error from '.';
 
-export default {
-    title: 'Pages/Error',
-    parameters: {chromatic: {delay: 5000}},
-};
+export default {title: 'Pages/Error'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Error />
 );
+
+component.parameters = {chromatic: {disableSnapshot: true}};

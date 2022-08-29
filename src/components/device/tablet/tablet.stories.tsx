@@ -2,7 +2,7 @@ import Tablet from '.';
 
 export default {title: 'Device/Tablet'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <div style={{maxWidth: '320px'}}>
         <Tablet>
             Table device content

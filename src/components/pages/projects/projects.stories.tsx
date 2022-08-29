@@ -1,10 +1,9 @@
 import Projects from '.';
 
-export default {
-    title: 'Pages/Projects',
-    parameters: {chromatic: {delay: 5000}},
-};
+export default {title: 'Pages/Projects'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Projects />
 );
+
+component.parameters = {chromatic: {disableSnapshot: true}};

@@ -5,7 +5,8 @@ module.exports = {
     staticDirs: ['../public'],
     framework: '@storybook/react',
     core: {
-        builder: "webpack5",
+        builder: 'webpack5',
+        disableTelemetry: true
     },
     addons: [
         {

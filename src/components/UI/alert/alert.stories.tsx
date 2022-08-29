@@ -1,74 +1,93 @@
 import VariantsEnum from '@/enums/VariantsEnum';
 import Alert from '.';
 
-export default {
-    title: 'UI/Alert',
-    parameters: {chromatic: {delay: 1400}},
-};
+export default {title: 'UI/Alert'};
 
 const data = {content: 'Ham hock cupim sausage ball tip tenderloin shank.'};
 
-export const component: React.FC = () => (
+export const component = () => (
     <Alert isVisible>{data.content}</Alert>
 );
 
-export const title: React.FC = () => (
+component.parameters = {chromatic: {delay: 1400}};
+
+export const title = () => (
     <Alert isVisible title="Alert with title">{data.content}</Alert>
 );
 
-export const success: React.FC = () => (
+title.parameters = {chromatic: {delay: 1400}};
+
+export const success = () => (
     <Alert isVisible variant={VariantsEnum.success} title="Success message">
         {data.content}
     </Alert>
 );
 
-export const successWithTimeout: React.FC = () => (
+success.parameters = {chromatic: {delay: 1400}};
+
+export const successWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.success} title="Success message" timeout={5}>
         {data.content}
     </Alert>
 );
 
-export const info: React.FC = () => (
+successWithTimeout.parameters = {chromatic: {disableSnapshot: true}};
+
+export const info = () => (
     <Alert isVisible variant={VariantsEnum.info} title="Info message">
         {data.content}
     </Alert>
 );
 
-export const infoWithTimeout: React.FC = () => (
+info.parameters = {chromatic: {delay: 1400}};
+
+export const infoWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.info} title="Info message" timeout={5}>
         {data.content}
     </Alert>
 );
 
-export const warning: React.FC = () => (
+infoWithTimeout.parameters = {chromatic: {disableSnapshot: true}};
+
+export const warning = () => (
     <Alert isVisible variant={VariantsEnum.warning} title="Warning message">
         {data.content}
     </Alert>
 );
 
-export const warningWithTimeout: React.FC = () => (
+warning.parameters = {chromatic: {delay: 1400}};
+
+export const warningWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.warning} title="Warning message" timeout={5}>
         {data.content}
     </Alert>
 );
 
-export const danger: React.FC = () => (
+warningWithTimeout.parameters = {chromatic: {disableSnapshot: true}};
+
+export const danger = () => (
     <Alert isVisible variant={VariantsEnum.danger} title="Danger message">
         {data.content}
     </Alert>
 );
 
-export const dangerWithTimeout: React.FC = () => (
+danger.parameters = {chromatic: {delay: 1400}};
+
+export const dangerWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.danger} title="Danger message" timeout={5}>
         {data.content}
     </Alert>
 );
 
-export const timeout: React.FC = () => (
+dangerWithTimeout.parameters = {chromatic: {disableSnapshot: true}};
+
+export const timeout = () => (
     <Alert isVisible timeout={3}>{data.content} hide after 3s</Alert>
 );
 
-export const longtext: React.FC = () => (
+timeout.parameters = {chromatic: {disableSnapshot: true}};
+
+export const longtext = () => (
     <Alert isVisible title={`${data.content} with long text`}>
         {data.content} Tri-tip pastrami jowl doner meatloaf tenderloin buffalo.
         Pastrami pancetta short ribs fatback shoulder, corned beef spare ribs. Tri-tip filet mignon beef ribs meatball
@@ -77,3 +96,5 @@ export const longtext: React.FC = () => (
         jowl pig alcatra turducken ham hock pork loin
     </Alert>
 );
+
+longtext.parameters = {chromatic: {delay: 1400}};

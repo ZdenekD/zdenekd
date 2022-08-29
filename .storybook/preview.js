@@ -55,7 +55,7 @@ export const parameters = {
 export const decorators = [
     mswDecorator,
     Story => (
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
             <LazyMotion strict features={domAnimation}>
                 <Story />
                 <Cursor />
