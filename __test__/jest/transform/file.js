@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
+const paths = require('path');
 
 module.exports = {
-    process(src, filename) {
-        const assetFilename = JSON.stringify(path.basename(filename));
-
-        return {code: `module.exports = ${assetFilename};`};
+    process(_, filename) {
+        return {code: `module.exports = ${JSON.stringify(paths.basename(filename))};`};
     },
 };

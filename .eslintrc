@@ -103,7 +103,7 @@
     ],
     // Disallow the use of console
     "no-console": [
-      "error",
+      "warn",
       {
         "allow": ["info", "log", "warn", "error", "table", "assert", "dir"]
       }

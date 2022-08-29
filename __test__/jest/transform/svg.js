@@ -1,17 +1,23 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const babel = require('@babel/core');
+const paths = require('path');
 
 module.exports = {
-    process(src, filename) {
-        const {code} = babel.transform(
-            `export default () => (<svg data-filename="${path.relative(process.cwd(), filename)}" />);`,
-            {
-                filename,
-                retainLines: true,
-            }
-        );
+    process(_, file) {
+        const name = paths.basename(file, '.svg');
+        const filename = `${name[0].toUpperCase()}${name.substring(1)}`;
 
-        return {code};
+        return {
+            code: `
+                const React = require('react');
+                const ${filename} = (props) => {
+                    return React.createElement('svg', {
+                        ...props,
+                        'data-testid': '${filename}'
+                    });
+                }
+
+                module.exports = ${filename};
+            `,
+        };
     },
 };
