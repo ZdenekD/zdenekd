@@ -1,10 +1,7 @@
 import VariantsEnum from '@/enums/VariantsEnum';
 import Alert from '.';
 
-export default {
-    title: 'UI/Alert',
-    parameters: {chromatic: {delay: 1400}},
-};
+export default {title: 'UI/Alert'};
 
 const data = {content: 'Ham hock cupim sausage ball tip tenderloin shank.'};
 
@@ -12,15 +9,21 @@ export const component = () => (
     <Alert isVisible>{data.content}</Alert>
 );
 
+component.parameters = {chromatic: {delay: 1400}};
+
 export const title = () => (
     <Alert isVisible title="Alert with title">{data.content}</Alert>
 );
+
+title.parameters = {chromatic: {delay: 1400}};
 
 export const success = () => (
     <Alert isVisible variant={VariantsEnum.success} title="Success message">
         {data.content}
     </Alert>
 );
+
+success.parameters = {chromatic: {delay: 1400}};
 
 export const successWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.success} title="Success message" timeout={5}>
@@ -36,6 +39,8 @@ export const info = () => (
     </Alert>
 );
 
+info.parameters = {chromatic: {delay: 1400}};
+
 export const infoWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.info} title="Info message" timeout={5}>
         {data.content}
@@ -50,6 +55,8 @@ export const warning = () => (
     </Alert>
 );
 
+warning.parameters = {chromatic: {delay: 1400}};
+
 export const warningWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.warning} title="Warning message" timeout={5}>
         {data.content}
@@ -63,6 +70,8 @@ export const danger = () => (
         {data.content}
     </Alert>
 );
+
+danger.parameters = {chromatic: {delay: 1400}};
 
 export const dangerWithTimeout = () => (
     <Alert isVisible variant={VariantsEnum.danger} title="Danger message" timeout={5}>
@@ -87,3 +96,5 @@ export const longtext = () => (
         jowl pig alcatra turducken ham hock pork loin
     </Alert>
 );
+
+longtext.parameters = {chromatic: {delay: 1400}};
