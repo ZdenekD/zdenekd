@@ -76,6 +76,8 @@ export const timeout = () => (
     <Alert isVisible timeout={3}>{data.content} hide after 3s</Alert>
 );
 
+timeout.parameters = {chromatic: {disableSnapshot: true}};
+
 export const longtext = () => (
     <Alert isVisible title={`${data.content} with long text`}>
         {data.content} Tri-tip pastrami jowl doner meatloaf tenderloin buffalo.

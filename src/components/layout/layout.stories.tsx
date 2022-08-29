@@ -10,3 +10,5 @@ export const component = () => (
         Layout content
     </Layout>
 );
+
+component.parameters = {chromatic: {disableSnapshot: true}};
