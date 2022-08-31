@@ -9,7 +9,7 @@ const projects: IProjects = [
         tools: [
             'vercel',
             'nextjs',
-            'graphcms',
+            'hygraph',
             'react',
             'typescript',
             'framer-motion',
@@ -26,7 +26,7 @@ const projects: IProjects = [
         tools: [
             'vercel',
             'nextjs',
-            'graphcms',
+            'hygraph',
             'react',
             'typescript',
             'lottie',
