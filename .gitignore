@@ -4,6 +4,12 @@ node_modules
 bower_components
 jspm_packages
 .pnp*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # Build
 dist/
@@ -47,8 +53,10 @@ behat.yml
 # Test
 coverage
 cypress.env.json
+/__test__/jest/coverage
 /__test__/playwright/report
 /__test__/playwright/results
+/__test__/cypress/videos
 
 # System files
 .DS_Store
