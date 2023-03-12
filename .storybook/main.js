@@ -1,12 +1,15 @@
 const path = require('path');
 
 module.exports = {
-    stories: ['../src/**/*.stories.tsx'],
+    stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
     staticDirs: ['../public'],
     framework: '@storybook/react',
     core: {
         builder: 'webpack5',
         disableTelemetry: true
+    },
+    features: {
+        storyStoreV7: true,
     },
     addons: [
         {
@@ -42,13 +45,12 @@ module.exports = {
                 }
             }
         },
-        '@storybook/addon-actions',
-        '@storybook/addon-viewport',
-        '@storybook/addon-docs',
-        '@storybook/addon-backgrounds',
-        '@storybook/addon-toolbars',
         '@storybook/addon-a11y',
-        'storybook-addon-next-router'
+        '@storybook/addon-actions',
+        '@storybook/addon-interactions',
+        '@storybook/addon-toolbars',
+        '@storybook/addon-viewport',
+        'storybook-addon-next-router',
     ],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.map(rule => (rule.test?.toString().search('svg') > 0

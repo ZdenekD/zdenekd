@@ -49,6 +49,7 @@ build/Release
 behat.yml
 .sentryclirc
 *.tsbuildinfo
+next-env.d.ts
 
 # Test
 coverage

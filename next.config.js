@@ -3,7 +3,6 @@
 require('dotenv').config();
 
 const path = require('path');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({enabled: process.env.ANALYZE === 'true'});
 const {withSentryConfig} = require('@sentry/nextjs');
 const loaderUtils = require('loader-utils');
 const headers = require('./next.headers');
@@ -25,6 +24,7 @@ const moduleExports = {
     async headers() {
         return headers;
     },
+    compiler: {reactRemoveProperties: {properties: ['^data-test$', '^data-testid$']}},
     webpack(config, {dev}) {
         const rules = config.module.rules
             .find(rule => typeof rule.oneOf === 'object')
@@ -54,6 +54,7 @@ const moduleExports = {
     images: {
         disableStaticImages: true,
         formats: ['image/avif', 'image/webp'],
+        dangerouslyAllowSVG: true,
     },
     i18n: {
         locales: ['cs', 'en'],
@@ -69,9 +70,10 @@ const moduleExports = {
         ],
     },
     eslint: {ignoreDuringBuilds: true},
+    sentry: {hideSourceMaps: true},
     reactStrictMode: true,
     poweredByHeader: false,
 };
 const SentryWebpackPluginOptions = {silent: true};
 
-module.exports = withBundleAnalyzer(withSentryConfig(moduleExports, SentryWebpackPluginOptions));
+module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);

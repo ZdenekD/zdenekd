@@ -8,6 +8,7 @@ doc/*
 __test__/jest/coverage
 __test__/playwright/report
 __test__/playwright/results
+__test__/cypress
 *.html
 *.tsx
 *.ts
