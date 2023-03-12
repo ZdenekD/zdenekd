@@ -1,7 +1,7 @@
 import LocalesEnum from '@/enums/LocalesEnum';
 import PagesEnum from '@/enums/PagesEnum';
 import prefix from '@/helpers/prefix';
-import {IPages} from '@/types/pages';
+import type {IPages} from '@/types/pages';
 
 const pages: IPages = {
     [PagesEnum.homepage]: {

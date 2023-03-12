@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import pages from '@/data/pages';
 import LocalesEnum from '@/enums/LocalesEnum';
-import PagesEnum from '@/enums/PagesEnum';
+import type PagesEnum from '@/enums/PagesEnum';
 import getPage from '@/helpers/getPage';
 import useStore from '@/store/index';
 import Anchor from '@/UI/anchor';

@@ -104,7 +104,7 @@ const Project: React.FC = () => {
     return (
         <div className={styles.block} data-testid="component-project">
             <header className={styles.content}>
-                {projects[index]?.title && (
+                {projects[index]?.title ? (
                     <h2
                         ref={titleRef}
                         className={styles.title}
@@ -112,9 +112,9 @@ const Project: React.FC = () => {
                     >
                         {projects[index].title}
                     </h2>
-                )}
+                ) : null}
 
-                {projects[index]?.locale[lang].description && (
+                {projects[index]?.locale[lang].description ? (
                     <p
                         ref={descriptionRef}
                         className={styles.description}
@@ -122,7 +122,7 @@ const Project: React.FC = () => {
                     >
                         {projects[index].locale[lang].description}
                     </p>
-                )}
+                ) : null}
 
                 {projects[index]?.tools.length > 0 && (
                     <div ref={toolsWrapperRef} className={styles.toolsWrapper}>

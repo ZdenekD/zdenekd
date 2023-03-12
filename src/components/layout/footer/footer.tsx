@@ -21,7 +21,8 @@ const Footer: React.FC = () => {
             animate="enter"
             exit="exit"
             variants={animations.footer}
-            className={`${styles.footer} ${isOpen ? styles.opened : styles.closed}`} data-testid="component-footer"
+            className={`${styles.footer} ${isOpen ? styles.opened : styles.closed}`}
+            data-testid="component-footer"
         >
             <code className={styles.code}>
                 {locale.footer.code}
@@ -50,13 +51,13 @@ const Footer: React.FC = () => {
                 variants={animations.locale}
                 className={styles.languages}
             >
-                {router.locales && router.locales.map(item => (
+                {router.locales ? router.locales.map(item => (
                     <Lang
                         key={item}
                         locale={item}
                         router={router}
                     />
-                ))}
+                )) : null}
             </m.div>
             <Keys />
             <m.span

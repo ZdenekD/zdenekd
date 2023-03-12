@@ -28,7 +28,7 @@ const Error: React.FC = () => {
 
     return (
         <Layout className={styles.root}>
-            {router.locale && paragraph[router.locale]}
+            {router.locale ? paragraph[router.locale] : null}
         </Layout>
     );
 };

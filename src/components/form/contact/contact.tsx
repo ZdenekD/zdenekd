@@ -4,8 +4,7 @@ import dynamic from 'next/dynamic';
 import React from 'react';
 import {
     useForm,
-    Controller,
-    SubmitHandler
+    Controller
 } from 'react-hook-form';
 import api from '@/distributors/api';
 import usePost from '@/hooks/api/usePost';
@@ -17,6 +16,7 @@ import Input from '@/UI/form-control/input';
 import Textarea from '@/UI/form-control/textarea';
 import validation from './contact.validation';
 import styles from './contact.module.css';
+import type {SubmitHandler} from 'react-hook-form';
 
 const Loader = dynamic(() => import('@/UI/loader'));
 
@@ -76,7 +76,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <>
-            {isSubmitting && <Loader data-testid="component-contact-loader" />}
+            {isSubmitting ? <Loader data-testid="component-contact-loader" /> : null}
             <Form
                 ref={formRef}
                 className={styles.form}

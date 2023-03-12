@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import '@/test/mocks/nextRouterMock';
-import {IProject} from '@/types/projects';
+import type {IProject} from '@/types/projects';
 import Video from '.';
 
 const project: IProject = {

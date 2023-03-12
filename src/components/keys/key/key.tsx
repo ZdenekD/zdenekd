@@ -1,5 +1,5 @@
 import React from 'react';
-import DirectionsEnum from '@/enums/DirectionsEnum';
+import type DirectionsEnum from '@/enums/DirectionsEnum';
 import useCursor from '@/hooks/useCursor';
 import styles from './key.module.css';
 

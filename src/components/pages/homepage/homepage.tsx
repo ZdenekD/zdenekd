@@ -44,11 +44,11 @@ const Homepage: React.FC = () => {
                     variants={animations.article}
                     className={styles.article}
                 >
-                    {paragraph && (
+                    {paragraph ? (
                         <p className={styles.paragraph}>
                             {paragraph}
                         </p>
-                    )}
+                    ) : null}
                 </m.article>
             </Layout>
             <LazyMotion strict features={domAnimation}>
@@ -59,7 +59,7 @@ const Homepage: React.FC = () => {
                     variants={animations.devices}
                     className={styles.devicesWrapper}
                 >
-                    {width > MediaQueriesEnum.xl && (
+                    {width >= MediaQueriesEnum.xl && (
                         <div className={styles.computer}>
                             <Computer>
                                 <video
@@ -77,7 +77,7 @@ const Homepage: React.FC = () => {
                             </Computer>
                         </div>
                     )}
-                    {width > MediaQueriesEnum.md && (
+                    {width >= MediaQueriesEnum.md && (
                         <div className={styles.mobile}>
                             <Mobile>
                                 <video
@@ -95,7 +95,7 @@ const Homepage: React.FC = () => {
                             </Mobile>
                         </div>
                     )}
-                    {width > MediaQueriesEnum.md && (
+                    {width >= MediaQueriesEnum.md && (
                         <div className={styles.tablet}>
                             <Tablet>
                                 <video

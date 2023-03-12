@@ -1,7 +1,7 @@
 import {AnimatePresence} from 'framer-motion';
-import {AppProps} from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import type {AppProps} from 'next/app';
 import '@/assets/styles/index.css';
 
 const App = ({Component, pageProps, router}: AppProps): JSX.Element => {

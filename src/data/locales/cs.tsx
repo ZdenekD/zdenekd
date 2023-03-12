@@ -1,6 +1,6 @@
 import LocalesEnum from '@/enums/LocalesEnum';
 import getRoman from '@/helpers/getRoman';
-import {ILocales} from './types';
+import type {ILocales} from './types';
 
 const year = new Date().getFullYear();
 const date = getRoman(year);

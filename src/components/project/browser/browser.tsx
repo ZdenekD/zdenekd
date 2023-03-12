@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
 import useWindowSize from '@/hooks/useWindowSize';
-import {IProject} from '@/types/projects';
+import type {IProject} from '@/types/projects';
 import Addressbar from './addressbar';
 import Controls from './controls';
 import Target from './target';
@@ -48,7 +48,7 @@ const Browser = React.forwardRef<HTMLElement, IProps>(({
                 <Target url={project.url} />
             </header>
 
-            {width > MediaQueriesEnum.sm ? (
+            {width >= MediaQueriesEnum.sm ? (
                 <Video project={project} />
             ) : (
                 <Image

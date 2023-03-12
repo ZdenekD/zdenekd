@@ -17,14 +17,14 @@ const Controls: React.FC<IProps> = ({
     handleNext = undefined,
 }) => {
     const [prevElement, setPrevElement] = React.useState<HTMLButtonElement | null>(null);
-    const [nextElement, setnextElement] = React.useState<HTMLButtonElement | null>(null);
+    const [nextElement, setNextElement] = React.useState<HTMLButtonElement | null>(null);
     const prevRef = React.useRef<HTMLButtonElement | null>(null);
     const nextRef = React.useRef<HTMLButtonElement | null>(null);
     const locale = useLocale();
 
     React.useEffect(() => {
         setPrevElement(prevRef.current);
-        setnextElement(nextRef.current);
+        setNextElement(nextRef.current);
     }, []);
 
     useCursor(prevElement);

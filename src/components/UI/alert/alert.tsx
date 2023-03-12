@@ -5,7 +5,7 @@ import {
     m
 } from 'framer-motion';
 import React from 'react';
-import VariantsEnum from '@/enums/VariantsEnum';
+import type VariantsEnum from '@/enums/VariantsEnum';
 import useClickOutside from '@/hooks/useClickOutside';
 import useLocale from '@/hooks/useLocale';
 import useStore from '@/store/index';
@@ -31,7 +31,7 @@ const Alert: React.FC<IProps> = ({
     children,
     onClose,
 }) => {
-    const [isOpened, setOpened] = React.useState(false);
+    const [isOpened, setIsOpened] = React.useState(false);
     const {message, unset} = useStore(state => state.alert);
     const locale = useLocale();
     const handleClose = () => {
@@ -39,7 +39,7 @@ const Alert: React.FC<IProps> = ({
             onClose();
         }
 
-        setOpened(false);
+        setIsOpened(false);
 
         if (message) {
             unset();
@@ -68,12 +68,12 @@ const Alert: React.FC<IProps> = ({
     }, [timeout]);
 
     React.useEffect(() => {
-        setOpened(isVisible);
+        setIsOpened(isVisible);
     }, [isVisible]);
 
     return (
         <AnimatePresence>
-            {isOpened && (
+            {isOpened ? (
                 <LazyMotion strict features={domAnimation}>
                     <m.div
                         initial="initial"
@@ -93,11 +93,11 @@ const Alert: React.FC<IProps> = ({
                         role="alert"
                         data-testid="component-alert"
                     >
-                        {title && (
+                        {title ? (
                             <header className={styles.header}>
                                 <strong className={styles.title}>{title}</strong>
                             </header>
-                        )}
+                        ) : null}
 
                         <section className={styles.section}>
                             {children}
@@ -113,17 +113,17 @@ const Alert: React.FC<IProps> = ({
                             &times;
                         </button>
 
-                        {timeout && (
+                        {timeout ? (
                             <m.div
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
                                 className={`${styles.progress} chromatic-ignore`}
                                 data-testid="component-alert-timeout"
                             />
-                        )}
+                        ) : null}
                     </m.div>
                 </LazyMotion>
-            )}
+            ) : null}
         </AnimatePresence>
     );
 };

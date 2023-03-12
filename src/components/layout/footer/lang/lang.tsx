@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import {NextRouter} from 'next/router';
 import React from 'react';
 import useCursor from '@/hooks/useCursor';
 import styles from './lang.module.css';
+import type {NextRouter} from 'next/router';
 
 type IProps = {
     locale: string

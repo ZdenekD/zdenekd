@@ -80,17 +80,17 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
             >
                 <span className={styles.labelContent}>
                     {label}
-                    {required && (<sup className={styles.required}>*</sup>)}
+                    {required ? <sup className={styles.required}>*</sup> : null}
                 </span>
             </label>
 
-            {error && (<span id={`err_${id || name}`} className={styles.error} data-testid="component-input-error">{error}</span>)}
+            {error ? <span id={`err_${id || name}`} className={styles.error} data-testid="component-input-error">{error}</span> : null}
 
-            {maxlength && !disabled && (
+            {maxlength && !disabled ? (
                 <span className={styles.maxlength} data-testid="component-input-maxlength">
                     {length} / {maxlength}
                 </span>
-            )}
+            ) : null}
         </div>
     );
 });

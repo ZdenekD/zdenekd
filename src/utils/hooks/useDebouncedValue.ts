@@ -2,7 +2,7 @@
 import React from 'react';
 
 const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leading: false}) => {
-    const [_value, setValue] = React.useState(value);
+    const [content, setContent] = React.useState(value);
     const mountedRef = React.useRef(false);
     const timeoutRef = React.useRef<number | null>(null);
     const cooldownRef = React.useRef(false);
@@ -13,12 +13,12 @@ const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leadi
         if (mountedRef.current) {
             if (!cooldownRef.current && options.leading) {
                 cooldownRef.current = true;
-                setValue(value);
+                setContent(value);
             } else {
                 cancel();
                 timeoutRef.current = window.setTimeout(() => {
                     cooldownRef.current = false;
-                    setValue(value);
+                    setContent(value);
                 }, wait);
             }
         }
@@ -34,7 +34,7 @@ const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leadi
         return cancel;
     }, []);
 
-    return [_value, cancel] as const;
+    return [content, cancel] as const;
 };
 
 export default useDebouncedValue;

@@ -1,4 +1,4 @@
-import {IMethods, IOptions} from '@/api/types';
+import type {IMethods, IOptions} from '@/api/types';
 
 const getHeaders = (options?: IOptions): HeadersInit => (
     options?.token

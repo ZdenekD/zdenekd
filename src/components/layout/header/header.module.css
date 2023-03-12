@@ -6,11 +6,11 @@
     position: relative;
     z-index: var(--zindex-header);
 
-    @media (min-width: 300px) {
+    @media (width >= 300px) {
         padding: var(--gap);
     }
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
         padding: var(--gap) calc(2 * var(--gap)) 0;
     }
 }
