@@ -41,7 +41,7 @@ initialize();
 
 Object.defineProperty(nextImage, 'default', {
     configurable: true,
-    value: props => <img {...props} />
+    value: props => <img {...props} alt="" />
 });
 
 export const parameters = {

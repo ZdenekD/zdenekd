@@ -4,6 +4,9 @@ module.exports = {
     stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
     staticDirs: ['../public'],
     framework: '@storybook/react',
+    typescript: {
+        reactDocgen: 'react-docgen-typescript-plugin'
+    },
     core: {
         builder: 'webpack5',
         disableTelemetry: true
@@ -51,6 +54,7 @@ module.exports = {
         '@storybook/addon-toolbars',
         '@storybook/addon-viewport',
         'storybook-addon-next-router',
+        'storybook-addon-apollo-client'
     ],
     webpackFinal: async config => {
         config.module.rules = config.module.rules.map(rule => (rule.test?.toString().search('svg') > 0
@@ -70,11 +74,13 @@ module.exports = {
             '@/components': path.resolve(__dirname, '../src/components'),
             '@/UI': path.resolve(__dirname, '../src/components/UI'),
             '@/data': path.resolve(__dirname, '../src/data'),
-            '@/db': path.resolve(__dirname, '../src/database'),
+            '@/db': path.resolve(__dirname, '../src/lib/database'),
+            '@/lib': path.resolve(__dirname, '../src/lib'),
             '@/store': path.resolve(__dirname, '../src/store'),
             '@/api': path.resolve(__dirname, '../src/utils/api'),
             '@/distributors': path.resolve(__dirname, '../src/utils/distributors'),
             '@/enums': path.resolve(__dirname, '../src/utils/enums'),
+            '@/queries': path.resolve(__dirname, '../src/utils/queries'),
             '@/helpers': path.resolve(__dirname, '../src/utils/helpers'),
             '@/hooks': path.resolve(__dirname, '../src/utils/hooks'),
             '@/mocks': path.resolve(__dirname, '../src/utils/mocks'),

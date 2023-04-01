@@ -9,11 +9,13 @@
       "@/components/*": ["src/components/*"],
       "@/UI/*": ["src/components/UI/*"],
       "@/data/*": ["src/data/*"],
-      "@/db/*": ["src/database/*"],
-      "@/store/*": ["src/store/*"],
+      "@/db/*": ["src/lib/database/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/store": ["src/store/index.ts"],
       "@/api/*": ["src/utils/api/*"],
       "@/distributors/*": ["src/utils/distributors/*"],
-      "@/enums/*": ["src/utils/enums/*"],
+      "@/enums": ["src/utils/enums/index.ts"],
+      "@/queries/*": ["src/utils/queries/*"],
       "@/helpers/*": ["src/utils/helpers/*"],
       "@/hooks/*": ["src/utils/hooks/*"],
       "@/mocks/*": ["src/utils/mocks/*"],
@@ -43,6 +45,6 @@
     "sourceMap": true,
     "strict": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "__test__"],
   "include": ["next-env.d.ts", "next-add.d.ts", "src/**/*.ts", "src/**/*.tsx"]
 }

@@ -18,8 +18,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:@next/next/recommended",
-    "plugin:playwright/playwright-test"
+    "plugin:@next/next/recommended"
   ],
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
