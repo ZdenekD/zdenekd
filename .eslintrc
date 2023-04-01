@@ -18,8 +18,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:@next/next/recommended",
-    "plugin:playwright/playwright-test"
+    "plugin:@next/next/recommended"
   ],
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
@@ -36,24 +35,14 @@
     }
   },
   "rules": {
-    // Enforce line breaks between array elements
-    "array-element-newline": [
-      "error",
-      {
-        "minItems": 3
-      }
-    ],
     // Enforce line breaks after opening and before closing array brackets
-    "array-bracket-newline": [
-      "error",
-      {
-        "multiline": true
-      }
-    ],
-    // Require parens in arrow function arguments
-    "arrow-parens": ["error", "as-needed"],
+    "array-bracket-newline": ["error", {"multiline": true}],
+    // Enforce line breaks between array elements
+    "array-element-newline": ["error", {"minItems": 3}],
     // Require braces in arrow function body
     "arrow-body-style": ["error", "as-needed"],
+    // Require parens in arrow function arguments
+    "arrow-parens": ["error", "as-needed"],
     // Disallow or enforce spaces inside of single line blocks
     "block-spacing": ["error", "never"],
     // Require or disallow trailing commas
@@ -64,32 +53,56 @@
         "objects": "always-multiline"
       }
     ],
-    // Indentation
-    "indent": [
-      "error",
-      4,
-      {
-        "SwitchCase": 1
-      }
-    ],
     // Enforce consistent line breaks inside function parentheses
     "function-paren-newline": ["error", "multiline-arguments"],
-    // Require or disallow an empty line between class members
-    "lines-between-class-members": ["error", "always", {"exceptAfterSingleLine": true}],
-    // Enforce consistent linebreak style
-    "linebreak-style": ["error", "unix"],
-    // Enforce consistent line breaks inside braces
-    "object-curly-newline": [
+    // Ensure consistent use of file extension within the import path
+    "import/extensions": 0,
+    // When there is only a single export from a module, prefer using default export over named export.
+    "import/prefer-default-export": 0,
+    // Ensures that there is no resolvable path back to this module via its dependencies.
+    "import/no-cycle": [1, {"maxDepth": 5}],
+    // Off import errors (becauseof webpack config)
+    "import/no-extraneous-dependencies": 0,
+    // Ensures an imported module can be resolved to a module on the local filesystem, as defined by standard Node require.resolve behavior.
+    "import/no-unresolved": 0,
+    // Enforces or forbids new lines between import groups
+    "import/order": [
       "error",
       {
-        "ObjectExpression": {"multiline": true, "minProperties": 3},
-        "ObjectPattern": {"multiline": true},
-        "ImportDeclaration": {"multiline": true, "minProperties": 3},
-        "ExportDeclaration": {"multiline": true, "minProperties": 3}
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./*.css",
+            "group": "index",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ],
-    // Enforce consistent spacing inside braces
-    "object-curly-spacing": ["error", "never"],
+    // Indentation
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    // Disallow using expect outside of it or test blocks (no-standalone-expect
+    "jest/no-standalone-expect": 0,
+    // Enforce valid expect() usage (valid-expect)
+    "jest/valid-expect": 1,
+    // Enforce that a label tag has a text label and an associated control.
+    "jsx-a11y/label-has-associated-control": 1,
+    // Enforce that autoFocus prop is not used on elements. Autofocusing elements can cause usability issues for sighted and non-sighted users, alike.
+    "jsx-a11y/no-autofocus": 1,
+    // Enforce consistent linebreak style
+    "linebreak-style": ["error", "unix"],
+    // Require or disallow an empty line between class members
+    "lines-between-class-members": ["error", "always", {"exceptAfterSingleLine": true}],
     // Enforce a maximum line length
     "max-len": [
       "error",
@@ -111,12 +124,8 @@
     // This rule aims to reduce the scrolling required when reading through your code. It will warn when the maximum amount of empty lines has been exceeded.
     "no-multiple-empty-lines": [2, {"max": 1, "maxEOF": 1, "maxBOF": 2}],
     // Disallow the unary operators ++ and --
-    "no-plusplus": [
-      "error",
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
+    // Disallow the unary operators ++ and --
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
     // Disallow specified names in exports
     "no-restricted-exports": ["error", {"restrictedNamedExports": [""]}],
     // Disallow variable declarations from shadowing variables declared in the outer scope
@@ -130,6 +139,20 @@
         "allowAfterSuper": true
       }
     ],
+    // Disallow the use of variables before they are defined.
+    "no-use-before-define": "off",
+    // Enforce consistent line breaks inside braces
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {"multiline": true, "minProperties": 3},
+        "ObjectPattern": {"multiline": true},
+        "ImportDeclaration": {"multiline": true, "minProperties": 3},
+        "ExportDeclaration": {"multiline": true, "minProperties": 3}
+      }
+    ],
+    // Enforce consistent spacing inside braces
+    "object-curly-spacing": ["error", "never"],
     // Require or disallow padding lines between statements (padding-line-between-statements)
     "padding-line-between-statements": [
       "error",
@@ -171,6 +194,70 @@
     ],
     // Enforce the consistent use of either backticks, double, or single quotes
     "quotes": ["error", "single"],
+    // Enforce consistent usage of destructuring assignment of props, state, and context
+    "react/destructuring-assignment": [1, "always", {"ignoreClassFields": true}],
+    // Forbid certain propTypes
+    "react/forbid-prop-types": [0],
+    // Enforce a specific function type for function components
+    "react/function-component-definition": ["error", {"namedComponents": "arrow-function"}],
+    // Ensure destructuring and symmetric naming of useState hook value and setter variables
+    "react/hook-use-state": ["error"],
+    // Enforce closing bracket location in JSX
+    "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+    // Enforce proper position of the first property in JSX
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    // Enforce or disallow spaces inside of curly braces in JSX attributes and expressions
+    "react/jsx-child-element-spacing": ["error"],
+    // Enforce JSX indentation
+    "react/jsx-indent": ["error", 4],
+    // Validate props indentation in JSX
+    "react/jsx-indent-props": ["error", 4],
+    // Disallow problematic leaked values from being rendered
+    "react/jsx-no-leaked-render": ["error"],
+    // Disallow multiple spaces between inline JSX props
+    "react/jsx-props-no-multi-spaces": ["error"],
+    // This rule checks all JSX components and verifies that all props are sorted alphabetically. A spread attribute resets the verification. The default configuration of the rule is case-sensitive.
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "shorthandLast": false,
+        "ignoreCase": false,
+        "multiline": "last",
+        "noSortAlphabetically": true,
+        "reservedFirst": true
+      }
+    ],
+    // Disallow missing parentheses around multiline JSX
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ],
+    // Enforce maximum of props on a single line in JSX
+    "react/jsx-max-props-per-line": ["error", {"maximum": 1, "when": "multiline"}],
+    // Disallow React to be incorrectly marked as unused
+    "react/jsx-uses-react": "off",
+    // Prevent definitions of unused state
+    "react/no-unused-state": 0,
+    // Prevent missing props validation in a React component definition
+    "react/prop-types": 0,
+    // Disallow missing React when using JSX
+    "react/react-in-jsx-scope": "off",
+    // Enforce propTypes declarations alphabetical sorting
+    "react/sort-prop-types": ["error", {"callbacksLast": true}],
+    // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "off",
+    // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "error",
     // Require or disallow a space before function parenthesis
     "space-before-function-paren": [
       "error",
@@ -180,97 +267,17 @@
         "asyncArrow": "always"
       }
     ],
-    // Note you must disable the base rule as it can report incorrect errors
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    // No HTML link for pages
+    "@next/next/no-html-link-for-pages": 0,
+    // Enforce consistent usage of type imports.
+    "@typescript-eslint/consistent-type-imports": ["warn", {"prefer": "type-imports"}],
     // Explicit accessibility modifiers on class properties and methods are not required
     "@typescript-eslint/explicit-member-accessibility": ["off"],
     // Disallow variable declarations from shadowing variables declared in the outer scope
     "@typescript-eslint/no-shadow": ["error"],
+    // Disallow the use of variables before they are defined.
+    "@typescript-eslint/no-use-before-define": ["error"],
     // Enforce consistent returning of awaited values.
-    "@typescript-eslint/return-await": ["off"],
-    // Forbid certain propTypes
-    "react/forbid-prop-types": [0],
-    // React scope is not necessary for React v17+
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    // Enforce JSX indentation
-    "react/jsx-indent": ["error", 4],
-    // Validate props indentation in JSX
-    "react/jsx-indent-props": ["error", 4],
-    // This rule checks all JSX components and verifies that all props are sorted alphabetically. A spread attribute resets the verification. The default configuration of the rule is case-sensitive.
-    "react/jsx-sort-props": [
-      "warn",
-      {
-        "callbacksLast": true,
-        "shorthandFirst": true,
-        "shorthandLast": false,
-        "ignoreCase": false,
-        "noSortAlphabetically": true,
-        "reservedFirst": true
-      }
-    ],
-    // Prevent definitions of unused state
-    "react/no-unused-state": 0,
-    // Enforce consistent usage of destructuring assignment of props, state, and context
-    "react/destructuring-assignment": [
-      1,
-      "always",
-      {
-        "ignoreClassFields": true
-      }
-    ],
-    // Prevent missing props validation in a React component definition
-    "react/prop-types": 0,
-    // Checks rules of Hooks
-    "react-hooks/rules-of-hooks": "error",
-    // Checks effect dependencies
-    "react-hooks/exhaustive-deps": "warn",
-    // Enforce that a label tag has a text label and an associated control.
-    "jsx-a11y/label-has-associated-control": 1,
-    "jsx-a11y/label-has-for": [
-      1,
-      {
-        "required": {
-          "some": ["nesting", "id"]
-        }
-      }
-    ],
-    // No HTML link for pages
-    "@next/next/no-html-link-for-pages": 0,
-    // Enforce valid expect() usage (valid-expect)
-    "jest/valid-expect": 1,
-    // Disallow using expect outside of it or test blocks (no-standalone-expect
-    "jest/no-standalone-expect": 0,
-    // When there is only a single export from a module, prefer using default export over named export.
-    "import/prefer-default-export": 0,
-    // Off import errors (becauseof webpack config)
-    "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": 0,
-    "import/extensions": 0,
-    // Enforces or forbids new lines between import groups
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
-        "pathGroups": [
-          {
-            "pattern": "@/**",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "./*.css",
-            "group": "index",
-            "position": "after"
-          }
-        ],
-        "newlines-between": "never",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
+    "@typescript-eslint/return-await": ["off"]
   }
 }

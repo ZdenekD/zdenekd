@@ -1,4 +1,9 @@
-import React from 'react';
+
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import Icon from '@/assets/images/icon_open.svg';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
@@ -9,12 +14,12 @@ type IProps = {
     url: string
 }
 
-const Target: React.FC<IProps> = ({url}) => {
-    const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
-    const targetRef = React.useRef<HTMLAnchorElement | null>(null);
+const Target = ({url}: IProps) => {
+    const [catcher, setCatcher] = useState<HTMLAnchorElement | null>(null);
+    const targetRef = useRef<HTMLAnchorElement | null>(null);
     const locale = useLocale();
 
-    React.useEffect(() => {
+    useEffect(() => {
         setCatcher(targetRef.current);
     }, []);
 

@@ -1,5 +1,5 @@
 import useEventListener from '@use-it/event-listener';
-import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import {ProjectActionsEnum} from '@/enums';
 import type {IDistributor} from '@/types/distributor';
 import useProjectAction from './useProjectAction';
 

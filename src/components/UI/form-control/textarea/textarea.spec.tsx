@@ -1,5 +1,4 @@
 import {render, screen} from '@testing-library/react';
-import React from 'react';
 import Textarea from '.';
 
 const props = {
@@ -15,7 +14,7 @@ describe('UI/Form Control/Textarea', () => {
     });
 
     it('renders message component on error', () => {
-        render(<Textarea error="Error message"{...props} />);
+        render(<Textarea error="Error message" {...props} />);
 
         expect(screen.getByTestId('component-textarea-error')).toBeInTheDocument();
     });

@@ -1,5 +1,5 @@
-import {SetState} from 'zustand';
 import type {IStore} from '..';
+import type {SetState} from 'zustand';
 
 type IValue = {
     isOpen: boolean | undefined

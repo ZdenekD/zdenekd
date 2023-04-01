@@ -1,4 +1,4 @@
-import {Variants} from 'framer-motion';
+import type {Variants} from 'framer-motion';
 
 const animations: Variants = {
     initial: {opacity: 0},

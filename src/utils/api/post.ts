@@ -1,10 +1,10 @@
 import API from '@/utils/config';
-import {
+import methods from './utils/methods';
+import type {
     IData,
     IOptions,
     IResponse
 } from './types';
-import methods from './utils/methods';
 
 type IPost = <D, R = string>(path: string, data?: D, options?: IOptions) =>
     Promise<IResponse<IData<R, D | undefined>>>

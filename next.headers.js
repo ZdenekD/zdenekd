@@ -61,21 +61,17 @@ const headers = [
                 value: 'script-src "self"',
             },
             {
-                key: 'Cache-Control',
-                value: 'private, max-age=31536000, immutable',
-            },
-            {
                 key: 'Content-Type',
                 value: 'application/javascript; charset=utf-8',
             },
         ],
     },
     {
-        source: '/(.*).css',
+        source: '/(.*).(js|css)',
         headers: [
             {
                 key: 'Cache-Control',
-                value: 'public, max-age=31536000, immutable',
+                value: 'private, max-age=31536000, immutable',
             },
         ],
     },

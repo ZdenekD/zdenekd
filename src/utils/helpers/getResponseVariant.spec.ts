@@ -1,4 +1,4 @@
-import VariantsEnum from '@/enums/VariantsEnum';
+import {VariantsEnum} from '@/enums';
 import getResponseVariant from './getResponseVariant';
 
 describe('Helper - handleResponseStatus', () => {

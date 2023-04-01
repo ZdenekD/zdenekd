@@ -4,13 +4,14 @@ import {
     LazyMotion,
     m
 } from 'framer-motion';
-import React from 'react';
-import VariantsEnum from '@/enums/VariantsEnum';
+import {useEffect, useState} from 'react';
+import type {VariantsEnum} from '@/enums';
 import useClickOutside from '@/hooks/useClickOutside';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import animations from './alert.animations';
 import styles from './alert.module.css';
+import type {PropsWithChildren} from 'react';
 
 type IProps = {
     title?: string
@@ -18,11 +19,10 @@ type IProps = {
     timeout?: number
     className?: string
     isVisible?: boolean
-    children?: React.ReactNode
     onClose?: () => void
 }
 
-const Alert: React.FC<IProps> = ({
+const Alert = ({
     title,
     variant,
     timeout,
@@ -30,8 +30,8 @@ const Alert: React.FC<IProps> = ({
     isVisible = false,
     children,
     onClose,
-}) => {
-    const [isOpened, setOpened] = React.useState(false);
+}: PropsWithChildren<IProps>) => {
+    const [isOpened, setIsOpened] = useState(false);
     const {message, unset} = useStore(state => state.alert);
     const locale = useLocale();
     const handleClose = () => {
@@ -39,7 +39,7 @@ const Alert: React.FC<IProps> = ({
             onClose();
         }
 
-        setOpened(false);
+        setIsOpened(false);
 
         if (message) {
             unset();
@@ -49,7 +49,7 @@ const Alert: React.FC<IProps> = ({
         handleClose();
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
         let timer: NodeJS.Timeout | null;
 
         if (timeout) {
@@ -67,13 +67,13 @@ const Alert: React.FC<IProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timeout]);
 
-    React.useEffect(() => {
-        setOpened(isVisible);
+    useEffect(() => {
+        setIsOpened(isVisible);
     }, [isVisible]);
 
     return (
         <AnimatePresence>
-            {isOpened && (
+            {isOpened ? (
                 <LazyMotion strict features={domAnimation}>
                     <m.div
                         initial="initial"
@@ -93,11 +93,11 @@ const Alert: React.FC<IProps> = ({
                         role="alert"
                         data-testid="component-alert"
                     >
-                        {title && (
+                        {title ? (
                             <header className={styles.header}>
                                 <strong className={styles.title}>{title}</strong>
                             </header>
-                        )}
+                        ) : null}
 
                         <section className={styles.section}>
                             {children}
@@ -113,17 +113,17 @@ const Alert: React.FC<IProps> = ({
                             &times;
                         </button>
 
-                        {timeout && (
+                        {timeout ? (
                             <m.div
                                 initial={{width: 0}}
                                 animate={{width: '100%', transition: {duration: (timeout)}}}
                                 className={`${styles.progress} chromatic-ignore`}
                                 data-testid="component-alert-timeout"
                             />
-                        )}
+                        ) : null}
                     </m.div>
                 </LazyMotion>
-            )}
+            ) : null}
         </AnimatePresence>
     );
 };

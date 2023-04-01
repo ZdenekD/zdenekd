@@ -1,18 +1,23 @@
-import React from 'react';
+
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import {animationIn, animationOut} from './menu.animations';
 import styles from './menu.module.css';
 
-const Menu: React.FC = () => {
-    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
+const Menu = () => {
+    const [catcher, setCatcher] = useState<HTMLButtonElement | null>(null);
     const {isOpen, set} = useStore(state => state.menu);
     const {isAsideAnimated} = useStore(state => state.animation);
-    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
-    const pathTopRef = React.useRef<SVGPathElement | null>(null);
-    const pathMiddleRef = React.useRef<SVGPathElement | null>(null);
-    const pathBottomRef = React.useRef<SVGPathElement | null>(null);
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
+    const pathTopRef = useRef<SVGPathElement | null>(null);
+    const pathMiddleRef = useRef<SVGPathElement | null>(null);
+    const pathBottomRef = useRef<SVGPathElement | null>(null);
     const locale = useLocale();
     const handleTriggerAnimationIn = () => {
         animationIn({
@@ -32,7 +37,7 @@ const Menu: React.FC = () => {
         set({isOpen: !isOpen});
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (isOpen === undefined) {
             return;
         }
@@ -40,7 +45,7 @@ const Menu: React.FC = () => {
         (isOpen ? handleTriggerAnimationIn : handleTriggerAnimationOut)();
     }, [isOpen]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setCatcher(buttonRef.current);
     }, []);
 

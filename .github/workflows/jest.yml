@@ -13,5 +13,5 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'yarn'
-      - run: yarn --frozen-lockfile --check-files
+      - run: yarn --immutable
       - run: npx jest

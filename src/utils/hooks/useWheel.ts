@@ -1,6 +1,6 @@
 import useEventListener from '@use-it/event-listener';
 import _ from 'lodash';
-import PageActionsEnum from '@/enums/PageActionsEnum';
+import {PageActionsEnum} from '@/enums';
 import usePageAction from './usePageAction';
 
 const useWheel = (): void => {

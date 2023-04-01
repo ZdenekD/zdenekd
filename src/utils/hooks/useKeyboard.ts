@@ -1,7 +1,6 @@
 import useEventListener from '@use-it/event-listener';
 import _ from 'lodash';
-import PageActionsEnum from '@/enums/PageActionsEnum';
-import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import {PageActionsEnum, ProjectActionsEnum} from '@/enums';
 import type {IDistributor} from '@/types/distributor';
 import usePageAction from './usePageAction';
 import useProjectAction from './useProjectAction';

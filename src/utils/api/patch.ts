@@ -1,6 +1,6 @@
 import API from '@/utils/config';
-import {IOptions, IResponse} from './types';
 import methods from './utils/methods';
+import type {IOptions, IResponse} from './types';
 
 type IPatch = <D, R>(path: string, data?: D, options?: IOptions) => Promise<IResponse<R>>
 

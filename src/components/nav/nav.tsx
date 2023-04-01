@@ -2,15 +2,15 @@ import {m} from 'framer-motion';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import pages from '@/data/pages';
-import LocalesEnum from '@/enums/LocalesEnum';
-import PagesEnum from '@/enums/PagesEnum';
+import {LocalesEnum} from '@/enums';
+import type {PagesEnum} from '@/enums';
 import getPage from '@/helpers/getPage';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import Anchor from '@/UI/anchor';
 import {animations, animation} from './nav.animations';
 import styles from './nav.module.css';
 
-const Nav: React.FC = () => {
+const Nav = () => {
     const router = useRouter();
     const {isOpen, set: setMenu} = useStore(state => state.menu);
     const {set: setAnimation} = useStore(state => state.animation);
@@ -40,7 +40,7 @@ const Nav: React.FC = () => {
                         className={styles.item}
                         data-testid="component-item"
                     >
-                        <Link passHref href={pages[key as PagesEnum].route}>
+                        <Link legacyBehavior href={pages[key as PagesEnum].route}>
                             <Anchor
                                 href={pages[key as PagesEnum].route}
                                 className={`${styles.link} ${page === key ? styles.active : ''}`}

@@ -1,13 +1,14 @@
-import React from 'react';
+
+import {forwardRef} from 'react';
 import styles from './form.module.css';
+import type {FormEvent, PropsWithChildren} from 'react';
 
 export type IProps = {
     className?: string
-    children: React.ReactNode
-    onSubmit?: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
+    onSubmit?: (event: FormEvent<HTMLFormElement>) => Promise<void>
 }
 
-const Form = React.forwardRef<HTMLFormElement, IProps>(({
+const Form = forwardRef<HTMLFormElement, PropsWithChildren<IProps>>(({
     className = '',
     children,
     onSubmit,

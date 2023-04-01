@@ -5,21 +5,22 @@ import {
 } from 'framer-motion';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import React from 'react';
 import Computer from '@/components/device/computer';
 import Mobile from '@/components/device/mobile';
 import Tablet from '@/components/device/tablet';
 import Layout from '@/components/layout';
 import Heading from '@/components/layout/heading';
 import pages from '@/data/pages';
-import LocalesEnum from '@/enums/LocalesEnum';
-import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
-import PagesEnum from '@/enums/PagesEnum';
+import {
+    LocalesEnum,
+    MediaQueriesEnum,
+    PagesEnum
+} from '@/enums';
 import useWindowSize from '@/hooks/useWindowSize';
 import animations from './homepage.animations';
 import styles from './homepage.module.css';
 
-const Homepage: React.FC = () => {
+const Homepage = () => {
     const router = useRouter();
     const {width} = useWindowSize();
     const lang = router.locale as LocalesEnum || LocalesEnum.cs;
@@ -44,11 +45,11 @@ const Homepage: React.FC = () => {
                     variants={animations.article}
                     className={styles.article}
                 >
-                    {paragraph && (
+                    {paragraph ? (
                         <p className={styles.paragraph}>
                             {paragraph}
                         </p>
-                    )}
+                    ) : null}
                 </m.article>
             </Layout>
             <LazyMotion strict features={domAnimation}>
@@ -59,7 +60,7 @@ const Homepage: React.FC = () => {
                     variants={animations.devices}
                     className={styles.devicesWrapper}
                 >
-                    {width > MediaQueriesEnum.xl && (
+                    {width >= MediaQueriesEnum.xl && (
                         <div className={styles.computer}>
                             <Computer>
                                 <video
@@ -77,7 +78,7 @@ const Homepage: React.FC = () => {
                             </Computer>
                         </div>
                     )}
-                    {width > MediaQueriesEnum.md && (
+                    {width >= MediaQueriesEnum.md && (
                         <div className={styles.mobile}>
                             <Mobile>
                                 <video
@@ -95,7 +96,7 @@ const Homepage: React.FC = () => {
                             </Mobile>
                         </div>
                     )}
-                    {width > MediaQueriesEnum.md && (
+                    {width >= MediaQueriesEnum.md && (
                         <div className={styles.tablet}>
                             <Tablet>
                                 <video

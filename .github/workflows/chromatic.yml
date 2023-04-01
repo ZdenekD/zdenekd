@@ -2,7 +2,6 @@ name: Chromatic
 on:
   pull_request:
     branches:
-      - master
       - develop
 jobs:
   chromatic:
@@ -15,8 +14,8 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'yarn'
-      - run: yarn --frozen-lockfile --check-files
+      - run: yarn --immutable
       - uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+          projectToken: ${{secrets.CHROMATIC_TOKEN}}
           exitOnceUploaded: true

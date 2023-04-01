@@ -1,4 +1,4 @@
-import VariantsEnum from '@/enums/VariantsEnum';
+import {VariantsEnum} from '@/enums';
 import Button from '.';
 
 export default {title: 'UI/Form Control/Button'};

@@ -1,5 +1,4 @@
-import LocalesEnum from '@/enums/LocalesEnum';
-import PagesEnum from '@/enums/PagesEnum';
+import type {LocalesEnum, PagesEnum} from '@/enums';
 
 export type IPages = {
     [key in PagesEnum]: {

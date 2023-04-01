@@ -1,10 +1,7 @@
 import styles from './tablet.module.css';
+import type {PropsWithChildren} from 'react';
 
-type IProps = {
-    children?: React.ReactNode
-}
-
-const Tablet: React.FC<IProps> = ({children}) => (
+const Tablet = ({children}: PropsWithChildren) => (
     <div className={styles.wrapper} data-testid="component-device-tablet">
         <div className={styles.tablet}>
             <div className={styles.content}>

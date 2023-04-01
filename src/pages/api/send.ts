@@ -1,8 +1,9 @@
-import sendgrid, {MailDataRequired} from '@sendgrid/mail';
+import sendgrid from '@sendgrid/mail';
 import {withSentry} from '@sentry/nextjs';
-import {NextApiRequest, NextApiResponse} from 'next';
 import locales from '@/data/locales';
-import LocalesEnum from '@/enums/LocalesEnum';
+import type {LocalesEnum} from '@/enums';
+import type {MailDataRequired} from '@sendgrid/mail';
+import type {NextApiRequest, NextApiResponse} from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     const {method} = req;

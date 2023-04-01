@@ -1,16 +1,17 @@
-import React from 'react';
+
+import {forwardRef} from 'react';
 import styles from './anchor.module.css';
+import type {PropsWithChildren, MouseEventHandler} from 'react';
 
 export type IProps = {
     href: string
     title?: string
     target?: '_blank'
     className?: string
-    children: React.ReactNode
-    onClick?: (event: React.MouseEvent) => void
+    onClick?: MouseEventHandler
 }
 
-const Anchor = React.forwardRef<HTMLAnchorElement, IProps>(({
+const Anchor = forwardRef<HTMLAnchorElement, PropsWithChildren<IProps>>(({
     href,
     title,
     target,

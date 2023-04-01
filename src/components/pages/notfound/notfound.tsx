@@ -2,10 +2,10 @@ import {Player} from '@lottiefiles/react-lottie-player';
 import {useRouter} from 'next/router';
 import Layout from '@/components/layout';
 import Heading from '@/components/layout/heading';
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import styles from './notfound.module.css';
 
-const NotFound: React.FC = () => {
+const NotFound = () => {
     const router = useRouter();
     const paragraph: {[key: string]: string} = {
         [LocalesEnum.cs]: 'Stránka bohužel neexistuje',
@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
 
     return (
         <Layout className={styles.root}>
-            <Heading data-testid="component-heading">{router.locale && paragraph[router.locale]}</Heading>
+            <Heading data-testid="component-heading">{router.locale ? paragraph[router.locale] : null}</Heading>
             <div className={styles.animation}>
                 <Player
                     autoplay

@@ -1,5 +1,5 @@
-import LocalesEnum from '@/enums/LocalesEnum';
-import {IProjects} from '@/types/projects';
+import {LocalesEnum} from '@/enums';
+import type {IProjects} from '@/types/projects';
 
 const projects: IProjects = [
     {
@@ -9,7 +9,7 @@ const projects: IProjects = [
         tools: [
             'vercel',
             'nextjs',
-            'graphcms',
+            'hygraph',
             'react',
             'typescript',
             'framer-motion',
@@ -26,7 +26,7 @@ const projects: IProjects = [
         tools: [
             'vercel',
             'nextjs',
-            'graphcms',
+            'hygraph',
             'react',
             'typescript',
             'lottie',

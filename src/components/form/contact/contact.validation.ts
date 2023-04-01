@@ -1,11 +1,11 @@
 import * as yup from 'yup';
-import {
+import type {ILocale} from '@/data/locales/types';
+import regex from '@/helpers/regex';
+import type {
     AnyObjectSchema,
     BooleanSchema,
     StringSchema
 } from 'yup';
-import {ILocale} from '@/data/locales/types';
-import regex from '@/helpers/regex';
 
 type IValidate<R = BooleanSchema | StringSchema> = (locale: ILocale | undefined) => R;
 

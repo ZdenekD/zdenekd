@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import DirectionsEnum from '@/enums/DirectionsEnum';
+import {DirectionsEnum} from '@/enums';
 import Key from '.';
 
 describe('Keys/Key', () => {

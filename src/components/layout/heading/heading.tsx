@@ -1,15 +1,12 @@
 import anime from 'animejs';
-import React from 'react';
+import {useEffect, useRef} from 'react';
 import styles from './heading.module.css';
+import type {PropsWithChildren} from 'react';
 
-type IProps = {
-    children?: React.ReactNode
-}
+const Heading = ({children}: PropsWithChildren) => {
+    const headingRef = useRef<HTMLHeadingElement | null>(null);
 
-const Heading: React.FC<IProps> = ({children}) => {
-    const headingRef = React.useRef<HTMLHeadingElement | null>(null);
-
-    React.useEffect(() => {
+    useEffect(() => {
         anime({
             targets: headingRef.current,
             duration: 800,

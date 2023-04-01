@@ -1,25 +1,30 @@
-import React from 'react';
-import DirectionsEnum from '@/enums/DirectionsEnum';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
+import type {DirectionsEnum} from '@/enums';
 import useCursor from '@/hooks/useCursor';
 import styles from './key.module.css';
+import type {MouseEventHandler} from 'react';
 
 type IProps = {
     direction: DirectionsEnum
     label: string
     disabled?: boolean
-    onClick?: (event: React.MouseEvent) => void
+    onClick?: MouseEventHandler
 }
 
-const Key: React.FC<IProps> = ({
+const Key = ({
     direction,
     label,
     disabled = false,
     onClick = undefined,
-}) => {
-    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+}: IProps) => {
+    const [catcher, setCatcher] = useState<HTMLButtonElement | null>(null);
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setCatcher(buttonRef.current);
     }, []);
 

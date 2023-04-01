@@ -1,5 +1,6 @@
-import React from 'react';
-import VariantsEnum from '@/enums/VariantsEnum';
+
+import {createElement, useState} from 'react';
+import {VariantsEnum} from '@/enums';
 import Input from '.';
 
 export default {title: 'UI/Form Control/Input'};
@@ -9,8 +10,8 @@ const props = {
     label: 'Input',
 };
 
-export const component = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const component = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -29,8 +30,8 @@ export const component = () => React.createElement(() => {
     );
 });
 
-export const success = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const success = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -51,8 +52,8 @@ export const success = () => React.createElement(() => {
     );
 });
 
-export const info = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const info = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -73,8 +74,8 @@ export const info = () => React.createElement(() => {
     );
 });
 
-export const warning = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const warning = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -95,8 +96,8 @@ export const warning = () => React.createElement(() => {
     );
 });
 
-export const danger = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const danger = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -124,8 +125,8 @@ export const disabled = () => (
     </>
 );
 
-export const required = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const required = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -150,8 +151,8 @@ export const readonly = () => (
     <Input readonly value="Readonly input" {...props} />
 );
 
-export const error = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const error = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>
@@ -179,8 +180,8 @@ export const error = () => React.createElement(() => {
     );
 });
 
-export const maxlength = () => React.createElement(() => {
-    const [value, setValue] = React.useState('');
+export const maxlength = () => createElement(() => {
+    const [value, setValue] = useState('');
 
     return (
         <>

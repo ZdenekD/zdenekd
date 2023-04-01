@@ -1,6 +1,6 @@
 import cs from './cs';
 import en from './en';
-import {ILocales} from './types';
+import type {ILocales} from './types';
 
 const locales: ILocales = {
     ...cs,

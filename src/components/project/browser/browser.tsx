@@ -1,23 +1,24 @@
 import Image from 'next/image';
-import React from 'react';
-import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
+import {forwardRef} from 'react';
+import {MediaQueriesEnum} from '@/enums';
 import useWindowSize from '@/hooks/useWindowSize';
-import {IProject} from '@/types/projects';
+import type {IProject} from '@/types/projects';
 import Addressbar from './addressbar';
 import Controls from './controls';
 import Target from './target';
 import Video from './video';
 import styles from './browser.module.css';
+import type {MouseEventHandler} from 'react';
 
 type IProps = {
     project: IProject
     isFirst: boolean
     isLast: boolean
-    handlePrev?: (event: React.MouseEvent) => void
-    handleNext?: (event: React.MouseEvent) => void
+    handlePrev?: MouseEventHandler
+    handleNext?: MouseEventHandler
 }
 
-const Browser = React.forwardRef<HTMLElement, IProps>(({
+const Browser = forwardRef<HTMLElement, IProps>(({
     project,
     isFirst,
     isLast,
@@ -48,7 +49,7 @@ const Browser = React.forwardRef<HTMLElement, IProps>(({
                 <Target url={project.url} />
             </header>
 
-            {width > MediaQueriesEnum.sm ? (
+            {width >= MediaQueriesEnum.sm ? (
                 <Video project={project} />
             ) : (
                 <Image

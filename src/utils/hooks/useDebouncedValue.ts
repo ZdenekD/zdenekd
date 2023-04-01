@@ -1,24 +1,27 @@
-
-import React from 'react';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 
 const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leading: false}) => {
-    const [_value, setValue] = React.useState(value);
-    const mountedRef = React.useRef(false);
-    const timeoutRef = React.useRef<number | null>(null);
-    const cooldownRef = React.useRef(false);
+    const [content, setContent] = useState(value);
+    const mountedRef = useRef(false);
+    const timeoutRef = useRef<number | null>(null);
+    const cooldownRef = useRef(false);
 
     const cancel = () => window.clearTimeout(timeoutRef.current ?? 0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (mountedRef.current) {
             if (!cooldownRef.current && options.leading) {
                 cooldownRef.current = true;
-                setValue(value);
+                setContent(value);
             } else {
                 cancel();
                 timeoutRef.current = window.setTimeout(() => {
                     cooldownRef.current = false;
-                    setValue(value);
+                    setContent(value);
                 }, wait);
             }
         }
@@ -28,13 +31,13 @@ const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leadi
         wait,
     ]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         mountedRef.current = true;
 
         return cancel;
     }, []);
 
-    return [_value, cancel] as const;
+    return [content, cancel] as const;
 };
 
 export default useDebouncedValue;

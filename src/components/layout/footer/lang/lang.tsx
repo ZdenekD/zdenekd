@@ -1,26 +1,30 @@
 import Link from 'next/link';
-import {NextRouter} from 'next/router';
-import React from 'react';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import useCursor from '@/hooks/useCursor';
 import styles from './lang.module.css';
+import type {NextRouter} from 'next/router';
 
 type IProps = {
     locale: string
     router: NextRouter
 }
 
-const Locale: React.FC<IProps> = ({locale, router}) => {
-    const [catcher, setCatcher] = React.useState<HTMLAnchorElement | null>(null);
-    const anchorRef = React.useRef<HTMLAnchorElement | null>(null);
+const Locale = ({locale, router}: IProps) => {
+    const [catcher, setCatcher] = useState<HTMLAnchorElement | null>(null);
+    const anchorRef = useRef<HTMLAnchorElement | null>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setCatcher(anchorRef.current);
     }, []);
 
     useCursor(catcher);
 
     return (
-        <Link href={router.route} locale={locale}>
+        <Link legacyBehavior href={router.route} locale={locale}>
             <a
                 ref={anchorRef}
                 href={router.route}

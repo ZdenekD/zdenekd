@@ -4,7 +4,7 @@ const paths = require('path');
 module.exports = {
     process(_, file) {
         const name = paths.basename(file, '.svg');
-        const filename = `${name[0].toUpperCase()}${name.substring(1)}`;
+        const filename = `${name[0].toUpperCase()}${name.substring(1)}`.replace(/([-_]\w)/g, chars => chars[chars.length - 1].toUpperCase());
 
         return {
             code: `

@@ -2,7 +2,7 @@ import {m} from 'framer-motion';
 import {animations} from './curtain.animations';
 import styles from './curtain.module.css';
 
-const Curtain: React.FC = () => (
+const Curtain = () => (
     <m.div
         initial="exit"
         animate="enter"

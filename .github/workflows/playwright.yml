@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'yarn'
-      - run: yarn --frozen-lockfile --check-files
+      - run: yarn --immutable
       - run: npx playwright install --with-deps
-      - run: yarn test
+      - run: yarn test:playwright
       - uses: actions/upload-artifact@v2
         if: always()
         with:

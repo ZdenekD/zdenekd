@@ -1,18 +1,18 @@
 import {m} from 'framer-motion';
 import {useRouter} from 'next/router';
-import React from 'react';
+import {useRef} from 'react';
 import Keys from '@/components/keys';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import Icon, {IconsEnum} from '@/UI/icon';
 import {animations} from './footer.animations';
 import Lang from './lang';
 import styles from './footer.module.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     const router = useRouter();
     const {isOpen} = useStore(state => state.menu);
-    const dotRef = React.useRef<HTMLElement | null>(null);
+    const dotRef = useRef<HTMLElement | null>(null);
     const locale = useLocale();
 
     return (
@@ -21,7 +21,8 @@ const Footer: React.FC = () => {
             animate="enter"
             exit="exit"
             variants={animations.footer}
-            className={`${styles.footer} ${isOpen ? styles.opened : styles.closed}`} data-testid="component-footer"
+            className={`${styles.footer} ${isOpen ? styles.opened : styles.closed}`}
+            data-testid="component-footer"
         >
             <code className={styles.code}>
                 {locale.footer.code}
@@ -50,13 +51,13 @@ const Footer: React.FC = () => {
                 variants={animations.locale}
                 className={styles.languages}
             >
-                {router.locales && router.locales.map(item => (
+                {router.locales ? router.locales.map(item => (
                     <Lang
                         key={item}
                         locale={item}
                         router={router}
                     />
-                ))}
+                )) : null}
             </m.div>
             <Keys />
             <m.span

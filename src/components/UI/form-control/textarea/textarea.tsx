@@ -1,7 +1,14 @@
 /* eslint-disable no-param-reassign */
-import React from 'react';
-import VariantsEnum from '@/enums/VariantsEnum';
+
+import {
+    forwardRef,
+    useEffect,
+    useRef,
+    useState
+} from 'react';
+import {VariantsEnum} from '@/enums';
 import styles from './textarea.module.css';
+import type {ChangeEvent, ChangeEventHandler} from 'react';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
@@ -17,13 +24,13 @@ type ITextarea = {
     autoComplete?: 'on' | 'off'
     error?: string
     className?: string
-    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
-    onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+    onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void
+    onBlur?: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export type IProps = IReadonlyProps & ITextarea;
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
+const Textarea = forwardRef<HTMLTextAreaElement, IProps>(({
     id,
     name,
     label,
@@ -40,15 +47,15 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
     onChange,
     onBlur,
 }, ref) => {
-    const [length, setLength] = React.useState<number>(value?.length || 0);
-    const textareaRef = React.useRef<HTMLTextAreaElement | null>(null);
+    const [length, setLength] = useState<number>(value?.length || 0);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const handleHeight = (element: HTMLTextAreaElement) => {
         if (element.style) {
             element.style.height = element.style.minHeight;
             element.style.height = `${element.scrollHeight + 2}px`;
         }
     };
-    const handleInput: React.ChangeEventHandler<HTMLTextAreaElement> = event => {
+    const handleInput: ChangeEventHandler<HTMLTextAreaElement> = event => {
         handleHeight(event.target);
         setLength(event.target.value.length);
 
@@ -57,7 +64,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         setLength(value?.length || 0);
 
         if (textareaRef.current) {
@@ -90,17 +97,17 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({
             >
                 <span className={styles.labelContent}>
                     {label}
-                    {required && (<sup className={styles.required}>*</sup>)}
+                    {required ? <sup className={styles.required}>*</sup> : null}
                 </span>
             </label>
 
-            {error && (<span id={`err_${id || name}`} className={styles.error} data-testid="component-textarea-error">{error}</span>)}
+            {error ? <span id={`err_${id || name}`} className={styles.error} data-testid="component-textarea-error">{error}</span> : null}
 
-            {maxlength && !disabled && (
+            {maxlength && !disabled ? (
                 <span className={styles.maxlength} data-testid="component-textarea-maxlength">
                     {length} / {maxlength}
                 </span>
-            )}
+            ) : null}
         </div>
     );
 });

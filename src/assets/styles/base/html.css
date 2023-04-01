@@ -4,7 +4,7 @@ body {
     width: 100%;
     background-color: hsl(var(--color-white));
     color: hsl(var(--color-black));
-    font-family: 'Titillium Web', Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
+    font-family: Titillium Web, Ubuntu, Tahoma, Nimbus Sans L, Free Sans, sans-serif;
     font-size: clamp(0.8rem, 0.76rem + 0.21vw, 1rem);
     line-height: 1.4;
     font-weight: 400;
@@ -15,7 +15,7 @@ body {
         cursor: crosshair;
     }
 
-    @media (min-width: 900px) {
+    @media (width >= 900px) {
         overflow-y: hidden;
     }
 }
@@ -23,7 +23,7 @@ body {
 code,
 kbd,
 samp {
-    font-family: 'Roboto Mono', monospace;
+    font-family: Roboto Mono, monospace;
 }
 
 ::selection {

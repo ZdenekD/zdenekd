@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
 
-const useClickOutside = <T extends HTMLElement = any>(handler: () => void): React.MutableRefObject<T | undefined> => {
-    const ref = React.useRef();
+import {useEffect, useRef} from 'react';
+import type {MutableRefObject} from 'react';
 
-    React.useEffect(() => {
+const useClickOutside = <T extends HTMLElement = any>(handler: () => void): MutableRefObject<T | undefined> => {
+    const ref = useRef();
+
+    useEffect(() => {
         const listener = (event: any) => {
             if (!ref.current || (ref.current as HTMLElement).contains(event.target)) {
                 return;
