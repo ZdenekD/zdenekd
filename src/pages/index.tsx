@@ -1,5 +1,5 @@
 import Homepage from '@/components/pages/homepage';
 
-const Page: React.FC = () => (<Homepage />);
+const Page = () => (<Homepage />);
 
 export default Page;

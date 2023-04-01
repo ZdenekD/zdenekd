@@ -4,7 +4,7 @@ type IProps = {
     className?: string
 }
 
-const Loader: React.FC<IProps> = ({className = ''}) => (
+const Loader = ({className = ''}: IProps) => (
     <div className={`${styles.loader} ${className}`} data-testid="component-loader" />
 );
 

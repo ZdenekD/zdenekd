@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/nextjs';
 import remove from '@/api/delete';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 
 type IDeleteHandler = (path: string) => Promise<void>
 

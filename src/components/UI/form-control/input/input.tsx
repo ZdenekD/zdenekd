@@ -1,6 +1,12 @@
-import React from 'react';
-import VariantsEnum from '@/enums/VariantsEnum';
+
+import {
+    forwardRef,
+    useEffect,
+    useState
+} from 'react';
+import {VariantsEnum} from '@/enums';
 import styles from './input.module.css';
+import type {ChangeEvent, ChangeEventHandler} from 'react';
 
 type IReadonlyProps = {readonly?: false; value?: string} | {readonly?: true; value: string};
 
@@ -17,13 +23,13 @@ type IInput = {
     autoComplete?: 'on' | 'off'
     error?: string
     className?: string
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-    onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+    onBlur?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export type IProps = IReadonlyProps & IInput;
 
-const Input = React.forwardRef<HTMLInputElement, IProps>(({
+const Input = forwardRef<HTMLInputElement, IProps>(({
     id,
     name,
     label,
@@ -41,8 +47,8 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
     onChange,
     onBlur,
 }, ref) => {
-    const [length, setLength] = React.useState<number>(value?.length || 0);
-    const handleInput: React.ChangeEventHandler<HTMLInputElement> = event => {
+    const [length, setLength] = useState<number>(value?.length || 0);
+    const handleInput: ChangeEventHandler<HTMLInputElement> = event => {
         setLength(event.target.value.length);
 
         if (onChange) {
@@ -50,7 +56,7 @@ const Input = React.forwardRef<HTMLInputElement, IProps>(({
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         setLength(value?.length || 0);
     }, [value]);
 

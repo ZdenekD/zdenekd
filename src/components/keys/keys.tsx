@@ -1,20 +1,21 @@
 import {m} from 'framer-motion';
 import {useRouter} from 'next/router';
-import React from 'react';
 import pages from '@/data/pages';
-import DirectionsEnum from '@/enums/DirectionsEnum';
-import PageActionsEnum from '@/enums/PageActionsEnum';
-import PagesEnum from '@/enums/PagesEnum';
-import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import {
+    DirectionsEnum,
+    PageActionsEnum,
+    PagesEnum,
+    ProjectActionsEnum
+} from '@/enums';
 import useLocale from '@/hooks/useLocale';
 import usePageAction from '@/hooks/usePageAction';
 import useProjectAction from '@/hooks/useProjectAction';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import Key from './key';
 import {animations} from './keys.animations';
 import styles from './keys.module.css';
 
-const Keys: React.FC = () => {
+const Keys = () => {
     const {isOpen} = useStore(state => state.menu);
     const {isFirst, isLast} = useStore(state => state.project);
     const router = useRouter();

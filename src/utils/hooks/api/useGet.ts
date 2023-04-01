@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/nextjs';
-import React from 'react';
+import {useState} from 'react';
 import get from '@/api/get';
-import useStore from '@/store/index';
+import useStore from '@/store';
 
 type IGetHandler = (path: string) => Promise<void>
 
@@ -9,7 +9,7 @@ const useGet = <R>(
     onSuccess?: () => void,
     onFailure?: () => void
 ) => {
-    const [data, setData] = React.useState<R | undefined>(undefined);
+    const [data, setData] = useState<R | undefined>(undefined);
     const {set} = useStore(state => state.alert);
     const handleGet: IGetHandler = async path => {
         try {

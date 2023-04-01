@@ -1,4 +1,4 @@
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import type {IProjects} from '@/types/projects';
 
 const projects: IProjects = [

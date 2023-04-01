@@ -1,30 +1,33 @@
 import anime from 'animejs';
 import {useRouter} from 'next/router';
-import React from 'react';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import projects from '@/data/projects';
-import LocalesEnum from '@/enums/LocalesEnum';
-import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
+import {LocalesEnum, ProjectActionsEnum} from '@/enums';
 import useProjectAction from '@/hooks/useProjectAction';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import Browser from './browser';
 import Controls from './controls';
 import Tools from './tools';
 import styles from './project.module.css';
 
-const Project: React.FC = () => {
+const Project = () => {
     const router = useRouter();
     const {
         index: project,
         isFirst,
         isLast,
     } = useStore(state => state.project);
-    const [index, setIndex] = React.useState<number>(project);
-    const titleRef = React.useRef<HTMLHeadingElement | null>(null);
-    const descriptionRef = React.useRef<HTMLParagraphElement | null>(null);
-    const toolsWrapperRef = React.useRef<HTMLDivElement | null>(null);
-    const toolsRef = React.useRef<HTMLUListElement | null>(null);
-    const browserRef = React.useRef<HTMLDivElement | null>(null);
-    const controlsRef = React.useRef<HTMLUListElement | null>(null);
+    const [index, setIndex] = useState<number>(project);
+    const titleRef = useRef<HTMLHeadingElement | null>(null);
+    const descriptionRef = useRef<HTMLParagraphElement | null>(null);
+    const toolsWrapperRef = useRef<HTMLDivElement | null>(null);
+    const toolsRef = useRef<HTMLUListElement | null>(null);
+    const browserRef = useRef<HTMLDivElement | null>(null);
+    const controlsRef = useRef<HTMLUListElement | null>(null);
     const setProjectAction = useProjectAction();
     const lang = router.locale || LocalesEnum.cs;
     const handlePrev = () => {
@@ -69,7 +72,7 @@ const Project: React.FC = () => {
             });
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         const {current: title} = titleRef;
         const {current: description} = descriptionRef;
         const {current: tools} = toolsWrapperRef;
@@ -94,7 +97,7 @@ const Project: React.FC = () => {
         });
     }, []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (project !== index) {
             handleAnimation();
         }

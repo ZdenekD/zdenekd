@@ -1,4 +1,4 @@
-import VariantsEnum from '@/enums/VariantsEnum';
+import {VariantsEnum} from '@/enums';
 
 const getResponseVariant = (code: number): VariantsEnum => {
     switch (Math.floor(code / 100)) {

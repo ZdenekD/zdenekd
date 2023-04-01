@@ -1,11 +1,11 @@
 import {
-    Html,
     Head,
+    Html,
     Main,
     NextScript
 } from 'next/document';
 
-export const Document = () => (
+const Document = () => (
     <Html>
         <Head>
             <link rel="preload" href="/font/titillium-web.woff2" as="font" crossOrigin="anonymous" />

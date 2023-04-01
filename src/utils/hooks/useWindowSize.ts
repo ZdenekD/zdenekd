@@ -1,6 +1,6 @@
 import useEventListener from '@use-it/event-listener';
 import {debounce} from 'lodash';
-import React from 'react';
+import {useEffect, useState} from 'react';
 
 type ISize = {
     width: number
@@ -12,7 +12,7 @@ const initialState: ISize = {
     height: 0,
 };
 const useWindowSize = (): ISize => {
-    const [size, setSize] = React.useState<ISize>(initialState);
+    const [size, setSize] = useState<ISize>(initialState);
     const handleResize = () => {
         setSize({
             width: window.innerWidth,
@@ -20,7 +20,7 @@ const useWindowSize = (): ISize => {
         });
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         handleResize();
     }, []);
 

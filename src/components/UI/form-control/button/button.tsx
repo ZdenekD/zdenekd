@@ -1,6 +1,12 @@
-import React from 'react';
-import type VariantsEnum from '@/enums/VariantsEnum';
+
+import {forwardRef} from 'react';
+import type {VariantsEnum} from '@/enums';
 import styles from './button.module.css';
+import type {
+    PropsWithChildren,
+    KeyboardEventHandler,
+    MouseEventHandler
+} from 'react';
 
 export type IProps = {
     type?: 'button' | 'submit' | 'reset'
@@ -9,13 +15,12 @@ export type IProps = {
     title?: string
     tabindex?: number
     className?: string
-    children: React.ReactNode
     onFocus?: () => void
-    onClick?: (e: React.MouseEvent) => void
-    onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void
+    onClick?: MouseEventHandler
+    onKeyDown?: KeyboardEventHandler
 }
 
-const Button = React.forwardRef<HTMLButtonElement, IProps>(({
+const Button = forwardRef<HTMLButtonElement, PropsWithChildren<IProps>>(({
     type = 'button',
     disabled,
     variant,

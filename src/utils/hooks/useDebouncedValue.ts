@@ -1,15 +1,18 @@
-
-import React from 'react';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 
 const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leading: false}) => {
-    const [content, setContent] = React.useState(value);
-    const mountedRef = React.useRef(false);
-    const timeoutRef = React.useRef<number | null>(null);
-    const cooldownRef = React.useRef(false);
+    const [content, setContent] = useState(value);
+    const mountedRef = useRef(false);
+    const timeoutRef = useRef<number | null>(null);
+    const cooldownRef = useRef(false);
 
     const cancel = () => window.clearTimeout(timeoutRef.current ?? 0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (mountedRef.current) {
             if (!cooldownRef.current && options.leading) {
                 cooldownRef.current = true;
@@ -28,7 +31,7 @@ const useDebouncedValue = <T = unknown>(value: T, wait: number, options = {leadi
         wait,
     ]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         mountedRef.current = true;
 
         return cancel;

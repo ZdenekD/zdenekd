@@ -2,10 +2,10 @@ import {useRouter} from 'next/router';
 import Layout from '@/components/layout';
 import Heading from '@/components/layout/heading';
 import Anchor from '@/components/UI/anchor';
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import styles from './error.module.css';
 
-const Error: React.FC = () => {
+const Error = () => {
     const router = useRouter();
     const paragraph: {[key: string]: JSX.Element} = {
         [LocalesEnum.cs]: (

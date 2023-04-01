@@ -1,9 +1,9 @@
 import * as Sentry from '@sentry/nextjs';
 import {useRouter} from 'next/router';
 import post from '@/api/post';
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 
 type IPostHandler<D> = (path: string, data: D) => Promise<void>
 

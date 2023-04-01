@@ -2,10 +2,10 @@ import {Player} from '@lottiefiles/react-lottie-player';
 import {useRouter} from 'next/router';
 import Layout from '@/components/layout';
 import Heading from '@/components/layout/heading';
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import styles from './notfound.module.css';
 
-const NotFound: React.FC = () => {
+const NotFound = () => {
     const router = useRouter();
     const paragraph: {[key: string]: string} = {
         [LocalesEnum.cs]: 'Stránka bohužel neexistuje',

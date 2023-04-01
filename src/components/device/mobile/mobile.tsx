@@ -1,12 +1,9 @@
 import {m} from 'framer-motion';
 import {animations} from './mobile.animations';
 import styles from './mobile.module.css';
+import type {PropsWithChildren} from 'react';
 
-type IProps = {
-    children?: React.ReactNode
-}
-
-const Mobile: React.FC<IProps> = ({children}) => (
+const Mobile = ({children}: PropsWithChildren) => (
     <div className={styles.wrapper} data-testid="component-device-mobile">
         <div className={styles.mobile}>
             <div className={styles.content}>

@@ -1,5 +1,5 @@
 import {m, AnimatePresence} from 'framer-motion';
-import React from 'react';
+import {useRef} from 'react';
 import useLocale from '@/hooks/useLocale';
 import type {IProject} from '@/types/projects';
 import {animations} from './video.animations';
@@ -9,8 +9,8 @@ type IProps = {
     project: IProject
 }
 
-const Video: React.FC<IProps> = ({project}) => {
-    const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+const Video = ({project}: IProps) => {
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
     const locale = useLocale();
 
     return (

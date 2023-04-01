@@ -1,11 +1,11 @@
 import {
+    act,
     render,
     screen,
     waitFor
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@/test/mocks/nextRouterMock';
-import React from 'react';
 import Alert from '.';
 
 describe('UI/Alert', () => {
@@ -33,7 +33,7 @@ describe('UI/Alert', () => {
 
         render(<Alert isVisible>Alert</Alert>);
 
-        await user.click(screen.getByTestId('component-alert-button'));
+        await act(async () => user.click(screen.getByTestId('component-alert-button')));
         await waitFor(() => {
             expect(screen.queryByTestId('component-alert')).not.toBeInTheDocument();
         });

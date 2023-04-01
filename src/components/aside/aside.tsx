@@ -4,13 +4,13 @@ import {
     m
 } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import {animations} from './aside.animations';
 import styles from './aside.module.css';
 
 const Nav = dynamic(() => import('@/components/nav'));
 
-const Aside: React.FC = () => {
+const Aside = () => {
     const {set} = useStore(state => state.animation);
     const {isOpen} = useStore(state => state.menu);
     const handleAnimationStart = () => set({isAsideAnimated: true});

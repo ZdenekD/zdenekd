@@ -1,4 +1,9 @@
-import {render, screen} from '@testing-library/react';
+import {
+    act,
+    render,
+    screen,
+    waitFor
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@/test/mocks/nextRouterMock';
 import Controls from '.';
@@ -26,9 +31,9 @@ describe('Project/Controls', () => {
                 handlePrev={mockFunction}
             />
         );
-        await user.click(screen.getByTestId('component-controls-prev'));
 
-        expect(mockFunction).toHaveBeenCalled();
+        await act(async () => {user.click(screen.getByTestId('component-controls-prev'));});
+        await waitFor(() => expect(mockFunction).toHaveBeenCalled());
     });
 
     it('triggers handleNext function on next button click', async () => {
@@ -42,8 +47,8 @@ describe('Project/Controls', () => {
                 handleNext={mockFunction}
             />
         );
-        await user.click(screen.getByTestId('component-controls-next'));
 
-        expect(mockFunction).toHaveBeenCalled();
+        await act(async () => {user.click(screen.getByTestId('component-controls-next'));});
+        await waitFor(() => {expect(mockFunction).toHaveBeenCalled();});
     });
 });

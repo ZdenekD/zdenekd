@@ -34,20 +34,14 @@
     border-bottom-color: hsl(var(--color-blue-darken-4));
 
     &::before {
-        top: 5%;
-        right: 5%;
-        bottom: 5%;
-        left: 5%;
+        inset: 5%;
         content: '';
         animation-duration: 1.8s;
         border-top-color: hsl(var(--color-blue));
     }
 
     &::after {
-        top: 12%;
-        right: 12%;
-        bottom: 12%;
-        left: 12%;
+        inset: 12%;
         content: '';
         animation-duration: 1.2s;
         border-top-color: hsl(var(--color-green));

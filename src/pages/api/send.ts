@@ -1,7 +1,7 @@
 import sendgrid from '@sendgrid/mail';
 import {withSentry} from '@sentry/nextjs';
 import locales from '@/data/locales';
-import type LocalesEnum from '@/enums/LocalesEnum';
+import type {LocalesEnum} from '@/enums';
 import type {MailDataRequired} from '@sendgrid/mail';
 import type {NextApiRequest, NextApiResponse} from 'next';
 

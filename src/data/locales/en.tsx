@@ -1,4 +1,4 @@
-import LocalesEnum from '@/enums/LocalesEnum';
+import {LocalesEnum} from '@/enums';
 import getRoman from '@/helpers/getRoman';
 import type {ILocales} from './types';
 

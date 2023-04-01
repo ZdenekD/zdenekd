@@ -1,9 +1,8 @@
 import {useRouter} from 'next/router';
 import pages from '@/data/pages';
 import projects from '@/data/projects';
-import PagesEnum from '@/enums/PagesEnum';
-import ProjectActionsEnum from '@/enums/ProjectActionsEnum';
-import useStore from '@/store/index';
+import {PagesEnum, ProjectActionsEnum} from '@/enums';
+import useStore from '@/store';
 import type {IDistributor} from '@/types/distributor';
 
 type IAction = {

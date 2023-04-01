@@ -1,4 +1,4 @@
-import React from 'react';
+
 import useLocale from '@/hooks/useLocale';
 import styles from './addressbar.module.css';
 
@@ -6,7 +6,7 @@ type IProps = {
     url: string
 }
 
-const Addressbar: React.FC<IProps> = ({url}) => {
+const Addressbar = ({url}: IProps) => {
     const locale = useLocale();
 
     return (

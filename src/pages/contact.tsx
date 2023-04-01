@@ -1,5 +1,5 @@
 import Contact from '@/components/pages/contact';
 
-const Page: React.FC = () => (<Contact />);
+const Page = () => (<Contact />);
 
 export default Page;

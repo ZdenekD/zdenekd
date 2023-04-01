@@ -5,21 +5,22 @@ import {
 } from 'framer-motion';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import React from 'react';
 import Computer from '@/components/device/computer';
 import Mobile from '@/components/device/mobile';
 import Tablet from '@/components/device/tablet';
 import Layout from '@/components/layout';
 import Heading from '@/components/layout/heading';
 import pages from '@/data/pages';
-import LocalesEnum from '@/enums/LocalesEnum';
-import MediaQueriesEnum from '@/enums/MediaQueriesEnum';
-import PagesEnum from '@/enums/PagesEnum';
+import {
+    LocalesEnum,
+    MediaQueriesEnum,
+    PagesEnum
+} from '@/enums';
 import useWindowSize from '@/hooks/useWindowSize';
 import animations from './homepage.animations';
 import styles from './homepage.module.css';
 
-const Homepage: React.FC = () => {
+const Homepage = () => {
     const router = useRouter();
     const {width} = useWindowSize();
     const lang = router.locale as LocalesEnum || LocalesEnum.cs;

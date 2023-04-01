@@ -1,16 +1,16 @@
 /* eslint-disable no-param-reassign */
 import useEventListener from '@use-it/event-listener';
-import React from 'react';
-import useStore from '@/store/index';
+import {useRef} from 'react';
+import useStore from '@/store';
 import styles from './cursor.module.css';
 
 type IHandler = (coordX: number, coordY: number, inner: HTMLElement, outer: HTMLElement) => void
 type ICursorHandle = (coordX: number, coordY: number) => void
 
-const Cursor: React.FC = () => {
+const Cursor = () => {
     const {isStuck, props} = useStore(state => state.cursor);
-    const outerCursorRef = React.useRef<HTMLElement | null>(null);
-    const innerCursorRef = React.useRef<HTMLElement | null>(null);
+    const outerCursorRef = useRef<HTMLElement | null>(null);
+    const innerCursorRef = useRef<HTMLElement | null>(null);
     const handleIsUnstuck: IHandler = (coordX, coordY, inner, outer) => {
         document.body.style.setProperty('--cursor-x', `${coordX}px`);
         document.body.style.setProperty('--cursor-y', `${coordY}px`);

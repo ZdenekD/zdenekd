@@ -1,28 +1,34 @@
-import React from 'react';
+
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import useCursor from '@/hooks/useCursor';
 import useLocale from '@/hooks/useLocale';
 import styles from './controls.module.css';
+import type {MouseEventHandler} from 'react';
 
 type IProps = {
     isFirst: boolean
     isLast: boolean
-    handlePrev?: (event: React.MouseEvent) => void
-    handleNext?: (event: React.MouseEvent) => void
+    handlePrev?: MouseEventHandler
+    handleNext?: MouseEventHandler
 }
 
-const Controls: React.FC<IProps> = ({
+const Controls = ({
     isFirst,
     isLast,
     handlePrev = undefined,
     handleNext = undefined,
-}) => {
-    const [prevElement, setPrevElement] = React.useState<HTMLButtonElement | null>(null);
-    const [nextElement, setNextElement] = React.useState<HTMLButtonElement | null>(null);
-    const prevRef = React.useRef<HTMLButtonElement | null>(null);
-    const nextRef = React.useRef<HTMLButtonElement | null>(null);
+}: IProps) => {
+    const [prevElement, setPrevElement] = useState<HTMLButtonElement | null>(null);
+    const [nextElement, setNextElement] = useState<HTMLButtonElement | null>(null);
+    const prevRef = useRef<HTMLButtonElement | null>(null);
+    const nextRef = useRef<HTMLButtonElement | null>(null);
     const locale = useLocale();
 
-    React.useEffect(() => {
+    useEffect(() => {
         setPrevElement(prevRef.current);
         setNextElement(nextRef.current);
     }, []);

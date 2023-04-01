@@ -1,7 +1,11 @@
 import {yupResolver} from '@hookform/resolvers/yup';
 import anime from 'animejs';
 import dynamic from 'next/dynamic';
-import React from 'react';
+import {
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import {
     useForm,
     Controller
@@ -27,10 +31,10 @@ type IValues = {
     med: string
 }
 
-const ContactForm: React.FC = () => {
-    const [catcher, setCatcher] = React.useState<HTMLButtonElement | null>(null);
-    const buttonRef = React.useRef<HTMLButtonElement | null>(null);
-    const formRef = React.useRef<HTMLFormElement | null>(null);
+const ContactForm = () => {
+    const [catcher, setCatcher] = useState<HTMLButtonElement | null>(null);
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
+    const formRef = useRef<HTMLFormElement | null>(null);
     const locale = useLocale();
     const schema = validation(locale);
     const {
@@ -55,7 +59,7 @@ const ContactForm: React.FC = () => {
         await handlePost(api.send, values);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (formRef.current) {
             anime({
                 targets: [...formRef.current.querySelectorAll('.animated-block')],

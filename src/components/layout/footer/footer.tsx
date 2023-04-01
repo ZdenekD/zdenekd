@@ -1,18 +1,18 @@
 import {m} from 'framer-motion';
 import {useRouter} from 'next/router';
-import React from 'react';
+import {useRef} from 'react';
 import Keys from '@/components/keys';
 import useLocale from '@/hooks/useLocale';
-import useStore from '@/store/index';
+import useStore from '@/store';
 import Icon, {IconsEnum} from '@/UI/icon';
 import {animations} from './footer.animations';
 import Lang from './lang';
 import styles from './footer.module.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     const router = useRouter();
     const {isOpen} = useStore(state => state.menu);
-    const dotRef = React.useRef<HTMLElement | null>(null);
+    const dotRef = useRef<HTMLElement | null>(null);
     const locale = useLocale();
 
     return (

@@ -1,5 +1,5 @@
 import useEventListener from '@use-it/event-listener';
-import useStore from '@/store/index';
+import useStore from '@/store';
 
 const useCursor = (element: HTMLElement | null): void => {
     const {set, unset} = useStore(state => state.cursor);

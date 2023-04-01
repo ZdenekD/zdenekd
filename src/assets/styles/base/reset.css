@@ -95,8 +95,8 @@ video {
 }
 
 html {
-    height: 100%;
     block-size: 100%;
+    text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizespeed;
     -moz-osx-font-smoothing: grayscale;
@@ -104,10 +104,8 @@ html {
 }
 
 body {
-    min-height: 100vh;
     min-block-size: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden auto;
     line-height: 1.5;
 }
 
@@ -124,15 +122,16 @@ section {
     display: block;
 }
 
-audio,
-canvas,
-video {
-    display: inline-block;
+a:not([class]) {
+    text-decoration-skip-ink: auto;
 }
 
-ol,
-ul {
-    list-style: none;
+:where(p, h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+strong {
+    font-weight: 700;
 }
 
 abbr[title] {
@@ -144,13 +143,11 @@ abbr[title] {
 blockquote,
 q {
     quotes: none;
-}
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-    content: '';
+    &::before,
+    &::after {
+        content: '';
+    }
 }
 
 table {
@@ -158,15 +155,40 @@ table {
     border-collapse: collapse;
 }
 
-strong {
-    font-weight: 700;
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+    display: block;
 }
 
-button:not(:disabled),
-[type = 'button']:not(:disabled),
-[type = 'reset']:not(:disabled),
-[type = 'submit']:not(:disabled) {
-    cursor: pointer;
+:where(img, svg, video) {
+    block-size: auto;
+    max-inline-size: 100%;
+}
+
+:where(input, button, textarea, select),
+:where(input[type = 'file'])::-webkit-file-upload-button {
+    color: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
+:where(ol, ul) {
+    list-style: none;
+    list-style-position: inside;
+}
+
+button,
+[type = 'button'],
+[type = 'reset'],
+[type = 'submit'] {
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;
+        touch-action: manipulation;
+    }
 }
 
 textarea {
@@ -189,11 +211,14 @@ sup {
     top: -0.5em;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
 
     html:focus-within {
         scroll-behavior: smooth;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,

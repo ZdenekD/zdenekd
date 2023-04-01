@@ -8,7 +8,7 @@ type IProps = {
     size?: number
 }
 
-const Icon: React.FC<IProps> = ({variant, size = 28}) => (
+const Icon = ({variant, size = 28}: IProps) => (
     <>
         {variant === IconsEnum.brandGithub && (
             <svg
