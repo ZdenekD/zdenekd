@@ -94,7 +94,7 @@
     "lint-staged": "^13.0.0",
     "msw": "^0.44.1",
     "msw-storybook-addon": "^1.6.0",
-    "postcss": "^8.2.6",
+    "postcss": "^8.4.31",
     "postcss-custom-media": "^8.0.0",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^7.0.0",
